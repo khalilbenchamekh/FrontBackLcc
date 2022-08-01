@@ -1,0 +1,93 @@
+{
+  "data": [
+    {
+      "name": "Dashboard",
+      "url": "/admin/dashboard"
+    },
+    {
+      "name": "Rôles & Permissions",
+      "url": "/admin/dashboard/Permission"
+    },
+    {
+      "name": "Employées",
+      "url": "/admin/dashboard/employees"
+    },
+    {
+      "name": "Gestions des Affaires",
+      "children": [
+        {
+          "name": "Natures des affaires",
+          "url": "/admin/dashboard/business/natures"
+        },
+        {
+          "name": "affaires",
+          "url": "/admin/dashboard/business/business"
+        },
+        {
+          "name": "Situation des affaires",
+          "url": "/admin/dashboard/business/situations"
+        }
+      ]
+    },
+    {
+      "name": "Gestions Relation client",
+      "children": [
+        {
+          "name": "client",
+          "url": "/admin/dashboard/customerRelationship/client"
+        },
+        {
+          "name": "intermédiaire",
+          "url": "/admin/dashboard/customerRelationship/intermediate"
+        }
+      ]
+    },
+    {
+      "name": "Gestions des Dossier Technique",
+      "children": [
+        {
+          "name": "Natures des Dossier Technique",
+          "url": "/admin/dashboard/folderTech/natures"
+        },
+        {
+          "name": "Dossier Technique",
+          "url": "/admin/dashboard/folderTech/folderTech"
+        },
+        {
+          "name": "Situation des Dossier Technique",
+          "url": "/admin/dashboard/folderTech/situations"
+        }
+      ]
+    },
+    {
+      "name": "Item4",
+      "children": [
+        {
+          "name": "Child41",
+          "url": "/child41"
+        },
+        {
+          "name": "Child42",
+          "url": "/child42"
+        },
+        {
+          "name": "Child43",
+          "children": [
+            {
+              "name": "Child431",
+              "url": "/child431"
+            },
+            {
+              "name": "Child432",
+              "url": "/child432,"
+            },
+            {
+              "name": "Child433",
+              "url": "/child433"
+            }
+          ]
+        }
+      ]
+    }
+  ]
+}

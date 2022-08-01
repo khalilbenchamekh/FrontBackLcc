@@ -1,0 +1,14 @@
+27/05/2022 19:59:15 => SQLSTATE[23000]: Integrity constraint violation: 1452 Cannot add or update a child row: a foreign key constraint fails (`multigeomappingdbtest`.`load_types`, CONSTRAINT `load_types_organisation_id_foreign` FOREIGN KEY (`organisation_id`) REFERENCES `organisations` (`id`) ON DELETE CASCADE) (SQL: insert into `load_types` (`organisation_id`, `name`, `created_at`, `updated_at`) values (33, type1, ?, ?)) on "C:\xampp\htdocs\lcc\vendor\laravel\framework\src\Illuminate\Database\Connection.php on line 669" with code 23000
+27/05/2022 20:01:11 => Trying to get property 'organisation_id' of non-object on "C:\xampp\htdocs\lcc\app\Repository\LoadTypes\LoadTypesRepository.php on line 32" with code 0
+27/05/2022 20:02:36 => Trying to get property 'organisation_id' of non-object on "C:\xampp\htdocs\lcc\app\Repository\LoadTypes\LoadTypesRepository.php on line 32" with code 0
+27/05/2022 20:03:08 => Trying to get property 'organisation_id' of non-object on "C:\xampp\htdocs\lcc\app\Repository\LoadTypes\LoadTypesRepository.php on line 32" with code 0
+27/05/2022 22:49:53 => Trying to get property 'organisation_id' of non-object on "C:\xampp\htdocs\lcc\app\Repository\LoadTypes\LoadTypesRepository.php on line 57" with code 0
+27/05/2022 22:50:32 => Trying to get property 'organisation_id' of non-object on "C:\xampp\htdocs\lcc\app\Repository\LoadTypes\LoadTypesRepository.php on line 57" with code 0
+27/05/2022 22:52:40 => Trying to get property 'organisation_id' of non-object on "C:\xampp\htdocs\lcc\app\Repository\LoadTypes\LoadTypesRepository.php on line 57" with code 0
+27/05/2022 22:52:48 => Trying to get property 'organisation_id' of non-object on "C:\xampp\htdocs\lcc\app\Repository\LoadTypes\LoadTypesRepository.php on line 57" with code 0
+27/05/2022 22:53:13 => Trying to get property 'organisation_id' of non-object on "C:\xampp\htdocs\lcc\app\Repository\LoadTypes\LoadTypesRepository.php on line 57" with code 0
+27/05/2022 22:53:22 => Trying to get property 'organisation_id' of non-object on "C:\xampp\htdocs\lcc\app\Repository\LoadTypes\LoadTypesRepository.php on line 57" with code 0
+27/05/2022 22:54:23 => Trying to get property 'organisation_id' of non-object on "C:\xampp\htdocs\lcc\app\Repository\LoadTypes\LoadTypesRepository.php on line 57" with code 0
+27/05/2022 22:54:48 => Trying to get property 'organisation_id' of non-object on "C:\xampp\htdocs\lcc\app\Repository\LoadTypes\LoadTypesRepository.php on line 57" with code 0
+27/05/2022 22:55:25 => Trying to get property 'organisation_id' of non-object on "C:\xampp\htdocs\lcc\app\Repository\LoadTypes\LoadTypesRepository.php on line 57" with code 0
+27/05/2022 22:57:12 => Trying to access array offset on value of type null on "C:\xampp\htdocs\lcc\app\Repository\LoadTypes\LoadTypesRepository.php on line 57" with code 0

@@ -1,0 +1,2 @@
+03/05/2022 22:26:41 => explode() expects parameter 2 to be string, array given on "C:\xampp\htdocs\lcc\vendor\laravel\framework\src\Illuminate\Support\Str.php on line 414" with code 0
+03/05/2022 22:27:52 => Undefined variable: affaireCreated on "C:\xampp\htdocs\lcc\app\Repository\AffaireNature\AffaireNatureRepository.php on line 84" with code 0

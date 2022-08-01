@@ -1,0 +1,64 @@
+{
+  "data": [
+    {
+      "label": "Dashbord",
+      "url": "/dashboard",
+      "icon": "fa-chart-line"
+    },
+    {
+      "label": "Gestion des Affaires",
+      "url": "/business/natures",
+      "icon": "fa-tasks"
+    },
+    {
+      "label": "Gestion des grands chantiers",
+      "url": "",
+      "icon": "fa-drafting-compass"
+    },
+    {
+      "label": "Gestion des dossiers techniques",
+      "url": "/folderTech/folderTech",
+      "icon": "fa-suitcase"
+    },
+    {
+      "label": "Gestion RH",
+      "url": "",
+      "icon": "fa-user-circle"
+    },
+    {
+      "label": "Gestion des fichiers",
+      "url": "/fileManager",
+      "icon": "fa-folder-open"
+    },
+    {
+      "label": "Paramètres",
+      "url": "",
+      "icon": "fa-tools"
+    },
+    {
+      "label": "Gestion des rôles et permissions",
+      "url": "/admin/Permission",
+      "icon": "fa-user-tag"
+    },
+    {
+      "label": "Gestion des LOGS",
+      "url": "/log",
+      "icon": "fa-history"
+    },
+    {
+      "label": "Gestion des clients et intermédiaires :",
+      "url": "/customerRelationship/clientIntermediate",
+      "icon": "fa-address-book"
+    },
+    {
+      "label": "Notifications",
+      "url": "",
+      "icon": "fa-bell"
+    },
+    {
+      "label": "Messagerie",
+      "url": "/messaging",
+      "icon": "fa-comment-dots"
+    }
+  ]
+}

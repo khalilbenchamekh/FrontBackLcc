@@ -1,0 +1,124 @@
+/* -------------------------- @Media ------------------------------------*/
+
+@media (max-width: 1280px){
+
+    .mapboxgl-map{
+        /*margin-top: 10%;*/
+        height: 100vh;
+        width:  calc(100vw - 20rem);
+    } .map-box-home{
+          height: 79vh;
+          width: 100vw;
+      }
+    .ZoomControlMoreInfo{
+        position: absolute;
+        z-index: 10;
+        display: flex;
+        flex-direction: column;
+        bottom: 20px;
+        top: auto;
+        right: auto;
+        width: auto;
+        background-color: #f3f5f5;
+        left: 40px;
+        padding: 5px 8px;
+        font-size: x-small;
+    }
+
+}
+@media (min-width:1281px) {
+    .mapboxgl-map {
+        height: 79vh;
+        width: 41vw;
+    }
+
+    .map-box-home {
+        height: 79vh;
+        width: 100vw;
+
+
+    }
+
+    @media (min-width: 768px) and (max-width: 1024px) and (orientation: landscape) {
+        .mapboxgl-map {
+            height: 100vh;
+            width: calc(100vw - 20rem);
+        }
+
+        .map-box-home {
+            height: 79vh;
+            width: 100vw;
+        }
+
+
+    }
+
+    /*
+      ##Device = Low Resolution Tablets, Mobiles (Landscape)
+      ##Screen = B/w 481px to 767px
+    */
+    @media (min-width: 481px) and (max-width: 767px) {
+
+
+        .mapboxgl-map {
+            height: 100vh;
+            width: 100vw;
+        }
+
+        .map-box-home {
+            height: 79vh;
+            width: 100vw;
+        }
+
+    }
+
+
+    @media (min-width: 320px) and (max-width: 480px) {
+
+        .mapboxgl-map {
+            height: 100vh;
+            width: 100vw;
+        }
+
+        .map-box-home {
+            height: 79vh;
+            width: 100vw;
+        }
+    }
+}
+.MuiInput-underline:before {
+    border-bottom: 1px solid rgb(0, 132, 137);
+}
+.MuiInput-underline:after {
+    border-bottom: 2px solid #008489;
+}
+.MuiSelect-icon {
+    color: rgb(0, 132, 137);
+}
+/*.MuiFormLabel-root {*/
+    /*color: #f8f9fa;*/
+/*}*/
+.UpdateBusinessSituations-root-222 {
+    background: none;
+}
+.MuiIconButton-label {
+    color: black;
+}
+.UpdateBusinessSituations-formControl-223 {
+    background: #222928;
+}
+.MuiMenu-list {
+    background: black;
+    color: white;
+}
+
+/*.MuiButton-label {*/
+    /*color:  white;*/
+/*}*/
+.MuiSelect-select.MuiSelect-select {
+    color: #008489;
+}
+.CustomToolbar-paper-467 {
+
+    background-color: black;
+}

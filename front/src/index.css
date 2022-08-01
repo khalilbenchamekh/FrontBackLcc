@@ -1,0 +1,282 @@
+
+
+body {
+  margin-top: 20px;
+  padding: 0;
+  font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", "Roboto", "Oxygen",
+    "Ubuntu", "Cantarell", "Fira Sans", "Droid Sans", "Helvetica Neue",
+    sans-serif;
+  -webkit-font-smoothing: antialiased;
+  -moz-osx-font-smoothing: grayscale;
+  background-color: #222928 !important;
+}
+
+code {
+  font-family: source-code-pro, Menlo, Monaco, Consolas, "Courier New",
+    monospace;
+}
+.divEx1{
+  padding: 100px;
+}
+.table-index-no_margin,.table-index{
+  z-index:999;
+}
+.table-index{
+  margin: 0 0 90px 0;
+}
+/*--------------------------file Upload -----------------*/
+.files input {
+  padding: 10px 0px 40px 3%;
+  margin: 16px 0;
+}
+.color input {
+  background-color: #f1f1f1;
+}
+
+.disabledbutton {
+  pointer-events: none;
+  opacity: 0.4;
+}
+#chart {
+  max-width: 650px;
+  margin: 35px auto;
+}
+.order-card {
+  color: #fff;
+}
+
+.bg-c-blue {
+  background: linear-gradient(45deg, #4099ff, #73b4ff);
+}
+.bg-c-green {
+  background: linear-gradient(45deg, #2ed8b6, #59e0c5);
+}
+
+.bg-c-yellow {
+  background: linear-gradient(45deg, #ffb64d, #ffcb80);
+}
+
+.bg-c-pink {
+  background: linear-gradient(45deg, #ff5370, #ff869a);
+}
+
+.card {
+  border-radius: 5px;
+  -webkit-box-shadow: 0 1px 2.94px 0.06px rgba(4, 26, 55, 0.16);
+  box-shadow: 0 1px 2.94px 0.06px rgba(4, 26, 55, 0.16);
+  border: none;
+  margin-bottom: 30px;
+  -webkit-transition: all 0.3s ease-in-out;
+  transition: all 0.3s ease-in-out;
+}
+
+.card .card-block {
+  padding: 25px;
+}
+
+.order-card i {
+  font-size: 26px;
+}
+
+.f-left {
+  float: left;
+}
+
+.f-right {
+  float: right;
+}
+.MenuBar-contentShift-10 {
+  margin: 0;
+}
+
+.react-autosuggest__container {
+  position: relative;
+  display: inline-block;
+  margin-top: -10px;
+}
+
+.react-autosuggest__input {
+  width: 200px;
+  height: 16px;
+  padding: 10px;
+  font-weight: 300;
+  font-size: 13px;
+  border: 1px solid rgba(0, 126, 255, 0.24);
+  border-radius: 4px;
+  color: #000;
+  background-color: #fff;
+}
+
+.react-autosuggest__input::placeholder {
+  color: #777;
+  opacity: 1;
+}
+
+.react-autosuggest__input--focused {
+  outline: none;
+}
+
+.react-autosuggest__input--open {
+  border-bottom-left-radius: 0;
+  border-bottom-right-radius: 0;
+}
+
+.react-autosuggest__suggestions-list {
+  margin: 0;
+  position: absolute;
+  padding: 0;
+  background-color: #fff;
+  list-style-type: none;
+  width: 220px;
+  border: 1px solid #eee;
+}
+
+.react-autosuggest__suggestion {
+  cursor: pointer;
+  padding: 10px;
+  border-bottom: 1px solid #eee;
+  width: 200px;
+  white-space: nowrap;
+}
+
+.react-autosuggest__suggestion--highlighted {
+  background-color: #ddd;
+}
+
+.result {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  font-size: 80%;
+}
+
+.shortCode {
+  background-color: #4696ec;
+  color: #fff;
+  padding: 4px;
+  border-radius: 2px;
+}
+
+.highlight {
+  background-color: yellow;
+  padding: 4px;
+  border-radius: 2px;
+}
+.photo-popup-content {
+  text-align: center;
+}
+.photo-popup-content .photo-popup-image {
+  height: 100%;
+  max-width: 100%;
+}
+.photo-popup-content {
+  text-align: center;
+}
+.photo-popup-content .photo-popup-image {
+  height: 100%;
+  max-width: 100%;
+}
+.dx-filemanager .dx-filemanager-container .dx-filemanager-dirs-panel {
+  padding: 5px 10px;
+  height: 100%;
+  width: 100%;
+  display: block;
+}
+.dx-filemanager .dx-filemanager-dirs-panel {
+  background-color: black
+}
+.dx-filemanager .dx-filemanager-breadcrumbs {
+  background-color: black
+}
+@media (min-width: 600px) {
+  .MuiContainer-root {
+    padding-left: 24px;
+    padding-right: 24px;
+    min-width: 1300px;
+  }
+}
+/* -------------------------- @Media ------------------------------------*/
+
+
+
+  .mapboxgl-map{
+    /*margin-top: 10%;*/
+    height: 100vh;
+    width:  calc(100vw - 20rem);
+  }
+
+  /*.map-box-home{*/
+      /*height: 79vh;*/
+      /*width: 100vw;*/
+    /*}*/
+
+
+  .map-box-home {
+    height: 50vh;
+    width: 70vw;
+  }
+.mapMarkerStyle {
+  width: 1.5rem;
+  height: 1.5rem;
+  border-radius: 50% 50% 50% 0;
+
+  border: 1px solid #FFFFFF;
+  position: absolute;
+  transform: rotate(-45deg);
+  left: 50%;
+  top: 50%;
+  margin: -15px 0 0 -15px;
+  text-align: center;
+}
+.mapMarkerStyle{
+  background-color: blue;
+}
+.Number {
+  text-align: center;
+  transform: rotate(45deg);
+  color: #fff;
+  position: relative;
+  top: 2px;
+}
+.pulse {
+  background: #d6d4d4;
+  border-radius: 50%;
+  height: 14px;
+  width: 14px;
+  position: absolute;
+  left: 50%;
+  top: 50%;
+  margin: 12px 0px -2px -9px;
+  transform: rotateX(55deg);
+
+}
+.pulse:after {
+  content: "";
+  border-radius: 50%;
+  height: 40px;
+  width: 40px;
+  position: absolute;
+  margin: -13px 0 0 -13px;
+  animation: pulsate 1s ease-out;
+  animation-iteration-count: infinite;
+  opacity: 0;
+  box-shadow: 0 0 1px 2px #00cae9;
+  animation-delay: 1.1s;
+}
+
+.MuiInput-underline:before {
+  border-bottom: 1px solid rgb(0, 132, 137);
+}
+.MuiInput-underline:after {
+  border-bottom: 2px solid #008489;
+}
+.MuiSelect-icon {
+  color: rgb(0, 132, 137);
+}
+.MuiFormLabel-root {
+  color: #f8f9fa;
+}
+.UpdateBusinessSituations-root-222 {
+  background: none;
+}
+

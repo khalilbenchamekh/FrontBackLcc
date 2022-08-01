@@ -1,0 +1,80 @@
+{
+    "name": "kennethtomagan/laravel-6-api-boilerplate",
+    "type": "project",
+    "description": "A Laravel 6 API Boilerplate to create a ready-to-use REST API. User Authentication using JWT.",
+    "keywords": [
+        "laravel",
+        "api",
+        "jwt",
+        "boilerplate"
+    ],
+    "license": "MIT",
+    "require": {
+        "php": "^7.4",
+        "ext-gd": "*",
+        "ext-json": "*",
+        "barryvdh/laravel-cors": "^0.11.4",
+        "barryvdh/laravel-dompdf": "^0.8.6",
+        "commerceguys/enum": "^1.0",
+        "dompdf/dompdf": "^0.8.5",
+        "fideloper/proxy": "^4.0",
+        "flynsarmy/csv-seeder": "2.*",
+        "halpdesk/zizaco-entrust-laravel-6.0": "^1.9",
+        "intervention/image": "^2.5",
+        "laravel/framework": "^6.0",
+        "laravel/tinker": "^1.0",
+        "maatwebsite/excel": "^3.1",
+        "moontoast/math": "^1.2",
+        "predis/predis": "^1.1",
+        "pusher/pusher-php-server": "^4.0",
+        "salmanzafar/laravel-crud-generator": "^1.0",
+        "spatie/data-transfer-object": "^2.8",
+        "tymon/jwt-auth": "dev-develop"
+    },
+    "require-dev": {
+        "appzcoder/crud-generator": "^3.1",
+        "facade/ignition": "^1.4",
+        "fzaninotto/faker": "^1.4",
+        "mockery/mockery": "^1.0",
+        "nunomaduro/collision": "^3.0",
+        "phpunit/phpunit": "^8.0"
+    },
+    "config": {
+        "optimize-autoloader": true,
+        "preferred-install": "dist",
+        "sort-packages": true
+    },
+    "extra": {
+        "laravel": {
+            "dont-discover": []
+        }
+    },
+    "autoload": {
+        "psr-4": {
+            "App\\": "app/"
+        },
+        "classmap": [
+            "database/seeds",
+            "database/factories"
+        ]
+    },
+    "autoload-dev": {
+        "psr-4": {
+            "Tests\\": "tests/"
+        }
+    },
+    "minimum-stability": "dev",
+    "prefer-stable": true,
+    "scripts": {
+        "post-autoload-dump": [
+            "Illuminate\\Foundation\\ComposerScripts::postAutoloadDump",
+            "@php artisan package:discover --ansi"
+        ],
+        "post-root-package-install": [
+            "@php -r \"file_exists('.env') || copy('.env.example', '.env');\""
+        ],
+        "post-create-project-cmd": [
+            "@php artisan key:generate --ansi"
+        ]
+    }
+}

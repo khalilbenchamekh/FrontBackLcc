@@ -1,0 +1,12 @@
+export const minZoom =3;
+export const maxZoom =12;
+export const longitude =32;
+export const latitude =32;
+export const locations =[];
+export const scrollZoom =false;
+export const city ="";
+export const mapboxZoom =[3];
+export const mapStyle ="mapbox://styles/mapbox/streets-v9";
+export const accessToken ="pk.eyJ1IjoiZ2VvbWFwaW5nIiwiYSI6ImNrOHl3YzJxZjBjcjczcWw2OWR0bnAycG8ifQ.XDpU4t5osfDFe8XJDsjs4w";
+export const mapboxGetCoordinateWithLatAndLng='https://api.mapbox.com/geocoding/v5/mapbox.places/%s,%s.json?access_token='+accessToken;
+export const PositionIfDenide='https://freegeoip.app/json/';
