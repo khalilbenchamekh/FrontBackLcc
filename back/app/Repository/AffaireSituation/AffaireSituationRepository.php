@@ -2,25 +2,29 @@
 
 namespace App\Repository\AffaireSituation;
 
+use App\Helpers\LogActivity;
+use App\Http\Requests\Enums\LogsEnumConst;
 use App\Models\AffaireSituation;
 use App\Repository\Log\LogTrait;
 use Carbon\Carbon;
-use Illuminate\Support\Facades\DB;
+use Illuminate\Support\Facades\Auth;
 
 class AffaireSituationRepository implements IAffaireSituationRepository
 {
     use LogTrait;
-
-    public function index($page)
+    private $organisation_id;
+    public function __construct()
+    {
+        $this->organisation_id = Auth::User()->organisation;
+    }
+    public function index($request)
     {
         // TODO: Implement index() method.
-        $organisation_id=3;
         try {
-
-            return DB::table("affairesituations")
-                ->select()
-                ->where("organisation_id","=",$organisation_id)
-                ->paginate(15,['*'],"page",$page);
+            return AffaireSituation::
+                select()
+                ->where("organisation_id","=",$this->organisation_id)
+                ->paginate($request['limit'],['*'],'page',$request['page']);
         }catch (\Exception $exception){
             $this->Log($exception);
             return null;
@@ -31,7 +35,9 @@ class AffaireSituationRepository implements IAffaireSituationRepository
     {
         // TODO: Implement get() method.
         try {
-           return AffaireSituation::find($id);
+           return AffaireSituation::where("id","=",$id)
+           ->where("organisation_id",'=',$this->organisation_id)
+           ->get();
         }catch (\Exception $exception){
             $this->Log($exception);
             return null;
@@ -52,11 +58,13 @@ class AffaireSituationRepository implements IAffaireSituationRepository
         }
     }
 
-    public function delete($perAffaireSitution,$id)
+    public function delete($data)
     {
         // TODO: Implement delete() method.
         try {
-            return $perAffaireSitution->delete();
+            return AffaireSituation::where("id","=",$id)
+            ->where("organisation_id",'=',$this->organisation_id)
+            ->destroy();
         }catch (\Exception $exception){
             $this->Log($exception);
             return null;
@@ -65,11 +73,10 @@ class AffaireSituationRepository implements IAffaireSituationRepository
 
     public function store($data)
     {
-        $organisation_id=3;
         // TODO: Implement store() method.
         try {
             $affaireSituation = new AffaireSituation();
-            $affaireSituation->organisation_id=$organisation_id;
+            $affaireSituation->organisation_id=$this->organisation_id;
             $affaireSituation->orderChr=$data['orderChr'];
             $affaireSituation->Name=$data['Name'];
             $affaireSituation->created_at=Carbon::now();
@@ -83,19 +90,19 @@ class AffaireSituationRepository implements IAffaireSituationRepository
 
     public function storeMany($data)
     {
-        $organisation_id=3;
         // TODO: Implement storeMany() method.
-        $affaireSituations=[];
         try {
             foreach ($data as $item){
                 $affaireSituation= new AffaireSituation();
-                $affaireSituation->organisation_id=$organisation_id;
+                $affaireSituation->organisation_id=$this->organisation_id;
                 $affaireSituation->Name=$item['Name'];
                 $affaireSituation->orderChr=$item['orderChr'];
                 $affaireSituation->save();
-                array_push($affaireSituations,$affaireSituation);
+                $subject = LogsEnumConst::Add . LogsEnumConst::BusinessSituation . $item['Name'];
+                $logs = new LogActivity();
+                $logs->addToLog($subject, $data);
             }
-            return $affaireSituations;
+            return $data;
         }catch (\Exception $exception){
             $this->Log($exception);
             return null;

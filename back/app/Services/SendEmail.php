@@ -11,7 +11,7 @@ class SendEmail
 {
     private $organisationService;
     private $adminService;
-    public function __construct(OrganisationService $organisationService,AdminService $adminService)
+    public function __construct(OrganisationService $organisationService,IAdminService $adminService)
     {
         $this->organisationService=$organisationService;
         $this->adminService=$adminService;
@@ -163,5 +163,9 @@ class SendEmail
                 Mail::to($el)->send(new Email($message));
             }
         }
+    }
+
+    public function ResetPassword($to,$message){
+        Mail::to($to)->send(new Email($message));
     }
 }

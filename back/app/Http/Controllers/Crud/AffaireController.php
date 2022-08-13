@@ -1,7 +1,6 @@
 <?php
 
 namespace App\Http\Controllers\Crud;
-
 use App\Helpers\LogActivity;
 use App\Http\Controllers\Controller;
 use App\Http\Requests\Crud\AffaireRequest;
@@ -10,9 +9,7 @@ use App\Models\Affaire;
 use App\Models\AffaireSituation;
 use App\Models\BusinessManagement;
 use App\Models\Mission;
-use Carbon\Carbon;
 use DateTime;
-use Illuminate\Http\Request;
 use Illuminate\Support\Facades\Auth;
 use Illuminate\Support\Facades\Validator;
 use Illuminate\Support\Facades\File;
@@ -21,11 +18,11 @@ class AffaireController extends Controller
 {
     public function __construct()
     {
+       $this->middleware('role:owner');
         $this->middleware('role:affaires_create|owner|admin', ['only' => ['store']]);
         $this->middleware('role:affaires_edit|owner|admin', ['only' => ['update']]);
         $this->middleware('role:affaires_read|owner|admin', ['only' => ['index']]);
         $this->middleware('role:affaires_delete|owner|admin', ['only' => ['destroy']]);
-
     }
 
     public function index()

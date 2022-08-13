@@ -2,7 +2,7 @@
 
 namespace App\Response\Organisation;
 
-use App\Services\AdminService;
+use App\Services\Admin\IAdminService;
 use Illuminate\Http\Resources\Json\JsonResource;
 
 class OrganisationResponse extends JsonResource

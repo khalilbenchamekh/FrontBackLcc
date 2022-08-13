@@ -8,7 +8,7 @@ class Message extends Model
 {
 //    protected $table = 'messages as m';
     protected $fillable = [
-        'content', 'from_id','to_id','read_at','created_at'
+        'content', 'from_id','to_id','read_at','created_at','organisation_id'
     ];
     protected $sates= ['read_at','created_at'];
     public $timestamps =false;

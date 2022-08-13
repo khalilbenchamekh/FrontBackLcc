@@ -2,14 +2,13 @@
 
 namespace App\Http\Controllers;
 
+use App\Services\Organisation\IOrganisationService;
 use Illuminate\Foundation\Bus\DispatchesJobs;
 use Illuminate\Http\Request;
 use Illuminate\Routing\Controller as BaseController;
 use Illuminate\Foundation\Validation\ValidatesRequests;
-use Illuminate\Foundation\Auth\Access\AuthorizesRequests;
 use Illuminate\Support\Facades\Config;
 use Illuminate\Support\Facades\File;
-use Illuminate\Support\Facades\Response;
 use Illuminate\Support\Facades\Storage;
 use Illuminate\Support\Facades\Validator;
 use Tymon\JWTAuth\Facades\JWTAuth;
@@ -21,7 +20,13 @@ use Tymon\JWTAuth\Facades\JWTAuth;
 class FileManagerController extends BaseController
 {
     use  DispatchesJobs, ValidatesRequests;
-
+    private $const;
+    private $iOrganisationService;
+    public function __construct(IOrganisationService $iOrganisationService)
+    {
+        $this->const = Config::get('constants.fileSystemPath');
+        $this->iOrganisationService =$iOrganisationService;
+    }
 
     public function downloadFunc(Request $request)
     {
@@ -44,7 +49,7 @@ class FileManagerController extends BaseController
                 $mimeType = File::mimeType($temp);
                 if ($mimeType != 'directory') {
 
-                    
+
 //                    $response = Response::make($file, 200);
 //                    $response->header('Content-Type' , $mimeType);
 //                    $response->header('Authorization', 'Bearer ' . $token);
@@ -71,17 +76,17 @@ class FileManagerController extends BaseController
 
     private function makeCorrectPath($path = '/')
     {
-        $const = Config::get('constants.fileSystemPath');
+        $organistionName = $this->iOrganisationService->getMyOrganisation()->name;
         if ($path == '/') {
-            $path = $const;
+            $path = $organistionName;
         }
-        if ($path == $const) {
-            $temp = $this->generateTempPaht($const);
+        if ($path == $organistionName) {
+            $temp = $this->generateTempPaht($organistionName);
             if (!File::isDirectory($temp)) {
                 File::makeDirectory($temp, 0777, true, true);
             }
         } else {
-            $path = $const . $path;
+            $path = $organistionName . $path;
         }
         return $path;
     }
@@ -89,7 +94,7 @@ class FileManagerController extends BaseController
     private function download($path, $name, $selectedItems, $isImage = false)
     {
         $file = $isImage ? $path : "$path/$name";
-        $filePath = Storage::disk('public')->getDriver()->getAdapter()->applyPathPrefix($file);
+        $filePath = Storage::disk($this->const)->getDriver()->getAdapter()->applyPathPrefix($file);
         return $filePath;
     }
 
@@ -118,12 +123,12 @@ class FileManagerController extends BaseController
                 $responseData = [
                     'files' => $this->read($path, $extensionsAllow, $selectedItems),
                     'cwd' => [
-                        'dateModified' => date('Y/m/d h:i:s', Storage::disk('public')->lastModified($path)),
+                        'dateModified' => date('Y/m/d h:i:s', Storage::disk($this->const)->lastModified($path)),
                         'isFile' => false,
                         'name' => basename($path),
                         'hasChild' => false,
-                        'size' => Storage::disk('public')->size($path),
-                        'type' => Storage::disk('public')->mimeType($path)
+                        'size' => Storage::disk($this->const)->size($path),
+                        'type' => Storage::disk($this->const)->mimeType($path)
                     ]
                 ];
                 break;
@@ -145,12 +150,12 @@ class FileManagerController extends BaseController
                 $responseData = [
                     'files' => $this->read($path, $extensionsAllow, $selectedItems),
                     'cwd' => [
-                        'dateModified' => date('Y/m/d h:i:s', Storage::disk('public')->lastModified($path)),
+                        'dateModified' => date('Y/m/d h:i:s', Storage::disk($this->const)->lastModified($path)),
                         'isFile' => false,
                         'name' => basename($path),
                         'hasChild' => false,
-                        'size' => Storage::disk('public')->size($path),
-                        'type' => Storage::disk('public')->mimeType($path)
+                        'size' => Storage::disk($this->const)->size($path),
+                        'type' => Storage::disk($this->const)->mimeType($path)
                     ],
                     'error' => null
                 ];
@@ -164,12 +169,12 @@ class FileManagerController extends BaseController
                 $responseData = [
                     'files' => $this->read($path, $extensionsAllow, $selectedItems),
                     'cwd' => [
-                        'dateModified' => date('Y/m/d h:i:s', Storage::disk('public')->lastModified($path)),
+                        'dateModified' => date('Y/m/d h:i:s', Storage::disk($this->const)->lastModified($path)),
                         'isFile' => false,
                         'name' => basename($path),
                         'hasChild' => false,
-                        'size' => Storage::disk('public')->size($path),
-                        'type' => Storage::disk('public')->mimeType($path)
+                        'size' => Storage::disk($this->const)->size($path),
+                        'type' => Storage::disk($this->const)->mimeType($path)
                     ],
                     'error' => null
                 ];
@@ -185,12 +190,12 @@ class FileManagerController extends BaseController
                 $responseData = [
                     'files' => $this->read($path, $extensionsAllow, $selectedItems),
                     'cwd' => [
-                        'dateModified' => date('Y/m/d h:i:s', Storage::disk('public')->lastModified($path)),
+                        'dateModified' => date('Y/m/d h:i:s', Storage::disk($this->const)->lastModified($path)),
                         'isFile' => false,
                         'name' => basename($path),
                         'hasChild' => false,
-                        'size' => Storage::disk('public')->size($path),
-                        'type' => Storage::disk('public')->mimeType($path)
+                        'size' => Storage::disk($this->const)->size($path),
+                        'type' => Storage::disk($this->const)->mimeType($path)
                     ],
                     'error' => null
                 ];
@@ -204,12 +209,12 @@ class FileManagerController extends BaseController
                 $responseData = [
                     'files' => $this->read($path, $extensionsAllow, $selectedItems),
                     'cwd' => [
-                        'dateModified' => date('Y/m/d h:i:s', Storage::disk('public')->lastModified($path)),
+                        'dateModified' => date('Y/m/d h:i:s', Storage::disk($this->const)->lastModified($path)),
                         'isFile' => false,
                         'name' => basename($path),
                         'hasChild' => false,
-                        'size' => Storage::disk('public')->size($path),
-                        'type' => Storage::disk('public')->mimeType($path)
+                        'size' => Storage::disk($this->const)->size($path),
+                        'type' => Storage::disk($this->const)->mimeType($path)
                     ],
                     'error' => null
                 ];
@@ -224,12 +229,12 @@ class FileManagerController extends BaseController
                 $responseData = [
                     'files' => $this->read($path, $extensionsAllow, $selectedItems),
                     'cwd' => [
-                        'dateModified' => date('Y/m/d h:i:s', Storage::disk('public')->lastModified($path)),
+                        'dateModified' => date('Y/m/d h:i:s', Storage::disk($this->const)->lastModified($path)),
                         'isFile' => false,
                         'name' => basename($path),
                         'hasChild' => false,
-                        'size' => Storage::disk('public')->size($path),
-                        'type' => Storage::disk('public')->mimeType($path)
+                        'size' => Storage::disk($this->const)->size($path),
+                        'type' => Storage::disk($this->const)->mimeType($path)
                     ],
                     'error' => null
                 ];
@@ -260,19 +265,19 @@ class FileManagerController extends BaseController
      */
     private function read($path, $extensionsAllow = null, $selectedItems = [])
     {
-        $files = Storage::disk('public')->files($path);
-        $directories = Storage::disk('public')->directories($path);
+        $files = Storage::disk($this->const)->files($path);
+        $directories = Storage::disk($this->const)->directories($path);
         $items = array_merge($files, $directories);
         $allFiles = [];
         foreach ($items as $item) {
-            $mimeType = Storage::disk('public')->mimeType($item);
+            $mimeType = Storage::disk($this->const)->mimeType($item);
             array_push($allFiles, [
                 'name' => basename($item),
                 'hasChild' => $mimeType == 'directory',
                 'isFile' => $mimeType != 'directory',
                 'type' => $mimeType,
-                'dateModified' => date('Y/m/d h:i:s', Storage::disk('public')->lastModified($item)),
-                'size' => Storage::disk('public')->size($item)
+                'dateModified' => date('Y/m/d h:i:s', Storage::disk($this->const)->lastModified($item)),
+                'size' => Storage::disk($this->const)->size($item)
             ]);
         }
 
@@ -288,18 +293,18 @@ class FileManagerController extends BaseController
     private function createFolder($path, $name = 'New Folder', $selectedItems = [])
     {
         $file = "$path/$name";
-        Storage::disk('public')->makeDirectory($file);
+        Storage::disk($this->const)->makeDirectory($file);
 
         $allFiles = [];
 
-        $mimeType = Storage::disk('public')->mimeType($file);
+        $mimeType = Storage::disk($this->const)->mimeType($file);
         $fileObject = [
             'name' => basename($file),
             'hasChild' => $mimeType == 'directory',
             'isFile' => $mimeType != 'directory',
             'type' => $mimeType,
-            'dateModified' => date('Y/m/d h:i:s', Storage::disk('public')->lastModified($file)),
-            'size' => Storage::disk('public')->size($file)
+            'dateModified' => date('Y/m/d h:i:s', Storage::disk($this->const)->lastModified($file)),
+            'size' => Storage::disk($this->const)->size($file)
         ];
         array_push($allFiles, $fileObject);
 
@@ -315,8 +320,8 @@ class FileManagerController extends BaseController
     {
         foreach ($names as $name) {
             $file = "$path/$name";
-            $type = Storage::disk('public')->mimeType($file);
-            $type == 'directory' ? Storage::disk('public')->deleteDirectory($file) : Storage::disk('public')->delete($file);
+            $type = Storage::disk($this->const)->mimeType($file);
+            $type == 'directory' ? Storage::disk($this->const)->deleteDirectory($file) : Storage::disk($this->const)->delete($file);
         }
     }
 
@@ -343,7 +348,7 @@ class FileManagerController extends BaseController
 //            $file->move($path, $fileNameToStore);
 //        }
 
-        Storage::disk('public')->putFileAs($path, $fileUpload, $fileUpload->getClientOriginalName());
+        Storage::disk($this->const)->putFileAs($path, $fileUpload, $fileUpload->getClientOriginalName());
     }
 
     /**
@@ -357,7 +362,7 @@ class FileManagerController extends BaseController
     {
         $fileOld = "$path/$name";
         $fileNew = "$path/$newName";
-        Storage::disk('public')->move($fileOld, $fileNew);
+        Storage::disk($this->const)->move($fileOld, $fileNew);
     }
 
     private function copy($path, $names = [], $targetPath)
@@ -366,7 +371,7 @@ class FileManagerController extends BaseController
             $targetPath = $this->makeCorrectPath($targetPath);
             $fileOld = "$path/$name";
             $fileNew = "$targetPath/$name";
-            Storage::disk('public')->copy($fileOld, $fileNew);
+            Storage::disk($this->const)->copy($fileOld, $fileNew);
         }
     }
 
@@ -376,7 +381,7 @@ class FileManagerController extends BaseController
             $targetPath = $this->makeCorrectPath($targetPath);
             $fileOld = "$path/$name";
             $fileNew = "$targetPath/$name";
-            Storage::disk('public')->move($fileOld, $fileNew);
+            Storage::disk($this->const)->move($fileOld, $fileNew);
         }
     }
 
@@ -395,10 +400,10 @@ class FileManagerController extends BaseController
                 'CreationTime' => 'Unknown',
                 'Extension' => File::extension($file),
                 'FullName' => $file,
-                'Format' => Storage::disk('public')->mimeType($file),
-                'LastWriteTime' => date('Y/m/d h:i:s', Storage::disk('public')->lastModified($file)),
+                'Format' => Storage::disk($this->const)->mimeType($file),
+                'LastWriteTime' => date('Y/m/d h:i:s', Storage::disk($this->const)->lastModified($file)),
                 'LastAccessTime' => 'Unknown',
-                'Length' => Storage::disk('public')->size($file),
+                'Length' => Storage::disk($this->const)->size($file),
                 'Name' => File::name($file)
             ];
             array_push($files, $fileDetails);

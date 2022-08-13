@@ -8,10 +8,12 @@ use App\Observers\ChatMessageObserver;
 use App\Observers\LogActivityObserver;
 use App\Repository\Admin\AdminRepository;
 use App\Repository\Admin\IAdminRepository;
+use App\Repository\Admin\IConversationRepository;
 use App\Repository\AffaireNature\AffaireNatureRepository;
 use App\Repository\AffaireNature\IAffaireNatureRepository;
 use App\Repository\AffaireSituation\AffaireSituationRepository;
 use App\Repository\AffaireSituation\IAffaireSituationRepository;
+use App\Repository\Conversation\ConversationRepository;
 use App\Repository\Employee\EmployeeRepository;
 use App\Repository\Employee\IEmployeeRepository;
 use App\Repository\FileLoad\FileLoadRepository;
@@ -38,8 +40,16 @@ use App\Repository\Load\LoadRepository;
 use App\Repository\Load\ILoadRepository;
 use App\Repository\LoadTypes\ILoadTypesRepository;
 use App\Repository\LoadTypes\LoadTypesRepository;
+use App\Repository\Organisation\IOrganisationRepository;
+use App\Repository\Organisation\OrganisationRepository;
+use App\Services\Admin\AdminService;
+use App\Services\Admin\IAdminService;
+use App\Services\ImageService;
+use App\Services\ImageService\IImageService;
 use App\Services\LoadTypes\LoadTypesService;
 use App\Services\LoadTypes\ILoadTypesService;
+use App\Services\Organisation\IOrganisationService;
+use App\Services\Organisation\OrganisationService;
 use App\Services\SaveFile\ISaveFileService;
 use App\Services\SaveFile\SaveFileService;
 
@@ -56,22 +66,30 @@ class AppServiceProvider extends ServiceProvider
     public function register()
     {
         Schema::defaultStringLength(191);
-        $this->app->bind(IAdminRepository::class,AdminRepository::class);
+        // Services
+        $this->app->bind(IOrganisationService::class,OrganisationService::class);
+        $this->app->bind(IImageService::class,ImageService::class);
+        $this->app->bind(IAdminService::class,AdminService::class);
+
         $this->app->bind(IAffaireNatureService::class,AffaireNatureService::class);
-        $this->app->bind(IAffaireNatureRepository::class,AffaireNatureRepository::class);
         $this->app->bind(ILoadService::class,LoadService::class);
-        $this->app->bind(ILoadRepository::class,LoadRepository::class);
-        $this->app->bind(ILoadTypesRepository::class,LoadTypesRepository::class);
         $this->app->bind(ILoadTypesService::class,LoadTypesService::class);
         $this->app->bind(ISaveFileService::class,SaveFileService::class);
         $this->app->bind(IFileLoadService::class,FileLoadService::class);
-        $this->app->bind(IFileLoadRipository::class,FileLoadRepository::class);
-        $this->app->bind(IAffaireSituationRepository::class,AffaireSituationRepository::class);
         $this->app->bind(IAffaireSituationService::class,AffaireSituationService::class);
         $this->app->bind(IEmployeeService::class,EmployeeService::class);
-        $this->app->bind(IEmployeeRepository::class,EmployeeRepository::class);
         $this->app->bind(IRoleService::class,RoleService::class);
+        //  Repositories
+        $this->app->bind(IOrganisationRepository::class,OrganisationRepository::class);
+        $this->app->bind(IAdminRepository::class,AdminRepository::class);
+        $this->app->bind(IAffaireNatureRepository::class,AffaireNatureRepository::class);
+        $this->app->bind(ILoadRepository::class,LoadRepository::class);
+        $this->app->bind(ILoadTypesRepository::class,LoadTypesRepository::class);
+        $this->app->bind(IFileLoadRipository::class,FileLoadRepository::class);
+        $this->app->bind(IAffaireSituationRepository::class,AffaireSituationRepository::class);
+        $this->app->bind(IEmployeeRepository::class,EmployeeRepository::class);
         $this->app->bind(IRoleRepository::class,RoleRepository::class);
+        $this->app->bind(IConversationRepository::class,ConversationRepository::class);
 
         if($this->app->environment()==='local'){
             if(isset($_SERVER['REQUEST_METHOD'],$_SERVER['REQUEST_URI'])){

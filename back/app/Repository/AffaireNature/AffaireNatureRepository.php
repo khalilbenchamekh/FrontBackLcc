@@ -1,18 +1,25 @@
 <?php
 
 namespace App\Repository\AffaireNature;
-
+use App\Helpers\LogActivity;
+use App\Http\Requests\Enums\LogsEnumConst;
 use App\Models\AffaireNature;
 use App\Repository\Log\LogTrait;
-use Illuminate\Support\Facades\DB;
-use App\Models\Affaire;
+use Illuminate\Support\Facades\Auth;
 
 class AffaireNatureRepository implements IAffaireNatureRepository
 {
     use LogTrait;
+    private $organisation_id;
+    public function __construct()
+    {
+        $this->organisation_id = Auth::User()->organisation;
+    }
+
     public function findAffaireNatureByName($name){
         try {
-            return DB::table('affaire_natures')->where("Name","=",$name)->get();
+            return AffaireNature::where('name', 'like', '%' . $name . '%')
+            ->where('organisation_id','=',$this->organisation_id)->get();
         }catch (\Exception $exception){
             $this->Log($exception);
             return null;
@@ -20,12 +27,11 @@ class AffaireNatureRepository implements IAffaireNatureRepository
     }
     public function store($data)
     {
-
         try{
             $affireNature= new AffaireNature();
             $affireNature->Name=$data['Name'];
             $affireNature->Abr_v=$data['Abr_v'];
-            $affireNature->organisation_id =$data['organisation_id'];
+            $affireNature->organisation_id =$this->organisation_id;
             $affireNature->save();
             return $affireNature;
         }catch (\Exception $exception){dd($exception->getMessage());
@@ -33,11 +39,11 @@ class AffaireNatureRepository implements IAffaireNatureRepository
             return null;
         }
     }
-    public function getAllAffaireNature($id,$request)
+
+    public function getAllAffaireNature($request)
     {
         try{
-            return DB::table('affaire_natures')
-                ->where('organisation_id','=',$id)
+            return AffaireNature::where('organisation_id','=',$this->organisation_id)
                 ->paginate($request['limit'],['*'],'page',$request['page']);
 
         }catch (\Exception $exception){
@@ -46,12 +52,12 @@ class AffaireNatureRepository implements IAffaireNatureRepository
         }
     }
 
-    public function get($id, $data)
+    public function get($id)
     {
         // TODO: Implement get() method.
         try {
-            return DB::table('affaire_natures')->where("id","=",$id)
-                ->where("organisation_id",'=',$data['organisation_id'])
+            return AffaireNature::where("id","=",$id)
+                ->where("organisation_id",'=',$this->organisation_id)
                 ->get();
         }catch (\Exception $exception){
             $this->Log($exception);
@@ -59,40 +65,38 @@ class AffaireNatureRepository implements IAffaireNatureRepository
         }
     }
 
-    public function edit($affairNature, $data)
+    public function edit(AffaireNature $affairNature, $data)
     {
         // TODO: Implement edit() method.
         try {
-            $affairNature=new  AffaireNature();
             $affairNature->Name=$data['Name'];
             $affairNature->Abr_v=$data['Abr_v'];
-            $affairNature->organisation_id=$data['organisation_id'];
+            $affairNature->organisation_id=$this->organisation_id;
             $affairNature->save();
             return $affairNature;
         }catch (\Exception $exception){
             $this->Log($exception);
             return null;
         }
-
     }
+
      public function saveMany($data)
     {
         # code...
-
         try{
-
-            $affaireCreated=[];
             for ($i=0; $i<count($data) ; $i++) {
                 # code...
                 $affairenature=new AffaireNature();
                 $el=$data[$i];
                 $affairenature->Name = $el['Name'];
                 $affairenature->Abr_v = $el['Abr_v'];
-                $affairenature->organisation_id=$el['organisation_id'];
+                $affairenature->organisation_id=$this->organisation_id;
                 $affairenature->save();
-                array_push($affaireCreated,$affairenature);
+                $subject = LogsEnumConst::Add . LogsEnumConst::BusinessNature . $el['Name'];
+                $logs = new LogActivity();
+                $logs->addToLog($subject, $data);
             }
-            return $affaireCreated;
+            return $data;
         }catch(\Exception $exception){
             $this->Log($exception);
             return null;
@@ -102,9 +106,10 @@ class AffaireNatureRepository implements IAffaireNatureRepository
     public function destroy($id)
     {
         try{
-            $affaire=new AffaireNature();
-            $affaire::destroy($id);
-            return $affaire;
+            return  AffaireNature::where("id","=",$id)
+                ->where("organisation_id",'=',$this->organisation_id)
+                ->destroy();
+
         }catch(\Exception $exception){
             $this->Log($exception);
             return null;

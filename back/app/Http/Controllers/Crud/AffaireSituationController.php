@@ -1,18 +1,14 @@
 <?php
 
 namespace App\Http\Controllers\Crud;
-
-use App\Helpers\LogActivity;
 use App\Http\Controllers\Controller;
+use App\Http\Requests\Auth\PaginatinRequest;
 use App\Http\Requests\Crud\AffaireSituationRequest;
-use App\Http\Requests\Enums\LogsEnumConst;
 use App\Models\AffaireSituation;
 use App\Response\AffaireSituation\AffaireSituationResponse;
 use App\Response\AffaireSituation\AffaireSituationsResponse;
 use App\Services\AffaireSituation\IAffaireSituationService;
-use Illuminate\Http\Request;
 use Illuminate\Pagination\LengthAwarePaginator;
-use Illuminate\Support\Facades\Validator;
 use Symfony\Component\HttpFoundation\Response;
 
 class AffaireSituationController extends Controller
@@ -21,20 +17,14 @@ class AffaireSituationController extends Controller
     public function __construct(IAffaireSituationService $affaireSituationService)
     {
         $this->affaireSituationService=$affaireSituationService;
-//        $this->middleware('role:affairesituations_create|owner|admin', ['only' => ['store', 'storeMany']]);
-//        $this->middleware('role:affairesituations_edit|owner|admin', ['only' => ['update']]);
-//        $this->middleware('role:affairesituations_read|owner|admin', ['only' => ['index']]);
-//        $this->middleware('role:affairesituations_delete|owner|admin', ['only' => ['destroy']]);
+      $this->middleware('role:affairesituations_create|owner|admin', ['only' => ['store', 'storeMany']]);
+      $this->middleware('role:affairesituations_edit|owner|admin', ['only' => ['update']]);
+       $this->middleware('role:affairesituations_read|owner|admin', ['only' => ['index']]);
+       $this->middleware('role:affairesituations_delete|owner|admin', ['only' => ['destroy']]);
     }
 
-    public function index(Request $request)
+    public function index(PaginatinRequest $request)
     {
-        $validator=Validator::make($request->all(),[
-           "page"=>"required|integer"
-        ]);
-        if($validator->fails()){
-            return response()->json(["error"=>$validator->errors()],Response::HTTP_BAD_REQUEST);
-        }
         $page=$request->input("page");
         $affaireSatuations=$this->affaireSituationService->index($page);
         if($affaireSatuations instanceof LengthAwarePaginator ){
@@ -47,49 +37,17 @@ class AffaireSituationController extends Controller
             ],Response::HTTP_OK);
         }
         return \response()->json(['error'=>"Bad Request",Response::HTTP_BAD_REQUEST]);
-//        $affairesituations = AffaireSituation::latest()->get();
-//
-//        return response(['data' => $affairesituations], 200);
     }
 
-    public function storeMany(Request $request)
+    public function storeMany(AffaireSituationRequest $request)
     {
-       // $affairesituations = new AffaireSituation();
-        $validator = Validator::make($request->all(), [
-            'affaireSituations.*.Name' => 'required|string|min:4|max:255|distinct|unique:App\Models\AffaireSituation',
-            'affaireSituations.*.orderChr' => 'required|integer',
-        ]);
-        if ($validator->fails()) {
-            return response($validator->errors(), 400);
-        }
         $data=$request->all()['affaireSituations'];
         $affaireSituations=$this->affaireSituationService->storeMany($data);
         if(is_array($affaireSituations) && count($affaireSituations)>0){
             $response=AffaireSituationsResponse::make($affaireSituations);
             return  response()->json(["affaireSituations"=>$response],Response::HTTP_CREATED);
         }
-        return \response()->json(['error'=>"Bad Request",Response::HTTP_BAD_REQUEST]);
-
-//        if ($validator->fails()) {
-//            return response($validator->errors(), 400);
-//        }
-//        $affaires = $request->all();
-//        $affaire_records = [];
-//        foreach ($affaires as $affaire) {
-//            if (!empty($affaire)) {
-//                $affairesituations->Name = $affaire['Name'];
-//                $affairesituations->orderChr = $affaire['orderChr'];
-//                $affairesituations->save();
-//                $subject = LogsEnumConst::Add . LogsEnumConst::BusinessSituation . $affaire['Name'];
-//           $logs = new LogActivity();
-//        $logs->addToLog($subject, $request);
-//                $affaire_records[] = $affairesituations;
-//            }
-//        }
-//        $affairesituations = $affaire_records;
-//        return response(['data' => $affairesituations], 201);
-
-
+        return response()->json(['error'=>"Bad Request",Response::HTTP_BAD_REQUEST]);
     }
 
     public function store(AffaireSituationRequest $request)
@@ -100,11 +58,6 @@ class AffaireSituationController extends Controller
            return response()->json(["affaireSituation"=>$response],Response::HTTP_CREATED);
         }
         return response()->json(['error'=>"Bad Request"],Response::HTTP_BAD_REQUEST);
-
-//        $affairesituation = AffaireSituation::create($request->all());
-//
-//        return response(['data' => $affairesituation], 201);
-
     }
 
     public function show($id)

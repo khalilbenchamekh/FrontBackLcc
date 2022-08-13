@@ -14,10 +14,26 @@ class AffaireSituationRequest extends FormRequest
 
     public function rules()
     {
+        return [
+            'Name' => ['required', 'string','min:4', 'max:255', 'unique:affairesituations'],
+            'orderChr' => ['required','integer'],
+        ];
+    }
+}
+
+class AffaireSituationArrayRequest extends FormRequest
+{
+    public function authorize()
+    {
+        return true;
+    }
+
+    public function rules()
+    {
 
         return [
-            'Name' => ['required', 'string', 'max:255', 'unique:affairesituations'],
-            'orderChr' => ['required','integer'],
+            'affaireSituations.*.Name' =>  ['required', 'string','min:4', 'max:255', 'unique:affairesituations'],
+            'affaireSituations.*.orderChr' => 'required|integer',
         ];
     }
 }

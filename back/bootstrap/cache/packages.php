@@ -42,6 +42,13 @@
       0 => 'Fideloper\\Proxy\\TrustedProxyServiceProvider',
     ),
   ),
+  'flynsarmy/csv-seeder' => 
+  array (
+    'providers' => 
+    array (
+      0 => 'Flynsarmy\\CsvSeeder\\CsvSeederServiceProvider',
+    ),
+  ),
   'halpdesk/zizaco-entrust-laravel-6.0' => 
   array (
     'providers' => 

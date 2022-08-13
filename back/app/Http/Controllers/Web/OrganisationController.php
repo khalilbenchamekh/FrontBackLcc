@@ -7,9 +7,9 @@ use App\Organisation;
 use App\Response\Admin\AllAdminResponse;
 use App\Response\Organisation\AllOrganisationResponse;
 use App\Response\Organisation\OrganisationResponse;
-use App\Services\AdminService;
+use App\Services\Admin\IAdminService;
 use App\Services\ImageService;
-use App\Services\OrganisationService;
+use App\Services\Organisation\OrganisationService;
 use App\Services\SendEmail;
 use App\User;
 use Illuminate\Pagination\LengthAwarePaginator;
@@ -27,7 +27,7 @@ class OrganisationController
     private $organisationService;
     private $adminService;
     private $sendEmail;
-    public function __construct(OrganisationService $organisationService,AdminService $adminService,SendEmail $sendEmail)
+    public function __construct(OrganisationService $organisationService,IAdminService $adminService,SendEmail $sendEmail)
     {
         $this->organisationService=$organisationService;
         $this->adminService=$adminService;

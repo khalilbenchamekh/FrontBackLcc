@@ -3,13 +3,20 @@
 
 namespace App\Helpers;
 
+use App\Http\Requests\Auth\PaginatinRequest;
 use App\Models\Notification;
 use Illuminate\Http\Request;
 use App\Models\LogActivity as LogActivityModel;
-use Tymon\JWTAuth\Facades\JWTAuth;
+use Illuminate\Support\Facades\Auth;
+use Illuminate\Support\Facades\DB;
 
 class LogActivity
 {
+    private $organisation_id;
+    public function __construct()
+    {
+        $this->organisation_id = Auth::User()->organisation;
+    }
     private function AssocieteNameToSubject($subject, $user)
     {
         if ($user) {
@@ -21,7 +28,7 @@ class LogActivity
 
     public function addToLog($subject, Request $request)
     {
-        $user = JWTAuth::user();
+        $user = Auth::user();
         $subject = $this->AssocieteNameToSubject($subject, $user);
         if ($subject != null) {
             $log = [];
@@ -32,6 +39,7 @@ class LogActivity
             $log['agent'] = $request->header('user-agent');
             $log['user_id'] = $user->id;
             $log['user_name'] = $user->email;
+            $log['organisation_id'] = $this->organisation_id;
             $notifications = new Notification();
             $notifications->description = $subject;
             $notifications->save();
@@ -40,11 +48,10 @@ class LogActivity
 
     }
 
-
-    public static function logActivityLists()
+    public function logActivityLists(PaginatinRequest $request)
     {
-        return LogActivityModel::latest()->get();
+        return DB::table("log_activities")
+        ->where('organisation_id','=', $this->organisation_id)
+        ->paginate($request['limit'],['*'],'page',$request['page']);
     }
-
-
 }

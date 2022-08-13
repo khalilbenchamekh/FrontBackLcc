@@ -1,7 +1,8 @@
 <?php
 
 namespace App\Services\AffaireSituation;
-
+use App\Helpers\LogActivity;
+use App\Http\Requests\Enums\LogsEnumConst;
 use App\Repository\AffaireSituation\IAffaireSituationRepository;
 
 class AffaireSituationService implements IAffaireSituationService
@@ -27,13 +28,26 @@ class AffaireSituationService implements IAffaireSituationService
     public function edit($perAffaireSituation, $data)
     {
         // TODO: Implement edit() method.
-        return $this->affaireSituationRepository->edit($perAffaireSituation, $data);
+        $res = $this->affaireSituationRepository->edit($perAffaireSituation, $data);
+        if(!is_null($res)){
+            $subject = LogsEnumConst::Update . LogsEnumConst::BusinessSituation . $data['Name'];
+            $logs = new LogActivity();
+            $logs->addToLog($subject, $data);
+        }
+        return null;
     }
 
-    public function delete($perAffaireSitution,$id)
+    public function delete($request)
     {
-        // TODO: Implement delete() method.
-        return $this->affaireSituationRepository->delete($perAffaireSitution,$id);
+        $res = $this->affaireSituationRepository->delete($request);
+        if($res === 0 || is_null($res)){
+            return false;
+        }else{
+            $subject = LogsEnumConst::Delete . LogsEnumConst::BusinessSituation . $request['Name'];
+            $logs = new LogActivity();
+            $logs->addToLog($subject, $request);
+        }
+        return true;
     }
 
     public function store($data)

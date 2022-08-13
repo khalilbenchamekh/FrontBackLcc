@@ -1,9 +1,6 @@
 <?php
 
 namespace App\Repository\Admin;
-
-use App\User;
-
 interface IAdminRepository
 {
     public function getAllUser($limit,$page);

@@ -19,7 +19,7 @@ class LogsEnumConst
 
     const BusinessNature='Affaire Nature ';
     const FolderTechNature='Dossier Technique Nature';
-
+    const Cadastral ='les consultaion cadastraux ';
     const BusinessSituation='Situation Affaire  ';
     const FolderTechSituation='Situation Dossier Technique ';
 

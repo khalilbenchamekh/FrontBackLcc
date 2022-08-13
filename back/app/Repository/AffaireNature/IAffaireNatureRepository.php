@@ -2,16 +2,18 @@
 
 namespace App\Repository\AffaireNature;
 
+use App\Models\AffaireNature;
+
 interface IAffaireNatureRepository
 {
     public function store($data);
     public function findAffaireNatureByName($id);
 
-    public function getAllAffaireNature($id,$request);
+    public function getAllAffaireNature($request);
 
-    public function get($id,$data);
+    public function get($id);
 
-    public  function edit($affairNature,$data);
+    public  function edit(AffaireNature $affairNature,$data);
 
     public  function saveMany($data);
 

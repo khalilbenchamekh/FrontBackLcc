@@ -37,15 +37,13 @@ class AuthController extends Controller
         $user=User::Where('email',"=",$request->input("email"))->where('password',"=",$request->input("password"))->first();
         try {
                 if($user instanceof User){
-                    if (! $token = JWTAuth::fromUser($user)) {
+                    if (!$token = JWTAuth::fromUser($user)) {
                         return response()->json(['error' => 'invalid_credentials'], 400);
-                }
+                    }
+                return response()->json(compact('token'));
             }
-
         } catch (JWTException $e) {
             return response()->json(['error' => 'could_not_create_token'], 500);
         }
-
-        return response()->json(compact('token'));
     }
 }

@@ -1,16 +1,13 @@
 <?php
 
 namespace App\Http\Controllers\Web;
-
-
-
 use App\Http\Requests\Enums\EmailMessageChoice;
 use App\Organisation;
 use App\Request\AdminRequest;
 use App\Response\Admin\AdminResponse;
 use App\Response\Admin\AllAdminResponse;
-use App\Services\AdminService;
-use App\Services\OrganisationService;
+use App\Services\Admin\IAdminService;
+use App\Services\Organisation\IOrganisationService;
 use App\Services\SendEmail;
 use App\User;
 use Illuminate\Http\Request;
@@ -18,15 +15,13 @@ use Illuminate\Pagination\LengthAwarePaginator;
 use Illuminate\Support\Facades\Validator;
 use Symfony\Component\HttpFoundation\Response;
 
-
-
 class AdminController
 {
     private $adminService;
     private $adminRequest;
     private $organisationService;
     private $sendEmail;
-    public function __construct(AdminService $adminService,AdminRequest $adminRequest,OrganisationService $organisationService,SendEmail $sendEmail)
+    public function __construct(IAdminService $adminService,AdminRequest $adminRequest,IOrganisationService $organisationService,SendEmail $sendEmail)
     {
         $this->adminService=$adminService;
         $this->adminRequest=$adminRequest;

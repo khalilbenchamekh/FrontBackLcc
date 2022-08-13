@@ -5,7 +5,7 @@ namespace App\Services\Employee;
 use App\Models\Employee;
 use App\Models\Role;
 use App\Repository\Employee\IEmployeeRepository;
-use App\Services\AdminService;
+use App\Services\Admin\IAdminService;
 use App\Services\Role\IRoleService;
 use App\User;
 
@@ -14,7 +14,7 @@ class EmployeeService implements IEmployeeService
     private $employeeRepository;
     private $adminService;
     private $roleService;
-    public function __construct(IEmployeeRepository $employeeRepository,AdminService $adminService,IRoleService $roleService)
+    public function __construct(IEmployeeRepository $employeeRepository,IAdminService $adminService,IRoleService $roleService)
     {
         $this->employeeRepository = $employeeRepository;
         $this->adminService = $adminService;

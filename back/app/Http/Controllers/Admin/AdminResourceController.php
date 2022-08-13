@@ -3,9 +3,6 @@
 namespace App\Http\Controllers\Admin;
 
 use App\Http\Controllers\Controller;
-use App\Http\Requests\Admin\AdminDashBoardRequest;
-use App\Http\Requests\Enums\AbrvDate;
-use App\Http\Requests\Enums\RangeDateChoice;
 use App\Http\Requests\Enums\TableChoice;
 use App\Http\Resources\GetFess;
 use App\Models\Permission;
@@ -15,6 +12,7 @@ use App\User;
 use Carbon\Carbon;
 use Illuminate\Http\Request;
 use App\Helpers\LogActivity;
+use App\Http\Requests\Auth\PaginatinRequest;
 use Illuminate\Support\Facades\DB;
 use Illuminate\Support\Facades\Validator;
 
@@ -96,7 +94,6 @@ class AdminResourceController extends Controller
     public function getPermissions(Request $request)
     {
         $permissions = Permission::orderBy('name')->get();
-        LogActivity::addToLog('subject', $request);
         return response()->json($permissions);
     }
 
@@ -346,9 +343,10 @@ class AdminResourceController extends Controller
         return response()->json(["data" => $ongoingProject], 200);
     }
 
-    public function logActivity()
+    public function logActivity(PaginatinRequest $request)
     {
-        $logs = LogActivity::logActivityLists();
+        $log = new LogActivity();
+        $logs = $log->logActivityLists($request);
         return response()->json($logs);
     }
 }

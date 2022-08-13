@@ -1,98 +1,68 @@
 <?php
 
 namespace App\Services\AffaireNature;
-
-use App\Models\AffaireNature;
-use App\Organisation;
+use App\Helpers\LogActivity;
+use App\Http\Requests\Enums\LogsEnumConst;
 use App\Repository\AffaireNature\IAffaireNatureRepository;
-use App\Services\OrganisationService;
 
 class AffaireNatureService implements IAffaireNatureService
 {
     private $affaireNatureRepository;
-    private $organisationService;
-    public function __construct(IAffaireNatureRepository $affaireNatureRepository,OrganisationService $organisationService)
+    public function __construct(IAffaireNatureRepository $affaireNatureRepository)
     {
         $this->affaireNatureRepository=$affaireNatureRepository;
-        $this->organisationService=$organisationService;
     }
 
     public function store($request)
     {
-        $org=$this->checkIfOrganisationExist($request->input('organisation_id'));
-        $chckIfExist=$this->affaireNatureRepository->findAffaireNatureByName($request->input('Name'));
-        if(count($chckIfExist->toArray())>0){
-            return true;
+        $res = $this->affaireNatureRepository->store($request->all());
+        if(!is_null($res)){
+            $subject = LogsEnumConst::Add . LogsEnumConst::BusinessNature . $request['Name'];
+            $logs = new LogActivity();
+            $logs->addToLog($subject, $request);
         }
-        if($org){
-            return $this->affaireNatureRepository->store($request->all());
-        }else{
-            return null;
-        }
-    }
-    public function checkIfOrganisationExist($id):bool
-    {
-        $org=$this->organisationService->getOrganisation($id);
-        if($org instanceof Organisation){
-            return true;
-        }else{
-            return  false;
-        }
-    }
-    public function getAllAffaireNature($id,$request)
-    {
-        $org=$this->checkIfOrganisationExist($id);
-        if($org){
-            return $this->affaireNatureRepository->getAllAffaireNature($id,$request);
-        }else{
-            return  null;
-        }
+        return $res;
     }
 
-    public function get($id, $data)
+    public function getAllAffaireNature($request)
     {
-        // TODO: Implement get() method.
-        $org=$this->checkIfOrganisationExist($data['organisation_id']);
-        if($org){
-            return $this->affaireNatureRepository->get($id,$data);
-        }else{
-            return null;
-        }
+        return $this->affaireNatureRepository->getAllAffaireNature($request);
+    }
+
+    public function get($id)
+    {
+        return $this->affaireNatureRepository->get($id);
     }
 
     public function edit($id, $data)
     {
         // TODO: Implement edit() method.
-        $org=$this->checkIfOrganisationExist($data['organisation_id']);
-        if($org){
-            $chckIfExist=$this->affaireNatureRepository->findAffaireNatureByName($data['Name']);
-            if(count($chckIfExist->toArray())>0){
-                return true;
-            }
-            $affairNature=$this->get($id,$data);
+            $affairNature=$this->get($id);
             if($affairNature){
-                $newAffaireNature=$this->affaireNatureRepository->edit($affairNature,$data);
+                $newAffaireNature=$this->affaireNatureRepository->edit($affairNature,$data->all());
+                $subject = LogsEnumConst::Update . LogsEnumConst::BusinessNature . $data['Name'];
+                $logs = new LogActivity();
+                $logs->addToLog($subject, $data);
                 return $newAffaireNature;
-            }else{
-                return null;
             }
-        }else{
             return null;
-        }
     }
 
     public function saveMany($data)
     {
-       return  $this->affaireNatureRepository->saveMany($data);
+       return  $this->affaireNatureRepository->saveMany($data->all());
     }
 
-    public function destroy($id)
+    public function destroy($request)
     {
-        $affaire=AffaireNature::find($id);
-        if($affaire instanceof AffaireNature){
-            return $this->affaireNatureRepository->destroy($id);
+        $res =  $this->affaireNatureRepository->destroy($request['id']);
+        if($res === 0 || is_null($res)){
+            return false;
         }else{
-            return null;
+            $subject = LogsEnumConst::Delete . LogsEnumConst::BusinessNature . $request['Name'];
+            $logs = new LogActivity();
+            $logs->addToLog($subject, $request);
         }
+        return true;
     }
 }

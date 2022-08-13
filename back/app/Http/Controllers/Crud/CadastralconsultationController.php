@@ -16,7 +16,6 @@ class CadastralconsultationController extends Controller
     public function __construct()
     {
         set_time_limit(8000000);
-
         $this->middleware('role:Cadastralconsultation_create|owner|admin', ['only' => ['store']]);
         $this->middleware('role:Cadastralconsultation_edit|owner|admin', ['only' => ['update']]);
         $this->middleware('role:Cadastralconsultation_read|owner|admin', ['only' => ['index']]);
@@ -32,42 +31,6 @@ class CadastralconsultationController extends Controller
 
     public function store(CadastralconsultationRequest $request)
     {
-
-        $validator = Validator::make($request->all(), [
-            '*.REQ_TIT' => 'required|size:1',
-            '*.NUM' => 'nullable|integer',
-            '*.INDICE' => 'nullable|integer',
-            '*.GENRE_OP' => 'nullable|string|max:255',
-            '*.TITRE_MERE' => 'nullable|string|max:255',
-            '*.REQ_MERE' => 'nullable|string|max:255',
-            '*.X' => 'nullable|regex:/^[0-9]+(\.[0-9][0-9]?)?$/',
-            '*.Y' => 'nullable|regex:/^[0-9]+(\.[0-9][0-9]?)?$/',
-            '*.DATE_ARRIVEE' => 'nullable|',
-            '*.DATE_BORNAGE' => 'nullable|',
-            '*.RESULTAT_BORNAGE' => 'nullable|string|max:255',
-            '*.BORNEUR' => 'nullable|string|max:255',
-            '*.NUM_DEPOT' => 'nullable|string|max:255',
-            '*.DATE_DEPOT' => 'nullable|',
-            '*.CARNET' => 'nullable|string|max:255',
-            '*.BON' => 'nullable|string|max:255',
-            '*.DATE_DELIVRANCE' => 'nullable|',
-            '*.NBRE_FRACTION' => 'nullable|integer',
-            '*.PRIVE' => 'nullable|string|max:255',
-            '*.OBSERVATIONS' => 'nullable|string|max:255',
-            '*.DATE_ARCHIVE' => 'nullable',
-            '*.CONT_ARR' => 'nullable|integer',
-            '*.SITUATION' => 'nullable|string|max:255',
-            '*.PTE_DITE' => 'nullable|string|max:255',
-            '*.MAPPE' => 'nullable|string|max:255',
-            '*.STATUT' => 'nullable|string|max:255',
-            '*.COMMUNE' => 'nullable|string|max:255',
-            '*.CONSISTANCE' => 'nullable|string|max:255',
-            '*.CLEF' => 'nullable|string|max:255',
-        ]);
-
-        if ($validator->fails()) {
-            return response($validator->errors(), 400);
-        }
         DB::delete("DELETE FROM cadastralconsultations");
 
         $cadastraux = $request->all();

@@ -40,7 +40,7 @@
 #37 C:\\xampp\\htdocs\\lcc\\public\\index.php(55): Illuminate\\Foundation\\Http\\Kernel->handle(Object(Illuminate\\Http\\Request))
 #38 C:\\xampp\\htdocs\\lcc\\server.php(21): require_once('C:\\\\xampp\\\\htdocs...')
 #39 {main}
-"} 
+"}
 [2022-04-24 12:11:43] local.ERROR: Wrong number of segments {"exception":"[object] (Tymon\\JWTAuth\\Exceptions\\TokenInvalidException(code: 0): Wrong number of segments at C:\\xampp\\htdocs\\lcc\\vendor\\tymon\\jwt-auth\\src\\Validators\\TokenValidator.php:42)
 [stacktrace]
 #0 C:\\xampp\\htdocs\\lcc\\vendor\\tymon\\jwt-auth\\src\\Validators\\TokenValidator.php(27): Tymon\\JWTAuth\\Validators\\TokenValidator->validateStructure('null')
@@ -83,7 +83,7 @@
 #37 C:\\xampp\\htdocs\\lcc\\public\\index.php(55): Illuminate\\Foundation\\Http\\Kernel->handle(Object(Illuminate\\Http\\Request))
 #38 C:\\xampp\\htdocs\\lcc\\server.php(21): require_once('C:\\\\xampp\\\\htdocs...')
 #39 {main}
-"} 
+"}
 [2022-04-24 12:11:54] local.ERROR: Wrong number of segments {"exception":"[object] (Tymon\\JWTAuth\\Exceptions\\TokenInvalidException(code: 0): Wrong number of segments at C:\\xampp\\htdocs\\lcc\\vendor\\tymon\\jwt-auth\\src\\Validators\\TokenValidator.php:42)
 [stacktrace]
 #0 C:\\xampp\\htdocs\\lcc\\vendor\\tymon\\jwt-auth\\src\\Validators\\TokenValidator.php(27): Tymon\\JWTAuth\\Validators\\TokenValidator->validateStructure('null')
@@ -126,7 +126,7 @@
 #37 C:\\xampp\\htdocs\\lcc\\public\\index.php(55): Illuminate\\Foundation\\Http\\Kernel->handle(Object(Illuminate\\Http\\Request))
 #38 C:\\xampp\\htdocs\\lcc\\server.php(21): require_once('C:\\\\xampp\\\\htdocs...')
 #39 {main}
-"} 
+"}
 [2022-04-24 12:11:54] local.ERROR: Wrong number of segments {"exception":"[object] (Tymon\\JWTAuth\\Exceptions\\TokenInvalidException(code: 0): Wrong number of segments at C:\\xampp\\htdocs\\lcc\\vendor\\tymon\\jwt-auth\\src\\Validators\\TokenValidator.php:42)
 [stacktrace]
 #0 C:\\xampp\\htdocs\\lcc\\vendor\\tymon\\jwt-auth\\src\\Validators\\TokenValidator.php(27): Tymon\\JWTAuth\\Validators\\TokenValidator->validateStructure('null')
@@ -169,7 +169,7 @@
 #37 C:\\xampp\\htdocs\\lcc\\public\\index.php(55): Illuminate\\Foundation\\Http\\Kernel->handle(Object(Illuminate\\Http\\Request))
 #38 C:\\xampp\\htdocs\\lcc\\server.php(21): require_once('C:\\\\xampp\\\\htdocs...')
 #39 {main}
-"} 
+"}
 [2022-04-24 12:11:58] local.ERROR: Wrong number of segments {"exception":"[object] (Tymon\\JWTAuth\\Exceptions\\TokenInvalidException(code: 0): Wrong number of segments at C:\\xampp\\htdocs\\lcc\\vendor\\tymon\\jwt-auth\\src\\Validators\\TokenValidator.php:42)
 [stacktrace]
 #0 C:\\xampp\\htdocs\\lcc\\vendor\\tymon\\jwt-auth\\src\\Validators\\TokenValidator.php(27): Tymon\\JWTAuth\\Validators\\TokenValidator->validateStructure('null')
@@ -212,7 +212,7 @@
 #37 C:\\xampp\\htdocs\\lcc\\public\\index.php(55): Illuminate\\Foundation\\Http\\Kernel->handle(Object(Illuminate\\Http\\Request))
 #38 C:\\xampp\\htdocs\\lcc\\server.php(21): require_once('C:\\\\xampp\\\\htdocs...')
 #39 {main}
-"} 
+"}
 [2022-04-24 12:11:59] local.ERROR: Wrong number of segments {"exception":"[object] (Tymon\\JWTAuth\\Exceptions\\TokenInvalidException(code: 0): Wrong number of segments at C:\\xampp\\htdocs\\lcc\\vendor\\tymon\\jwt-auth\\src\\Validators\\TokenValidator.php:42)
 [stacktrace]
 #0 C:\\xampp\\htdocs\\lcc\\vendor\\tymon\\jwt-auth\\src\\Validators\\TokenValidator.php(27): Tymon\\JWTAuth\\Validators\\TokenValidator->validateStructure('null')
@@ -255,7 +255,7 @@
 #37 C:\\xampp\\htdocs\\lcc\\public\\index.php(55): Illuminate\\Foundation\\Http\\Kernel->handle(Object(Illuminate\\Http\\Request))
 #38 C:\\xampp\\htdocs\\lcc\\server.php(21): require_once('C:\\\\xampp\\\\htdocs...')
 #39 {main}
-"} 
+"}
 [2022-04-24 12:12:01] local.ERROR: Wrong number of segments {"exception":"[object] (Tymon\\JWTAuth\\Exceptions\\TokenInvalidException(code: 0): Wrong number of segments at C:\\xampp\\htdocs\\lcc\\vendor\\tymon\\jwt-auth\\src\\Validators\\TokenValidator.php:42)
 [stacktrace]
 #0 C:\\xampp\\htdocs\\lcc\\vendor\\tymon\\jwt-auth\\src\\Validators\\TokenValidator.php(27): Tymon\\JWTAuth\\Validators\\TokenValidator->validateStructure('null')
@@ -298,7 +298,7 @@
 #37 C:\\xampp\\htdocs\\lcc\\public\\index.php(55): Illuminate\\Foundation\\Http\\Kernel->handle(Object(Illuminate\\Http\\Request))
 #38 C:\\xampp\\htdocs\\lcc\\server.php(21): require_once('C:\\\\xampp\\\\htdocs...')
 #39 {main}
-"} 
+"}
 [2022-04-24 12:12:05] local.ERROR: Wrong number of segments {"exception":"[object] (Tymon\\JWTAuth\\Exceptions\\TokenInvalidException(code: 0): Wrong number of segments at C:\\xampp\\htdocs\\lcc\\vendor\\tymon\\jwt-auth\\src\\Validators\\TokenValidator.php:42)
 [stacktrace]
 #0 C:\\xampp\\htdocs\\lcc\\vendor\\tymon\\jwt-auth\\src\\Validators\\TokenValidator.php(27): Tymon\\JWTAuth\\Validators\\TokenValidator->validateStructure('null')
@@ -341,7 +341,7 @@
 #37 C:\\xampp\\htdocs\\lcc\\public\\index.php(55): Illuminate\\Foundation\\Http\\Kernel->handle(Object(Illuminate\\Http\\Request))
 #38 C:\\xampp\\htdocs\\lcc\\server.php(21): require_once('C:\\\\xampp\\\\htdocs...')
 #39 {main}
-"} 
+"}
 [2022-04-24 12:23:46] local.ERROR: Wrong number of segments {"exception":"[object] (Tymon\\JWTAuth\\Exceptions\\TokenInvalidException(code: 0): Wrong number of segments at C:\\xampp\\htdocs\\lcc\\vendor\\tymon\\jwt-auth\\src\\Validators\\TokenValidator.php:42)
 [stacktrace]
 #0 C:\\xampp\\htdocs\\lcc\\vendor\\tymon\\jwt-auth\\src\\Validators\\TokenValidator.php(27): Tymon\\JWTAuth\\Validators\\TokenValidator->validateStructure('null')
@@ -384,7 +384,7 @@
 #37 C:\\xampp\\htdocs\\lcc\\public\\index.php(55): Illuminate\\Foundation\\Http\\Kernel->handle(Object(Illuminate\\Http\\Request))
 #38 C:\\xampp\\htdocs\\lcc\\server.php(21): require_once('C:\\\\xampp\\\\htdocs...')
 #39 {main}
-"} 
+"}
 [2022-04-24 12:23:47] local.ERROR: Wrong number of segments {"exception":"[object] (Tymon\\JWTAuth\\Exceptions\\TokenInvalidException(code: 0): Wrong number of segments at C:\\xampp\\htdocs\\lcc\\vendor\\tymon\\jwt-auth\\src\\Validators\\TokenValidator.php:42)
 [stacktrace]
 #0 C:\\xampp\\htdocs\\lcc\\vendor\\tymon\\jwt-auth\\src\\Validators\\TokenValidator.php(27): Tymon\\JWTAuth\\Validators\\TokenValidator->validateStructure('null')
@@ -427,7 +427,7 @@
 #37 C:\\xampp\\htdocs\\lcc\\public\\index.php(55): Illuminate\\Foundation\\Http\\Kernel->handle(Object(Illuminate\\Http\\Request))
 #38 C:\\xampp\\htdocs\\lcc\\server.php(21): require_once('C:\\\\xampp\\\\htdocs...')
 #39 {main}
-"} 
+"}
 [2022-04-24 12:43:07] local.ERROR: Token has expired {"exception":"[object] (Tymon\\JWTAuth\\Exceptions\\TokenExpiredException(code: 0): Token has expired at C:\\xampp\\htdocs\\lcc\\vendor\\tymon\\jwt-auth\\src\\Claims\\Expiration.php:31)
 [stacktrace]
 #0 [internal function]: Tymon\\JWTAuth\\Claims\\Expiration->validatePayload()
@@ -477,7 +477,7 @@
 #44 C:\\xampp\\htdocs\\lcc\\public\\index.php(55): Illuminate\\Foundation\\Http\\Kernel->handle(Object(Illuminate\\Http\\Request))
 #45 C:\\xampp\\htdocs\\lcc\\server.php(21): require_once('C:\\\\xampp\\\\htdocs...')
 #46 {main}
-"} 
+"}
 [2022-04-24 13:06:13] local.ERROR: Trying to get property 'organisation_id' of non-object {"userId":13,"exception":"[object] (ErrorException(code: 0): Trying to get property 'organisation_id' of non-object at C:\\xampp\\htdocs\\lcc\\app\\Services\\AdminService.php:153)
 [stacktrace]
 #0 C:\\xampp\\htdocs\\lcc\\app\\Services\\AdminService.php(153): Illuminate\\Foundation\\Bootstrap\\HandleExceptions->handleError(8, 'Trying to get p...', 'C:\\\\xampp\\\\htdocs...', 153, Array)
@@ -524,8 +524,8 @@
 #41 C:\\xampp\\htdocs\\lcc\\public\\index.php(55): Illuminate\\Foundation\\Http\\Kernel->handle(Object(Illuminate\\Http\\Request))
 #42 C:\\xampp\\htdocs\\lcc\\server.php(21): require_once('C:\\\\xampp\\\\htdocs...')
 #43 {main}
-"} 
-[2022-04-24 13:17:03] local.ERROR: Call to undefined method App\Services\AdminService::organisationService() {"userId":13,"exception":"[object] (Symfony\\Component\\Debug\\Exception\\FatalThrowableError(code: 0): Call to undefined method App\\Services\\AdminService::organisationService() at C:\\xampp\\htdocs\\lcc\\app\\Services\\AdminService.php:195)
+"}
+[2022-04-24 13:17:03] local.ERROR: Call to undefined method App\Services\Admin\IAdminService::organisationService() {"userId":13,"exception":"[object] (Symfony\\Component\\Debug\\Exception\\FatalThrowableError(code: 0): Call to undefined method App\\Services\\AdminService::organisationService() at C:\\xampp\\htdocs\\lcc\\app\\Services\\AdminService.php:195)
 [stacktrace]
 #0 C:\\xampp\\htdocs\\lcc\\app\\Http\\Controllers\\Web\\AdminController.php(254): App\\Services\\AdminService->getImageOrganisation('69')
 #1 C:\\xampp\\htdocs\\lcc\\vendor\\laravel\\framework\\src\\Illuminate\\Routing\\ControllerDispatcher.php(48): App\\Http\\Controllers\\Web\\AdminController->getImage('69')
@@ -570,7 +570,7 @@
 #40 C:\\xampp\\htdocs\\lcc\\public\\index.php(55): Illuminate\\Foundation\\Http\\Kernel->handle(Object(Illuminate\\Http\\Request))
 #41 C:\\xampp\\htdocs\\lcc\\server.php(21): require_once('C:\\\\xampp\\\\htdocs...')
 #42 {main}
-"} 
+"}
 [2022-04-24 13:27:13] local.ERROR: Trying to get property 'name' of non-object {"userId":13,"exception":"[object] (ErrorException(code: 0): Trying to get property 'name' of non-object at C:\\xampp\\htdocs\\lcc\\app\\Services\\AdminService.php:196)
 [stacktrace]
 #0 C:\\xampp\\htdocs\\lcc\\app\\Services\\AdminService.php(196): Illuminate\\Foundation\\Bootstrap\\HandleExceptions->handleError(8, 'Trying to get p...', 'C:\\\\xampp\\\\htdocs...', 196, Array)
@@ -617,7 +617,7 @@
 #41 C:\\xampp\\htdocs\\lcc\\public\\index.php(55): Illuminate\\Foundation\\Http\\Kernel->handle(Object(Illuminate\\Http\\Request))
 #42 C:\\xampp\\htdocs\\lcc\\server.php(21): require_once('C:\\\\xampp\\\\htdocs...')
 #43 {main}
-"} 
+"}
 [2022-04-24 13:28:23] local.ERROR: Trying to get property 'name' of non-object {"userId":13,"exception":"[object] (ErrorException(code: 0): Trying to get property 'name' of non-object at C:\\xampp\\htdocs\\lcc\\app\\Services\\AdminService.php:196)
 [stacktrace]
 #0 C:\\xampp\\htdocs\\lcc\\app\\Services\\AdminService.php(196): Illuminate\\Foundation\\Bootstrap\\HandleExceptions->handleError(8, 'Trying to get p...', 'C:\\\\xampp\\\\htdocs...', 196, Array)
@@ -664,7 +664,7 @@
 #41 C:\\xampp\\htdocs\\lcc\\public\\index.php(55): Illuminate\\Foundation\\Http\\Kernel->handle(Object(Illuminate\\Http\\Request))
 #42 C:\\xampp\\htdocs\\lcc\\server.php(21): require_once('C:\\\\xampp\\\\htdocs...')
 #43 {main}
-"} 
+"}
 [2022-04-24 13:28:53] local.ERROR: Trying to get property 'name' of non-object {"userId":13,"exception":"[object] (ErrorException(code: 0): Trying to get property 'name' of non-object at C:\\xampp\\htdocs\\lcc\\app\\Services\\AdminService.php:196)
 [stacktrace]
 #0 C:\\xampp\\htdocs\\lcc\\app\\Services\\AdminService.php(196): Illuminate\\Foundation\\Bootstrap\\HandleExceptions->handleError(8, 'Trying to get p...', 'C:\\\\xampp\\\\htdocs...', 196, Array)
@@ -711,7 +711,7 @@
 #41 C:\\xampp\\htdocs\\lcc\\public\\index.php(55): Illuminate\\Foundation\\Http\\Kernel->handle(Object(Illuminate\\Http\\Request))
 #42 C:\\xampp\\htdocs\\lcc\\server.php(21): require_once('C:\\\\xampp\\\\htdocs...')
 #43 {main}
-"} 
+"}
 [2022-04-24 13:35:10] local.ERROR: Trying to get property 'name' of non-object {"userId":13,"exception":"[object] (ErrorException(code: 0): Trying to get property 'name' of non-object at C:\\xampp\\htdocs\\lcc\\app\\Services\\AdminService.php:196)
 [stacktrace]
 #0 C:\\xampp\\htdocs\\lcc\\app\\Services\\AdminService.php(196): Illuminate\\Foundation\\Bootstrap\\HandleExceptions->handleError(8, 'Trying to get p...', 'C:\\\\xampp\\\\htdocs...', 196, Array)
@@ -758,7 +758,7 @@
 #41 C:\\xampp\\htdocs\\lcc\\public\\index.php(55): Illuminate\\Foundation\\Http\\Kernel->handle(Object(Illuminate\\Http\\Request))
 #42 C:\\xampp\\htdocs\\lcc\\server.php(21): require_once('C:\\\\xampp\\\\htdocs...')
 #43 {main}
-"} 
+"}
 [2022-04-24 13:35:17] local.ERROR: Trying to get property 'name' of non-object {"userId":13,"exception":"[object] (ErrorException(code: 0): Trying to get property 'name' of non-object at C:\\xampp\\htdocs\\lcc\\app\\Services\\AdminService.php:196)
 [stacktrace]
 #0 C:\\xampp\\htdocs\\lcc\\app\\Services\\AdminService.php(196): Illuminate\\Foundation\\Bootstrap\\HandleExceptions->handleError(8, 'Trying to get p...', 'C:\\\\xampp\\\\htdocs...', 196, Array)
@@ -805,7 +805,7 @@
 #41 C:\\xampp\\htdocs\\lcc\\public\\index.php(55): Illuminate\\Foundation\\Http\\Kernel->handle(Object(Illuminate\\Http\\Request))
 #42 C:\\xampp\\htdocs\\lcc\\server.php(21): require_once('C:\\\\xampp\\\\htdocs...')
 #43 {main}
-"} 
+"}
 [2022-04-24 13:35:35] local.ERROR: Trying to get property 'name' of non-object {"userId":13,"exception":"[object] (ErrorException(code: 0): Trying to get property 'name' of non-object at C:\\xampp\\htdocs\\lcc\\app\\Services\\AdminService.php:196)
 [stacktrace]
 #0 C:\\xampp\\htdocs\\lcc\\app\\Services\\AdminService.php(196): Illuminate\\Foundation\\Bootstrap\\HandleExceptions->handleError(8, 'Trying to get p...', 'C:\\\\xampp\\\\htdocs...', 196, Array)
@@ -852,7 +852,7 @@
 #41 C:\\xampp\\htdocs\\lcc\\public\\index.php(55): Illuminate\\Foundation\\Http\\Kernel->handle(Object(Illuminate\\Http\\Request))
 #42 C:\\xampp\\htdocs\\lcc\\server.php(21): require_once('C:\\\\xampp\\\\htdocs...')
 #43 {main}
-"} 
+"}
 [2022-04-24 13:36:16] local.ERROR: Trying to get property 'name' of non-object {"userId":13,"exception":"[object] (ErrorException(code: 0): Trying to get property 'name' of non-object at C:\\xampp\\htdocs\\lcc\\app\\Services\\AdminService.php:196)
 [stacktrace]
 #0 C:\\xampp\\htdocs\\lcc\\app\\Services\\AdminService.php(196): Illuminate\\Foundation\\Bootstrap\\HandleExceptions->handleError(8, 'Trying to get p...', 'C:\\\\xampp\\\\htdocs...', 196, Array)
@@ -899,7 +899,7 @@
 #41 C:\\xampp\\htdocs\\lcc\\public\\index.php(55): Illuminate\\Foundation\\Http\\Kernel->handle(Object(Illuminate\\Http\\Request))
 #42 C:\\xampp\\htdocs\\lcc\\server.php(21): require_once('C:\\\\xampp\\\\htdocs...')
 #43 {main}
-"} 
+"}
 [2022-04-24 14:30:02] local.ERROR: Undefined index: password {"userId":13,"exception":"[object] (ErrorException(code: 0): Undefined index: password at C:\\xampp\\htdocs\\lcc\\app\\Request\\AdminRequest.php:15)
 [stacktrace]
 #0 C:\\xampp\\htdocs\\lcc\\app\\Request\\AdminRequest.php(15): Illuminate\\Foundation\\Bootstrap\\HandleExceptions->handleError(8, 'Undefined index...', 'C:\\\\xampp\\\\htdocs...', 15, Array)
@@ -946,7 +946,7 @@
 #41 C:\\xampp\\htdocs\\lcc\\public\\index.php(55): Illuminate\\Foundation\\Http\\Kernel->handle(Object(Illuminate\\Http\\Request))
 #42 C:\\xampp\\htdocs\\lcc\\server.php(21): require_once('C:\\\\xampp\\\\htdocs...')
 #43 {main}
-"} 
+"}
 [2022-04-24 14:31:50] local.ERROR: Undefined index: password {"userId":13,"exception":"[object] (ErrorException(code: 0): Undefined index: password at C:\\xampp\\htdocs\\lcc\\app\\Request\\AdminRequest.php:15)
 [stacktrace]
 #0 C:\\xampp\\htdocs\\lcc\\app\\Request\\AdminRequest.php(15): Illuminate\\Foundation\\Bootstrap\\HandleExceptions->handleError(8, 'Undefined index...', 'C:\\\\xampp\\\\htdocs...', 15, Array)
@@ -993,7 +993,7 @@
 #41 C:\\xampp\\htdocs\\lcc\\public\\index.php(55): Illuminate\\Foundation\\Http\\Kernel->handle(Object(Illuminate\\Http\\Request))
 #42 C:\\xampp\\htdocs\\lcc\\server.php(21): require_once('C:\\\\xampp\\\\htdocs...')
 #43 {main}
-"} 
+"}
 [2022-04-24 19:56:15] local.ERROR: Trying to get property 'name' of non-object {"userId":13,"exception":"[object] (ErrorException(code: 0): Trying to get property 'name' of non-object at C:\\xampp\\htdocs\\lcc\\app\\Http\\Controllers\\Web\\OrganisationController.php:153)
 [stacktrace]
 #0 C:\\xampp\\htdocs\\lcc\\app\\Http\\Controllers\\Web\\OrganisationController.php(153): Illuminate\\Foundation\\Bootstrap\\HandleExceptions->handleError(8, 'Trying to get p...', 'C:\\\\xampp\\\\htdocs...', 153, Array)
@@ -1039,4 +1039,4 @@
 #40 C:\\xampp\\htdocs\\lcc\\public\\index.php(55): Illuminate\\Foundation\\Http\\Kernel->handle(Object(Illuminate\\Http\\Request))
 #41 C:\\xampp\\htdocs\\lcc\\server.php(21): require_once('C:\\\\xampp\\\\htdocs...')
 #42 {main}
-"} 
+"}

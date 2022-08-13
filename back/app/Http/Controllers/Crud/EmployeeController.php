@@ -27,13 +27,12 @@ class EmployeeController extends Controller
     public function __construct(IEmployeeService $employeeService)
     {
         $this->employeeService=$employeeService;
-//        set_time_limit(8000000);
-//
-//
-//        $this->middleware('role:employees_create|owner|admin', ['only' => ['storeEmployee']]);
-//        $this->middleware('role:employees_edit|owner|admin', ['only' => ['update']]);
-//        $this->middleware('role:employees_read|owner|admin', ['only' => ['index']]);
-//        $this->middleware('role:employees_delete|owner|admin', ['only' => ['destroy']]);
+      set_time_limit(8000000);
+
+       $this->middleware('role:employees_create|owner|admin', ['only' => ['storeEmployee']]);
+        $this->middleware('role:employees_edit|owner|admin', ['only' => ['update']]);
+        $this->middleware('role:employees_read|owner|admin', ['only' => ['index']]);
+        $this->middleware('role:employees_delete|owner|admin', ['only' => ['destroy']]);
     }
 
     public function index()
