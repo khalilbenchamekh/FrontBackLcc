@@ -5,7 +5,7 @@ namespace App\Repository\Load;
 
 use App\Repository\Log\LogTrait;
 
-use Carbon\Carbon;
+
 use Illuminate\Support\Facades\DB;
 use App\Models\Load;
 

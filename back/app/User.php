@@ -38,7 +38,7 @@ class User extends Authenticatable implements JWTSubject
     {
         return $this->belongsToMany(Chat::class);
     }
-
+  
     public function getHasEmployeeProfileAttribute()
     {
         return $this->membership_type == 'App\Models\Employee';

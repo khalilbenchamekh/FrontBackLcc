@@ -7,14 +7,17 @@ use App\Http\Controllers\Controller;
 
 use App\Http\Requests\Crud\CadastralconsultationRequest;
 use App\Models\Cadastralconsultation;
+use App\Services\CadastralConsultation\ICadastralconsultationService;
 use Illuminate\Support\Facades\DB;
 use Illuminate\Support\Facades\Validator;
 
 class CadastralconsultationController extends Controller
 {
 
-    public function __construct()
+    private $iCadastralconsultationService;
+    public function __construct(ICadastralconsultationService $iCadastralconsultationService)
     {
+        $this->iCadastralconsultationService=$iCadastralconsultationService;
         set_time_limit(8000000);
         $this->middleware('role:Cadastralconsultation_create|owner|admin', ['only' => ['store']]);
         $this->middleware('role:Cadastralconsultation_edit|owner|admin', ['only' => ['update']]);

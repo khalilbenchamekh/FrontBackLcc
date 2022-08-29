@@ -46,7 +46,7 @@ class LoadTypesController extends Controller
         $response =  LoadTypesResponse::make($type);
         return response()->json($response,Response::HTTP_OK);
        }
-        if(!$type instanceof LoadType){
+        if(!$type instanceof LoadTypes){
                 return response()->json(["error"=>"bad request"], Response::HTTP_BAD_REQUEST);
         }
     }

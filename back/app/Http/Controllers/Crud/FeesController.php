@@ -131,7 +131,8 @@ class FeesController extends Controller
             return response($validator->errors(), 400);
         }
         $id = $request->input('id');
-        $busines_mang = BusinessManagement::where("membership_id", '=', $id)->where('membership_type', 'like', '%' . "FolderTech")->get();
+        $busines_mang = BusinessManagement::where("membership_id", '=', $id)
+        ->where('membership_type', 'like', '%' . "FolderTech")->get();
         $size = count($busines_mang);
         if ($size > 0) {
             $busines_mang_id = $busines_mang[0]->id;

@@ -7,6 +7,6 @@ interface IEmployeeService
 public function index($page);
 public function store($data);
 public function get($id);
-public function edit($perEmployee,$data);
-public function delete($perEmployee,$id);
+public function edit($id,$data);
+public function delete($id);
 }

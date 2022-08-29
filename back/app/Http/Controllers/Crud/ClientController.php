@@ -9,52 +9,79 @@ use App\Http\Requests\Enums\LogsEnumConst;
 use App\Models\business;
 use App\Models\Client;
 use App\Models\Particular;
+use App\Response\Client\ClientsResponse;
+use App\Response\Client\ClientResponse;
+use App\Services\Client\IClientService;
 use Illuminate\Http\Request;
 use Illuminate\Support\Facades\Validator;
-
+use Symfony\Component\HttpFoundation\Response;
+use Illuminate\Pagination\LengthAwarePaginator;
 
 class ClientController extends Controller
 {
 
-    public function __construct()
+    private $iClientService;
+    public function __construct(IClientService $iClientService)
     {
-        set_time_limit(8000000);
-        $this->middleware('role:clients_create|owner|admin', ['only' => ['store']]);
-        $this->middleware('role:clients_edit|owner|admin', ['only' => ['update']]);
-        $this->middleware('role:clients_read|owner|admin', ['only' => ['index']]);
-        $this->middleware('role:clients_delete|owner|admin', ['only' => ['destroy']]);
-
+        // set_time_limit(8000000);
+        // $this->middleware('role:clients_create|owner|admin', ['only' => ['store']]);
+        // $this->middleware('role:clients_edit|owner|admin', ['only' => ['update']]);
+        // $this->middleware('role:clients_read|owner|admin', ['only' => ['index']]);
+        // $this->middleware('role:clients_delete|owner|admin', ['only' => ['destroy']]);
+        $this->iClientService=$iClientService;
     }
 
 
-    public function index()
+    public function index(Request $request)
     {
-        $clients = Client::with('membership')->get();
-        $clients_records = [];
-        foreach ($clients as $client) {
-            if (!empty($client)) {
-                $data = [
-                    "name" => $client->name,
-                    "Street" => $client->Street,
-                    "Street2" => $client->Street2,
-                    "city" => $client->city,
-                    "ZIP_code" => $client->ZIP_code,
-                    "Country" => $client->Country,
-                    "id" => $client->id,
-                    "ICE" => $client->membership->ICE,
-                    "id_mem" => $client->membership->id,
-                    "RC" => $client->membership->ICE,
-                    "tel" => $client->membership->ICE,
-                    "Cour" => $client->membership->ICE,
-                    "updated_at" => $client->membership->ICE,
-                    "created_at" => $client->membership->ICE,
-                ];
-                $clients_records[] = $data;
-            }
+        $validator = Validator::make($request->all(),[
+            "page"=>["required","integer"]
+        ]);
+        if($validator->fails()){
+            return response()->json(["error"=>$validator->errors()],Response::HTTP_BAD_REQUEST);
+        }
+        $clients=$this->iClientService->index($request->input("page"));
+        if($clients instanceof LengthAwarePaginator){
+            $response =  ClientsResponse::make($clients->items());
+            return response()->json(
+            [
+                "clients"=>$response,
+                'countPage'=>$clients->perPage(),
+                "currentPage"=>$clients->currentPage(),
+                "nextPage"=>$clients->currentPage()<$clients->lastPage()?$clients->currentPage()+1:$clients->currentPage(),
+                "lastPage"=>$clients->lastPage(),
+                'totalOrganisation'=>$clients->total(),
+            ],Response::HTTP_OK);
         }
 
+        return response()->json("Bad Request",Response::HTTP_BAD_REQUEST);
 
-        return response(['data' => $clients_records], 200);
+        // $clients = Client::with('membership')->get();
+        // $clients_records = [];
+        // foreach ($clients as $client) {
+        //     if (!empty($client)) {
+        //         $data = [
+        //             "name" => $client->name,
+        //             "Street" => $client->Street,
+        //             "Street2" => $client->Street2,
+        //             "city" => $client->city,
+        //             "ZIP_code" => $client->ZIP_code,
+        //             "Country" => $client->Country,
+        //             "id" => $client->id,
+        //             "ICE" => $client->membership->ICE,
+        //             "id_mem" => $client->membership->id,
+        //             "RC" => $client->membership->ICE,
+        //             "tel" => $client->membership->ICE,
+        //             "Cour" => $client->membership->ICE,
+        //             "updated_at" => $client->membership->ICE,
+        //             "created_at" => $client->membership->ICE,
+        //         ];
+        //         $clients_records[] = $data;
+        //     }
+        // }
+
+
+        // return response(['data' => $clients_records], 200);
     }
 
     public function storeBusiness(Request $request)
@@ -155,7 +182,7 @@ class ClientController extends Controller
         $client->membership()->associate($bus);
         $client->save();
         $subject = LogsEnumConst::Add . LogsEnumConst::Particular . $client->name;
-   $logs = new LogActivity();
+        $logs = new LogActivity();
         $logs->addToLog($subject, $request);
         return response(['data' => $client], 201);
     }
@@ -163,17 +190,39 @@ class ClientController extends Controller
 
     public function store(ClientRequest $request)
     {
-        $client = Client::create($request->all());
 
-        return response(['data' => $client], 201);
+        $client=$this->iClientService->store($request);
+        if ($client instanceOf Client) {
+            # code...
+            $response=ClientResponse::make($client);
+            return response()->json($response,Response::HTTP_CREATED);
+        }
+        return response()->json("Bad Request",Response::HTTP_BAD_REQUEST);
+
+        // $client = Client::create($request->all());
+
+        // return response(['data' => $client], 201);
 
     }
 
     public function show($id)
     {
-        $client = Client::findOrFail($id);
+        $client= $this->iClientService->get($id);
+        if($client instanceof Client){
+            dd($client);
+            $response = ClientResponse::make($client);
+            return response()->json(["Client"=>$response],Response::HTTP_OK);
+        }
+        return response()->json("Bad Request",Response::HTTP_BAD_REQUEST);
+        // $client =$this->iClientService->get($id);
 
-        return response(['data', $client], 200);
+
+        // if($client instanceof Client){
+        //     $response= ClientResponse::make($client);
+        //     return response()->json(["client"=>$response],Response::HTTP_OK);
+        // }
+
+        // return response()->json(["error"=>"Bad Request"],Response::HTTP_BAD_REQUEST);
     }
 
     public function update(ClientRequest $request, $id)
@@ -221,8 +270,15 @@ class ClientController extends Controller
 
     public function destroy($id)
     {
-        Client::destroy($id);
+        // Client::destroy($id);
 
-        return response(['data' => null], 204);
+        // return response(['data' => null], 204);
+        $perClient=$this->iClientService->get($id);
+        if($perClient instanceof Client){
+            $destroy=$this->iClientService->delete($perClient,$id);
+            $response=ClientResponse::make($destroy);
+            return response()->json(['client'=>$response,Response::HTTP_OK]);
+        }
+        return response()->json(["error"=>"Bad Request"],Response::HTTP_BAD_REQUEST);
     }
 }

@@ -2,12 +2,15 @@
 
 namespace App\Services\Employee;
 
+use App\Helpers\LogActivity;
+use App\Http\Requests\Enums\LogsEnumConst;
 use App\Models\Employee;
 use App\Models\Role;
 use App\Repository\Employee\IEmployeeRepository;
 use App\Services\Admin\IAdminService;
 use App\Services\Role\IRoleService;
 use App\User;
+use Illuminate\Support\Facades\Auth;
 
 class EmployeeService implements IEmployeeService
 {
@@ -29,18 +32,10 @@ class EmployeeService implements IEmployeeService
 
     public function store($data)
     {
-        $roleName = $data->input('role') == null ? 'user' : $data->input('role');
-        $filter=[["key"=>"name","value"=>$roleName]];
-        $role=$this->roleService->getBy($filter);
-        dd($role);
-        if($role instanceof Role){
-            $user->attachRole($role);
-        }
-        // TODO: Implement store() method.
-        $organisation_id=3;
-        $employee= $this->employeeRepository->store($data);
+        $user=Auth::User();
+        $res=$employee= $this->employeeRepository->store($data);
         if($employee instanceof  Employee){
-            $user=$this->adminService->createUserToOrganisation($data,$organisation_id);
+            $user=$this->adminService->createUserToOrganisation($data,$user->organisation);
             if($user instanceof User){
                 $roleName = $data->input('role') == null ? 'user' : $data->input('role');
                 $filter=[["key"=>"name","value"=>$roleName]];
@@ -49,9 +44,15 @@ class EmployeeService implements IEmployeeService
                 if($role instanceof Role){
                     $user->attachRole($role);
                 }
-                return $employee;
+                if(!is_null($res)){
+                    $subject = LogsEnumConst::Add . LogsEnumConst::Employee . $user['name'];
+                    $logs = new LogActivity();
+                    $logs->addToLog($subject, $data);
+                }
+                return $res;
             }
         }
+        return null;
     }
 
     public function get($id)
@@ -60,15 +61,28 @@ class EmployeeService implements IEmployeeService
         return $this->employeeRepository->get($id);
     }
 
-    public function edit($perEmployee, $data)
+    public function edit($id,$data)
     {
-        // TODO: Implement edit() method.
-        return $this->employeeRepository->edit($perEmployee, $data);
+        $perEmployee=$this->get($id);
+        if($perEmployee){
+            $subject = LogsEnumConst::Update . LogsEnumConst::Employee . $data['personal_number'];
+            $logs = new LogActivity();
+            $logs->addToLog($subject, $data);
+            return $this->employeeRepository->edit($perEmployee,$data);
+        }
+        return null;
     }
 
-    public function delete($perEmployee, $id)
+    public function delete($request)
     {
-        // TODO: Implement delete() method.
-        return $this->employeeRepository->delete($perEmployee, $id);
+        $res= $this->employeeRepository->delete($request['id']);
+        if($res === 0 || is_null($res)){
+            return false;
+        }else{
+            $subject = LogsEnumConst::Delete . LogsEnumConst::Employee . $request['personal_number'];
+            $logs = new LogActivity();
+            $logs->addToLog($subject, $request);
+        }
+        return true;
     }
 }

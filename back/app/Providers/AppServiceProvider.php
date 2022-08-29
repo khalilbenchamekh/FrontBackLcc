@@ -18,6 +18,8 @@ use App\Repository\Employee\EmployeeRepository;
 use App\Repository\Employee\IEmployeeRepository;
 use App\Repository\FileLoad\FileLoadRepository;
 use App\Repository\FileLoad\IFileLoadRipository;
+use App\Repository\Client\IClientRepository;
+use App\Repository\Client\ClientRepository;
 use App\Repository\Role\IRoleRepository;
 use App\Repository\Role\RoleRepository;
 use App\Services\AffaireNature\AffaireNatureService;
@@ -44,6 +46,8 @@ use App\Repository\Organisation\IOrganisationRepository;
 use App\Repository\Organisation\OrganisationRepository;
 use App\Services\Admin\AdminService;
 use App\Services\Admin\IAdminService;
+use App\Services\Client\ClientService;
+use App\Services\Client\IClientService;
 use App\Services\ImageService;
 use App\Services\ImageService\IImageService;
 use App\Services\LoadTypes\LoadTypesService;
@@ -79,6 +83,7 @@ class AppServiceProvider extends ServiceProvider
         $this->app->bind(IAffaireSituationService::class,AffaireSituationService::class);
         $this->app->bind(IEmployeeService::class,EmployeeService::class);
         $this->app->bind(IRoleService::class,RoleService::class);
+        $this->app->bind(IClientService::class,ClientService::class);
         //  Repositories
         $this->app->bind(IOrganisationRepository::class,OrganisationRepository::class);
         $this->app->bind(IAdminRepository::class,AdminRepository::class);
@@ -90,6 +95,8 @@ class AppServiceProvider extends ServiceProvider
         $this->app->bind(IEmployeeRepository::class,EmployeeRepository::class);
         $this->app->bind(IRoleRepository::class,RoleRepository::class);
         $this->app->bind(IConversationRepository::class,ConversationRepository::class);
+        $this->app->bind(IClientRepository::class,ClientRepository::class);
+
 
         if($this->app->environment()==='local'){
             if(isset($_SERVER['REQUEST_METHOD'],$_SERVER['REQUEST_URI'])){

@@ -7,6 +7,7 @@ use Illuminate\Http\Request;
 use Illuminate\Support\Facades\Route;
 use App\Http\Controllers\Crud\LoadController;
 use App\Http\Controllers\Crud\LoadTypesController;
+use App\Http\Controllers\Crud\ClientController;
 use Illuminate\Support\Facades\App;
 
 /*
@@ -59,6 +60,11 @@ Route::post("/employees/store",[EmployeeController::class,'store']);
 // GOOD Route::post('/loadtypes/saveMany',[LoadTypesController::class,"storeMany"]);
 
 //-------------- End loadtypes ------------->
+
+//----------clients ------------------>
+Route::post('/clients',[ClientController::class,"index"]);
+Route::post('/client/store',[ClientController::class,"store"]);
+Route::get('/client/{id}',[ClientController::class,"show"]);
 
 
 
@@ -183,7 +189,7 @@ Route::group(['middleware' => ['jwt', 'jwt.auth']], function () {
         //Route::apiResource('loads', 'LoadController');
         Route::post('loads/statistics', 'LoadController@dashboard');
 
-        Route::apiResource('clients', 'ClientController');
+        //Route::apiResource('clients', 'ClientController');
         Route::post('clients/business', 'ClientController@storeBusiness');
         Route::post('clients/particular', 'ClientController@storeParticular');
 

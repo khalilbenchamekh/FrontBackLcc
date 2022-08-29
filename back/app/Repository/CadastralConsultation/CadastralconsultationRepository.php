@@ -45,7 +45,7 @@ class CadastralConsultationRepository implements ICadastralConsultationRepositor
         }
     }
 
-    public function edit(Cadastralconsultation $prevElem,$data){
+    public function edit($prevElem,$data){
          // TODO: Implement edit() method.
          try {
             $prevElem->update($data->all());
@@ -104,8 +104,13 @@ class CadastralConsultationRepository implements ICadastralConsultationRepositor
         }
     }
     public function delete($id){
-        Cadastralconsultation::destroy($id);
+        try{
+            return  Cadastralconsultation::where("id","=",$id)
+                ->where("organisation_id",'=',$this->organisation_id)
+                ->destroy();
+        }catch(\Exception $exception){
+            $this->Log($exception);
+            return null;
+        }
     }
-
-
 }

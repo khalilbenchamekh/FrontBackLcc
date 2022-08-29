@@ -23,6 +23,11 @@ class LogsEnumConst
     const BusinessSituation='Situation Affaire  ';
     const FolderTechSituation='Situation Dossier Technique ';
 
+    const BusinessManagement="Business Management";
+    const Fees='Fees';
+
+    const Charge='Charge';
+
     const Client='Client ';
     const Employee='Employee ';
     const Particular='Particular ';
