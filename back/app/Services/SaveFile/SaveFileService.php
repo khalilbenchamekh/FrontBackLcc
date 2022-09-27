@@ -27,7 +27,7 @@ class SaveFileService implements ISaveFileService
     }
     public function saveFile($direction,$files)
     {
-
+        dd('rr');
         $path='geoMapping/'.$direction;
         $this->createFile($path);
             $filenameWithExt = $files->getClientOriginalName();
@@ -39,6 +39,7 @@ class SaveFileService implements ISaveFileService
             $fileNameToStore = $filename.'_'.time().'.'.$extension;
             // Upload Image
             $files->move(public_path()."/".$path."/",$fileNameToStore);
+            dd( $path."/".$fileNameToStore);
            return $path."/".$fileNameToStore ;
     }
     public function createFile($path)

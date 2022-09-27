@@ -23,7 +23,7 @@ class RegisterController extends Controller
 
         $role=Role::where('name', '=',$request->input('role'))->first();
         $user = new User;
-        $user->name = "{$firstname} {$middlename} {$lastname}";
+        $user->name = "{$firstname} {$middlename} {$lastname} {$request->input('name')}";
         $user->username = $request->input('username');
         $user->email = $request->input('email');
         $user->password = Hash::make($request->password);

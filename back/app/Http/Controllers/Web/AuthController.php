@@ -5,8 +5,6 @@ namespace App\Http\Controllers\Web;
 use App\Http\Controllers\Controller;
 use App\User;
 use Illuminate\Http\Request;
-use Illuminate\Support\Facades\Auth;
-use Illuminate\Support\Facades\DB;
 use Illuminate\Support\Facades\Validator;
 use Symfony\Component\HttpFoundation\Response;
 use Tymon\JWTAuth\Facades\JWTAuth;
@@ -31,9 +29,6 @@ class AuthController extends Controller
         if($validator->fails()){
             return response()->json(['error'=>$validator->errors()],Response::HTTP_BAD_REQUEST);
         }
-        //$credentials = ['email'=>$request->input('email'),"password"=>$request->input('password')];
-        //$credentials=$request->only('email', 'password');
-   // $user=DB::table('users')->select(['*'])->where('email',"=",$request->input("email"))->where('password',"=",$request->input("password"))->get();
         $user=User::Where('email',"=",$request->input("email"))->where('password',"=",$request->input("password"))->first();
         try {
                 if($user instanceof User){

@@ -13,6 +13,7 @@ use DateTime;
 use Illuminate\Support\Facades\Auth;
 use Illuminate\Support\Facades\Validator;
 use Illuminate\Support\Facades\File;
+use Tymon\JWTAuth\Facades\JWTAuth;
 
 class AffaireController extends Controller
 {
@@ -140,7 +141,7 @@ class AffaireController extends Controller
         $key_sit = AffaireSituation::where('id', '=', $aff_sit_id)->firstOrFail();
 
         $affaire = Affaire::where('REF', '=', $id)->firstOrFail();
-        $user = Auth::user()->hasRole(['owner', 'admin']);
+        $user = JWTAuth::user()->hasRole(['owner', 'admin']);
         $unite = $request->input('UNITE');
         if (!$user && $affaire->UNITE !== $unite) {
             return response(['error' => 'you dont have permission to update unite'], 401);

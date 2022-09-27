@@ -7,87 +7,121 @@ use App\Http\Controllers\Controller;
 use App\Http\Requests\Crud\FolderTechSituationRequest;
 use App\Http\Requests\Enums\LogsEnumConst;
 use App\Models\FolderTechSituation;
+use App\Response\FolderTechSituation\FolderTechSituationResponse;
+use App\Response\FolderTechSituation\FolderTechSituationsResponse;
+use App\Services\FolderTechSituation\IFolderTechSituationService;
 use Illuminate\Http\Request;
+use Illuminate\Pagination\LengthAwarePaginator;
 use Illuminate\Support\Facades\Validator;
+use Symfony\Component\HttpFoundation\Response;
 
 class FolderTechSituationController extends Controller
 {
-    public function __construct()
+    private $iFolderTechSituationService;
+    public function __construct(IFolderTechSituationService $iFolderTechSituationService)
     {
-        set_time_limit(8000000);
-        $this->middleware('role:owner|admin');
-        $this->middleware('role:foldertechsituations_create|owner|admin', ['only' => ['storeMany']]);
-        $this->middleware('role:foldertechsituations_edit|owner|admin', ['only' => ['update']]);
-        $this->middleware('role:foldertechsituations_read|owner|admin', ['only' => ['index']]);
-        $this->middleware('role:foldertechsituations_delete|owner|admin', ['only' => ['destroy']]);
+        // set_time_limit(8000000);
+        // $this->middleware('role:owner|admin');
+        // $this->middleware('role:foldertechsituations_create|owner|admin', ['only' => ['storeMany']]);
+        // $this->middleware('role:foldertechsituations_edit|owner|admin', ['only' => ['update']]);
+        // $this->middleware('role:foldertechsituations_read|owner|admin', ['only' => ['index']]);
+        // $this->middleware('role:foldertechsituations_delete|owner|admin', ['only' => ['destroy']]);
+        $this->iFolderTechSituationService=$iFolderTechSituationService;
     }
-    public function index()
+    public function index(Request $request)
     {
-        $foldertechsituations = FolderTechSituation::latest()->get();
+        $validator = Validator::make($request->all(), [
+            "limit"=>'required|integer',
+            "page"=>'required|integer'
+        ]);
+        if ($validator->fails()) {
+            return response($validator->errors(), 400);
+        }
+        $foldertechsituations = $this->iFolderTechSituationService->index($request);
+        if($foldertechsituations instanceof LengthAwarePaginator){
+            $response = FolderTechSituationsResponse::make($foldertechsituations->all());
+            return response()->json([
+                "foldertechsituation"=>$response,
+                'total'=>$foldertechsituations->total(),
+                'lastPage'=>$foldertechsituations->lastPage(),
+                'currentPage'=>$foldertechsituations->currentPage(),
+            ],Response::HTTP_OK);
+        }
+        return response()->json(["error"=>"Bad Request"],Response::HTTP_BAD_REQUEST);
 
-        return response(['data' => $foldertechsituations ], 200);
     }
 
     public function store(FolderTechSituationRequest $request)
     {
-        $foldertechsituation = FolderTechSituation::create($request->all());
+        $foldertechsituation = $this->iFolderTechSituationService->save($request);
+        if($foldertechsituation instanceof FolderTechSituation){
+            $response = FolderTechSituationResponse::make($foldertechsituation);
+            return response()->json([
+                "foldertechsituation"=>$response
+            ],Response::HTTP_CREATED);
+        }
 
-        return response(['data' => $foldertechsituation ], 201);
-
+        return response()->json(["error"=>"Bad Request"],Response::HTTP_BAD_REQUEST);
     }
     public function storeMany(Request $request)
     {
-        $foldertechsituation =new FolderTechSituation();
         $validator = Validator::make($request->all(), [
-            '*.Name' => 'required|string|min:4|max:255|distinct|unique:App\Models\FolderTechSituation',
-            '*.orderChr' => 'integer|between:0,10',
+            'foldertechsituation.*.Name' => 'required|string|min:4|max:255|distinct|unique:App\Models\FolderTechSituation',
+            'foldertechsituation.*.orderChr' => 'integer|between:0,10',
         ]);
 
         if($validator->fails()) {
             return response($validator->errors(),400);
         }
-        $affaires = $request->all();
-        $affaire_records = [];
-        foreach($affaires as $affaire)
-        {
-            if(! empty($affaire))
-            {
-                $foldertechsituation->Name= $affaire['Name'];
-                $foldertechsituation->orderChr=$affaire['orderChr'];
-                $foldertechsituation->save();
-                $subject = LogsEnumConst::Add . LogsEnumConst::FolderTechSituation . $affaire['Name'];
-           $logs = new LogActivity();
-        $logs->addToLog($subject, $request);
-                $affaire_records[] = $foldertechsituation;
-            }
+        $foldertechsituations=$this->iFolderTechSituationService->storeMany($request);
+        if(is_array($foldertechsituations) && !empty($foldertechsituations)){
+            $response = FolderTechSituationsResponse::make($foldertechsituations);
+            return response()->json([
+                "foldertechsituations"=>$response
+            ],Response::HTTP_CREATED);
         }
-        $foldertechsituation= $affaire_records;
-        return response(['data' => $foldertechsituation ],  201);
+        return response()->json(['error'=>"Bad Request"],Response::HTTP_BAD_REQUEST);
+
 
 
     }
 
     public function show($id)
     {
-        $foldertechsituation = FolderTechSituation::findOrFail($id);
+        $foldertechsituation = $this->iFolderTechSituationService->show($id);
+        if($foldertechsituation instanceof FolderTechSituation){
+            $response = FolderTechSituationResponse::make($foldertechsituation);
+            return response()->json([
+                "foldertechsituation"=>$response
+            ],Response::HTTP_OK);
+        }
 
-        return response(['data', $foldertechsituation ], 200);
+        return response()->json(["error"=>"Bad Request"],Response::HTTP_BAD_REQUEST);
     }
 
     public function update(FolderTechSituationRequest $request, $id)
     {
-        $foldertechsituation = FolderTechSituation::findOrFail($id);
-        $foldertechsituation->update($request->all());
-        $subject = LogsEnumConst::Update . LogsEnumConst::FolderTechSituation . $foldertechsituation['Name'];
-   $logs = new LogActivity();
-        $logs->addToLog($subject, $request);
-        return response(['data' => $foldertechsituation ], 200);
+        $foldertechsituation = $this->iFolderTechSituationService->update($id,$request);
+        if($foldertechsituation instanceof FolderTechSituation){
+            $response = FolderTechSituationResponse::make($foldertechsituation);
+            return response()->json([
+                "foldertechsituation"=>$response
+            ],Response::HTTP_OK);
+        }
+
+        return response()->json(["error"=>"Bad Request"],Response::HTTP_BAD_REQUEST);
     }
 
     public function destroy($id)
     {
-        FolderTechSituation::destroy($id);
-
-        return response(['data' => null ], 204);
+        $foldertechsituation = $this->iFolderTechSituationService->destroy($id);
+        if($foldertechsituation instanceof FolderTechSituation){
+            $response=FolderTechSituationResponse::make($foldertechsituation);
+            return response()->json([
+                'feesfolderteche'=>$response
+            ],Response::HTTP_OK);
+        }else{
+            return response()->json(['error'=>"Bad Request"],Response::HTTP_BAD_REQUEST);
+        }
     }
 }

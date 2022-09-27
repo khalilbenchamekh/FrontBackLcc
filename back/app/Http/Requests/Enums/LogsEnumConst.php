@@ -22,11 +22,23 @@ class LogsEnumConst
     const Cadastral ='les consultaion cadastraux ';
     const BusinessSituation='Situation Affaire  ';
     const FolderTechSituation='Situation Dossier Technique ';
+    const BusinessFees='Business Fees';
+
+    const FolderTechFees='Dossier Technique Fees';
 
     const BusinessManagement="Business Management";
     const Fees='Fees';
 
+    const Mission='Mission';
+
     const Charge='Charge';
+
+    const Affaire='Affaire';
+    const TypesChange='TypesChange';
+    const FeesFolderTech='FeesFolderTech';
+
+    const Intermediate='Intermediate';
+    const InvoiceStatus ='InvoiceStatus';
 
     const Client='Client ';
     const Employee='Employee ';

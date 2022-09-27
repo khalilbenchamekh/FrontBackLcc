@@ -15,7 +15,7 @@ class LogActivity
     private $organisation_id;
     public function __construct()
     {
-        $this->organisation_id = Auth::User()->organisation;
+        $this->organisation_id = 3;
     }
     private function AssocieteNameToSubject($subject, $user)
     {

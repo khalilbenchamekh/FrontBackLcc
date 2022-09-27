@@ -3,16 +3,18 @@
 namespace App\Services\Admin;
 
 use App\Organisation;
-use App\Repository\Admin\IAdminService;
+use App\Repository\Admin\IAdminRepository;
+use App\Services\ImageService;
 use App\Services\Organisation\IOrganisationService;
 use App\User;
 use Illuminate\Support\Facades\Hash;
 
-class AdminService
+class AdminService implements IAdminService
+
 {
     public $adminRepository;
     public $organisationService;
-    public function __construct(IAdminService $adminRepository,IOrganisationService $organisationService)
+    public function __construct(IAdminRepository $adminRepository,IOrganisationService $organisationService)
     {
         $this->adminRepository=$adminRepository;
         $this->organisationService=$organisationService;

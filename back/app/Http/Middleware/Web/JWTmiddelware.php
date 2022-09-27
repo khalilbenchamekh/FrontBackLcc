@@ -19,7 +19,7 @@ class JWTmiddelware
     {
         try {
             $user= JWTAuth::parseToken()->authenticate();
-        } catch (Exception $e) {
+        } catch (\Exception $e) {
             if ($e instanceof \Tymon\JWTAuth\Exceptions\TokenInvalidException){
                 return response()->json(['status' => 'Token is Invalid'],Response::HTTP_UNAUTHORIZED);
             }else if ($e instanceof \Tymon\JWTAuth\Exceptions\TokenExpiredException){

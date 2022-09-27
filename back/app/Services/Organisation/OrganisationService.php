@@ -6,6 +6,7 @@ use App\Organisation;
 use App\Repository\Organisation\OrganisationRepository;
 use App\Services\Organisation\IOrganisationService;
 use App\Request\OrganisationRequest;
+use App\Services\ImageService;
 use Illuminate\Support\Facades\Auth;
 
 class OrganisationService implements IOrganisationService
@@ -15,7 +16,8 @@ class OrganisationService implements IOrganisationService
     public function __construct(OrganisationRepository $organisationRepo)
     {
         $this->organisationRepo=$organisationRepo;
-        $this->organisation_id = Auth::User()->organisation;
+        // $this->organisation_id = Auth::User()->organisation_id;
+        $this->organisation_id = 3;
     }
 
     /**

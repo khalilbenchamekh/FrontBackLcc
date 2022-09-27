@@ -13,6 +13,7 @@ class AdminRepository implements IAdminRepository
 use LogTrait;
 
 
+
     /**
      * @param $user
      * @param $id

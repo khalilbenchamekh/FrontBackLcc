@@ -22,6 +22,7 @@ class User extends Authenticatable implements JWTSubject
         SoftDeletes::restore insteadof EntrustUserTrait;
         EntrustUserTrait::restore insteadof SoftDeletes;
     }
+    
 
 
     public function membership()
@@ -38,7 +39,7 @@ class User extends Authenticatable implements JWTSubject
     {
         return $this->belongsToMany(Chat::class);
     }
-  
+
     public function getHasEmployeeProfileAttribute()
     {
         return $this->membership_type == 'App\Models\Employee';

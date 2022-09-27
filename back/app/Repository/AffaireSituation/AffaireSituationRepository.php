@@ -13,9 +13,11 @@ class AffaireSituationRepository implements IAffaireSituationRepository
 {
     use LogTrait;
     private $organisation_id;
+    private $current_user;
     public function __construct()
     {
-        $this->organisation_id = Auth::User()->organisation;
+        $this->organisation_id = 1;
+        $this->current_user=Auth::user()->id;
     }
     public function index($request)
     {
@@ -62,7 +64,7 @@ class AffaireSituationRepository implements IAffaireSituationRepository
     {
         // TODO: Implement delete() method.
         try {
-            return AffaireSituation::where("id","=",$id)
+            return AffaireSituation::where("id","=",$this->current_user)
             ->where("organisation_id",'=',$this->organisation_id)
             ->destroy();
         }catch (\Exception $exception){

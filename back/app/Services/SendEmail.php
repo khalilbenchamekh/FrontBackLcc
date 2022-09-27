@@ -5,6 +5,8 @@ namespace App\Services;
 use App\Http\Requests\Enums\EmailMessageChoice;
 use App\Mail\Email;
 use App\Organisation;
+use App\Services\Admin\IAdminService;
+use App\Services\Organisation\OrganisationService;
 use Illuminate\Support\Facades\Mail;
 
 class SendEmail

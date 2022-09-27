@@ -16,4 +16,6 @@ interface IAdminRepository
     public function addIdToCto($user,$id);
     public function getAllUserOrganisationToEmail($organisation_id,$cto_id);
     public function createUserToOrganisation($data,$organisation_id);
+    public function getByUser($id);
+    public function saveImage($user, $fileName);
 }

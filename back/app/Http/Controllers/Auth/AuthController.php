@@ -13,9 +13,9 @@ use App\User;
 use Carbon\Exceptions\Exception;
 use Illuminate\Hashing\BcryptHasher;
 use Tymon\JWTAuth\Exceptions\JWTException;
-use Tymon\JWTAuth\Facades\JWTAuth;
 use Faker\Generator as Faker;
 use Illuminate\Support\Facades\Hash;
+use Tymon\JWTAuth\Facades\JWTAuth;
 
 class AuthController extends Controller
 {
@@ -34,8 +34,7 @@ class AuthController extends Controller
     public function login(LoginRequest $request)
     {
         // Get User by email
-        $user = User::where('email', $request->email)->first();
-
+         $user = User::where('email', $request->email)->first();
         // Return error message if user not found.
         if (!$user) return response()->json(['error' => 'User not found.'], 404);
 
@@ -46,8 +45,10 @@ class AuthController extends Controller
         }
 
         // Get email and password from Request
-        $credentials = $request->only('email', 'password');
-
+        $credentials = [
+            'email'=>$request->input('email'),
+            'password'=>$request->input('password')
+        ];
         try {
             // Login Attempt
             if (!$token = JWTAuth::attempt($credentials)) {
@@ -59,7 +60,6 @@ class AuthController extends Controller
            // return $credentials = $request->only('email', 'password');
             return response()->json(['error' => 'could_not_create_token'], 500);
         }
-
         $customClaims = ['Role' => $user->roles !== [] ? $user->roles[0]->name : 'user'];
         $token = JWTAuth::attempt($credentials, $customClaims);
         $data = new ProfileResource($user);

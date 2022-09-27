@@ -8,6 +8,13 @@ use Illuminate\Support\Facades\Route;
 use App\Http\Controllers\Crud\LoadController;
 use App\Http\Controllers\Crud\LoadTypesController;
 use App\Http\Controllers\Crud\ClientController;
+use App\Http\Controllers\Crud\FeesController;
+use App\Http\Controllers\Crud\FeesFolderTechController;
+use App\Http\Controllers\Crud\FolderTechNatureController;
+use App\Http\Controllers\Crud\FolderTechSituationController;
+use App\Http\Controllers\Crud\IntermediateController;
+use App\Http\Controllers\Crud\InvoiceStatusController;
+use App\Http\Controllers\Crud\TypesChargeController;
 use Illuminate\Support\Facades\App;
 
 /*
@@ -67,6 +74,66 @@ Route::post('/client/store',[ClientController::class,"store"]);
 Route::get('/client/{id}',[ClientController::class,"show"]);
 
 
+//--------Fees------->
+//------?????
+Route::post('/saveFolderTechFees', [FeesController::class,"saveFolderTechFees"]);
+//-------->
+Route::post('/getBusinessFees', [FeesController::class,'getBusinessFees']);
+Route::post('/getFolderTech',  [FeesController::class,'getFolderTech']);
+Route::post('/getBusiness', [FeesController::class,'getBusiness']);
+Route::post('/getFolderTechFees', [FeesController::class,'getFolderTechFees']);
+Route::put('/updateBusinessFees/{id}',[FeesController::class,'updateBusinessFees']);
+
+
+//-------FeesFolderTechController------------>
+Route::post('/getAllFeesFolderTech',[FeesFolderTechController::class,'index']);
+Route::get('/getFeesFolderTech/{id}',[FeesFolderTechController::class,'show']);
+Route::post('/updateFeesFolderTech',[FeesFolderTechController::class,'update']);
+Route::post('/saveFeesFolderTech',[FeesFolderTechController::class,'store']);
+Route::get('/deletFeesFolderTech/{id}',[FeesFolderTechController::class,'destroy']);
+//----------End FeesFolderTechController------------------>
+
+
+//-----------------FolderTechNatureController----------------->
+Route::post('foldertechnature/multi',[FolderTechNatureController::class,'storeMany'] );
+Route::post('foldertechnature/save',[FolderTechNatureController::class,'store'] );
+Route::get('foldertechnature/get/{id}',[FolderTechNatureController::class,'show'] );
+Route::post('foldertechnature/update/{id}',[FolderTechNatureController::class,'update'] );
+Route::post('foldertechnature/all',[FolderTechNatureController::class,'index'] );
+Route::get('foldertechnature/delet/{id}',[FolderTechNatureController::class,'destroy'] );
+//-------------End FolderTechNatureController ------------------------->
+
+//-----------------FolderTechSituationController----------------->
+Route::post('/foldertechsituation/save', [FolderTechSituationController::class,'store']);
+Route::get('/foldertechsituation/get/{id}', [FolderTechSituationController::class,'show']);
+Route::post('/foldertechsituations', [FolderTechSituationController::class,'index']);
+Route::post('/foldertechsituation/update/{id}', [FolderTechSituationController::class,'update']);
+Route::get('/foldertechsituation/delete/{id}', [FolderTechSituationController::class,'destroy']);
+Route::post('foldertechsituations/multi',[FolderTechSituationController::class,'storeMany'] );
+//-----------------End FolderTechSituationController----------------->
+
+//-----------------IntermediateController----------------->
+Route::post('/intermediates', [IntermediateController::class,'index']);
+Route::post('/intermediate/save', [IntermediateController::class,'store']);
+Route::get('/intermediate/get/{id}', [IntermediateController::class,'show']);
+Route::post('/intermediate/update/{id}', [IntermediateController::class,'update']);
+Route::get('/intermediate/delete/{id}', [IntermediateController::class,'destroy']);
+//-----------------End IntermediateController----------------->
+
+//-------------InvoiceStatusController------------------>
+Route::post('/invoicestatuses',[InvoiceStatusController::class,'index']);
+Route::post('/invoicestatuse/save',[InvoiceStatusController::class,'store']);
+Route::get('/invoicestatuse/get/{id}',[InvoiceStatusController::class,'show']);
+Route::post('/invoicestatuse/update/{id}',[InvoiceStatusController::class,'update']);
+Route::get('/invoicestatuse/delete/{id}',[InvoiceStatusController::class,'destroy']);
+//-------------End InvoiceStatusController------------------>
+//----------------------TypesChargeController------------>
+
+Route::post('/typescharges',[TypesChargeController::class,'index']);
+Route::post('/typescharge/save',[TypesChargeController::class,'store']);
+Route::get('/typescharge/get/{id}',[TypesChargeController::class,'show']);
+Route::post('/typescharge/update/{id}',[TypesChargeController::class,'update']);
+Route::get('/typescharge/delete/{id}',[TypesChargeController::class,'destroy']);
 
 
 
@@ -178,9 +245,9 @@ Route::group(['middleware' => ['jwt', 'jwt.auth']], function () {
         Route::post('affairenatures/edit/{id}', [\App\Http\Controllers\Crud\AffaireNatureController::class,'edait']);
         Route::get('affairenatures/delete/{id}', [\App\Http\Controllers\Crud\AffaireNatureController::class,'destroy']);
         //end apiResource('affairenatures', 'AffaireNatureController')
-        Route::apiResource('foldertechnatures', 'FolderTechNatureController');
+        // Route::apiResource('foldertechnatures', 'FolderTechNatureController');
         // Route::post('affairenatures/multi', 'AffaireNatureController@storeMany');
-        Route::post('foldertechnatures/multi', 'FolderTechNatureController@storeMany');
+        // Route::post('foldertechnatures/multi', 'FolderTechNatureController@storeMany');
         //end Route::post('foldertechnatures/multi', 'FolderTechNatureController@storeMany');
         //Route::apiResource('loadtypes', 'LoadTypesController');
 
@@ -200,8 +267,8 @@ Route::group(['middleware' => ['jwt', 'jwt.auth']], function () {
         //Route::apiResource('affairesituations', 'AffaireSituationController');
         Route::post('affairesituations/multi', 'AffaireSituationController@storeMany');
 
-        Route::apiResource('foldertechsituations', 'FolderTechSituationController');
-        Route::post('foldertechsituations/multi', 'FolderTechSituationController@storeMany');
+        // Route::apiResource('foldertechsituations', 'FolderTechSituationController');
+        // Route::post('foldertechsituations/multi', 'FolderTechSituationController@storeMany');
 
 
         Route::apiResource('affaires', 'AffaireController');
@@ -209,14 +276,14 @@ Route::group(['middleware' => ['jwt', 'jwt.auth']], function () {
 
         Route::apiResource('folderteches', 'FolderTechController');
 
-        Route::apiResource('intermediates', 'IntermediateController');
+        // Route::apiResource('intermediates', 'IntermediateController');
 
-        Route::get('getFolderTech', 'FeesController@getFolderTech');
-        Route::get('getBusiness', 'FeesController@getBusiness');
-        Route::get('getFolderTechFees', 'FeesController@getFolderTechFees');
-        Route::get('getBusinessFees', 'FeesController@getBusinessFees');
+        // Route::get('getFolderTech', 'FeesController@getFolderTech');
+        // Route::get('getBusiness', 'FeesController@getBusiness');
+        // Route::get('getFolderTechFees', 'FeesController@getFolderTechFees');
+        // Route::get('getBusinessFees', 'FeesController@getBusinessFees');
         Route::post('saveBusinessFees', 'FeesController@saveBusinessFees');
-        Route::post('saveFolderTechFees', 'FeesController@saveFolderTechFees');
+        // Route::post('saveFolderTechFees', 'FeesController@saveFolderTechFees');
         Route::put('updateBusinessFees/{index}', 'FeesController@updateBusinessFees');
         Route::put('updateFolderTechFees/{index}', 'FeesController@updateFolderTechFees');
 
@@ -224,10 +291,10 @@ Route::group(['middleware' => ['jwt', 'jwt.auth']], function () {
         Route::post('g_c_s/dashboard', 'GreatConstructionSitesController@dashboard');
         Route::apiResource('cadastralconsultations', 'CadastralconsultationController');
 
-        Route::apiResource('invoicestatuses', 'InvoiceStatusController');
+        // Route::apiResource('invoicestatuses', 'InvoiceStatusController');
         Route::apiResource('charges', 'ChargesController');
-        Route::apiResource('typescharges', 'TypesChargeController');
 
+        // Route::apiResource('typescharges', 'TypesChargeController');
     });
 
     Route::group(['namespace' => 'Resource'], function () {

@@ -13,7 +13,7 @@ class CreateFeesfoldertechesTable extends Migration
      */
     public function up()
     {
-        Schema::create('feesfolderteches', function (Blueprint $table) {
+        Schema::create('fees_folder_teches', function (Blueprint $table) {
             $table->bigIncrements('id');
             $table->integer('organisation_id')->unsigned();
             $table->foreign('organisation_id')->references('id')->on('organisations')->onDelete("cascade");
@@ -33,6 +33,6 @@ class CreateFeesfoldertechesTable extends Migration
      */
     public function down()
     {
-        Schema::dropIfExists('feesfolderteches');
+        Schema::dropIfExists('fees_folder_teches');
     }
 }

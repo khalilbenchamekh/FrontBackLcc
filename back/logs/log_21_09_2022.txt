@@ -1,0 +1,1 @@
+21/09/2022 12:41:25 => Call to undefined method Illuminate\Database\Eloquent\Builder::destroy() on "C:\xampp\htdocs\New folder (7)\FrontBackLcc\back\vendor\laravel\framework\src\Illuminate\Support\Traits\ForwardsCalls.php on line 50" with code 0

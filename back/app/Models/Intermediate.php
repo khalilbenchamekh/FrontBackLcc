@@ -7,6 +7,7 @@ use Illuminate\Database\Eloquent\Model;
 
 class Intermediate extends Model
 {
+    public $table = 'intermediates';
     protected $guarded = ['id'];
 
     public function affaire()

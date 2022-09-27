@@ -22,7 +22,7 @@ class CreateIntermediatesTable extends Migration
             $table->string('Street');
             $table->string('Street2');
             $table->string('city');
-            $table->string('ZIP code');
+            $table->string('ZIP_code');
             $table->string('Country');
             $table->string('Function');
             $table->string('tel');
