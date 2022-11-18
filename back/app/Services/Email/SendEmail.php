@@ -1,19 +1,19 @@
 <?php
 
-namespace App\Services;
+namespace App\Services\Email;
 
 use App\Http\Requests\Enums\EmailMessageChoice;
 use App\Mail\Email;
 use App\Organisation;
 use App\Services\Admin\IAdminService;
-use App\Services\Organisation\OrganisationService;
+use App\Services\Organisation\IOrganisationService;
 use Illuminate\Support\Facades\Mail;
 
-class SendEmail
+class SendEmail implements ISendEmail
 {
     private $organisationService;
     private $adminService;
-    public function __construct(OrganisationService $organisationService,IAdminService $adminService)
+    public function __construct(IOrganisationService $organisationService,IAdminService $adminService)
     {
         $this->organisationService=$organisationService;
         $this->adminService=$adminService;
@@ -158,7 +158,8 @@ class SendEmail
         }
 
     }
-    public function email($to,$message){
+    public function email($to,$message)
+    {
         for ($i=0;$i<count($to);$i++){
             $el=$to[$i];
             if(isset($el)){

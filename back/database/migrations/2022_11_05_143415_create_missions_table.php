@@ -21,7 +21,7 @@ class CreateMissionsTable extends Migration
             $table->text('description')->nullable();
             $table->date('startDate');
             $table->date('endDate');
-            $table->integer('user_id')->nullable();
+            $table->integer('user_id')->unsigned()->nullable();
             $table->foreign('user_id')->references('id')->on('users')
                 ->onUpdate('cascade')->onDelete('cascade');
             $table->tinyInteger ('allDay')->unsigned()->default(0);

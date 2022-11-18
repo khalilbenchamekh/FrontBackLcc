@@ -11,8 +11,8 @@ class AffaireRepository implements IAffaireRepository
     private $organisation_id;
     public function __construct()
     {
-        $this->organisation_id = Auth::user()->organisation_id;
-        $this->current_user = Auth::user()->id;
+        $this->organisation_id = 3;
+        $this->current_user = 3;
     }
     public function getBusiness($request)
     {

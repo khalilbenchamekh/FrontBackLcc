@@ -8,8 +8,8 @@ use App\Response\Admin\AllAdminResponse;
 use App\Response\Organisation\AllOrganisationResponse;
 use App\Response\Organisation\OrganisationResponse;
 use App\Services\Admin\IAdminService;
+use App\Services\Email\ISendEmail;
 use App\Services\Organisation\IOrganisationService;
-use App\Services\SendEmail;
 use App\User;
 use Illuminate\Pagination\LengthAwarePaginator;
 use Illuminate\Support\Facades\Validator;
@@ -21,7 +21,7 @@ class OrganisationController
     private $organisationService;
     private $adminService;
     private $sendEmail;
-    public function __construct(IOrganisationService $organisationService,IAdminService $adminService,SendEmail $sendEmail)
+    public function __construct(IOrganisationService $organisationService,IAdminService $adminService,ISendEmail $sendEmail)
     {
         $this->organisationService=$organisationService;
         $this->adminService=$adminService;

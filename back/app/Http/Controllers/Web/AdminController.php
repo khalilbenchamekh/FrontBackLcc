@@ -7,8 +7,8 @@ use App\Request\AdminRequest;
 use App\Response\Admin\AdminResponse;
 use App\Response\Admin\AllAdminResponse;
 use App\Services\Admin\IAdminService;
+use App\Services\Email\ISendEmail;
 use App\Services\Organisation\IOrganisationService;
-use App\Services\SendEmail;
 use App\User;
 use Illuminate\Http\Request;
 use Illuminate\Pagination\LengthAwarePaginator;
@@ -21,7 +21,7 @@ class AdminController
     private $adminRequest;
     private $organisationService;
     private $sendEmail;
-    public function __construct(IAdminService $adminService,AdminRequest $adminRequest,IOrganisationService $organisationService,SendEmail $sendEmail)
+    public function __construct(IAdminService $adminService,AdminRequest $adminRequest,IOrganisationService $organisationService,ISendEmail $sendEmail)
     {
         $this->adminService=$adminService;
         $this->adminRequest=$adminRequest;

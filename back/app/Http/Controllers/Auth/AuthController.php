@@ -8,7 +8,7 @@ use App\Http\Requests\Auth\ForgotPasswordMainRequest;
 use App\Http\Requests\Auth\ForgotPasswordRequest;
 use App\Http\Requests\Auth\LoginRequest;
 use App\Http\Resources\UserResource;
-use App\Services\SendEmail;
+use App\Services\Email\ISendEmail;
 use App\User;
 use Carbon\Exceptions\Exception;
 use Illuminate\Hashing\BcryptHasher;
@@ -21,7 +21,7 @@ use Symfony\Component\HttpFoundation\Response;
 class AuthController extends Controller
 {
     private $sendEmail;
-    public function __construct(SendEmail $sendEmail)
+    public function __construct(ISendEmail $sendEmail)
     {
         $this->sendEmail=$sendEmail;
     }

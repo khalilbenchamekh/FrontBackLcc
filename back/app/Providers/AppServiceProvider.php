@@ -112,6 +112,14 @@ use App\Services\Admin\AdminResourceService;
 use App\Services\Admin\IAdminResourceService;
 use App\Services\Admin\AdminResourceRepository;
 use App\Services\Admin\IAdminResourceRepository;
+use App\Services\Email\ISendEmail;
+use App\Services\Email\SendEmail;
+use App\Services\BusinessManagement\IBusinessManagementService;
+use App\Services\BusinessManagement\BusinessManagementService;
+
+use App\Repository\BusinessManagement\IBusinessManagementRespositry;
+use App\Repository\BusinessManagement\BusinessManagementRespositry;
+
 class AppServiceProvider extends ServiceProvider
 {
     /**
@@ -124,6 +132,8 @@ class AppServiceProvider extends ServiceProvider
         Schema::defaultStringLength(191);
         // Services
         $this->app->bind(IOrganisationService::class,OrganisationService::class);
+        $this->app->bind(ISendEmail::class,SendEmail::class);
+        $this->app->bind(IBusinessManagementService::class,BusinessManagementService::class);
         $this->app->bind(IAdminService::class,AdminService::class);
         $this->app->bind(IAffaireNatureService::class,AffaireNatureService::class);
         $this->app->bind(ILoadService::class,LoadService::class);
@@ -144,7 +154,6 @@ class AppServiceProvider extends ServiceProvider
         $this->app->bind(IIntermediateService::class,IntermediateService::class);
         $this->app->bind(IInvoiceStatusService::class,InvoiceStatusService::class);
         $this->app->bind(ITypesChargeService::class,TypesChargeService::class);
-        $this->app->bind(IAdminService::class,AdminService::class);
         $this->app->bind(IUserService::class,UserService::class);
         $this->app->bind(IGreatConstructionSitesService::class,GreatConstructionSitesService::class);
         $this->app->bind(IFileService::class,FileService::class);
@@ -181,6 +190,7 @@ class AppServiceProvider extends ServiceProvider
         $this->app->bind(IBillRepository::class,BillRepository::class);
         $this->app->bind(IMissionRepository::class,MissionRepository::class);
         $this->app->bind(IAdminResourceRepository::class,AdminResourceRepository::class);
+        $this->app->bind(IBusinessManagementRespositry::class,BusinessManagementRespositry::class);
 
         if($this->app->environment()==='local'){
             if(isset($_SERVER['REQUEST_METHOD'],$_SERVER['REQUEST_URI'])){
