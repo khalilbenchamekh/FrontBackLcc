@@ -2,9 +2,7 @@
 
 namespace App\Providers;
 
-use App\Models\ChatMessage;
 use App\Models\LogActivity;
-use App\Observers\ChatMessageObserver;
 use App\Observers\LogActivityObserver;
 use App\Repository\Admin\AdminRepository;
 use App\Repository\Admin\IAdminRepository;
@@ -94,7 +92,6 @@ use App\Services\User\IUserService;
 use App\Services\User\UserService;
 use App\Repository\User\IUserRepository;
 use App\Repository\User\UserRepository;
-
 use App\Repository\GreatConstructionSites\IGreatConstructionSitesRepository;
 use App\Repository\GreatConstructionSites\GreatConstructionSitesRepository;
 use App\Services\GreatConstructionSites\IGreatConstructionSitesService;
@@ -103,17 +100,14 @@ use App\Repository\File\IFileRepository;
 use App\Repository\File\FileRepository;
 use App\Services\File\FileService;
 use App\Services\File\IFileService;
-
 use App\Repository\Bill\IBillRepository;
 use App\Repository\Bill\BillRepository;
 use App\Services\Bill\IBillService;
 use App\Services\Bill\BillService;
 use App\Services\Mission\MissionService;
 use App\Services\Mission\IMissionService;
-
 use App\Repository\MissionRepository;
 use App\Repository\IMissionRepository;
-
 use App\Services\Admin\AdminResourceService;
 use App\Services\Admin\IAdminResourceService;
 use App\Services\Admin\AdminResourceRepository;
@@ -211,7 +205,6 @@ class AppServiceProvider extends ServiceProvider
      */
     public function boot()
     {
-        ChatMessage::observe(ChatMessageObserver::class);
         LogActivity::observe(LogActivityObserver::class);
     }
 }

@@ -7,11 +7,7 @@ use Maatwebsite\Excel\Facades\Excel;
 
 class CsvTableSeeder extends Seeder
 {
-    /**
-     * Run the database seeds.
-     *
-     * @return void
-     */
+    
     public function run()
     {
         $locations =Location::where('name','like','Tanger'.'%')->get();

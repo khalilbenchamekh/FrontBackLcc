@@ -78,14 +78,14 @@ class FileManagerController extends BaseController
     private function download($path, $name, $selectedItems, $isImage = false)
     {
         $file = $isImage ? $path : "$path/$name";
-        $filePath = Storage::disk($this->const)->getDriver()->getAdapter()->applyPathPrefix($file);
-        return $filePath;
+        $res = Storage::disk($this->const);
+        if(!$res && isset($res) && ($res!==null)){
+            $filePath = $res->getDriver()->getAdapter()->applyPathPrefix($file);
+            return $filePath;
+        }
+        return "";
     }
 
-    /**
-     * @param Request $request
-     * @return \Illuminate\Http\JsonResponse|\Symfony\Component\HttpFoundation\BinaryFileResponse
-     */
     public function actions(Request $request)
     {
 
@@ -93,14 +93,18 @@ class FileManagerController extends BaseController
             '*.uploadFiles.*' => 'mimes:jpeg,png,gif,svg,doc,pdf,docx,zip',
             'uploadFiles.*' => 'mimes:jpeg,png,gif,svg,doc,pdf,docx,zip',
         ]);
-        
+
         if ($validator->fails()) {
             return response($validator->errors(), 400);
         }
         $action = $request->input('action');
-        $responseData = null;
         $path = $request->input('path');
         $path = $this->makeCorrectPath($path);
+        $res = Storage::disk($this->const);
+        $type = "";
+        if(!$res && isset($res) && ($res!==null)){
+            $type = $res->mimeType($path);
+        }
         switch ($action) {
             case 'read':
                 $extensionsAllow = $request->input('ExtensionsAllow');
@@ -113,7 +117,7 @@ class FileManagerController extends BaseController
                         'name' => basename($path),
                         'hasChild' => false,
                         'size' => Storage::disk($this->const)->size($path),
-                        'type' => Storage::disk($this->const)->mimeType($path)
+                        'type' => $type
                     ]
                 ];
                 break;
@@ -140,7 +144,7 @@ class FileManagerController extends BaseController
                         'name' => basename($path),
                         'hasChild' => false,
                         'size' => Storage::disk($this->const)->size($path),
-                        'type' => Storage::disk($this->const)->mimeType($path)
+                        'type' => $type
                     ],
                     'error' => null
                 ];
@@ -159,7 +163,7 @@ class FileManagerController extends BaseController
                         'name' => basename($path),
                         'hasChild' => false,
                         'size' => Storage::disk($this->const)->size($path),
-                        'type' => Storage::disk($this->const)->mimeType($path)
+                        'type' => $type
                     ],
                     'error' => null
                 ];
@@ -180,7 +184,7 @@ class FileManagerController extends BaseController
                         'name' => basename($path),
                         'hasChild' => false,
                         'size' => Storage::disk($this->const)->size($path),
-                        'type' => Storage::disk($this->const)->mimeType($path)
+                        'type' => $type
                     ],
                     'error' => null
                 ];
@@ -199,7 +203,7 @@ class FileManagerController extends BaseController
                         'name' => basename($path),
                         'hasChild' => false,
                         'size' => Storage::disk($this->const)->size($path),
-                        'type' => Storage::disk($this->const)->mimeType($path)
+                        'type' => $type
                     ],
                     'error' => null
                 ];
@@ -219,7 +223,7 @@ class FileManagerController extends BaseController
                         'name' => basename($path),
                         'hasChild' => false,
                         'size' => Storage::disk($this->const)->size($path),
-                        'type' => Storage::disk($this->const)->mimeType($path)
+                        'type' => $type
                     ],
                     'error' => null
                 ];
@@ -254,7 +258,12 @@ class FileManagerController extends BaseController
         $items = array_merge($files, $directories);
         $allFiles = [];
         foreach ($items as $item) {
-            $mimeType = Storage::disk($this->const)->mimeType($item);
+            $type = "";
+            $res =Storage::disk($this->const);
+            if(!$res && isset($res) && ($res!==null)){
+                $type = $res->mimeType($path);
+            }
+            $mimeType = $type;
             array_push($allFiles, [
                 'name' => basename($item),
                 'hasChild' => $mimeType == 'directory',
@@ -280,8 +289,12 @@ class FileManagerController extends BaseController
         Storage::disk($this->const)->makeDirectory($file);
 
         $allFiles = [];
-
-        $mimeType = Storage::disk($this->const)->mimeType($file);
+        $type = "";
+        $res =Storage::disk($this->const);
+        if(!$res && isset($res) && ($res!==null)){
+            $type = $res->mimeType($path);
+        }
+        $mimeType = $type;
         $fileObject = [
             'name' => basename($file),
             'hasChild' => $mimeType == 'directory',
@@ -304,7 +317,11 @@ class FileManagerController extends BaseController
     {
         foreach ($names as $name) {
             $file = "$path/$name";
-            $type = Storage::disk($this->const)->mimeType($file);
+            $type = "";
+            $res =Storage::disk($this->const);
+            if(!$res && isset($res) && ($res!==null)){
+                $type = $res->mimeType($path);
+            }
             $type == 'directory' ? Storage::disk($this->const)->deleteDirectory($file) : Storage::disk($this->const)->delete($file);
         }
     }
@@ -315,9 +332,12 @@ class FileManagerController extends BaseController
      * @param array $selectedItems
      */
     private function upload($path, $fileUpload, $selectedItems = [])
-
     {
-        Storage::disk($this->const)->putFileAs($path, $fileUpload, $fileUpload->getClientOriginalName());
+        $res =Storage::disk($this->const);
+        if(!$res && isset($res) && ($res!==null)){
+             return $res->putFileAs($path, $fileUpload, $fileUpload->getClientOriginalName());
+        }
+        return null;
     }
 
     /**
@@ -365,11 +385,16 @@ class FileManagerController extends BaseController
         $files = [];
         foreach ($names as $name) {
             $file = "$path/$name";
+            $res = Storage::disk($this->const);
+            $type = "";
+            if(!$res && isset($res) && ($res!==null)){
+                $type = $res->mimeType($file);
+            }
             $fileDetails = [
                 'CreationTime' => 'Unknown',
                 'Extension' => File::extension($file),
                 'FullName' => $file,
-                'Format' => Storage::disk($this->const)->mimeType($file),
+                'Format' => $type,
                 'LastWriteTime' => date('Y/m/d h:i:s', Storage::disk($this->const)->lastModified($file)),
                 'LastAccessTime' => 'Unknown',
                 'Length' => Storage::disk($this->const)->size($file),

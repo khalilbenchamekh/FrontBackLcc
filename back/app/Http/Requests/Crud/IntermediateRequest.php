@@ -19,7 +19,6 @@ class IntermediateRequest extends FormRequest
             "Street2"=>["required","max:225","min:3"],
             "city"=>["required","max:225","min:3"],
             "ZIP_code"=>["required","max:225","min:3"],
-            "ZIP_code"=>["required","max:225","min:3"],
             "Country"=>["required","max:225","min:3"],
             "Function"=>["required","max:225","min:3"],
             "tel"=>["required","max:225","min:3"],

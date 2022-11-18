@@ -7,10 +7,12 @@ use DateTime;
 class AffaireRepository implements IAffaireRepository
 {
     use LogTrait;
+    private $current_user;
     private $organisation_id;
     public function __construct()
     {
         $this->organisation_id = Auth::user()->organisation_id;
+        $this->current_user = Auth::user()->id;
     }
     public function getBusiness($request)
     {

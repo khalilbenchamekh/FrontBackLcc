@@ -57,7 +57,7 @@ class ProfileController extends Controller
             'name' => ['string', 'max:255'],
             'gender' => ['nullable', 'in:female,male'],
             'birthdate' =>
-                'nullable', 'date:Y-m-d', 'before:' . now()->subYear(10)->format('Y-m-d'),
+                'nullable', 'date:Y-m-d', 'before:' . now()->subYears(10)->format('Y-m-d'),
             'address' => ['nullable', 'string', 'max:510'],
             'username' => ['unique:users', 'string', 'max:255'],
             'avatar.*' => 'image|mimes:jpeg,png,jpg,gif,svg',

@@ -30,7 +30,7 @@ class AffaireService implements IAffaireService{
         $affaire= $this->iAffaireRepository->save($request);
         if(!is_null($affaire) ){
             $resBusinessManagement=$this->businessManagementService->store($request,$affaire);
-            $resMission=$this->missionService->save($request,$affaire);
+            $resMission=$this->missionService->save($request);
             $subject = LogsEnumConst::Add . LogsEnumConst::Affaire. $affaire->REF;
             $logs = new LogActivity();
             $logs->addToLog($subject, $request);
@@ -52,7 +52,7 @@ class AffaireService implements IAffaireService{
             $newAffaire= $this->iAffaireRepository->update($affaire,$request);
             if(!is_null($newAffaire) ){
                 $resBusinessManagement=$this->businessManagementService->store($request,$affaire);
-                $resMission=$this->missionService->save($request,$affaire);
+                $resMission=$this->missionService->save($request);
                 $subject = LogsEnumConst::Update . LogsEnumConst::Affaire. $affaire->REF;
                 $logs = new LogActivity();
                 $logs->addToLog($subject, $request);

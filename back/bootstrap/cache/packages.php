@@ -24,6 +24,13 @@
       'PDF' => 'Barryvdh\\DomPDF\\Facade',
     ),
   ),
+  'darkaonline/l5-swagger' => 
+  array (
+    'providers' => 
+    array (
+      0 => 'L5Swagger\\L5SwaggerServiceProvider',
+    ),
+  ),
   'facade/ignition' => 
   array (
     'providers' => 

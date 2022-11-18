@@ -44,7 +44,7 @@ class RegisterController extends Controller
      * Save Auth Token.
      *
      * @param string $token
-     * @param App\User $user
+     * @param \App\User $user
      *
      * @return bool
      */

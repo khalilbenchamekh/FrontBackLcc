@@ -13,21 +13,28 @@
 
 
 use Illuminate\Support\Facades\Broadcast;
-use Tymon\JWTAuth\Facades\JWTAuth;
+use Illuminate\Support\Facades\Auth;
+use Mockery\Undefined;
 
 Broadcast::channel('App.User.{id}', function ($user, $id) {
     return (int) $user->id === (int) $id;
 });
 
 Broadcast::channel('logs', function () {
-    $user = JWTAuth::user();
-    return $user->hasRole('owner');
+    $user = Auth::User();
+    if(!$user && isset($user) && ($user!==null)){
+        return $user->hasRole('owner');
+    }
+    return false;
 }
 );
 
 Broadcast::channel('countDown', function () {
-    $user = JWTAuth::user();
-    return $user->hasRole('owner');
+    $user = Auth::User();
+    if(!$user && isset($user) && ($user!==null)){
+        return $user->hasRole('owner');
+    }
+    return false;
 }
 );
 

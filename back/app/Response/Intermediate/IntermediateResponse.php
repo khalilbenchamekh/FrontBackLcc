@@ -12,7 +12,6 @@ class IntermediateResponse extends JsonResource
         return[
             'id'=>$this->id,
             "name"=>$this->name,
-            "name"=>$this->name,
             "second_name"=>$this->second_name,
             "Street"=>$this->Street,
             "Street2"=>$this->Street2,

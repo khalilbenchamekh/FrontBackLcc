@@ -28,7 +28,7 @@ class RegisterRequest extends FormRequest
             'lastname' => ['required_if:step,0|string|max:255'],
             'gender' => ['nullable|in:female,male'],
             'birthdate' =>
-                'nullable|date:Y-m-d|before:'.now()->subYear(10)->format('Y-m-d'),
+                'nullable|date:Y-m-d|before:'.now()->subYears(10)->format('Y-m-d'),
             'address' => ['nullable|string|max:510'],
             'role' => ['required_if:step,1|in:roles'],
             'username' => ['unique:users' ,'string', 'max:255'],
