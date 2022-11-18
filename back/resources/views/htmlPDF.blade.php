@@ -1,7 +1,7 @@
 <!DOCTYPE html>
 <html>
 <head>
-    <title>Laravel HTML to PDF</title>
+    <title>{{$data['iamgeOrganisation']}}</title>
     <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.4.1/css/bootstrap.min.css"
           integrity="sha384-Vkoo8x4CGsO3+Hhxv8T/Q5PaXtkKtu6ug5TOeNV6gBiFeWPGFN9MuhOf23Q9Ifjh" crossorigin="anonymous">
 </head>
@@ -9,18 +9,16 @@
         {{--<img src="{{ public_path("/image/logo.jpg")}}" class="img-fluid" style="height: 140px;width: 170px" alt="logo">--}}
 
 
-        <img src="{{ public_path("/image/logo.jpg")}}" class="img-fluid" style="height: 140px;width: 170px" alt="logo">
+        <img src="{{$data['org']['iamgeOrganisation']}}" class="img-fluid" style="height: 140px;width: 170px" alt="logo">
         <div class="float-right">
             <h3>
                 GEOMAPING SARL
             </h3>
-            <p style="font-size: 10px">Imm 97, Appt 4 et 5, Avenue Omar Ben Elkhattab,<br>
-
-                Elyoussoufia.<br>
-                85000 TIZNIT<br>
-                Tél : 0528-601878 / 0666-599001<br>
-                Email : geomaping.sarl@gmail.com<br>
-                ICE : 000010420000057<br>
+            <p style="font-size: 10px">{{$data['org']['address']}} <br>
+                {{$data['org']['zip_code']}} {{$data['org']['city']}}<br>
+                Tél : {{$data['org']['emailOrganisation']}}<br>
+                Email : {{$data['org']['tel']}}<br>
+                ICE : {{$data['org']['ICE']}}<br>
             </p>
             <div style="height: 100px;width: 170px;background-color: #e2f2fd">
                 <h6>
@@ -96,12 +94,9 @@
     <p style=" margin: auto;
   width: 50%;
   padding: 10px;">
+        Adresse {{$data['org']['address']}} <br>
         Adresse imm 97, Appt 4 et 5, Avenue Omar Ben Elkhattab, Tiznit, 85000<br>
-        R.C:24 25, IF:14492962, COMPTE BMCE : 011750 <br>
-
-        000003210000207572, Site web : …………………………………..<br>
-        I.CE : 000010420000057, Email : geomaping.sarl@gmail.com
-
+        ICE : {{$data['org']['ICE']}}, Email : {{$data['org']['emailOrganisation']}}
     </p>
 
 </div>

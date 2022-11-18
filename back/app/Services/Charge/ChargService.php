@@ -25,7 +25,7 @@ class ChargeService implements IChargeService
     {
         $res= $this->iChargeRpository->store($request);
         if(!is_null($res)){
-            $subject = LogsEnumConst::Add . LogsEnumConst::Charge . $request['num_quit'];
+            $subject = LogsEnumConst::Add . LogsEnumConst::Charge . $res->num_quit;
             $logs = new LogActivity();
             $logs->addToLog($subject, $request);
         }
@@ -39,10 +39,13 @@ class ChargeService implements IChargeService
     {
         $perElem=$this->show($id);
         if($perElem){
-            $subject = LogsEnumConst::Update . LogsEnumConst::Charge . $data['num_quit'];
-            $logs = new LogActivity();
-            $logs->addToLog($subject, $data);
-            return $this->iChargeRpository->update($perElem,$data);
+            $res = $this->iChargeRpository->update($perElem,$data);
+            if(!is_null($res)){
+                $subject = LogsEnumConst::Update . LogsEnumConst::Charge . $res->num_quit;
+                $logs = new LogActivity();
+                $logs->addToLog($subject, $data);
+            }
+            return $res;
         }
         return null;
     }

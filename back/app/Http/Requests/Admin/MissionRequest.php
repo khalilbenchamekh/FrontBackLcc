@@ -13,7 +13,8 @@ class MissionRequest extends FormRequest
     public function rules()
     {
         return [
-            'text' => 'required|string|max:255|unique:missions,text',
+            'text' => 'required|string|max:255',
+            'user_id' => 'required|integer',
             'Description' => ['string', 'max:255'],
             'startDate' => [ 'date:Y-m-d'],
             'endDate' => [ 'date:Y-m-d'],

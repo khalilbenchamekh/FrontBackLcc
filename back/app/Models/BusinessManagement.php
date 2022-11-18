@@ -20,7 +20,6 @@ class BusinessManagement extends Model
 
     public function fees()
     {
-
         return $this->hasMany(Fees::class);
     }
 }

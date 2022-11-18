@@ -1,20 +1,18 @@
 <?php
-
-
 namespace App\Repository\FolderTech;
-
+use App\Models\BusinessManagement;
 use App\Models\FolderTech;
+use App\Models\Mission;
 use App\Repository\Log\LogTrait;
 use DateTime;
 use Illuminate\Support\Facades\Auth;
-
 class FolderTechRepository implements IFolderTechRepository
 {
     use LogTrait;
     private $organisation_id;
     public function __construct()
     {
-        $this->organisation_id = 3;
+        $this->organisation_id = Auth::User()->organisation_id;
     }
     public function getFolderTech($request)
     {
@@ -27,7 +25,6 @@ class FolderTechRepository implements IFolderTechRepository
             return null;
         }
     }
-
 
     public function save($request)
     {
@@ -60,9 +57,7 @@ class FolderTechRepository implements IFolderTechRepository
         $folderTech->resp_id = $request->input('resp_id');
         $folderTech->nature_name = $request->input('nature_name');
         $folderTech->save();
-
         return $folderTech;
-
         }catch(\Exception $exception){
             $this->Log($exception);
             return null;
@@ -75,6 +70,39 @@ class FolderTechRepository implements IFolderTechRepository
                 select()
                 ->where("organisation_id","=",$this->organisation_id)
                 ->paginate($request['limit'],['*'],'page',$request['page']);
+        }catch (\Exception $exception){
+            $this->Log($exception);
+            return null;
+        }
+    }
+      public function saveBusinessManagement($request,$affaire)
+        {
+        try {
+            $longitude = $request->input('longitude');
+            $latitude = $request->input('latitude');
+            $ttc = $request->input('ttc');
+            $bus_mang = new BusinessManagement();
+            $bus_mang->longitude = $longitude;
+            $bus_mang->ttc = $ttc;
+            $bus_mang->latitude = $latitude;
+            $bus_mang->organisation_id=$this->organisation_id;
+            $bus_mang->membership()->associate($affaire);
+            $bus_mang->save();
+        }catch (\Exception $exception){
+            $this->Log($exception);
+            return null;
+        }
+    }  public function saveMission($request,$affaire)
+        {
+        try {
+            $mission = new Mission();
+            $mission->text = "Dossier Technique" . $affaire->REF;
+            $mission->description = "";
+            $mission->startDate = date("Y-m-d H:i:s", strtotime(date($affaire->DATE_LAI)));
+            $mission->endDate = date("Y-m-d H:i:s", strtotime(date($affaire->DATE_LAI)));
+            $mission->allDay = 1;
+            $mission->organisation_id=$this->organisation_id;
+            $mission->save();
         }catch (\Exception $exception){
             $this->Log($exception);
             return null;

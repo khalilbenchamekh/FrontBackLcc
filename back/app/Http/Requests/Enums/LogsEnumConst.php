@@ -23,6 +23,7 @@ class LogsEnumConst
     const BusinessSituation='Situation Affaire  ';
     const FolderTechSituation='Situation Dossier Technique ';
     const BusinessFees='Business Fees';
+    const FileModel='FileModel';
 
     const FolderTechFees='Dossier Technique Fees';
 
@@ -46,4 +47,5 @@ class LogsEnumConst
     const GSC='Grand Chantier ';
     const Load='Charge ';
     const LoadType='Type de Charge ';
+    const Bill='Facture ';
 }

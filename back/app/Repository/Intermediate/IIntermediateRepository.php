@@ -1,10 +1,6 @@
 <?php
-
-
 namespace App\Repository\Intermediate;
-
 use App\Models\Intermediate;
-
 interface IIntermediateRepository
 {
     public function save($request);

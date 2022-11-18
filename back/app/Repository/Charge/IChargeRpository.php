@@ -1,10 +1,6 @@
 <?php
-
-
 namespace App\Repository\Charge;
-
 use App\Models\Charges;
-
 interface IChargeRpository
 {
     public function index($request);

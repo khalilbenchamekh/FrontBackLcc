@@ -2,10 +2,9 @@
 
 namespace App\Http\Controllers\Crud;
 
-use App\Helpers\LogActivity;
 use App\Http\Controllers\Controller;
+use App\Http\Requests\Auth\PaginationRequest;
 use App\Http\Requests\Crud\FolderTechSituationRequest;
-use App\Http\Requests\Enums\LogsEnumConst;
 use App\Models\FolderTechSituation;
 use App\Response\FolderTechSituation\FolderTechSituationResponse;
 use App\Response\FolderTechSituation\FolderTechSituationsResponse;
@@ -20,35 +19,29 @@ class FolderTechSituationController extends Controller
     private $iFolderTechSituationService;
     public function __construct(IFolderTechSituationService $iFolderTechSituationService)
     {
-        // set_time_limit(8000000);
-        // $this->middleware('role:owner|admin');
-        // $this->middleware('role:foldertechsituations_create|owner|admin', ['only' => ['storeMany']]);
-        // $this->middleware('role:foldertechsituations_edit|owner|admin', ['only' => ['update']]);
-        // $this->middleware('role:foldertechsituations_read|owner|admin', ['only' => ['index']]);
-        // $this->middleware('role:foldertechsituations_delete|owner|admin', ['only' => ['destroy']]);
+         set_time_limit(8000000);
+         $this->middleware('role:owner|admin');
+         $this->middleware('role:foldertechsituations_create|owner|admin', ['only' => ['storeMany']]);
+         $this->middleware('role:foldertechsituations_edit|owner|admin', ['only' => ['update']]);
+         $this->middleware('role:foldertechsituations_read|owner|admin', ['only' => ['index']]);
+         $this->middleware('role:foldertechsituations_delete|owner|admin', ['only' => ['destroy']]);
         $this->iFolderTechSituationService=$iFolderTechSituationService;
     }
-    public function index(Request $request)
+    public function index(PaginationRequest $request)
     {
-        $validator = Validator::make($request->all(), [
-            "limit"=>'required|integer',
-            "page"=>'required|integer'
-        ]);
-        if ($validator->fails()) {
-            return response($validator->errors(), 400);
-        }
         $foldertechsituations = $this->iFolderTechSituationService->index($request);
         if($foldertechsituations instanceof LengthAwarePaginator){
             $response = FolderTechSituationsResponse::make($foldertechsituations->all());
             return response()->json([
-                "foldertechsituation"=>$response,
-                'total'=>$foldertechsituations->total(),
-                'lastPage'=>$foldertechsituations->lastPage(),
-                'currentPage'=>$foldertechsituations->currentPage(),
+                "data"=>$response,
+                'countPage'=>$response->perPage(),
+                "currentPage"=>$response->currentPage(),
+                "nextPage"=>$response->currentPage()<$response->lastPage()?$response->currentPage()+1:$response->currentPage(),
+                "lastPage"=>$response->lastPage(),
+                'total'=>$response->total(),
             ],Response::HTTP_OK);
         }
         return response()->json(["error"=>"Bad Request"],Response::HTTP_BAD_REQUEST);
-
     }
 
     public function store(FolderTechSituationRequest $request)
@@ -57,7 +50,7 @@ class FolderTechSituationController extends Controller
         if($foldertechsituation instanceof FolderTechSituation){
             $response = FolderTechSituationResponse::make($foldertechsituation);
             return response()->json([
-                "foldertechsituation"=>$response
+                "data"=>$response
             ],Response::HTTP_CREATED);
         }
 
@@ -77,13 +70,10 @@ class FolderTechSituationController extends Controller
         if(is_array($foldertechsituations) && !empty($foldertechsituations)){
             $response = FolderTechSituationsResponse::make($foldertechsituations);
             return response()->json([
-                "foldertechsituations"=>$response
+                "data"=>$response
             ],Response::HTTP_CREATED);
         }
         return response()->json(['error'=>"Bad Request"],Response::HTTP_BAD_REQUEST);
-
-
-
     }
 
     public function show($id)
@@ -92,7 +82,7 @@ class FolderTechSituationController extends Controller
         if($foldertechsituation instanceof FolderTechSituation){
             $response = FolderTechSituationResponse::make($foldertechsituation);
             return response()->json([
-                "foldertechsituation"=>$response
+                "data"=>$response
             ],Response::HTTP_OK);
         }
 
@@ -105,23 +95,25 @@ class FolderTechSituationController extends Controller
         if($foldertechsituation instanceof FolderTechSituation){
             $response = FolderTechSituationResponse::make($foldertechsituation);
             return response()->json([
-                "foldertechsituation"=>$response
+                "data"=>$response
             ],Response::HTTP_OK);
         }
 
         return response()->json(["error"=>"Bad Request"],Response::HTTP_BAD_REQUEST);
     }
-
-    public function destroy($id)
+    public function destroy(Request $request)
     {
-        $foldertechsituation = $this->iFolderTechSituationService->destroy($id);
-        if($foldertechsituation instanceof FolderTechSituation){
-            $response=FolderTechSituationResponse::make($foldertechsituation);
-            return response()->json([
-                'feesfolderteche'=>$response
-            ],Response::HTTP_OK);
-        }else{
-            return response()->json(['error'=>"Bad Request"],Response::HTTP_BAD_REQUEST);
-        }
+        $validator = Validator::make($request->all(),[
+            "id"=>["required","integer"],
+            "Name"=>["required","string"],
+        ]);
+            if($validator->fails()){
+                return response()->json(["error"=>$validator->errors()],Response::HTTP_BAD_REQUEST);
+            }
+            $res=$this->iFolderTechSituationService->destroy($request);
+            if(!is_null($res) ){
+                return response()->json(['data' => $res], Response::HTTP_NO_CONTENT);
+           }
+           return response()->json(['error'=>"Bad Request"],Response::HTTP_BAD_REQUEST);
     }
 }

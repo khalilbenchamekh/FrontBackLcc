@@ -1,34 +1,60 @@
 <?php
 
 namespace App\Services\Client;
-
-use App\Repository\Log\LogTrait;
+use App\Http\Requests\Enums\LogsEnumConst;
 use App\Repository\Client\IClientRepository;
+use App\Helpers\LogActivity;
 
 class ClientService implements IClientService
 {
-    
+
     private $iClientRepository;
     public function __construct(IClientRepository $iClientRepository)
     {
         $this->iClientRepository=$iClientRepository;
     }
 
-    public function index($page)
+    public function index($request)
     {
-        return $this->iClientRepository->index($page);
+        return $this->iClientRepository->index($request);
     }
     public function storeBusiness($data,$bus)
     {
-        return $this->iClientRepository->storeBusiness($data,$bus);
+        $res =$this->iClientRepository->storeBusiness($data,$bus);
+        if(!is_null($res)){
+            $subject = LogsEnumConst::Add . LogsEnumConst::Business . $res->ICE;
+            $logs = new LogActivity();
+            $logs->addToLog($subject, $data);
+        }
+        return $res;
+    }
+    public function business($data)
+    {
+        return $this->iClientRepository->business($data);
     }
     public function storeParticular($data,$par)
     {
-        return $this->iClientRepository->storeParticular($data,$par);
+        $res = $this->iClientRepository->storeParticular($data,$par);
+        if(!is_null($res)){
+            $subject = LogsEnumConst::Add . LogsEnumConst::Particular . $res->name;
+            $logs = new LogActivity();
+            $logs->addToLog($subject, $data);
+        }
+        return $res;
+    }
+    public function newParticular($data)
+    {
+        return $this->iClientRepository->newParticular($data);
     }
     public function store($data)
     {
-        return $this->iClientRepository->store($data);
+        $res =  $this->iClientRepository->store($data);
+        if(!is_null($res)){
+            $subject = LogsEnumConst::Add . LogsEnumConst::Client . $res->name;
+            $logs = new LogActivity();
+            $logs->addToLog($subject, $data);
+        }
+        return $res;
     }
     public function get($id)
     {
@@ -38,8 +64,34 @@ class ClientService implements IClientService
     {
         return $this->iClientRepository->edit($perClient,$data);
     }
-    public function delete($perClient, $id)
+    public function editBusiness($data,$id)
     {
-        return $this->iClientRepository->delete($perClient,$id);
+        $bus =$this->iClientRepository->getBusinessById($data->input('id_mem'));
+        if(!is_null($bus)){
+             $this->iClientRepository->editBusiness($data,$bus);
+             $client = $this->get($id);
+             if(!is_null($client)){
+               $res = $this->edit($client,$data);
+               if(!is_null($res)){
+                $subject = LogsEnumConst::Update . LogsEnumConst::Client . $res->name;
+                $logs = new LogActivity();
+                $logs->addToLog($subject, $data);
+                }
+                return $res;
+            }
+        }
+        return null;
+    }
+    public function delete($request)
+    {
+        $res = $this->iClientRepository->delete($request['id']);
+        if($res === 0 || is_null($res)){
+            return false;
+        }else{
+            $subject = LogsEnumConst::Delete . LogsEnumConst::Client . $request['ICE'];
+            $logs = new LogActivity();
+            $logs->addToLog($subject, $request);
+        }
+        return true;
     }
 }

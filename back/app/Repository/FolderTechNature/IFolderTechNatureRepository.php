@@ -1,11 +1,6 @@
 <?php
-
-
 namespace App\Repository\FolderTechNature;
-
-
 use App\Models\FolderTechNature;
-
 interface IFolderTechNatureRepository
 {
     public function getFolerTechNatureByName($id,$name);

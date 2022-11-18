@@ -13,10 +13,9 @@ class FolderTechRequest extends FormRequest
     public function rules()
     {
         return [
-
-            'aff_sit_id' => ['exists:foldertechsituations,id'],
-            'client_id' => ['exists:clients,id'],
-            'resp_id' => ['exists:users,id'],
+            'aff_sit_id' => ['required', 'integer'],
+            'client_id' => ['required', 'integer'],
+            'resp_id' => ['required', 'integer'],
             'nature_name' => ['exists:folder_tech_natures,Name'],
             'nature_Abr_v_name' => 'string|max:3',
             'PTE_KNOWN' => ['required', 'string', 'max:255'],

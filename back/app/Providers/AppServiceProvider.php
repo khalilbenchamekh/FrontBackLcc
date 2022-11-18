@@ -19,7 +19,7 @@ use App\Repository\Conversation\ConversationRepository;
 use App\Repository\Employee\EmployeeRepository;
 use App\Repository\Employee\IEmployeeRepository;
 use App\Repository\FileLoad\FileLoadRepository;
-use App\Repository\FileLoad\IFileLoadRipository;
+use App\Repository\FileLoad\IFileLoadRepository;
 use App\Repository\Client\IClientRepository;
 use App\Repository\Client\ClientRepository;
 use App\Repository\Fees\FeesRepository;
@@ -78,8 +78,6 @@ use App\Services\FolderTechNature\FolderTechNatureService;
 use App\Services\FolderTechNature\IFolderTechNatureService;
 use App\Services\FolderTechSituation\FolderTechSituationService;
 use App\Services\FolderTechSituation\IFolderTechSituationService;
-use App\Services\ImageService;
-use App\Services\ImageService\IImageService;
 use App\Services\Intermediate\IIntermediateService;
 use App\Services\Intermediate\IntermediateService;
 use App\Services\InvoiceStatus\IInvoiceStatusService;
@@ -92,7 +90,34 @@ use App\Services\SaveFile\ISaveFileService;
 use App\Services\SaveFile\SaveFileService;
 use App\Services\TypesCharge\ITypesChargeService;
 use App\Services\TypesCharge\TypesChargeService;
+use App\Services\User\IUserService;
+use App\Services\User\UserService;
+use App\Repository\User\IUserRepository;
+use App\Repository\User\UserRepository;
 
+use App\Repository\GreatConstructionSites\IGreatConstructionSitesRepository;
+use App\Repository\GreatConstructionSites\GreatConstructionSitesRepository;
+use App\Services\GreatConstructionSites\IGreatConstructionSitesService;
+use App\Services\GreatConstructionSites\GreatConstructionSitesService;
+use App\Repository\File\IFileRepository;
+use App\Repository\File\FileRepository;
+use App\Services\File\FileService;
+use App\Services\File\IFileService;
+
+use App\Repository\Bill\IBillRepository;
+use App\Repository\Bill\BillRepository;
+use App\Services\Bill\IBillService;
+use App\Services\Bill\BillService;
+use App\Services\Mission\MissionService;
+use App\Services\Mission\IMissionService;
+
+use App\Repository\MissionRepository;
+use App\Repository\IMissionRepository;
+
+use App\Services\Admin\AdminResourceService;
+use App\Services\Admin\IAdminResourceService;
+use App\Services\Admin\AdminResourceRepository;
+use App\Services\Admin\IAdminResourceRepository;
 class AppServiceProvider extends ServiceProvider
 {
     /**
@@ -105,9 +130,7 @@ class AppServiceProvider extends ServiceProvider
         Schema::defaultStringLength(191);
         // Services
         $this->app->bind(IOrganisationService::class,OrganisationService::class);
-        $this->app->bind(IImageService::class,ImageService::class);
         $this->app->bind(IAdminService::class,AdminService::class);
-
         $this->app->bind(IAffaireNatureService::class,AffaireNatureService::class);
         $this->app->bind(ILoadService::class,LoadService::class);
         $this->app->bind(ILoadTypesService::class,LoadTypesService::class);
@@ -128,9 +151,13 @@ class AppServiceProvider extends ServiceProvider
         $this->app->bind(IInvoiceStatusService::class,InvoiceStatusService::class);
         $this->app->bind(ITypesChargeService::class,TypesChargeService::class);
         $this->app->bind(IAdminService::class,AdminService::class);
-
-
-
+        $this->app->bind(IUserService::class,UserService::class);
+        $this->app->bind(IGreatConstructionSitesService::class,GreatConstructionSitesService::class);
+        $this->app->bind(IFileService::class,FileService::class);
+        $this->app->bind(IFileService::class,FileService::class);
+        $this->app->bind(IBillService::class,BillService::class);
+        $this->app->bind(IMissionService::class,MissionService::class);
+        $this->app->bind(IAdminResourceService::class,AdminResourceService::class);
 
         //  Repositories
         $this->app->bind(IOrganisationRepository::class,OrganisationRepository::class);
@@ -138,7 +165,7 @@ class AppServiceProvider extends ServiceProvider
         $this->app->bind(IAffaireNatureRepository::class,AffaireNatureRepository::class);
         $this->app->bind(ILoadRepository::class,LoadRepository::class);
         $this->app->bind(ILoadTypesRepository::class,LoadTypesRepository::class);
-        $this->app->bind(IFileLoadRipository::class,FileLoadRepository::class);
+        $this->app->bind(IFileLoadRepository::class,FileLoadRepository::class);
         $this->app->bind(IAffaireSituationRepository::class,AffaireSituationRepository::class);
         $this->app->bind(IEmployeeRepository::class,EmployeeRepository::class);
         $this->app->bind(IRoleRepository::class,RoleRepository::class);
@@ -154,6 +181,12 @@ class AppServiceProvider extends ServiceProvider
         $this->app->bind(IInvoiceStatusRepository::class,InvoiceStatusRepository::class);
         $this->app->bind(ITypesChargeRepository::class,TypesChargeRepository::class);
         $this->app->bind(IAdminRepository::class,AdminRepository::class);
+        $this->app->bind(IUserRepository::class,UserRepository::class);
+        $this->app->bind(IGreatConstructionSitesRepository::class,GreatConstructionSitesRepository::class);
+        $this->app->bind(IFileRepository::class,FileRepository::class);
+        $this->app->bind(IBillRepository::class,BillRepository::class);
+        $this->app->bind(IMissionRepository::class,MissionRepository::class);
+        $this->app->bind(IAdminResourceRepository::class,AdminResourceRepository::class);
 
         if($this->app->environment()==='local'){
             if(isset($_SERVER['REQUEST_METHOD'],$_SERVER['REQUEST_URI'])){

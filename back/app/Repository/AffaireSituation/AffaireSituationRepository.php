@@ -16,7 +16,7 @@ class AffaireSituationRepository implements IAffaireSituationRepository
     private $current_user;
     public function __construct()
     {
-        $this->organisation_id = 1;
+        $this->organisation_id = Auth::user()->organisation_id;
         $this->current_user=Auth::user()->id;
     }
     public function index($request)

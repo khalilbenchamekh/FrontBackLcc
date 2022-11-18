@@ -1,30 +1,27 @@
 <?php
-
 namespace App\Repository\Client;
-
+use App\Models\business;
+use App\Models\Particular;
 use App\Repository\Log\LogTrait;
 use App\Models\Client;
 use Illuminate\Support\Facades\DB;
-
-
-
-
+use Illuminate\Support\Facades\Auth;
 
 class ClientRepository implements IClientRepository
 {
     use LogTrait;
+    private $organisation_id;
     public function __construct()
     {
-
+        $this->organisation_id = Auth::user()->organisation_id;
     }
 
-    public function index($page)
+    public function index($request)
     {
-        $idUser=3;
         try{
             $clients= DB::table('clients')->select("*")
-                    ->where('organisation_id','=',$idUser)
-                    ->paginate(15,$columns = ['*'], $pageName = 'page', $page = $page);
+                    ->where('organisation_id','=',$this->organisation_id)
+                    ->paginate($request['limit'],['*'],'page',$request['page']);
             return $clients;
         }catch(\Exception $exception){
             $this->Log($exception);
@@ -33,10 +30,9 @@ class ClientRepository implements IClientRepository
     }
     public function storeBusiness($data,$bus)
     {
-        $idUser=1;
         try{
             $client = new Client();
-            $client->organisation_id=$idUser;
+            $client->organisation_id=$this->organisation_id;
             $client->name = $data->input('name');
             $client->Street = $data->input('Street');
             $client->Street2 = $data->input('Street2');
@@ -51,12 +47,25 @@ class ClientRepository implements IClientRepository
             return null;
         }
     }
+     public function business($data)
+    {
+        try{
+            $bus = new business();
+            $bus->ICE = $data->input('ICE');
+            $bus->RC = $data->input('RC');
+            $bus->tel = $data->input('tel');
+            $bus->Cour = $data->input('Cour');
+            $bus->save();
+        }catch(\Exception $exception){
+            $this->Log($exception);
+            return null;
+        }
+    }
     public function storeParticular($data,$par)
     {
-        $idUser=1;
         try{
             $client = new Client();
-            $client->organisation_id=$idUser;
+            $client->organisation_id=$this->organisation_id;
             $client->name = $data->input('name');
             $client->Street = $data->input('Street');
             $client->Street2 = $data->input('Street2');
@@ -71,13 +80,42 @@ class ClientRepository implements IClientRepository
             return null;
         }
     }
+    public function newParticular($data)
+    {
+        try{
+            $bus = new Particular();
+            $bus->Function = $data->input('Function');
+            $bus->tel = $data->input('tel');
+            $bus->Cour = $data->input('Cour');
+            $bus->organisation_id=$this->organisation_id;
+            $bus->save();
+            return $bus;
+        }catch(\Exception $exception){
+            $this->Log($exception);
+            return null;
+        }
+    }
+    public function editBusiness($data,$particular)
+    {
+        try{
+            if($particular instanceof  Particular){
+                $particular->Function = $data->input('Function');
+                $particular->tel = $data->input('tel');
+                $particular->Cour = $data->input('Cour');
+                $particular->organisation_id=$this->organisation_id;
+                $particular->update();
+                return $particular;
+            }
+        }catch(\Exception $exception){
+            $this->Log($exception);
+        }
+        return null;
+    }
     public function store($data)
     {
-
-        $idUser=3;
         try {
             $client = new Client();
-            $client->organisation_id=$idUser;
+            $client->organisation_id=$this->organisation_id;
             $client->name = $data->input('name');
             $client->Street = $data->input('Street');
             $client->Street2 = $data->input('Street2');
@@ -95,9 +133,8 @@ class ClientRepository implements IClientRepository
     }
     public function get($id)
     {
-        $idUser=3;
         try {
-            $client =Client::find($id)->where("organisation_id","=",$idUser)->get();
+            $client =Client::find($id)->where("organisation_id","=",$this->organisation_id)->get();
 
             return $client;
         } catch (\Exception $exception) {
@@ -114,9 +151,7 @@ class ClientRepository implements IClientRepository
             $perClient->city = $data->input('city');
             $perClient->ZIP_code = $data->input('ZIP_code');
             $perClient->Country = $data->input('Country');
-
             $perClient->save();
-
             return $perClient;
         } catch (\Exception $exception) {
             $this->Log($exception);
@@ -124,16 +159,33 @@ class ClientRepository implements IClientRepository
         }
 
     }
-    public function delete($perClient, $id)
+    public function delete($id)
     {
         try{
-            $perClient::destroy($id);
-            return $perClient;
+            return Client::where("id","=",$id)
+            ->where("organisation_id",'=',$this->organisation_id)
+            ->destroy();
         }catch(\Exception $exception){
             $this->Log($exception);
             return null;
         }
     }
 
+	/**
+	 *
+	 * @param mixed $data
+	 * @param mixed $particular
+	 *
+	 * @return mixed
+	 */
+	public function getBusinessById($id) {
+        try{
+            return  business::findOrFail("id","=",$id)
+            ->where("organisation_id",'=',$this->organisation_id);
+    }catch(\Exception $exception){
+            $this->Log($exception);
+            return null;
+        }
+	}
 }
 

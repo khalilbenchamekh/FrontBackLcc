@@ -1,8 +1,5 @@
 <?php
-
-
 namespace App\Repository\InvoiceStatus;
-
 use App\Models\InvoiceStatus;
 use App\Repository\Log\LogTrait;
 use Illuminate\Support\Facades\Auth;
@@ -13,7 +10,7 @@ class InvoiceStatusRepository implements IInvoiceStatusRepository
     private $organisation_id;
     public function __construct()
     {
-        $this->organisation_id = 3;
+        $this->organisation_id = Auth::User()->organisation_id;
     }
     public function save($request)
     {
@@ -61,7 +58,6 @@ class InvoiceStatusRepository implements IInvoiceStatusRepository
             //code...
             $intermediate->organisation_id=$this->organisation_id;
             $intermediate->name=$request['name'];
-
             $intermediate->save();
 
             return $intermediate;
@@ -70,12 +66,12 @@ class InvoiceStatusRepository implements IInvoiceStatusRepository
             return null;
         }
     }
-    public function destroy($intermediate)
+    public function destroy($id)
     {
         try {
-            $deleted=$intermediate;
-            $deleted->delete();
-            return $intermediate;
+            return  InvoiceStatus::where("id","=",$id)
+            ->where("organisation_id",'=',$this->organisation_id)
+            ->destroy();
         } catch (\Exception $exception) {
              $this->Log($exception);
              return null;

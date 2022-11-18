@@ -4,7 +4,6 @@ namespace App\Services\TypesCharge;
 
 use App\Helpers\LogActivity;
 use App\Http\Requests\Enums\LogsEnumConst;
-use App\Models\TypesCharge;
 use App\Repository\TypesCharge\ITypesChargeRepository;
 
 class TypesChargeService implements ITypesChargeService
@@ -46,12 +45,16 @@ class TypesChargeService implements ITypesChargeService
         }
         return null;
     }
-    public function destroy($id)
+    public function destroy($request)
     {
-        $typesCharge=$this->show($id);
-        if($typesCharge instanceof TypesCharge){
-            return $this->iTypesChargeRepository->destroy($typesCharge);
+        $res= $this->iTypesChargeRepository->destroy($request['id']);
+        if($res === 0 || is_null($res)){
+            return false;
+        }else{
+            $subject = LogsEnumConst::Delete . LogsEnumConst::Employee . $request['name'];
+            $logs = new LogActivity();
+            $logs->addToLog($subject, $request);
         }
-        return null;
+        return true;
     }
 }

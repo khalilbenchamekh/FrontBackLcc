@@ -10,9 +10,7 @@ use Illuminate\Support\Facades\Hash;
 
 class AdminRepository implements IAdminRepository
 {
-use LogTrait;
-
-
+    use LogTrait;
 
     /**
      * @param $user

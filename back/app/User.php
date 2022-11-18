@@ -6,6 +6,7 @@ use Illuminate\Support\Facades\Cache;
 use App\Models\Chat;
 use App\Models\Load;
 use App\Models\Message;
+use App\Models\Mission;
 use App\Models\Participant;
 use Illuminate\Database\Eloquent\Relations\HasMany;
 use Illuminate\Database\Eloquent\SoftDeletes;
@@ -22,8 +23,6 @@ class User extends Authenticatable implements JWTSubject
         SoftDeletes::restore insteadof EntrustUserTrait;
         EntrustUserTrait::restore insteadof SoftDeletes;
     }
-    
-
 
     public function membership()
     {
@@ -35,11 +34,6 @@ class User extends Authenticatable implements JWTSubject
         return $this->hasOne(Organisation::class);
     }
 
-    public function chats()
-    {
-        return $this->belongsToMany(Chat::class);
-    }
-
     public function getHasEmployeeProfileAttribute()
     {
         return $this->membership_type == 'App\Models\Employee';
@@ -47,8 +41,11 @@ class User extends Authenticatable implements JWTSubject
 
     public function loads()
     {
-
         return $this->hasMany(Load::class);
+    }
+     public function missions()
+    {
+        return $this->hasMany(Mission::class);
     }
 
     /**

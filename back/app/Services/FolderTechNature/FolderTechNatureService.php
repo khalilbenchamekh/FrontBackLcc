@@ -16,14 +16,7 @@ class FolderTechNatureService implements IFolderTechNatureService
     {
         $this->iFolderTechNatureRepository =$iFolderTechNatureRepository;
     }
-    private function checkByName($id,$name):bool
-    {
-        $folderTechNature= $this->iFolderTechNatureRepository->getFolerTechNatureByName($id,$name);
-        if($folderTechNature instanceof FolderTechNature){
-            return true;
-        }
-        return false;
-    }
+
     public function storeMany(Request $request)
     {
             $data=$request->all();
@@ -31,11 +24,15 @@ class FolderTechNatureService implements IFolderTechNatureService
             $folderTechNature_records = [];
             foreach($folderTechNatures as $folderTechNature)
             {
-
                 if(! empty($folderTechNature))
                 {
-                    $affairenature=$this->iFolderTechNatureRepository->save($folderTechNature);
-                    $folderTechNature_records[] = $affairenature;
+                    $res=$this->iFolderTechNatureRepository->save($folderTechNature);
+                    if(!is_null($res)){
+                        $subject = LogsEnumConst::Add . LogsEnumConst::FolderTechNature . $res->Abr_v;
+                        $logs = new LogActivity();
+                        $logs->addToLog($subject, $request);
+                        $folderTechNature_records[] = $res;
+                    }
                 }
             }
             return $folderTechNature_records;
@@ -47,7 +44,7 @@ class FolderTechNatureService implements IFolderTechNatureService
         $abr_v=empty($abr_v) ? substr($name,0,3) : $abr_v;
         $folderTechNature=$this->iFolderTechNatureRepository->save($request->all());
         if(!is_null($folderTechNature)){
-            $subject = LogsEnumConst::Add . LogsEnumConst::FolderTechNature . $name;
+            $subject = LogsEnumConst::Add . LogsEnumConst::FolderTechNature . $abr_v;
             $logs = new LogActivity();
             $logs->addToLog($subject, $request);
             return $folderTechNature;
@@ -63,9 +60,8 @@ class FolderTechNatureService implements IFolderTechNatureService
         return $this->iFolderTechNatureRepository->show($id);
     }
     public function update($id,$request)
-    {$isExest=$this->checkByName($id,$request->input('Name'));
-
-        if($isExest === false){
+    {
+        $folderTechNature= $this->iFolderTechNatureRepository->getFolerTechNatureByName($id,$request->input('Name'));
             $folderTechNature=$this->show($id);
             if($folderTechNature instanceof FolderTechNature){
                 $name= $request->input('Name');
@@ -79,13 +75,18 @@ class FolderTechNatureService implements IFolderTechNatureService
                     return $folderTechNature;
                 }
             }
-        }elseif($isExest === true){
-            return true;
-        }
         return null;
     }
-    public function destroy($id)
+    public function destroy($request)
     {
-        return $this->iFolderTechNatureRepository->destroy($id);
+        $res = $this->iFolderTechNatureRepository->destroy($request['id']);
+        if($res === 0 || is_null($res)){
+            return false;
+        }else{
+            $subject = LogsEnumConst::Delete . LogsEnumConst::FolderTechNature . $request['Abr_v'];
+            $logs = new LogActivity();
+            $logs->addToLog($subject, $request);
+        }
+        return true;
     }
 }

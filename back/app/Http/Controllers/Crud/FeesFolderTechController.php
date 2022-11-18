@@ -1,7 +1,7 @@
 <?php
 namespace App\Http\Controllers\Crud;
-
 use App\Http\Controllers\Controller;
+use App\Http\Requests\Auth\PaginationRequest;
 use App\Http\Requests\Crud\FeesFolderTechRequest;
 use App\Models\FeesFolderTech;
 use App\Response\FeesFolderTech\FeesFolderTechResponse;
@@ -20,28 +20,21 @@ class FeesFolderTechController extends Controller
         $this->iFeesFolderTechService=$iFeesFolderTechService;
     }
 
-    public function index(Request $request)
+    public function index(PaginationRequest $request)
     {
-        $validator = Validator::make($request->all(), [
-            "limit"=>'required|integer',
-            "page"=>'required|integer'
-        ]);
-        if ($validator->fails()) {
-            return response($validator->errors(), Response::HTTP_BAD_REQUEST);
-        }
         $feesfolderteches = $this->iFeesFolderTechService->index($request->all());
-
        if($feesfolderteches instanceof LengthAwarePaginator){
             $response=FeesFolderTechsResponse::make($feesfolderteches);
             return response()->json([
-                'feesfolderteche'=>$response->items(),
-                'total'=>$feesfolderteches->total(),
-                'lastPage'=>$feesfolderteches->lastPage(),
-                'currentPage'=>$feesfolderteches->currentPage(),
+                "data"=>$response,
+                'countPage'=>$response->perPage(),
+                "currentPage"=>$response->currentPage(),
+                "nextPage"=>$response->currentPage()<$response->lastPage()?$response->currentPage()+1:$response->currentPage(),
+                "lastPage"=>$response->lastPage(),
+                'total'=>$response->total(),
             ],Response::HTTP_OK);
-        }else{
-
         }
+         return response()->json(['error'=>"Bad Request"],Response::HTTP_BAD_REQUEST);
     }
 
     public function store (Request $request)
@@ -56,29 +49,25 @@ class FeesFolderTechController extends Controller
             return response($validator->errors(), Response::HTTP_BAD_REQUEST);
         }
         $feesfoldertech = $this->iFeesFolderTechService->save($request);
-
-        if($feesfoldertech instanceof FeesFolderTech){
+        if(!is_null($feesfoldertech) ){
             $response=FeesFolderTechResponse::make($feesfoldertech);
             return response()->json([
-                'feesfolderteche'=>$response
+                'data'=>$response
             ],Response::HTTP_CREATED);
-        }else{
-            return response()->json(['error'=>"Bad Request"],Response::HTTP_BAD_REQUEST);
         }
-
+        return response()->json(['error'=>"Bad Request"],Response::HTTP_BAD_REQUEST);
     }
 
     public function show($id)
     {
         $feesfoldertech = $this->iFeesFolderTechService->show($id);
-        if($feesfoldertech instanceof FeesFolderTech){
+        if(!is_null($feesfoldertech) ){
             $response=FeesFolderTechResponse::make($feesfoldertech);
             return response()->json([
-                'feesfolderteche'=>$response
+                'data'=>$response
             ],Response::HTTP_OK);
-        }else{
-            return response()->json(['error'=>"Bad Request"],Response::HTTP_BAD_REQUEST);
         }
+        return response()->json(['error'=>"Bad Request"],Response::HTTP_BAD_REQUEST);
     }
 
     public function update(FeesFolderTechRequest $request, $id)
@@ -94,28 +83,27 @@ class FeesFolderTechController extends Controller
         }
 
         $feesfoldertech = $this->iFeesFolderTechService->update($request,$id);
-
-       if($feesfoldertech instanceof FeesFolderTech){
+        if(!is_null($feesfoldertech) ){
             $response=FeesFolderTechResponse::make($feesfoldertech);
             return response()->json([
-                'feesfolderteche'=>$response
+                'data'=>$response
             ],Response::HTTP_OK);
-        }else{
-            return response()->json(['error'=>"Bad Request"],Response::HTTP_BAD_REQUEST);
         }
+         return response()->json(['error'=>"Bad Request"],Response::HTTP_BAD_REQUEST);
     }
 
-    public function destroy($id)
+    public function destroy(Request $request)
     {
-        $feesfoldertech = $this->iFeesFolderTechService->destroy($id);
-
-        if($feesfoldertech instanceof FeesFolderTech){
-             $response=FeesFolderTechResponse::make($feesfoldertech);
-             return response()->json([
-                 'feesfolderteche'=>$response
-             ],Response::HTTP_OK);
-         }else{
-             return response()->json(['error'=>"Bad Request"],Response::HTTP_BAD_REQUEST);
-         }
+        $validator = Validator::make($request->all(),[
+            "id"=>["required","integer"],
+        ]);
+            if($validator->fails()){
+                return response()->json(["error"=>$validator->errors()],Response::HTTP_BAD_REQUEST);
+            }
+            $res=$this->iFeesFolderTechService->destroy($request);
+            if(!is_null($res) ){
+                return response()->json(['data' => $res], Response::HTTP_NO_CONTENT);
+           }
+           return response()->json(['error'=>"Bad Request"],Response::HTTP_BAD_REQUEST);
     }
 }

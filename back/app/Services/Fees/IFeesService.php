@@ -14,5 +14,7 @@ interface IFeesService
     public function destroy();
     public function getBusinessFees($request);
     public function getFolderTechFees($request);
+    public function updateFolderTechFees($request,$index);
+    public function saveGreatConstructionSitesFees($request,$id= null);
 }
 

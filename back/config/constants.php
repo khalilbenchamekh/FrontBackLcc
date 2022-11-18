@@ -7,6 +7,6 @@
  */
 return [
     'CornDayAtt' => '11:00',
-    'fileSystemPath' =>"public/geoMapping",
+    'fileSystemPath' =>"public",
     "localeFileManger"=>"http://localhost:3000/fileManager"
 ];

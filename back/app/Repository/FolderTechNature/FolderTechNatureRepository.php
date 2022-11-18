@@ -14,7 +14,7 @@ class FolderTechNatureRepository implements IFolderTechNatureRepository
     private $organisation_id;
     public function __construct()
     {
-        $this->organisation_id = 3;
+        $this->organisation_id = Auth::User()->organisation_id;
     }
 
     public function getFolerTechNatureByName($id,$name)
@@ -41,14 +41,12 @@ class FolderTechNatureRepository implements IFolderTechNatureRepository
             $folderTechNature->Name=$name;
             $folderTechNature->Abr_v=$abr_v;
             $folderTechNature->organisation_id=$this->organisation_id;
-
-             $folderTechNature->save();
+            $folderTechNature->save();
             return $folderTechNature;
         } catch (\Exception $exception) {
             $this->Log($exception);
             return null;
         }
-
     }
     public function index($request)
     {
@@ -96,14 +94,9 @@ class FolderTechNatureRepository implements IFolderTechNatureRepository
     public function destroy($id)
     {
         try {
-            //code...
-            $folderTechNature= $this->show($id);
-            $deleted=$folderTechNature;
-            if($folderTechNature instanceof FolderTechNature){
-                 $deleted->delete();
-                 return $folderTechNature;
-            }
-            return null;
+            return FolderTechNature::where("id","=",$id)
+                ->where("organisation_id",'=',$this->organisation_id)
+                ->destroy();
 
         } catch (\Exception $exception) {
             $this->Log($exception);

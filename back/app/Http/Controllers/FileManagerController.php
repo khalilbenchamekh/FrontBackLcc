@@ -12,6 +12,7 @@ use Illuminate\Support\Facades\File;
 use Illuminate\Support\Facades\Storage;
 use Illuminate\Support\Facades\Validator;
 use Tymon\JWTAuth\Facades\JWTAuth;
+use Illuminate\Http\Response;
 
 /**
  * Class FileManagerController
@@ -24,8 +25,8 @@ class FileManagerController extends BaseController
     private $iOrganisationService;
     public function __construct(IOrganisationService $iOrganisationService)
     {
-        $this->const = Config::get('constants.fileSystemPath');
         $this->iOrganisationService =$iOrganisationService;
+        $this->const = $this->iOrganisationService->getMyOrganisation()->name;
     }
 
     public function downloadFunc(Request $request)
@@ -35,8 +36,7 @@ class FileManagerController extends BaseController
         $request = request();
         $token = $request->bearerToken();
         $names = $request->input('names');
-        $selectedItems = $request->input('selectedItems');
-        $const = Config::get('constants.fileSystemPath');
+
         $user = JWTAuth::user();
         if ($user) {
             if (!empty($names)) {
@@ -47,25 +47,10 @@ class FileManagerController extends BaseController
                     abort(404);
                 }
                 $mimeType = File::mimeType($temp);
-                if ($mimeType != 'directory') {
-
-
-//                    $response = Response::make($file, 200);
-//                    $response->header('Content-Type' , $mimeType);
-//                    $response->header('Authorization', 'Bearer ' . $token);
-//                    $response->header('Content-Disposition', 'attachment ');
-//                    $response->header('filename', '{$name} ');
-//                    return $response;
-                    return response()->download($temp, $name);
-
-                } else {
-                    return response(null);
-                }
-            } else {
-                return response(null);
+                if ($mimeType != 'directory') return response()->download($temp, $name);
             }
-
         }
+        return response(null);
     }
 
     private function generateTempPaht($const)
@@ -76,17 +61,16 @@ class FileManagerController extends BaseController
 
     private function makeCorrectPath($path = '/')
     {
-        $organistionName = $this->iOrganisationService->getMyOrganisation()->name;
         if ($path == '/') {
-            $path = $organistionName;
+            $path = $$this->const;
         }
-        if ($path == $organistionName) {
-            $temp = $this->generateTempPaht($organistionName);
+        if ($path == $$this->const) {
+            $temp = $this->generateTempPaht($$this->const);
             if (!File::isDirectory($temp)) {
                 File::makeDirectory($temp, 0777, true, true);
             }
         } else {
-            $path = $organistionName . $path;
+            $path = $$this->const . $path;
         }
         return $path;
     }
@@ -109,6 +93,7 @@ class FileManagerController extends BaseController
             '*.uploadFiles.*' => 'mimes:jpeg,png,gif,svg,doc,pdf,docx,zip',
             'uploadFiles.*' => 'mimes:jpeg,png,gif,svg,doc,pdf,docx,zip',
         ]);
+        
         if ($validator->fails()) {
             return response($validator->errors(), 400);
         }
@@ -249,7 +234,6 @@ class FileManagerController extends BaseController
             case 'getImage':
                 $selectedItems = $request->input('SelectedItems');
                 return response()->download($this->download($path, null, $selectedItems, true));
-                break;
             default:
                 break;
         }
@@ -333,21 +317,6 @@ class FileManagerController extends BaseController
     private function upload($path, $fileUpload, $selectedItems = [])
 
     {
-
-//        foreach ($fileUpload as $file) {
-//            $filenameWithExt = $file->getClientOriginalName();
-//            $filename = pathinfo($filenameWithExt, PATHINFO_FILENAME);
-//            $extension = $file->getClientOriginalExtension();
-//            $fileNameToStore = md5($filename . time()) . '.' . $extension;
-//            array_push($files, [
-//                "fileName" => $fileNameToStore
-//            ]);
-//
-//
-//            $path = storage_path() . '/' . $path;
-//            $file->move($path, $fileNameToStore);
-//        }
-
         Storage::disk($this->const)->putFileAs($path, $fileUpload, $fileUpload->getClientOriginalName());
     }
 

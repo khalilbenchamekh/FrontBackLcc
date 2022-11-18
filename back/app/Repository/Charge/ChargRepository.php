@@ -1,8 +1,5 @@
 <?php
-
-
 namespace App\Repository\Charge;
-
 use App\Helpers\LogActivity;
 use App\Http\Requests\Enums\LogsEnumConst;
 use App\Models\Charges;
@@ -18,7 +15,7 @@ class ChargeRpository implements IChargeRpository
     private $organisation_id;
     public function __construct()
     {
-        $this->organisation_id=Auth::user()->organisation;
+        $this->organisation_id = Auth::user()->organisation_id;
     }
 
     public function index($request)

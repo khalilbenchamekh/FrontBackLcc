@@ -50,12 +50,16 @@ class IntermediateService implements IIntermediateService
         return null;
 
     }
-    public function destroy($id)
+    public function destroy($request)
     {
-        $intermediate=$this->show($id);
-        if($intermediate instanceof Intermediate){
-            return $this->iIntermediateRepository->destroy($intermediate);
+        $res= $this->iIntermediateRepository->destroy($request['id']);
+        if($res === 0 || is_null($res)){
+            return false;
+        }else{
+            $subject = LogsEnumConst::Delete . LogsEnumConst::Intermediate . $request['Name'];
+            $logs = new LogActivity();
+            $logs->addToLog($subject, $request);
         }
-        return null;
+        return true;
     }
 }

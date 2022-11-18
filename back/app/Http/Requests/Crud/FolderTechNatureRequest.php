@@ -13,7 +13,7 @@ class FolderTechNatureRequest extends FormRequest
     public function rules()
     {
         return [
-            'Name' => ['required','string','min:4','max:255','distinct','unique:App\Models\FolderTechNature'],
+            'Name' => ['required','string','min:4','max:255'],
             'Abr_v' => ['string','max:3'],
         ];
     }

@@ -3,16 +3,11 @@
 namespace App\Http\Controllers\Resource;
 
 use App\Http\Controllers\Controller;
-use App\Http\Requests\Admin\AdminDashBoardRequest;
-use App\Http\Requests\Enums\AbrvDate;
-use App\Http\Requests\Enums\RangeDateChoice;
-
 use App\Http\Requests\Enums\TableChoice;
 use App\Http\Resources\GetFess;
 use App\Models\Affaire;
 use App\Models\AffaireNature;
 use App\Models\AffaireSituation;
-use App\Models\business;
 use App\Models\BusinessManagement;
 use App\Models\Client;
 use App\Models\FolderTech;
@@ -21,15 +16,10 @@ use App\Models\FolderTechSituation;
 use App\Models\GreatConstructionSites;
 use App\Models\Intermediate;
 use App\Models\LoadTypes;
-use App\Models\Location;
 use App\Models\Notification;
-use App\Models\Permission;
-use App\Models\Role;
-use App\Models\Route;
 use App\User;
 use Carbon\Carbon;
 use Illuminate\Http\Request;
-use App\Helpers\LogActivity;
 use Illuminate\Support\Facades\Cache;
 use Illuminate\Support\Facades\DB;
 use Illuminate\Support\Facades\Validator;
@@ -102,22 +92,6 @@ class ResourceController extends Controller
 
     public function getIntermediate()
     {
-//        $validator = Validator::make($request->all(), [
-//            'key' => 'required|string|max:255',
-//        ]);
-//
-//        if ($validator->fails()) {
-//            return response($validator->errors(), 400);
-//        }
-//        $inter = Intermediate::where('name', 'like', '%' . $request->input('key') . '%')
-//            ->orWhere('second_name', 'like', '%' . $request->input('key') . '%')
-//            ->orWhere('Function', 'like', '%' . $request->input('key') . '%')
-//            ->orWhere('tel', 'like', '%' . $request->input('key') . '%')
-//            ->get([
-//                DB::raw('name as value'),
-//                DB::raw(' id'),
-//            ]);
-//        return response()->json($inter);
         $inter = Intermediate::latest()->get();
         return response(['data' => $inter], 200);
     }
@@ -130,144 +104,33 @@ class ResourceController extends Controller
 
     public function getBusinessSituation()
     {
-//        $validator = Validator::make($request->all(), [
-//            'key' => 'required|string|max:255',
-//        ]);
-//
-//        if ($validator->fails()) {
-//            return response($validator->errors(), 400);
-//        }
-//        $inter = AffaireSituation::where('Name', 'like', '%' . $request->input('key') . '%')
-//            ->orWhere('orderChr', 'like', '%' . $request->input('key') . '%')
-//            ->get([
-//                DB::raw('Name as value'),
-//                DB::raw('id'),
-//
-//            ]);
-//        return response()->json($inter);
         $bus = AffaireSituation::latest()
             ->select()
             ->get();
         return response(['data' => $bus], 200);
     }
 
-//    public function getClientAutocomplete(Request $request)
-//    {
-//        $validator = Validator::make($request->all(), [
-//            'key' => 'required|string|max:255',
-//        ]);
-//
-//        if ($validator->fails()) {
-//            return response($validator->errors(), 400);
-//        }
-//        $client =
-//            DB::table('clients as cl')
-//                ->join('businesses as bu', function ($join) {
-//                    $join->on('bu.id', '=', 'cl.membership_id')->where('cl.membership_type', '=', 'App\Models\business');
-//                })
-//                ->where('cl.name', 'like', '%' . $request->input('key') . '%')
-//                ->orWhere('bu.ICE', 'like', '%' . $request->input('key') . '%')
-//                ->orWhere('bu.RC', 'like', '%' . $request->input('key') . '%')
-//                ->get([
-//                    DB::raw('cl.name as value'),
-//                    DB::raw('cl.id'),
-//
-//                ]);
-//        return response()->json($client);
-//
-//    }
-
-//    public function geResp(Request $request)
-//    {
-//        $validator = Validator::make($request->all(), [
-//            'key' => 'required|string|max:255',
-//        ]);
-//
-//        if ($validator->fails()) {
-//            return response($validator->errors(), 400);
-//        }
-//        $client =
-//            DB::table('employees as emp')
-//                ->join('users as uti', function ($join) {
-//                    $join->on('emp.id', '=', 'uti.membership_id')->where('uti.membership_type', '=', 'App\Models\Employee');
-//                })
-//                ->where('emp.personal_number', 'like', '%' . $request->input('key') . '%')
-//                ->orWhere('emp.profession_number', 'like', '%' . $request->input('key') . '%')
-//                ->orWhere('uti.name', 'like', '%' . $request->input('key') . '%')
-//                ->orWhere('uti.username', 'like', '%' . $request->input('key') . '%')
-//                ->orWhere('uti.email', 'like', '%' . $request->input('key') . '%')
-//                ->orWhere('uti.firstname', 'like', '%' . $request->input('key') . '%')
-//                ->orWhere('uti.middlename', 'like', '%' . $request->input('key') . '%')
-//                ->orWhere('uti.lastname', 'like', '%' . $request->input('key') . '%')
-//                ->get([
-//                    DB::raw('uti.name as value'),
-//                    DB::raw('uti.id'),
-//                ]);
-//        return response()->json($client);
-//
-//    }
 
     public function geFolderTechSituation()
     {
-//        $validator = Validator::make($request->all(), [
-//            'key' => 'required|string|max:255',
-//        ]);
-//
-//        if ($validator->fails()) {
-//            return response($validator->errors(), 400);
-//        }
-//        $inter = FolderTechSituation::where('Name', 'like', '%' . $request->input('key') . '%')
-//            ->orWhere('orderChr', 'like', '%' . $request->input('key') . '%')
-//            ->get([
-//                DB::raw('Name as value'),
-//                DB::raw('id'),
-//
-//            ]);
         $bus = FolderTechSituation::latest()->get();
         return response(['data' => $bus], 200);
     }
 
     public function getNatureBusinessName()
     {
-//        $validator = Validator::make($request->all(), [
-//            'key' => 'required|string|max:255',
-//        ]);
-//        if ($validator->fails()) {
-//            return response($validator->errors(), 400);
-//        }
-//        $inter = AffaireNature::where('Name', 'like', '%' . $request->input('key') . '%')
-//            ->orWhere('Abr_v', 'like', '%' . $request->input('key') . '%')
-//            ->get([
-//                DB::raw('Name as value'),
-//                DB::raw('id'),
-//            ]);
-//        return response()->json($inter);
         $bus = AffaireNature::latest()->get();
         return response(['data' => $bus], 200);
     }
 
     public function getFolderTechName()
     {
-//        $validator = Validator::make($request->all(), [
-//            'key' => 'required|string|max:255',
-//        ]);
-//        if ($validator->fails()) {
-//            return response($validator->errors(), 400);
-//        }
-//        $inter = FolderTechNature::where('Name', 'like', '%' . $request->input('key') . '%')
-//            ->orWhere('Abr_v', 'like', '%' . $request->input('key') . '%')
-//            ->get([
-//                DB::raw('Name as value'),
-//                DB::raw('id'),
-//            ]);
-//        return response()->json($inter);
         $bus = FolderTechNature::latest()->get();
         return response(['data' => $bus], 200);
     }
 
     public function getLocations()
     {
-//        $locations =BusinessManagement::where([['longitude','!=',null],['latitude','=', null]])->select(
         $locations = BusinessManagement::
         where('longitude', '!=', 'null')
             ->where(function ($query) {

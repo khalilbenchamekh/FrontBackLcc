@@ -1,11 +1,6 @@
 <?php
-
-
-
 namespace App\Repository\FeesFolderTech;
-
 use App\Models\FeesFolderTech;
-
 interface IFeesFolderTechRepository
 {
     public function save($request);

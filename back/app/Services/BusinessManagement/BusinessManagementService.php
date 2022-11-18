@@ -18,9 +18,9 @@ class BusinessManagementService  implements IBusinessManagementService
     {
         return $this->iBusinessManagementRespositry->index($request);
     }
-    public function store($data)
+    public function store($data,$affaire = null)
     {
-        $res=$this->iBusinessManagementRespositry->store($data);
+        $res=$this->iBusinessManagementRespositry->store($data,$affaire);
         if(!is_null($res)){
             $subject = LogsEnumConst::Add . LogsEnumConst::BusinessManagement . $data['id'];
             $logs = new LogActivity();
@@ -36,10 +36,13 @@ class BusinessManagementService  implements IBusinessManagementService
     {
         $perElem=$this->get($id);
         if($perElem){
-            $subject = LogsEnumConst::Update . LogsEnumConst::BusinessManagement . $data['id'];
-            $logs = new LogActivity();
-            $logs->addToLog($subject, $data);
-            return $this->iBusinessManagementRespositry->update($perElem,$data);
+            $res = $this->iBusinessManagementRespositry->update($perElem,$data);
+            if(!is_null($res)){
+                $subject = LogsEnumConst::Update . LogsEnumConst::BusinessManagement . $data['id'];
+                $logs = new LogActivity();
+                $logs->addToLog($subject, $data);
+            }
+            return $res;
         }
         return null;
     }

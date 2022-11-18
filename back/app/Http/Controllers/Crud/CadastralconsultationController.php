@@ -79,7 +79,6 @@ class CadastralconsultationController extends Controller
     public function show($id)
     {
         $cadastralconsultation = Cadastralconsultation::findOrFail($id);
-
         return response(['data', $cadastralconsultation], 200);
     }
 

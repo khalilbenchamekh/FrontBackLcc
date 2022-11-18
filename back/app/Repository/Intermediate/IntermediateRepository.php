@@ -1,20 +1,15 @@
 <?php
-
-
 namespace App\Repository\Intermediate;
-
 use App\Models\Intermediate;
-
 use App\Repository\Log\LogTrait;
 use Illuminate\Support\Facades\Auth;
-
 class IntermediateRepository implements IIntermediateRepository
 {
     use LogTrait;
     private $organisation_id;
     public function __construct()
     {
-        $this->organisation_id = 3;
+        $this->organisation_id = Auth::User()->organisation_id;
     }
     public function save($request)
     {
@@ -92,12 +87,12 @@ class IntermediateRepository implements IIntermediateRepository
             return null;
         }
     }
-    public function destroy($intermediate)
+    public function destroy($id)
     {
         try {
-           $deleted=$intermediate;
-           $deleted->delete();
-           return $intermediate;
+            return  Intermediate::where("id","=",$id)
+            ->where("organisation_id",'=',$this->organisation_id)
+            ->destroy();
         } catch (\Exception $exception) {
             $this->Log($exception);
             return null;

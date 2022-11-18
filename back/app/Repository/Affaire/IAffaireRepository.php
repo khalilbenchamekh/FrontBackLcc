@@ -1,9 +1,6 @@
 <?php
-
 namespace App\Repository\Affaire;
-
 use App\Models\Affaire;
-
 interface IAffaireRepository
 {
     public function save($request);
@@ -14,4 +11,3 @@ interface IAffaireRepository
     public function getAffaireBy(array $conditions);
     public function getBusiness($request);
 }
-

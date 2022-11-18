@@ -2,48 +2,40 @@
 
 namespace App\Services\Organisation;
 
-use App\Organisation;
-use App\Repository\Organisation\OrganisationRepository;
+use App\Repository\Organisation\IOrganisationRepository;
 use App\Services\Organisation\IOrganisationService;
 use App\Request\OrganisationRequest;
-use App\Services\ImageService;
+use App\Services\SaveFile\ISaveFileService;
 use Illuminate\Support\Facades\Auth;
-
 class OrganisationService implements IOrganisationService
 {
     private $organisationRepo;
     private $organisation_id;
-    public function __construct(OrganisationRepository $organisationRepo)
+    private $iSaveFileService;
+    public function __construct(ISaveFileService $iSaveFileService,IOrganisationRepository $organisationRepo)
     {
         $this->organisationRepo=$organisationRepo;
-        // $this->organisation_id = Auth::User()->organisation_id;
-        $this->organisation_id = 3;
+        $this->iSaveFileService=$iSaveFileService;
+        $this->organisation_id = Auth::User()->organisation_id;
     }
 
-    /**
-     * @param $req
-     * @return \Illuminate\Contracts\Pagination\LengthAwarePaginator|null
-     */
-    public function getAllOrganisation($req): ?\Illuminate\Contracts\Pagination\LengthAwarePaginator
+    public function getAllOrganisation($req)
     {
         if(!isset($req))return  null;
         return  $this->organisationRepo->getAll($req);
     }
 
-    public function getOrganisation($id):?Organisation
+    public function getOrganisation($id)
     {
         return $this->organisationRepo->getById($id);
     }
 
-    public function getMyOrganisation():Organisation
+    public function getMyOrganisation()
     {
         return $this->organisationRepo->getById($this->organisation_id);
     }
-    /**
-     * @param $request
-     * @return Organisation|null
-     */
-    public function storeOrganisation($request,$cto): ?Organisation
+
+    public function storeOrganisation($request,$cto)
     {
         $req= OrganisationRequest::newRequest($request);
         $org= $this->organisationRepo->store($req,$cto);
@@ -52,150 +44,110 @@ class OrganisationService implements IOrganisationService
     public function editOrganisation($id,$request)
     {
         $req= OrganisationRequest::newRequest($request);
-
-        $isExist=$this->checkEmailOraganisation($id,$req['emailOrganisation']);
-        if($isExist instanceof Organisation){
-                return false;
-        }else{
+        $res=$this->checkEmailOraganisation($id,$req['emailOrganisation']);
+        if(!is_null($res)) {
             $org=$this->getOrganisation($id);
-            if($org instanceof Organisation){
-                $from=$org->name;
-                $newOrga= $this->organisationRepo->edit($org,$req);
-                if($newOrga instanceof Organisation){
-                    $to=$newOrga->name;
-                    $this->renameFileOrganisation($from,$to);
-                    return $newOrga;
-                }
-            }else{
-                return  null;
-            }
+            if (!is_null($org)) {
+               $from=$org->name;
+               $newOrga= $this->organisationRepo->edit($org,$req);
+               if (!is_null($newOrga)) {
+                   $to=$newOrga->name;
+                   $this->renameFileOrganisation($from,$to);
+                   return $newOrga;
+               }
+           }
         }
+        return  null;
     }
     public function checkEmailOraganisation($id,$email)
     {
-        $isExist= $this->organisationRepo->checkEmail($id,$email);
-        if($isExist instanceof Organisation){
-            return $isExist;
-        }else{
-            return null;
-        }
+        return $this->organisationRepo->checkEmail($id,$email);
     }
     public function deleteOrganisation($id)
     {
         $org= $this->getOrganisation($id);
-        if(!($org instanceof Organisation)) return null;
-        $deletedOrg= $this->organisationRepo->delete($org);
-        if($deletedOrg instanceof Organisation){
-            return  $deletedOrg;
-        }else{
-            return null;
-        }
+        if(is_null($org)) return null;
+        return $this->organisationRepo->delete($org);
     }
     public function enableOrganisation($id)
     {
         $org= $this->getOrganisation($id);
-        if($org instanceof Organisation){
+         if (!is_null($org)) {
             return $this->organisationRepo->enable($org);
-        }else{
-            return  null;
         }
+        return  null;
     }
     public function disableOrganisation($id)
     {
         $org= $this->getOrganisation($id);
-        if($org instanceof Organisation){
+         if (!is_null($org)) {
                 return $this->organisationRepo->disable($org);
-
-        }else{
-            return  null;
         }
+            return  null;
     }
     public function blockedOrganisation($id)
     {
         $org=$this->getOrganisation($id);
-        if($org instanceof Organisation){
+         if (!is_null($org)) {
             if($org->blocked==0 || $org->blocked===false || $org->blocked===null){
-
                 return $this->organisationRepo->block($org,1);
             }else{
                 return $this->organisationRepo->block($org,0);
             }
-        }else{
-            return  null;
         }
+        return  null;
     }
     public function saveImageOrganisation($id,$request,$base64=false)
     {
             $org = $this->getOrganisation($id);
-            if ($org instanceof Organisation) {
-                $store = new ImageService();
-                $filesArray = [
-                    'geoMapping',
-                    'geoMapping/organisation/' . $org->name,
-                ];
-                if($base64===false){
-                    $fileName = $store->store_image($filesArray, $request, "/" . $filesArray[1],$org->file_avatar_name);
-                    if (isset($fileName)) {
-                        $org = $this->organisationRepo->saveImage($org, $fileName);
-                        if ($org instanceof Organisation) {
-                            return $org;
-                        } else {
-                            return null;
-                        }
-                    } else {
-                        return null;
-                    }
-                }
-                if ($base64 ===true){
-                    $fileName = $store->store_image_if_is_it_base64($filesArray, $request, "/" . $filesArray[1],$org->file_avatar_name);
-                    if (isset($fileName)) {
-                        $org = $this->organisationRepo->saveImage($org, $fileName);
-                        if ($org instanceof Organisation) {
-                            return $org;
-                        } else {
-                            return null;
-                        }
-                    } else {
-                        return null;
-                    }
-                }else{
-                    return null;
-                }
-
+            if (!is_null($org)) {
+                $fileName =$base64===false ?  $this->iSaveFileService->store_image($org->name, $request,$org->file_avatar_name):
+                 $this->iSaveFileService->store_image_if_is_it_base64($org->name, $request,$org->file_avatar_name);
+                 $res = $this->organisationRepo->saveImage($org, $fileName);
+                 if (!is_null($res)) {
+                     return $res;
+                 }
             }
+            return null;
     }
     public function deleteImageOrganisation($id)
     {
         $org=$this->getOrganisation($id);
-        if($org instanceof  Organisation){
-            $store= new ImageService();
-            $filesArray = [
-                'geoMapping',
-                'geoMapping/organisation/' . $org->name,
-            ];
-            $store->deleteFile($filesArray[1],$org->file_avatar_name);
-                $org= $this->organisationRepo->deleteImage($org);
-                if($org instanceof  Organisation){
-                    return $org;
-                }else{
-                    return  null;
+        if (!is_null($org)) {
+                $this->iSaveFileService->deleteFile($org->name);
+                $res= $this->organisationRepo->deleteImage($org);
+                if (!is_null($res)) {
+                    return $res;
                 }
         }
+        return null;
     }
-    public function getImageOrganisation($id)
+    public function getImageOrganisation($id=null)
     {
+        $id = is_null($id) ? $this->organisation_id : $id;
         $org= $this->getOrganisation($id);
-        $path = 'geoMapping/organisation/' . $org->name;
-        if($org instanceof  Organisation && $org->file_avatar_name != null){
-            $image = new ImageService();
-            return $image->fetchImage($path,$org->file_avatar_name);
+        if(!is_null($org)){
+            $defaultImage= $org->file_avatar_name != null ? $org->file_avatar_name  : "Default.jpg";
+            return $this->iSaveFileService->fetchImage($org->name,$defaultImage);
         }
-        $defaultImage="Default.jpg";
-        $path='geoMapping/organisation';
-        if($org instanceof  Organisation && $org->file_avatar_name === null){
-            $image = new ImageService();
-            return $image->fetchImage($path,$defaultImage);
+        return null;
+    }
+    public function getOrganisationWithSupInfo($id=null)
+    {
+        $id = is_null($id) ? $this->organisation_id : $id;
+        $org= $this->getOrganisation($id);
+        if(!is_null($org)){
+            $defaultImage= $org->file_avatar_name != null ? $org->file_avatar_name  : "Default.jpg";
+            $iamgeOrganisation = $this->iSaveFileService->fetchImage($org->name,$defaultImage);
+            $resArray=[
+                'org' => $org,
+                'iamgeOrganisation' => $iamgeOrganisation,
+            ];
+
+            return $resArray;
         }
+
+        return null;
     }
     public function getOrganisationByCto($id)
     {
@@ -205,12 +157,11 @@ class OrganisationService implements IOrganisationService
     public function getAllUserOrganisation($id,$req)
     {
         $organisation=$this->getOrganisation($id);
-        if($organisation instanceof Organisation){
+        if (!is_null($organisation)) {
             $usersOrganisation=$this->organisationRepo->getAllUserOrganisation($organisation,$req);
             return $usersOrganisation;
-        }else{
-            return null;
         }
+        return null;
     }
 
     public function renameFileOrganisation($from ,$to){

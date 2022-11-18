@@ -2,10 +2,9 @@
 
 namespace App\Http\Controllers\Crud;
 
-use App\Helpers\LogActivity;
 use App\Http\Controllers\Controller;
+use App\Http\Requests\Auth\PaginationRequest;
 use App\Http\Requests\Crud\TypesChargeRequest;
-use App\Http\Requests\Enums\LogsEnumConst;
 use App\Models\TypesCharge;
 use App\Response\TypesCharge\TypesChargeResponse;
 use App\Response\TypesCharge\TypesChargesResponse;
@@ -19,32 +18,26 @@ class TypesChargeController extends Controller
 {
     private $iTypesChargeService;
     public function __construct(ITypesChargeService $iTypesChargeService)
-    {;
-        // set_time_limit(8000000);
-        // $this->middleware('role:typeCharge_create|owner|admin', ['only' => ['store']]);
-        // $this->middleware('role:typeCharge_edit|owner|admin', ['only' => ['update']]);
-        // $this->middleware('role:typeCharge_read|owner|admin', ['only' => ['index']]);
-        // $this->middleware('role:typeCharge_delete|owner|admin', ['only' => ['destroy']]);
+    {
+         set_time_limit(8000000);
+        $this->middleware('role:typeCharge_create|owner|admin', ['only' => ['store']]);
+        $this->middleware('role:typeCharge_edit|owner|admin', ['only' => ['update']]);
+        $this->middleware('role:typeCharge_read|owner|admin', ['only' => ['index']]);
+        $this->middleware('role:typeCharge_delete|owner|admin', ['only' => ['destroy']]);
         $this->iTypesChargeService=$iTypesChargeService;
     }
-
-    public function index(Request $request)
+    public function index(PaginationRequest $request)
     {
-        $validator = Validator::make($request->all(), [
-            "limit"=>'required|integer',
-            "page"=>'required|integer'
-        ]);
-        if ($validator->fails()) {
-            return response($validator->errors(), 400);
-        }
-        $typescharges = $this->iTypesChargeService->index($request);
-        if($typescharges instanceof LengthAwarePaginator){
-            $response=TypesChargesResponse::make($typescharges->all());
+        $res = $this->iTypesChargeService->index($request);
+        if($res instanceof LengthAwarePaginator){
+            $response = TypesChargeResponse::make($res->all());
             return response()->json([
-                "typescharges"=>$response,
-                'total'=>$typescharges->total(),
-                'lastPage'=>$typescharges->lastPage(),
-                'currentPage'=>$typescharges->currentPage(),
+                "data"=>$response,
+                'countPage'=>$response->perPage(),
+                "currentPage"=>$response->currentPage(),
+                "nextPage"=>$response->currentPage()<$response->lastPage()?$response->currentPage()+1:$response->currentPage(),
+                "lastPage"=>$response->lastPage(),
+                'total'=>$response->total(),
             ],Response::HTTP_OK);
         }
         return response()->json(["error"=>"Bad Request"],Response::HTTP_BAD_REQUEST);
@@ -56,7 +49,7 @@ class TypesChargeController extends Controller
         if($typescharge instanceof TypesCharge){
             $response = TypesChargeResponse::make($typescharge);
             return response()->json([
-                "typescharge"=>$response,
+                "data"=>$response,
             ],Response::HTTP_CREATED);
         }
         return response()->json(["error"=>"Bad Request"],Response::HTTP_BAD_REQUEST);
@@ -68,7 +61,7 @@ class TypesChargeController extends Controller
         if($typescharge instanceof TypesCharge){
             $response = TypesChargeResponse::make($typescharge);
             return response()->json([
-                "typescharge"=>$response,
+                "data"=>$response,
             ],Response::HTTP_OK);
         }
         return response()->json(["error"=>"Bad Request"],Response::HTTP_BAD_REQUEST);
@@ -80,21 +73,25 @@ class TypesChargeController extends Controller
         if($typescharge instanceof TypesCharge){
             $response = TypesChargeResponse::make($typescharge);
             return response()->json([
-                "typescharge"=>$response,
+                "data"=>$response,
             ],Response::HTTP_OK);
         }
         return response()->json(["error"=>"Bad Request"],Response::HTTP_BAD_REQUEST);
     }
-
-    public function destroy($id)
+    public function destroy(Request $request)
     {
-        $typescharge =  $this->iTypesChargeService->destroy($id);
-        if($typescharge instanceof TypesCharge){
-            $response=TypesChargeResponse::make($typescharge);
-            return response()->json([
-                "invoicetatuses"=>$response
-            ],Response::HTTP_OK);
+        $validator = Validator::make($request->all(),[
+            "id"=>["required","integer"],
+            "name"=>["required","string"]
+        ]);
+        if($validator->fails()){
+            return response()->json(["error"=>$validator->errors()],Response::HTTP_BAD_REQUEST);
         }
-        return response()->json(["error"=>"Bad Request"],Response::HTTP_BAD_REQUEST);
+            $res=$this->iTypesChargeService->destroy($request);
+            if(!is_null($res) ){
+                return response()->json(['data' => $res], Response::HTTP_NO_CONTENT);
+           }else{
+               return response()->json(['error'=>"Bad Request"],Response::HTTP_BAD_REQUEST);
+           }
     }
 }

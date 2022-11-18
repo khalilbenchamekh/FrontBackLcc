@@ -17,7 +17,6 @@ class FeesFolderTechService implements IFeesFolderTechService
 
     public function save($request)
     {
-
         $feesFolderTech=$this->iFeesFolderTechRepository->save($request->all());
         if(!is_null($feesFolderTech)){
             $subject = LogsEnumConst::Add . LogsEnumConst::FeesFolderTech . $request->input('id');
@@ -48,8 +47,16 @@ class FeesFolderTechService implements IFeesFolderTechService
     {
         return $this->iFeesFolderTechRepository->show($id);
     }
-    public function destroy($id)
+    public function destroy($request)
     {
-        return $this->iFeesFolderTechRepository->destroy($id);
+        $res= $this->iFeesFolderTechRepository->destroy($request['id']);
+        if($res === 0 || is_null($res)){
+            return false;
+        }else{
+            $subject = LogsEnumConst::Delete . LogsEnumConst::FeesFolderTech . $request['id'];
+            $logs = new LogActivity();
+            $logs->addToLog($subject, $request);
+        }
+        return true;
     }
 }

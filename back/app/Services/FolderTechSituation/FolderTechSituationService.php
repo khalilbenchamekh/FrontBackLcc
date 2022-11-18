@@ -31,7 +31,6 @@ class FolderTechSituationService implements IFolderTechSituationService
                 $subject = LogsEnumConst::Add . LogsEnumConst::FolderTechSituation . $foldertechsituation['Name'];
                 $logs = new LogActivity();
                 $logs->addToLog($subject, $request);
-                $affaire_records[] = $foldertechsituation;
                 $foldertechsituations_records[]=$saveFoldertechsituations;
             }
         }
@@ -72,14 +71,17 @@ class FolderTechSituationService implements IFolderTechSituationService
         }
         return null;
     }
-    public function destroy($id)
+    public function destroy($request)
     {
-        $folderTechSituation=$this->show($id);
-        if($folderTechSituation instanceof FolderTechSituation){
-            return $this->iFolderTechSituationRepository->destroy($folderTechSituation);
+        $res= $this->iFolderTechSituationRepository->destroy($request['id']);
+        if($res === 0 || is_null($res)){
+            return false;
+        }else{
+            $subject = LogsEnumConst::Delete . LogsEnumConst::FolderTechSituation . $request['Name'];
+            $logs = new LogActivity();
+            $logs->addToLog($subject, $request);
         }
-        return null;
-
+        return true;
     }
 
 }

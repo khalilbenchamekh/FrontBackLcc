@@ -1,36 +1,46 @@
 <?php
-
-
 namespace App\Repository\Load;
-
 use App\Repository\Log\LogTrait;
-
-
 use Illuminate\Support\Facades\DB;
 use App\Models\Load;
-
-
-
-
+use Illuminate\Support\Facades\Auth;
 
 class LoadRepository implements ILoadRepository
 {
     use LogTrait;
+    private $organisation_id;
     public function __construct()
     {
-
-
+        $this->organisation_id = Auth::User()->organisation_id;
     }
-
-        public function index($page)
+        public function index($request)
         {
-            $idUser=3;
             try{
                 return DB::table('loads')
-                    ->where('organisation_id','=',$idUser)
-                    ->paginate(15,['*'],'page',$page);
+                    ->where('organisation_id','=',$this->organisation_id)
+                    ->paginate($request['limit'],['*'],'page',$request['page']);
             }catch(\Exception $exception){
-                dd($exception->getMessage());
+                $this->Log($exception);
+                return null;
+            }
+        }
+        public function dashboard($from,$to,$orderBy)
+        {
+            try{
+              return  DB::table('loads as g')
+              ->where('g.organisation_id','=',$this->organisation_id)
+            ->whereBetween('g.DATE_LOAD', [$from, $to])
+            ->select(
+                $orderBy === 'year' ?
+                    DB::raw("YEAR(`g`.`DATE_LOAD`) as `year`")
+                    : DB::raw("MONTH(`g`.`DATE_LOAD`) as `month`")
+                ,
+                DB::raw("(SELECT count(`g`.`DATE_LOAD`) FROM `loads` as `g`  ) as `charges`")
+            )
+            ->groupBy([$orderBy])
+            ->get()
+            ->reverse();
+            }catch(\Exception $exception){
                 $this->Log($exception);
                 return null;
             }
@@ -46,10 +56,10 @@ class LoadRepository implements ILoadRepository
                 $loads->TVA =$data["TVA"];
                 $loads->load_related_to =$data["load_related_to"];
                 $loads->load_types_name =$data["load_types_name"];
+                $loads->organisation_id=$this->organisation_id;
                 $loads->save();
                 return $loads;
             }catch(\Exception $exception){
-                dd($exception);
                 $this->Log($exception);
                 return null;
             }
@@ -64,6 +74,7 @@ class LoadRepository implements ILoadRepository
                 $load->TVA =$data["TVA"];
                 $load->load_related_to =$data["load_related_to"];
                 $load->load_types_name =$data["load_types_name"];
+                $load->organisation_id=$this->organisation_id;
                 $load->save();
                 return $load;
             }catch (\Exception $exception){
@@ -74,8 +85,9 @@ class LoadRepository implements ILoadRepository
         public function destroy($id)
         {
             try {
-                $load =Load::destroy($id);
-                dd($load);
+                return Load::where("id","=",$id)
+                ->where("organisation_id",'=',$this->organisation_id)
+                ->destroy();
             }catch (\Exception $exception){
                 $this->Log($exception);
                 return null;
@@ -84,9 +96,10 @@ class LoadRepository implements ILoadRepository
 
     public function show($id)
     {
-        // TODO: Implement show() method.
         try {
-            return Load::find($id);
+            return Load::where("id","=",$id)
+            ->where("organisation_id",'=',$this->organisation_id)
+            ->first();
         }catch (\Exception $exception){
             $this->Log($exception);
             return null;

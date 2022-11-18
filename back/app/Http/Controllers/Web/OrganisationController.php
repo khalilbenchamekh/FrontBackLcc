@@ -8,18 +8,12 @@ use App\Response\Admin\AllAdminResponse;
 use App\Response\Organisation\AllOrganisationResponse;
 use App\Response\Organisation\OrganisationResponse;
 use App\Services\Admin\IAdminService;
-use App\Services\ImageService;
-use App\Services\Organisation\OrganisationService;
+use App\Services\Organisation\IOrganisationService;
 use App\Services\SendEmail;
 use App\User;
 use Illuminate\Pagination\LengthAwarePaginator;
-use Illuminate\Support\Facades\Auth;
-use Illuminate\Support\Facades\File;
-use Illuminate\Support\Facades\Storage;
 use Illuminate\Support\Facades\Validator;
 use Illuminate\Http\Request;
-use Intervention\Image\Facades\Image;
-use PhpParser\Node\Stmt\DeclareDeclare;
 use Symfony\Component\HttpFoundation\Response;
 
 class OrganisationController
@@ -27,7 +21,7 @@ class OrganisationController
     private $organisationService;
     private $adminService;
     private $sendEmail;
-    public function __construct(OrganisationService $organisationService,IAdminService $adminService,SendEmail $sendEmail)
+    public function __construct(IOrganisationService $organisationService,IAdminService $adminService,SendEmail $sendEmail)
     {
         $this->organisationService=$organisationService;
         $this->adminService=$adminService;
@@ -41,26 +35,18 @@ class OrganisationController
         ]);
         if ($validator->fails())
         {
-            return \response()->json(['data'=>$validator->errors()],Response::HTTP_BAD_REQUEST);
+            return response()->json(['data'=>$validator->errors()],Response::HTTP_BAD_REQUEST);
         }
-        if($request->hasfile("avatar")){
-            $org= $this->organisationService->saveImageOrganisation($id,$request->file('avatar'),false);
+        $isbase64 = $request->hasfile("avatar");
+        $file = !$isbase64 ? $request->file('avatar') : $request->input('avatar');
+        if($file){
+            $org= $this->organisationService->saveImageOrganisation($id, $file,$isbase64);
             if($org instanceof  Organisation){
                 $response = new OrganisationResponse($org);
-                return \response()->json(['data'=>$response,'message'=>"image saved"],Response::HTTP_ACCEPTED);
-            }else{
-                return  \response()->json(['error'=>'Bad Request'],Response::HTTP_BAD_REQUEST);
+                return response()->json(['data'=>$response,'message'=>"image saved"],Response::HTTP_ACCEPTED);
             }
         }
-        if($request->input('avatar')){
-            $org= $this->organisationService->saveImageOrganisation($id,$request->input('avatar'),true);
-            if($org instanceof  Organisation){
-                $response = new OrganisationResponse($org);
-                return \response()->json(['data'=>$response,'message'=>"image saved"],Response::HTTP_ACCEPTED);
-            }else{
-                return  \response()->json(['error'=>'Bad Request'],Response::HTTP_BAD_REQUEST);
-            }
-        }
+        return  response()->json(['error'=>'Bad Request'],Response::HTTP_BAD_REQUEST);
 
     }
     public function deleteImageOrganisation($id)
@@ -68,19 +54,19 @@ class OrganisationController
         $org = $this->organisationService->deleteImageOrganisation($id);
         if ($org instanceof  Organisation){
             $response=new OrganisationResponse($org);
-            return \response()->json(['organisation'=>$response,"message"=>'organisation image deleted'],Response::HTTP_OK);
-        }else{
-                return \response()->json(['error'=>"Bad Request"],Response::HTTP_BAD_REQUEST);
+            return response()->json(['organisation'=>$response,"message"=>'organisation image deleted'],Response::HTTP_OK);
         }
+                return response()->json(['error'=>"Bad Request"],Response::HTTP_BAD_REQUEST);
+
     }
     public function getImOrganisation($id)
     {
         $image= $this->organisationService->getImageOrganisation($id);
         if(isset($image)){
             return $image;
-        }else{
-            return \response()->json(['error'=>'Bad Request'],Response::HTTP_BAD_REQUEST);
         }
+            return response()->json(['error'=>"Bad Request"],Response::HTTP_BAD_REQUEST);
+
     }
     public function getAllOrganisation(Request $request)
     {
@@ -89,8 +75,8 @@ class OrganisationController
             'page'=>'required|integer'
         ]);
         if ($validator->fails()){
-            return \response()->json(['error'=>$validator->errors()],Response::HTTP_BAD_REQUEST);
-        }else{
+            return response()->json(['error'=>$validator->errors()],Response::HTTP_BAD_REQUEST);
+        }
             $organisation = $this->organisationService->getAllOrganisation($request->all());
             if($organisation instanceof LengthAwarePaginator){
                 $response= AllOrganisationResponse::make($organisation->items());
@@ -101,7 +87,7 @@ class OrganisationController
                     $el->cto=$cto->name;
                     array_push($table,$el);
                 }
-                return  \response()->json([
+                return  response()->json([
                     'organisations'=>$table,
                     'countPage'=>$organisation->perPage(),
                     "currentPage"=>$organisation->currentPage(),
@@ -109,22 +95,17 @@ class OrganisationController
                     "lastPage"=>$organisation->lastPage(),
                     'totalOrganisation'=>$organisation->total(),
                 ],Response::HTTP_OK);
-            }else{
-                return \response()->json([
-                    'error'=>'Bad Request'
-                ],Response::HTTP_BAD_REQUEST);
             }
-        }
+            return response()->json(['error'=>"Bad Request"],Response::HTTP_BAD_REQUEST);
     }
     public function getOrganisation($id)
     {
         $org=$this->organisationService->getOrganisation($id);
         if ($org instanceof Organisation){
             $response = new OrganisationResponse($org);
-            return \response()->json(['organisation'=>$response,"message"=>'organisation'],Response::HTTP_OK);
-        }else{
-            return \response()->json(['error'=>"Bad Request"],Response::HTTP_BAD_REQUEST);
+            return response()->json(['organisation'=>$response,"message"=>'organisation'],Response::HTTP_OK);
         }
+        return response()->json(['error'=>"Bad Request"],Response::HTTP_BAD_REQUEST);
     }
     public function storeOrganisation(Request $request)
     {
@@ -138,7 +119,7 @@ class OrganisationController
         ]);
         if($validator->fails()){
             return response()->json(['error'=>$validator->errors()],Response::HTTP_BAD_REQUEST);
-        }else{
+        }
 
             $dataCto= ["name"=>$request->input('nameCto'),"email"=>$request->input('email'),"password"=>$request->input("passwordCto")];
             $ctoCreate=$this->adminService->createUser($dataCto);
@@ -150,12 +131,9 @@ class OrganisationController
                 $response = new OrganisationResponse($organisation);
                 $cto=$this->adminService->getUser($response->cto);;
                 $response->cto=$cto->name;
-                return \response()->json(['organisation'=>$response,"message"=>'organisation created'],Response::HTTP_CREATED);
-            }else{
-                return \response()->json(['error'=>"Bad Request"],Response::HTTP_BAD_REQUEST);
+                return response()->json(['organisation'=>$response,"message"=>'organisation created'],Response::HTTP_CREATED);
             }
-
-        }
+            return response()->json(['error'=>"Bad Request"],Response::HTTP_BAD_REQUEST);
     }
     public function editOrganisation($id,Request $request)
     {
@@ -167,22 +145,21 @@ class OrganisationController
         ]);
         if($validator->fails()) {
             return response()->json(['error' => $validator->errors()], Response::HTTP_BAD_REQUEST);
-        }else{
+        }
             $organisation=$this->organisationService->editOrganisation($id,$request);
             $cto=$this->adminService->getUser($organisation->cto);
             if ($organisation instanceof  Organisation && $cto instanceof User){
                 $action=EmailMessageChoice::EDITE_ORGANISATION;
                 $this->sendEmail->send($cto,$action);
                 $response=new OrganisationResponse($organisation);
-                return \response()->json(['organisation'=>$response,"message"=>'organisation edited'],Response::HTTP_OK);
+                return response()->json(['organisation'=>$response,"message"=>'organisation edited'],Response::HTTP_OK);
             }else{
                 if ($organisation ==false){
                     return response()->json(['error'=>"email already exist"],Response::HTTP_BAD_REQUEST);
-                }else{
-                    return \response()->json(['error'=>"Bad Request"],Response::HTTP_BAD_REQUEST);
                 }
-            }
         }
+        return response()->json(['error'=>"Bad Request"],Response::HTTP_BAD_REQUEST);
+
     }
     public function deleteOrganisation($id)
     {
@@ -192,10 +169,9 @@ class OrganisationController
                 $action=EmailMessageChoice::DELETE_ORGANISATION;
                 $this->sendEmail->send($cto,$action);
                 $response =new OrganisationResponse($organisation);
-                return  \response()->json(['data'=>$response,'message'=>"Organisation Deleted"],Response::HTTP_OK);
-            }else{
-                return \response()->json(['error'=>"Bad Requests"],Response::HTTP_BAD_REQUEST);
+                return  response()->json(['data'=>$response,'message'=>"Organisation Deleted"],Response::HTTP_OK);
             }
+                return response()->json(['error'=>"Bad Request"],Response::HTTP_BAD_REQUEST);
     }
     public function enableOrganisation($id)
     {
@@ -205,10 +181,9 @@ class OrganisationController
             $action=EmailMessageChoice::ENABLE_ORGANISATION;
             $this->sendEmail->send($cto,$action);
             $response =new OrganisationResponse($organisation);
-            return  \response()->json(['data'=>$response,'message'=>"Organisation Enabled"],Response::HTTP_OK);
-        }else{
-            return \response()->json(['error'=>"Bad Request"],Response::HTTP_BAD_REQUEST);
+            return  response()->json(['data'=>$response,'message'=>"Organisation Enabled"],Response::HTTP_OK);
         }
+               return response()->json(['error'=>"Bad Request"],Response::HTTP_BAD_REQUEST);
     }
     public function disableOrganisation($id)
     {
@@ -218,10 +193,9 @@ class OrganisationController
             $action=EmailMessageChoice::DISABLE_ORGANISATION;
             $this->sendEmail->send($cto,$action);
             $response =new OrganisationResponse($organisation);
-            return  \response()->json(['data'=>$response,'message'=>"Organisation Disabled"],Response::HTTP_OK);
-        }else{
-            return \response()->json(['error'=>"Bad Request"],Response::HTTP_BAD_REQUEST);
+            return  response()->json(['data'=>$response,'message'=>"Organisation Disabled"],Response::HTTP_OK);
         }
+                 return response()->json(['error'=>"Bad Request"],Response::HTTP_BAD_REQUEST);
     }
     public function blockedOrganisation($id)
     {
@@ -231,10 +205,9 @@ class OrganisationController
             $action=EmailMessageChoice::BLOCK_ORGANISATION;
             $this->sendEmail->send($cto,$action);
             $response =new OrganisationResponse($organisation);
-            return  \response()->json(['data'=>$response,'message'=>"Organisation Blocked"],Response::HTTP_OK);
-        }else{
-            return \response()->json(['error'=>"Bad Request"],Response::HTTP_BAD_REQUEST);
+            return  response()->json(['data'=>$response,'message'=>"Organisation Blocked"],Response::HTTP_OK);
         }
+                  return response()->json(['error'=>"Bad Request"],Response::HTTP_BAD_REQUEST);
     }
     public function getAllUserOrganisation($id,Request $request){
         $validator=Validator::make($request->all(),[
@@ -242,12 +215,12 @@ class OrganisationController
             'page'=>'required|integer'
         ]);
         if ($validator->fails()){
-            return \response()->json(['error'=>$validator->errors()],Response::HTTP_BAD_REQUEST);
-        }else{
+            return response()->json(['error'=>$validator->errors()],Response::HTTP_BAD_REQUEST);
+        }
             $userOrganisation=$this->organisationService->getAllUserOrganisation($id,$request->all());
             if($userOrganisation instanceof  LengthAwarePaginator ){
                 $response= new AllAdminResponse($userOrganisation);
-                return  \response()->json([
+                return  response()->json([
                    'users'=>$response,
                     'countPage'=>$userOrganisation->perPage(),
                     "currentPage"=>$userOrganisation->currentPage(),
@@ -255,13 +228,8 @@ class OrganisationController
                     "lastPage"=>$userOrganisation->lastPage(),
                    'totalOrganisation'=>$userOrganisation->total(),
                ],Response::HTTP_OK);
-            }else{
-                return \response()->json([
-                   'error'=>'Bad Request'
-                ],Response::HTTP_BAD_REQUEST);
             }
-
-        }
+            return response()->json(['error'=>"Bad Request"],Response::HTTP_BAD_REQUEST);
     }
 
 }

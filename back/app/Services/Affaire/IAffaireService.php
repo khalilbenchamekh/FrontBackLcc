@@ -7,7 +7,7 @@ interface IAffaireService{
     public function show($id);
     public function index($request);
     public function update($request,$id);
-    public function destroy($id);
+    public function destroy($request);
     public function getBusiness($request);
 }
 

@@ -13,7 +13,7 @@ class AffaireNatureRepository implements IAffaireNatureRepository
     private $organisation_id;
     public function __construct()
     {
-        $this->organisation_id = 1;
+        $this->organisation_id = Auth::user()->organisation_id;
     }
 
     public function findAffaireNatureByName($name){
@@ -29,8 +29,9 @@ class AffaireNatureRepository implements IAffaireNatureRepository
     {
         try{
             $affireNature= new AffaireNature();
+            $abr_v = empty($data['Abr_v']) ? substr($data['Name'], 0, 3) : $data['Abr_v'];
             $affireNature->Name=$data['Name'];
-            $affireNature->Abr_v=$data['Abr_v'];
+            $affireNature->Abr_v=$abr_v;
             $affireNature->organisation_id =$this->organisation_id;
             $affireNature->save();
             return $affireNature;
@@ -69,8 +70,9 @@ class AffaireNatureRepository implements IAffaireNatureRepository
     {
         // TODO: Implement edit() method.
         try {
+            $abr_v = empty($data['Abr_v']) ? substr($data['Name'], 0, 3) : $data['Abr_v'];
             $affairNature->Name=$data['Name'];
-            $affairNature->Abr_v=$data['Abr_v'];
+            $affairNature->Abr_v=$abr_v;
             $affairNature->organisation_id=$this->organisation_id;
             $affairNature->save();
             return $affairNature;
@@ -109,7 +111,6 @@ class AffaireNatureRepository implements IAffaireNatureRepository
             return  AffaireNature::where("id","=",$id)
                 ->where("organisation_id",'=',$this->organisation_id)
                 ->destroy();
-
         }catch(\Exception $exception){
             $this->Log($exception);
             return null;

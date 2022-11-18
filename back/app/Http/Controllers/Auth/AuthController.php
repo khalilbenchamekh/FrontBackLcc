@@ -16,6 +16,7 @@ use Tymon\JWTAuth\Exceptions\JWTException;
 use Faker\Generator as Faker;
 use Illuminate\Support\Facades\Hash;
 use Tymon\JWTAuth\Facades\JWTAuth;
+use Symfony\Component\HttpFoundation\Response;
 
 class AuthController extends Controller
 {
@@ -36,12 +37,12 @@ class AuthController extends Controller
         // Get User by email
          $user = User::where('email', $request->email)->first();
         // Return error message if user not found.
-        if (!$user) return response()->json(['error' => 'User not found.'], 404);
+        if (!$user) return response()->json(['error' => 'User not found.'], Response::HTTP_NOT_FOUND);
 
         // Account Validation
         if (!(new BcryptHasher)->check($request->input('password'), $user->password)) {
             // Return Error message if password is incorrect
-            return response()->json(['error' => 'Email or password is incorrect. Authentication failed.'], 401);
+            return response()->json(['error' => 'Email or password is incorrect. Authentication failed.'], Response::HTTP_UNAUTHORIZED);
         }
 
         // Get email and password from Request
@@ -53,12 +54,12 @@ class AuthController extends Controller
             // Login Attempt
             if (!$token = JWTAuth::attempt($credentials)) {
                 // Return error message if validation failed
-                return response()->json(['error' => 'invalid_credentials'], 401);
+                return response()->json(['error' => 'invalid_credentials'], Response::HTTP_UNAUTHORIZED);
             }
         } catch (JWTException $e) {
             // Return Error message if cannot create token.
            // return $credentials = $request->only('email', 'password');
-            return response()->json(['error' => 'could_not_create_token'], 500);
+            return response()->json(['error' => 'could_not_create_token'], Response::HTTP_INTERNAL_SERVER_ERROR);
         }
         $customClaims = ['Role' => $user->roles !== [] ? $user->roles[0]->name : 'user'];
         $token = JWTAuth::attempt($credentials, $customClaims);

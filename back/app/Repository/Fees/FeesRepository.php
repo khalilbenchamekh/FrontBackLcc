@@ -1,10 +1,6 @@
 <?php
-
-
 namespace App\Repository\Fees;
-
 use App\Http\Resources\MemberShipType;
-use App\Models\BusinessManagement;
 use App\Models\Fees;
 use App\Repository\Log\LogTrait;
 use Illuminate\Support\Facades\Auth;
@@ -15,7 +11,7 @@ class FeesRepository implements IFeesRepository
     private $organisation_id;
     public function __construct()
     {
-        $this->organisation_id = 3;
+        $this->organisation_id = Auth::User()->organisation_id;
     }
 
     public function getFolderTechFees($request)
@@ -60,6 +56,28 @@ class FeesRepository implements IFeesRepository
             $fees = new Fees();
             $fees->businessManagement()->associate(
                 $busines_mang_id
+            );
+            $fees->price = $price;
+            $fees->observation = $observation;
+            $fees->type = MemberShipType::business;
+            $fees->advanced = $advanced;
+            $fees->save();
+
+            return $fees;
+        }catch(\Exception $exception){
+            $this->Log($exception);
+            return null;
+        }
+    }
+    public function saveGreatConstructionSitesFees($greatConstructionSites_id,$request)
+    {
+        try{
+            $price = $request->input('price');
+            $observation = $request->input('observation');
+            $advanced = $request->input('advanced');
+            $fees = new Fees();
+            $fees->businessManagement()->associate(
+                $greatConstructionSites_id
             );
             $fees->price = $price;
             $fees->observation = $observation;

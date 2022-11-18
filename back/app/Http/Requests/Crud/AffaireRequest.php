@@ -14,9 +14,7 @@ class AffaireRequest extends FormRequest
 
     public function rules()
     {
-
         return [
-
             'aff_sit_id' => ['exists:affairesituations,id'],
             'client_id' => ['exists:clients,id'],
             'resp_id' => ['exists:users,id'],

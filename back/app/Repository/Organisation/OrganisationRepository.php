@@ -5,11 +5,9 @@ namespace App\Repository\Organisation;
 use App\Organisation;
 use App\Repository\Log\LogTrait;
 use Illuminate\Support\Facades\DB;
-
-
 class OrganisationRepository implements IOrganisationRepository
 {
-use LogTrait;
+    use LogTrait;
     public function getAll($req)
     {
         try {
@@ -23,7 +21,7 @@ use LogTrait;
             return  null;
         }
     }
-    public function getById($id):?Organisation
+    public function getById($id)
     {
         try {
             $org = Organisation::find($id);
@@ -32,9 +30,8 @@ use LogTrait;
             $this->Log($exception);
             return  null;
         }
-
     }
-    public function store($req,$cto):?Organisation
+    public function store($req,$cto)
     {
         try {
             $org= new Organisation();
@@ -56,9 +53,8 @@ use LogTrait;
             $this->Log($exception);
             return null;
         }
-
     }
-    public function edit($org,$req):?Organisation
+    public function edit($org,$req)
     {
         try {
 
@@ -174,7 +170,7 @@ use LogTrait;
         }
     }
 
-    public function getAllUserOrganisation(Organisation $organisation,$req)
+    public function getAllUserOrganisation($organisation,$req)
     {
         try {
             return DB::table('users')->where('organisation_id','=',$organisation->id)

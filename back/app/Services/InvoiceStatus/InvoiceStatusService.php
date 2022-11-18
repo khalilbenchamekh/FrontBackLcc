@@ -6,7 +6,6 @@ namespace App\Services\InvoiceStatus;
 use App\Helpers\LogActivity;
 use App\Http\Requests\Enums\LogsEnumConst;
 use App\Models\InvoiceStatus;
-use App\Repository\Intermediate\IIntermediateRepository;
 use App\Repository\InvoiceStatus\IInvoiceStatusRepository;
 
 class InvoiceStatusService implements IInvoiceStatusService
@@ -49,12 +48,16 @@ class InvoiceStatusService implements IInvoiceStatusService
         }
         return null;
     }
-    public function destroy($id)
+    public function destroy($request)
     {
-        $invoiceStatus=$this->show($id);
-        if($invoiceStatus instanceof InvoiceStatus){
-            return $this->iInvoiceStatusRepository->destroy($invoiceStatus);
+        $res= $this->iInvoiceStatusRepository->destroy($request['id']);
+        if($res === 0 || is_null($res)){
+            return false;
+        }else{
+            $subject = LogsEnumConst::Delete . LogsEnumConst::Intermediate . $request['Name'];
+            $logs = new LogActivity();
+            $logs->addToLog($subject, $request);
         }
-        return null;
+        return true;
     }
 }

@@ -11,8 +11,8 @@ class DatabaseSeeder extends Seeder
      */
     public function run()
     {
-        //$this->call(EntrustMockedDataSeeder::class);
-        //$this->call(CsvTableSeeder::class);
-        $this->call(SuperAdminSeeder::class);
+        $this->call(EntrustMockedDataSeeder::class);
+        $this->call(CsvTableSeeder::class);
+       // $this->call(UsersTableSeeder::class);
     }
 }

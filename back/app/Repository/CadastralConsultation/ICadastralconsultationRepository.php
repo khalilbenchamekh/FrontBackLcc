@@ -1,9 +1,5 @@
 <?php
-
 namespace App\Repository\CadastralConsultation;
-
-use App\Models\Cadastralconsultation;
-
 interface ICadastralConsultationRepository
 {
     public function index($request);

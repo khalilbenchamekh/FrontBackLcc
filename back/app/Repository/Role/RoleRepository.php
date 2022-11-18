@@ -2,6 +2,7 @@
 
 namespace App\Repository\Role;
 
+use App\Models\Permission;
 use App\Models\Role;
 use App\Repository\Log\LogTrait;
 
@@ -26,6 +27,26 @@ class RoleRepository implements IRoleRepository
             }
             $role->get();
             return $role;
+        }catch (\Exception $exception){
+            $this->Log($exception);
+            return null;
+        }
+    }
+    public function like($name)
+    {
+        try {
+            $role= Role::where('name', 'like', '%' . $name . '%')->first();
+            return $role;
+        }catch (\Exception $exception){
+            $this->Log($exception);
+            return null;
+        }
+    }
+    public function likePermission($name)
+    {
+        try {
+            $res= Permission::where('name', 'like', '%' . $name . '%')->first();
+            return $res;
         }catch (\Exception $exception){
             $this->Log($exception);
             return null;

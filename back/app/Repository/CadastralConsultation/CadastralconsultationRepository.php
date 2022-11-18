@@ -16,7 +16,7 @@ class CadastralConsultationRepository implements ICadastralConsultationRepositor
     private $organisation_id;
     public function __construct()
     {
-        $this->organisation_id = 1;
+        $this->organisation_id = Auth::user()->organisation_id;
     }
 
     public function index($request)

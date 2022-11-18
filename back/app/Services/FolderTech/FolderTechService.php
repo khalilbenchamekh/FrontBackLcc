@@ -17,13 +17,26 @@ class FolderTechService implements IFolderTechService
     }
     public function save($request)
     {
-        $folderTech= $this->iFolderTechRepository->save($request);
-        if(!is_null($folderTech) ){
-            $subject = LogsEnumConst::Add . LogsEnumConst::FolderTech. $request['id'];
+        $res= $this->iFolderTechRepository->save($request);
+        if(!is_null($res) ){
+            $resBu = $this->saveBusinessManagement($request,$res);
+            $resMission = $this->saveMission($request,$res);
+            if(!is_null($resBu) && !is_null($resMission) ){
+            $subject = LogsEnumConst::Add . LogsEnumConst::FolderTech. $res->REF;
             $logs = new LogActivity();
             $logs->addToLog($subject, $request);
+            }
         }
-        return $folderTech;
+        return $res;
+    }
+    public function saveBusinessManagement($request,$affaire)
+    {
+        $res= $this->iFolderTechRepository->saveBusinessManagement($request,$affaire);
+        return $res;
+    } public function saveMission($request,$affaire)
+    {
+        $res= $this->iFolderTechRepository->saveMission($request,$affaire);
+        return $res;
     }
     public function index($request)
     {
@@ -39,7 +52,7 @@ class FolderTechService implements IFolderTechService
         if($folderTech instanceof FolderTech){
             $folderTechUpdated= $this->iFolderTechRepository->update($folderTech,$request);
             if(!is_null($folderTechUpdated) ){
-                $subject = LogsEnumConst::Update . LogsEnumConst::FolderTech. $request['id'];
+                $subject = LogsEnumConst::Update . LogsEnumConst::FolderTech. $folderTechUpdated->REF;
                 $logs = new LogActivity();
                 $logs->addToLog($subject, $request);
             }
@@ -47,10 +60,19 @@ class FolderTechService implements IFolderTechService
         }
         return null;
     }
-    public function destroy($id)
+    public function delete($request)
     {
-        return $this->iFolderTechRepository->destroy($id);
+        $res = $this->iFolderTechRepository->destroy($request['id']);
+        if($res === 0 || is_null($res)){
+            return false;
+        }else{
+            $subject = LogsEnumConst::Delete . LogsEnumConst::FolderTech . $request['REF'];
+            $logs = new LogActivity();
+            $logs->addToLog($subject, $request);
+        }
+        return true;
     }
+
     public function getFolderTech($request)
     {
         return $this->iFolderTechRepository->getFolderTech($request);

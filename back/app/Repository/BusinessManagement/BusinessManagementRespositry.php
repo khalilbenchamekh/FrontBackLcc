@@ -1,20 +1,17 @@
 <?php
-
-
 namespace App\Repository\BusinessManagement;
-
+use App\Models\Affaire;
 use App\Models\BusinessManagement;
 use App\Repository\Log\LogTrait;
 use Illuminate\Support\Facades\Auth;
 use Illuminate\Support\Facades\DB;
-
 class BusinessManagementRespositry implements IBusinessManagementRespositry
 {
     use LogTrait;
     private $organisation_id;
     public function __construct()
     {
-        $this->organisation_id=1;
+        $this->organisation_id = Auth::user()->organisation_id;
     }
     public function index($request)
     {
@@ -28,14 +25,16 @@ class BusinessManagementRespositry implements IBusinessManagementRespositry
             return null;
         }
     }
-    public function store($request)
+    public function store($request,$affaire = null)
     {
         try{
             $buisnessManagement=new BusinessManagement();
             $buisnessManagement->DATE_ENTRY=$request["DATE_ENTRY"];
-            $buisnessManagement->DATE_LAI=$request["DATE_LAI"];
+            $buisnessManagement->DATE_ENTRY=$request["DATE_ENTRY"];
+            $buisnessManagement->DATE_LAI=isset($request["ttc"])?$request["ttc"]:null;
             $buisnessManagement->latitude=isset($request["latitude"])?$request["latitude"]:null;
             $buisnessManagement->longitude=isset($request["longitude"])?$request["longitude"]:null;
+            if($affaire instanceof Affaire)  $buisnessManagement->membership()->associate($affaire);
             $buisnessManagement->save();
             return $buisnessManagement;
         }catch(\Exception $exception){
@@ -53,6 +52,19 @@ class BusinessManagementRespositry implements IBusinessManagementRespositry
             return null;
         }
     }
+    public function businessManagement($membership_id,$relation)
+    {
+        try{
+            $buisnessManagement=BusinessManagement::where("membership_id", '=', $membership_id)
+            ->where("organisation_id","=",$this->organisation_id)
+            ->where('membership_type', 'like', '%' . $relation)->first();
+            return $buisnessManagement;
+        }catch(\Exception $exception){
+            $this->Log($exception);
+            return null;
+        }
+    }
+
     public function update($perElem,$data)
     {
         try{

@@ -2,29 +2,29 @@
 
 namespace App\Services\Admin;
 
-use App\Organisation;
 use App\Repository\Admin\IAdminRepository;
-use App\Services\ImageService;
 use App\Services\Organisation\IOrganisationService;
+use App\Services\SaveFile\ISaveFileService;
 use App\User;
 use Illuminate\Support\Facades\Hash;
 
 class AdminService implements IAdminService
-
 {
     public $adminRepository;
     public $organisationService;
-    public function __construct(IAdminRepository $adminRepository,IOrganisationService $organisationService)
+    private $iSaveFileService;
+
+    public function __construct(ISaveFileService $iSaveFileService,IAdminRepository $adminRepository,IOrganisationService $organisationService)
     {
         $this->adminRepository=$adminRepository;
         $this->organisationService=$organisationService;
+        $this->iSaveFileService=$iSaveFileService;
     }
 
     public function getAllUser($data)
     {
         try {
             return $this->adminRepository->getAllUser($data['limit'],$data['page']);
-
         }catch (\Exception $exception){
             return  null;
         }
@@ -148,62 +148,28 @@ class AdminService implements IAdminService
     public function saveImageUser($id, $request, $base64)
     {
         $user=$this->getUser($id);
-        if($user == null) return null;
-        $org = $this->organisationService->getOrganisation($user->organisation_id);
-        if ($org instanceof Organisation && $user instanceof User) {
-            $store = new ImageService();
-            $filesArray = [
-                'geoMapping',
-                'geoMapping/organisation/' . $org->name.'/'.$user->name,
-            ];
-            if($base64===false){
-                $fileName = $store->store_image($filesArray, $request, "/" . $filesArray[1],$user->filename);
-                if (isset($fileName)) {
-                    $user = $this->adminRepository->saveImage($user, $fileName);
-                    if ($user instanceof User) {
-                        return $user;
-                    } else {
-                        return null;
-                    }
-                } else {
-                    return null;
+        if (!is_null($user)) {
+            $org = $this->organisationService->getOrganisation($user->organisation_id);
+            if (!is_null($org)) {
+                $fileName = $base64===false ?  $this->iSaveFileService->store_image($org->name.'/'.$user->name, $request,$user->filename):
+                $this->iSaveFileService->store_image_if_is_it_base64($org->name.'/'.$user->name, $request,$user->filename);
+                $res = $this->adminRepository->saveImage($user, $fileName);
+                if (!is_null($res)) {
+                    return $res;
                 }
             }
-            if ($base64 ===true){
-                $fileName = $store->store_image_if_is_it_base64($filesArray, $request, "/" . $filesArray[1],$user->filename);
-                if (isset($fileName)) {
-                    $user = $this->adminRepository->saveImage($user, $fileName);
-                    if ($user instanceof User) {
-                        return $user;
-                    } else {
-                        return null;
-                    }
-                } else {
-                    return null;
-                }
-            }else{
-                return null;
-            }
-
         }
+        return null;
     }
 
     public function getImageUser($id)
     {
-        $user=$this->getUser($id);
-        if($user == null) return null;
-        $org= $this->organisationService->getOrganisation($user->organisation_id);
-        $path = 'geoMapping/organisation/' . $org->name.'/'.$user->name;
-        if($org instanceof  Organisation && $user instanceof User && $user->filename != null){
-            $image = new ImageService();
-            return $image->fetchImage($path,$user->filename);
+        $res= $this->getUser($id);
+        if(!is_null($res)){
+            $org= $this->organisationService->getOrganisation($res->organisation_id);
+            $defaultImage= $res->filename != null ? $res->filename  : "Default.jpg";
+            return $this->iSaveFileService->fetchImage($org->name.'/'. $res->name,$defaultImage);
         }
-        // IF USER DON'T HAVE ANY IMAGE THEN WE RETURN DEFAULT IMAGE
-        $defaultImage="Default.jpg";
-        $path='geoMapping/organisation';
-        if($org instanceof  Organisation && $user instanceof User && $user->filename === null){
-            $image = new ImageService();
-            return $image->fetchImage($path,$defaultImage);
-        }
+        return null;
     }
 }

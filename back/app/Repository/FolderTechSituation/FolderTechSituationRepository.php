@@ -13,7 +13,7 @@ class FolderTechSituationRepository implements IFolderTechSituationRepository
     private $organisation_id;
     public function __construct()
     {
-        $this->organisation_id = 3;
+        $this->organisation_id = Auth::User()->organisation_id;
     }
 
     public function save($request)
@@ -73,13 +73,13 @@ class FolderTechSituationRepository implements IFolderTechSituationRepository
             return null;
         }
     }
-    public function destroy($folderTechSituation)
+    public function destroy($id)
     {
         try {
             //code...
-            $deleted=$folderTechSituation;
-            $deleted->delete();
-            return $folderTechSituation;
+            return  FolderTechSituation::where("id","=",$id)
+                ->where("organisation_id",'=',$this->organisation_id)
+                ->destroy();
         } catch (\Exception $exception) {
             $this->Log($exception);
             return null;

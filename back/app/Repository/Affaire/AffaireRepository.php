@@ -1,20 +1,16 @@
 <?php
-
 namespace App\Repository\Affaire;
-
 use App\Models\Affaire;
 use App\Repository\Log\LogTrait;
 use Illuminate\Support\Facades\Auth;
 use DateTime;
-
-
 class AffaireRepository implements IAffaireRepository
 {
     use LogTrait;
     private $organisation_id;
     public function __construct()
     {
-        $this->organisation_id = 3;
+        $this->organisation_id = Auth::user()->organisation_id;
     }
     public function getBusiness($request)
     {
@@ -73,6 +69,7 @@ class AffaireRepository implements IAffaireRepository
         $affaire->client_id = $request->input('client_id');
         $affaire->resp_id = $request->input('resp_id');
         $affaire->nature_name = $request->input('nature_name');
+        $affaire->organisation_id = $this->organisation_id;
         $affaire->save();
 
         return $affaire;
@@ -126,6 +123,7 @@ class AffaireRepository implements IAffaireRepository
             $perElem->client_id = $request->input('client_id');
             $perElem->resp_id = $request->input('resp_id');
             $perElem->nature_name = $request->input('nature_name');
+            $perElem->organisation_id = $this->organisation_id;
             $perElem->update();
             return $perElem;
         }catch(\Exception $exception){

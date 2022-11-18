@@ -1,10 +1,8 @@
 <?php
-
 namespace App\Repository\FileLoad;
-
-interface IFileLoadRipository
+interface IFileLoadRepository
 {
-    public function  index($page);
+    public function  index($request);
     public function  store($data);
     public function  edit($file,$data);
     public function  delete($id);

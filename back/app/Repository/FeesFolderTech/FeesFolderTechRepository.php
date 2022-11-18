@@ -1,10 +1,8 @@
 <?php
-
-
 namespace App\Repository\FeesFolderTech;
-
 use App\Models\FeesFolderTech;
 use App\Repository\Log\LogTrait;
+use Illuminate\Support\Facades\Auth;
 
 class FeesFolderTechRepository implements IFeesFolderTechRepository
 {
@@ -12,7 +10,7 @@ class FeesFolderTechRepository implements IFeesFolderTechRepository
     private $organisation_id;
     public function __construct()
     {
-        $this->organisation_id = 3;
+        $this->organisation_id = Auth::User()->organisation_id;
     }
     public function save($request)
     {
@@ -23,7 +21,6 @@ class FeesFolderTechRepository implements IFeesFolderTechRepository
             $feesFolderTech->observation=$request['observation'];
             $feesFolderTech->folder_id=$request['id'];
             $feesFolderTech->save();
-
             return $feesFolderTech;
 
         }catch(\Exception $exception){
@@ -58,9 +55,7 @@ class FeesFolderTechRepository implements IFeesFolderTechRepository
             $feesFolderTech->advanced=$request('advanced');
             $feesFolderTech->observation=$request('observation');
             $feesFolderTech->folder_id=$request('folder_id');
-
             $feesFolderTech->save();
-
             return $feesFolderTech;
 
         }catch(\Exception $exception){
@@ -79,7 +74,6 @@ class FeesFolderTechRepository implements IFeesFolderTechRepository
                  return $feesFolderTech;
             }
             return null;
-
         } catch (\Exception $exception) {
             $this->Log($exception);
             return null;

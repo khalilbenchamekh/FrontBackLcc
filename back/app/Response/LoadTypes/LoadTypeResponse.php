@@ -1,10 +1,5 @@
 <?php
-
 namespace App\Response\LoadTypes;
-
-
-
-
 use Illuminate\Http\Resources\Json\JsonResource;
 
 class LoadTypeResponse extends JsonResource
@@ -18,5 +13,3 @@ class LoadTypeResponse extends JsonResource
         ];
     }
 }
-
-

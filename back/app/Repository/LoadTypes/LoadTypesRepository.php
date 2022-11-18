@@ -1,48 +1,40 @@
 <?php
-
 namespace App\Repository\LoadTypes;
-
 use App\Repository\LoadTypes\ILoadTypesRepository;
 use Illuminate\Support\Facades\DB;
 use App\Repository\Log\LogTrait;
 use App\Models\LoadTypes;
 use Carbon\Carbon;
-
-
-
+use Illuminate\Support\Facades\Auth;
 
 class LoadTypesRepository implements ILoadTypesRepository
 {
-use LogTrait;
-
-    public function index($idUser,$page)
+    use LogTrait;
+    private $organisation_id;
+    public function __construct()
     {
-
+        $this->organisation_id = Auth::User()->organisation_id;
+    }
+    public function index($request)
+    {
         try{
-         $data= DB::table('load_types')->select("*")->where('organisation_id','=',$idUser)->paginate(2, $columns = ['*'], $pageName = 'page', $page = $page);
-
-        return $data;
-
+            return DB::table('load_types')->select("*")->where('organisation_id','=',$this->organisation_id)
+         ->paginate($request['limit'],['*'],'page',$request['page']);
         }catch(\Exception $exception){
             $this->Log($exception);
             return null;
         }
-
     }
 
     public function store($data)
     {
-       // dd($data);
         try{
             $loadType= new LoadTypes();
-
-            $loadType->organisation_id=$data["organisation_id"];
+            $loadType->organisation_id=$this->organisation_id ;
             $loadType->name=$data["name"];
             $loadType->created_at=Carbon::now();
             $loadType->updated_at=Carbon::now();
-
             $loadType->save();
-
            return $loadType;
 
         }catch(\Exception $exception){
@@ -54,22 +46,22 @@ use LogTrait;
     public function edit($data,$perLoadType)
     {
         try{
-            $perLoadType->organisation_id=$data["organisation_id"];
+            $perLoadType->organisation_id=$this->organisation_id ;
             $perLoadType->name=$data["name"];
-
+            $perLoadType->updated_at=Carbon::now();
             $perLoadType->save();
             return $perLoadType;
-
         }catch(\Exception $exception){
             $this->Log($exception);
             return null;
         }
     }
-    public function delete($id,$LoadType)
+    public function delete($id)
     {
         try{
-            $loadtype=$LoadType::destroy($id);
-            return $LoadType;
+             return LoadTypes::where("id","=",$id)
+            ->where("organisation_id",'=',$this->organisation_id)
+            ->destroy();
         }catch(\Exception $exception){
             $this->Log($exception);
             return null;
@@ -78,7 +70,8 @@ use LogTrait;
     public function get($id)
     {
         try{
-          return  $loadtype=LoadTypes::find($id);
+          return LoadTypes::where("id","=",$id)
+          ->where("organisation_id",'=',$this->organisation_id)->first();
         }catch(\Exception $exception){
             $this->Log($exception);
             return null;
@@ -92,8 +85,7 @@ use LogTrait;
                 # code...
                 $loadTypes= new LoadTypes();
                 $loadTypes->name=$value['name'];
-                $loadTypes->organisation_id=$value['organisation_id'];
-
+                $loadTypes->organisation_id=$this->organisation_id;
                 $loadTypes->save();
                 array_push($multiLoadType,$loadTypes);
             }

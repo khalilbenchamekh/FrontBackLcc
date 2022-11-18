@@ -15,7 +15,5 @@ public function toArray($request)
         'Abr_v'=>$this->Abr_v,
         'organisation_id '=>$this->organisation_id,
     ];
-
-
 }
 }

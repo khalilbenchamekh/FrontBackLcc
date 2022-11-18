@@ -1,17 +1,12 @@
 <?php
-
 namespace App\Repository\Log;
-
 use function base_path;
-
 trait LogTrait
 {
-
     public function Log(\Exception $exception) {
 
         $this->_Log($exception->getMessage(), $exception->getFile(), $exception->getLine(), $exception->getCode());
     }
-
     private function _Log($message, $file, $line, $code) {
         try {
             $logDir = base_path() . "/logs/";

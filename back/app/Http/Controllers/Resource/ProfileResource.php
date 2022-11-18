@@ -7,12 +7,7 @@
  */
 
 namespace App\Http\Controllers\Resource;
-
-
 use Illuminate\Http\Resources\Json\JsonResource;
-use Illuminate\Support\Facades\File;
-use Illuminate\Support\Facades\Response;
-use Intervention\Image\Facades\Image;
 
 class ProfileResource extends JsonResource
 {
@@ -35,11 +30,8 @@ class ProfileResource extends JsonResource
             'birthdate' => $this->birthdate,
             'address' => $this->address,
             'original_filename' => $this->original_filename,
+            //'organisation_id' => $this->organisation_id,
             'customClaims' => ['Role' => $this->roles !==[]  ?$this->roles[0]->name : 'user'],
         ];
-        // return parent::toArray($request);
     }
-
-
-
 }

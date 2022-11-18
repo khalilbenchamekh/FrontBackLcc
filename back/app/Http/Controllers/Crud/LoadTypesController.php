@@ -2,20 +2,17 @@
 
 namespace App\Http\Controllers\Crud;
 
-use App\Helpers\LogActivity;
 use App\Http\Controllers\Controller;
+use App\Http\Requests\Auth\PaginationRequest;
 use App\Http\Requests\Crud\LoadTypesRequest;
-use App\Http\Requests\Enums\LogsEnumConst;
 use App\Models\LoadTypes;
 use Illuminate\Http\Request;
 use Illuminate\Support\Facades\Validator;
 use App\Services\LoadTypes\ILoadTypesService;
 use Symfony\Component\HttpFoundation\Response;
 use App\Response\LoadTypes\LoadTypesResponse;
-use function Spatie\DataTransferObject\toArray;
 use Illuminate\Pagination\LengthAwarePaginator;
 use App\Response\LoadTypes\LoadTypeResponse;
-
 
 class LoadTypesController extends Controller
 {
@@ -24,51 +21,31 @@ class LoadTypesController extends Controller
     public function __construct(ILoadTypesService $loadtypes )
     {
         $this->loadtypes=$loadtypes;
-        // set_time_limit(8000000);
-        // $this->middleware('role:loadtypes_create|owner|admin', ['only' => ['storeMany', 'storeMany']]);
-        // $this->middleware('role:loadtypes_edit|owner|admin', ['only' => ['update']]);
-        // $this->middleware('role:loadtypes_read|owner|admin', ['only' => ['index']]);
-        // $this->middleware('role:loadtypes_delete|owner|admin', ['only' => ['destroy']]);
+        set_time_limit(8000000);
+         $this->middleware('role:loadtypes_create|owner|admin', ['only' => ['storeMany', 'storeMany']]);
+         $this->middleware('role:loadtypes_edit|owner|admin', ['only' => ['update']]);
+        $this->middleware('role:loadtypes_read|owner|admin', ['only' => ['index']]);
+        $this->middleware('role:loadtypes_delete|owner|admin', ['only' => ['destroy']]);
     }
 
-    public function index(Request $request)
+    public function index(PaginationRequest $request)
     {
-        $validator = Validator::make($request->all(),[
-            "page"=>["required","integer"]
-        ]);
-        if($validator->fails()){
-            return response()->json(["error"=>$validator->errors()],Response::HTTP_BAD_REQUEST);
-        }
-        $idUser=3;
-        $type= $this->loadtypes->index($idUser,$request->input("page"));
-
-       if($type instanceof LengthAwarePaginator){
-        $response =  LoadTypesResponse::make($type);
+        $res= $this->loadtypes->index($request);
+       if($res instanceof LengthAwarePaginator){
+        $response =  LoadTypesResponse::make($res);
         return response()->json($response,Response::HTTP_OK);
        }
-        if(!$type instanceof LoadTypes){
-                return response()->json(["error"=>"bad request"], Response::HTTP_BAD_REQUEST);
-        }
+       return response()->json(["error"=>"Bed Request"],Response::HTTP_BAD_REQUEST);
     }
 
     public function store(LoadTypesRequest $request)
     {
-       //dd(gettype($request->all()) );
-
-        $loadType=$this->loadtypes->store($request->all());
-        if(!$loadType instanceof LoadTypes){
-            return response()->json(["error"=>"Bed Request"],Response::HTTP_BAD_REQUEST);
+        $affairesituation=$this->loadtypes->store($request->all());
+        if($affairesituation instanceof LoadTypes){
+           $response=LoadTypeResponse::make($affairesituation);
+           return response()->json(["data"=>$response],Response::HTTP_CREATED);
         }
-
-
-
-
-
-       // $loadtypes = new LoadTypes();
-       // $loadtypes->name = $request->input("name");
-        //$loadtypes->save();
-        //return response(['data' => $loadtypes], 201);
-
+        return response()->json(['error'=>"Bad Request"],Response::HTTP_BAD_REQUEST);
     }
 
     public function storeMany(Request $request)
@@ -88,102 +65,51 @@ class LoadTypesController extends Controller
 
                 return response()->json(["message"=>"loadtypes created"],Response::HTTP_CREATED);
             }
-
             return response()->json(["error"=>"Bad Request"],Response::HTTP_BAD_REQUEST);
-
-       // $validator = Validator::make($request->all(), [
-         //   '*.name' => 'required|string|min:4|max:255|distinct|unique:App\Models\LoadTypes',
-       // ]);
-
-        // if ($validator->fails()) {
-        //     return response($validator->errors(), 400);
-        // }
-        // $load_types = $request->all();
-        // $load_type_records = [];
-        // foreach ($load_types as $loadtype) {
-        //     if (!empty($loadtype)) {
-        //         $load_type_records[] = [
-        //             'name' => $loadtype['name'],
-        //         ];
-        //         $subject = LogsEnumConst::Add . LogsEnumConst::LoadType . $loadtype['name'];
-        //    $logs = new LogActivity();
-        // $logs->addToLog($subject, $request);
-        //     }
-        // }
-
-        // $loadtypes = LoadTypes::insert($load_type_records);
-        // return response(['data' => $loadtypes], 201);
-
     }
 
     public function show($id)
     {
-
-        $loadType =$this->loadtypes->get($id);
-
-        if(!$loadType instanceof LoadTypes){
-            return response()->json(["error"=>"Bad Request"],Response::HTTP_BAD_REQUEST);
+        $affairesituation=$this->loadtypes->get($id);
+        if($affairesituation instanceof LoadTypes){
+            $response=LoadTypeResponse::make($affairesituation);
+            return response()->json(["data"=>$response],Response::HTTP_OK);
         }
-
-        if($loadType instanceof LoadTypes){
-            $response= LoadTypeResponse::make($loadType);
-            return response()->json(["loadtype"=>$response],Response::HTTP_OK);
-        }
-
-       // $loadtypes = LoadTypes::findOrFail($id);
-
-        //return response(['data', $loadtypes], 200);
+        return response()->json(['error'=>"Bad Request"],Response::HTTP_BAD_REQUEST);
     }
 
     public function update(LoadTypesRequest $request, $id)
     {
-
         $perLoadType=$this->isLoaType($id);
-        if($perLoadType instanceof LoadTypes){
+        if(!is_null($perLoadType)){
             $data= $request->all();
             $loadType= $this->loadtypes->edit($data,$perLoadType);
-            if(!$loadType instanceof LoadTypes){
-                return response()->json(["error"=>"Bad Request"],Response::HTTP_BAD_REQUEST);
-            }
-            if($loadType instanceof LoadTypes){
+            if(!is_null($loadType)){
                 $response= LoadTypeResponse::make($loadType);
-                return response()->json(["loadtype"=>$response],Response::HTTP_OK);
+                return response()->json(["data"=>$response],Response::HTTP_OK);
             }
-        }else{
-            return response()->json(["error"=>"LoadType not exist"],Response::HTTP_NO_CONTENT);
         }
-
-
-
-
-       // $loadtypes = LoadTypes::findOrFail($id);
-        //$loadtypes->update($request->all());
-        //$subject = LogsEnumConst::Update . LogsEnumConst::LoadType . $loadtypes['name'];
-      //$logs = new LogActivity();
-        //$logs->addToLog($subject, $request);
-        //return response(['data' => $loadtypes], 200);
+        return response()->json(["error"=>"LoadType not exist"],Response::HTTP_NO_CONTENT);
     }
     private function isLoaType($id)
     {
-        $loadType=$this->loadtypes->get($id);
-        if($loadType instanceof LoadTypes ){
-            return $loadType;
-        }
-        return null;
+        return $this->loadtypes->get($id);
     }
 
-    public function destroy($id)
+    public function destroy(Request $request)
     {
-        $perLoadType=$this->isLoaType($id);
-        if($perLoadType === null){
-            return response()->json(["error"=>"LoadType not exist"],Response::HTTP_BAD_REQUEST);
-        }
-        $destroy = $this->loadtypes->delete($id,$perLoadType);
-        if($destroy instanceof LoadTypes){
-            $response = LoadTypeResponse::make($destroy);
-            return response()->json(["LoadType"=>$response],Response::HTTP_OK);
+        $validator = Validator::make($request->all(),[
+            "id"=>["required","integer"],
+            "name"=>["required","string"],
+        ]);
+            if($validator->fails()){
+                return response()->json(["error"=>$validator->errors()],Response::HTTP_BAD_REQUEST);
+            }
+        $res = $this->loadtypes->delete($request);
+        if(!is_null($res) ){
+            return response()->json(['data' => $res], Response::HTTP_NO_CONTENT);
         }else{
-            return response()->json(["error"=>"Bad Request"],Response::HTTP_BAD_REQUEST);
-        }
+           return response()->json(['error'=>"Bad Request"],Response::HTTP_BAD_REQUEST);
+       }
     }
 }

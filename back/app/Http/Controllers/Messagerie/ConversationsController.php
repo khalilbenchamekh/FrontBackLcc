@@ -5,6 +5,7 @@ use App\Events\NewMessage;
 use App\Http\Controllers\Controller;
 use App\Http\Requests\Messagerie\StoreMessageRequest;
 use App\Repository\Conversation\IConversationRepository;
+use App\Services\SaveFile\ISaveFileService;
 use App\User;
 use Carbon\Carbon;
 use Illuminate\Http\Request;
@@ -13,9 +14,11 @@ use Tymon\JWTAuth\Facades\JWTAuth;
 class ConversationsController extends Controller
 {
     private $con;
-    public function __construct(IConversationRepository $con)
+    private $iSaveFileService;
+    public function __construct(ISaveFileService $iSaveFileService, IConversationRepository $con)
     {
         $this->con = $con;
+        $this->iSaveFileService = $iSaveFileService;
     }
 
     public function index(){
@@ -71,19 +74,17 @@ class ConversationsController extends Controller
 
     public function store(User $user,StoreMessageRequest $request)
     {
-
+        $pathToMove = 'Messagerie/';
         $message= $this->con->createmessage(
             $request->user(),
             $user,
             $request
         );
+        $message = $this->iSaveFileService->saveConversationFiles($message,$pathToMove,$request->file('filenames'));
         broadcast( new NewMessage($message));
-
         return response()->json(
             [
                 'message'=>$message
             ]);
     }
-
-
 }

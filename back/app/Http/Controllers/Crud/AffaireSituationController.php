@@ -2,7 +2,7 @@
 
 namespace App\Http\Controllers\Crud;
 use App\Http\Controllers\Controller;
-use App\Http\Requests\Auth\PaginatinRequest;
+use App\Http\Requests\Auth\PaginationRequest;
 use App\Http\Requests\Crud\AffaireSituationRequest;
 use App\Models\AffaireSituation;
 use App\Response\AffaireSituation\AffaireSituationResponse;
@@ -10,7 +10,8 @@ use App\Response\AffaireSituation\AffaireSituationsResponse;
 use App\Services\AffaireSituation\IAffaireSituationService;
 use Illuminate\Pagination\LengthAwarePaginator;
 use Symfony\Component\HttpFoundation\Response;
-
+use Illuminate\Support\Facades\Validator;
+use Illuminate\Http\Request;
 class AffaireSituationController extends Controller
 {
     private $affaireSituationService;
@@ -23,14 +24,13 @@ class AffaireSituationController extends Controller
        $this->middleware('role:affairesituations_delete|owner|admin', ['only' => ['destroy']]);
     }
 
-    public function index(PaginatinRequest $request)
+    public function index(PaginationRequest $request)
     {
-        $page=$request->input("page");
-        $affaireSatuations=$this->affaireSituationService->index($page);
+        $affaireSatuations=$this->affaireSituationService->index($request);
         if($affaireSatuations instanceof LengthAwarePaginator ){
             $response=AffaireSituationsResponse::make($affaireSatuations);
             return response()->json([
-                'affaireSituations'=>$response->items(),
+                'data'=>$response->items(),
                 "total"=>$affaireSatuations->total(),
                 "currentPage"=>$affaireSatuations->currentPage(),
                 "lastPage"=>$affaireSatuations->lastPage()
@@ -45,7 +45,7 @@ class AffaireSituationController extends Controller
         $affaireSituations=$this->affaireSituationService->storeMany($data);
         if(is_array($affaireSituations) && count($affaireSituations)>0){
             $response=AffaireSituationsResponse::make($affaireSituations);
-            return  response()->json(["affaireSituations"=>$response],Response::HTTP_CREATED);
+            return  response()->json(["data"=>$response],Response::HTTP_CREATED);
         }
         return response()->json(['error'=>"Bad Request",Response::HTTP_BAD_REQUEST]);
     }
@@ -55,7 +55,7 @@ class AffaireSituationController extends Controller
         $affairesituation=$this->affaireSituationService->store($request->all());
         if($affairesituation instanceof AffaireSituation){
            $response=AffaireSituationResponse::make($affairesituation);
-           return response()->json(["affaireSituation"=>$response],Response::HTTP_CREATED);
+           return response()->json(["data"=>$response],Response::HTTP_CREATED);
         }
         return response()->json(['error'=>"Bad Request"],Response::HTTP_BAD_REQUEST);
     }
@@ -65,12 +65,9 @@ class AffaireSituationController extends Controller
         $affairesituation=$this->affaireSituationService->get($id);
         if($affairesituation instanceof AffaireSituation){
             $response=AffaireSituationResponse::make($affairesituation);
-            return response()->json(["affaireSituation"=>$response],Response::HTTP_OK);
+            return response()->json(["data"=>$response],Response::HTTP_OK);
         }
         return response()->json(['error'=>"Bad Request"],Response::HTTP_BAD_REQUEST);
-//        $affairesituation = AffaireSituation::findOrFail($id);
-//
-//        return response(['data', $affairesituation], 200);
     }
 
     public function update(AffaireSituationRequest $request, $id)
@@ -80,35 +77,26 @@ class AffaireSituationController extends Controller
             $affairesituation=$this->affaireSituationService->edit($perAffaireSituation,$request->all());
             if($affairesituation instanceof AffaireSituation){
                 $response=AffaireSituationResponse::make($affairesituation);
-                return response()->json(["affaireSituation"=>$response],Response::HTTP_OK);
+                return response()->json(["data"=>$response],Response::HTTP_OK);
             }
-            return response()->json(['error'=>"Bad Request"],Response::HTTP_BAD_REQUEST);
-        }else{
-            return response()->json(['error'=>"User Not Found"],Response::HTTP_BAD_REQUEST);
         }
-
-
-
-//        $affairesituation = AffaireSituation::findOrFail($id);
-//        $affairesituation->update($request->all());
-//
-//        return response(['data' => $affairesituation], 200);
+        return response()->json(['error'=>"Bad Request"],Response::HTTP_BAD_REQUEST);
     }
 
-    public function destroy($id)
+    public function destroy(Request $request)
     {
-        $perAffaireSitution=$this->affaireSituationService->get($id);
-        if($perAffaireSitution instanceof  AffaireSituation){
-            $affaireSituation=$this->affaireSituationService->delete($perAffaireSitution,$id);
-            if($affaireSituation){
-                $response=AffaireSituationResponse::make($perAffaireSitution);
-                return response()->json(['affaireSituation'=>$response],Response::HTTP_OK);
-            }
-            return response()->json(['error'=>"Bad Request"],Response::HTTP_BAD_REQUEST);
+        $validator = Validator::make($request->all(),[
+            "id"=>["required","integer"],
+            "Name"=>["required","string"]
+        ]);
+        if($validator->fails()){
+            return response()->json(["error"=>$validator->errors()],Response::HTTP_BAD_REQUEST);
         }
-        return response()->json(['error'=>"User Not Found"],Response::HTTP_BAD_REQUEST);
-//        AffaireSituation::destroy($id);
-//
-//        return response(['data' => null], 204);
+            $res=$this->affaireSituationService->delete($request);
+            if(!is_null($res) ){
+                return response()->json(['data' => $res], Response::HTTP_NO_CONTENT);
+           }else{
+               return response()->json(['error'=>"Bad Request"],Response::HTTP_BAD_REQUEST);
+           }
     }
 }

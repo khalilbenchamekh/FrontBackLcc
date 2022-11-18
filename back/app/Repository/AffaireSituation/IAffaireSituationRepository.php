@@ -1,7 +1,5 @@
 <?php
-
 namespace App\Repository\AffaireSituation;
-
 interface IAffaireSituationRepository
 {
     public function index($request);

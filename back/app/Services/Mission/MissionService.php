@@ -1,7 +1,5 @@
 <?php
-
 namespace App\Services\Mission;
-
 use App\Helpers\LogActivity;
 use App\Http\Requests\Enums\LogsEnumConst;
 use App\Repository\Mission\IMissionRepository;
@@ -17,7 +15,7 @@ class MissionService implements IMissionService
     {
         $typesCharge=$this->iMissionRepository->save($request);
         if(!is_null($typesCharge)){
-            $subject = LogsEnumConst::Add . LogsEnumConst::Mission . $request->input('id');
+            $subject = LogsEnumConst::Add . LogsEnumConst::Mission . $request->input('text');
             $logs = new LogActivity();
             $logs->addToLog($subject, $request);
         }
@@ -30,6 +28,9 @@ class MissionService implements IMissionService
     public function index($request)
     {
         return $this->iMissionRepository->index($request);
+    } public function  getMissionOfUSer($userID)
+    {
+        return $this->iMissionRepository->getMissionOfUSer($userID);
     }
     public function update($request,$id)
     {
@@ -37,7 +38,7 @@ class MissionService implements IMissionService
         if(!empty($TypesCharge)){
             $newTypesCharge= $this->iMissionRepository->update($TypesCharge,$request);
             if(!is_null($newTypesCharge) ){
-                $subject = LogsEnumConst::Update . LogsEnumConst::Mission. $request->input('id');
+                $subject = LogsEnumConst::Update . LogsEnumConst::Mission. $request->input('text');
                 $logs = new LogActivity();
                 $logs->addToLog($subject, $request);
             }
@@ -45,8 +46,16 @@ class MissionService implements IMissionService
         }
         return null;
     }
-    public function destroy($id)
+    public function destroy($request)
     {
-        return $this->iMissionRepository->destroy($id);
+        $res= $this->iMissionRepository->destroy($request['id']);
+        if($res === 0 || is_null($res)){
+            return false;
+        }else{
+            $subject = LogsEnumConst::Delete . LogsEnumConst::Intermediate . $request['text'];
+            $logs = new LogActivity();
+            $logs->addToLog($subject, $request);
+        }
+        return true;
     }
 }

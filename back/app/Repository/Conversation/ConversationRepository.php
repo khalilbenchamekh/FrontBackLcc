@@ -44,11 +44,8 @@ class ConversationRepository implements IConversationRepository
         return $conversations;
     }
 
-
     public function createmessage(User $from, User $to, Request $request)
     {
-        $files = [];
-        $type = '';
         $cont = $request->get('content');
         $lastMessages = $this->message->newQuery()->create(
             [
@@ -62,51 +59,8 @@ class ConversationRepository implements IConversationRepository
                 'organisation_id' => $this->organisation_id,
                 'created_at' => Carbon::now()
             ]
-
         );
-        if ($request->hasfile('filenames')) {
-            $filesArray = [
-                'geoMapping',
-                'geoMapping/Messagerie',
-            ];
-            $pathToMove = 'geoMapping/Messagerie/';
-            foreach ($filesArray as $item) {
-                $path = storage_path() . '/' . $item . '/';
-                if (!File::isDirectory($path)) {
-                    File::makeDirectory($path, 0777, true, true);
-                }
-            }
-
-
-            foreach ($request->file('filenames') as $file) {
-                $filenameWithExt = $file->getClientOriginalName();
-                $filename = pathinfo($filenameWithExt, PATHINFO_FILENAME);
-                $extension = $file->getClientOriginalExtension();
-                $fileNameToStore = md5($filename . time()) . '.' . $extension;
-                array_push($files, [
-                    "fileName" => $fileNameToStore
-                ]);
-                $path = public_path() . '/' . $pathToMove;
-                $file->move($path, $fileNameToStore);
-                $file = new MessageFile();
-                $file->message()->associate(
-                    $lastMessages->id
-                );
-                $file->fileName = $fileNameToStore;
-                $file->save();
-                $type = 'file';
-            }
-
-            if ($type == 'file') {
-                $lastMessages->update(
-                    [
-                        'type' => $type
-                    ]
-                );
-            }
-        }
-
-        return $lastMessages->setAttribute('files', $files);
+        return $lastMessages;
     }
 
     public function getMessageFor(int $from, int $to): Builder
@@ -132,8 +86,7 @@ class ConversationRepository implements IConversationRepository
      */
     public function unreadCount(int $user)
     {
-        return $this->message->newQuery()->where('organisation_id','=',$this->organisation_id)->
-        where('to_id', $user)
+        return $this->message->newQuery()->where('organisation_id','=',$this->organisation_id)->where('to_id', $user)
             ->groupBy('from_id')
             ->selectRaw('from_id, COUNT(id) as count')->whereRaw('read_at IS NULL')->get()->pluck('count', 'from_id');
     }

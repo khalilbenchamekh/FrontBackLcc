@@ -3,7 +3,7 @@
 
 namespace App\Helpers;
 
-use App\Http\Requests\Auth\PaginatinRequest;
+use App\Http\Requests\Auth\PaginationRequest;
 use App\Models\Notification;
 use Illuminate\Http\Request;
 use App\Models\LogActivity as LogActivityModel;
@@ -48,7 +48,7 @@ class LogActivity
 
     }
 
-    public function logActivityLists(PaginatinRequest $request)
+    public function logActivityLists(PaginationRequest $request)
     {
         return DB::table("log_activities")
         ->where('organisation_id','=', $this->organisation_id)

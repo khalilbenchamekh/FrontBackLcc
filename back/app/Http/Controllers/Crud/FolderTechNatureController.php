@@ -4,6 +4,7 @@ namespace App\Http\Controllers\Crud;
 
 use App\Helpers\LogActivity;
 use App\Http\Controllers\Controller;
+use App\Http\Requests\Auth\PaginationRequest;
 use App\Http\Requests\Crud\FolderTechNatureRequest;
 use App\Http\Requests\Enums\LogsEnumConst;
 use App\Http\Requests\Enums\OperationChoice;
@@ -22,89 +23,36 @@ class FolderTechNatureController extends Controller
     private $iFolderTechNatureService;
     public function __construct(IFolderTechNatureService $iFolderTechNatureService)
     {
-        // set_time_limit(8000000);
-        // $this->middleware('role:folderteches_create|owner|admin', ['only' => ['storeMany']]);
-        // $this->middleware('role:folderteches_edit|owner|admin', ['only' => ['update']]);
-        // $this->middleware('role:folderteches_read|owner|admin', ['only' => ['index']]);
-        // $this->middleware('role:folderteches_delete|owner|admin', ['only' => ['destroy']]);
+         set_time_limit(8000000);
+        $this->middleware('role:folderteches_create|owner|admin', ['only' => ['storeMany']]);
+        $this->middleware('role:folderteches_edit|owner|admin', ['only' => ['update']]);
+        $this->middleware('role:folderteches_read|owner|admin', ['only' => ['index']]);
+        $this->middleware('role:folderteches_delete|owner|admin', ['only' => ['destroy']]);
         $this->iFolderTechNatureService=$iFolderTechNatureService;
     }
 
-
-    private function treatment(Request $request,String $choice,$extera){
-
-        $affairenature = new FolderTechNature();
-        $name= $request->input('Name');
-        $abr_v= $request->input('Abr_v');
-        $abr_v=empty($abr_v) ? substr($name,0,3) : $abr_v;
-        $affairenature->Name=$name;
-        $affairenature->Abr_v=$abr_v;
-        if($choice == OperationChoice::SAVE){
-            $affairenature->save();
-            $subject = LogsEnumConst::Add . LogsEnumConst::FolderTechNature . $abr_v;
-       $logs = new LogActivity();
-        $logs->addToLog($subject, $request);
-        }if($choice == OperationChoice::UPDATE){
-            $affairenature = FolderTechNature::findOrFail($extera);
-
-            $affairenature->update($request->all());
-            $subject = LogsEnumConst::Update . LogsEnumConst::FolderTechNature . $abr_v;
-       $logs = new LogActivity();
-        $logs->addToLog($subject, $request);
-        }if($choice == OperationChoice::MULTIPLE) {
-            $affaires = $request->all();
-            $affaire_records = [];
-            foreach($affaires as $affaire)
-            {
-                if(! empty($affaire))
-                {
-
-                    $affairenature->Name= $affaire['Name'];
-                    $affairenature->Abr_v=$affaire['Abr_v'];
-                    $affairenature->save();
-                    $subject = LogsEnumConst::Add . LogsEnumConst::FolderTechNature . $abr_v;
-                $logs = new LogActivity();
-                $logs->addToLog($subject, $request);
-                    $affaire_records[] = $affairenature;
-
-                }
-            }
-            $affairenature= $affaire_records;
-        }
-
-        return response(['data' => $affairenature ], $choice === OperationChoice::SAVE ? 201 : 200);
-
-
-    }
-    public function index(Request $request)
+    public function index(PaginationRequest $request)
     {
-        $validator = Validator::make($request->all(), [
-            "limit"=>'required|integer',
-            "page"=>'required|integer'
-        ]);
-        if ($validator->fails()) {
-            return response($validator->errors(), 400);
-        }
-        $foldertechnatures = $this->iFolderTechNatureService->index($request);
+        $foldertechnatures = $this->iFolderTechNatureService->index($request->all());
         if($foldertechnatures instanceof LengthAwarePaginator){
             $response= FolderTechNaturesResponse::make($foldertechnatures->all());
             return response()->json([
-                'foldertechnatures'=>$response,
-                'total'=>$foldertechnatures->total(),
-                'lastPage'=>$foldertechnatures->lastPage(),
-                'currentPage'=>$foldertechnatures->currentPage(),
-            ],
-            Response::HTTP_OK
-            );
+                "data"=>$response,
+                'countPage'=>$response->perPage(),
+                "currentPage"=>$response->currentPage(),
+                "nextPage"=>$response->currentPage()<$response->lastPage()?$response->currentPage()+1:$response->currentPage(),
+                "lastPage"=>$response->lastPage(),
+                'total'=>$response->total(),
+            ],Response::HTTP_OK);
         }else{
             return response()->json(['error'=>"Bad Request"],Response::HTTP_BAD_REQUEST);
         }
     }
     public function storeMany(Request $request)
     {
-
+        // we should check name to be unque by organisation
         $validator = Validator::make($request->all(), [
-            'folderTechNature.*.Name' => 'required|string|min:4|max:255|distinct|unique:App\Models\FolderTechNature',
+            'folderTechNature.*.Name' => 'required|string|min:4|max:255',
             'folderTechNature.*.Abr_v' => 'string|max:3',
         ]);
 
@@ -115,7 +63,7 @@ class FolderTechNatureController extends Controller
         if(is_array($foldertechnatures) && !empty($foldertechnatures)){
             $response= FolderTechNaturesResponse::make($foldertechnatures);
             return response()->json([
-                "folderTechNature"=>$response
+                "data"=>$response
             ],Response::HTTP_CREATED);
         }
         return response()->json(['error'=>"Bad Request"],Response::HTTP_BAD_REQUEST);
@@ -126,7 +74,7 @@ class FolderTechNatureController extends Controller
         if($foldertechnature instanceof FolderTechNature){
             $response= FolderTechNatureResponse::make($foldertechnature);
             return response()->json([
-                "folderTechNature"=>$response
+                "data"=>$response
             ],Response::HTTP_CREATED);
         }
         return response()->json(['error'=>"Bad Request"],Response::HTTP_BAD_REQUEST);
@@ -138,7 +86,7 @@ class FolderTechNatureController extends Controller
         if($foldertechnature instanceof FolderTechNature){
             $response= FolderTechNatureResponse::make($foldertechnature);
             return response()->json([
-                "folderTechNature"=>$response
+                "data"=>$response
             ],Response::HTTP_OK);
         }
             return response()->json(['error'=>"Bad Request"],Response::HTTP_BAD_REQUEST);
@@ -159,26 +107,29 @@ class FolderTechNatureController extends Controller
         if($foldertechnature instanceof FolderTechNature){
             $response= FolderTechNatureResponse::make($foldertechnature);
             return response()->json([
-                "folderTechNature"=>$response
+                "data"=>$response
             ],Response::HTTP_OK);
         }
         if($foldertechnature === true){
-            return response()->json(['error'=>"Name alerdy teken"],Response::HTTP_BAD_REQUEST);
+            return response()->json(['error'=>"Name already exist"],Response::HTTP_BAD_REQUEST);
         }
             return response()->json(['error'=>"Bad Request"],Response::HTTP_BAD_REQUEST);
     }
 
-    public function destroy($id)
+    public function destroy(Request $request)
     {
-        $feesfoldertech = $this->iFolderTechNatureService->destroy($id);
-
-        if($feesfoldertech instanceof FolderTechNature){
-             $response=FolderTechNatureResponse::make($feesfoldertech);
-             return response()->json([
-                 'feesfolderteche'=>$response
-             ],Response::HTTP_OK);
-         }else{
-             return response()->json(['error'=>"Bad Request"],Response::HTTP_BAD_REQUEST);
-         }
+        $validator = Validator::make($request->all(),[
+            "id"=>["required","integer"],
+            "Abr_v"=>["required","string"]
+        ]);
+        if($validator->fails()){
+            return response()->json(["error"=>$validator->errors()],Response::HTTP_BAD_REQUEST);
+        }
+            $res=$this->iFolderTechNatureService->destroy($request);
+            if(!is_null($res) ){
+                return response()->json(['data' => $res], Response::HTTP_NO_CONTENT);
+           }else{
+               return response()->json(['error'=>"Bad Request"],Response::HTTP_BAD_REQUEST);
+           }
     }
 }

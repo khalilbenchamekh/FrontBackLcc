@@ -4,7 +4,7 @@ namespace App\Services\AffaireSituation;
 
 interface IAffaireSituationService
 {
-public function index($page);
+public function index($request);
 public function get($id);
 public function edit($perAffaireSituation,$data);
 public function delete($request);

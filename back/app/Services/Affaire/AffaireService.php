@@ -6,13 +6,19 @@ namespace App\Services\Affaire;
 use App\Helpers\LogActivity;
 use App\Http\Requests\Enums\LogsEnumConst;
 use App\Repository\Affaire\IAffaireRepository;
+use App\Services\BusinessManagement\IBusinessManagementService;
+use App\Services\Mission\IMissionService;
 
 class AffaireService implements IAffaireService{
 
     private $iAffaireRepository;
-    public function __construct(IAffaireRepository $iAffaireRepository)
+    private $businessManagementService;
+    private $missionService;
+    public function __construct(IAffaireRepository $iAffaireRepository,IBusinessManagementService $businessManagementService,IMissionService $missionService)
     {
         $this->iAffaireRepository=$iAffaireRepository;
+        $this->businessManagementService = $businessManagementService;
+        $this->missionService = $missionService;
     }
     public function getBusiness($request)
     {
@@ -23,7 +29,9 @@ class AffaireService implements IAffaireService{
     {
         $affaire= $this->iAffaireRepository->save($request);
         if(!is_null($affaire) ){
-            $subject = LogsEnumConst::Add . LogsEnumConst::Affaire. $request->input('REF');
+            $resBusinessManagement=$this->businessManagementService->store($request,$affaire);
+            $resMission=$this->missionService->save($request,$affaire);
+            $subject = LogsEnumConst::Add . LogsEnumConst::Affaire. $affaire->REF;
             $logs = new LogActivity();
             $logs->addToLog($subject, $request);
         }
@@ -43,7 +51,9 @@ class AffaireService implements IAffaireService{
         if(!empty($affaire)){
             $newAffaire= $this->iAffaireRepository->update($affaire,$request);
             if(!is_null($newAffaire) ){
-                $subject = LogsEnumConst::Update . LogsEnumConst::Affaire. $request->input('REF');
+                $resBusinessManagement=$this->businessManagementService->store($request,$affaire);
+                $resMission=$this->missionService->save($request,$affaire);
+                $subject = LogsEnumConst::Update . LogsEnumConst::Affaire. $affaire->REF;
                 $logs = new LogActivity();
                 $logs->addToLog($subject, $request);
             }
@@ -51,9 +61,17 @@ class AffaireService implements IAffaireService{
         }
         return null;
     }
-    public function destroy($id)
+    public function destroy($request)
     {
-        return $this->iAffaireRepository->destroy($id);
+        $res =  $this->iAffaireRepository->destroy($request['id']);
+        if($res === 0 || is_null($res)){
+            return false;
+        }else{
+            $subject = LogsEnumConst::Delete . LogsEnumConst::Affaire . $request['REF'];
+            $logs = new LogActivity();
+            $logs->addToLog($subject, $request);
+        }
+        return true;
     }
 
 }

@@ -49,9 +49,5 @@ class OrganisationRequest
             'desactiver'=>self::$desactiver,
             'blocked'=>self::$blocked,
         ];
-
     }
-
-
-
 }

@@ -11,6 +11,8 @@ interface IFolderTechService
     public function index($request);
     public function show($id);
     public function update($id,$request);
-    public function destroy($id);
+    public function delete($request);
     public function getFolderTech($request);
+    public function saveBusinessManagement($request,$affaire);
+    public function saveMission($request,$affaire);
 }

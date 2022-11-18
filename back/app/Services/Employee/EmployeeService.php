@@ -24,12 +24,32 @@ class EmployeeService implements IEmployeeService
         $this->roleService = $roleService;
     }
 
-    public function index($page)
+    public function index($request)
     {
         // TODO: Implement index() method.
-        return $this->employeeRepository->index($page);
+        return $this->employeeRepository->index($request);
     }
-
+    public function all()
+    {
+        // TODO: Implement index() method.
+        $employees = $this->employeeRepository->all();
+        $i = 0;
+        foreach ($employees as $employee) {
+            $isOnline = $employee['user']->isOnline();
+            $employees[$i]->setAttribute('isOnline', $isOnline);
+            $i++;
+        }
+        return $employees;
+    }
+    public function create($data){
+        $res=$this->employeeRepository->create($data);
+        if(!is_null($res)){
+            $subject = LogsEnumConst::Add . LogsEnumConst::Employee . $res->name;
+            $logs = new LogActivity();
+            $logs->addToLog($subject, $data);
+        }
+        return null;
+    }
     public function store($data)
     {
         $user=Auth::User();
@@ -40,7 +60,6 @@ class EmployeeService implements IEmployeeService
                 $roleName = $data->input('role') == null ? 'user' : $data->input('role');
                 $filter=[["key"=>"name","value"=>$roleName]];
                 $role=$this->roleService->getBy($filter);
-                dd($role);
                 if($role instanceof Role){
                     $user->attachRole($role);
                 }

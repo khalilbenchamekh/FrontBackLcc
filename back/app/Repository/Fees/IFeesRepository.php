@@ -1,9 +1,5 @@
 <?php
-
-
 namespace App\Repository\Fees;
-
-
 interface IFeesRepository
 {
     public function index($request);
@@ -15,4 +11,5 @@ interface IFeesRepository
     public function updateFolderTechFees($fees,$request,$busines_mang_id);
     public function destroy($request);
     public function getFolderTechFees($request);
+    public function saveGreatConstructionSitesFees($greatConstructionSites_id,$request);
 }

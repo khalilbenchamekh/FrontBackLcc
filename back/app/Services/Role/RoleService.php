@@ -19,7 +19,17 @@ class RoleService implements IRoleService
 
     public function getBy(array $filter)
     {
+    // TODO: Implement getBy() method.
+    return $this->roleRepository->getBy($filter);
+    }
+    public function like($name)
+    {
         // TODO: Implement getBy() method.
-        return $this->roleRepository->getBy($filter);
+        return $this->roleRepository->like($name);
+    }
+    public function likePermission($name)
+    {
+        // TODO: Implement getBy() method.
+        return $this->roleRepository->like($name);
     }
 }

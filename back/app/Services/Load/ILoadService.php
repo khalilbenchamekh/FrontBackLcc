@@ -9,4 +9,6 @@ interface ILoadService{
     public function edit($load,$data);
     public function show($id);
     public function destroy($id);
+    public function dashboard($from,$to,$orderBy);
+
 }

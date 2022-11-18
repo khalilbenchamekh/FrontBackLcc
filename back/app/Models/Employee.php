@@ -12,7 +12,6 @@ class Employee extends Model
 
     public function user()
     {
-
         return $this->morphOne(User::class, 'membership');
     }
 
@@ -20,5 +19,4 @@ class Employee extends Model
     {
         return $this->hasMany(Linked_Documents::class);
     }
-
 }

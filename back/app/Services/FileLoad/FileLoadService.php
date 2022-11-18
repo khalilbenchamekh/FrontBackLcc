@@ -2,12 +2,12 @@
 
 namespace App\Services\FileLoad;
 
-use App\Repository\FileLoad\IFileLoadRipository;
+use App\Repository\FileLoad\IFileLoadRepository;
 
 class FileLoadService implements IFileLoadService
 {
-    private IFileLoadRipository $fileLoadRipository;
-    public function __construct(IFileLoadRipository  $fileLoadRipository)
+    private IFileLoadRepository $fileLoadRipository;
+    public function __construct(IFileLoadRepository  $fileLoadRipository)
     {
         $this->fileLoadRipository=$fileLoadRipository;
     }
