@@ -14,9 +14,9 @@ class ClientService implements IClientService
         $this->iClientRepository=$iClientRepository;
     }
 
-    public function index($request)
+    public function index($request,$order=null)
     {
-        return $this->iClientRepository->index($request);
+        return $this->iClientRepository->index($request,$order);
     }
     public function storeBusiness($data,$bus)
     {

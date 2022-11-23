@@ -8,6 +8,8 @@ interface IAffaireNatureService
 
     public function getAllAffaireNature($request);
 
+    public function index($request,$order=null);
+
     public function get($id);
 
     public  function edit($id,$data);

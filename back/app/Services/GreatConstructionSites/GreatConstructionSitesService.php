@@ -2,6 +2,7 @@
 
 
 namespace App\Services\GreatConstructionSites;
+use Carbon\Carbon;
 use App\Helpers\LogActivity;
 use App\Http\Requests\Enums\LogsEnumConst;
 use App\Repository\GreatConstructionSites\IGreatConstructionSitesRepository;
@@ -104,5 +105,10 @@ class GreatConstructionSitesService implements IGreatConstructionSitesService
             $logs->addToLog($subject, $request);
         }
         return true;
+    }
+
+    public function getGreatConstructionSitesBetween($from ,$to)
+    {
+        return $this->iGreatConstructionSitesRepository->getGreatConstructionSitesBetween($from,$to);
     }
 }

@@ -19,14 +19,18 @@ class AffaireSituationRepository implements IAffaireSituationRepository
         $this->organisation_id = Auth::user()->organisation_id;
         $this->current_user=Auth::user()->id;
     }
-    public function index($request)
+    public function index($request,$order=null)
     {
         // TODO: Implement index() method.
         try {
-            return AffaireSituation::
-                select()
-                ->where("organisation_id","=",$this->organisation_id)
+            $affaireSituation= AffaireSituation::
+                select();
+                if(!is_null($order)){
+                    $affaireSituation->latest();
+                }
+                $affaireSituation->where("organisation_id","=",$this->organisation_id)
                 ->paginate($request['limit'],['*'],'page',$request['page']);
+                return $affaireSituation;
         }catch (\Exception $exception){
             $this->Log($exception);
             return null;

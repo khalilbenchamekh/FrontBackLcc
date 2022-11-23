@@ -38,13 +38,19 @@ class IntermediateRepository implements IIntermediateRepository
             return null;
         }
     }
-    public function index($request)
+    public function index($request,$order=null)
     {
         try {
-            return Intermediate::
-                select()
-                ->where("organisation_id","=",$this->organisation_id)
-                ->paginate($request['limit'],['*'],'page',$request['page']);
+            $intermediate=  Intermediate::
+                select();
+                if(!is_null($order))
+                 {
+                    $intermediate->latest();
+                 }
+                 $intermediate->where("organisation_id","=",$this->organisation_id)
+                 ->paginate($request['limit'],['*'],'page',$request['page']);
+
+            return $intermediate;
         }catch (\Exception $exception){
             $this->Log($exception);
             return null;

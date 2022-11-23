@@ -6,7 +6,7 @@ namespace App\Services\GreatConstructionSites;
 interface IGreatConstructionSitesService
 {
     public function show($id);
-
+    public function getGreatConstructionSitesBetween($from ,$to);
     public function dashboard($from,$to,$orderBy);
     public function index();
     public function store($request);

@@ -5,7 +5,7 @@ namespace App\Services\Client;
 interface IClientService
 {
 
-    public function index($request);
+    public function index($request,$order=null);
     public function storeBusiness($data,$bus);
     public function business($data);
     public function storeParticular($data,$par);

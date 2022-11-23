@@ -116,9 +116,19 @@ use App\Services\Email\ISendEmail;
 use App\Services\Email\SendEmail;
 use App\Services\BusinessManagement\IBusinessManagementService;
 use App\Services\BusinessManagement\BusinessManagementService;
+use App\Service\Profile\IProfileService;
+use App\Service\Profile\ProfileService;
 
 use App\Repository\BusinessManagement\IBusinessManagementRespositry;
 use App\Repository\BusinessManagement\BusinessManagementRespositry;
+use App\Repository\Notification\INotificationRepository;
+use App\Repository\Notification\NotificationRepository;
+use App\Repository\Resource\IResourceRepository;
+use App\Repository\Resource\ResourceRepository;
+use App\Service\Notification\INotificationService;
+use App\Service\Notification\NotificationService;
+use App\Service\Resource\IResourceService;
+use App\Service\Resource\ResourceService;
 
 class AppServiceProvider extends ServiceProvider
 {
@@ -161,6 +171,10 @@ class AppServiceProvider extends ServiceProvider
         $this->app->bind(IBillService::class,BillService::class);
         $this->app->bind(IMissionService::class,MissionService::class);
         $this->app->bind(IAdminResourceService::class,AdminResourceService::class);
+        $this->app->bind(IProfileService::class,ProfileService::class);
+        $this->app->bind(IResourceService::class,ResourceService::class);
+        $this->app->bind(INotificationService::class,NotificationService::class);
+
 
         //  Repositories
         $this->app->bind(IOrganisationRepository::class,OrganisationRepository::class);
@@ -191,6 +205,9 @@ class AppServiceProvider extends ServiceProvider
         $this->app->bind(IMissionRepository::class,MissionRepository::class);
         $this->app->bind(IAdminResourceRepository::class,AdminResourceRepository::class);
         $this->app->bind(IBusinessManagementRespositry::class,BusinessManagementRespositry::class);
+        $this->app->bind(INotificationRepository::class,NotificationRepository::class);
+        $this->app->bind(IResourceRepository::class,ResourceRepository::class);
+
 
         if($this->app->environment()==='local'){
             if(isset($_SERVER['REQUEST_METHOD'],$_SERVER['REQUEST_URI'])){

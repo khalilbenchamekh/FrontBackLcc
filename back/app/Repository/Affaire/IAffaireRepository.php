@@ -10,4 +10,5 @@ interface IAffaireRepository
     public function destroy($id);
     public function getAffaireBy(array $conditions);
     public function getBusiness($request);
+    public function getAffaireBetween($from, $to);
 }

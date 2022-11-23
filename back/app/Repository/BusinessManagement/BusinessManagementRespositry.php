@@ -86,4 +86,27 @@ class BusinessManagementRespositry implements IBusinessManagementRespositry
             return null;
         }
     }
+    public function getLocations()
+    {
+        try {
+            return BusinessManagement::
+            where('longitude', '!=', 'null')
+                ->where(function ($query) {
+                    $query->where('latitude', '!=', 'null');
+                })
+                ->where('organisation_id','=',$this->organisation_id)
+                ->select(
+                    DB::raw("membership_type"),
+                    DB::raw("COUNT(membership_type) as count_type"),
+                    'longitude',
+                    'latitude'
+                )
+                ->groupBy(["membership_type"])
+                ->groupBy(["longitude", "latitude"])
+                ->get();
+        } catch (\Exception $exception) {
+            $this->Log($exception);
+            return null;
+        }
+    }
 }

@@ -33,6 +33,10 @@ class AffaireNatureService implements IAffaireNatureService
     {
         return $this->affaireNatureRepository->get($id);
     }
+    public function index($request, $order = null)
+    {
+        return $this->affaireNatureRepository->index($request,$order);
+    }
 
     public function edit($id, $data)
     {

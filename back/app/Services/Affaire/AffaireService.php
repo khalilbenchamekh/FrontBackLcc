@@ -3,6 +3,7 @@
 
 namespace App\Services\Affaire;
 
+use Carbon\Carbon;
 use App\Helpers\LogActivity;
 use App\Http\Requests\Enums\LogsEnumConst;
 use App\Repository\Affaire\IAffaireRepository;
@@ -23,6 +24,10 @@ class AffaireService implements IAffaireService{
     public function getBusiness($request)
     {
         return $this->iAffaireRepository->getBusiness($request);
+    }
+    public function getAffaireBetween($from ,$to)
+    {
+        return $this->iAffaireRepository->getAffaireBetween($from,$to);
     }
 
     public function save($request)

@@ -3,6 +3,7 @@
 
 namespace App\Services\FolderTech;
 
+use Carbon\Carbon;
 use App\Helpers\LogActivity;
 use App\Http\Requests\Enums\LogsEnumConst;
 use App\Models\FolderTech;
@@ -28,6 +29,11 @@ class FolderTechService implements IFolderTechService
             }
         }
         return $res;
+    }
+    public function getFolderTechBetween($from ,$to)
+    {
+        
+        return $this->iFolderTechRepository->getFolderTechBetween($from,$to);
     }
     public function saveBusinessManagement($request,$affaire)
     {

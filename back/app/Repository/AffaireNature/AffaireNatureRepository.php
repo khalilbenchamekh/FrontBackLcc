@@ -66,6 +66,22 @@ class AffaireNatureRepository implements IAffaireNatureRepository
         }
     }
 
+    public function index($request,$order=null)
+    {
+        try{
+            $affairenature=AffaireNature::select();
+            if(!is_null($order)){
+                $affairenature->latest();
+            }
+            $affairenature->where('organisation_id','=',$this->organisation_id)
+            ->paginate($request['limit'],['*'],'page',$request['page']);
+            return $affairenature;
+        }catch(\Exception $exception){
+            $this->Log($exception);
+            return null;
+        }
+    }
+
     public function edit(AffaireNature $affairNature, $data)
     {
         // TODO: Implement edit() method.

@@ -4,6 +4,7 @@ use App\Models\AffaireNature;
 interface IAffaireNatureRepository
 {
     public function store($data);
+    public function index($request,$order=null);
     public function findAffaireNatureByName($id);
     public function getAllAffaireNature($request);
     public function get($id);

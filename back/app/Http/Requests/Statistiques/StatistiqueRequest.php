@@ -28,6 +28,9 @@ class StatistiqueRequest extends FormRequest
             'rapport' =>'in:financier,tva,ca',
             'from' => [ 'date:Y-m-d'],
             'to' => [ 'date:Y-m-d'],
+            'orderBy' => 'in:year,month',
+            'resp_id' => 'exists:users,id',
+            'client_id' => 'exists:clients,id',
         ];
     }
 }

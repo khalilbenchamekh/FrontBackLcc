@@ -5,7 +5,7 @@ interface IFolderTechNatureRepository
 {
     public function getFolerTechNatureByName($id,$name);
     public function save($request);
-    public function index($request);
+    public function index($request,$order=null);
     public function show($id);
     public function update(FolderTechNature $folderTech,$request);
     public function destroy($id);

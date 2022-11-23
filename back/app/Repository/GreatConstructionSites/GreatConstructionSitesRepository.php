@@ -145,10 +145,21 @@ class GreatConstructionSitesRepository implements IGreatConstructionSitesReposit
     {
         try {
             //code...
-           
+
             return  GreatConstructionSites::where("id","=",$id)
                 ->where("organisation_id",'=',$this->organisation_id)
                 ->destroy();
+        } catch (\Exception $exception) {
+            $this->Log($exception);
+            return null;
+        }
+    }
+    public function getGreatConstructionSitesBetween($from, $to)
+    {
+        try {
+            return GreatConstructionSites::whereBetween('DATE_LAI', [$from, $to])
+            ->select('Market_title')
+            ->get();
         } catch (\Exception $exception) {
             $this->Log($exception);
             return null;

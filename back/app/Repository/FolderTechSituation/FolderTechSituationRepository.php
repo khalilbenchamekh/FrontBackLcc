@@ -33,13 +33,17 @@ class FolderTechSituationRepository implements IFolderTechSituationRepository
             return null;
         }
     }
-    public function index($request)
+    public function index($request,$order=null)
     {
         try {
-            return FolderTechSituation::
-                select()
-                ->where("organisation_id","=",$this->organisation_id)
+                $folderTechSituation= FolderTechSituation::
+                select();
+                if(!is_null($order)){
+                    $folderTechSituation->latest();
+                }
+                $folderTechSituation->where("organisation_id","=",$this->organisation_id)
                 ->paginate($request['limit'],['*'],'page',$request['page']);
+                return $folderTechSituation;
         }catch (\Exception $exception){
             $this->Log($exception);
             return null;

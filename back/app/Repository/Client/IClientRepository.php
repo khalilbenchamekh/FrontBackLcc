@@ -2,7 +2,7 @@
 namespace App\Repository\Client;
 interface IClientRepository
 {
-    public function index($request);
+    public function index($request,$order=null);
     public function business($data);
     public function storeBusiness($data,$bus);
     public function storeParticular($data,$par);

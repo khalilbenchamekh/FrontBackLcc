@@ -51,9 +51,9 @@ class FolderTechNatureService implements IFolderTechNatureService
         }
         return null;
     }
-    public function index($request)
+    public function index($request,$order=null)
     {
-        return $this->iFolderTechNatureRepository->index($request);
+        return $this->iFolderTechNatureRepository->index($request,$order);
     }
     public function show($id)
     {

@@ -9,5 +9,6 @@ interface IAffaireService{
     public function update($request,$id);
     public function destroy($request);
     public function getBusiness($request);
+    public function getAffaireBetween($from ,$to);
 }
 

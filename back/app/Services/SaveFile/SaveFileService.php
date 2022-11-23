@@ -9,9 +9,9 @@ use Intervention\Image\Facades\Image;
 class SaveFileService implements ISaveFileService
 {
     use LogTrait;
-    private $organisationService;
-    private $organisation_id;
-    private $mainPath;
+    public  $organisationService;
+    public $organisation_id;
+    public $mainPath;
     public function __construct(IOrganisationService $organisationService)
     {
         $this->organisationService = $organisationService;
@@ -64,6 +64,7 @@ class SaveFileService implements ISaveFileService
         $business->files()->createMany($arrayFileNames);
     }
      public function saveConversationFiles($conversation,$direction,$files)
+
     {
         $arrayFileNames= $this->saveMany($direction,$files,'fileName');
         $conversation->files()->createMany($arrayFileNames);

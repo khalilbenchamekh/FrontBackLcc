@@ -58,4 +58,8 @@ class BusinessManagementService  implements IBusinessManagementService
         }
         return true;
     }
+    public function getLocations()
+    {
+        return $this->iBusinessManagementRespositry->getLocations();
+    }
 }

@@ -145,5 +145,16 @@ class AffaireRepository implements IAffaireRepository
             return null;
         }
     }
+    public function getAffaireBetween($from, $to)
+    {
+        try {
+            return Affaire::whereBetween('DATE_LAI', [$from, $to])
+            ->select('REF')
+            ->get();
+        } catch (\Exception $exception) {
+            $this->Log($exception);
+            return null;
+        }
+    }
 }
 

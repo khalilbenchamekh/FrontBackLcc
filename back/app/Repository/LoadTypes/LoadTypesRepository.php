@@ -15,11 +15,16 @@ class LoadTypesRepository implements ILoadTypesRepository
     {
         $this->organisation_id = Auth::User()->organisation_id;
     }
-    public function index($request)
+    public function index($request,$order=null)
     {
         try{
-            return DB::table('load_types')->select("*")->where('organisation_id','=',$this->organisation_id)
-         ->paginate($request['limit'],['*'],'page',$request['page']);
+            $loadType= LoadTypes::select("*");
+            if(!is_null($order)){
+                $loadType->latest();
+            }
+            $loadType->where('organisation_id','=',$this->organisation_id)
+            ->paginate($request['limit'],['*'],'page',$request['page']);
+            return $loadType;
         }catch(\Exception $exception){
             $this->Log($exception);
             return null;

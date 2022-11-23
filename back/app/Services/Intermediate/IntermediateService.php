@@ -27,9 +27,9 @@ class IntermediateService implements IIntermediateService
         }
         return null;
     }
-    public function index($request)
+    public function index($request,$order=null)
     {
-        return $this->iIntermediateRepository->index($request);
+        return $this->iIntermediateRepository->index($request,$order);
     }
     public function show($id)
     {

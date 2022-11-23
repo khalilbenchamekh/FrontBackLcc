@@ -11,4 +11,5 @@ interface IFolderTechRepository
     public function getFolderTech($request);
     public function saveBusinessManagement($request,$affaire);
     public function saveMission($request,$affaire);
+    public function getFolderTechBetween($from, $to);
 }

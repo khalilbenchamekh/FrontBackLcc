@@ -48,13 +48,17 @@ class FolderTechNatureRepository implements IFolderTechNatureRepository
             return null;
         }
     }
-    public function index($request)
+    public function index($request,$order=null)
     {
         try {
-            return FolderTechNature::
-                select()
-                ->where("organisation_id","=",$this->organisation_id)
+                $folderTechNature= FolderTechNature::
+                select();
+                if(!is_null($order)){
+                    $folderTechNature->latest();
+                }
+                $folderTechNature->where("organisation_id","=",$this->organisation_id)
                 ->paginate($request['limit'],['*'],'page',$request['page']);
+                return $folderTechNature;
         }catch (\Exception $exception){
             $this->Log($exception);
             return null;

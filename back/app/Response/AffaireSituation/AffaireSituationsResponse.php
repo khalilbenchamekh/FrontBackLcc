@@ -2,9 +2,9 @@
 
 namespace App\Response\AffaireSituation;
 
-use Illuminate\Http\Resources\Json\ResourceCollection;
+use Illuminate\Http\Resources\Json\JsonResource;
 
-class AffaireSituationsResponse extends ResourceCollection
+class AffaireSituationsResponse extends JsonResource
 {
     public function toArray($request)
     {

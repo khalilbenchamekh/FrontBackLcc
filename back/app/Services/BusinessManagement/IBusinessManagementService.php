@@ -9,4 +9,5 @@ interface IBusinessManagementService
     public function get($id);
     public function edit($id,$data);
     public function delete($request);
+    public function getLocations();
 }

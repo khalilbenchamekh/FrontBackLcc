@@ -1,5 +1,7 @@
 <?php
 namespace App\Repository\FolderTech;
+
+
 use App\Models\BusinessManagement;
 use App\Models\FolderTech;
 use App\Models\Mission;
@@ -24,6 +26,18 @@ class FolderTechRepository implements IFolderTechRepository
             $this->Log($exception);
             return null;
         }
+    }
+    public function getFolderTechBetween($from, $to)
+    {
+       try {
+            return  FolderTech::whereBetween('DATE_LAI', [$from, $to])
+            ->select('REF')
+            ->get();
+        }catch(\Exception $exception){
+            $this->Log($exception);
+            return null;
+        }
+
     }
 
     public function save($request)

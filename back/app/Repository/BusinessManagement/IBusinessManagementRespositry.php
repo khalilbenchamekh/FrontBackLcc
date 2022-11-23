@@ -8,4 +8,5 @@ interface IBusinessManagementRespositry
     public function update($perElem,$data);
     public function destroy($id);
     public function businessManagement($membership_id,$relation);
+    public function getLocations();
 }

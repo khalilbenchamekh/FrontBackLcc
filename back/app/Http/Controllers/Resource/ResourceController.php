@@ -3,329 +3,256 @@
 namespace App\Http\Controllers\Resource;
 
 use App\Http\Controllers\Controller;
-use App\Http\Requests\Enums\TableChoice;
-use App\Http\Resources\GetFess;
-use App\Models\Affaire;
-use App\Models\AffaireNature;
-use App\Models\AffaireSituation;
-use App\Models\BusinessManagement;
-use App\Models\Client;
-use App\Models\FolderTech;
-use App\Models\FolderTechNature;
-use App\Models\FolderTechSituation;
-use App\Models\GreatConstructionSites;
-use App\Models\Intermediate;
-use App\Models\LoadTypes;
-use App\Models\Notification;
-use App\User;
-use Carbon\Carbon;
 use Illuminate\Http\Request;
-use Illuminate\Support\Facades\Cache;
-use Illuminate\Support\Facades\DB;
-use Illuminate\Support\Facades\Validator;
-use App\Events\CountDown as CountDownEvent;
+use App\Http\Requests\Auth\PaginationRequest;
+use App\Http\Requests\Search\SearchRequest;
+use App\Response\AffaireNature\AllAffaireNatureResponse;
+use App\Response\AffaireSituation\AffaireSituationsResponse;
+use App\Response\BusinessManagements\BusinessManagementsResponse;
+use App\Response\Client\ClientsResponse;
+use App\Response\FolderTechNature\FolderTechNaturesResponse;
+use App\Response\FolderTechSituation\FolderTechSituationsResponse;
+use App\Response\Intermediate\IntermediatesResponse;
+use App\Response\LoadTypes\LoadTypesResponse;
+use App\Response\Notification\NotificationsReponse;
+use App\Service\Notification\INotificationService;
+use App\Service\Resource\IResourceService;
+use App\Services\AffaireNature\AffaireNatureService;
+use App\Services\AffaireSituation\IAffaireSituationService;
+use App\Services\Client\IClientService;
+use App\Services\FolderTechNature\IFolderTechNatureService;
+use App\Services\FolderTechSituation\IFolderTechSituationService;
+use App\Services\Intermediate\IIntermediateService;
+use App\Services\LoadTypes\ILoadTypesService;
+use Illuminate\Pagination\LengthAwarePaginator;
+use Symfony\Component\HttpFoundation\Response;
 
 class ResourceController extends Controller
 {
+    public $iResourceService;
+    public $iIntermediateService;
+    public $iClientService;
+    public $iAffaireSituationService;
+    public $iFolderTechSituationService;
+    public $affaireNatureService;
+    public $iFolderTechNatureService;
+    public $iLoadTypesService;
+    public $iNotificationService;
+    public function __construct(
+        IResourceService $iResourceService,
+        IIntermediateService $iIntermediateService,
+        IClientService $iClientService,
+        IAffaireSituationService $iAffaireSituationService,
+        IFolderTechSituationService $iFolderTechSituationService,
+        AffaireNatureService $affaireNatureService,
+        IFolderTechNatureService $iFolderTechNatureService,
+        ILoadTypesService $iLoadTypesService,
+        INotificationService $iNotificationService
+    )
+    {
+        $this->iResourceService=$iResourceService;
+        $this->iIntermediateService=$iIntermediateService;
+        $this->iClientService=$iClientService;
+        $this->iAffaireSituationService=$iAffaireSituationService;
+        $this->iFolderTechSituationService=$iFolderTechSituationService;
+        $this->affaireNatureService=$affaireNatureService;
+        $this->iFolderTechNatureService=$iFolderTechNatureService;
+        $this->iLoadTypesService=$iLoadTypesService;
+        $this->iNotificationService=$iNotificationService;
+    }
 
+    // you need to fix reponse to this method
     public function getCountDown()
     {
 
-        $from = Carbon::now()->toDateString();
-        $to = date("Y-m-d", strtotime(Carbon::now() . "+15 days"));
+        $arrayNotification= $this->iResourceService->getCountDown();
+        return response($arrayNotification, 200);
+    }
 
-        $great = GreatConstructionSites::whereBetween('DATE_LAI', [$from, $to])
-            ->select('Market_title')
-            ->get();
-
-        $affaire = Affaire::whereBetween('DATE_LAI', [$from, $to])
-            ->select('REF')
-            ->get();
-
-        $folderTech = FolderTech::whereBetween('DATE_LAI', [$from, $to])
-            ->select('REF')
-            ->get();
-        $arrayNotification = [];
-        if (count($great) !== 0) {
-            $temp = [];
-            foreach ($great as $item) {
-                array_push($temp, [
-                    'description' => "Le Grand Chantier sous référence" . $item->Market_title . "arrivera à échéance le" . $to,
-                    'created_at' => $to, 'updated_at' => $to
-                ]);
-            }
-            array_push($arrayNotification, $temp);
-
+    public function getIntermediate(PaginationRequest $request)
+    {
+        $inter = $this->iIntermediateService->index($request,true);
+        if($inter instanceof LengthAwarePaginator){
+            $response = IntermediatesResponse::make($inter->all());
+            return response()->json([
+                "data"=>$response,
+                'countPage'=>$response->perPage(),
+                "currentPage"=>$response->currentPage(),
+                "nextPage"=>$response->currentPage()<$response->lastPage()?$response->currentPage()+1:$response->currentPage(),
+                "lastPage"=>$response->lastPage(),
+                'total'=>$response->total(),
+            ],Response::HTTP_OK);
         }
-        if (count($affaire) !== 0) {
+        return response()->json(["error"=>"Bad Request"],Response::HTTP_BAD_REQUEST);
+    }
 
-            $temp = [];
-            foreach ($affaire as $item) {
-                array_push($temp, [
-                    'description' => "L'affaire sous référence" . $item->REF . "arrivera à échéance le" . $to,
-                    'created_at' => $to, 'updated_at' => $to
-                ]);
-            }
-            array_push($arrayNotification, $temp);
+    public function getClient(PaginationRequest $request)
+    {
+        $bus = $this->iClientService->index($request,true);
+        if($bus instanceof LengthAwarePaginator){
+            $response =  ClientsResponse::make($bus->items());
+            return response()->json(
+            [
+                "data"=>$response,
+                'countPage'=>$bus->perPage(),
+                "currentPage"=>$bus->currentPage(),
+                "nextPage"=>$bus->currentPage()<$bus->lastPage()?$bus->currentPage()+1:$bus->currentPage(),
+                "lastPage"=>$bus->lastPage(),
+                'total'=>$bus->total(),
+            ],Response::HTTP_OK);
         }
-        if (count($folderTech) !== 0) {
-            $temp = [];
-            foreach ($folderTech as $item) {
-                array_push($temp, [
-                    'description' => " Le dossier technique sous référence " . $item->REF . "arrivera à échéance le" . $to,
-                    'created_at' => $to, 'updated_at' => $to
-                ]);
-            }
-            array_push($arrayNotification, $temp);
+        return response()->json("Bad Request",Response::HTTP_BAD_REQUEST);
+    }
+
+    public function getBusinessSituation(PaginationRequest $request)
+    {
+        $affaireSatuations = $this->iAffaireSituationService->index($request,true);
+        if($affaireSatuations instanceof LengthAwarePaginator ){
+            $response=AffaireSituationsResponse::make($affaireSatuations);
+            return response()->json([
+                'data'=>$response->items(),
+                "total"=>$affaireSatuations->total(),
+                "currentPage"=>$affaireSatuations->currentPage(),
+                "lastPage"=>$affaireSatuations->lastPage()
+            ],Response::HTTP_OK);
         }
+        return \response()->json(['error'=>"Bad Request",Response::HTTP_BAD_REQUEST]);
+    }
 
-        if (!empty($arrayNotification)) {
-            $notifications = $arrayNotification[0];
-            if (!empty($notifications)) {
-                $not = new Notification();
-                $not->newQuery()->insert($notifications);
-                broadcast(new CountDownEvent($notifications));
-            }
+
+    public function geFolderTechSituation(PaginationRequest $request)
+    {
+        $foldertechsituations = $this->iFolderTechSituationService->index($request,true);
+        if($foldertechsituations instanceof LengthAwarePaginator){
+            $response = FolderTechSituationsResponse::make($foldertechsituations->all());
+            return response()->json([
+                "data"=>$response,
+                'countPage'=>$response->perPage(),
+                "currentPage"=>$response->currentPage(),
+                "nextPage"=>$response->currentPage()<$response->lastPage()?$response->currentPage()+1:$response->currentPage(),
+                "lastPage"=>$response->lastPage(),
+                'total'=>$response->total(),
+            ],Response::HTTP_OK);
         }
-        return response($arrayNotification[0], 200);
+        return response()->json(["error"=>"Bad Request"],Response::HTTP_BAD_REQUEST);
     }
 
-    public function getIntermediate()
+    public function getNatureBusinessName(PaginationRequest $request)
     {
-        $inter = Intermediate::latest()->get();
-        return response(['data' => $inter], 200);
+        $bus = $this->affaireNatureService->index($request,true);
+        if($bus instanceof LengthAwarePaginator){
+            $response = AllAffaireNatureResponse::make($bus->all());
+            return response()->json([
+                "data"=>$response,
+                'countPage'=>$response->perPage(),
+                "currentPage"=>$response->currentPage(),
+                "nextPage"=>$response->currentPage()<$response->lastPage()?$response->currentPage()+1:$response->currentPage(),
+                "lastPage"=>$response->lastPage(),
+                'total'=>$response->total(),
+            ],Response::HTTP_OK);
+        }
+        return response()->json(["error"=>"Bad Request"],Response::HTTP_BAD_REQUEST);
     }
 
-    public function getClient()
+    public function getFolderTechName(PaginationRequest $request)
     {
-        $bus = Client::latest()->get();
-        return response(['data' => $bus], 200);
-    }
-
-    public function getBusinessSituation()
-    {
-        $bus = AffaireSituation::latest()
-            ->select()
-            ->get();
-        return response(['data' => $bus], 200);
-    }
-
-
-    public function geFolderTechSituation()
-    {
-        $bus = FolderTechSituation::latest()->get();
-        return response(['data' => $bus], 200);
-    }
-
-    public function getNatureBusinessName()
-    {
-        $bus = AffaireNature::latest()->get();
-        return response(['data' => $bus], 200);
-    }
-
-    public function getFolderTechName()
-    {
-        $bus = FolderTechNature::latest()->get();
-        return response(['data' => $bus], 200);
+        $bus = $this->iFolderTechNatureService->index($request,true);
+        if($bus instanceof LengthAwarePaginator){
+            $response= FolderTechNaturesResponse::make($bus->all());
+            return response()->json([
+                "data"=>$response,
+                'countPage'=>$response->perPage(),
+                "currentPage"=>$response->currentPage(),
+                "nextPage"=>$response->currentPage()<$response->lastPage()?$response->currentPage()+1:$response->currentPage(),
+                "lastPage"=>$response->lastPage(),
+                'total'=>$response->total(),
+            ],Response::HTTP_OK);
+        }else{
+            return response()->json(['error'=>"Bad Request"],Response::HTTP_BAD_REQUEST);
+        }
     }
 
     public function getLocations()
     {
-        $locations = BusinessManagement::
-        where('longitude', '!=', 'null')
-            ->where(function ($query) {
-                $query->where('latitude', '!=', 'null');
-            })
-            ->select(
-                DB::raw("membership_type"),
-                DB::raw("COUNT(membership_type) as count_type"),
-                'longitude',
-                'latitude'
-            )
-            ->groupBy(["membership_type"])
-            ->groupBy(["longitude", "latitude"])
-            ->get();
-        return response(['data' => $locations], 200);
-
+        $locations = $this->iResourceService->getLocations();
+        $data = BusinessManagementsResponse::make($locations->items());
+        return response(['data' => $data], 200);
     }
 
-    public function getLoadType()
+    public function getLoadType(PaginationRequest $request)
     {
-        $locations = LoadTypes::latest()->get();
-        return response(['data' => $locations], 200);
+        $res = $this->iLoadTypesService->index($request,true);
+        if($res instanceof LengthAwarePaginator){
+            $response =  LoadTypesResponse::make($res);
+            return response()->json([
+                "data"=>$response,
+                'countPage'=>$response->perPage(),
+                "currentPage"=>$response->currentPage(),
+                "nextPage"=>$response->currentPage()<$response->lastPage()?$response->currentPage()+1:$response->currentPage(),
+                "lastPage"=>$response->lastPage(),
+                'total'=>$response->total(),
+            ],Response::HTTP_OK);
+           }
+           return response()->json(["error"=>"Bed Request"],Response::HTTP_BAD_REQUEST);
     }
 
     public function getUser()
     {
-        $users = User::latest()
-            ->select('name', 'id', 'username')
-            ->get();
+        $users = $this->iResourceService->getLocations();
         return response(['data' => $users], 200);
     }
 
-    public function getLocationsAutoComplete()
+    public function getLocationsAutoComplete(PaginationRequest $request)
     {
-        $locations = Cache::rememberForever('location', function () {
-            return DB::table('locations')->get();
-        });
+        $locations = $this->iResourceService->getLocationsAutoComplete($request,true);
         return response(['data' => $locations], 200);
     }
 
-    public function getAllocatedBrigades()
+    public function getAllocatedBrigades(PaginationRequest $request)
     {
-        $allocated_brigades = DB::table('allocated_brigades')->get();
-        return response(['data' => $allocated_brigades], 200);
+        $allocated_brigades = $this->iResourceService->getAllocatedBrigades($request,true);
+        if($allocated_brigades instanceof LengthAwarePaginator){
+            $response =  LoadTypesResponse::make($allocated_brigades->all());
+            return response()->json([
+                "data"=>$response,
+                'countPage'=>$response->perPage(),
+                "currentPage"=>$response->currentPage(),
+                "nextPage"=>$response->currentPage()<$response->lastPage()?$response->currentPage()+1:$response->currentPage(),
+                "lastPage"=>$response->lastPage(),
+                'total'=>$response->total(),
+            ],Response::HTTP_OK);
+           }
+           return response()->json(["error"=>"Bed Request"],Response::HTTP_BAD_REQUEST);
     }
 
-    public function getSearch(Request $request)
+    public function getSearch(SearchRequest $request)
     {
-        $from = $request->input('from');
-        $to = $request->input('to');
-        $orderBy = $request->input('orderBy');
-        if (!empty($from) || !empty($to)) {
 
-            $validator = Validator::make($request->all(), [
-                'from' => 'date_format:Y/m/d',
-                'to' => 'date_format:Y/m/d',
-            ]);
-            if ($validator->fails()) {
-                return response($validator->errors(), 400);
-            }
-        } else {
-            $from = date("Y-m-d", strtotime(Carbon::now() . "-1 year"));
-            $to = Carbon::now()->toDateString();
-        }
-        if (!empty($orderBy)) {
-            $validator = Validator::make($request->all(), [
-                'orderBy' => 'in:year,month',
-            ]);
-            if ($validator->fails()) {
-                return response($validator->errors(), 400);
-            }
-        } else {
-            $orderBy = 'year';
-        }
-        $table = $request->input('table');
-        if (!empty($table)) {
-
-            $validator = Validator::make($request->all(), [
-                'table' => 'in:affaires,folderteches,sites,loads',
-            ]);
-            if ($validator->fails()) {
-                return response($validator->errors(), 400);
-            }
-        } else {
-            $table = TableChoice::Great;
-        }
-        $fess = new GetFess();
-        $fess->set_from($from);
-        $fess->set_to($to);
-        $fess->set_orderBy($orderBy);
-        $fess->set_table($table == TableChoice::Sites ? TableChoice::Great : $table);
-        $fessArray = $this->getFess($fess);
+        $fessArray = $this->iResourceService->getSearch($request);
         return response(['data' => $fessArray], 200);
     }
 
     public function getSearchWithDetails(Request $request)
     {
-
-        $validator = Validator::make($request->all(), [
-            'id' => 'required|integer',
-        ]);
-        if ($validator->fails()) {
-            return response($validator->errors(), 400);
-        }
-        $id = $request->input('id');
-        $table = $request->input('table');
-        if (!empty($table)) {
-
-            $validator = Validator::make($request->all(), [
-                'table' => 'in:affaires,folderTech,sites,loads',
-            ]);
-            if ($validator->fails()) {
-                return response($validator->errors(), 400);
-            }
-        } else {
-            $table = TableChoice::Great;
-        }
-        $fess = new GetFess();
-        $fess->set_table($table == TableChoice::Sites ? TableChoice::Great : $table);
-        $fessArray = $this->getDetails($fess, $id);
+        $fessArray = $this->iResourceService->getSearchWithDetails($request);
         return response(['data' => $fessArray], 200);
     }
 
-    private function getFess(GetFess $fess)
+    public function getNotifications(PaginationRequest $request)
     {
-        $table = $fess->get_table();
-        $arrayFess = DB::table($table . ' as af');
-        switch ($fess->get_table()) {
-            case TableChoice::Load:
-                $arrayFess = $arrayFess
-                    ->select(DB::raw('af.*'));
-                break;
-            case TableChoice::Business:
-                $arrayFess = $arrayFess->join('affairesituations as w', 'af.aff_sit_id', '=', 'w.id')
-                    ->select(DB::raw('af.*'));
-                break;
-            case TableChoice::FolderTech:
-                $arrayFess = $arrayFess->join('foldertechsituations as w', 'af.folder_sit_id', '=', 'w.id')
-                    ->select(DB::raw('w.*'));
-                break;
-            case TableChoice::Great:
-                $arrayFess = $arrayFess->join('locations as l', 'af.location_id', '=', 'l.id')
-                    ->join('users as u', 'af.resp_id', '=', 'u.id')
-                    ->select(
-                        DB::raw('af.Market_title'),
-                        DB::raw('l.name as location_name'),
-                        DB::raw('u.name'),
-                        DB::raw('af.State_of_progress'),
-                        DB::raw('af.id')
-                    );
-                break;
-            default :
-                return $arrayFess;
-        }
-        $arrayFess = $arrayFess->whereBetween('af.created_at', [$fess->get_from(), $fess->get_to()])
-            ->get()
-            ->reverse();
-        return $arrayFess;
-    }
-
-    private function getDetails(GetFess $fess, $id)
-    {
-        $arrayFess = DB::table('fees as af')->join('business_managements as w', 'w.id', '=', 'af.business_id')
-            ->where('w.membership_id', '=', $id);
-
-        switch ($fess->get_table()) {
-            case TableChoice::Business:
-                $arrayFess
-                    ->where('w.membership_type', 'like', '%' . "Affaire");
-                break;
-            case TableChoice::FolderTech:
-                $arrayFess
-                    ->where('w.membership_type', 'like', '%' . "FolderTech");
-                break;
-            case TableChoice::Great:
-                $arrayFess
-                    ->where('w.membership_type', 'like', '%' . "GreatConstructionSites");
-                break;
-
-            default :
-                return $arrayFess;
-        }
-        $arrayFess = $arrayFess
-            ->select(
-                DB::raw("af.*")
-            )
-            ->get()
-            ->reverse();
-        return $arrayFess;
-    }
-
-    public function getNotifications(Request $request, $page = 1)
-    {
-        $notifications = DB::table('notifications')->latest()->paginate( 15, ['*'],$page);
-        return response(['data' => $notifications], 200);
+        $notifications = $this->iNotificationService->index($request,true);
+        if($notifications instanceof LengthAwarePaginator){
+            $response =  NotificationsReponse::make($notifications);
+            return response()->json([
+                "data"=>$response,
+                'countPage'=>$response->perPage(),
+                "currentPage"=>$response->currentPage(),
+                "nextPage"=>$response->currentPage()<$response->lastPage()?$response->currentPage()+1:$response->currentPage(),
+                "lastPage"=>$response->lastPage(),
+                'total'=>$response->total(),
+            ],Response::HTTP_OK);
+           }
+           return response()->json(["error"=>"Bed Request"],Response::HTTP_BAD_REQUEST);
     }
 
 }

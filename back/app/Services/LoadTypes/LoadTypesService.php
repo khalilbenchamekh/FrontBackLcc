@@ -12,9 +12,9 @@ class LoadTypesService implements ILoadTypesService
     {
         $this->loadTypesRepository=$loadTypesRepository;
     }
-    public function index($request)
+    public function index($request,$order=null)
     {
-       return  $this->loadTypesRepository->index($request);
+       return  $this->loadTypesRepository->index($request,$order=null);
     }
     public function store($data)
     {

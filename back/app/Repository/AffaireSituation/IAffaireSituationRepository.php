@@ -2,7 +2,7 @@
 namespace App\Repository\AffaireSituation;
 interface IAffaireSituationRepository
 {
-    public function index($request);
+    public function index($request,$order=null);
     public function get($id);
     public function edit($perAffaireSituation,$data);
     public function delete($request);

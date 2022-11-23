@@ -13,7 +13,7 @@ class AffaireSituationService implements IAffaireSituationService
         $this->affaireSituationRepository=$affaireSituationRepository;
     }
 
-    public function index($request)
+    public function index($request,$order=null)
     {
         // TODO: Implement index() method.
         return $this->affaireSituationRepository->index($request);

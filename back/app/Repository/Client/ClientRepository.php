@@ -16,11 +16,14 @@ class ClientRepository implements IClientRepository
         $this->organisation_id = Auth::user()->organisation_id;
     }
 
-    public function index($request)
+    public function index($request,$order=null)
     {
         try{
-            $clients= DB::table('clients')->select("*")
-                    ->where('organisation_id','=',$this->organisation_id)
+            $clients= DB::table('clients')->select("*");
+                        if(!is_null($order)){
+                            $clients->latest();
+                        }
+                    $clients->where('organisation_id','=',$this->organisation_id)
                     ->paginate($request['limit'],['*'],'page',$request['page']);
             return $clients;
         }catch(\Exception $exception){

@@ -49,7 +49,7 @@ class FolderTechSituationService implements IFolderTechSituationService
         }
         return null;
     }
-    public function index($request)
+    public function index($request,$order=null)
     {
         return $this->iFolderTechSituationRepository->index($request);
     }
