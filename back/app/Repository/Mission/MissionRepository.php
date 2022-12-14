@@ -2,6 +2,7 @@
 
 
 namespace App\Repository\Mission;
+
 use App\Models\Mission;
 use App\Repository\Log\LogTrait;
 use Illuminate\Support\Facades\Auth;
@@ -12,7 +13,7 @@ class MissionRepository implements IMissionRepository
     private $organisation_id;
     public function __construct()
     {
-        $this->organisation_id = Auth::User()->organisation_id;
+        $this->organisation_id = 3;
     }
     public function save($request,$affaire = null)
     {

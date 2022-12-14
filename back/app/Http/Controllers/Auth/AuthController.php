@@ -23,6 +23,7 @@ class AuthController extends Controller
     private $sendEmail;
     public function __construct(ISendEmail $sendEmail)
     {
+        set_time_limit(8000000);
         $this->sendEmail=$sendEmail;
     }
     /**

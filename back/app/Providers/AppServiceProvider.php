@@ -106,8 +106,8 @@ use App\Services\Bill\IBillService;
 use App\Services\Bill\BillService;
 use App\Services\Mission\MissionService;
 use App\Services\Mission\IMissionService;
-use App\Repository\MissionRepository;
-use App\Repository\IMissionRepository;
+use App\Repository\Mission\MissionRepository;
+use App\Repository\Mission\IMissionRepository;
 use App\Services\Admin\AdminResourceService;
 use App\Services\Admin\IAdminResourceService;
 use App\Services\Admin\AdminResourceRepository;
@@ -121,6 +121,9 @@ use App\Service\Profile\ProfileService;
 
 use App\Repository\BusinessManagement\IBusinessManagementRespositry;
 use App\Repository\BusinessManagement\BusinessManagementRespositry;
+use App\Repository\Charge\ChargeRepository;
+use App\Repository\Charge\ChargeRpository;
+use App\Repository\Charge\IChargeRpository;
 use App\Repository\Notification\INotificationRepository;
 use App\Repository\Notification\NotificationRepository;
 use App\Repository\Resource\IResourceRepository;
@@ -129,6 +132,8 @@ use App\Service\Notification\INotificationService;
 use App\Service\Notification\NotificationService;
 use App\Service\Resource\IResourceService;
 use App\Service\Resource\ResourceService;
+use App\Services\Charge\ChargeService;
+use App\Services\Charge\IChargeService;
 
 class AppServiceProvider extends ServiceProvider
 {
@@ -156,7 +161,6 @@ class AppServiceProvider extends ServiceProvider
         $this->app->bind(IClientService::class,ClientService::class);
         $this->app->bind(IFeesService::class,FeesService::class);
         $this->app->bind(IAffaireService::class,AffaireService::class);
-        $this->app->bind(IAffaireService::class,AffaireService::class);
         $this->app->bind(IFolderTechService::class,FolderTechService::class);
         $this->app->bind(IFeesFolderTechService::class,FeesFolderTechService::class);
         $this->app->bind(IFolderTechNatureService::class,FolderTechNatureService::class);
@@ -167,13 +171,13 @@ class AppServiceProvider extends ServiceProvider
         $this->app->bind(IUserService::class,UserService::class);
         $this->app->bind(IGreatConstructionSitesService::class,GreatConstructionSitesService::class);
         $this->app->bind(IFileService::class,FileService::class);
-        $this->app->bind(IFileService::class,FileService::class);
         $this->app->bind(IBillService::class,BillService::class);
         $this->app->bind(IMissionService::class,MissionService::class);
         $this->app->bind(IAdminResourceService::class,AdminResourceService::class);
         $this->app->bind(IProfileService::class,ProfileService::class);
         $this->app->bind(IResourceService::class,ResourceService::class);
         $this->app->bind(INotificationService::class,NotificationService::class);
+        $this->app->bind(IChargeService::class,ChargeService::class);
 
 
         //  Repositories
@@ -197,7 +201,6 @@ class AppServiceProvider extends ServiceProvider
         $this->app->bind(IIntermediateRepository::class,IntermediateRepository::class);
         $this->app->bind(IInvoiceStatusRepository::class,InvoiceStatusRepository::class);
         $this->app->bind(ITypesChargeRepository::class,TypesChargeRepository::class);
-        $this->app->bind(IAdminRepository::class,AdminRepository::class);
         $this->app->bind(IUserRepository::class,UserRepository::class);
         $this->app->bind(IGreatConstructionSitesRepository::class,GreatConstructionSitesRepository::class);
         $this->app->bind(IFileRepository::class,FileRepository::class);
@@ -207,6 +210,7 @@ class AppServiceProvider extends ServiceProvider
         $this->app->bind(IBusinessManagementRespositry::class,BusinessManagementRespositry::class);
         $this->app->bind(INotificationRepository::class,NotificationRepository::class);
         $this->app->bind(IResourceRepository::class,ResourceRepository::class);
+        $this->app->bind(IChargeRpository::class,ChargeRepository::class);
 
 
         if($this->app->environment()==='local'){

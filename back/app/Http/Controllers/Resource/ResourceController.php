@@ -4,7 +4,7 @@ namespace App\Http\Controllers\Resource;
 
 use App\Http\Controllers\Controller;
 use Illuminate\Http\Request;
-use App\Http\Requests\Auth\PaginationRequest;
+use App\Http\Requests\Pagination\PaginationRequest;
 use App\Http\Requests\Search\SearchRequest;
 use App\Response\AffaireNature\AllAffaireNatureResponse;
 use App\Response\AffaireSituation\AffaireSituationsResponse;

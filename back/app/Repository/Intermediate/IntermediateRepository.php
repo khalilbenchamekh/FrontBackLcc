@@ -9,7 +9,7 @@ class IntermediateRepository implements IIntermediateRepository
     private $organisation_id;
     public function __construct()
     {
-        $this->organisation_id = Auth::User()->organisation_id;
+        $this->organisation_id = 3;
     }
     public function save($request)
     {

@@ -23,14 +23,12 @@ class AffaireSituationRepository implements IAffaireSituationRepository
     {
         // TODO: Implement index() method.
         try {
-            $affaireSituation= AffaireSituation::
-                select();
-                if(!is_null($order)){
-                    $affaireSituation->latest();
-                }
-                $affaireSituation->where("organisation_id","=",$this->organisation_id)
-                ->paginate($request['limit'],['*'],'page',$request['page']);
-                return $affaireSituation;
+            $affaireSituation= AffaireSituation::where("organisation_id","=",$this->organisation_id)
+            ->when(!is_null($order),function ($query){
+                return $query->latest();
+            })
+            ->paginate($request['limit'],['*'],'page',$request['page']);
+            return $affaireSituation;
         }catch (\Exception $exception){
             $this->Log($exception);
             return null;
@@ -41,9 +39,8 @@ class AffaireSituationRepository implements IAffaireSituationRepository
     {
         // TODO: Implement get() method.
         try {
-           return AffaireSituation::where("id","=",$id)
-           ->where("organisation_id",'=',$this->organisation_id)
-           ->get();
+           return AffaireSituation::where("organisation_id",'=',$this->organisation_id)
+           ->find($id);
         }catch (\Exception $exception){
             $this->Log($exception);
             return null;
@@ -54,8 +51,9 @@ class AffaireSituationRepository implements IAffaireSituationRepository
     {
         // TODO: Implement edit() method.
         try {
-            $perAffaireSituation->Name=$data['Name'];
-            $perAffaireSituation->orderChr=$data['orderChr'];
+            $saveData= $data->all();
+            $perAffaireSituation->Name=$saveData['Name'];
+            $perAffaireSituation->orderChr=$saveData['orderChr'];
             $perAffaireSituation->save();
             return $perAffaireSituation;
         }catch (\Exception $exception){
@@ -68,10 +66,12 @@ class AffaireSituationRepository implements IAffaireSituationRepository
     {
         // TODO: Implement delete() method.
         try {
-            return AffaireSituation::where("id","=",$this->current_user)
-            ->where("organisation_id",'=',$this->organisation_id)
-            ->destroy();
+            $model= AffaireSituation::where("organisation_id",'=',$this->organisation_id)->find($data['id']);
+            $deleted = $model;
+            $deleted->delete();
+            return $model;
         }catch (\Exception $exception){
+            dd($exception->getMessage());
             $this->Log($exception);
             return null;
         }
@@ -98,7 +98,8 @@ class AffaireSituationRepository implements IAffaireSituationRepository
     {
         // TODO: Implement storeMany() method.
         try {
-            foreach ($data as $item){
+            $dataToSave = $data->all()['affaireSituations'];
+            foreach ($dataToSave as $item){
                 $affaireSituation= new AffaireSituation();
                 $affaireSituation->organisation_id=$this->organisation_id;
                 $affaireSituation->Name=$item['Name'];
@@ -108,10 +109,11 @@ class AffaireSituationRepository implements IAffaireSituationRepository
                 $logs = new LogActivity();
                 $logs->addToLog($subject, $data);
             }
-            return $data;
+            return $dataToSave;
         }catch (\Exception $exception){
             $this->Log($exception);
             return null;
         }
     }
+
 }

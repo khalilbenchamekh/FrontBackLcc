@@ -229,5 +229,6 @@ class EntrustMockedDataSeeder extends Seeder
             ]);
         };
         }
+        
     }
 }

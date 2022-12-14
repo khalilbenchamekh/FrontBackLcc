@@ -4,7 +4,7 @@ namespace App\Http\Controllers\Crud;
 
 use App\Helpers\LogActivity;
 use App\Http\Controllers\Controller;
-use App\Http\Requests\Auth\PaginationRequest;
+use App\Http\Requests\Pagination\PaginationRequest;
 use App\Http\Requests\Crud\LoadRequest;
 use App\Http\Requests\Enums\LogsEnumConst;
 use App\Models\fileLoad;

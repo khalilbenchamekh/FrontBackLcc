@@ -15,12 +15,15 @@ class AffaireRequest extends FormRequest
     public function rules()
     {
         return [
+          
+            'longitude' => 'required|regex:/^[0-9]+(\.[0-9][0-9]?)?$/',
+            'latitude' => 'required|regex:/^[0-9]+(\.[0-9][0-9]?)?$/',
             'aff_sit_id' => ['exists:affairesituations,id'],
             'client_id' => ['exists:clients,id'],
             'resp_id' => ['exists:users,id'],
             'nature_name' => ['exists:affaire_natures,Name'],
             'nature_Abr_v_name' => 'string|max:3',
-            'PTE_KNOWN' => ['required', 'string', 'max:255'],
+            'PTE_KNOWN' => ['required','string', 'max:255'],
             'TIT_REQ' => ['required', 'string', 'max:255'],
             'place' => ['required', 'string', 'max:255'],
             'DATE_ENTRY' => ['nullable', 'date:Y-m-d'],

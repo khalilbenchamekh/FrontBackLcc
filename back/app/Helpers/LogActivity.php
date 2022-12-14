@@ -3,7 +3,7 @@
 
 namespace App\Helpers;
 
-use App\Http\Requests\Auth\PaginationRequest;
+use App\Http\Requests\Pagination\PaginationRequest;
 use App\Models\Notification;
 use Illuminate\Http\Request;
 use App\Models\LogActivity as LogActivityModel;
@@ -15,7 +15,7 @@ class LogActivity
     private $organisation_id;
     public function __construct()
     {
-        $this->organisation_id = 3;
+        $this->organisation_id = Auth::user()->organisation_id;
     }
     private function AssocieteNameToSubject($subject, $user)
     {
@@ -42,7 +42,7 @@ class LogActivity
             $log['organisation_id'] = $this->organisation_id;
             $notifications = new Notification();
             $notifications->description = $subject;
-            $notifications->save();
+            $notifications->organisation_id = $this->organisation_id;
             LogActivityModel::create($log);
         }
 

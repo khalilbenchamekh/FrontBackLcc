@@ -15,7 +15,9 @@ class AffaireService implements IAffaireService{
     private $iAffaireRepository;
     private $businessManagementService;
     private $missionService;
-    public function __construct(IAffaireRepository $iAffaireRepository,IBusinessManagementService $businessManagementService,IMissionService $missionService)
+    public function __construct(IAffaireRepository $iAffaireRepository,
+    IBusinessManagementService $businessManagementService,
+    IMissionService $missionService)
     {
         $this->iAffaireRepository=$iAffaireRepository;
         $this->businessManagementService = $businessManagementService;

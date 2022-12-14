@@ -15,7 +15,7 @@ class TypesChargeService implements ITypesChargeService
     }
     public function save($request)
     {
-        $typesCharge=$this->iTypesChargeRepository->save($request->all());
+        $typesCharge=$this->iTypesChargeRepository->save($request);
         if(!is_null($typesCharge) ){
             $subject = LogsEnumConst::Add . LogsEnumConst::TypesChange. $request->input('name');
             $logs = new LogActivity();
@@ -37,7 +37,7 @@ class TypesChargeService implements ITypesChargeService
         if(!empty($typesCharge)){
             $newTypesCharge= $this->iTypesChargeRepository->update($typesCharge,$request->all());
             if(!is_null($newTypesCharge) ){
-                $subject = LogsEnumConst::Update . LogsEnumConst::TypesChange. $request->input('REF');
+                $subject = LogsEnumConst::Update . LogsEnumConst::TypesChange. $request->input('name');
                 $logs = new LogActivity();
                 $logs->addToLog($subject, $request);
             }
@@ -47,14 +47,18 @@ class TypesChargeService implements ITypesChargeService
     }
     public function destroy($request)
     {
-        $res= $this->iTypesChargeRepository->destroy($request['id']);
-        if($res === 0 || is_null($res)){
-            return false;
+        $model = $this->show($request->id);
+        if(is_null($model)){
+            return null;
+        }
+        $res= $this->iTypesChargeRepository->destroy($model);
+        if($res === false){
+            return null;
         }else{
-            $subject = LogsEnumConst::Delete . LogsEnumConst::Employee . $request['name'];
+            $subject = LogsEnumConst::Delete . LogsEnumConst::TypesChange . $request->name;
             $logs = new LogActivity();
             $logs->addToLog($subject, $request);
+            return $model;
         }
-        return true;
     }
 }

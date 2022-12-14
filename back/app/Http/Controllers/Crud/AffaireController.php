@@ -1,8 +1,9 @@
 <?php
 
+
 namespace App\Http\Controllers\Crud;
 use App\Http\Controllers\Controller;
-use App\Http\Requests\Auth\PaginationRequest;
+use App\Http\Requests\Pagination\PaginationRequest;
 use App\Http\Requests\Crud\AffaireRequest;
 use App\Response\Affaire\AffaireResponse;
 use App\Response\Affaire\AffairesResponse;
@@ -12,7 +13,6 @@ use Illuminate\Support\Facades\Validator;
 use Illuminate\Pagination\LengthAwarePaginator;
 use Symfony\Component\HttpFoundation\Response;
 use Illuminate\Http\Request;
-
 class AffaireController extends Controller
 {
     private $affaireService;
@@ -21,11 +21,11 @@ class AffaireController extends Controller
     {
         $this->affaireService = $affaireService;
         $this->saveFileService = $saveFileService;
-       $this->middleware('role:owner');
-        $this->middleware('role:affaires_create|owner|admin', ['only' => ['store']]);
-        $this->middleware('role:affaires_edit|owner|admin', ['only' => ['update']]);
-        $this->middleware('role:affaires_read|owner|admin', ['only' => ['index']]);
-        $this->middleware('role:affaires_delete|owner|admin', ['only' => ['destroy']]);
+    //    $this->middleware('role:owner');
+    //     $this->middleware('role:affaires_create|owner|admin', ['only' => ['store']]);
+    //     $this->middleware('role:affaires_edit|owner|admin', ['only' => ['update']]);
+    //     $this->middleware('role:affaires_read|owner|admin', ['only' => ['index']]);
+    //     $this->middleware('role:affaires_delete|owner|admin', ['only' => ['destroy']]);
     }
 
     public function index(PaginationRequest $request)
@@ -48,27 +48,17 @@ class AffaireController extends Controller
 
     public function store(AffaireRequest $request)
     {
-        $longitude = $request->input('longitude');
-        $latitude = $request->input('latitude');
-        if (!empty($longitude) || !empty($latitude)) {
-            $validator = Validator::make($request->all(), [
-                'longitude' => 'required|regex:/^[0-9]+(\.[0-9][0-9]?)?$/',
-                'latitude' => 'required|regex:/^[0-9]+(\.[0-9][0-9]?)?$/',
-            ]);
-            if ($validator->fails()) {
-                return response($validator->errors(),Response::HTTP_BAD_REQUEST);
-            }
-        }
 
-        $ttc = $request->input('ttc');
-        if (!empty($ttc)) {
-            $validator = Validator::make($request->all(), [
-                'ttc' => 'in:0,1',
-            ]);
-            if ($validator->fails()) {
-                return response($validator->errors(),Response::HTTP_BAD_REQUEST);
-            }
-        }
+
+        // $ttc = $request->input('ttc');
+        // if (!empty($ttc)) {
+        //     $validator = Validator::make($request->all(), [
+        //         'ttc' => 'in:0,1',
+        //     ]);
+        //     if ($validator->fails()) {
+        //         return response($validator->errors(),Response::HTTP_BAD_REQUEST);
+        //     }
+        // }
 
         $res=$this->affaireService->save($request->all());
         if(!is_null($res) ){

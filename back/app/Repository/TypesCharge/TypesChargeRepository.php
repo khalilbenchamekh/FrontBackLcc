@@ -13,15 +13,18 @@ class TypesChargeRepository implements ITypesChargeRepository
     private $organisation_id;
     public function __construct()
     {
-        $this->organisation_id = Auth::User()->organisation_id;
+        $this->organisation_id = Auth::user()->organisation_id;
     }
     public function save($request)
     {
         try {
             //code...
+            $data = $request->all();
+
             $typescharge= new TypesCharge();
-            $typescharge->name=$request['name'];
+            $typescharge->name=$data['name'];
             $typescharge->organisation_id=$this->organisation_id;
+
             $typescharge->save();
 
             return $typescharge;
@@ -68,13 +71,11 @@ class TypesChargeRepository implements ITypesChargeRepository
             return null;
         }
     }
-    public function destroy($id)
+    public function destroy($model)
     {
         try {
             //code...
-            return  TypesCharge::where("id","=",$id)
-            ->where("organisation_id",'=',$this->organisation_id)
-            ->destroy();
+            return $model->delete();
         } catch (\Exception $exception) {
             $this->Log($exception);
             return null;

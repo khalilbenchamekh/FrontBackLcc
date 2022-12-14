@@ -54,7 +54,7 @@ class AffaireNatureService implements IAffaireNatureService
 
     public function saveMany($data)
     {
-       return  $this->affaireNatureRepository->saveMany($data->all());
+       return  $this->affaireNatureRepository->saveMany($data);
     }
 
     public function destroy($request)

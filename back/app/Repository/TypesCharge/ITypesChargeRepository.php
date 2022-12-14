@@ -10,6 +10,6 @@ interface ITypesChargeRepository
     public function index($request);
     public function show($id);
     public function update(TypesCharge $typesCharge,$request);
-    public function destroy($typesCharge);
+    public function destroy($model);
 }
 

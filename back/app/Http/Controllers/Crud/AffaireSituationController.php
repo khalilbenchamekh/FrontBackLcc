@@ -2,7 +2,8 @@
 
 namespace App\Http\Controllers\Crud;
 use App\Http\Controllers\Controller;
-use App\Http\Requests\Auth\PaginationRequest;
+use App\Http\Requests\Crud\AffaireSituationArrayRequest;
+use App\Http\Requests\Pagination\PaginationRequest;
 use App\Http\Requests\Crud\AffaireSituationRequest;
 use App\Models\AffaireSituation;
 use App\Response\AffaireSituation\AffaireSituationResponse;
@@ -12,6 +13,8 @@ use Illuminate\Pagination\LengthAwarePaginator;
 use Symfony\Component\HttpFoundation\Response;
 use Illuminate\Support\Facades\Validator;
 use Illuminate\Http\Request;
+
+
 class AffaireSituationController extends Controller
 {
     private $affaireSituationService;
@@ -39,20 +42,22 @@ class AffaireSituationController extends Controller
         return \response()->json(['error'=>"Bad Request",Response::HTTP_BAD_REQUEST]);
     }
 
-    public function storeMany(AffaireSituationRequest $request)
+    public function storeMany(AffaireSituationArrayRequest $request)
     {
-        $data=$request->all()['affaireSituations'];
-        $affaireSituations=$this->affaireSituationService->storeMany($data);
+        $check=  $this->affaireSituationService->validName($request->all()['affaireSituations']);
+        if(count($check)>0){
+            return  response()->json(["error"=>$check],Response::HTTP_CREATED);
+        }
+        $affaireSituations=$this->affaireSituationService->storeMany($request);
         if(is_array($affaireSituations) && count($affaireSituations)>0){
-            $response=AffaireSituationsResponse::make($affaireSituations);
-            return  response()->json(["data"=>$response],Response::HTTP_CREATED);
+            return  response()->json(["data"=>$affaireSituations],Response::HTTP_CREATED);
         }
         return response()->json(['error'=>"Bad Request",Response::HTTP_BAD_REQUEST]);
     }
 
     public function store(AffaireSituationRequest $request)
     {
-        $affairesituation=$this->affaireSituationService->store($request->all());
+        $affairesituation=$this->affaireSituationService->store($request);
         if($affairesituation instanceof AffaireSituation){
            $response=AffaireSituationResponse::make($affairesituation);
            return response()->json(["data"=>$response],Response::HTTP_CREATED);
@@ -74,7 +79,7 @@ class AffaireSituationController extends Controller
     {
         $perAffaireSituation=$this->affaireSituationService->get($id);
         if($perAffaireSituation instanceof  AffaireSituation){
-            $affairesituation=$this->affaireSituationService->edit($perAffaireSituation,$request->all());
+            $affairesituation=$this->affaireSituationService->edit($perAffaireSituation,$request);
             if($affairesituation instanceof AffaireSituation){
                 $response=AffaireSituationResponse::make($affairesituation);
                 return response()->json(["data"=>$response],Response::HTTP_OK);

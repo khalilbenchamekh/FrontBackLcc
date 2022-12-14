@@ -20,20 +20,3 @@ class AffaireSituationRequest extends FormRequest
         ];
     }
 }
-
-class AffaireSituationArrayRequest extends FormRequest
-{
-    public function authorize()
-    {
-        return true;
-    }
-
-    public function rules()
-    {
-
-        return [
-            'affaireSituations.*.Name' =>  ['required', 'string','min:4', 'max:255', 'unique:affairesituations'],
-            'affaireSituations.*.orderChr' => 'required|integer',
-        ];
-    }
-}

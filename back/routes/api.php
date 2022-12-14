@@ -1,6 +1,8 @@
 <?php
 
+use App\Http\Controllers\Crud\AffaireController;
 use App\Http\Controllers\Crud\AffaireSituationController;
+use App\Http\Controllers\Crud\ChargesController;
 use App\Http\Controllers\Crud\EmployeeController;
 use App\Http\Requests\Enums\EmailMessageChoice;
 use Illuminate\Http\Request;
@@ -37,14 +39,13 @@ Route::get('/send',function (){
 });
 
 Route::post("/employees/store",[EmployeeController::class,'store']);
-//Route::post("/affairesituations",[AffaireSituationController::class,'index']);
-//GOOD Route::post("/affairesituations/many",[AffaireSituationController::class,'storeMany']);
-//GOOD Route::get("/affairesituations/delete/{id}",[AffaireSituationController::class,'destroy']);
-//Good Route::post("/affairesituations/edit/{id}",[AffaireSituationController::class,'update']);
+Route::post("/affairesituations",[AffaireSituationController::class,'index']);
+Route::post("/affairesituations/many",[AffaireSituationController::class,'storeMany']);
+Route::post("/affairesituations/delete",[AffaireSituationController::class,'destroy']);
+Route::post("/affairesituations/edit/{id}",[AffaireSituationController::class,'update']);
+Route::get("/affairesituations/{id}",[AffaireSituationController::class,'show']);
 
-// Good Route::get("/affairesituations/{id}",[AffaireSituationController::class,'show']);
-
-// GOOD Route::post("/affairesituations/store",[AffaireSituationController::class,'store']);
+Route::post("/affairesituations/store",[AffaireSituationController::class,'store']);
 //?? Route::get("/loads/destroy/{id}",[LoadController::class,'destroy']);
 // LE PROBLEME DANS MODIFICATION DE FILE  Route::post("/loads/{id}",[LoadController::class,'update']);
 //GOOD Route::post("/loads/store",[LoadController::class,'store']);
@@ -125,7 +126,7 @@ Route::post('/invoicestatuses',[InvoiceStatusController::class,'index']);
 Route::post('/invoicestatuse/save',[InvoiceStatusController::class,'store']);
 Route::get('/invoicestatuse/get/{id}',[InvoiceStatusController::class,'show']);
 Route::post('/invoicestatuse/update/{id}',[InvoiceStatusController::class,'update']);
-Route::get('/invoicestatuse/delete/{id}',[InvoiceStatusController::class,'destroy']);
+Route::post('/invoicestatuse/delete',[InvoiceStatusController::class,'destroy']);
 //-------------End InvoiceStatusController------------------>
 //----------------------TypesChargeController------------>
 
@@ -133,7 +134,11 @@ Route::post('/typescharges',[TypesChargeController::class,'index']);
 Route::post('/typescharge/save',[TypesChargeController::class,'store']);
 Route::get('/typescharge/get/{id}',[TypesChargeController::class,'show']);
 Route::post('/typescharge/update/{id}',[TypesChargeController::class,'update']);
-Route::get('/typescharge/delete/{id}',[TypesChargeController::class,'destroy']);
+Route::get('/typescharge/delete',[TypesChargeController::class,'destroy']);
+
+// ---------------------- AffaireController ---------------------->
+
+Route::post("/affaire/store",[AffaireController::class,'store']);
 
 
 
@@ -241,12 +246,14 @@ Route::group(['middleware' => ['jwt', 'jwt.auth']], function () {
         //TAPE1
         Route::post('affairenatures/store', [\App\Http\Controllers\Crud\AffaireNatureController::class,'store']);
         Route::post('affairenatures/all', [\App\Http\Controllers\Crud\AffaireNatureController::class,'index']);
-        Route::post('affairenatures/get/{id}', [\App\Http\Controllers\Crud\AffaireNatureController::class,'getAffaireNature']);
-        Route::post('affairenatures/edit/{id}', [\App\Http\Controllers\Crud\AffaireNatureController::class,'edait']);
-        Route::get('affairenatures/delete/{id}', [\App\Http\Controllers\Crud\AffaireNatureController::class,'destroy']);
+        Route::get('affairenatures/get/{id}', [\App\Http\Controllers\Crud\AffaireNatureController::class,'getAffaireNature']);
+        Route::post('affairenatures/edit/{id}', [\App\Http\Controllers\Crud\AffaireNatureController::class,'edit']);
+        Route::get('affairenatures/delete', [\App\Http\Controllers\Crud\AffaireNatureController::class,'destroy']);
+        Route::post('affairenatures/multi',  [\App\Http\Controllers\Crud\AffaireNatureController::class,'storeMany']);
+
         //end apiResource('affairenatures', 'AffaireNatureController')
         // Route::apiResource('foldertechnatures', 'FolderTechNatureController');
-        // Route::post('affairenatures/multi', 'AffaireNatureController@storeMany');
+
         // Route::post('foldertechnatures/multi', 'FolderTechNatureController@storeMany');
         //end Route::post('foldertechnatures/multi', 'FolderTechNatureController@storeMany');
         //Route::apiResource('loadtypes', 'LoadTypesController');
@@ -271,7 +278,7 @@ Route::group(['middleware' => ['jwt', 'jwt.auth']], function () {
         // Route::post('foldertechsituations/multi', 'FolderTechSituationController@storeMany');
 
 
-        Route::apiResource('affaires', 'AffaireController');
+        // Route::apiResource('affaires', 'AffaireController');
 
 
         Route::apiResource('folderteches', 'FolderTechController');
@@ -292,8 +299,8 @@ Route::group(['middleware' => ['jwt', 'jwt.auth']], function () {
         Route::apiResource('cadastralconsultations', 'CadastralconsultationController');
 
         // Route::apiResource('invoicestatuses', 'InvoiceStatusController');
-        Route::apiResource('charges', 'ChargesController');
-
+        // Route::apiResource('charges', 'ChargesController');
+        Route::post('charge/store',[ChargesController::class,'store']);
         // Route::apiResource('typescharges', 'TypesChargeController');
     });
 

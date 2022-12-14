@@ -2,7 +2,7 @@
 
 namespace App\Http\Controllers\Crud;
 use App\Http\Controllers\Controller;
-use App\Http\Requests\Auth\PaginationRequest;
+use App\Http\Requests\Pagination\PaginationRequest;
 use App\Http\Requests\Crud\IntermediateRequest;
 use App\Models\Intermediate;
 use App\Response\Intermediate\IntermediateResponse;
@@ -84,7 +84,7 @@ class IntermediateController extends Controller
     {
         $validator = Validator::make($request->all(),[
             "id"=>["required","integer"],
-            "Name"=>["required","string"],
+            "name"=>["required","string"],
         ]);
             if($validator->fails()){
                 return response()->json(["error"=>$validator->errors()],Response::HTTP_BAD_REQUEST);

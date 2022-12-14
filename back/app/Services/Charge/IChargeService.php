@@ -3,7 +3,6 @@
 
 namespace App\Services\Charge;
 
-use App\Models\Charges;
 
 interface IChargeService
 {

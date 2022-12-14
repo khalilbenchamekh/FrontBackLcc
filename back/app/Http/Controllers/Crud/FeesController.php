@@ -2,7 +2,7 @@
 namespace App\Http\Controllers\Crud;
 
 use App\Http\Controllers\Controller;
-use App\Http\Requests\Auth\PaginationRequest;
+use App\Http\Requests\Pagination\PaginationRequest;
 use App\Response\Affaire\AffairesResponse;
 use App\Response\Fees\FeesResponse;
 use App\Response\Fees\FeessResponse;

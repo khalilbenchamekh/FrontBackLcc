@@ -1,7 +1,7 @@
 <?php
 
 namespace App\Http\Controllers;
-use App\Http\Requests\Auth\PaginationRequest;
+use App\Http\Requests\Pagination\PaginationRequest;
 use App\Http\Requests\FileRequest;
 use App\Models\File as FileModel;
 use App\Response\FileModel\FileModelResponse;

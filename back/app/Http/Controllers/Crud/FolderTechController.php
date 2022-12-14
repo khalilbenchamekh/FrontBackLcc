@@ -1,7 +1,7 @@
 <?php
 namespace App\Http\Controllers\Crud;
 use App\Http\Controllers\Controller;
-use App\Http\Requests\Auth\PaginationRequest;
+use App\Http\Requests\Pagination\PaginationRequest;
 use App\Http\Requests\Crud\FolderTechRequest;
 use App\Models\FolderTech;
 use App\Response\FolderTechNature\FolderTechResponse;

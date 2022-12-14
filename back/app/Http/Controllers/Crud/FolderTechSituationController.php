@@ -3,7 +3,7 @@
 namespace App\Http\Controllers\Crud;
 
 use App\Http\Controllers\Controller;
-use App\Http\Requests\Auth\PaginationRequest;
+use App\Http\Requests\Pagination\PaginationRequest;
 use App\Http\Requests\Crud\FolderTechSituationRequest;
 use App\Models\FolderTechSituation;
 use App\Response\FolderTechSituation\FolderTechSituationResponse;

@@ -17,7 +17,7 @@ class FileService implements IFileService
     private $iFileRepository;
     public function __construct(IFileRepository $iFileRepository)
     {
-        $this->organisation_id = Auth::User()->organisation_id;
+        $this->organisation_id = 3;
         $this->iFileRepository = $iFileRepository;
     }
     public function index($request)

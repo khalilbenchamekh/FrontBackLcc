@@ -9,15 +9,15 @@ use Intervention\Image\Facades\Image;
 class SaveFileService implements ISaveFileService
 {
     use LogTrait;
-    public  $organisationService;
-    public $organisation_id;
+    public IOrganisationService $organisationService;
+    public  $organisation_id;
     public $mainPath;
-    public function __construct(IOrganisationService $organisationService)
-    {
-        $this->organisationService = $organisationService;
-        $this->organisation_id = Auth::User()->organisation_id;
-        $this->mainPath = public_path() . '/' .$this->organisationService->getMyOrganisation()->name.'/';
-    }
+    // public function __construct(IOrganisationService $organisationService)
+    // {
+    //     $this->organisationService = $organisationService;
+    //     $this->organisation_id = 3;
+    //      $this->mainPath = public_path() . '/' .$this->organisationService->getMyOrganisation()->name.'/';
+    // }
     public function editFile($direction,$file,$folder)
     {
         $tale=explode('/',$direction);

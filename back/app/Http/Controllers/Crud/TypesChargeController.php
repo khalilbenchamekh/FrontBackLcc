@@ -3,7 +3,7 @@
 namespace App\Http\Controllers\Crud;
 
 use App\Http\Controllers\Controller;
-use App\Http\Requests\Auth\PaginationRequest;
+use App\Http\Requests\Pagination\PaginationRequest;
 use App\Http\Requests\Crud\TypesChargeRequest;
 use App\Models\TypesCharge;
 use App\Response\TypesCharge\TypesChargeResponse;
@@ -30,7 +30,7 @@ class TypesChargeController extends Controller
     {
         $res = $this->iTypesChargeService->index($request);
         if($res instanceof LengthAwarePaginator){
-            $response = TypesChargeResponse::make($res->all());
+            $response = TypesChargesResponse::make($res);
             return response()->json([
                 "data"=>$response,
                 'countPage'=>$response->perPage(),
@@ -69,6 +69,7 @@ class TypesChargeController extends Controller
 
     public function update(TypesChargeRequest $request, $id)
     {
+
         $typescharge = $this->iTypesChargeService->update($id,$request);
         if($typescharge instanceof TypesCharge){
             $response = TypesChargeResponse::make($typescharge);
@@ -89,7 +90,10 @@ class TypesChargeController extends Controller
         }
             $res=$this->iTypesChargeService->destroy($request);
             if(!is_null($res) ){
-                return response()->json(['data' => $res], Response::HTTP_NO_CONTENT);
+                $response = TypesChargeResponse::make($res);
+            return response()->json([
+                "data"=>$response,
+            ],Response::HTTP_OK);
            }else{
                return response()->json(['error'=>"Bad Request"],Response::HTTP_BAD_REQUEST);
            }

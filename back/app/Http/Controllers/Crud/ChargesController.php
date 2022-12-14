@@ -2,8 +2,9 @@
 
 namespace App\Http\Controllers\Crud;
 use App\Http\Controllers\Controller;
-use App\Http\Requests\Auth\PaginationRequest;
+use App\Http\Requests\Pagination\PaginationRequest;
 use App\Http\Requests\Crud\ChargesRequest;
+use App\Repository\Charge\ChargeResponse;
 use App\Response\TypesCharge\TypesChargesResponse;
 use App\Services\Charge\IChargeService;
 use App\Services\SaveFile\ISaveFileService;
@@ -11,6 +12,7 @@ use Illuminate\Pagination\LengthAwarePaginator;
 use Symfony\Component\HttpFoundation\Response;
 use Illuminate\Support\Facades\Validator;
 use Illuminate\Http\Request;
+
 class ChargesController extends Controller
 {
     private $iChargeService;
@@ -43,22 +45,24 @@ class ChargesController extends Controller
 
     public function store(ChargesRequest $request)
     {
-        $res=$this->iChargeService->store($request->all());
+        $res=$this->iChargeService->store($request);
         if(!is_null($res) ){
-         /// we must create a response ChargeResponse + ChargesResponse  $response=ChargeResponse::make($res);
-         $path = 'Load/' . $res->num_quit;
-         $this->saveFileService->saveFiles($path,$request->file('filenames'));
-            return response()->json(["data"=>$res],Response::HTTP_CREATED);
+            $response = ChargeResponse::make($res);
+            if($request->hasFile('filenames')){
+                $path = 'Load/' . $res->num_quit;
+                $this->saveFileService->saveFiles($path,$request->file('filenames'));
+            }
+                return response()->json(["data"=>$response],Response::HTTP_CREATED);
         }
-        return response()->json(['error'=>"Bad Request"],Response::HTTP_BAD_REQUEST);
+            return response()->json(['error'=>"Bad Request"],Response::HTTP_BAD_REQUEST);
     }
 
     public function show($id)
     {
         $res=$this->iChargeService->show($id);
         if(!is_null($res) ){
-         /// we must create a response ChargeResponse + ChargesResponse  $response=ChargeResponse::make($res);
-             return response()->json(['data'=>$res],Response::HTTP_OK);
+            $response = ChargeResponse::make($res);
+             return response()->json(['data'=>$response],Response::HTTP_OK);
          }else{
              return response()->json(['error'=>"Bad Requedt"],Response::HTTP_BAD_REQUEST);
          }

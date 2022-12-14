@@ -1,0 +1,1529 @@
+[2022-12-04 14:10:48] local.INFO: Broadcasting [newLogs] on channels [private-logs] with payload:
+{
+    "logActivity": {
+        "id": 30,
+        "organisation_id": 1,
+        "subject": "Jovert Palonpona cr\u00e9e une InvoiceStatusinvoicestatuse1",
+        "url": "http:\/\/localhost:8000\/api\/invoicestatuse\/save",
+        "method": "POST",
+        "ip": "127.0.0.1",
+        "agent": "PostmanRuntime\/7.6.0",
+        "user_id": 2,
+        "user_name": null,
+        "created_at": "2022-12-04 14:10:47",
+        "updated_at": "2022-12-04 14:10:47"
+    },
+    "socket": null
+}  
+[2022-12-04 14:11:23] local.INFO: Broadcasting [newLogs] on channels [private-logs] with payload:
+{
+    "logActivity": {
+        "id": 31,
+        "organisation_id": 1,
+        "subject": "Jovert Palonpona cr\u00e9e une InvoiceStatusinvoicestatuse1",
+        "url": "http:\/\/localhost:8000\/api\/invoicestatuse\/save",
+        "method": "POST",
+        "ip": "127.0.0.1",
+        "agent": "PostmanRuntime\/7.6.0",
+        "user_id": 2,
+        "user_name": null,
+        "created_at": "2022-12-04 14:11:23",
+        "updated_at": "2022-12-04 14:11:23"
+    },
+    "socket": null
+}  
+[2022-12-04 14:13:17] local.ERROR: Method Illuminate\Support\Collection::perPage does not exist. {"userId":2,"exception":"[object] (BadMethodCallException(code: 0): Method Illuminate\\Support\\Collection::perPage does not exist. at C:\\xampp\\htdocs\\New folder\\FrontBackLcc\\back\\vendor\\laravel\\framework\\src\\Illuminate\\Support\\Traits\\Macroable.php:103)
+[stacktrace]
+#0 C:\\xampp\\htdocs\\New folder\\FrontBackLcc\\back\\vendor\\laravel\\framework\\src\\Illuminate\\Support\\Traits\\ForwardsCalls.php(23): Illuminate\\Support\\Collection->__call('perPage', Array)
+#1 C:\\xampp\\htdocs\\New folder\\FrontBackLcc\\back\\vendor\\laravel\\framework\\src\\Illuminate\\Http\\Resources\\DelegatesToResource.php(132): Illuminate\\Http\\Resources\\Json\\JsonResource->forwardCallTo(Object(Illuminate\\Support\\Collection), 'perPage', Array)
+#2 C:\\xampp\\htdocs\\New folder\\FrontBackLcc\\back\\app\\Http\\Controllers\\Crud\\InvoiceStatusController.php(38): Illuminate\\Http\\Resources\\Json\\JsonResource->__call('perPage', Array)
+#3 C:\\xampp\\htdocs\\New folder\\FrontBackLcc\\back\\vendor\\laravel\\framework\\src\\Illuminate\\Routing\\Controller.php(54): App\\Http\\Controllers\\Crud\\InvoiceStatusController->index(Object(App\\Http\\Requests\\Pagination\\PaginationRequest))
+#4 C:\\xampp\\htdocs\\New folder\\FrontBackLcc\\back\\vendor\\laravel\\framework\\src\\Illuminate\\Routing\\ControllerDispatcher.php(45): Illuminate\\Routing\\Controller->callAction('index', Array)
+#5 C:\\xampp\\htdocs\\New folder\\FrontBackLcc\\back\\vendor\\laravel\\framework\\src\\Illuminate\\Routing\\Route.php(219): Illuminate\\Routing\\ControllerDispatcher->dispatch(Object(Illuminate\\Routing\\Route), Object(App\\Http\\Controllers\\Crud\\InvoiceStatusController), 'index')
+#6 C:\\xampp\\htdocs\\New folder\\FrontBackLcc\\back\\vendor\\laravel\\framework\\src\\Illuminate\\Routing\\Route.php(176): Illuminate\\Routing\\Route->runController()
+#7 C:\\xampp\\htdocs\\New folder\\FrontBackLcc\\back\\vendor\\laravel\\framework\\src\\Illuminate\\Routing\\Router.php(681): Illuminate\\Routing\\Route->run()
+#8 C:\\xampp\\htdocs\\New folder\\FrontBackLcc\\back\\vendor\\laravel\\framework\\src\\Illuminate\\Pipeline\\Pipeline.php(130): Illuminate\\Routing\\Router->Illuminate\\Routing\\{closure}(Object(Illuminate\\Http\\Request))
+#9 C:\\xampp\\htdocs\\New folder\\FrontBackLcc\\back\\vendor\\halpdesk\\zizaco-entrust-laravel-6.0\\src\\Entrust\\Middleware\\EntrustRole.php(48): Illuminate\\Pipeline\\Pipeline->Illuminate\\Pipeline\\{closure}(Object(Illuminate\\Http\\Request))
+#10 C:\\xampp\\htdocs\\New folder\\FrontBackLcc\\back\\vendor\\laravel\\framework\\src\\Illuminate\\Pipeline\\Pipeline.php(171): Zizaco\\Entrust\\Middleware\\EntrustRole->handle(Object(Illuminate\\Http\\Request), Object(Closure), Array)
+#11 C:\\xampp\\htdocs\\New folder\\FrontBackLcc\\back\\vendor\\laravel\\framework\\src\\Illuminate\\Routing\\Middleware\\SubstituteBindings.php(41): Illuminate\\Pipeline\\Pipeline->Illuminate\\Pipeline\\{closure}(Object(Illuminate\\Http\\Request))
+#12 C:\\xampp\\htdocs\\New folder\\FrontBackLcc\\back\\vendor\\laravel\\framework\\src\\Illuminate\\Pipeline\\Pipeline.php(171): Illuminate\\Routing\\Middleware\\SubstituteBindings->handle(Object(Illuminate\\Http\\Request), Object(Closure))
+#13 C:\\xampp\\htdocs\\New folder\\FrontBackLcc\\back\\vendor\\laravel\\framework\\src\\Illuminate\\Routing\\Middleware\\ThrottleRequests.php(59): Illuminate\\Pipeline\\Pipeline->Illuminate\\Pipeline\\{closure}(Object(Illuminate\\Http\\Request))
+#14 C:\\xampp\\htdocs\\New folder\\FrontBackLcc\\back\\vendor\\laravel\\framework\\src\\Illuminate\\Pipeline\\Pipeline.php(171): Illuminate\\Routing\\Middleware\\ThrottleRequests->handle(Object(Illuminate\\Http\\Request), Object(Closure), 60, '1')
+#15 C:\\xampp\\htdocs\\New folder\\FrontBackLcc\\back\\app\\Http\\Middleware\\Cors.php(30): Illuminate\\Pipeline\\Pipeline->Illuminate\\Pipeline\\{closure}(Object(Illuminate\\Http\\Request))
+#16 C:\\xampp\\htdocs\\New folder\\FrontBackLcc\\back\\vendor\\laravel\\framework\\src\\Illuminate\\Pipeline\\Pipeline.php(171): App\\Http\\Middleware\\Cors->handle(Object(Illuminate\\Http\\Request), Object(Closure))
+#17 C:\\xampp\\htdocs\\New folder\\FrontBackLcc\\back\\vendor\\laravel\\framework\\src\\Illuminate\\Pipeline\\Pipeline.php(105): Illuminate\\Pipeline\\Pipeline->Illuminate\\Pipeline\\{closure}(Object(Illuminate\\Http\\Request))
+#18 C:\\xampp\\htdocs\\New folder\\FrontBackLcc\\back\\vendor\\laravel\\framework\\src\\Illuminate\\Routing\\Router.php(683): Illuminate\\Pipeline\\Pipeline->then(Object(Closure))
+#19 C:\\xampp\\htdocs\\New folder\\FrontBackLcc\\back\\vendor\\laravel\\framework\\src\\Illuminate\\Routing\\Router.php(658): Illuminate\\Routing\\Router->runRouteWithinStack(Object(Illuminate\\Routing\\Route), Object(Illuminate\\Http\\Request))
+#20 C:\\xampp\\htdocs\\New folder\\FrontBackLcc\\back\\vendor\\laravel\\framework\\src\\Illuminate\\Routing\\Router.php(624): Illuminate\\Routing\\Router->runRoute(Object(Illuminate\\Http\\Request), Object(Illuminate\\Routing\\Route))
+#21 C:\\xampp\\htdocs\\New folder\\FrontBackLcc\\back\\vendor\\laravel\\framework\\src\\Illuminate\\Routing\\Router.php(613): Illuminate\\Routing\\Router->dispatchToRoute(Object(Illuminate\\Http\\Request))
+#22 C:\\xampp\\htdocs\\New folder\\FrontBackLcc\\back\\vendor\\laravel\\framework\\src\\Illuminate\\Foundation\\Http\\Kernel.php(170): Illuminate\\Routing\\Router->dispatch(Object(Illuminate\\Http\\Request))
+#23 C:\\xampp\\htdocs\\New folder\\FrontBackLcc\\back\\vendor\\laravel\\framework\\src\\Illuminate\\Pipeline\\Pipeline.php(130): Illuminate\\Foundation\\Http\\Kernel->Illuminate\\Foundation\\Http\\{closure}(Object(Illuminate\\Http\\Request))
+#24 C:\\xampp\\htdocs\\New folder\\FrontBackLcc\\back\\app\\Http\\Middleware\\Cors.php(30): Illuminate\\Pipeline\\Pipeline->Illuminate\\Pipeline\\{closure}(Object(Illuminate\\Http\\Request))
+#25 C:\\xampp\\htdocs\\New folder\\FrontBackLcc\\back\\vendor\\laravel\\framework\\src\\Illuminate\\Pipeline\\Pipeline.php(171): App\\Http\\Middleware\\Cors->handle(Object(Illuminate\\Http\\Request), Object(Closure))
+#26 C:\\xampp\\htdocs\\New folder\\FrontBackLcc\\back\\vendor\\laravel\\framework\\src\\Illuminate\\Foundation\\Http\\Middleware\\TransformsRequest.php(21): Illuminate\\Pipeline\\Pipeline->Illuminate\\Pipeline\\{closure}(Object(Illuminate\\Http\\Request))
+#27 C:\\xampp\\htdocs\\New folder\\FrontBackLcc\\back\\vendor\\laravel\\framework\\src\\Illuminate\\Pipeline\\Pipeline.php(171): Illuminate\\Foundation\\Http\\Middleware\\TransformsRequest->handle(Object(Illuminate\\Http\\Request), Object(Closure))
+#28 C:\\xampp\\htdocs\\New folder\\FrontBackLcc\\back\\vendor\\laravel\\framework\\src\\Illuminate\\Foundation\\Http\\Middleware\\TransformsRequest.php(21): Illuminate\\Pipeline\\Pipeline->Illuminate\\Pipeline\\{closure}(Object(Illuminate\\Http\\Request))
+#29 C:\\xampp\\htdocs\\New folder\\FrontBackLcc\\back\\vendor\\laravel\\framework\\src\\Illuminate\\Pipeline\\Pipeline.php(171): Illuminate\\Foundation\\Http\\Middleware\\TransformsRequest->handle(Object(Illuminate\\Http\\Request), Object(Closure))
+#30 C:\\xampp\\htdocs\\New folder\\FrontBackLcc\\back\\vendor\\laravel\\framework\\src\\Illuminate\\Foundation\\Http\\Middleware\\ValidatePostSize.php(27): Illuminate\\Pipeline\\Pipeline->Illuminate\\Pipeline\\{closure}(Object(Illuminate\\Http\\Request))
+#31 C:\\xampp\\htdocs\\New folder\\FrontBackLcc\\back\\vendor\\laravel\\framework\\src\\Illuminate\\Pipeline\\Pipeline.php(171): Illuminate\\Foundation\\Http\\Middleware\\ValidatePostSize->handle(Object(Illuminate\\Http\\Request), Object(Closure))
+#32 C:\\xampp\\htdocs\\New folder\\FrontBackLcc\\back\\vendor\\laravel\\framework\\src\\Illuminate\\Foundation\\Http\\Middleware\\CheckForMaintenanceMode.php(63): Illuminate\\Pipeline\\Pipeline->Illuminate\\Pipeline\\{closure}(Object(Illuminate\\Http\\Request))
+#33 C:\\xampp\\htdocs\\New folder\\FrontBackLcc\\back\\vendor\\laravel\\framework\\src\\Illuminate\\Pipeline\\Pipeline.php(171): Illuminate\\Foundation\\Http\\Middleware\\CheckForMaintenanceMode->handle(Object(Illuminate\\Http\\Request), Object(Closure))
+#34 C:\\xampp\\htdocs\\New folder\\FrontBackLcc\\back\\vendor\\fideloper\\proxy\\src\\TrustProxies.php(57): Illuminate\\Pipeline\\Pipeline->Illuminate\\Pipeline\\{closure}(Object(Illuminate\\Http\\Request))
+#35 C:\\xampp\\htdocs\\New folder\\FrontBackLcc\\back\\vendor\\laravel\\framework\\src\\Illuminate\\Pipeline\\Pipeline.php(171): Fideloper\\Proxy\\TrustProxies->handle(Object(Illuminate\\Http\\Request), Object(Closure))
+#36 C:\\xampp\\htdocs\\New folder\\FrontBackLcc\\back\\vendor\\barryvdh\\laravel-cors\\src\\HandlePreflight.php(29): Illuminate\\Pipeline\\Pipeline->Illuminate\\Pipeline\\{closure}(Object(Illuminate\\Http\\Request))
+#37 C:\\xampp\\htdocs\\New folder\\FrontBackLcc\\back\\vendor\\laravel\\framework\\src\\Illuminate\\Pipeline\\Pipeline.php(171): Barryvdh\\Cors\\HandlePreflight->handle(Object(Illuminate\\Http\\Request), Object(Closure))
+#38 C:\\xampp\\htdocs\\New folder\\FrontBackLcc\\back\\vendor\\laravel\\framework\\src\\Illuminate\\Pipeline\\Pipeline.php(105): Illuminate\\Pipeline\\Pipeline->Illuminate\\Pipeline\\{closure}(Object(Illuminate\\Http\\Request))
+#39 C:\\xampp\\htdocs\\New folder\\FrontBackLcc\\back\\vendor\\laravel\\framework\\src\\Illuminate\\Foundation\\Http\\Kernel.php(145): Illuminate\\Pipeline\\Pipeline->then(Object(Closure))
+#40 C:\\xampp\\htdocs\\New folder\\FrontBackLcc\\back\\vendor\\laravel\\framework\\src\\Illuminate\\Foundation\\Http\\Kernel.php(110): Illuminate\\Foundation\\Http\\Kernel->sendRequestThroughRouter(Object(Illuminate\\Http\\Request))
+#41 C:\\xampp\\htdocs\\New folder\\FrontBackLcc\\back\\public\\index.php(55): Illuminate\\Foundation\\Http\\Kernel->handle(Object(Illuminate\\Http\\Request))
+#42 C:\\xampp\\htdocs\\New folder\\FrontBackLcc\\back\\server.php(21): require_once('C:\\\\xampp\\\\htdocs...')
+#43 {main}
+"} 
+[2022-12-04 19:00:51] local.ERROR: Method Illuminate\Support\Collection::perPage does not exist. {"userId":2,"exception":"[object] (BadMethodCallException(code: 0): Method Illuminate\\Support\\Collection::perPage does not exist. at C:\\xampp\\htdocs\\New folder\\FrontBackLcc\\back\\vendor\\laravel\\framework\\src\\Illuminate\\Support\\Traits\\Macroable.php:103)
+[stacktrace]
+#0 C:\\xampp\\htdocs\\New folder\\FrontBackLcc\\back\\vendor\\laravel\\framework\\src\\Illuminate\\Support\\Traits\\ForwardsCalls.php(23): Illuminate\\Support\\Collection->__call('perPage', Array)
+#1 C:\\xampp\\htdocs\\New folder\\FrontBackLcc\\back\\vendor\\laravel\\framework\\src\\Illuminate\\Http\\Resources\\DelegatesToResource.php(132): Illuminate\\Http\\Resources\\Json\\JsonResource->forwardCallTo(Object(Illuminate\\Support\\Collection), 'perPage', Array)
+#2 C:\\xampp\\htdocs\\New folder\\FrontBackLcc\\back\\app\\Http\\Controllers\\Crud\\InvoiceStatusController.php(38): Illuminate\\Http\\Resources\\Json\\JsonResource->__call('perPage', Array)
+#3 C:\\xampp\\htdocs\\New folder\\FrontBackLcc\\back\\vendor\\laravel\\framework\\src\\Illuminate\\Routing\\Controller.php(54): App\\Http\\Controllers\\Crud\\InvoiceStatusController->index(Object(App\\Http\\Requests\\Pagination\\PaginationRequest))
+#4 C:\\xampp\\htdocs\\New folder\\FrontBackLcc\\back\\vendor\\laravel\\framework\\src\\Illuminate\\Routing\\ControllerDispatcher.php(45): Illuminate\\Routing\\Controller->callAction('index', Array)
+#5 C:\\xampp\\htdocs\\New folder\\FrontBackLcc\\back\\vendor\\laravel\\framework\\src\\Illuminate\\Routing\\Route.php(219): Illuminate\\Routing\\ControllerDispatcher->dispatch(Object(Illuminate\\Routing\\Route), Object(App\\Http\\Controllers\\Crud\\InvoiceStatusController), 'index')
+#6 C:\\xampp\\htdocs\\New folder\\FrontBackLcc\\back\\vendor\\laravel\\framework\\src\\Illuminate\\Routing\\Route.php(176): Illuminate\\Routing\\Route->runController()
+#7 C:\\xampp\\htdocs\\New folder\\FrontBackLcc\\back\\vendor\\laravel\\framework\\src\\Illuminate\\Routing\\Router.php(681): Illuminate\\Routing\\Route->run()
+#8 C:\\xampp\\htdocs\\New folder\\FrontBackLcc\\back\\vendor\\laravel\\framework\\src\\Illuminate\\Pipeline\\Pipeline.php(130): Illuminate\\Routing\\Router->Illuminate\\Routing\\{closure}(Object(Illuminate\\Http\\Request))
+#9 C:\\xampp\\htdocs\\New folder\\FrontBackLcc\\back\\vendor\\halpdesk\\zizaco-entrust-laravel-6.0\\src\\Entrust\\Middleware\\EntrustRole.php(48): Illuminate\\Pipeline\\Pipeline->Illuminate\\Pipeline\\{closure}(Object(Illuminate\\Http\\Request))
+#10 C:\\xampp\\htdocs\\New folder\\FrontBackLcc\\back\\vendor\\laravel\\framework\\src\\Illuminate\\Pipeline\\Pipeline.php(171): Zizaco\\Entrust\\Middleware\\EntrustRole->handle(Object(Illuminate\\Http\\Request), Object(Closure), Array)
+#11 C:\\xampp\\htdocs\\New folder\\FrontBackLcc\\back\\vendor\\laravel\\framework\\src\\Illuminate\\Routing\\Middleware\\SubstituteBindings.php(41): Illuminate\\Pipeline\\Pipeline->Illuminate\\Pipeline\\{closure}(Object(Illuminate\\Http\\Request))
+#12 C:\\xampp\\htdocs\\New folder\\FrontBackLcc\\back\\vendor\\laravel\\framework\\src\\Illuminate\\Pipeline\\Pipeline.php(171): Illuminate\\Routing\\Middleware\\SubstituteBindings->handle(Object(Illuminate\\Http\\Request), Object(Closure))
+#13 C:\\xampp\\htdocs\\New folder\\FrontBackLcc\\back\\vendor\\laravel\\framework\\src\\Illuminate\\Routing\\Middleware\\ThrottleRequests.php(59): Illuminate\\Pipeline\\Pipeline->Illuminate\\Pipeline\\{closure}(Object(Illuminate\\Http\\Request))
+#14 C:\\xampp\\htdocs\\New folder\\FrontBackLcc\\back\\vendor\\laravel\\framework\\src\\Illuminate\\Pipeline\\Pipeline.php(171): Illuminate\\Routing\\Middleware\\ThrottleRequests->handle(Object(Illuminate\\Http\\Request), Object(Closure), 60, '1')
+#15 C:\\xampp\\htdocs\\New folder\\FrontBackLcc\\back\\app\\Http\\Middleware\\Cors.php(30): Illuminate\\Pipeline\\Pipeline->Illuminate\\Pipeline\\{closure}(Object(Illuminate\\Http\\Request))
+#16 C:\\xampp\\htdocs\\New folder\\FrontBackLcc\\back\\vendor\\laravel\\framework\\src\\Illuminate\\Pipeline\\Pipeline.php(171): App\\Http\\Middleware\\Cors->handle(Object(Illuminate\\Http\\Request), Object(Closure))
+#17 C:\\xampp\\htdocs\\New folder\\FrontBackLcc\\back\\vendor\\laravel\\framework\\src\\Illuminate\\Pipeline\\Pipeline.php(105): Illuminate\\Pipeline\\Pipeline->Illuminate\\Pipeline\\{closure}(Object(Illuminate\\Http\\Request))
+#18 C:\\xampp\\htdocs\\New folder\\FrontBackLcc\\back\\vendor\\laravel\\framework\\src\\Illuminate\\Routing\\Router.php(683): Illuminate\\Pipeline\\Pipeline->then(Object(Closure))
+#19 C:\\xampp\\htdocs\\New folder\\FrontBackLcc\\back\\vendor\\laravel\\framework\\src\\Illuminate\\Routing\\Router.php(658): Illuminate\\Routing\\Router->runRouteWithinStack(Object(Illuminate\\Routing\\Route), Object(Illuminate\\Http\\Request))
+#20 C:\\xampp\\htdocs\\New folder\\FrontBackLcc\\back\\vendor\\laravel\\framework\\src\\Illuminate\\Routing\\Router.php(624): Illuminate\\Routing\\Router->runRoute(Object(Illuminate\\Http\\Request), Object(Illuminate\\Routing\\Route))
+#21 C:\\xampp\\htdocs\\New folder\\FrontBackLcc\\back\\vendor\\laravel\\framework\\src\\Illuminate\\Routing\\Router.php(613): Illuminate\\Routing\\Router->dispatchToRoute(Object(Illuminate\\Http\\Request))
+#22 C:\\xampp\\htdocs\\New folder\\FrontBackLcc\\back\\vendor\\laravel\\framework\\src\\Illuminate\\Foundation\\Http\\Kernel.php(170): Illuminate\\Routing\\Router->dispatch(Object(Illuminate\\Http\\Request))
+#23 C:\\xampp\\htdocs\\New folder\\FrontBackLcc\\back\\vendor\\laravel\\framework\\src\\Illuminate\\Pipeline\\Pipeline.php(130): Illuminate\\Foundation\\Http\\Kernel->Illuminate\\Foundation\\Http\\{closure}(Object(Illuminate\\Http\\Request))
+#24 C:\\xampp\\htdocs\\New folder\\FrontBackLcc\\back\\app\\Http\\Middleware\\Cors.php(30): Illuminate\\Pipeline\\Pipeline->Illuminate\\Pipeline\\{closure}(Object(Illuminate\\Http\\Request))
+#25 C:\\xampp\\htdocs\\New folder\\FrontBackLcc\\back\\vendor\\laravel\\framework\\src\\Illuminate\\Pipeline\\Pipeline.php(171): App\\Http\\Middleware\\Cors->handle(Object(Illuminate\\Http\\Request), Object(Closure))
+#26 C:\\xampp\\htdocs\\New folder\\FrontBackLcc\\back\\vendor\\laravel\\framework\\src\\Illuminate\\Foundation\\Http\\Middleware\\TransformsRequest.php(21): Illuminate\\Pipeline\\Pipeline->Illuminate\\Pipeline\\{closure}(Object(Illuminate\\Http\\Request))
+#27 C:\\xampp\\htdocs\\New folder\\FrontBackLcc\\back\\vendor\\laravel\\framework\\src\\Illuminate\\Pipeline\\Pipeline.php(171): Illuminate\\Foundation\\Http\\Middleware\\TransformsRequest->handle(Object(Illuminate\\Http\\Request), Object(Closure))
+#28 C:\\xampp\\htdocs\\New folder\\FrontBackLcc\\back\\vendor\\laravel\\framework\\src\\Illuminate\\Foundation\\Http\\Middleware\\TransformsRequest.php(21): Illuminate\\Pipeline\\Pipeline->Illuminate\\Pipeline\\{closure}(Object(Illuminate\\Http\\Request))
+#29 C:\\xampp\\htdocs\\New folder\\FrontBackLcc\\back\\vendor\\laravel\\framework\\src\\Illuminate\\Pipeline\\Pipeline.php(171): Illuminate\\Foundation\\Http\\Middleware\\TransformsRequest->handle(Object(Illuminate\\Http\\Request), Object(Closure))
+#30 C:\\xampp\\htdocs\\New folder\\FrontBackLcc\\back\\vendor\\laravel\\framework\\src\\Illuminate\\Foundation\\Http\\Middleware\\ValidatePostSize.php(27): Illuminate\\Pipeline\\Pipeline->Illuminate\\Pipeline\\{closure}(Object(Illuminate\\Http\\Request))
+#31 C:\\xampp\\htdocs\\New folder\\FrontBackLcc\\back\\vendor\\laravel\\framework\\src\\Illuminate\\Pipeline\\Pipeline.php(171): Illuminate\\Foundation\\Http\\Middleware\\ValidatePostSize->handle(Object(Illuminate\\Http\\Request), Object(Closure))
+#32 C:\\xampp\\htdocs\\New folder\\FrontBackLcc\\back\\vendor\\laravel\\framework\\src\\Illuminate\\Foundation\\Http\\Middleware\\CheckForMaintenanceMode.php(63): Illuminate\\Pipeline\\Pipeline->Illuminate\\Pipeline\\{closure}(Object(Illuminate\\Http\\Request))
+#33 C:\\xampp\\htdocs\\New folder\\FrontBackLcc\\back\\vendor\\laravel\\framework\\src\\Illuminate\\Pipeline\\Pipeline.php(171): Illuminate\\Foundation\\Http\\Middleware\\CheckForMaintenanceMode->handle(Object(Illuminate\\Http\\Request), Object(Closure))
+#34 C:\\xampp\\htdocs\\New folder\\FrontBackLcc\\back\\vendor\\fideloper\\proxy\\src\\TrustProxies.php(57): Illuminate\\Pipeline\\Pipeline->Illuminate\\Pipeline\\{closure}(Object(Illuminate\\Http\\Request))
+#35 C:\\xampp\\htdocs\\New folder\\FrontBackLcc\\back\\vendor\\laravel\\framework\\src\\Illuminate\\Pipeline\\Pipeline.php(171): Fideloper\\Proxy\\TrustProxies->handle(Object(Illuminate\\Http\\Request), Object(Closure))
+#36 C:\\xampp\\htdocs\\New folder\\FrontBackLcc\\back\\vendor\\barryvdh\\laravel-cors\\src\\HandlePreflight.php(29): Illuminate\\Pipeline\\Pipeline->Illuminate\\Pipeline\\{closure}(Object(Illuminate\\Http\\Request))
+#37 C:\\xampp\\htdocs\\New folder\\FrontBackLcc\\back\\vendor\\laravel\\framework\\src\\Illuminate\\Pipeline\\Pipeline.php(171): Barryvdh\\Cors\\HandlePreflight->handle(Object(Illuminate\\Http\\Request), Object(Closure))
+#38 C:\\xampp\\htdocs\\New folder\\FrontBackLcc\\back\\vendor\\laravel\\framework\\src\\Illuminate\\Pipeline\\Pipeline.php(105): Illuminate\\Pipeline\\Pipeline->Illuminate\\Pipeline\\{closure}(Object(Illuminate\\Http\\Request))
+#39 C:\\xampp\\htdocs\\New folder\\FrontBackLcc\\back\\vendor\\laravel\\framework\\src\\Illuminate\\Foundation\\Http\\Kernel.php(145): Illuminate\\Pipeline\\Pipeline->then(Object(Closure))
+#40 C:\\xampp\\htdocs\\New folder\\FrontBackLcc\\back\\vendor\\laravel\\framework\\src\\Illuminate\\Foundation\\Http\\Kernel.php(110): Illuminate\\Foundation\\Http\\Kernel->sendRequestThroughRouter(Object(Illuminate\\Http\\Request))
+#41 C:\\xampp\\htdocs\\New folder\\FrontBackLcc\\back\\public\\index.php(55): Illuminate\\Foundation\\Http\\Kernel->handle(Object(Illuminate\\Http\\Request))
+#42 C:\\xampp\\htdocs\\New folder\\FrontBackLcc\\back\\server.php(21): require_once('C:\\\\xampp\\\\htdocs...')
+#43 {main}
+"} 
+[2022-12-04 19:14:50] local.INFO: Broadcasting [newLogs] on channels [private-logs] with payload:
+{
+    "logActivity": {
+        "id": 32,
+        "organisation_id": 1,
+        "subject": "Jovert Palonpona modifi\u00e9 une InvoiceStatusupdate",
+        "url": "http:\/\/localhost:8000\/api\/invoicestatuse\/update\/3",
+        "method": "POST",
+        "ip": "127.0.0.1",
+        "agent": "PostmanRuntime\/7.6.0",
+        "user_id": 2,
+        "user_name": null,
+        "created_at": "2022-12-04 19:14:50",
+        "updated_at": "2022-12-04 19:14:50"
+    },
+    "socket": null
+}  
+[2022-12-04 19:15:14] local.INFO: Broadcasting [newLogs] on channels [private-logs] with payload:
+{
+    "logActivity": {
+        "id": 33,
+        "organisation_id": 1,
+        "subject": "Jovert Palonpona modifi\u00e9 une InvoiceStatussaida",
+        "url": "http:\/\/localhost:8000\/api\/invoicestatuse\/update\/3",
+        "method": "POST",
+        "ip": "127.0.0.1",
+        "agent": "PostmanRuntime\/7.6.0",
+        "user_id": 2,
+        "user_name": null,
+        "created_at": "2022-12-04 19:15:14",
+        "updated_at": "2022-12-04 19:15:14"
+    },
+    "socket": null
+}  
+[2022-12-04 19:15:35] local.INFO: Broadcasting [newLogs] on channels [private-logs] with payload:
+{
+    "logActivity": {
+        "id": 34,
+        "organisation_id": 1,
+        "subject": "Jovert Palonpona modifi\u00e9 une InvoiceStatusinvoicestatuse1",
+        "url": "http:\/\/localhost:8000\/api\/invoicestatuse\/update\/3",
+        "method": "POST",
+        "ip": "127.0.0.1",
+        "agent": "PostmanRuntime\/7.6.0",
+        "user_id": 2,
+        "user_name": null,
+        "created_at": "2022-12-04 19:15:35",
+        "updated_at": "2022-12-04 19:15:35"
+    },
+    "socket": null
+}  
+[2022-12-04 19:18:40] local.INFO: Broadcasting [newLogs] on channels [private-logs] with payload:
+{
+    "logActivity": {
+        "id": 35,
+        "organisation_id": 1,
+        "subject": "Jovert Palonpona supprim\u00e9 une Intermediate",
+        "url": "http:\/\/localhost:8000\/api\/invoicestatuse\/delete\/3",
+        "method": "GET",
+        "ip": "127.0.0.1",
+        "agent": "PostmanRuntime\/7.6.0",
+        "user_id": 2,
+        "user_name": null,
+        "created_at": "2022-12-04 19:18:40",
+        "updated_at": "2022-12-04 19:18:40"
+    },
+    "socket": null
+}  
+[2022-12-04 19:20:47] local.ERROR: Call to a member function delete() on null {"userId":2,"exception":"[object] (Symfony\\Component\\Debug\\Exception\\FatalThrowableError(code: 0): Call to a member function delete() on null at C:\\xampp\\htdocs\\New folder\\FrontBackLcc\\back\\app\\Repository\\InvoiceStatus\\InvoiceStatusRepository.php:75)
+[stacktrace]
+#0 C:\\xampp\\htdocs\\New folder\\FrontBackLcc\\back\\app\\Services\\InvoiceStatus\\InvoiceStatusService.php(53): App\\Repository\\InvoiceStatus\\InvoiceStatusRepository->destroy('3')
+#1 C:\\xampp\\htdocs\\New folder\\FrontBackLcc\\back\\app\\Http\\Controllers\\Crud\\InvoiceStatusController.php(92): App\\Services\\InvoiceStatus\\InvoiceStatusService->destroy(Object(Illuminate\\Http\\Request))
+#2 C:\\xampp\\htdocs\\New folder\\FrontBackLcc\\back\\vendor\\laravel\\framework\\src\\Illuminate\\Routing\\Controller.php(54): App\\Http\\Controllers\\Crud\\InvoiceStatusController->destroy(Object(Illuminate\\Http\\Request), '3')
+#3 C:\\xampp\\htdocs\\New folder\\FrontBackLcc\\back\\vendor\\laravel\\framework\\src\\Illuminate\\Routing\\ControllerDispatcher.php(45): Illuminate\\Routing\\Controller->callAction('destroy', Array)
+#4 C:\\xampp\\htdocs\\New folder\\FrontBackLcc\\back\\vendor\\laravel\\framework\\src\\Illuminate\\Routing\\Route.php(219): Illuminate\\Routing\\ControllerDispatcher->dispatch(Object(Illuminate\\Routing\\Route), Object(App\\Http\\Controllers\\Crud\\InvoiceStatusController), 'destroy')
+#5 C:\\xampp\\htdocs\\New folder\\FrontBackLcc\\back\\vendor\\laravel\\framework\\src\\Illuminate\\Routing\\Route.php(176): Illuminate\\Routing\\Route->runController()
+#6 C:\\xampp\\htdocs\\New folder\\FrontBackLcc\\back\\vendor\\laravel\\framework\\src\\Illuminate\\Routing\\Router.php(681): Illuminate\\Routing\\Route->run()
+#7 C:\\xampp\\htdocs\\New folder\\FrontBackLcc\\back\\vendor\\laravel\\framework\\src\\Illuminate\\Pipeline\\Pipeline.php(130): Illuminate\\Routing\\Router->Illuminate\\Routing\\{closure}(Object(Illuminate\\Http\\Request))
+#8 C:\\xampp\\htdocs\\New folder\\FrontBackLcc\\back\\vendor\\halpdesk\\zizaco-entrust-laravel-6.0\\src\\Entrust\\Middleware\\EntrustRole.php(48): Illuminate\\Pipeline\\Pipeline->Illuminate\\Pipeline\\{closure}(Object(Illuminate\\Http\\Request))
+#9 C:\\xampp\\htdocs\\New folder\\FrontBackLcc\\back\\vendor\\laravel\\framework\\src\\Illuminate\\Pipeline\\Pipeline.php(171): Zizaco\\Entrust\\Middleware\\EntrustRole->handle(Object(Illuminate\\Http\\Request), Object(Closure), Array)
+#10 C:\\xampp\\htdocs\\New folder\\FrontBackLcc\\back\\vendor\\laravel\\framework\\src\\Illuminate\\Routing\\Middleware\\SubstituteBindings.php(41): Illuminate\\Pipeline\\Pipeline->Illuminate\\Pipeline\\{closure}(Object(Illuminate\\Http\\Request))
+#11 C:\\xampp\\htdocs\\New folder\\FrontBackLcc\\back\\vendor\\laravel\\framework\\src\\Illuminate\\Pipeline\\Pipeline.php(171): Illuminate\\Routing\\Middleware\\SubstituteBindings->handle(Object(Illuminate\\Http\\Request), Object(Closure))
+#12 C:\\xampp\\htdocs\\New folder\\FrontBackLcc\\back\\vendor\\laravel\\framework\\src\\Illuminate\\Routing\\Middleware\\ThrottleRequests.php(59): Illuminate\\Pipeline\\Pipeline->Illuminate\\Pipeline\\{closure}(Object(Illuminate\\Http\\Request))
+#13 C:\\xampp\\htdocs\\New folder\\FrontBackLcc\\back\\vendor\\laravel\\framework\\src\\Illuminate\\Pipeline\\Pipeline.php(171): Illuminate\\Routing\\Middleware\\ThrottleRequests->handle(Object(Illuminate\\Http\\Request), Object(Closure), 60, '1')
+#14 C:\\xampp\\htdocs\\New folder\\FrontBackLcc\\back\\app\\Http\\Middleware\\Cors.php(30): Illuminate\\Pipeline\\Pipeline->Illuminate\\Pipeline\\{closure}(Object(Illuminate\\Http\\Request))
+#15 C:\\xampp\\htdocs\\New folder\\FrontBackLcc\\back\\vendor\\laravel\\framework\\src\\Illuminate\\Pipeline\\Pipeline.php(171): App\\Http\\Middleware\\Cors->handle(Object(Illuminate\\Http\\Request), Object(Closure))
+#16 C:\\xampp\\htdocs\\New folder\\FrontBackLcc\\back\\vendor\\laravel\\framework\\src\\Illuminate\\Pipeline\\Pipeline.php(105): Illuminate\\Pipeline\\Pipeline->Illuminate\\Pipeline\\{closure}(Object(Illuminate\\Http\\Request))
+#17 C:\\xampp\\htdocs\\New folder\\FrontBackLcc\\back\\vendor\\laravel\\framework\\src\\Illuminate\\Routing\\Router.php(683): Illuminate\\Pipeline\\Pipeline->then(Object(Closure))
+#18 C:\\xampp\\htdocs\\New folder\\FrontBackLcc\\back\\vendor\\laravel\\framework\\src\\Illuminate\\Routing\\Router.php(658): Illuminate\\Routing\\Router->runRouteWithinStack(Object(Illuminate\\Routing\\Route), Object(Illuminate\\Http\\Request))
+#19 C:\\xampp\\htdocs\\New folder\\FrontBackLcc\\back\\vendor\\laravel\\framework\\src\\Illuminate\\Routing\\Router.php(624): Illuminate\\Routing\\Router->runRoute(Object(Illuminate\\Http\\Request), Object(Illuminate\\Routing\\Route))
+#20 C:\\xampp\\htdocs\\New folder\\FrontBackLcc\\back\\vendor\\laravel\\framework\\src\\Illuminate\\Routing\\Router.php(613): Illuminate\\Routing\\Router->dispatchToRoute(Object(Illuminate\\Http\\Request))
+#21 C:\\xampp\\htdocs\\New folder\\FrontBackLcc\\back\\vendor\\laravel\\framework\\src\\Illuminate\\Foundation\\Http\\Kernel.php(170): Illuminate\\Routing\\Router->dispatch(Object(Illuminate\\Http\\Request))
+#22 C:\\xampp\\htdocs\\New folder\\FrontBackLcc\\back\\vendor\\laravel\\framework\\src\\Illuminate\\Pipeline\\Pipeline.php(130): Illuminate\\Foundation\\Http\\Kernel->Illuminate\\Foundation\\Http\\{closure}(Object(Illuminate\\Http\\Request))
+#23 C:\\xampp\\htdocs\\New folder\\FrontBackLcc\\back\\app\\Http\\Middleware\\Cors.php(30): Illuminate\\Pipeline\\Pipeline->Illuminate\\Pipeline\\{closure}(Object(Illuminate\\Http\\Request))
+#24 C:\\xampp\\htdocs\\New folder\\FrontBackLcc\\back\\vendor\\laravel\\framework\\src\\Illuminate\\Pipeline\\Pipeline.php(171): App\\Http\\Middleware\\Cors->handle(Object(Illuminate\\Http\\Request), Object(Closure))
+#25 C:\\xampp\\htdocs\\New folder\\FrontBackLcc\\back\\vendor\\laravel\\framework\\src\\Illuminate\\Foundation\\Http\\Middleware\\TransformsRequest.php(21): Illuminate\\Pipeline\\Pipeline->Illuminate\\Pipeline\\{closure}(Object(Illuminate\\Http\\Request))
+#26 C:\\xampp\\htdocs\\New folder\\FrontBackLcc\\back\\vendor\\laravel\\framework\\src\\Illuminate\\Pipeline\\Pipeline.php(171): Illuminate\\Foundation\\Http\\Middleware\\TransformsRequest->handle(Object(Illuminate\\Http\\Request), Object(Closure))
+#27 C:\\xampp\\htdocs\\New folder\\FrontBackLcc\\back\\vendor\\laravel\\framework\\src\\Illuminate\\Foundation\\Http\\Middleware\\TransformsRequest.php(21): Illuminate\\Pipeline\\Pipeline->Illuminate\\Pipeline\\{closure}(Object(Illuminate\\Http\\Request))
+#28 C:\\xampp\\htdocs\\New folder\\FrontBackLcc\\back\\vendor\\laravel\\framework\\src\\Illuminate\\Pipeline\\Pipeline.php(171): Illuminate\\Foundation\\Http\\Middleware\\TransformsRequest->handle(Object(Illuminate\\Http\\Request), Object(Closure))
+#29 C:\\xampp\\htdocs\\New folder\\FrontBackLcc\\back\\vendor\\laravel\\framework\\src\\Illuminate\\Foundation\\Http\\Middleware\\ValidatePostSize.php(27): Illuminate\\Pipeline\\Pipeline->Illuminate\\Pipeline\\{closure}(Object(Illuminate\\Http\\Request))
+#30 C:\\xampp\\htdocs\\New folder\\FrontBackLcc\\back\\vendor\\laravel\\framework\\src\\Illuminate\\Pipeline\\Pipeline.php(171): Illuminate\\Foundation\\Http\\Middleware\\ValidatePostSize->handle(Object(Illuminate\\Http\\Request), Object(Closure))
+#31 C:\\xampp\\htdocs\\New folder\\FrontBackLcc\\back\\vendor\\laravel\\framework\\src\\Illuminate\\Foundation\\Http\\Middleware\\CheckForMaintenanceMode.php(63): Illuminate\\Pipeline\\Pipeline->Illuminate\\Pipeline\\{closure}(Object(Illuminate\\Http\\Request))
+#32 C:\\xampp\\htdocs\\New folder\\FrontBackLcc\\back\\vendor\\laravel\\framework\\src\\Illuminate\\Pipeline\\Pipeline.php(171): Illuminate\\Foundation\\Http\\Middleware\\CheckForMaintenanceMode->handle(Object(Illuminate\\Http\\Request), Object(Closure))
+#33 C:\\xampp\\htdocs\\New folder\\FrontBackLcc\\back\\vendor\\fideloper\\proxy\\src\\TrustProxies.php(57): Illuminate\\Pipeline\\Pipeline->Illuminate\\Pipeline\\{closure}(Object(Illuminate\\Http\\Request))
+#34 C:\\xampp\\htdocs\\New folder\\FrontBackLcc\\back\\vendor\\laravel\\framework\\src\\Illuminate\\Pipeline\\Pipeline.php(171): Fideloper\\Proxy\\TrustProxies->handle(Object(Illuminate\\Http\\Request), Object(Closure))
+#35 C:\\xampp\\htdocs\\New folder\\FrontBackLcc\\back\\vendor\\barryvdh\\laravel-cors\\src\\HandlePreflight.php(29): Illuminate\\Pipeline\\Pipeline->Illuminate\\Pipeline\\{closure}(Object(Illuminate\\Http\\Request))
+#36 C:\\xampp\\htdocs\\New folder\\FrontBackLcc\\back\\vendor\\laravel\\framework\\src\\Illuminate\\Pipeline\\Pipeline.php(171): Barryvdh\\Cors\\HandlePreflight->handle(Object(Illuminate\\Http\\Request), Object(Closure))
+#37 C:\\xampp\\htdocs\\New folder\\FrontBackLcc\\back\\vendor\\laravel\\framework\\src\\Illuminate\\Pipeline\\Pipeline.php(105): Illuminate\\Pipeline\\Pipeline->Illuminate\\Pipeline\\{closure}(Object(Illuminate\\Http\\Request))
+#38 C:\\xampp\\htdocs\\New folder\\FrontBackLcc\\back\\vendor\\laravel\\framework\\src\\Illuminate\\Foundation\\Http\\Kernel.php(145): Illuminate\\Pipeline\\Pipeline->then(Object(Closure))
+#39 C:\\xampp\\htdocs\\New folder\\FrontBackLcc\\back\\vendor\\laravel\\framework\\src\\Illuminate\\Foundation\\Http\\Kernel.php(110): Illuminate\\Foundation\\Http\\Kernel->sendRequestThroughRouter(Object(Illuminate\\Http\\Request))
+#40 C:\\xampp\\htdocs\\New folder\\FrontBackLcc\\back\\public\\index.php(55): Illuminate\\Foundation\\Http\\Kernel->handle(Object(Illuminate\\Http\\Request))
+#41 C:\\xampp\\htdocs\\New folder\\FrontBackLcc\\back\\server.php(21): require_once('C:\\\\xampp\\\\htdocs...')
+#42 {main}
+"} 
+[2022-12-04 19:21:14] local.INFO: Broadcasting [newLogs] on channels [private-logs] with payload:
+{
+    "logActivity": {
+        "id": 36,
+        "organisation_id": 1,
+        "subject": "Jovert Palonpona cr\u00e9e une InvoiceStatusinvoicestatuse1",
+        "url": "http:\/\/localhost:8000\/api\/invoicestatuse\/save",
+        "method": "POST",
+        "ip": "127.0.0.1",
+        "agent": "PostmanRuntime\/7.6.0",
+        "user_id": 2,
+        "user_name": null,
+        "created_at": "2022-12-04 19:21:14",
+        "updated_at": "2022-12-04 19:21:14"
+    },
+    "socket": null
+}  
+[2022-12-04 19:21:17] local.INFO: Broadcasting [newLogs] on channels [private-logs] with payload:
+{
+    "logActivity": {
+        "id": 37,
+        "organisation_id": 1,
+        "subject": "Jovert Palonpona cr\u00e9e une InvoiceStatusinvoicestatuse1",
+        "url": "http:\/\/localhost:8000\/api\/invoicestatuse\/save",
+        "method": "POST",
+        "ip": "127.0.0.1",
+        "agent": "PostmanRuntime\/7.6.0",
+        "user_id": 2,
+        "user_name": null,
+        "created_at": "2022-12-04 19:21:17",
+        "updated_at": "2022-12-04 19:21:17"
+    },
+    "socket": null
+}  
+[2022-12-04 19:21:18] local.INFO: Broadcasting [newLogs] on channels [private-logs] with payload:
+{
+    "logActivity": {
+        "id": 38,
+        "organisation_id": 1,
+        "subject": "Jovert Palonpona cr\u00e9e une InvoiceStatusinvoicestatuse1",
+        "url": "http:\/\/localhost:8000\/api\/invoicestatuse\/save",
+        "method": "POST",
+        "ip": "127.0.0.1",
+        "agent": "PostmanRuntime\/7.6.0",
+        "user_id": 2,
+        "user_name": null,
+        "created_at": "2022-12-04 19:21:18",
+        "updated_at": "2022-12-04 19:21:18"
+    },
+    "socket": null
+}  
+[2022-12-04 19:21:19] local.INFO: Broadcasting [newLogs] on channels [private-logs] with payload:
+{
+    "logActivity": {
+        "id": 39,
+        "organisation_id": 1,
+        "subject": "Jovert Palonpona cr\u00e9e une InvoiceStatusinvoicestatuse1",
+        "url": "http:\/\/localhost:8000\/api\/invoicestatuse\/save",
+        "method": "POST",
+        "ip": "127.0.0.1",
+        "agent": "PostmanRuntime\/7.6.0",
+        "user_id": 2,
+        "user_name": null,
+        "created_at": "2022-12-04 19:21:19",
+        "updated_at": "2022-12-04 19:21:19"
+    },
+    "socket": null
+}  
+[2022-12-04 19:21:21] local.INFO: Broadcasting [newLogs] on channels [private-logs] with payload:
+{
+    "logActivity": {
+        "id": 40,
+        "organisation_id": 1,
+        "subject": "Jovert Palonpona cr\u00e9e une InvoiceStatusinvoicestatuse1",
+        "url": "http:\/\/localhost:8000\/api\/invoicestatuse\/save",
+        "method": "POST",
+        "ip": "127.0.0.1",
+        "agent": "PostmanRuntime\/7.6.0",
+        "user_id": 2,
+        "user_name": null,
+        "created_at": "2022-12-04 19:21:21",
+        "updated_at": "2022-12-04 19:21:21"
+    },
+    "socket": null
+}  
+[2022-12-04 19:21:22] local.INFO: Broadcasting [newLogs] on channels [private-logs] with payload:
+{
+    "logActivity": {
+        "id": 41,
+        "organisation_id": 1,
+        "subject": "Jovert Palonpona cr\u00e9e une InvoiceStatusinvoicestatuse1",
+        "url": "http:\/\/localhost:8000\/api\/invoicestatuse\/save",
+        "method": "POST",
+        "ip": "127.0.0.1",
+        "agent": "PostmanRuntime\/7.6.0",
+        "user_id": 2,
+        "user_name": null,
+        "created_at": "2022-12-04 19:21:22",
+        "updated_at": "2022-12-04 19:21:22"
+    },
+    "socket": null
+}  
+[2022-12-04 19:21:23] local.INFO: Broadcasting [newLogs] on channels [private-logs] with payload:
+{
+    "logActivity": {
+        "id": 42,
+        "organisation_id": 1,
+        "subject": "Jovert Palonpona cr\u00e9e une InvoiceStatusinvoicestatuse1",
+        "url": "http:\/\/localhost:8000\/api\/invoicestatuse\/save",
+        "method": "POST",
+        "ip": "127.0.0.1",
+        "agent": "PostmanRuntime\/7.6.0",
+        "user_id": 2,
+        "user_name": null,
+        "created_at": "2022-12-04 19:21:23",
+        "updated_at": "2022-12-04 19:21:23"
+    },
+    "socket": null
+}  
+[2022-12-04 19:21:24] local.INFO: Broadcasting [newLogs] on channels [private-logs] with payload:
+{
+    "logActivity": {
+        "id": 43,
+        "organisation_id": 1,
+        "subject": "Jovert Palonpona cr\u00e9e une InvoiceStatusinvoicestatuse1",
+        "url": "http:\/\/localhost:8000\/api\/invoicestatuse\/save",
+        "method": "POST",
+        "ip": "127.0.0.1",
+        "agent": "PostmanRuntime\/7.6.0",
+        "user_id": 2,
+        "user_name": null,
+        "created_at": "2022-12-04 19:21:24",
+        "updated_at": "2022-12-04 19:21:24"
+    },
+    "socket": null
+}  
+[2022-12-04 19:27:49] local.ERROR: Illegal string offset 'Name' {"userId":2,"exception":"[object] (ErrorException(code: 0): Illegal string offset 'Name' at C:\\xampp\\htdocs\\New folder\\FrontBackLcc\\back\\app\\Services\\InvoiceStatus\\InvoiceStatusService.php:61)
+[stacktrace]
+#0 C:\\xampp\\htdocs\\New folder\\FrontBackLcc\\back\\app\\Services\\InvoiceStatus\\InvoiceStatusService.php(61): Illuminate\\Foundation\\Bootstrap\\HandleExceptions->handleError(2, 'Illegal string ...', 'C:\\\\xampp\\\\htdocs...', 61, Array)
+#1 C:\\xampp\\htdocs\\New folder\\FrontBackLcc\\back\\app\\Http\\Controllers\\Crud\\InvoiceStatusController.php(92): App\\Services\\InvoiceStatus\\InvoiceStatusService->destroy('5')
+#2 C:\\xampp\\htdocs\\New folder\\FrontBackLcc\\back\\vendor\\laravel\\framework\\src\\Illuminate\\Routing\\Controller.php(54): App\\Http\\Controllers\\Crud\\InvoiceStatusController->destroy(Object(Illuminate\\Http\\Request), '5')
+#3 C:\\xampp\\htdocs\\New folder\\FrontBackLcc\\back\\vendor\\laravel\\framework\\src\\Illuminate\\Routing\\ControllerDispatcher.php(45): Illuminate\\Routing\\Controller->callAction('destroy', Array)
+#4 C:\\xampp\\htdocs\\New folder\\FrontBackLcc\\back\\vendor\\laravel\\framework\\src\\Illuminate\\Routing\\Route.php(219): Illuminate\\Routing\\ControllerDispatcher->dispatch(Object(Illuminate\\Routing\\Route), Object(App\\Http\\Controllers\\Crud\\InvoiceStatusController), 'destroy')
+#5 C:\\xampp\\htdocs\\New folder\\FrontBackLcc\\back\\vendor\\laravel\\framework\\src\\Illuminate\\Routing\\Route.php(176): Illuminate\\Routing\\Route->runController()
+#6 C:\\xampp\\htdocs\\New folder\\FrontBackLcc\\back\\vendor\\laravel\\framework\\src\\Illuminate\\Routing\\Router.php(681): Illuminate\\Routing\\Route->run()
+#7 C:\\xampp\\htdocs\\New folder\\FrontBackLcc\\back\\vendor\\laravel\\framework\\src\\Illuminate\\Pipeline\\Pipeline.php(130): Illuminate\\Routing\\Router->Illuminate\\Routing\\{closure}(Object(Illuminate\\Http\\Request))
+#8 C:\\xampp\\htdocs\\New folder\\FrontBackLcc\\back\\vendor\\halpdesk\\zizaco-entrust-laravel-6.0\\src\\Entrust\\Middleware\\EntrustRole.php(48): Illuminate\\Pipeline\\Pipeline->Illuminate\\Pipeline\\{closure}(Object(Illuminate\\Http\\Request))
+#9 C:\\xampp\\htdocs\\New folder\\FrontBackLcc\\back\\vendor\\laravel\\framework\\src\\Illuminate\\Pipeline\\Pipeline.php(171): Zizaco\\Entrust\\Middleware\\EntrustRole->handle(Object(Illuminate\\Http\\Request), Object(Closure), Array)
+#10 C:\\xampp\\htdocs\\New folder\\FrontBackLcc\\back\\vendor\\laravel\\framework\\src\\Illuminate\\Routing\\Middleware\\SubstituteBindings.php(41): Illuminate\\Pipeline\\Pipeline->Illuminate\\Pipeline\\{closure}(Object(Illuminate\\Http\\Request))
+#11 C:\\xampp\\htdocs\\New folder\\FrontBackLcc\\back\\vendor\\laravel\\framework\\src\\Illuminate\\Pipeline\\Pipeline.php(171): Illuminate\\Routing\\Middleware\\SubstituteBindings->handle(Object(Illuminate\\Http\\Request), Object(Closure))
+#12 C:\\xampp\\htdocs\\New folder\\FrontBackLcc\\back\\vendor\\laravel\\framework\\src\\Illuminate\\Routing\\Middleware\\ThrottleRequests.php(59): Illuminate\\Pipeline\\Pipeline->Illuminate\\Pipeline\\{closure}(Object(Illuminate\\Http\\Request))
+#13 C:\\xampp\\htdocs\\New folder\\FrontBackLcc\\back\\vendor\\laravel\\framework\\src\\Illuminate\\Pipeline\\Pipeline.php(171): Illuminate\\Routing\\Middleware\\ThrottleRequests->handle(Object(Illuminate\\Http\\Request), Object(Closure), 60, '1')
+#14 C:\\xampp\\htdocs\\New folder\\FrontBackLcc\\back\\app\\Http\\Middleware\\Cors.php(30): Illuminate\\Pipeline\\Pipeline->Illuminate\\Pipeline\\{closure}(Object(Illuminate\\Http\\Request))
+#15 C:\\xampp\\htdocs\\New folder\\FrontBackLcc\\back\\vendor\\laravel\\framework\\src\\Illuminate\\Pipeline\\Pipeline.php(171): App\\Http\\Middleware\\Cors->handle(Object(Illuminate\\Http\\Request), Object(Closure))
+#16 C:\\xampp\\htdocs\\New folder\\FrontBackLcc\\back\\vendor\\laravel\\framework\\src\\Illuminate\\Pipeline\\Pipeline.php(105): Illuminate\\Pipeline\\Pipeline->Illuminate\\Pipeline\\{closure}(Object(Illuminate\\Http\\Request))
+#17 C:\\xampp\\htdocs\\New folder\\FrontBackLcc\\back\\vendor\\laravel\\framework\\src\\Illuminate\\Routing\\Router.php(683): Illuminate\\Pipeline\\Pipeline->then(Object(Closure))
+#18 C:\\xampp\\htdocs\\New folder\\FrontBackLcc\\back\\vendor\\laravel\\framework\\src\\Illuminate\\Routing\\Router.php(658): Illuminate\\Routing\\Router->runRouteWithinStack(Object(Illuminate\\Routing\\Route), Object(Illuminate\\Http\\Request))
+#19 C:\\xampp\\htdocs\\New folder\\FrontBackLcc\\back\\vendor\\laravel\\framework\\src\\Illuminate\\Routing\\Router.php(624): Illuminate\\Routing\\Router->runRoute(Object(Illuminate\\Http\\Request), Object(Illuminate\\Routing\\Route))
+#20 C:\\xampp\\htdocs\\New folder\\FrontBackLcc\\back\\vendor\\laravel\\framework\\src\\Illuminate\\Routing\\Router.php(613): Illuminate\\Routing\\Router->dispatchToRoute(Object(Illuminate\\Http\\Request))
+#21 C:\\xampp\\htdocs\\New folder\\FrontBackLcc\\back\\vendor\\laravel\\framework\\src\\Illuminate\\Foundation\\Http\\Kernel.php(170): Illuminate\\Routing\\Router->dispatch(Object(Illuminate\\Http\\Request))
+#22 C:\\xampp\\htdocs\\New folder\\FrontBackLcc\\back\\vendor\\laravel\\framework\\src\\Illuminate\\Pipeline\\Pipeline.php(130): Illuminate\\Foundation\\Http\\Kernel->Illuminate\\Foundation\\Http\\{closure}(Object(Illuminate\\Http\\Request))
+#23 C:\\xampp\\htdocs\\New folder\\FrontBackLcc\\back\\app\\Http\\Middleware\\Cors.php(30): Illuminate\\Pipeline\\Pipeline->Illuminate\\Pipeline\\{closure}(Object(Illuminate\\Http\\Request))
+#24 C:\\xampp\\htdocs\\New folder\\FrontBackLcc\\back\\vendor\\laravel\\framework\\src\\Illuminate\\Pipeline\\Pipeline.php(171): App\\Http\\Middleware\\Cors->handle(Object(Illuminate\\Http\\Request), Object(Closure))
+#25 C:\\xampp\\htdocs\\New folder\\FrontBackLcc\\back\\vendor\\laravel\\framework\\src\\Illuminate\\Foundation\\Http\\Middleware\\TransformsRequest.php(21): Illuminate\\Pipeline\\Pipeline->Illuminate\\Pipeline\\{closure}(Object(Illuminate\\Http\\Request))
+#26 C:\\xampp\\htdocs\\New folder\\FrontBackLcc\\back\\vendor\\laravel\\framework\\src\\Illuminate\\Pipeline\\Pipeline.php(171): Illuminate\\Foundation\\Http\\Middleware\\TransformsRequest->handle(Object(Illuminate\\Http\\Request), Object(Closure))
+#27 C:\\xampp\\htdocs\\New folder\\FrontBackLcc\\back\\vendor\\laravel\\framework\\src\\Illuminate\\Foundation\\Http\\Middleware\\TransformsRequest.php(21): Illuminate\\Pipeline\\Pipeline->Illuminate\\Pipeline\\{closure}(Object(Illuminate\\Http\\Request))
+#28 C:\\xampp\\htdocs\\New folder\\FrontBackLcc\\back\\vendor\\laravel\\framework\\src\\Illuminate\\Pipeline\\Pipeline.php(171): Illuminate\\Foundation\\Http\\Middleware\\TransformsRequest->handle(Object(Illuminate\\Http\\Request), Object(Closure))
+#29 C:\\xampp\\htdocs\\New folder\\FrontBackLcc\\back\\vendor\\laravel\\framework\\src\\Illuminate\\Foundation\\Http\\Middleware\\ValidatePostSize.php(27): Illuminate\\Pipeline\\Pipeline->Illuminate\\Pipeline\\{closure}(Object(Illuminate\\Http\\Request))
+#30 C:\\xampp\\htdocs\\New folder\\FrontBackLcc\\back\\vendor\\laravel\\framework\\src\\Illuminate\\Pipeline\\Pipeline.php(171): Illuminate\\Foundation\\Http\\Middleware\\ValidatePostSize->handle(Object(Illuminate\\Http\\Request), Object(Closure))
+#31 C:\\xampp\\htdocs\\New folder\\FrontBackLcc\\back\\vendor\\laravel\\framework\\src\\Illuminate\\Foundation\\Http\\Middleware\\CheckForMaintenanceMode.php(63): Illuminate\\Pipeline\\Pipeline->Illuminate\\Pipeline\\{closure}(Object(Illuminate\\Http\\Request))
+#32 C:\\xampp\\htdocs\\New folder\\FrontBackLcc\\back\\vendor\\laravel\\framework\\src\\Illuminate\\Pipeline\\Pipeline.php(171): Illuminate\\Foundation\\Http\\Middleware\\CheckForMaintenanceMode->handle(Object(Illuminate\\Http\\Request), Object(Closure))
+#33 C:\\xampp\\htdocs\\New folder\\FrontBackLcc\\back\\vendor\\fideloper\\proxy\\src\\TrustProxies.php(57): Illuminate\\Pipeline\\Pipeline->Illuminate\\Pipeline\\{closure}(Object(Illuminate\\Http\\Request))
+#34 C:\\xampp\\htdocs\\New folder\\FrontBackLcc\\back\\vendor\\laravel\\framework\\src\\Illuminate\\Pipeline\\Pipeline.php(171): Fideloper\\Proxy\\TrustProxies->handle(Object(Illuminate\\Http\\Request), Object(Closure))
+#35 C:\\xampp\\htdocs\\New folder\\FrontBackLcc\\back\\vendor\\barryvdh\\laravel-cors\\src\\HandlePreflight.php(29): Illuminate\\Pipeline\\Pipeline->Illuminate\\Pipeline\\{closure}(Object(Illuminate\\Http\\Request))
+#36 C:\\xampp\\htdocs\\New folder\\FrontBackLcc\\back\\vendor\\laravel\\framework\\src\\Illuminate\\Pipeline\\Pipeline.php(171): Barryvdh\\Cors\\HandlePreflight->handle(Object(Illuminate\\Http\\Request), Object(Closure))
+#37 C:\\xampp\\htdocs\\New folder\\FrontBackLcc\\back\\vendor\\laravel\\framework\\src\\Illuminate\\Pipeline\\Pipeline.php(105): Illuminate\\Pipeline\\Pipeline->Illuminate\\Pipeline\\{closure}(Object(Illuminate\\Http\\Request))
+#38 C:\\xampp\\htdocs\\New folder\\FrontBackLcc\\back\\vendor\\laravel\\framework\\src\\Illuminate\\Foundation\\Http\\Kernel.php(145): Illuminate\\Pipeline\\Pipeline->then(Object(Closure))
+#39 C:\\xampp\\htdocs\\New folder\\FrontBackLcc\\back\\vendor\\laravel\\framework\\src\\Illuminate\\Foundation\\Http\\Kernel.php(110): Illuminate\\Foundation\\Http\\Kernel->sendRequestThroughRouter(Object(Illuminate\\Http\\Request))
+#40 C:\\xampp\\htdocs\\New folder\\FrontBackLcc\\back\\public\\index.php(55): Illuminate\\Foundation\\Http\\Kernel->handle(Object(Illuminate\\Http\\Request))
+#41 C:\\xampp\\htdocs\\New folder\\FrontBackLcc\\back\\server.php(21): require_once('C:\\\\xampp\\\\htdocs...')
+#42 {main}
+"} 
+[2022-12-04 19:29:23] local.ERROR: Illegal string offset 'Name' {"userId":2,"exception":"[object] (ErrorException(code: 0): Illegal string offset 'Name' at C:\\xampp\\htdocs\\New folder\\FrontBackLcc\\back\\app\\Services\\InvoiceStatus\\InvoiceStatusService.php:61)
+[stacktrace]
+#0 C:\\xampp\\htdocs\\New folder\\FrontBackLcc\\back\\app\\Services\\InvoiceStatus\\InvoiceStatusService.php(61): Illuminate\\Foundation\\Bootstrap\\HandleExceptions->handleError(2, 'Illegal string ...', 'C:\\\\xampp\\\\htdocs...', 61, Array)
+#1 C:\\xampp\\htdocs\\New folder\\FrontBackLcc\\back\\app\\Http\\Controllers\\Crud\\InvoiceStatusController.php(92): App\\Services\\InvoiceStatus\\InvoiceStatusService->destroy('4')
+#2 C:\\xampp\\htdocs\\New folder\\FrontBackLcc\\back\\vendor\\laravel\\framework\\src\\Illuminate\\Routing\\Controller.php(54): App\\Http\\Controllers\\Crud\\InvoiceStatusController->destroy(Object(Illuminate\\Http\\Request), '4')
+#3 C:\\xampp\\htdocs\\New folder\\FrontBackLcc\\back\\vendor\\laravel\\framework\\src\\Illuminate\\Routing\\ControllerDispatcher.php(45): Illuminate\\Routing\\Controller->callAction('destroy', Array)
+#4 C:\\xampp\\htdocs\\New folder\\FrontBackLcc\\back\\vendor\\laravel\\framework\\src\\Illuminate\\Routing\\Route.php(219): Illuminate\\Routing\\ControllerDispatcher->dispatch(Object(Illuminate\\Routing\\Route), Object(App\\Http\\Controllers\\Crud\\InvoiceStatusController), 'destroy')
+#5 C:\\xampp\\htdocs\\New folder\\FrontBackLcc\\back\\vendor\\laravel\\framework\\src\\Illuminate\\Routing\\Route.php(176): Illuminate\\Routing\\Route->runController()
+#6 C:\\xampp\\htdocs\\New folder\\FrontBackLcc\\back\\vendor\\laravel\\framework\\src\\Illuminate\\Routing\\Router.php(681): Illuminate\\Routing\\Route->run()
+#7 C:\\xampp\\htdocs\\New folder\\FrontBackLcc\\back\\vendor\\laravel\\framework\\src\\Illuminate\\Pipeline\\Pipeline.php(130): Illuminate\\Routing\\Router->Illuminate\\Routing\\{closure}(Object(Illuminate\\Http\\Request))
+#8 C:\\xampp\\htdocs\\New folder\\FrontBackLcc\\back\\vendor\\halpdesk\\zizaco-entrust-laravel-6.0\\src\\Entrust\\Middleware\\EntrustRole.php(48): Illuminate\\Pipeline\\Pipeline->Illuminate\\Pipeline\\{closure}(Object(Illuminate\\Http\\Request))
+#9 C:\\xampp\\htdocs\\New folder\\FrontBackLcc\\back\\vendor\\laravel\\framework\\src\\Illuminate\\Pipeline\\Pipeline.php(171): Zizaco\\Entrust\\Middleware\\EntrustRole->handle(Object(Illuminate\\Http\\Request), Object(Closure), Array)
+#10 C:\\xampp\\htdocs\\New folder\\FrontBackLcc\\back\\vendor\\laravel\\framework\\src\\Illuminate\\Routing\\Middleware\\SubstituteBindings.php(41): Illuminate\\Pipeline\\Pipeline->Illuminate\\Pipeline\\{closure}(Object(Illuminate\\Http\\Request))
+#11 C:\\xampp\\htdocs\\New folder\\FrontBackLcc\\back\\vendor\\laravel\\framework\\src\\Illuminate\\Pipeline\\Pipeline.php(171): Illuminate\\Routing\\Middleware\\SubstituteBindings->handle(Object(Illuminate\\Http\\Request), Object(Closure))
+#12 C:\\xampp\\htdocs\\New folder\\FrontBackLcc\\back\\vendor\\laravel\\framework\\src\\Illuminate\\Routing\\Middleware\\ThrottleRequests.php(59): Illuminate\\Pipeline\\Pipeline->Illuminate\\Pipeline\\{closure}(Object(Illuminate\\Http\\Request))
+#13 C:\\xampp\\htdocs\\New folder\\FrontBackLcc\\back\\vendor\\laravel\\framework\\src\\Illuminate\\Pipeline\\Pipeline.php(171): Illuminate\\Routing\\Middleware\\ThrottleRequests->handle(Object(Illuminate\\Http\\Request), Object(Closure), 60, '1')
+#14 C:\\xampp\\htdocs\\New folder\\FrontBackLcc\\back\\app\\Http\\Middleware\\Cors.php(30): Illuminate\\Pipeline\\Pipeline->Illuminate\\Pipeline\\{closure}(Object(Illuminate\\Http\\Request))
+#15 C:\\xampp\\htdocs\\New folder\\FrontBackLcc\\back\\vendor\\laravel\\framework\\src\\Illuminate\\Pipeline\\Pipeline.php(171): App\\Http\\Middleware\\Cors->handle(Object(Illuminate\\Http\\Request), Object(Closure))
+#16 C:\\xampp\\htdocs\\New folder\\FrontBackLcc\\back\\vendor\\laravel\\framework\\src\\Illuminate\\Pipeline\\Pipeline.php(105): Illuminate\\Pipeline\\Pipeline->Illuminate\\Pipeline\\{closure}(Object(Illuminate\\Http\\Request))
+#17 C:\\xampp\\htdocs\\New folder\\FrontBackLcc\\back\\vendor\\laravel\\framework\\src\\Illuminate\\Routing\\Router.php(683): Illuminate\\Pipeline\\Pipeline->then(Object(Closure))
+#18 C:\\xampp\\htdocs\\New folder\\FrontBackLcc\\back\\vendor\\laravel\\framework\\src\\Illuminate\\Routing\\Router.php(658): Illuminate\\Routing\\Router->runRouteWithinStack(Object(Illuminate\\Routing\\Route), Object(Illuminate\\Http\\Request))
+#19 C:\\xampp\\htdocs\\New folder\\FrontBackLcc\\back\\vendor\\laravel\\framework\\src\\Illuminate\\Routing\\Router.php(624): Illuminate\\Routing\\Router->runRoute(Object(Illuminate\\Http\\Request), Object(Illuminate\\Routing\\Route))
+#20 C:\\xampp\\htdocs\\New folder\\FrontBackLcc\\back\\vendor\\laravel\\framework\\src\\Illuminate\\Routing\\Router.php(613): Illuminate\\Routing\\Router->dispatchToRoute(Object(Illuminate\\Http\\Request))
+#21 C:\\xampp\\htdocs\\New folder\\FrontBackLcc\\back\\vendor\\laravel\\framework\\src\\Illuminate\\Foundation\\Http\\Kernel.php(170): Illuminate\\Routing\\Router->dispatch(Object(Illuminate\\Http\\Request))
+#22 C:\\xampp\\htdocs\\New folder\\FrontBackLcc\\back\\vendor\\laravel\\framework\\src\\Illuminate\\Pipeline\\Pipeline.php(130): Illuminate\\Foundation\\Http\\Kernel->Illuminate\\Foundation\\Http\\{closure}(Object(Illuminate\\Http\\Request))
+#23 C:\\xampp\\htdocs\\New folder\\FrontBackLcc\\back\\app\\Http\\Middleware\\Cors.php(30): Illuminate\\Pipeline\\Pipeline->Illuminate\\Pipeline\\{closure}(Object(Illuminate\\Http\\Request))
+#24 C:\\xampp\\htdocs\\New folder\\FrontBackLcc\\back\\vendor\\laravel\\framework\\src\\Illuminate\\Pipeline\\Pipeline.php(171): App\\Http\\Middleware\\Cors->handle(Object(Illuminate\\Http\\Request), Object(Closure))
+#25 C:\\xampp\\htdocs\\New folder\\FrontBackLcc\\back\\vendor\\laravel\\framework\\src\\Illuminate\\Foundation\\Http\\Middleware\\TransformsRequest.php(21): Illuminate\\Pipeline\\Pipeline->Illuminate\\Pipeline\\{closure}(Object(Illuminate\\Http\\Request))
+#26 C:\\xampp\\htdocs\\New folder\\FrontBackLcc\\back\\vendor\\laravel\\framework\\src\\Illuminate\\Pipeline\\Pipeline.php(171): Illuminate\\Foundation\\Http\\Middleware\\TransformsRequest->handle(Object(Illuminate\\Http\\Request), Object(Closure))
+#27 C:\\xampp\\htdocs\\New folder\\FrontBackLcc\\back\\vendor\\laravel\\framework\\src\\Illuminate\\Foundation\\Http\\Middleware\\TransformsRequest.php(21): Illuminate\\Pipeline\\Pipeline->Illuminate\\Pipeline\\{closure}(Object(Illuminate\\Http\\Request))
+#28 C:\\xampp\\htdocs\\New folder\\FrontBackLcc\\back\\vendor\\laravel\\framework\\src\\Illuminate\\Pipeline\\Pipeline.php(171): Illuminate\\Foundation\\Http\\Middleware\\TransformsRequest->handle(Object(Illuminate\\Http\\Request), Object(Closure))
+#29 C:\\xampp\\htdocs\\New folder\\FrontBackLcc\\back\\vendor\\laravel\\framework\\src\\Illuminate\\Foundation\\Http\\Middleware\\ValidatePostSize.php(27): Illuminate\\Pipeline\\Pipeline->Illuminate\\Pipeline\\{closure}(Object(Illuminate\\Http\\Request))
+#30 C:\\xampp\\htdocs\\New folder\\FrontBackLcc\\back\\vendor\\laravel\\framework\\src\\Illuminate\\Pipeline\\Pipeline.php(171): Illuminate\\Foundation\\Http\\Middleware\\ValidatePostSize->handle(Object(Illuminate\\Http\\Request), Object(Closure))
+#31 C:\\xampp\\htdocs\\New folder\\FrontBackLcc\\back\\vendor\\laravel\\framework\\src\\Illuminate\\Foundation\\Http\\Middleware\\CheckForMaintenanceMode.php(63): Illuminate\\Pipeline\\Pipeline->Illuminate\\Pipeline\\{closure}(Object(Illuminate\\Http\\Request))
+#32 C:\\xampp\\htdocs\\New folder\\FrontBackLcc\\back\\vendor\\laravel\\framework\\src\\Illuminate\\Pipeline\\Pipeline.php(171): Illuminate\\Foundation\\Http\\Middleware\\CheckForMaintenanceMode->handle(Object(Illuminate\\Http\\Request), Object(Closure))
+#33 C:\\xampp\\htdocs\\New folder\\FrontBackLcc\\back\\vendor\\fideloper\\proxy\\src\\TrustProxies.php(57): Illuminate\\Pipeline\\Pipeline->Illuminate\\Pipeline\\{closure}(Object(Illuminate\\Http\\Request))
+#34 C:\\xampp\\htdocs\\New folder\\FrontBackLcc\\back\\vendor\\laravel\\framework\\src\\Illuminate\\Pipeline\\Pipeline.php(171): Fideloper\\Proxy\\TrustProxies->handle(Object(Illuminate\\Http\\Request), Object(Closure))
+#35 C:\\xampp\\htdocs\\New folder\\FrontBackLcc\\back\\vendor\\barryvdh\\laravel-cors\\src\\HandlePreflight.php(29): Illuminate\\Pipeline\\Pipeline->Illuminate\\Pipeline\\{closure}(Object(Illuminate\\Http\\Request))
+#36 C:\\xampp\\htdocs\\New folder\\FrontBackLcc\\back\\vendor\\laravel\\framework\\src\\Illuminate\\Pipeline\\Pipeline.php(171): Barryvdh\\Cors\\HandlePreflight->handle(Object(Illuminate\\Http\\Request), Object(Closure))
+#37 C:\\xampp\\htdocs\\New folder\\FrontBackLcc\\back\\vendor\\laravel\\framework\\src\\Illuminate\\Pipeline\\Pipeline.php(105): Illuminate\\Pipeline\\Pipeline->Illuminate\\Pipeline\\{closure}(Object(Illuminate\\Http\\Request))
+#38 C:\\xampp\\htdocs\\New folder\\FrontBackLcc\\back\\vendor\\laravel\\framework\\src\\Illuminate\\Foundation\\Http\\Kernel.php(145): Illuminate\\Pipeline\\Pipeline->then(Object(Closure))
+#39 C:\\xampp\\htdocs\\New folder\\FrontBackLcc\\back\\vendor\\laravel\\framework\\src\\Illuminate\\Foundation\\Http\\Kernel.php(110): Illuminate\\Foundation\\Http\\Kernel->sendRequestThroughRouter(Object(Illuminate\\Http\\Request))
+#40 C:\\xampp\\htdocs\\New folder\\FrontBackLcc\\back\\public\\index.php(55): Illuminate\\Foundation\\Http\\Kernel->handle(Object(Illuminate\\Http\\Request))
+#41 C:\\xampp\\htdocs\\New folder\\FrontBackLcc\\back\\server.php(21): require_once('C:\\\\xampp\\\\htdocs...')
+#42 {main}
+"} 
+[2022-12-04 19:32:53] local.ERROR: Undefined variable: POST /api/invoicestatuse/delete HTTP/1.1
+Accept:          */*
+Accept-Encoding: gzip, deflate
+Authorization:   Bearer eyJ0eXAiOiJKV1QiLCJhbGciOiJIUzI1NiJ9.eyJpc3MiOiJodHRwOi8vbG9jYWxob3N0OjgwMDAvYXBpL2F1dGgvbG9naW4iLCJpYXQiOjE2Njk3Mjk1MDksImV4cCI6MTY3MDMzNDMwOSwibmJmIjoxNjY5NzI5NTA5LCJqdGkiOiIwNDE4MVZLWHZTRFB0clRLIiwic3ViIjoiMiIsInBydiI6Ijg3ZTBhZjFlZjlmZDE1ODEyZmRlYzk3MTUzYTE0ZTBiMDQ3NTQ2YWEiLCJpZCI6MiwiZW1haWwiOiJqb3ZlcnRAZXhhbXBsZS5jb20iLCJuYW1lIjoiSm92ZXJ0IFBhbG9ucG9uIiwicm9sZSI6Im93bmVyIn0.DK99N65s114CP8_n-DRGpjGMrym8GyJlZxNzgnFEwq0
+Cache-Control:   no-cache
+Connection:      keep-alive
+Content-Length:  49
+Content-Type:    application/json
+Host:            localhost:8000
+Postman-Token:   e5fa1692-8f11-44ff-9e65-dd0bbc31b290
+User-Agent:      PostmanRuntime/7.6.0
+
+{
+    "name":"invoicestatuse1",
+    "id":"6"
+} {"userId":2,"exception":"[object] (ErrorException(code: 0): Undefined variable: POST /api/invoicestatuse/delete HTTP/1.1
+
+Accept:          */*
+
+Accept-Encoding: gzip, deflate
+
+Authorization:   Bearer eyJ0eXAiOiJKV1QiLCJhbGciOiJIUzI1NiJ9.eyJpc3MiOiJodHRwOi8vbG9jYWxob3N0OjgwMDAvYXBpL2F1dGgvbG9naW4iLCJpYXQiOjE2Njk3Mjk1MDksImV4cCI6MTY3MDMzNDMwOSwibmJmIjoxNjY5NzI5NTA5LCJqdGkiOiIwNDE4MVZLWHZTRFB0clRLIiwic3ViIjoiMiIsInBydiI6Ijg3ZTBhZjFlZjlmZDE1ODEyZmRlYzk3MTUzYTE0ZTBiMDQ3NTQ2YWEiLCJpZCI6MiwiZW1haWwiOiJqb3ZlcnRAZXhhbXBsZS5jb20iLCJuYW1lIjoiSm92ZXJ0IFBhbG9ucG9uIiwicm9sZSI6Im93bmVyIn0.DK99N65s114CP8_n-DRGpjGMrym8GyJlZxNzgnFEwq0
+
+Cache-Control:   no-cache
+
+Connection:      keep-alive
+
+Content-Length:  49
+
+Content-Type:    application/json
+
+Host:            localhost:8000
+
+Postman-Token:   e5fa1692-8f11-44ff-9e65-dd0bbc31b290
+
+User-Agent:      PostmanRuntime/7.6.0
+
+
+
+{
+
+    \"name\":\"invoicestatuse1\",
+
+    \"id\":\"6\"
+
+} at C:\\xampp\\htdocs\\New folder\\FrontBackLcc\\back\\app\\Http\\Controllers\\Crud\\InvoiceStatusController.php:92)
+[stacktrace]
+#0 C:\\xampp\\htdocs\\New folder\\FrontBackLcc\\back\\app\\Http\\Controllers\\Crud\\InvoiceStatusController.php(92): Illuminate\\Foundation\\Bootstrap\\HandleExceptions->handleError(8, 'Undefined varia...', 'C:\\\\xampp\\\\htdocs...', 92, Array)
+#1 C:\\xampp\\htdocs\\New folder\\FrontBackLcc\\back\\vendor\\laravel\\framework\\src\\Illuminate\\Routing\\Controller.php(54): App\\Http\\Controllers\\Crud\\InvoiceStatusController->destroy(Object(Illuminate\\Http\\Request))
+#2 C:\\xampp\\htdocs\\New folder\\FrontBackLcc\\back\\vendor\\laravel\\framework\\src\\Illuminate\\Routing\\ControllerDispatcher.php(45): Illuminate\\Routing\\Controller->callAction('destroy', Array)
+#3 C:\\xampp\\htdocs\\New folder\\FrontBackLcc\\back\\vendor\\laravel\\framework\\src\\Illuminate\\Routing\\Route.php(219): Illuminate\\Routing\\ControllerDispatcher->dispatch(Object(Illuminate\\Routing\\Route), Object(App\\Http\\Controllers\\Crud\\InvoiceStatusController), 'destroy')
+#4 C:\\xampp\\htdocs\\New folder\\FrontBackLcc\\back\\vendor\\laravel\\framework\\src\\Illuminate\\Routing\\Route.php(176): Illuminate\\Routing\\Route->runController()
+#5 C:\\xampp\\htdocs\\New folder\\FrontBackLcc\\back\\vendor\\laravel\\framework\\src\\Illuminate\\Routing\\Router.php(681): Illuminate\\Routing\\Route->run()
+#6 C:\\xampp\\htdocs\\New folder\\FrontBackLcc\\back\\vendor\\laravel\\framework\\src\\Illuminate\\Pipeline\\Pipeline.php(130): Illuminate\\Routing\\Router->Illuminate\\Routing\\{closure}(Object(Illuminate\\Http\\Request))
+#7 C:\\xampp\\htdocs\\New folder\\FrontBackLcc\\back\\vendor\\halpdesk\\zizaco-entrust-laravel-6.0\\src\\Entrust\\Middleware\\EntrustRole.php(48): Illuminate\\Pipeline\\Pipeline->Illuminate\\Pipeline\\{closure}(Object(Illuminate\\Http\\Request))
+#8 C:\\xampp\\htdocs\\New folder\\FrontBackLcc\\back\\vendor\\laravel\\framework\\src\\Illuminate\\Pipeline\\Pipeline.php(171): Zizaco\\Entrust\\Middleware\\EntrustRole->handle(Object(Illuminate\\Http\\Request), Object(Closure), Array)
+#9 C:\\xampp\\htdocs\\New folder\\FrontBackLcc\\back\\vendor\\laravel\\framework\\src\\Illuminate\\Routing\\Middleware\\SubstituteBindings.php(41): Illuminate\\Pipeline\\Pipeline->Illuminate\\Pipeline\\{closure}(Object(Illuminate\\Http\\Request))
+#10 C:\\xampp\\htdocs\\New folder\\FrontBackLcc\\back\\vendor\\laravel\\framework\\src\\Illuminate\\Pipeline\\Pipeline.php(171): Illuminate\\Routing\\Middleware\\SubstituteBindings->handle(Object(Illuminate\\Http\\Request), Object(Closure))
+#11 C:\\xampp\\htdocs\\New folder\\FrontBackLcc\\back\\vendor\\laravel\\framework\\src\\Illuminate\\Routing\\Middleware\\ThrottleRequests.php(59): Illuminate\\Pipeline\\Pipeline->Illuminate\\Pipeline\\{closure}(Object(Illuminate\\Http\\Request))
+#12 C:\\xampp\\htdocs\\New folder\\FrontBackLcc\\back\\vendor\\laravel\\framework\\src\\Illuminate\\Pipeline\\Pipeline.php(171): Illuminate\\Routing\\Middleware\\ThrottleRequests->handle(Object(Illuminate\\Http\\Request), Object(Closure), 60, '1')
+#13 C:\\xampp\\htdocs\\New folder\\FrontBackLcc\\back\\app\\Http\\Middleware\\Cors.php(30): Illuminate\\Pipeline\\Pipeline->Illuminate\\Pipeline\\{closure}(Object(Illuminate\\Http\\Request))
+#14 C:\\xampp\\htdocs\\New folder\\FrontBackLcc\\back\\vendor\\laravel\\framework\\src\\Illuminate\\Pipeline\\Pipeline.php(171): App\\Http\\Middleware\\Cors->handle(Object(Illuminate\\Http\\Request), Object(Closure))
+#15 C:\\xampp\\htdocs\\New folder\\FrontBackLcc\\back\\vendor\\laravel\\framework\\src\\Illuminate\\Pipeline\\Pipeline.php(105): Illuminate\\Pipeline\\Pipeline->Illuminate\\Pipeline\\{closure}(Object(Illuminate\\Http\\Request))
+#16 C:\\xampp\\htdocs\\New folder\\FrontBackLcc\\back\\vendor\\laravel\\framework\\src\\Illuminate\\Routing\\Router.php(683): Illuminate\\Pipeline\\Pipeline->then(Object(Closure))
+#17 C:\\xampp\\htdocs\\New folder\\FrontBackLcc\\back\\vendor\\laravel\\framework\\src\\Illuminate\\Routing\\Router.php(658): Illuminate\\Routing\\Router->runRouteWithinStack(Object(Illuminate\\Routing\\Route), Object(Illuminate\\Http\\Request))
+#18 C:\\xampp\\htdocs\\New folder\\FrontBackLcc\\back\\vendor\\laravel\\framework\\src\\Illuminate\\Routing\\Router.php(624): Illuminate\\Routing\\Router->runRoute(Object(Illuminate\\Http\\Request), Object(Illuminate\\Routing\\Route))
+#19 C:\\xampp\\htdocs\\New folder\\FrontBackLcc\\back\\vendor\\laravel\\framework\\src\\Illuminate\\Routing\\Router.php(613): Illuminate\\Routing\\Router->dispatchToRoute(Object(Illuminate\\Http\\Request))
+#20 C:\\xampp\\htdocs\\New folder\\FrontBackLcc\\back\\vendor\\laravel\\framework\\src\\Illuminate\\Foundation\\Http\\Kernel.php(170): Illuminate\\Routing\\Router->dispatch(Object(Illuminate\\Http\\Request))
+#21 C:\\xampp\\htdocs\\New folder\\FrontBackLcc\\back\\vendor\\laravel\\framework\\src\\Illuminate\\Pipeline\\Pipeline.php(130): Illuminate\\Foundation\\Http\\Kernel->Illuminate\\Foundation\\Http\\{closure}(Object(Illuminate\\Http\\Request))
+#22 C:\\xampp\\htdocs\\New folder\\FrontBackLcc\\back\\app\\Http\\Middleware\\Cors.php(30): Illuminate\\Pipeline\\Pipeline->Illuminate\\Pipeline\\{closure}(Object(Illuminate\\Http\\Request))
+#23 C:\\xampp\\htdocs\\New folder\\FrontBackLcc\\back\\vendor\\laravel\\framework\\src\\Illuminate\\Pipeline\\Pipeline.php(171): App\\Http\\Middleware\\Cors->handle(Object(Illuminate\\Http\\Request), Object(Closure))
+#24 C:\\xampp\\htdocs\\New folder\\FrontBackLcc\\back\\vendor\\laravel\\framework\\src\\Illuminate\\Foundation\\Http\\Middleware\\TransformsRequest.php(21): Illuminate\\Pipeline\\Pipeline->Illuminate\\Pipeline\\{closure}(Object(Illuminate\\Http\\Request))
+#25 C:\\xampp\\htdocs\\New folder\\FrontBackLcc\\back\\vendor\\laravel\\framework\\src\\Illuminate\\Pipeline\\Pipeline.php(171): Illuminate\\Foundation\\Http\\Middleware\\TransformsRequest->handle(Object(Illuminate\\Http\\Request), Object(Closure))
+#26 C:\\xampp\\htdocs\\New folder\\FrontBackLcc\\back\\vendor\\laravel\\framework\\src\\Illuminate\\Foundation\\Http\\Middleware\\TransformsRequest.php(21): Illuminate\\Pipeline\\Pipeline->Illuminate\\Pipeline\\{closure}(Object(Illuminate\\Http\\Request))
+#27 C:\\xampp\\htdocs\\New folder\\FrontBackLcc\\back\\vendor\\laravel\\framework\\src\\Illuminate\\Pipeline\\Pipeline.php(171): Illuminate\\Foundation\\Http\\Middleware\\TransformsRequest->handle(Object(Illuminate\\Http\\Request), Object(Closure))
+#28 C:\\xampp\\htdocs\\New folder\\FrontBackLcc\\back\\vendor\\laravel\\framework\\src\\Illuminate\\Foundation\\Http\\Middleware\\ValidatePostSize.php(27): Illuminate\\Pipeline\\Pipeline->Illuminate\\Pipeline\\{closure}(Object(Illuminate\\Http\\Request))
+#29 C:\\xampp\\htdocs\\New folder\\FrontBackLcc\\back\\vendor\\laravel\\framework\\src\\Illuminate\\Pipeline\\Pipeline.php(171): Illuminate\\Foundation\\Http\\Middleware\\ValidatePostSize->handle(Object(Illuminate\\Http\\Request), Object(Closure))
+#30 C:\\xampp\\htdocs\\New folder\\FrontBackLcc\\back\\vendor\\laravel\\framework\\src\\Illuminate\\Foundation\\Http\\Middleware\\CheckForMaintenanceMode.php(63): Illuminate\\Pipeline\\Pipeline->Illuminate\\Pipeline\\{closure}(Object(Illuminate\\Http\\Request))
+#31 C:\\xampp\\htdocs\\New folder\\FrontBackLcc\\back\\vendor\\laravel\\framework\\src\\Illuminate\\Pipeline\\Pipeline.php(171): Illuminate\\Foundation\\Http\\Middleware\\CheckForMaintenanceMode->handle(Object(Illuminate\\Http\\Request), Object(Closure))
+#32 C:\\xampp\\htdocs\\New folder\\FrontBackLcc\\back\\vendor\\fideloper\\proxy\\src\\TrustProxies.php(57): Illuminate\\Pipeline\\Pipeline->Illuminate\\Pipeline\\{closure}(Object(Illuminate\\Http\\Request))
+#33 C:\\xampp\\htdocs\\New folder\\FrontBackLcc\\back\\vendor\\laravel\\framework\\src\\Illuminate\\Pipeline\\Pipeline.php(171): Fideloper\\Proxy\\TrustProxies->handle(Object(Illuminate\\Http\\Request), Object(Closure))
+#34 C:\\xampp\\htdocs\\New folder\\FrontBackLcc\\back\\vendor\\barryvdh\\laravel-cors\\src\\HandlePreflight.php(29): Illuminate\\Pipeline\\Pipeline->Illuminate\\Pipeline\\{closure}(Object(Illuminate\\Http\\Request))
+#35 C:\\xampp\\htdocs\\New folder\\FrontBackLcc\\back\\vendor\\laravel\\framework\\src\\Illuminate\\Pipeline\\Pipeline.php(171): Barryvdh\\Cors\\HandlePreflight->handle(Object(Illuminate\\Http\\Request), Object(Closure))
+#36 C:\\xampp\\htdocs\\New folder\\FrontBackLcc\\back\\vendor\\laravel\\framework\\src\\Illuminate\\Pipeline\\Pipeline.php(105): Illuminate\\Pipeline\\Pipeline->Illuminate\\Pipeline\\{closure}(Object(Illuminate\\Http\\Request))
+#37 C:\\xampp\\htdocs\\New folder\\FrontBackLcc\\back\\vendor\\laravel\\framework\\src\\Illuminate\\Foundation\\Http\\Kernel.php(145): Illuminate\\Pipeline\\Pipeline->then(Object(Closure))
+#38 C:\\xampp\\htdocs\\New folder\\FrontBackLcc\\back\\vendor\\laravel\\framework\\src\\Illuminate\\Foundation\\Http\\Kernel.php(110): Illuminate\\Foundation\\Http\\Kernel->sendRequestThroughRouter(Object(Illuminate\\Http\\Request))
+#39 C:\\xampp\\htdocs\\New folder\\FrontBackLcc\\back\\public\\index.php(55): Illuminate\\Foundation\\Http\\Kernel->handle(Object(Illuminate\\Http\\Request))
+#40 C:\\xampp\\htdocs\\New folder\\FrontBackLcc\\back\\server.php(21): require_once('C:\\\\xampp\\\\htdocs...')
+#41 {main}
+"} 
+[2022-12-04 19:34:05] local.ERROR: Undefined variable: POST /api/invoicestatuse/delete HTTP/1.1
+Accept:          */*
+Accept-Encoding: gzip, deflate
+Authorization:   Bearer eyJ0eXAiOiJKV1QiLCJhbGciOiJIUzI1NiJ9.eyJpc3MiOiJodHRwOi8vbG9jYWxob3N0OjgwMDAvYXBpL2F1dGgvbG9naW4iLCJpYXQiOjE2Njk3Mjk1MDksImV4cCI6MTY3MDMzNDMwOSwibmJmIjoxNjY5NzI5NTA5LCJqdGkiOiIwNDE4MVZLWHZTRFB0clRLIiwic3ViIjoiMiIsInBydiI6Ijg3ZTBhZjFlZjlmZDE1ODEyZmRlYzk3MTUzYTE0ZTBiMDQ3NTQ2YWEiLCJpZCI6MiwiZW1haWwiOiJqb3ZlcnRAZXhhbXBsZS5jb20iLCJuYW1lIjoiSm92ZXJ0IFBhbG9ucG9uIiwicm9sZSI6Im93bmVyIn0.DK99N65s114CP8_n-DRGpjGMrym8GyJlZxNzgnFEwq0
+Cache-Control:   no-cache
+Connection:      keep-alive
+Content-Length:  49
+Content-Type:    application/json
+Host:            localhost:8000
+Postman-Token:   ffab5d53-51c1-490d-ad12-cdc9f1bb8d14
+User-Agent:      PostmanRuntime/7.6.0
+
+{
+    "name":"invoicestatuse1",
+    "id":"6"
+} {"userId":2,"exception":"[object] (ErrorException(code: 0): Undefined variable: POST /api/invoicestatuse/delete HTTP/1.1
+
+Accept:          */*
+
+Accept-Encoding: gzip, deflate
+
+Authorization:   Bearer eyJ0eXAiOiJKV1QiLCJhbGciOiJIUzI1NiJ9.eyJpc3MiOiJodHRwOi8vbG9jYWxob3N0OjgwMDAvYXBpL2F1dGgvbG9naW4iLCJpYXQiOjE2Njk3Mjk1MDksImV4cCI6MTY3MDMzNDMwOSwibmJmIjoxNjY5NzI5NTA5LCJqdGkiOiIwNDE4MVZLWHZTRFB0clRLIiwic3ViIjoiMiIsInBydiI6Ijg3ZTBhZjFlZjlmZDE1ODEyZmRlYzk3MTUzYTE0ZTBiMDQ3NTQ2YWEiLCJpZCI6MiwiZW1haWwiOiJqb3ZlcnRAZXhhbXBsZS5jb20iLCJuYW1lIjoiSm92ZXJ0IFBhbG9ucG9uIiwicm9sZSI6Im93bmVyIn0.DK99N65s114CP8_n-DRGpjGMrym8GyJlZxNzgnFEwq0
+
+Cache-Control:   no-cache
+
+Connection:      keep-alive
+
+Content-Length:  49
+
+Content-Type:    application/json
+
+Host:            localhost:8000
+
+Postman-Token:   ffab5d53-51c1-490d-ad12-cdc9f1bb8d14
+
+User-Agent:      PostmanRuntime/7.6.0
+
+
+
+{
+
+    \"name\":\"invoicestatuse1\",
+
+    \"id\":\"6\"
+
+} at C:\\xampp\\htdocs\\New folder\\FrontBackLcc\\back\\app\\Http\\Controllers\\Crud\\InvoiceStatusController.php:92)
+[stacktrace]
+#0 C:\\xampp\\htdocs\\New folder\\FrontBackLcc\\back\\app\\Http\\Controllers\\Crud\\InvoiceStatusController.php(92): Illuminate\\Foundation\\Bootstrap\\HandleExceptions->handleError(8, 'Undefined varia...', 'C:\\\\xampp\\\\htdocs...', 92, Array)
+#1 C:\\xampp\\htdocs\\New folder\\FrontBackLcc\\back\\vendor\\laravel\\framework\\src\\Illuminate\\Routing\\Controller.php(54): App\\Http\\Controllers\\Crud\\InvoiceStatusController->destroy(Object(Illuminate\\Http\\Request))
+#2 C:\\xampp\\htdocs\\New folder\\FrontBackLcc\\back\\vendor\\laravel\\framework\\src\\Illuminate\\Routing\\ControllerDispatcher.php(45): Illuminate\\Routing\\Controller->callAction('destroy', Array)
+#3 C:\\xampp\\htdocs\\New folder\\FrontBackLcc\\back\\vendor\\laravel\\framework\\src\\Illuminate\\Routing\\Route.php(219): Illuminate\\Routing\\ControllerDispatcher->dispatch(Object(Illuminate\\Routing\\Route), Object(App\\Http\\Controllers\\Crud\\InvoiceStatusController), 'destroy')
+#4 C:\\xampp\\htdocs\\New folder\\FrontBackLcc\\back\\vendor\\laravel\\framework\\src\\Illuminate\\Routing\\Route.php(176): Illuminate\\Routing\\Route->runController()
+#5 C:\\xampp\\htdocs\\New folder\\FrontBackLcc\\back\\vendor\\laravel\\framework\\src\\Illuminate\\Routing\\Router.php(681): Illuminate\\Routing\\Route->run()
+#6 C:\\xampp\\htdocs\\New folder\\FrontBackLcc\\back\\vendor\\laravel\\framework\\src\\Illuminate\\Pipeline\\Pipeline.php(130): Illuminate\\Routing\\Router->Illuminate\\Routing\\{closure}(Object(Illuminate\\Http\\Request))
+#7 C:\\xampp\\htdocs\\New folder\\FrontBackLcc\\back\\vendor\\halpdesk\\zizaco-entrust-laravel-6.0\\src\\Entrust\\Middleware\\EntrustRole.php(48): Illuminate\\Pipeline\\Pipeline->Illuminate\\Pipeline\\{closure}(Object(Illuminate\\Http\\Request))
+#8 C:\\xampp\\htdocs\\New folder\\FrontBackLcc\\back\\vendor\\laravel\\framework\\src\\Illuminate\\Pipeline\\Pipeline.php(171): Zizaco\\Entrust\\Middleware\\EntrustRole->handle(Object(Illuminate\\Http\\Request), Object(Closure), Array)
+#9 C:\\xampp\\htdocs\\New folder\\FrontBackLcc\\back\\vendor\\laravel\\framework\\src\\Illuminate\\Routing\\Middleware\\SubstituteBindings.php(41): Illuminate\\Pipeline\\Pipeline->Illuminate\\Pipeline\\{closure}(Object(Illuminate\\Http\\Request))
+#10 C:\\xampp\\htdocs\\New folder\\FrontBackLcc\\back\\vendor\\laravel\\framework\\src\\Illuminate\\Pipeline\\Pipeline.php(171): Illuminate\\Routing\\Middleware\\SubstituteBindings->handle(Object(Illuminate\\Http\\Request), Object(Closure))
+#11 C:\\xampp\\htdocs\\New folder\\FrontBackLcc\\back\\vendor\\laravel\\framework\\src\\Illuminate\\Routing\\Middleware\\ThrottleRequests.php(59): Illuminate\\Pipeline\\Pipeline->Illuminate\\Pipeline\\{closure}(Object(Illuminate\\Http\\Request))
+#12 C:\\xampp\\htdocs\\New folder\\FrontBackLcc\\back\\vendor\\laravel\\framework\\src\\Illuminate\\Pipeline\\Pipeline.php(171): Illuminate\\Routing\\Middleware\\ThrottleRequests->handle(Object(Illuminate\\Http\\Request), Object(Closure), 60, '1')
+#13 C:\\xampp\\htdocs\\New folder\\FrontBackLcc\\back\\app\\Http\\Middleware\\Cors.php(30): Illuminate\\Pipeline\\Pipeline->Illuminate\\Pipeline\\{closure}(Object(Illuminate\\Http\\Request))
+#14 C:\\xampp\\htdocs\\New folder\\FrontBackLcc\\back\\vendor\\laravel\\framework\\src\\Illuminate\\Pipeline\\Pipeline.php(171): App\\Http\\Middleware\\Cors->handle(Object(Illuminate\\Http\\Request), Object(Closure))
+#15 C:\\xampp\\htdocs\\New folder\\FrontBackLcc\\back\\vendor\\laravel\\framework\\src\\Illuminate\\Pipeline\\Pipeline.php(105): Illuminate\\Pipeline\\Pipeline->Illuminate\\Pipeline\\{closure}(Object(Illuminate\\Http\\Request))
+#16 C:\\xampp\\htdocs\\New folder\\FrontBackLcc\\back\\vendor\\laravel\\framework\\src\\Illuminate\\Routing\\Router.php(683): Illuminate\\Pipeline\\Pipeline->then(Object(Closure))
+#17 C:\\xampp\\htdocs\\New folder\\FrontBackLcc\\back\\vendor\\laravel\\framework\\src\\Illuminate\\Routing\\Router.php(658): Illuminate\\Routing\\Router->runRouteWithinStack(Object(Illuminate\\Routing\\Route), Object(Illuminate\\Http\\Request))
+#18 C:\\xampp\\htdocs\\New folder\\FrontBackLcc\\back\\vendor\\laravel\\framework\\src\\Illuminate\\Routing\\Router.php(624): Illuminate\\Routing\\Router->runRoute(Object(Illuminate\\Http\\Request), Object(Illuminate\\Routing\\Route))
+#19 C:\\xampp\\htdocs\\New folder\\FrontBackLcc\\back\\vendor\\laravel\\framework\\src\\Illuminate\\Routing\\Router.php(613): Illuminate\\Routing\\Router->dispatchToRoute(Object(Illuminate\\Http\\Request))
+#20 C:\\xampp\\htdocs\\New folder\\FrontBackLcc\\back\\vendor\\laravel\\framework\\src\\Illuminate\\Foundation\\Http\\Kernel.php(170): Illuminate\\Routing\\Router->dispatch(Object(Illuminate\\Http\\Request))
+#21 C:\\xampp\\htdocs\\New folder\\FrontBackLcc\\back\\vendor\\laravel\\framework\\src\\Illuminate\\Pipeline\\Pipeline.php(130): Illuminate\\Foundation\\Http\\Kernel->Illuminate\\Foundation\\Http\\{closure}(Object(Illuminate\\Http\\Request))
+#22 C:\\xampp\\htdocs\\New folder\\FrontBackLcc\\back\\app\\Http\\Middleware\\Cors.php(30): Illuminate\\Pipeline\\Pipeline->Illuminate\\Pipeline\\{closure}(Object(Illuminate\\Http\\Request))
+#23 C:\\xampp\\htdocs\\New folder\\FrontBackLcc\\back\\vendor\\laravel\\framework\\src\\Illuminate\\Pipeline\\Pipeline.php(171): App\\Http\\Middleware\\Cors->handle(Object(Illuminate\\Http\\Request), Object(Closure))
+#24 C:\\xampp\\htdocs\\New folder\\FrontBackLcc\\back\\vendor\\laravel\\framework\\src\\Illuminate\\Foundation\\Http\\Middleware\\TransformsRequest.php(21): Illuminate\\Pipeline\\Pipeline->Illuminate\\Pipeline\\{closure}(Object(Illuminate\\Http\\Request))
+#25 C:\\xampp\\htdocs\\New folder\\FrontBackLcc\\back\\vendor\\laravel\\framework\\src\\Illuminate\\Pipeline\\Pipeline.php(171): Illuminate\\Foundation\\Http\\Middleware\\TransformsRequest->handle(Object(Illuminate\\Http\\Request), Object(Closure))
+#26 C:\\xampp\\htdocs\\New folder\\FrontBackLcc\\back\\vendor\\laravel\\framework\\src\\Illuminate\\Foundation\\Http\\Middleware\\TransformsRequest.php(21): Illuminate\\Pipeline\\Pipeline->Illuminate\\Pipeline\\{closure}(Object(Illuminate\\Http\\Request))
+#27 C:\\xampp\\htdocs\\New folder\\FrontBackLcc\\back\\vendor\\laravel\\framework\\src\\Illuminate\\Pipeline\\Pipeline.php(171): Illuminate\\Foundation\\Http\\Middleware\\TransformsRequest->handle(Object(Illuminate\\Http\\Request), Object(Closure))
+#28 C:\\xampp\\htdocs\\New folder\\FrontBackLcc\\back\\vendor\\laravel\\framework\\src\\Illuminate\\Foundation\\Http\\Middleware\\ValidatePostSize.php(27): Illuminate\\Pipeline\\Pipeline->Illuminate\\Pipeline\\{closure}(Object(Illuminate\\Http\\Request))
+#29 C:\\xampp\\htdocs\\New folder\\FrontBackLcc\\back\\vendor\\laravel\\framework\\src\\Illuminate\\Pipeline\\Pipeline.php(171): Illuminate\\Foundation\\Http\\Middleware\\ValidatePostSize->handle(Object(Illuminate\\Http\\Request), Object(Closure))
+#30 C:\\xampp\\htdocs\\New folder\\FrontBackLcc\\back\\vendor\\laravel\\framework\\src\\Illuminate\\Foundation\\Http\\Middleware\\CheckForMaintenanceMode.php(63): Illuminate\\Pipeline\\Pipeline->Illuminate\\Pipeline\\{closure}(Object(Illuminate\\Http\\Request))
+#31 C:\\xampp\\htdocs\\New folder\\FrontBackLcc\\back\\vendor\\laravel\\framework\\src\\Illuminate\\Pipeline\\Pipeline.php(171): Illuminate\\Foundation\\Http\\Middleware\\CheckForMaintenanceMode->handle(Object(Illuminate\\Http\\Request), Object(Closure))
+#32 C:\\xampp\\htdocs\\New folder\\FrontBackLcc\\back\\vendor\\fideloper\\proxy\\src\\TrustProxies.php(57): Illuminate\\Pipeline\\Pipeline->Illuminate\\Pipeline\\{closure}(Object(Illuminate\\Http\\Request))
+#33 C:\\xampp\\htdocs\\New folder\\FrontBackLcc\\back\\vendor\\laravel\\framework\\src\\Illuminate\\Pipeline\\Pipeline.php(171): Fideloper\\Proxy\\TrustProxies->handle(Object(Illuminate\\Http\\Request), Object(Closure))
+#34 C:\\xampp\\htdocs\\New folder\\FrontBackLcc\\back\\vendor\\barryvdh\\laravel-cors\\src\\HandlePreflight.php(29): Illuminate\\Pipeline\\Pipeline->Illuminate\\Pipeline\\{closure}(Object(Illuminate\\Http\\Request))
+#35 C:\\xampp\\htdocs\\New folder\\FrontBackLcc\\back\\vendor\\laravel\\framework\\src\\Illuminate\\Pipeline\\Pipeline.php(171): Barryvdh\\Cors\\HandlePreflight->handle(Object(Illuminate\\Http\\Request), Object(Closure))
+#36 C:\\xampp\\htdocs\\New folder\\FrontBackLcc\\back\\vendor\\laravel\\framework\\src\\Illuminate\\Pipeline\\Pipeline.php(105): Illuminate\\Pipeline\\Pipeline->Illuminate\\Pipeline\\{closure}(Object(Illuminate\\Http\\Request))
+#37 C:\\xampp\\htdocs\\New folder\\FrontBackLcc\\back\\vendor\\laravel\\framework\\src\\Illuminate\\Foundation\\Http\\Kernel.php(145): Illuminate\\Pipeline\\Pipeline->then(Object(Closure))
+#38 C:\\xampp\\htdocs\\New folder\\FrontBackLcc\\back\\vendor\\laravel\\framework\\src\\Illuminate\\Foundation\\Http\\Kernel.php(110): Illuminate\\Foundation\\Http\\Kernel->sendRequestThroughRouter(Object(Illuminate\\Http\\Request))
+#39 C:\\xampp\\htdocs\\New folder\\FrontBackLcc\\back\\public\\index.php(55): Illuminate\\Foundation\\Http\\Kernel->handle(Object(Illuminate\\Http\\Request))
+#40 C:\\xampp\\htdocs\\New folder\\FrontBackLcc\\back\\server.php(21): require_once('C:\\\\xampp\\\\htdocs...')
+#41 {main}
+"} 
+[2022-12-04 19:34:47] local.ERROR: Undefined variable: POST /api/invoicestatuse/delete HTTP/1.1
+Accept:          */*
+Accept-Encoding: gzip, deflate
+Authorization:   Bearer eyJ0eXAiOiJKV1QiLCJhbGciOiJIUzI1NiJ9.eyJpc3MiOiJodHRwOi8vbG9jYWxob3N0OjgwMDAvYXBpL2F1dGgvbG9naW4iLCJpYXQiOjE2Njk3Mjk1MDksImV4cCI6MTY3MDMzNDMwOSwibmJmIjoxNjY5NzI5NTA5LCJqdGkiOiIwNDE4MVZLWHZTRFB0clRLIiwic3ViIjoiMiIsInBydiI6Ijg3ZTBhZjFlZjlmZDE1ODEyZmRlYzk3MTUzYTE0ZTBiMDQ3NTQ2YWEiLCJpZCI6MiwiZW1haWwiOiJqb3ZlcnRAZXhhbXBsZS5jb20iLCJuYW1lIjoiSm92ZXJ0IFBhbG9ucG9uIiwicm9sZSI6Im93bmVyIn0.DK99N65s114CP8_n-DRGpjGMrym8GyJlZxNzgnFEwq0
+Cache-Control:   no-cache
+Connection:      keep-alive
+Content-Length:  49
+Content-Type:    application/json
+Host:            localhost:8000
+Postman-Token:   551b21aa-0edf-46d9-a1e5-53407f88dd94
+User-Agent:      PostmanRuntime/7.6.0
+
+{
+    "name":"invoicestatuse1",
+    "id":"6"
+} {"userId":2,"exception":"[object] (ErrorException(code: 0): Undefined variable: POST /api/invoicestatuse/delete HTTP/1.1
+
+Accept:          */*
+
+Accept-Encoding: gzip, deflate
+
+Authorization:   Bearer eyJ0eXAiOiJKV1QiLCJhbGciOiJIUzI1NiJ9.eyJpc3MiOiJodHRwOi8vbG9jYWxob3N0OjgwMDAvYXBpL2F1dGgvbG9naW4iLCJpYXQiOjE2Njk3Mjk1MDksImV4cCI6MTY3MDMzNDMwOSwibmJmIjoxNjY5NzI5NTA5LCJqdGkiOiIwNDE4MVZLWHZTRFB0clRLIiwic3ViIjoiMiIsInBydiI6Ijg3ZTBhZjFlZjlmZDE1ODEyZmRlYzk3MTUzYTE0ZTBiMDQ3NTQ2YWEiLCJpZCI6MiwiZW1haWwiOiJqb3ZlcnRAZXhhbXBsZS5jb20iLCJuYW1lIjoiSm92ZXJ0IFBhbG9ucG9uIiwicm9sZSI6Im93bmVyIn0.DK99N65s114CP8_n-DRGpjGMrym8GyJlZxNzgnFEwq0
+
+Cache-Control:   no-cache
+
+Connection:      keep-alive
+
+Content-Length:  49
+
+Content-Type:    application/json
+
+Host:            localhost:8000
+
+Postman-Token:   551b21aa-0edf-46d9-a1e5-53407f88dd94
+
+User-Agent:      PostmanRuntime/7.6.0
+
+
+
+{
+
+    \"name\":\"invoicestatuse1\",
+
+    \"id\":\"6\"
+
+} at C:\\xampp\\htdocs\\New folder\\FrontBackLcc\\back\\app\\Http\\Controllers\\Crud\\InvoiceStatusController.php:92)
+[stacktrace]
+#0 C:\\xampp\\htdocs\\New folder\\FrontBackLcc\\back\\app\\Http\\Controllers\\Crud\\InvoiceStatusController.php(92): Illuminate\\Foundation\\Bootstrap\\HandleExceptions->handleError(8, 'Undefined varia...', 'C:\\\\xampp\\\\htdocs...', 92, Array)
+#1 C:\\xampp\\htdocs\\New folder\\FrontBackLcc\\back\\vendor\\laravel\\framework\\src\\Illuminate\\Routing\\Controller.php(54): App\\Http\\Controllers\\Crud\\InvoiceStatusController->destroy(Object(Illuminate\\Http\\Request))
+#2 C:\\xampp\\htdocs\\New folder\\FrontBackLcc\\back\\vendor\\laravel\\framework\\src\\Illuminate\\Routing\\ControllerDispatcher.php(45): Illuminate\\Routing\\Controller->callAction('destroy', Array)
+#3 C:\\xampp\\htdocs\\New folder\\FrontBackLcc\\back\\vendor\\laravel\\framework\\src\\Illuminate\\Routing\\Route.php(219): Illuminate\\Routing\\ControllerDispatcher->dispatch(Object(Illuminate\\Routing\\Route), Object(App\\Http\\Controllers\\Crud\\InvoiceStatusController), 'destroy')
+#4 C:\\xampp\\htdocs\\New folder\\FrontBackLcc\\back\\vendor\\laravel\\framework\\src\\Illuminate\\Routing\\Route.php(176): Illuminate\\Routing\\Route->runController()
+#5 C:\\xampp\\htdocs\\New folder\\FrontBackLcc\\back\\vendor\\laravel\\framework\\src\\Illuminate\\Routing\\Router.php(681): Illuminate\\Routing\\Route->run()
+#6 C:\\xampp\\htdocs\\New folder\\FrontBackLcc\\back\\vendor\\laravel\\framework\\src\\Illuminate\\Pipeline\\Pipeline.php(130): Illuminate\\Routing\\Router->Illuminate\\Routing\\{closure}(Object(Illuminate\\Http\\Request))
+#7 C:\\xampp\\htdocs\\New folder\\FrontBackLcc\\back\\vendor\\laravel\\framework\\src\\Illuminate\\Routing\\Middleware\\SubstituteBindings.php(41): Illuminate\\Pipeline\\Pipeline->Illuminate\\Pipeline\\{closure}(Object(Illuminate\\Http\\Request))
+#8 C:\\xampp\\htdocs\\New folder\\FrontBackLcc\\back\\vendor\\laravel\\framework\\src\\Illuminate\\Pipeline\\Pipeline.php(171): Illuminate\\Routing\\Middleware\\SubstituteBindings->handle(Object(Illuminate\\Http\\Request), Object(Closure))
+#9 C:\\xampp\\htdocs\\New folder\\FrontBackLcc\\back\\vendor\\laravel\\framework\\src\\Illuminate\\Routing\\Middleware\\ThrottleRequests.php(59): Illuminate\\Pipeline\\Pipeline->Illuminate\\Pipeline\\{closure}(Object(Illuminate\\Http\\Request))
+#10 C:\\xampp\\htdocs\\New folder\\FrontBackLcc\\back\\vendor\\laravel\\framework\\src\\Illuminate\\Pipeline\\Pipeline.php(171): Illuminate\\Routing\\Middleware\\ThrottleRequests->handle(Object(Illuminate\\Http\\Request), Object(Closure), 60, '1')
+#11 C:\\xampp\\htdocs\\New folder\\FrontBackLcc\\back\\app\\Http\\Middleware\\Cors.php(30): Illuminate\\Pipeline\\Pipeline->Illuminate\\Pipeline\\{closure}(Object(Illuminate\\Http\\Request))
+#12 C:\\xampp\\htdocs\\New folder\\FrontBackLcc\\back\\vendor\\laravel\\framework\\src\\Illuminate\\Pipeline\\Pipeline.php(171): App\\Http\\Middleware\\Cors->handle(Object(Illuminate\\Http\\Request), Object(Closure))
+#13 C:\\xampp\\htdocs\\New folder\\FrontBackLcc\\back\\vendor\\laravel\\framework\\src\\Illuminate\\Pipeline\\Pipeline.php(105): Illuminate\\Pipeline\\Pipeline->Illuminate\\Pipeline\\{closure}(Object(Illuminate\\Http\\Request))
+#14 C:\\xampp\\htdocs\\New folder\\FrontBackLcc\\back\\vendor\\laravel\\framework\\src\\Illuminate\\Routing\\Router.php(683): Illuminate\\Pipeline\\Pipeline->then(Object(Closure))
+#15 C:\\xampp\\htdocs\\New folder\\FrontBackLcc\\back\\vendor\\laravel\\framework\\src\\Illuminate\\Routing\\Router.php(658): Illuminate\\Routing\\Router->runRouteWithinStack(Object(Illuminate\\Routing\\Route), Object(Illuminate\\Http\\Request))
+#16 C:\\xampp\\htdocs\\New folder\\FrontBackLcc\\back\\vendor\\laravel\\framework\\src\\Illuminate\\Routing\\Router.php(624): Illuminate\\Routing\\Router->runRoute(Object(Illuminate\\Http\\Request), Object(Illuminate\\Routing\\Route))
+#17 C:\\xampp\\htdocs\\New folder\\FrontBackLcc\\back\\vendor\\laravel\\framework\\src\\Illuminate\\Routing\\Router.php(613): Illuminate\\Routing\\Router->dispatchToRoute(Object(Illuminate\\Http\\Request))
+#18 C:\\xampp\\htdocs\\New folder\\FrontBackLcc\\back\\vendor\\laravel\\framework\\src\\Illuminate\\Foundation\\Http\\Kernel.php(170): Illuminate\\Routing\\Router->dispatch(Object(Illuminate\\Http\\Request))
+#19 C:\\xampp\\htdocs\\New folder\\FrontBackLcc\\back\\vendor\\laravel\\framework\\src\\Illuminate\\Pipeline\\Pipeline.php(130): Illuminate\\Foundation\\Http\\Kernel->Illuminate\\Foundation\\Http\\{closure}(Object(Illuminate\\Http\\Request))
+#20 C:\\xampp\\htdocs\\New folder\\FrontBackLcc\\back\\app\\Http\\Middleware\\Cors.php(30): Illuminate\\Pipeline\\Pipeline->Illuminate\\Pipeline\\{closure}(Object(Illuminate\\Http\\Request))
+#21 C:\\xampp\\htdocs\\New folder\\FrontBackLcc\\back\\vendor\\laravel\\framework\\src\\Illuminate\\Pipeline\\Pipeline.php(171): App\\Http\\Middleware\\Cors->handle(Object(Illuminate\\Http\\Request), Object(Closure))
+#22 C:\\xampp\\htdocs\\New folder\\FrontBackLcc\\back\\vendor\\laravel\\framework\\src\\Illuminate\\Foundation\\Http\\Middleware\\TransformsRequest.php(21): Illuminate\\Pipeline\\Pipeline->Illuminate\\Pipeline\\{closure}(Object(Illuminate\\Http\\Request))
+#23 C:\\xampp\\htdocs\\New folder\\FrontBackLcc\\back\\vendor\\laravel\\framework\\src\\Illuminate\\Pipeline\\Pipeline.php(171): Illuminate\\Foundation\\Http\\Middleware\\TransformsRequest->handle(Object(Illuminate\\Http\\Request), Object(Closure))
+#24 C:\\xampp\\htdocs\\New folder\\FrontBackLcc\\back\\vendor\\laravel\\framework\\src\\Illuminate\\Foundation\\Http\\Middleware\\TransformsRequest.php(21): Illuminate\\Pipeline\\Pipeline->Illuminate\\Pipeline\\{closure}(Object(Illuminate\\Http\\Request))
+#25 C:\\xampp\\htdocs\\New folder\\FrontBackLcc\\back\\vendor\\laravel\\framework\\src\\Illuminate\\Pipeline\\Pipeline.php(171): Illuminate\\Foundation\\Http\\Middleware\\TransformsRequest->handle(Object(Illuminate\\Http\\Request), Object(Closure))
+#26 C:\\xampp\\htdocs\\New folder\\FrontBackLcc\\back\\vendor\\laravel\\framework\\src\\Illuminate\\Foundation\\Http\\Middleware\\ValidatePostSize.php(27): Illuminate\\Pipeline\\Pipeline->Illuminate\\Pipeline\\{closure}(Object(Illuminate\\Http\\Request))
+#27 C:\\xampp\\htdocs\\New folder\\FrontBackLcc\\back\\vendor\\laravel\\framework\\src\\Illuminate\\Pipeline\\Pipeline.php(171): Illuminate\\Foundation\\Http\\Middleware\\ValidatePostSize->handle(Object(Illuminate\\Http\\Request), Object(Closure))
+#28 C:\\xampp\\htdocs\\New folder\\FrontBackLcc\\back\\vendor\\laravel\\framework\\src\\Illuminate\\Foundation\\Http\\Middleware\\CheckForMaintenanceMode.php(63): Illuminate\\Pipeline\\Pipeline->Illuminate\\Pipeline\\{closure}(Object(Illuminate\\Http\\Request))
+#29 C:\\xampp\\htdocs\\New folder\\FrontBackLcc\\back\\vendor\\laravel\\framework\\src\\Illuminate\\Pipeline\\Pipeline.php(171): Illuminate\\Foundation\\Http\\Middleware\\CheckForMaintenanceMode->handle(Object(Illuminate\\Http\\Request), Object(Closure))
+#30 C:\\xampp\\htdocs\\New folder\\FrontBackLcc\\back\\vendor\\fideloper\\proxy\\src\\TrustProxies.php(57): Illuminate\\Pipeline\\Pipeline->Illuminate\\Pipeline\\{closure}(Object(Illuminate\\Http\\Request))
+#31 C:\\xampp\\htdocs\\New folder\\FrontBackLcc\\back\\vendor\\laravel\\framework\\src\\Illuminate\\Pipeline\\Pipeline.php(171): Fideloper\\Proxy\\TrustProxies->handle(Object(Illuminate\\Http\\Request), Object(Closure))
+#32 C:\\xampp\\htdocs\\New folder\\FrontBackLcc\\back\\vendor\\barryvdh\\laravel-cors\\src\\HandlePreflight.php(29): Illuminate\\Pipeline\\Pipeline->Illuminate\\Pipeline\\{closure}(Object(Illuminate\\Http\\Request))
+#33 C:\\xampp\\htdocs\\New folder\\FrontBackLcc\\back\\vendor\\laravel\\framework\\src\\Illuminate\\Pipeline\\Pipeline.php(171): Barryvdh\\Cors\\HandlePreflight->handle(Object(Illuminate\\Http\\Request), Object(Closure))
+#34 C:\\xampp\\htdocs\\New folder\\FrontBackLcc\\back\\vendor\\laravel\\framework\\src\\Illuminate\\Pipeline\\Pipeline.php(105): Illuminate\\Pipeline\\Pipeline->Illuminate\\Pipeline\\{closure}(Object(Illuminate\\Http\\Request))
+#35 C:\\xampp\\htdocs\\New folder\\FrontBackLcc\\back\\vendor\\laravel\\framework\\src\\Illuminate\\Foundation\\Http\\Kernel.php(145): Illuminate\\Pipeline\\Pipeline->then(Object(Closure))
+#36 C:\\xampp\\htdocs\\New folder\\FrontBackLcc\\back\\vendor\\laravel\\framework\\src\\Illuminate\\Foundation\\Http\\Kernel.php(110): Illuminate\\Foundation\\Http\\Kernel->sendRequestThroughRouter(Object(Illuminate\\Http\\Request))
+#37 C:\\xampp\\htdocs\\New folder\\FrontBackLcc\\back\\public\\index.php(55): Illuminate\\Foundation\\Http\\Kernel->handle(Object(Illuminate\\Http\\Request))
+#38 C:\\xampp\\htdocs\\New folder\\FrontBackLcc\\back\\server.php(21): require_once('C:\\\\xampp\\\\htdocs...')
+#39 {main}
+"} 
+[2022-12-04 19:35:53] local.ERROR: Undefined variable: POST /api/invoicestatuse/delete HTTP/1.1
+Accept:          */*
+Accept-Encoding: gzip, deflate
+Authorization:   Bearer eyJ0eXAiOiJKV1QiLCJhbGciOiJIUzI1NiJ9.eyJpc3MiOiJodHRwOi8vbG9jYWxob3N0OjgwMDAvYXBpL2F1dGgvbG9naW4iLCJpYXQiOjE2Njk3Mjk1MDksImV4cCI6MTY3MDMzNDMwOSwibmJmIjoxNjY5NzI5NTA5LCJqdGkiOiIwNDE4MVZLWHZTRFB0clRLIiwic3ViIjoiMiIsInBydiI6Ijg3ZTBhZjFlZjlmZDE1ODEyZmRlYzk3MTUzYTE0ZTBiMDQ3NTQ2YWEiLCJpZCI6MiwiZW1haWwiOiJqb3ZlcnRAZXhhbXBsZS5jb20iLCJuYW1lIjoiSm92ZXJ0IFBhbG9ucG9uIiwicm9sZSI6Im93bmVyIn0.DK99N65s114CP8_n-DRGpjGMrym8GyJlZxNzgnFEwq0
+Cache-Control:   no-cache
+Connection:      keep-alive
+Content-Length:  49
+Content-Type:    application/json
+Host:            localhost:8000
+Postman-Token:   1570acb2-1361-4163-851c-cd395da3d566
+User-Agent:      PostmanRuntime/7.6.0
+
+{
+    "name":"invoicestatuse1",
+    "id":"6"
+} {"userId":2,"exception":"[object] (ErrorException(code: 0): Undefined variable: POST /api/invoicestatuse/delete HTTP/1.1
+
+Accept:          */*
+
+Accept-Encoding: gzip, deflate
+
+Authorization:   Bearer eyJ0eXAiOiJKV1QiLCJhbGciOiJIUzI1NiJ9.eyJpc3MiOiJodHRwOi8vbG9jYWxob3N0OjgwMDAvYXBpL2F1dGgvbG9naW4iLCJpYXQiOjE2Njk3Mjk1MDksImV4cCI6MTY3MDMzNDMwOSwibmJmIjoxNjY5NzI5NTA5LCJqdGkiOiIwNDE4MVZLWHZTRFB0clRLIiwic3ViIjoiMiIsInBydiI6Ijg3ZTBhZjFlZjlmZDE1ODEyZmRlYzk3MTUzYTE0ZTBiMDQ3NTQ2YWEiLCJpZCI6MiwiZW1haWwiOiJqb3ZlcnRAZXhhbXBsZS5jb20iLCJuYW1lIjoiSm92ZXJ0IFBhbG9ucG9uIiwicm9sZSI6Im93bmVyIn0.DK99N65s114CP8_n-DRGpjGMrym8GyJlZxNzgnFEwq0
+
+Cache-Control:   no-cache
+
+Connection:      keep-alive
+
+Content-Length:  49
+
+Content-Type:    application/json
+
+Host:            localhost:8000
+
+Postman-Token:   1570acb2-1361-4163-851c-cd395da3d566
+
+User-Agent:      PostmanRuntime/7.6.0
+
+
+
+{
+
+    \"name\":\"invoicestatuse1\",
+
+    \"id\":\"6\"
+
+} at C:\\xampp\\htdocs\\New folder\\FrontBackLcc\\back\\app\\Http\\Controllers\\Crud\\InvoiceStatusController.php:92)
+[stacktrace]
+#0 C:\\xampp\\htdocs\\New folder\\FrontBackLcc\\back\\app\\Http\\Controllers\\Crud\\InvoiceStatusController.php(92): Illuminate\\Foundation\\Bootstrap\\HandleExceptions->handleError(8, 'Undefined varia...', 'C:\\\\xampp\\\\htdocs...', 92, Array)
+#1 C:\\xampp\\htdocs\\New folder\\FrontBackLcc\\back\\vendor\\laravel\\framework\\src\\Illuminate\\Routing\\Controller.php(54): App\\Http\\Controllers\\Crud\\InvoiceStatusController->destroy(Object(Illuminate\\Http\\Request))
+#2 C:\\xampp\\htdocs\\New folder\\FrontBackLcc\\back\\vendor\\laravel\\framework\\src\\Illuminate\\Routing\\ControllerDispatcher.php(45): Illuminate\\Routing\\Controller->callAction('destroy', Array)
+#3 C:\\xampp\\htdocs\\New folder\\FrontBackLcc\\back\\vendor\\laravel\\framework\\src\\Illuminate\\Routing\\Route.php(219): Illuminate\\Routing\\ControllerDispatcher->dispatch(Object(Illuminate\\Routing\\Route), Object(App\\Http\\Controllers\\Crud\\InvoiceStatusController), 'destroy')
+#4 C:\\xampp\\htdocs\\New folder\\FrontBackLcc\\back\\vendor\\laravel\\framework\\src\\Illuminate\\Routing\\Route.php(176): Illuminate\\Routing\\Route->runController()
+#5 C:\\xampp\\htdocs\\New folder\\FrontBackLcc\\back\\vendor\\laravel\\framework\\src\\Illuminate\\Routing\\Router.php(681): Illuminate\\Routing\\Route->run()
+#6 C:\\xampp\\htdocs\\New folder\\FrontBackLcc\\back\\vendor\\laravel\\framework\\src\\Illuminate\\Pipeline\\Pipeline.php(130): Illuminate\\Routing\\Router->Illuminate\\Routing\\{closure}(Object(Illuminate\\Http\\Request))
+#7 C:\\xampp\\htdocs\\New folder\\FrontBackLcc\\back\\vendor\\laravel\\framework\\src\\Illuminate\\Routing\\Middleware\\SubstituteBindings.php(41): Illuminate\\Pipeline\\Pipeline->Illuminate\\Pipeline\\{closure}(Object(Illuminate\\Http\\Request))
+#8 C:\\xampp\\htdocs\\New folder\\FrontBackLcc\\back\\vendor\\laravel\\framework\\src\\Illuminate\\Pipeline\\Pipeline.php(171): Illuminate\\Routing\\Middleware\\SubstituteBindings->handle(Object(Illuminate\\Http\\Request), Object(Closure))
+#9 C:\\xampp\\htdocs\\New folder\\FrontBackLcc\\back\\vendor\\laravel\\framework\\src\\Illuminate\\Routing\\Middleware\\ThrottleRequests.php(59): Illuminate\\Pipeline\\Pipeline->Illuminate\\Pipeline\\{closure}(Object(Illuminate\\Http\\Request))
+#10 C:\\xampp\\htdocs\\New folder\\FrontBackLcc\\back\\vendor\\laravel\\framework\\src\\Illuminate\\Pipeline\\Pipeline.php(171): Illuminate\\Routing\\Middleware\\ThrottleRequests->handle(Object(Illuminate\\Http\\Request), Object(Closure), 60, '1')
+#11 C:\\xampp\\htdocs\\New folder\\FrontBackLcc\\back\\app\\Http\\Middleware\\Cors.php(30): Illuminate\\Pipeline\\Pipeline->Illuminate\\Pipeline\\{closure}(Object(Illuminate\\Http\\Request))
+#12 C:\\xampp\\htdocs\\New folder\\FrontBackLcc\\back\\vendor\\laravel\\framework\\src\\Illuminate\\Pipeline\\Pipeline.php(171): App\\Http\\Middleware\\Cors->handle(Object(Illuminate\\Http\\Request), Object(Closure))
+#13 C:\\xampp\\htdocs\\New folder\\FrontBackLcc\\back\\vendor\\laravel\\framework\\src\\Illuminate\\Pipeline\\Pipeline.php(105): Illuminate\\Pipeline\\Pipeline->Illuminate\\Pipeline\\{closure}(Object(Illuminate\\Http\\Request))
+#14 C:\\xampp\\htdocs\\New folder\\FrontBackLcc\\back\\vendor\\laravel\\framework\\src\\Illuminate\\Routing\\Router.php(683): Illuminate\\Pipeline\\Pipeline->then(Object(Closure))
+#15 C:\\xampp\\htdocs\\New folder\\FrontBackLcc\\back\\vendor\\laravel\\framework\\src\\Illuminate\\Routing\\Router.php(658): Illuminate\\Routing\\Router->runRouteWithinStack(Object(Illuminate\\Routing\\Route), Object(Illuminate\\Http\\Request))
+#16 C:\\xampp\\htdocs\\New folder\\FrontBackLcc\\back\\vendor\\laravel\\framework\\src\\Illuminate\\Routing\\Router.php(624): Illuminate\\Routing\\Router->runRoute(Object(Illuminate\\Http\\Request), Object(Illuminate\\Routing\\Route))
+#17 C:\\xampp\\htdocs\\New folder\\FrontBackLcc\\back\\vendor\\laravel\\framework\\src\\Illuminate\\Routing\\Router.php(613): Illuminate\\Routing\\Router->dispatchToRoute(Object(Illuminate\\Http\\Request))
+#18 C:\\xampp\\htdocs\\New folder\\FrontBackLcc\\back\\vendor\\laravel\\framework\\src\\Illuminate\\Foundation\\Http\\Kernel.php(170): Illuminate\\Routing\\Router->dispatch(Object(Illuminate\\Http\\Request))
+#19 C:\\xampp\\htdocs\\New folder\\FrontBackLcc\\back\\vendor\\laravel\\framework\\src\\Illuminate\\Pipeline\\Pipeline.php(130): Illuminate\\Foundation\\Http\\Kernel->Illuminate\\Foundation\\Http\\{closure}(Object(Illuminate\\Http\\Request))
+#20 C:\\xampp\\htdocs\\New folder\\FrontBackLcc\\back\\app\\Http\\Middleware\\Cors.php(30): Illuminate\\Pipeline\\Pipeline->Illuminate\\Pipeline\\{closure}(Object(Illuminate\\Http\\Request))
+#21 C:\\xampp\\htdocs\\New folder\\FrontBackLcc\\back\\vendor\\laravel\\framework\\src\\Illuminate\\Pipeline\\Pipeline.php(171): App\\Http\\Middleware\\Cors->handle(Object(Illuminate\\Http\\Request), Object(Closure))
+#22 C:\\xampp\\htdocs\\New folder\\FrontBackLcc\\back\\vendor\\laravel\\framework\\src\\Illuminate\\Foundation\\Http\\Middleware\\TransformsRequest.php(21): Illuminate\\Pipeline\\Pipeline->Illuminate\\Pipeline\\{closure}(Object(Illuminate\\Http\\Request))
+#23 C:\\xampp\\htdocs\\New folder\\FrontBackLcc\\back\\vendor\\laravel\\framework\\src\\Illuminate\\Pipeline\\Pipeline.php(171): Illuminate\\Foundation\\Http\\Middleware\\TransformsRequest->handle(Object(Illuminate\\Http\\Request), Object(Closure))
+#24 C:\\xampp\\htdocs\\New folder\\FrontBackLcc\\back\\vendor\\laravel\\framework\\src\\Illuminate\\Foundation\\Http\\Middleware\\TransformsRequest.php(21): Illuminate\\Pipeline\\Pipeline->Illuminate\\Pipeline\\{closure}(Object(Illuminate\\Http\\Request))
+#25 C:\\xampp\\htdocs\\New folder\\FrontBackLcc\\back\\vendor\\laravel\\framework\\src\\Illuminate\\Pipeline\\Pipeline.php(171): Illuminate\\Foundation\\Http\\Middleware\\TransformsRequest->handle(Object(Illuminate\\Http\\Request), Object(Closure))
+#26 C:\\xampp\\htdocs\\New folder\\FrontBackLcc\\back\\vendor\\laravel\\framework\\src\\Illuminate\\Foundation\\Http\\Middleware\\ValidatePostSize.php(27): Illuminate\\Pipeline\\Pipeline->Illuminate\\Pipeline\\{closure}(Object(Illuminate\\Http\\Request))
+#27 C:\\xampp\\htdocs\\New folder\\FrontBackLcc\\back\\vendor\\laravel\\framework\\src\\Illuminate\\Pipeline\\Pipeline.php(171): Illuminate\\Foundation\\Http\\Middleware\\ValidatePostSize->handle(Object(Illuminate\\Http\\Request), Object(Closure))
+#28 C:\\xampp\\htdocs\\New folder\\FrontBackLcc\\back\\vendor\\laravel\\framework\\src\\Illuminate\\Foundation\\Http\\Middleware\\CheckForMaintenanceMode.php(63): Illuminate\\Pipeline\\Pipeline->Illuminate\\Pipeline\\{closure}(Object(Illuminate\\Http\\Request))
+#29 C:\\xampp\\htdocs\\New folder\\FrontBackLcc\\back\\vendor\\laravel\\framework\\src\\Illuminate\\Pipeline\\Pipeline.php(171): Illuminate\\Foundation\\Http\\Middleware\\CheckForMaintenanceMode->handle(Object(Illuminate\\Http\\Request), Object(Closure))
+#30 C:\\xampp\\htdocs\\New folder\\FrontBackLcc\\back\\vendor\\fideloper\\proxy\\src\\TrustProxies.php(57): Illuminate\\Pipeline\\Pipeline->Illuminate\\Pipeline\\{closure}(Object(Illuminate\\Http\\Request))
+#31 C:\\xampp\\htdocs\\New folder\\FrontBackLcc\\back\\vendor\\laravel\\framework\\src\\Illuminate\\Pipeline\\Pipeline.php(171): Fideloper\\Proxy\\TrustProxies->handle(Object(Illuminate\\Http\\Request), Object(Closure))
+#32 C:\\xampp\\htdocs\\New folder\\FrontBackLcc\\back\\vendor\\barryvdh\\laravel-cors\\src\\HandlePreflight.php(29): Illuminate\\Pipeline\\Pipeline->Illuminate\\Pipeline\\{closure}(Object(Illuminate\\Http\\Request))
+#33 C:\\xampp\\htdocs\\New folder\\FrontBackLcc\\back\\vendor\\laravel\\framework\\src\\Illuminate\\Pipeline\\Pipeline.php(171): Barryvdh\\Cors\\HandlePreflight->handle(Object(Illuminate\\Http\\Request), Object(Closure))
+#34 C:\\xampp\\htdocs\\New folder\\FrontBackLcc\\back\\vendor\\laravel\\framework\\src\\Illuminate\\Pipeline\\Pipeline.php(105): Illuminate\\Pipeline\\Pipeline->Illuminate\\Pipeline\\{closure}(Object(Illuminate\\Http\\Request))
+#35 C:\\xampp\\htdocs\\New folder\\FrontBackLcc\\back\\vendor\\laravel\\framework\\src\\Illuminate\\Foundation\\Http\\Kernel.php(145): Illuminate\\Pipeline\\Pipeline->then(Object(Closure))
+#36 C:\\xampp\\htdocs\\New folder\\FrontBackLcc\\back\\vendor\\laravel\\framework\\src\\Illuminate\\Foundation\\Http\\Kernel.php(110): Illuminate\\Foundation\\Http\\Kernel->sendRequestThroughRouter(Object(Illuminate\\Http\\Request))
+#37 C:\\xampp\\htdocs\\New folder\\FrontBackLcc\\back\\public\\index.php(55): Illuminate\\Foundation\\Http\\Kernel->handle(Object(Illuminate\\Http\\Request))
+#38 C:\\xampp\\htdocs\\New folder\\FrontBackLcc\\back\\server.php(21): require_once('C:\\\\xampp\\\\htdocs...')
+#39 {main}
+"} 
+[2022-12-04 19:36:30] local.ERROR: Undefined variable: POST /api/invoicestatuse/delete HTTP/1.1
+Accept:          */*
+Accept-Encoding: gzip, deflate
+Authorization:   Bearer eyJ0eXAiOiJKV1QiLCJhbGciOiJIUzI1NiJ9.eyJpc3MiOiJodHRwOi8vbG9jYWxob3N0OjgwMDAvYXBpL2F1dGgvbG9naW4iLCJpYXQiOjE2Njk3Mjk1MDksImV4cCI6MTY3MDMzNDMwOSwibmJmIjoxNjY5NzI5NTA5LCJqdGkiOiIwNDE4MVZLWHZTRFB0clRLIiwic3ViIjoiMiIsInBydiI6Ijg3ZTBhZjFlZjlmZDE1ODEyZmRlYzk3MTUzYTE0ZTBiMDQ3NTQ2YWEiLCJpZCI6MiwiZW1haWwiOiJqb3ZlcnRAZXhhbXBsZS5jb20iLCJuYW1lIjoiSm92ZXJ0IFBhbG9ucG9uIiwicm9sZSI6Im93bmVyIn0.DK99N65s114CP8_n-DRGpjGMrym8GyJlZxNzgnFEwq0
+Cache-Control:   no-cache
+Connection:      keep-alive
+Content-Length:  49
+Content-Type:    application/json
+Host:            localhost:8000
+Postman-Token:   4a8ad58a-4521-4bad-819b-d964c85ac7a1
+User-Agent:      PostmanRuntime/7.6.0
+
+{
+    "name":"invoicestatuse1",
+    "id":"6"
+} {"userId":2,"exception":"[object] (ErrorException(code: 0): Undefined variable: POST /api/invoicestatuse/delete HTTP/1.1
+
+Accept:          */*
+
+Accept-Encoding: gzip, deflate
+
+Authorization:   Bearer eyJ0eXAiOiJKV1QiLCJhbGciOiJIUzI1NiJ9.eyJpc3MiOiJodHRwOi8vbG9jYWxob3N0OjgwMDAvYXBpL2F1dGgvbG9naW4iLCJpYXQiOjE2Njk3Mjk1MDksImV4cCI6MTY3MDMzNDMwOSwibmJmIjoxNjY5NzI5NTA5LCJqdGkiOiIwNDE4MVZLWHZTRFB0clRLIiwic3ViIjoiMiIsInBydiI6Ijg3ZTBhZjFlZjlmZDE1ODEyZmRlYzk3MTUzYTE0ZTBiMDQ3NTQ2YWEiLCJpZCI6MiwiZW1haWwiOiJqb3ZlcnRAZXhhbXBsZS5jb20iLCJuYW1lIjoiSm92ZXJ0IFBhbG9ucG9uIiwicm9sZSI6Im93bmVyIn0.DK99N65s114CP8_n-DRGpjGMrym8GyJlZxNzgnFEwq0
+
+Cache-Control:   no-cache
+
+Connection:      keep-alive
+
+Content-Length:  49
+
+Content-Type:    application/json
+
+Host:            localhost:8000
+
+Postman-Token:   4a8ad58a-4521-4bad-819b-d964c85ac7a1
+
+User-Agent:      PostmanRuntime/7.6.0
+
+
+
+{
+
+    \"name\":\"invoicestatuse1\",
+
+    \"id\":\"6\"
+
+} at C:\\xampp\\htdocs\\New folder\\FrontBackLcc\\back\\app\\Http\\Controllers\\Crud\\InvoiceStatusController.php:92)
+[stacktrace]
+#0 C:\\xampp\\htdocs\\New folder\\FrontBackLcc\\back\\app\\Http\\Controllers\\Crud\\InvoiceStatusController.php(92): Illuminate\\Foundation\\Bootstrap\\HandleExceptions->handleError(8, 'Undefined varia...', 'C:\\\\xampp\\\\htdocs...', 92, Array)
+#1 C:\\xampp\\htdocs\\New folder\\FrontBackLcc\\back\\vendor\\laravel\\framework\\src\\Illuminate\\Routing\\Controller.php(54): App\\Http\\Controllers\\Crud\\InvoiceStatusController->destroy(Object(Illuminate\\Http\\Request))
+#2 C:\\xampp\\htdocs\\New folder\\FrontBackLcc\\back\\vendor\\laravel\\framework\\src\\Illuminate\\Routing\\ControllerDispatcher.php(45): Illuminate\\Routing\\Controller->callAction('destroy', Array)
+#3 C:\\xampp\\htdocs\\New folder\\FrontBackLcc\\back\\vendor\\laravel\\framework\\src\\Illuminate\\Routing\\Route.php(219): Illuminate\\Routing\\ControllerDispatcher->dispatch(Object(Illuminate\\Routing\\Route), Object(App\\Http\\Controllers\\Crud\\InvoiceStatusController), 'destroy')
+#4 C:\\xampp\\htdocs\\New folder\\FrontBackLcc\\back\\vendor\\laravel\\framework\\src\\Illuminate\\Routing\\Route.php(176): Illuminate\\Routing\\Route->runController()
+#5 C:\\xampp\\htdocs\\New folder\\FrontBackLcc\\back\\vendor\\laravel\\framework\\src\\Illuminate\\Routing\\Router.php(681): Illuminate\\Routing\\Route->run()
+#6 C:\\xampp\\htdocs\\New folder\\FrontBackLcc\\back\\vendor\\laravel\\framework\\src\\Illuminate\\Pipeline\\Pipeline.php(130): Illuminate\\Routing\\Router->Illuminate\\Routing\\{closure}(Object(Illuminate\\Http\\Request))
+#7 C:\\xampp\\htdocs\\New folder\\FrontBackLcc\\back\\vendor\\laravel\\framework\\src\\Illuminate\\Routing\\Middleware\\SubstituteBindings.php(41): Illuminate\\Pipeline\\Pipeline->Illuminate\\Pipeline\\{closure}(Object(Illuminate\\Http\\Request))
+#8 C:\\xampp\\htdocs\\New folder\\FrontBackLcc\\back\\vendor\\laravel\\framework\\src\\Illuminate\\Pipeline\\Pipeline.php(171): Illuminate\\Routing\\Middleware\\SubstituteBindings->handle(Object(Illuminate\\Http\\Request), Object(Closure))
+#9 C:\\xampp\\htdocs\\New folder\\FrontBackLcc\\back\\vendor\\laravel\\framework\\src\\Illuminate\\Routing\\Middleware\\ThrottleRequests.php(59): Illuminate\\Pipeline\\Pipeline->Illuminate\\Pipeline\\{closure}(Object(Illuminate\\Http\\Request))
+#10 C:\\xampp\\htdocs\\New folder\\FrontBackLcc\\back\\vendor\\laravel\\framework\\src\\Illuminate\\Pipeline\\Pipeline.php(171): Illuminate\\Routing\\Middleware\\ThrottleRequests->handle(Object(Illuminate\\Http\\Request), Object(Closure), 60, '1')
+#11 C:\\xampp\\htdocs\\New folder\\FrontBackLcc\\back\\app\\Http\\Middleware\\Cors.php(30): Illuminate\\Pipeline\\Pipeline->Illuminate\\Pipeline\\{closure}(Object(Illuminate\\Http\\Request))
+#12 C:\\xampp\\htdocs\\New folder\\FrontBackLcc\\back\\vendor\\laravel\\framework\\src\\Illuminate\\Pipeline\\Pipeline.php(171): App\\Http\\Middleware\\Cors->handle(Object(Illuminate\\Http\\Request), Object(Closure))
+#13 C:\\xampp\\htdocs\\New folder\\FrontBackLcc\\back\\vendor\\laravel\\framework\\src\\Illuminate\\Pipeline\\Pipeline.php(105): Illuminate\\Pipeline\\Pipeline->Illuminate\\Pipeline\\{closure}(Object(Illuminate\\Http\\Request))
+#14 C:\\xampp\\htdocs\\New folder\\FrontBackLcc\\back\\vendor\\laravel\\framework\\src\\Illuminate\\Routing\\Router.php(683): Illuminate\\Pipeline\\Pipeline->then(Object(Closure))
+#15 C:\\xampp\\htdocs\\New folder\\FrontBackLcc\\back\\vendor\\laravel\\framework\\src\\Illuminate\\Routing\\Router.php(658): Illuminate\\Routing\\Router->runRouteWithinStack(Object(Illuminate\\Routing\\Route), Object(Illuminate\\Http\\Request))
+#16 C:\\xampp\\htdocs\\New folder\\FrontBackLcc\\back\\vendor\\laravel\\framework\\src\\Illuminate\\Routing\\Router.php(624): Illuminate\\Routing\\Router->runRoute(Object(Illuminate\\Http\\Request), Object(Illuminate\\Routing\\Route))
+#17 C:\\xampp\\htdocs\\New folder\\FrontBackLcc\\back\\vendor\\laravel\\framework\\src\\Illuminate\\Routing\\Router.php(613): Illuminate\\Routing\\Router->dispatchToRoute(Object(Illuminate\\Http\\Request))
+#18 C:\\xampp\\htdocs\\New folder\\FrontBackLcc\\back\\vendor\\laravel\\framework\\src\\Illuminate\\Foundation\\Http\\Kernel.php(170): Illuminate\\Routing\\Router->dispatch(Object(Illuminate\\Http\\Request))
+#19 C:\\xampp\\htdocs\\New folder\\FrontBackLcc\\back\\vendor\\laravel\\framework\\src\\Illuminate\\Pipeline\\Pipeline.php(130): Illuminate\\Foundation\\Http\\Kernel->Illuminate\\Foundation\\Http\\{closure}(Object(Illuminate\\Http\\Request))
+#20 C:\\xampp\\htdocs\\New folder\\FrontBackLcc\\back\\app\\Http\\Middleware\\Cors.php(30): Illuminate\\Pipeline\\Pipeline->Illuminate\\Pipeline\\{closure}(Object(Illuminate\\Http\\Request))
+#21 C:\\xampp\\htdocs\\New folder\\FrontBackLcc\\back\\vendor\\laravel\\framework\\src\\Illuminate\\Pipeline\\Pipeline.php(171): App\\Http\\Middleware\\Cors->handle(Object(Illuminate\\Http\\Request), Object(Closure))
+#22 C:\\xampp\\htdocs\\New folder\\FrontBackLcc\\back\\vendor\\laravel\\framework\\src\\Illuminate\\Foundation\\Http\\Middleware\\TransformsRequest.php(21): Illuminate\\Pipeline\\Pipeline->Illuminate\\Pipeline\\{closure}(Object(Illuminate\\Http\\Request))
+#23 C:\\xampp\\htdocs\\New folder\\FrontBackLcc\\back\\vendor\\laravel\\framework\\src\\Illuminate\\Pipeline\\Pipeline.php(171): Illuminate\\Foundation\\Http\\Middleware\\TransformsRequest->handle(Object(Illuminate\\Http\\Request), Object(Closure))
+#24 C:\\xampp\\htdocs\\New folder\\FrontBackLcc\\back\\vendor\\laravel\\framework\\src\\Illuminate\\Foundation\\Http\\Middleware\\TransformsRequest.php(21): Illuminate\\Pipeline\\Pipeline->Illuminate\\Pipeline\\{closure}(Object(Illuminate\\Http\\Request))
+#25 C:\\xampp\\htdocs\\New folder\\FrontBackLcc\\back\\vendor\\laravel\\framework\\src\\Illuminate\\Pipeline\\Pipeline.php(171): Illuminate\\Foundation\\Http\\Middleware\\TransformsRequest->handle(Object(Illuminate\\Http\\Request), Object(Closure))
+#26 C:\\xampp\\htdocs\\New folder\\FrontBackLcc\\back\\vendor\\laravel\\framework\\src\\Illuminate\\Foundation\\Http\\Middleware\\ValidatePostSize.php(27): Illuminate\\Pipeline\\Pipeline->Illuminate\\Pipeline\\{closure}(Object(Illuminate\\Http\\Request))
+#27 C:\\xampp\\htdocs\\New folder\\FrontBackLcc\\back\\vendor\\laravel\\framework\\src\\Illuminate\\Pipeline\\Pipeline.php(171): Illuminate\\Foundation\\Http\\Middleware\\ValidatePostSize->handle(Object(Illuminate\\Http\\Request), Object(Closure))
+#28 C:\\xampp\\htdocs\\New folder\\FrontBackLcc\\back\\vendor\\laravel\\framework\\src\\Illuminate\\Foundation\\Http\\Middleware\\CheckForMaintenanceMode.php(63): Illuminate\\Pipeline\\Pipeline->Illuminate\\Pipeline\\{closure}(Object(Illuminate\\Http\\Request))
+#29 C:\\xampp\\htdocs\\New folder\\FrontBackLcc\\back\\vendor\\laravel\\framework\\src\\Illuminate\\Pipeline\\Pipeline.php(171): Illuminate\\Foundation\\Http\\Middleware\\CheckForMaintenanceMode->handle(Object(Illuminate\\Http\\Request), Object(Closure))
+#30 C:\\xampp\\htdocs\\New folder\\FrontBackLcc\\back\\vendor\\fideloper\\proxy\\src\\TrustProxies.php(57): Illuminate\\Pipeline\\Pipeline->Illuminate\\Pipeline\\{closure}(Object(Illuminate\\Http\\Request))
+#31 C:\\xampp\\htdocs\\New folder\\FrontBackLcc\\back\\vendor\\laravel\\framework\\src\\Illuminate\\Pipeline\\Pipeline.php(171): Fideloper\\Proxy\\TrustProxies->handle(Object(Illuminate\\Http\\Request), Object(Closure))
+#32 C:\\xampp\\htdocs\\New folder\\FrontBackLcc\\back\\vendor\\barryvdh\\laravel-cors\\src\\HandlePreflight.php(29): Illuminate\\Pipeline\\Pipeline->Illuminate\\Pipeline\\{closure}(Object(Illuminate\\Http\\Request))
+#33 C:\\xampp\\htdocs\\New folder\\FrontBackLcc\\back\\vendor\\laravel\\framework\\src\\Illuminate\\Pipeline\\Pipeline.php(171): Barryvdh\\Cors\\HandlePreflight->handle(Object(Illuminate\\Http\\Request), Object(Closure))
+#34 C:\\xampp\\htdocs\\New folder\\FrontBackLcc\\back\\vendor\\laravel\\framework\\src\\Illuminate\\Pipeline\\Pipeline.php(105): Illuminate\\Pipeline\\Pipeline->Illuminate\\Pipeline\\{closure}(Object(Illuminate\\Http\\Request))
+#35 C:\\xampp\\htdocs\\New folder\\FrontBackLcc\\back\\vendor\\laravel\\framework\\src\\Illuminate\\Foundation\\Http\\Kernel.php(145): Illuminate\\Pipeline\\Pipeline->then(Object(Closure))
+#36 C:\\xampp\\htdocs\\New folder\\FrontBackLcc\\back\\vendor\\laravel\\framework\\src\\Illuminate\\Foundation\\Http\\Kernel.php(110): Illuminate\\Foundation\\Http\\Kernel->sendRequestThroughRouter(Object(Illuminate\\Http\\Request))
+#37 C:\\xampp\\htdocs\\New folder\\FrontBackLcc\\back\\public\\index.php(55): Illuminate\\Foundation\\Http\\Kernel->handle(Object(Illuminate\\Http\\Request))
+#38 C:\\xampp\\htdocs\\New folder\\FrontBackLcc\\back\\server.php(21): require_once('C:\\\\xampp\\\\htdocs...')
+#39 {main}
+"} 
+[2022-12-04 19:37:35] local.ERROR: Undefined variable: POST /api/invoicestatuse/delete HTTP/1.1
+Accept:          */*
+Accept-Encoding: gzip, deflate
+Authorization:   Bearer eyJ0eXAiOiJKV1QiLCJhbGciOiJIUzI1NiJ9.eyJpc3MiOiJodHRwOi8vbG9jYWxob3N0OjgwMDAvYXBpL2F1dGgvbG9naW4iLCJpYXQiOjE2Njk3Mjk1MDksImV4cCI6MTY3MDMzNDMwOSwibmJmIjoxNjY5NzI5NTA5LCJqdGkiOiIwNDE4MVZLWHZTRFB0clRLIiwic3ViIjoiMiIsInBydiI6Ijg3ZTBhZjFlZjlmZDE1ODEyZmRlYzk3MTUzYTE0ZTBiMDQ3NTQ2YWEiLCJpZCI6MiwiZW1haWwiOiJqb3ZlcnRAZXhhbXBsZS5jb20iLCJuYW1lIjoiSm92ZXJ0IFBhbG9ucG9uIiwicm9sZSI6Im93bmVyIn0.DK99N65s114CP8_n-DRGpjGMrym8GyJlZxNzgnFEwq0
+Cache-Control:   no-cache
+Connection:      keep-alive
+Content-Length:  49
+Content-Type:    application/json
+Host:            localhost:8000
+Postman-Token:   3fd6ece6-0fe5-48bd-8366-035ad00fabf8
+User-Agent:      PostmanRuntime/7.6.0
+
+{
+    "name":"invoicestatuse1",
+    "id":"6"
+} {"userId":2,"exception":"[object] (ErrorException(code: 0): Undefined variable: POST /api/invoicestatuse/delete HTTP/1.1
+
+Accept:          */*
+
+Accept-Encoding: gzip, deflate
+
+Authorization:   Bearer eyJ0eXAiOiJKV1QiLCJhbGciOiJIUzI1NiJ9.eyJpc3MiOiJodHRwOi8vbG9jYWxob3N0OjgwMDAvYXBpL2F1dGgvbG9naW4iLCJpYXQiOjE2Njk3Mjk1MDksImV4cCI6MTY3MDMzNDMwOSwibmJmIjoxNjY5NzI5NTA5LCJqdGkiOiIwNDE4MVZLWHZTRFB0clRLIiwic3ViIjoiMiIsInBydiI6Ijg3ZTBhZjFlZjlmZDE1ODEyZmRlYzk3MTUzYTE0ZTBiMDQ3NTQ2YWEiLCJpZCI6MiwiZW1haWwiOiJqb3ZlcnRAZXhhbXBsZS5jb20iLCJuYW1lIjoiSm92ZXJ0IFBhbG9ucG9uIiwicm9sZSI6Im93bmVyIn0.DK99N65s114CP8_n-DRGpjGMrym8GyJlZxNzgnFEwq0
+
+Cache-Control:   no-cache
+
+Connection:      keep-alive
+
+Content-Length:  49
+
+Content-Type:    application/json
+
+Host:            localhost:8000
+
+Postman-Token:   3fd6ece6-0fe5-48bd-8366-035ad00fabf8
+
+User-Agent:      PostmanRuntime/7.6.0
+
+
+
+{
+
+    \"name\":\"invoicestatuse1\",
+
+    \"id\":\"6\"
+
+} at C:\\xampp\\htdocs\\New folder\\FrontBackLcc\\back\\app\\Http\\Controllers\\Crud\\InvoiceStatusController.php:92)
+[stacktrace]
+#0 C:\\xampp\\htdocs\\New folder\\FrontBackLcc\\back\\app\\Http\\Controllers\\Crud\\InvoiceStatusController.php(92): Illuminate\\Foundation\\Bootstrap\\HandleExceptions->handleError(8, 'Undefined varia...', 'C:\\\\xampp\\\\htdocs...', 92, Array)
+#1 C:\\xampp\\htdocs\\New folder\\FrontBackLcc\\back\\vendor\\laravel\\framework\\src\\Illuminate\\Routing\\Controller.php(54): App\\Http\\Controllers\\Crud\\InvoiceStatusController->destroy(Object(Illuminate\\Http\\Request))
+#2 C:\\xampp\\htdocs\\New folder\\FrontBackLcc\\back\\vendor\\laravel\\framework\\src\\Illuminate\\Routing\\ControllerDispatcher.php(45): Illuminate\\Routing\\Controller->callAction('destroy', Array)
+#3 C:\\xampp\\htdocs\\New folder\\FrontBackLcc\\back\\vendor\\laravel\\framework\\src\\Illuminate\\Routing\\Route.php(219): Illuminate\\Routing\\ControllerDispatcher->dispatch(Object(Illuminate\\Routing\\Route), Object(App\\Http\\Controllers\\Crud\\InvoiceStatusController), 'destroy')
+#4 C:\\xampp\\htdocs\\New folder\\FrontBackLcc\\back\\vendor\\laravel\\framework\\src\\Illuminate\\Routing\\Route.php(176): Illuminate\\Routing\\Route->runController()
+#5 C:\\xampp\\htdocs\\New folder\\FrontBackLcc\\back\\vendor\\laravel\\framework\\src\\Illuminate\\Routing\\Router.php(681): Illuminate\\Routing\\Route->run()
+#6 C:\\xampp\\htdocs\\New folder\\FrontBackLcc\\back\\vendor\\laravel\\framework\\src\\Illuminate\\Pipeline\\Pipeline.php(130): Illuminate\\Routing\\Router->Illuminate\\Routing\\{closure}(Object(Illuminate\\Http\\Request))
+#7 C:\\xampp\\htdocs\\New folder\\FrontBackLcc\\back\\vendor\\halpdesk\\zizaco-entrust-laravel-6.0\\src\\Entrust\\Middleware\\EntrustRole.php(48): Illuminate\\Pipeline\\Pipeline->Illuminate\\Pipeline\\{closure}(Object(Illuminate\\Http\\Request))
+#8 C:\\xampp\\htdocs\\New folder\\FrontBackLcc\\back\\vendor\\laravel\\framework\\src\\Illuminate\\Pipeline\\Pipeline.php(171): Zizaco\\Entrust\\Middleware\\EntrustRole->handle(Object(Illuminate\\Http\\Request), Object(Closure), Array)
+#9 C:\\xampp\\htdocs\\New folder\\FrontBackLcc\\back\\vendor\\laravel\\framework\\src\\Illuminate\\Routing\\Middleware\\SubstituteBindings.php(41): Illuminate\\Pipeline\\Pipeline->Illuminate\\Pipeline\\{closure}(Object(Illuminate\\Http\\Request))
+#10 C:\\xampp\\htdocs\\New folder\\FrontBackLcc\\back\\vendor\\laravel\\framework\\src\\Illuminate\\Pipeline\\Pipeline.php(171): Illuminate\\Routing\\Middleware\\SubstituteBindings->handle(Object(Illuminate\\Http\\Request), Object(Closure))
+#11 C:\\xampp\\htdocs\\New folder\\FrontBackLcc\\back\\vendor\\laravel\\framework\\src\\Illuminate\\Routing\\Middleware\\ThrottleRequests.php(59): Illuminate\\Pipeline\\Pipeline->Illuminate\\Pipeline\\{closure}(Object(Illuminate\\Http\\Request))
+#12 C:\\xampp\\htdocs\\New folder\\FrontBackLcc\\back\\vendor\\laravel\\framework\\src\\Illuminate\\Pipeline\\Pipeline.php(171): Illuminate\\Routing\\Middleware\\ThrottleRequests->handle(Object(Illuminate\\Http\\Request), Object(Closure), 60, '1')
+#13 C:\\xampp\\htdocs\\New folder\\FrontBackLcc\\back\\app\\Http\\Middleware\\Cors.php(30): Illuminate\\Pipeline\\Pipeline->Illuminate\\Pipeline\\{closure}(Object(Illuminate\\Http\\Request))
+#14 C:\\xampp\\htdocs\\New folder\\FrontBackLcc\\back\\vendor\\laravel\\framework\\src\\Illuminate\\Pipeline\\Pipeline.php(171): App\\Http\\Middleware\\Cors->handle(Object(Illuminate\\Http\\Request), Object(Closure))
+#15 C:\\xampp\\htdocs\\New folder\\FrontBackLcc\\back\\vendor\\laravel\\framework\\src\\Illuminate\\Pipeline\\Pipeline.php(105): Illuminate\\Pipeline\\Pipeline->Illuminate\\Pipeline\\{closure}(Object(Illuminate\\Http\\Request))
+#16 C:\\xampp\\htdocs\\New folder\\FrontBackLcc\\back\\vendor\\laravel\\framework\\src\\Illuminate\\Routing\\Router.php(683): Illuminate\\Pipeline\\Pipeline->then(Object(Closure))
+#17 C:\\xampp\\htdocs\\New folder\\FrontBackLcc\\back\\vendor\\laravel\\framework\\src\\Illuminate\\Routing\\Router.php(658): Illuminate\\Routing\\Router->runRouteWithinStack(Object(Illuminate\\Routing\\Route), Object(Illuminate\\Http\\Request))
+#18 C:\\xampp\\htdocs\\New folder\\FrontBackLcc\\back\\vendor\\laravel\\framework\\src\\Illuminate\\Routing\\Router.php(624): Illuminate\\Routing\\Router->runRoute(Object(Illuminate\\Http\\Request), Object(Illuminate\\Routing\\Route))
+#19 C:\\xampp\\htdocs\\New folder\\FrontBackLcc\\back\\vendor\\laravel\\framework\\src\\Illuminate\\Routing\\Router.php(613): Illuminate\\Routing\\Router->dispatchToRoute(Object(Illuminate\\Http\\Request))
+#20 C:\\xampp\\htdocs\\New folder\\FrontBackLcc\\back\\vendor\\laravel\\framework\\src\\Illuminate\\Foundation\\Http\\Kernel.php(170): Illuminate\\Routing\\Router->dispatch(Object(Illuminate\\Http\\Request))
+#21 C:\\xampp\\htdocs\\New folder\\FrontBackLcc\\back\\vendor\\laravel\\framework\\src\\Illuminate\\Pipeline\\Pipeline.php(130): Illuminate\\Foundation\\Http\\Kernel->Illuminate\\Foundation\\Http\\{closure}(Object(Illuminate\\Http\\Request))
+#22 C:\\xampp\\htdocs\\New folder\\FrontBackLcc\\back\\app\\Http\\Middleware\\Cors.php(30): Illuminate\\Pipeline\\Pipeline->Illuminate\\Pipeline\\{closure}(Object(Illuminate\\Http\\Request))
+#23 C:\\xampp\\htdocs\\New folder\\FrontBackLcc\\back\\vendor\\laravel\\framework\\src\\Illuminate\\Pipeline\\Pipeline.php(171): App\\Http\\Middleware\\Cors->handle(Object(Illuminate\\Http\\Request), Object(Closure))
+#24 C:\\xampp\\htdocs\\New folder\\FrontBackLcc\\back\\vendor\\laravel\\framework\\src\\Illuminate\\Foundation\\Http\\Middleware\\TransformsRequest.php(21): Illuminate\\Pipeline\\Pipeline->Illuminate\\Pipeline\\{closure}(Object(Illuminate\\Http\\Request))
+#25 C:\\xampp\\htdocs\\New folder\\FrontBackLcc\\back\\vendor\\laravel\\framework\\src\\Illuminate\\Pipeline\\Pipeline.php(171): Illuminate\\Foundation\\Http\\Middleware\\TransformsRequest->handle(Object(Illuminate\\Http\\Request), Object(Closure))
+#26 C:\\xampp\\htdocs\\New folder\\FrontBackLcc\\back\\vendor\\laravel\\framework\\src\\Illuminate\\Foundation\\Http\\Middleware\\TransformsRequest.php(21): Illuminate\\Pipeline\\Pipeline->Illuminate\\Pipeline\\{closure}(Object(Illuminate\\Http\\Request))
+#27 C:\\xampp\\htdocs\\New folder\\FrontBackLcc\\back\\vendor\\laravel\\framework\\src\\Illuminate\\Pipeline\\Pipeline.php(171): Illuminate\\Foundation\\Http\\Middleware\\TransformsRequest->handle(Object(Illuminate\\Http\\Request), Object(Closure))
+#28 C:\\xampp\\htdocs\\New folder\\FrontBackLcc\\back\\vendor\\laravel\\framework\\src\\Illuminate\\Foundation\\Http\\Middleware\\ValidatePostSize.php(27): Illuminate\\Pipeline\\Pipeline->Illuminate\\Pipeline\\{closure}(Object(Illuminate\\Http\\Request))
+#29 C:\\xampp\\htdocs\\New folder\\FrontBackLcc\\back\\vendor\\laravel\\framework\\src\\Illuminate\\Pipeline\\Pipeline.php(171): Illuminate\\Foundation\\Http\\Middleware\\ValidatePostSize->handle(Object(Illuminate\\Http\\Request), Object(Closure))
+#30 C:\\xampp\\htdocs\\New folder\\FrontBackLcc\\back\\vendor\\laravel\\framework\\src\\Illuminate\\Foundation\\Http\\Middleware\\CheckForMaintenanceMode.php(63): Illuminate\\Pipeline\\Pipeline->Illuminate\\Pipeline\\{closure}(Object(Illuminate\\Http\\Request))
+#31 C:\\xampp\\htdocs\\New folder\\FrontBackLcc\\back\\vendor\\laravel\\framework\\src\\Illuminate\\Pipeline\\Pipeline.php(171): Illuminate\\Foundation\\Http\\Middleware\\CheckForMaintenanceMode->handle(Object(Illuminate\\Http\\Request), Object(Closure))
+#32 C:\\xampp\\htdocs\\New folder\\FrontBackLcc\\back\\vendor\\fideloper\\proxy\\src\\TrustProxies.php(57): Illuminate\\Pipeline\\Pipeline->Illuminate\\Pipeline\\{closure}(Object(Illuminate\\Http\\Request))
+#33 C:\\xampp\\htdocs\\New folder\\FrontBackLcc\\back\\vendor\\laravel\\framework\\src\\Illuminate\\Pipeline\\Pipeline.php(171): Fideloper\\Proxy\\TrustProxies->handle(Object(Illuminate\\Http\\Request), Object(Closure))
+#34 C:\\xampp\\htdocs\\New folder\\FrontBackLcc\\back\\vendor\\barryvdh\\laravel-cors\\src\\HandlePreflight.php(29): Illuminate\\Pipeline\\Pipeline->Illuminate\\Pipeline\\{closure}(Object(Illuminate\\Http\\Request))
+#35 C:\\xampp\\htdocs\\New folder\\FrontBackLcc\\back\\vendor\\laravel\\framework\\src\\Illuminate\\Pipeline\\Pipeline.php(171): Barryvdh\\Cors\\HandlePreflight->handle(Object(Illuminate\\Http\\Request), Object(Closure))
+#36 C:\\xampp\\htdocs\\New folder\\FrontBackLcc\\back\\vendor\\laravel\\framework\\src\\Illuminate\\Pipeline\\Pipeline.php(105): Illuminate\\Pipeline\\Pipeline->Illuminate\\Pipeline\\{closure}(Object(Illuminate\\Http\\Request))
+#37 C:\\xampp\\htdocs\\New folder\\FrontBackLcc\\back\\vendor\\laravel\\framework\\src\\Illuminate\\Foundation\\Http\\Kernel.php(145): Illuminate\\Pipeline\\Pipeline->then(Object(Closure))
+#38 C:\\xampp\\htdocs\\New folder\\FrontBackLcc\\back\\vendor\\laravel\\framework\\src\\Illuminate\\Foundation\\Http\\Kernel.php(110): Illuminate\\Foundation\\Http\\Kernel->sendRequestThroughRouter(Object(Illuminate\\Http\\Request))
+#39 C:\\xampp\\htdocs\\New folder\\FrontBackLcc\\back\\public\\index.php(55): Illuminate\\Foundation\\Http\\Kernel->handle(Object(Illuminate\\Http\\Request))
+#40 C:\\xampp\\htdocs\\New folder\\FrontBackLcc\\back\\server.php(21): require_once('C:\\\\xampp\\\\htdocs...')
+#41 {main}
+"} 
+[2022-12-04 19:38:33] local.ERROR: Undefined variable: POST /api/invoicestatuse/delete HTTP/1.1
+Accept:          */*
+Accept-Encoding: gzip, deflate
+Authorization:   Bearer eyJ0eXAiOiJKV1QiLCJhbGciOiJIUzI1NiJ9.eyJpc3MiOiJodHRwOi8vbG9jYWxob3N0OjgwMDAvYXBpL2F1dGgvbG9naW4iLCJpYXQiOjE2Njk3Mjk1MDksImV4cCI6MTY3MDMzNDMwOSwibmJmIjoxNjY5NzI5NTA5LCJqdGkiOiIwNDE4MVZLWHZTRFB0clRLIiwic3ViIjoiMiIsInBydiI6Ijg3ZTBhZjFlZjlmZDE1ODEyZmRlYzk3MTUzYTE0ZTBiMDQ3NTQ2YWEiLCJpZCI6MiwiZW1haWwiOiJqb3ZlcnRAZXhhbXBsZS5jb20iLCJuYW1lIjoiSm92ZXJ0IFBhbG9ucG9uIiwicm9sZSI6Im93bmVyIn0.DK99N65s114CP8_n-DRGpjGMrym8GyJlZxNzgnFEwq0
+Cache-Control:   no-cache
+Connection:      keep-alive
+Content-Length:  49
+Content-Type:    application/json
+Host:            localhost:8000
+Postman-Token:   2bc606bf-c08b-441f-aa78-68e430ed7138
+User-Agent:      PostmanRuntime/7.6.0
+
+{
+    "name":"invoicestatuse1",
+    "id":"6"
+} {"userId":2,"exception":"[object] (ErrorException(code: 0): Undefined variable: POST /api/invoicestatuse/delete HTTP/1.1
+
+Accept:          */*
+
+Accept-Encoding: gzip, deflate
+
+Authorization:   Bearer eyJ0eXAiOiJKV1QiLCJhbGciOiJIUzI1NiJ9.eyJpc3MiOiJodHRwOi8vbG9jYWxob3N0OjgwMDAvYXBpL2F1dGgvbG9naW4iLCJpYXQiOjE2Njk3Mjk1MDksImV4cCI6MTY3MDMzNDMwOSwibmJmIjoxNjY5NzI5NTA5LCJqdGkiOiIwNDE4MVZLWHZTRFB0clRLIiwic3ViIjoiMiIsInBydiI6Ijg3ZTBhZjFlZjlmZDE1ODEyZmRlYzk3MTUzYTE0ZTBiMDQ3NTQ2YWEiLCJpZCI6MiwiZW1haWwiOiJqb3ZlcnRAZXhhbXBsZS5jb20iLCJuYW1lIjoiSm92ZXJ0IFBhbG9ucG9uIiwicm9sZSI6Im93bmVyIn0.DK99N65s114CP8_n-DRGpjGMrym8GyJlZxNzgnFEwq0
+
+Cache-Control:   no-cache
+
+Connection:      keep-alive
+
+Content-Length:  49
+
+Content-Type:    application/json
+
+Host:            localhost:8000
+
+Postman-Token:   2bc606bf-c08b-441f-aa78-68e430ed7138
+
+User-Agent:      PostmanRuntime/7.6.0
+
+
+
+{
+
+    \"name\":\"invoicestatuse1\",
+
+    \"id\":\"6\"
+
+} at C:\\xampp\\htdocs\\New folder\\FrontBackLcc\\back\\app\\Http\\Controllers\\Crud\\InvoiceStatusController.php:92)
+[stacktrace]
+#0 C:\\xampp\\htdocs\\New folder\\FrontBackLcc\\back\\app\\Http\\Controllers\\Crud\\InvoiceStatusController.php(92): Illuminate\\Foundation\\Bootstrap\\HandleExceptions->handleError(8, 'Undefined varia...', 'C:\\\\xampp\\\\htdocs...', 92, Array)
+#1 C:\\xampp\\htdocs\\New folder\\FrontBackLcc\\back\\vendor\\laravel\\framework\\src\\Illuminate\\Routing\\Controller.php(54): App\\Http\\Controllers\\Crud\\InvoiceStatusController->destroy(Object(Illuminate\\Http\\Request))
+#2 C:\\xampp\\htdocs\\New folder\\FrontBackLcc\\back\\vendor\\laravel\\framework\\src\\Illuminate\\Routing\\ControllerDispatcher.php(45): Illuminate\\Routing\\Controller->callAction('destroy', Array)
+#3 C:\\xampp\\htdocs\\New folder\\FrontBackLcc\\back\\vendor\\laravel\\framework\\src\\Illuminate\\Routing\\Route.php(219): Illuminate\\Routing\\ControllerDispatcher->dispatch(Object(Illuminate\\Routing\\Route), Object(App\\Http\\Controllers\\Crud\\InvoiceStatusController), 'destroy')
+#4 C:\\xampp\\htdocs\\New folder\\FrontBackLcc\\back\\vendor\\laravel\\framework\\src\\Illuminate\\Routing\\Route.php(176): Illuminate\\Routing\\Route->runController()
+#5 C:\\xampp\\htdocs\\New folder\\FrontBackLcc\\back\\vendor\\laravel\\framework\\src\\Illuminate\\Routing\\Router.php(681): Illuminate\\Routing\\Route->run()
+#6 C:\\xampp\\htdocs\\New folder\\FrontBackLcc\\back\\vendor\\laravel\\framework\\src\\Illuminate\\Pipeline\\Pipeline.php(130): Illuminate\\Routing\\Router->Illuminate\\Routing\\{closure}(Object(Illuminate\\Http\\Request))
+#7 C:\\xampp\\htdocs\\New folder\\FrontBackLcc\\back\\vendor\\halpdesk\\zizaco-entrust-laravel-6.0\\src\\Entrust\\Middleware\\EntrustRole.php(48): Illuminate\\Pipeline\\Pipeline->Illuminate\\Pipeline\\{closure}(Object(Illuminate\\Http\\Request))
+#8 C:\\xampp\\htdocs\\New folder\\FrontBackLcc\\back\\vendor\\laravel\\framework\\src\\Illuminate\\Pipeline\\Pipeline.php(171): Zizaco\\Entrust\\Middleware\\EntrustRole->handle(Object(Illuminate\\Http\\Request), Object(Closure), Array)
+#9 C:\\xampp\\htdocs\\New folder\\FrontBackLcc\\back\\vendor\\laravel\\framework\\src\\Illuminate\\Routing\\Middleware\\SubstituteBindings.php(41): Illuminate\\Pipeline\\Pipeline->Illuminate\\Pipeline\\{closure}(Object(Illuminate\\Http\\Request))
+#10 C:\\xampp\\htdocs\\New folder\\FrontBackLcc\\back\\vendor\\laravel\\framework\\src\\Illuminate\\Pipeline\\Pipeline.php(171): Illuminate\\Routing\\Middleware\\SubstituteBindings->handle(Object(Illuminate\\Http\\Request), Object(Closure))
+#11 C:\\xampp\\htdocs\\New folder\\FrontBackLcc\\back\\vendor\\laravel\\framework\\src\\Illuminate\\Routing\\Middleware\\ThrottleRequests.php(59): Illuminate\\Pipeline\\Pipeline->Illuminate\\Pipeline\\{closure}(Object(Illuminate\\Http\\Request))
+#12 C:\\xampp\\htdocs\\New folder\\FrontBackLcc\\back\\vendor\\laravel\\framework\\src\\Illuminate\\Pipeline\\Pipeline.php(171): Illuminate\\Routing\\Middleware\\ThrottleRequests->handle(Object(Illuminate\\Http\\Request), Object(Closure), 60, '1')
+#13 C:\\xampp\\htdocs\\New folder\\FrontBackLcc\\back\\app\\Http\\Middleware\\Cors.php(30): Illuminate\\Pipeline\\Pipeline->Illuminate\\Pipeline\\{closure}(Object(Illuminate\\Http\\Request))
+#14 C:\\xampp\\htdocs\\New folder\\FrontBackLcc\\back\\vendor\\laravel\\framework\\src\\Illuminate\\Pipeline\\Pipeline.php(171): App\\Http\\Middleware\\Cors->handle(Object(Illuminate\\Http\\Request), Object(Closure))
+#15 C:\\xampp\\htdocs\\New folder\\FrontBackLcc\\back\\vendor\\laravel\\framework\\src\\Illuminate\\Pipeline\\Pipeline.php(105): Illuminate\\Pipeline\\Pipeline->Illuminate\\Pipeline\\{closure}(Object(Illuminate\\Http\\Request))
+#16 C:\\xampp\\htdocs\\New folder\\FrontBackLcc\\back\\vendor\\laravel\\framework\\src\\Illuminate\\Routing\\Router.php(683): Illuminate\\Pipeline\\Pipeline->then(Object(Closure))
+#17 C:\\xampp\\htdocs\\New folder\\FrontBackLcc\\back\\vendor\\laravel\\framework\\src\\Illuminate\\Routing\\Router.php(658): Illuminate\\Routing\\Router->runRouteWithinStack(Object(Illuminate\\Routing\\Route), Object(Illuminate\\Http\\Request))
+#18 C:\\xampp\\htdocs\\New folder\\FrontBackLcc\\back\\vendor\\laravel\\framework\\src\\Illuminate\\Routing\\Router.php(624): Illuminate\\Routing\\Router->runRoute(Object(Illuminate\\Http\\Request), Object(Illuminate\\Routing\\Route))
+#19 C:\\xampp\\htdocs\\New folder\\FrontBackLcc\\back\\vendor\\laravel\\framework\\src\\Illuminate\\Routing\\Router.php(613): Illuminate\\Routing\\Router->dispatchToRoute(Object(Illuminate\\Http\\Request))
+#20 C:\\xampp\\htdocs\\New folder\\FrontBackLcc\\back\\vendor\\laravel\\framework\\src\\Illuminate\\Foundation\\Http\\Kernel.php(170): Illuminate\\Routing\\Router->dispatch(Object(Illuminate\\Http\\Request))
+#21 C:\\xampp\\htdocs\\New folder\\FrontBackLcc\\back\\vendor\\laravel\\framework\\src\\Illuminate\\Pipeline\\Pipeline.php(130): Illuminate\\Foundation\\Http\\Kernel->Illuminate\\Foundation\\Http\\{closure}(Object(Illuminate\\Http\\Request))
+#22 C:\\xampp\\htdocs\\New folder\\FrontBackLcc\\back\\app\\Http\\Middleware\\Cors.php(30): Illuminate\\Pipeline\\Pipeline->Illuminate\\Pipeline\\{closure}(Object(Illuminate\\Http\\Request))
+#23 C:\\xampp\\htdocs\\New folder\\FrontBackLcc\\back\\vendor\\laravel\\framework\\src\\Illuminate\\Pipeline\\Pipeline.php(171): App\\Http\\Middleware\\Cors->handle(Object(Illuminate\\Http\\Request), Object(Closure))
+#24 C:\\xampp\\htdocs\\New folder\\FrontBackLcc\\back\\vendor\\laravel\\framework\\src\\Illuminate\\Foundation\\Http\\Middleware\\TransformsRequest.php(21): Illuminate\\Pipeline\\Pipeline->Illuminate\\Pipeline\\{closure}(Object(Illuminate\\Http\\Request))
+#25 C:\\xampp\\htdocs\\New folder\\FrontBackLcc\\back\\vendor\\laravel\\framework\\src\\Illuminate\\Pipeline\\Pipeline.php(171): Illuminate\\Foundation\\Http\\Middleware\\TransformsRequest->handle(Object(Illuminate\\Http\\Request), Object(Closure))
+#26 C:\\xampp\\htdocs\\New folder\\FrontBackLcc\\back\\vendor\\laravel\\framework\\src\\Illuminate\\Foundation\\Http\\Middleware\\TransformsRequest.php(21): Illuminate\\Pipeline\\Pipeline->Illuminate\\Pipeline\\{closure}(Object(Illuminate\\Http\\Request))
+#27 C:\\xampp\\htdocs\\New folder\\FrontBackLcc\\back\\vendor\\laravel\\framework\\src\\Illuminate\\Pipeline\\Pipeline.php(171): Illuminate\\Foundation\\Http\\Middleware\\TransformsRequest->handle(Object(Illuminate\\Http\\Request), Object(Closure))
+#28 C:\\xampp\\htdocs\\New folder\\FrontBackLcc\\back\\vendor\\laravel\\framework\\src\\Illuminate\\Foundation\\Http\\Middleware\\ValidatePostSize.php(27): Illuminate\\Pipeline\\Pipeline->Illuminate\\Pipeline\\{closure}(Object(Illuminate\\Http\\Request))
+#29 C:\\xampp\\htdocs\\New folder\\FrontBackLcc\\back\\vendor\\laravel\\framework\\src\\Illuminate\\Pipeline\\Pipeline.php(171): Illuminate\\Foundation\\Http\\Middleware\\ValidatePostSize->handle(Object(Illuminate\\Http\\Request), Object(Closure))
+#30 C:\\xampp\\htdocs\\New folder\\FrontBackLcc\\back\\vendor\\laravel\\framework\\src\\Illuminate\\Foundation\\Http\\Middleware\\CheckForMaintenanceMode.php(63): Illuminate\\Pipeline\\Pipeline->Illuminate\\Pipeline\\{closure}(Object(Illuminate\\Http\\Request))
+#31 C:\\xampp\\htdocs\\New folder\\FrontBackLcc\\back\\vendor\\laravel\\framework\\src\\Illuminate\\Pipeline\\Pipeline.php(171): Illuminate\\Foundation\\Http\\Middleware\\CheckForMaintenanceMode->handle(Object(Illuminate\\Http\\Request), Object(Closure))
+#32 C:\\xampp\\htdocs\\New folder\\FrontBackLcc\\back\\vendor\\fideloper\\proxy\\src\\TrustProxies.php(57): Illuminate\\Pipeline\\Pipeline->Illuminate\\Pipeline\\{closure}(Object(Illuminate\\Http\\Request))
+#33 C:\\xampp\\htdocs\\New folder\\FrontBackLcc\\back\\vendor\\laravel\\framework\\src\\Illuminate\\Pipeline\\Pipeline.php(171): Fideloper\\Proxy\\TrustProxies->handle(Object(Illuminate\\Http\\Request), Object(Closure))
+#34 C:\\xampp\\htdocs\\New folder\\FrontBackLcc\\back\\vendor\\barryvdh\\laravel-cors\\src\\HandlePreflight.php(29): Illuminate\\Pipeline\\Pipeline->Illuminate\\Pipeline\\{closure}(Object(Illuminate\\Http\\Request))
+#35 C:\\xampp\\htdocs\\New folder\\FrontBackLcc\\back\\vendor\\laravel\\framework\\src\\Illuminate\\Pipeline\\Pipeline.php(171): Barryvdh\\Cors\\HandlePreflight->handle(Object(Illuminate\\Http\\Request), Object(Closure))
+#36 C:\\xampp\\htdocs\\New folder\\FrontBackLcc\\back\\vendor\\laravel\\framework\\src\\Illuminate\\Pipeline\\Pipeline.php(105): Illuminate\\Pipeline\\Pipeline->Illuminate\\Pipeline\\{closure}(Object(Illuminate\\Http\\Request))
+#37 C:\\xampp\\htdocs\\New folder\\FrontBackLcc\\back\\vendor\\laravel\\framework\\src\\Illuminate\\Foundation\\Http\\Kernel.php(145): Illuminate\\Pipeline\\Pipeline->then(Object(Closure))
+#38 C:\\xampp\\htdocs\\New folder\\FrontBackLcc\\back\\vendor\\laravel\\framework\\src\\Illuminate\\Foundation\\Http\\Kernel.php(110): Illuminate\\Foundation\\Http\\Kernel->sendRequestThroughRouter(Object(Illuminate\\Http\\Request))
+#39 C:\\xampp\\htdocs\\New folder\\FrontBackLcc\\back\\public\\index.php(55): Illuminate\\Foundation\\Http\\Kernel->handle(Object(Illuminate\\Http\\Request))
+#40 C:\\xampp\\htdocs\\New folder\\FrontBackLcc\\back\\server.php(21): require_once('C:\\\\xampp\\\\htdocs...')
+#41 {main}
+"} 
+[2022-12-04 19:39:00] local.ERROR: Undefined variable: POST /api/invoicestatuse/delete HTTP/1.1
+Accept:          */*
+Accept-Encoding: gzip, deflate
+Authorization:   Bearer eyJ0eXAiOiJKV1QiLCJhbGciOiJIUzI1NiJ9.eyJpc3MiOiJodHRwOi8vbG9jYWxob3N0OjgwMDAvYXBpL2F1dGgvbG9naW4iLCJpYXQiOjE2Njk3Mjk1MDksImV4cCI6MTY3MDMzNDMwOSwibmJmIjoxNjY5NzI5NTA5LCJqdGkiOiIwNDE4MVZLWHZTRFB0clRLIiwic3ViIjoiMiIsInBydiI6Ijg3ZTBhZjFlZjlmZDE1ODEyZmRlYzk3MTUzYTE0ZTBiMDQ3NTQ2YWEiLCJpZCI6MiwiZW1haWwiOiJqb3ZlcnRAZXhhbXBsZS5jb20iLCJuYW1lIjoiSm92ZXJ0IFBhbG9ucG9uIiwicm9sZSI6Im93bmVyIn0.DK99N65s114CP8_n-DRGpjGMrym8GyJlZxNzgnFEwq0
+Cache-Control:   no-cache
+Connection:      keep-alive
+Content-Length:  49
+Content-Type:    application/json
+Host:            localhost:8000
+Postman-Token:   0b8b5dc7-7911-4954-b7df-bd9da9e2143e
+User-Agent:      PostmanRuntime/7.6.0
+
+{
+    "name":"invoicestatuse1",
+    "id":"6"
+} {"userId":2,"exception":"[object] (ErrorException(code: 0): Undefined variable: POST /api/invoicestatuse/delete HTTP/1.1
+
+Accept:          */*
+
+Accept-Encoding: gzip, deflate
+
+Authorization:   Bearer eyJ0eXAiOiJKV1QiLCJhbGciOiJIUzI1NiJ9.eyJpc3MiOiJodHRwOi8vbG9jYWxob3N0OjgwMDAvYXBpL2F1dGgvbG9naW4iLCJpYXQiOjE2Njk3Mjk1MDksImV4cCI6MTY3MDMzNDMwOSwibmJmIjoxNjY5NzI5NTA5LCJqdGkiOiIwNDE4MVZLWHZTRFB0clRLIiwic3ViIjoiMiIsInBydiI6Ijg3ZTBhZjFlZjlmZDE1ODEyZmRlYzk3MTUzYTE0ZTBiMDQ3NTQ2YWEiLCJpZCI6MiwiZW1haWwiOiJqb3ZlcnRAZXhhbXBsZS5jb20iLCJuYW1lIjoiSm92ZXJ0IFBhbG9ucG9uIiwicm9sZSI6Im93bmVyIn0.DK99N65s114CP8_n-DRGpjGMrym8GyJlZxNzgnFEwq0
+
+Cache-Control:   no-cache
+
+Connection:      keep-alive
+
+Content-Length:  49
+
+Content-Type:    application/json
+
+Host:            localhost:8000
+
+Postman-Token:   0b8b5dc7-7911-4954-b7df-bd9da9e2143e
+
+User-Agent:      PostmanRuntime/7.6.0
+
+
+
+{
+
+    \"name\":\"invoicestatuse1\",
+
+    \"id\":\"6\"
+
+} at C:\\xampp\\htdocs\\New folder\\FrontBackLcc\\back\\app\\Http\\Controllers\\Crud\\InvoiceStatusController.php:92)
+[stacktrace]
+#0 C:\\xampp\\htdocs\\New folder\\FrontBackLcc\\back\\app\\Http\\Controllers\\Crud\\InvoiceStatusController.php(92): Illuminate\\Foundation\\Bootstrap\\HandleExceptions->handleError(8, 'Undefined varia...', 'C:\\\\xampp\\\\htdocs...', 92, Array)
+#1 C:\\xampp\\htdocs\\New folder\\FrontBackLcc\\back\\vendor\\laravel\\framework\\src\\Illuminate\\Routing\\Controller.php(54): App\\Http\\Controllers\\Crud\\InvoiceStatusController->destroy(Object(Illuminate\\Http\\Request))
+#2 C:\\xampp\\htdocs\\New folder\\FrontBackLcc\\back\\vendor\\laravel\\framework\\src\\Illuminate\\Routing\\ControllerDispatcher.php(45): Illuminate\\Routing\\Controller->callAction('destroy', Array)
+#3 C:\\xampp\\htdocs\\New folder\\FrontBackLcc\\back\\vendor\\laravel\\framework\\src\\Illuminate\\Routing\\Route.php(219): Illuminate\\Routing\\ControllerDispatcher->dispatch(Object(Illuminate\\Routing\\Route), Object(App\\Http\\Controllers\\Crud\\InvoiceStatusController), 'destroy')
+#4 C:\\xampp\\htdocs\\New folder\\FrontBackLcc\\back\\vendor\\laravel\\framework\\src\\Illuminate\\Routing\\Route.php(176): Illuminate\\Routing\\Route->runController()
+#5 C:\\xampp\\htdocs\\New folder\\FrontBackLcc\\back\\vendor\\laravel\\framework\\src\\Illuminate\\Routing\\Router.php(681): Illuminate\\Routing\\Route->run()
+#6 C:\\xampp\\htdocs\\New folder\\FrontBackLcc\\back\\vendor\\laravel\\framework\\src\\Illuminate\\Pipeline\\Pipeline.php(130): Illuminate\\Routing\\Router->Illuminate\\Routing\\{closure}(Object(Illuminate\\Http\\Request))
+#7 C:\\xampp\\htdocs\\New folder\\FrontBackLcc\\back\\vendor\\halpdesk\\zizaco-entrust-laravel-6.0\\src\\Entrust\\Middleware\\EntrustRole.php(48): Illuminate\\Pipeline\\Pipeline->Illuminate\\Pipeline\\{closure}(Object(Illuminate\\Http\\Request))
+#8 C:\\xampp\\htdocs\\New folder\\FrontBackLcc\\back\\vendor\\laravel\\framework\\src\\Illuminate\\Pipeline\\Pipeline.php(171): Zizaco\\Entrust\\Middleware\\EntrustRole->handle(Object(Illuminate\\Http\\Request), Object(Closure), Array)
+#9 C:\\xampp\\htdocs\\New folder\\FrontBackLcc\\back\\vendor\\laravel\\framework\\src\\Illuminate\\Routing\\Middleware\\SubstituteBindings.php(41): Illuminate\\Pipeline\\Pipeline->Illuminate\\Pipeline\\{closure}(Object(Illuminate\\Http\\Request))
+#10 C:\\xampp\\htdocs\\New folder\\FrontBackLcc\\back\\vendor\\laravel\\framework\\src\\Illuminate\\Pipeline\\Pipeline.php(171): Illuminate\\Routing\\Middleware\\SubstituteBindings->handle(Object(Illuminate\\Http\\Request), Object(Closure))
+#11 C:\\xampp\\htdocs\\New folder\\FrontBackLcc\\back\\vendor\\laravel\\framework\\src\\Illuminate\\Routing\\Middleware\\ThrottleRequests.php(59): Illuminate\\Pipeline\\Pipeline->Illuminate\\Pipeline\\{closure}(Object(Illuminate\\Http\\Request))
+#12 C:\\xampp\\htdocs\\New folder\\FrontBackLcc\\back\\vendor\\laravel\\framework\\src\\Illuminate\\Pipeline\\Pipeline.php(171): Illuminate\\Routing\\Middleware\\ThrottleRequests->handle(Object(Illuminate\\Http\\Request), Object(Closure), 60, '1')
+#13 C:\\xampp\\htdocs\\New folder\\FrontBackLcc\\back\\app\\Http\\Middleware\\Cors.php(30): Illuminate\\Pipeline\\Pipeline->Illuminate\\Pipeline\\{closure}(Object(Illuminate\\Http\\Request))
+#14 C:\\xampp\\htdocs\\New folder\\FrontBackLcc\\back\\vendor\\laravel\\framework\\src\\Illuminate\\Pipeline\\Pipeline.php(171): App\\Http\\Middleware\\Cors->handle(Object(Illuminate\\Http\\Request), Object(Closure))
+#15 C:\\xampp\\htdocs\\New folder\\FrontBackLcc\\back\\vendor\\laravel\\framework\\src\\Illuminate\\Pipeline\\Pipeline.php(105): Illuminate\\Pipeline\\Pipeline->Illuminate\\Pipeline\\{closure}(Object(Illuminate\\Http\\Request))
+#16 C:\\xampp\\htdocs\\New folder\\FrontBackLcc\\back\\vendor\\laravel\\framework\\src\\Illuminate\\Routing\\Router.php(683): Illuminate\\Pipeline\\Pipeline->then(Object(Closure))
+#17 C:\\xampp\\htdocs\\New folder\\FrontBackLcc\\back\\vendor\\laravel\\framework\\src\\Illuminate\\Routing\\Router.php(658): Illuminate\\Routing\\Router->runRouteWithinStack(Object(Illuminate\\Routing\\Route), Object(Illuminate\\Http\\Request))
+#18 C:\\xampp\\htdocs\\New folder\\FrontBackLcc\\back\\vendor\\laravel\\framework\\src\\Illuminate\\Routing\\Router.php(624): Illuminate\\Routing\\Router->runRoute(Object(Illuminate\\Http\\Request), Object(Illuminate\\Routing\\Route))
+#19 C:\\xampp\\htdocs\\New folder\\FrontBackLcc\\back\\vendor\\laravel\\framework\\src\\Illuminate\\Routing\\Router.php(613): Illuminate\\Routing\\Router->dispatchToRoute(Object(Illuminate\\Http\\Request))
+#20 C:\\xampp\\htdocs\\New folder\\FrontBackLcc\\back\\vendor\\laravel\\framework\\src\\Illuminate\\Foundation\\Http\\Kernel.php(170): Illuminate\\Routing\\Router->dispatch(Object(Illuminate\\Http\\Request))
+#21 C:\\xampp\\htdocs\\New folder\\FrontBackLcc\\back\\vendor\\laravel\\framework\\src\\Illuminate\\Pipeline\\Pipeline.php(130): Illuminate\\Foundation\\Http\\Kernel->Illuminate\\Foundation\\Http\\{closure}(Object(Illuminate\\Http\\Request))
+#22 C:\\xampp\\htdocs\\New folder\\FrontBackLcc\\back\\app\\Http\\Middleware\\Cors.php(30): Illuminate\\Pipeline\\Pipeline->Illuminate\\Pipeline\\{closure}(Object(Illuminate\\Http\\Request))
+#23 C:\\xampp\\htdocs\\New folder\\FrontBackLcc\\back\\vendor\\laravel\\framework\\src\\Illuminate\\Pipeline\\Pipeline.php(171): App\\Http\\Middleware\\Cors->handle(Object(Illuminate\\Http\\Request), Object(Closure))
+#24 C:\\xampp\\htdocs\\New folder\\FrontBackLcc\\back\\vendor\\laravel\\framework\\src\\Illuminate\\Foundation\\Http\\Middleware\\TransformsRequest.php(21): Illuminate\\Pipeline\\Pipeline->Illuminate\\Pipeline\\{closure}(Object(Illuminate\\Http\\Request))
+#25 C:\\xampp\\htdocs\\New folder\\FrontBackLcc\\back\\vendor\\laravel\\framework\\src\\Illuminate\\Pipeline\\Pipeline.php(171): Illuminate\\Foundation\\Http\\Middleware\\TransformsRequest->handle(Object(Illuminate\\Http\\Request), Object(Closure))
+#26 C:\\xampp\\htdocs\\New folder\\FrontBackLcc\\back\\vendor\\laravel\\framework\\src\\Illuminate\\Foundation\\Http\\Middleware\\TransformsRequest.php(21): Illuminate\\Pipeline\\Pipeline->Illuminate\\Pipeline\\{closure}(Object(Illuminate\\Http\\Request))
+#27 C:\\xampp\\htdocs\\New folder\\FrontBackLcc\\back\\vendor\\laravel\\framework\\src\\Illuminate\\Pipeline\\Pipeline.php(171): Illuminate\\Foundation\\Http\\Middleware\\TransformsRequest->handle(Object(Illuminate\\Http\\Request), Object(Closure))
+#28 C:\\xampp\\htdocs\\New folder\\FrontBackLcc\\back\\vendor\\laravel\\framework\\src\\Illuminate\\Foundation\\Http\\Middleware\\ValidatePostSize.php(27): Illuminate\\Pipeline\\Pipeline->Illuminate\\Pipeline\\{closure}(Object(Illuminate\\Http\\Request))
+#29 C:\\xampp\\htdocs\\New folder\\FrontBackLcc\\back\\vendor\\laravel\\framework\\src\\Illuminate\\Pipeline\\Pipeline.php(171): Illuminate\\Foundation\\Http\\Middleware\\ValidatePostSize->handle(Object(Illuminate\\Http\\Request), Object(Closure))
+#30 C:\\xampp\\htdocs\\New folder\\FrontBackLcc\\back\\vendor\\laravel\\framework\\src\\Illuminate\\Foundation\\Http\\Middleware\\CheckForMaintenanceMode.php(63): Illuminate\\Pipeline\\Pipeline->Illuminate\\Pipeline\\{closure}(Object(Illuminate\\Http\\Request))
+#31 C:\\xampp\\htdocs\\New folder\\FrontBackLcc\\back\\vendor\\laravel\\framework\\src\\Illuminate\\Pipeline\\Pipeline.php(171): Illuminate\\Foundation\\Http\\Middleware\\CheckForMaintenanceMode->handle(Object(Illuminate\\Http\\Request), Object(Closure))
+#32 C:\\xampp\\htdocs\\New folder\\FrontBackLcc\\back\\vendor\\fideloper\\proxy\\src\\TrustProxies.php(57): Illuminate\\Pipeline\\Pipeline->Illuminate\\Pipeline\\{closure}(Object(Illuminate\\Http\\Request))
+#33 C:\\xampp\\htdocs\\New folder\\FrontBackLcc\\back\\vendor\\laravel\\framework\\src\\Illuminate\\Pipeline\\Pipeline.php(171): Fideloper\\Proxy\\TrustProxies->handle(Object(Illuminate\\Http\\Request), Object(Closure))
+#34 C:\\xampp\\htdocs\\New folder\\FrontBackLcc\\back\\vendor\\barryvdh\\laravel-cors\\src\\HandlePreflight.php(29): Illuminate\\Pipeline\\Pipeline->Illuminate\\Pipeline\\{closure}(Object(Illuminate\\Http\\Request))
+#35 C:\\xampp\\htdocs\\New folder\\FrontBackLcc\\back\\vendor\\laravel\\framework\\src\\Illuminate\\Pipeline\\Pipeline.php(171): Barryvdh\\Cors\\HandlePreflight->handle(Object(Illuminate\\Http\\Request), Object(Closure))
+#36 C:\\xampp\\htdocs\\New folder\\FrontBackLcc\\back\\vendor\\laravel\\framework\\src\\Illuminate\\Pipeline\\Pipeline.php(105): Illuminate\\Pipeline\\Pipeline->Illuminate\\Pipeline\\{closure}(Object(Illuminate\\Http\\Request))
+#37 C:\\xampp\\htdocs\\New folder\\FrontBackLcc\\back\\vendor\\laravel\\framework\\src\\Illuminate\\Foundation\\Http\\Kernel.php(145): Illuminate\\Pipeline\\Pipeline->then(Object(Closure))
+#38 C:\\xampp\\htdocs\\New folder\\FrontBackLcc\\back\\vendor\\laravel\\framework\\src\\Illuminate\\Foundation\\Http\\Kernel.php(110): Illuminate\\Foundation\\Http\\Kernel->sendRequestThroughRouter(Object(Illuminate\\Http\\Request))
+#39 C:\\xampp\\htdocs\\New folder\\FrontBackLcc\\back\\public\\index.php(55): Illuminate\\Foundation\\Http\\Kernel->handle(Object(Illuminate\\Http\\Request))
+#40 C:\\xampp\\htdocs\\New folder\\FrontBackLcc\\back\\server.php(21): require_once('C:\\\\xampp\\\\htdocs...')
+#41 {main}
+"} 
+[2022-12-04 19:40:36] local.ERROR: Undefined variable: POST /api/invoicestatuse/delete HTTP/1.1
+Accept:          */*
+Accept-Encoding: gzip, deflate
+Authorization:   Bearer eyJ0eXAiOiJKV1QiLCJhbGciOiJIUzI1NiJ9.eyJpc3MiOiJodHRwOi8vbG9jYWxob3N0OjgwMDAvYXBpL2F1dGgvbG9naW4iLCJpYXQiOjE2Njk3Mjk1MDksImV4cCI6MTY3MDMzNDMwOSwibmJmIjoxNjY5NzI5NTA5LCJqdGkiOiIwNDE4MVZLWHZTRFB0clRLIiwic3ViIjoiMiIsInBydiI6Ijg3ZTBhZjFlZjlmZDE1ODEyZmRlYzk3MTUzYTE0ZTBiMDQ3NTQ2YWEiLCJpZCI6MiwiZW1haWwiOiJqb3ZlcnRAZXhhbXBsZS5jb20iLCJuYW1lIjoiSm92ZXJ0IFBhbG9ucG9uIiwicm9sZSI6Im93bmVyIn0.DK99N65s114CP8_n-DRGpjGMrym8GyJlZxNzgnFEwq0
+Cache-Control:   no-cache
+Connection:      keep-alive
+Content-Length:  49
+Content-Type:    application/json
+Host:            localhost:8000
+Postman-Token:   6592ad99-5f9d-4efb-b7b5-72277cff2740
+User-Agent:      PostmanRuntime/7.6.0
+
+{
+    "name":"invoicestatuse1",
+    "id":"6"
+} {"userId":2,"exception":"[object] (ErrorException(code: 0): Undefined variable: POST /api/invoicestatuse/delete HTTP/1.1
+
+Accept:          */*
+
+Accept-Encoding: gzip, deflate
+
+Authorization:   Bearer eyJ0eXAiOiJKV1QiLCJhbGciOiJIUzI1NiJ9.eyJpc3MiOiJodHRwOi8vbG9jYWxob3N0OjgwMDAvYXBpL2F1dGgvbG9naW4iLCJpYXQiOjE2Njk3Mjk1MDksImV4cCI6MTY3MDMzNDMwOSwibmJmIjoxNjY5NzI5NTA5LCJqdGkiOiIwNDE4MVZLWHZTRFB0clRLIiwic3ViIjoiMiIsInBydiI6Ijg3ZTBhZjFlZjlmZDE1ODEyZmRlYzk3MTUzYTE0ZTBiMDQ3NTQ2YWEiLCJpZCI6MiwiZW1haWwiOiJqb3ZlcnRAZXhhbXBsZS5jb20iLCJuYW1lIjoiSm92ZXJ0IFBhbG9ucG9uIiwicm9sZSI6Im93bmVyIn0.DK99N65s114CP8_n-DRGpjGMrym8GyJlZxNzgnFEwq0
+
+Cache-Control:   no-cache
+
+Connection:      keep-alive
+
+Content-Length:  49
+
+Content-Type:    application/json
+
+Host:            localhost:8000
+
+Postman-Token:   6592ad99-5f9d-4efb-b7b5-72277cff2740
+
+User-Agent:      PostmanRuntime/7.6.0
+
+
+
+{
+
+    \"name\":\"invoicestatuse1\",
+
+    \"id\":\"6\"
+
+} at C:\\xampp\\htdocs\\New folder\\FrontBackLcc\\back\\app\\Http\\Controllers\\Crud\\InvoiceStatusController.php:92)
+[stacktrace]
+#0 C:\\xampp\\htdocs\\New folder\\FrontBackLcc\\back\\app\\Http\\Controllers\\Crud\\InvoiceStatusController.php(92): Illuminate\\Foundation\\Bootstrap\\HandleExceptions->handleError(8, 'Undefined varia...', 'C:\\\\xampp\\\\htdocs...', 92, Array)
+#1 C:\\xampp\\htdocs\\New folder\\FrontBackLcc\\back\\vendor\\laravel\\framework\\src\\Illuminate\\Routing\\Controller.php(54): App\\Http\\Controllers\\Crud\\InvoiceStatusController->destroy(Object(Illuminate\\Http\\Request))
+#2 C:\\xampp\\htdocs\\New folder\\FrontBackLcc\\back\\vendor\\laravel\\framework\\src\\Illuminate\\Routing\\ControllerDispatcher.php(45): Illuminate\\Routing\\Controller->callAction('destroy', Array)
+#3 C:\\xampp\\htdocs\\New folder\\FrontBackLcc\\back\\vendor\\laravel\\framework\\src\\Illuminate\\Routing\\Route.php(219): Illuminate\\Routing\\ControllerDispatcher->dispatch(Object(Illuminate\\Routing\\Route), Object(App\\Http\\Controllers\\Crud\\InvoiceStatusController), 'destroy')
+#4 C:\\xampp\\htdocs\\New folder\\FrontBackLcc\\back\\vendor\\laravel\\framework\\src\\Illuminate\\Routing\\Route.php(176): Illuminate\\Routing\\Route->runController()
+#5 C:\\xampp\\htdocs\\New folder\\FrontBackLcc\\back\\vendor\\laravel\\framework\\src\\Illuminate\\Routing\\Router.php(681): Illuminate\\Routing\\Route->run()
+#6 C:\\xampp\\htdocs\\New folder\\FrontBackLcc\\back\\vendor\\laravel\\framework\\src\\Illuminate\\Pipeline\\Pipeline.php(130): Illuminate\\Routing\\Router->Illuminate\\Routing\\{closure}(Object(Illuminate\\Http\\Request))
+#7 C:\\xampp\\htdocs\\New folder\\FrontBackLcc\\back\\vendor\\halpdesk\\zizaco-entrust-laravel-6.0\\src\\Entrust\\Middleware\\EntrustRole.php(48): Illuminate\\Pipeline\\Pipeline->Illuminate\\Pipeline\\{closure}(Object(Illuminate\\Http\\Request))
+#8 C:\\xampp\\htdocs\\New folder\\FrontBackLcc\\back\\vendor\\laravel\\framework\\src\\Illuminate\\Pipeline\\Pipeline.php(171): Zizaco\\Entrust\\Middleware\\EntrustRole->handle(Object(Illuminate\\Http\\Request), Object(Closure), Array)
+#9 C:\\xampp\\htdocs\\New folder\\FrontBackLcc\\back\\vendor\\laravel\\framework\\src\\Illuminate\\Routing\\Middleware\\SubstituteBindings.php(41): Illuminate\\Pipeline\\Pipeline->Illuminate\\Pipeline\\{closure}(Object(Illuminate\\Http\\Request))
+#10 C:\\xampp\\htdocs\\New folder\\FrontBackLcc\\back\\vendor\\laravel\\framework\\src\\Illuminate\\Pipeline\\Pipeline.php(171): Illuminate\\Routing\\Middleware\\SubstituteBindings->handle(Object(Illuminate\\Http\\Request), Object(Closure))
+#11 C:\\xampp\\htdocs\\New folder\\FrontBackLcc\\back\\vendor\\laravel\\framework\\src\\Illuminate\\Routing\\Middleware\\ThrottleRequests.php(59): Illuminate\\Pipeline\\Pipeline->Illuminate\\Pipeline\\{closure}(Object(Illuminate\\Http\\Request))
+#12 C:\\xampp\\htdocs\\New folder\\FrontBackLcc\\back\\vendor\\laravel\\framework\\src\\Illuminate\\Pipeline\\Pipeline.php(171): Illuminate\\Routing\\Middleware\\ThrottleRequests->handle(Object(Illuminate\\Http\\Request), Object(Closure), 60, '1')
+#13 C:\\xampp\\htdocs\\New folder\\FrontBackLcc\\back\\app\\Http\\Middleware\\Cors.php(30): Illuminate\\Pipeline\\Pipeline->Illuminate\\Pipeline\\{closure}(Object(Illuminate\\Http\\Request))
+#14 C:\\xampp\\htdocs\\New folder\\FrontBackLcc\\back\\vendor\\laravel\\framework\\src\\Illuminate\\Pipeline\\Pipeline.php(171): App\\Http\\Middleware\\Cors->handle(Object(Illuminate\\Http\\Request), Object(Closure))
+#15 C:\\xampp\\htdocs\\New folder\\FrontBackLcc\\back\\vendor\\laravel\\framework\\src\\Illuminate\\Pipeline\\Pipeline.php(105): Illuminate\\Pipeline\\Pipeline->Illuminate\\Pipeline\\{closure}(Object(Illuminate\\Http\\Request))
+#16 C:\\xampp\\htdocs\\New folder\\FrontBackLcc\\back\\vendor\\laravel\\framework\\src\\Illuminate\\Routing\\Router.php(683): Illuminate\\Pipeline\\Pipeline->then(Object(Closure))
+#17 C:\\xampp\\htdocs\\New folder\\FrontBackLcc\\back\\vendor\\laravel\\framework\\src\\Illuminate\\Routing\\Router.php(658): Illuminate\\Routing\\Router->runRouteWithinStack(Object(Illuminate\\Routing\\Route), Object(Illuminate\\Http\\Request))
+#18 C:\\xampp\\htdocs\\New folder\\FrontBackLcc\\back\\vendor\\laravel\\framework\\src\\Illuminate\\Routing\\Router.php(624): Illuminate\\Routing\\Router->runRoute(Object(Illuminate\\Http\\Request), Object(Illuminate\\Routing\\Route))
+#19 C:\\xampp\\htdocs\\New folder\\FrontBackLcc\\back\\vendor\\laravel\\framework\\src\\Illuminate\\Routing\\Router.php(613): Illuminate\\Routing\\Router->dispatchToRoute(Object(Illuminate\\Http\\Request))
+#20 C:\\xampp\\htdocs\\New folder\\FrontBackLcc\\back\\vendor\\laravel\\framework\\src\\Illuminate\\Foundation\\Http\\Kernel.php(170): Illuminate\\Routing\\Router->dispatch(Object(Illuminate\\Http\\Request))
+#21 C:\\xampp\\htdocs\\New folder\\FrontBackLcc\\back\\vendor\\laravel\\framework\\src\\Illuminate\\Pipeline\\Pipeline.php(130): Illuminate\\Foundation\\Http\\Kernel->Illuminate\\Foundation\\Http\\{closure}(Object(Illuminate\\Http\\Request))
+#22 C:\\xampp\\htdocs\\New folder\\FrontBackLcc\\back\\app\\Http\\Middleware\\Cors.php(30): Illuminate\\Pipeline\\Pipeline->Illuminate\\Pipeline\\{closure}(Object(Illuminate\\Http\\Request))
+#23 C:\\xampp\\htdocs\\New folder\\FrontBackLcc\\back\\vendor\\laravel\\framework\\src\\Illuminate\\Pipeline\\Pipeline.php(171): App\\Http\\Middleware\\Cors->handle(Object(Illuminate\\Http\\Request), Object(Closure))
+#24 C:\\xampp\\htdocs\\New folder\\FrontBackLcc\\back\\vendor\\laravel\\framework\\src\\Illuminate\\Foundation\\Http\\Middleware\\TransformsRequest.php(21): Illuminate\\Pipeline\\Pipeline->Illuminate\\Pipeline\\{closure}(Object(Illuminate\\Http\\Request))
+#25 C:\\xampp\\htdocs\\New folder\\FrontBackLcc\\back\\vendor\\laravel\\framework\\src\\Illuminate\\Pipeline\\Pipeline.php(171): Illuminate\\Foundation\\Http\\Middleware\\TransformsRequest->handle(Object(Illuminate\\Http\\Request), Object(Closure))
+#26 C:\\xampp\\htdocs\\New folder\\FrontBackLcc\\back\\vendor\\laravel\\framework\\src\\Illuminate\\Foundation\\Http\\Middleware\\TransformsRequest.php(21): Illuminate\\Pipeline\\Pipeline->Illuminate\\Pipeline\\{closure}(Object(Illuminate\\Http\\Request))
+#27 C:\\xampp\\htdocs\\New folder\\FrontBackLcc\\back\\vendor\\laravel\\framework\\src\\Illuminate\\Pipeline\\Pipeline.php(171): Illuminate\\Foundation\\Http\\Middleware\\TransformsRequest->handle(Object(Illuminate\\Http\\Request), Object(Closure))
+#28 C:\\xampp\\htdocs\\New folder\\FrontBackLcc\\back\\vendor\\laravel\\framework\\src\\Illuminate\\Foundation\\Http\\Middleware\\ValidatePostSize.php(27): Illuminate\\Pipeline\\Pipeline->Illuminate\\Pipeline\\{closure}(Object(Illuminate\\Http\\Request))
+#29 C:\\xampp\\htdocs\\New folder\\FrontBackLcc\\back\\vendor\\laravel\\framework\\src\\Illuminate\\Pipeline\\Pipeline.php(171): Illuminate\\Foundation\\Http\\Middleware\\ValidatePostSize->handle(Object(Illuminate\\Http\\Request), Object(Closure))
+#30 C:\\xampp\\htdocs\\New folder\\FrontBackLcc\\back\\vendor\\laravel\\framework\\src\\Illuminate\\Foundation\\Http\\Middleware\\CheckForMaintenanceMode.php(63): Illuminate\\Pipeline\\Pipeline->Illuminate\\Pipeline\\{closure}(Object(Illuminate\\Http\\Request))
+#31 C:\\xampp\\htdocs\\New folder\\FrontBackLcc\\back\\vendor\\laravel\\framework\\src\\Illuminate\\Pipeline\\Pipeline.php(171): Illuminate\\Foundation\\Http\\Middleware\\CheckForMaintenanceMode->handle(Object(Illuminate\\Http\\Request), Object(Closure))
+#32 C:\\xampp\\htdocs\\New folder\\FrontBackLcc\\back\\vendor\\fideloper\\proxy\\src\\TrustProxies.php(57): Illuminate\\Pipeline\\Pipeline->Illuminate\\Pipeline\\{closure}(Object(Illuminate\\Http\\Request))
+#33 C:\\xampp\\htdocs\\New folder\\FrontBackLcc\\back\\vendor\\laravel\\framework\\src\\Illuminate\\Pipeline\\Pipeline.php(171): Fideloper\\Proxy\\TrustProxies->handle(Object(Illuminate\\Http\\Request), Object(Closure))
+#34 C:\\xampp\\htdocs\\New folder\\FrontBackLcc\\back\\vendor\\barryvdh\\laravel-cors\\src\\HandlePreflight.php(29): Illuminate\\Pipeline\\Pipeline->Illuminate\\Pipeline\\{closure}(Object(Illuminate\\Http\\Request))
+#35 C:\\xampp\\htdocs\\New folder\\FrontBackLcc\\back\\vendor\\laravel\\framework\\src\\Illuminate\\Pipeline\\Pipeline.php(171): Barryvdh\\Cors\\HandlePreflight->handle(Object(Illuminate\\Http\\Request), Object(Closure))
+#36 C:\\xampp\\htdocs\\New folder\\FrontBackLcc\\back\\vendor\\laravel\\framework\\src\\Illuminate\\Pipeline\\Pipeline.php(105): Illuminate\\Pipeline\\Pipeline->Illuminate\\Pipeline\\{closure}(Object(Illuminate\\Http\\Request))
+#37 C:\\xampp\\htdocs\\New folder\\FrontBackLcc\\back\\vendor\\laravel\\framework\\src\\Illuminate\\Foundation\\Http\\Kernel.php(145): Illuminate\\Pipeline\\Pipeline->then(Object(Closure))
+#38 C:\\xampp\\htdocs\\New folder\\FrontBackLcc\\back\\vendor\\laravel\\framework\\src\\Illuminate\\Foundation\\Http\\Kernel.php(110): Illuminate\\Foundation\\Http\\Kernel->sendRequestThroughRouter(Object(Illuminate\\Http\\Request))
+#39 C:\\xampp\\htdocs\\New folder\\FrontBackLcc\\back\\public\\index.php(55): Illuminate\\Foundation\\Http\\Kernel->handle(Object(Illuminate\\Http\\Request))
+#40 C:\\xampp\\htdocs\\New folder\\FrontBackLcc\\back\\server.php(21): require_once('C:\\\\xampp\\\\htdocs...')
+#41 {main}
+"} 
+[2022-12-04 19:41:24] local.INFO: Broadcasting [newLogs] on channels [private-logs] with payload:
+{
+    "logActivity": {
+        "id": 44,
+        "organisation_id": 1,
+        "subject": "Jovert Palonpona supprim\u00e9 une Intermediateinvoicestatuse1",
+        "url": "http:\/\/localhost:8000\/api\/invoicestatuse\/delete",
+        "method": "POST",
+        "ip": "127.0.0.1",
+        "agent": "PostmanRuntime\/7.6.0",
+        "user_id": 2,
+        "user_name": null,
+        "created_at": "2022-12-04 19:41:24",
+        "updated_at": "2022-12-04 19:41:24"
+    },
+    "socket": null
+}  
+[2022-12-04 19:41:50] local.INFO: Broadcasting [newLogs] on channels [private-logs] with payload:
+{
+    "logActivity": {
+        "id": 45,
+        "organisation_id": 1,
+        "subject": "Jovert Palonpona supprim\u00e9 une Intermediateinvoicestatuse1",
+        "url": "http:\/\/localhost:8000\/api\/invoicestatuse\/delete",
+        "method": "POST",
+        "ip": "127.0.0.1",
+        "agent": "PostmanRuntime\/7.6.0",
+        "user_id": 2,
+        "user_name": null,
+        "created_at": "2022-12-04 19:41:50",
+        "updated_at": "2022-12-04 19:41:50"
+    },
+    "socket": null
+}  
+[2022-12-04 19:46:35] local.INFO: Broadcasting [newLogs] on channels [private-logs] with payload:
+{
+    "logActivity": {
+        "id": 46,
+        "organisation_id": 1,
+        "subject": "Jovert Palonpona cr\u00e9e une TypesChangetypescharge1",
+        "url": "http:\/\/localhost:8000\/api\/typescharge\/save",
+        "method": "POST",
+        "ip": "127.0.0.1",
+        "agent": "PostmanRuntime\/7.6.0",
+        "user_id": 2,
+        "user_name": null,
+        "created_at": "2022-12-04 19:46:35",
+        "updated_at": "2022-12-04 19:46:35"
+    },
+    "socket": null
+}  
+[2022-12-04 19:46:46] local.INFO: Broadcasting [newLogs] on channels [private-logs] with payload:
+{
+    "logActivity": {
+        "id": 47,
+        "organisation_id": 1,
+        "subject": "Jovert Palonpona cr\u00e9e une TypesChangetypescharge1",
+        "url": "http:\/\/localhost:8000\/api\/typescharge\/save",
+        "method": "POST",
+        "ip": "127.0.0.1",
+        "agent": "PostmanRuntime\/7.6.0",
+        "user_id": 2,
+        "user_name": null,
+        "created_at": "2022-12-04 19:46:46",
+        "updated_at": "2022-12-04 19:46:46"
+    },
+    "socket": null
+}  
+[2022-12-04 19:46:47] local.INFO: Broadcasting [newLogs] on channels [private-logs] with payload:
+{
+    "logActivity": {
+        "id": 48,
+        "organisation_id": 1,
+        "subject": "Jovert Palonpona cr\u00e9e une TypesChangetypescharge1",
+        "url": "http:\/\/localhost:8000\/api\/typescharge\/save",
+        "method": "POST",
+        "ip": "127.0.0.1",
+        "agent": "PostmanRuntime\/7.6.0",
+        "user_id": 2,
+        "user_name": null,
+        "created_at": "2022-12-04 19:46:47",
+        "updated_at": "2022-12-04 19:46:47"
+    },
+    "socket": null
+}  
+[2022-12-04 19:46:49] local.INFO: Broadcasting [newLogs] on channels [private-logs] with payload:
+{
+    "logActivity": {
+        "id": 49,
+        "organisation_id": 1,
+        "subject": "Jovert Palonpona cr\u00e9e une TypesChangetypescharge1",
+        "url": "http:\/\/localhost:8000\/api\/typescharge\/save",
+        "method": "POST",
+        "ip": "127.0.0.1",
+        "agent": "PostmanRuntime\/7.6.0",
+        "user_id": 2,
+        "user_name": null,
+        "created_at": "2022-12-04 19:46:49",
+        "updated_at": "2022-12-04 19:46:49"
+    },
+    "socket": null
+}  
+[2022-12-04 19:46:50] local.INFO: Broadcasting [newLogs] on channels [private-logs] with payload:
+{
+    "logActivity": {
+        "id": 50,
+        "organisation_id": 1,
+        "subject": "Jovert Palonpona cr\u00e9e une TypesChangetypescharge1",
+        "url": "http:\/\/localhost:8000\/api\/typescharge\/save",
+        "method": "POST",
+        "ip": "127.0.0.1",
+        "agent": "PostmanRuntime\/7.6.0",
+        "user_id": 2,
+        "user_name": null,
+        "created_at": "2022-12-04 19:46:50",
+        "updated_at": "2022-12-04 19:46:50"
+    },
+    "socket": null
+}  
+[2022-12-04 19:46:51] local.INFO: Broadcasting [newLogs] on channels [private-logs] with payload:
+{
+    "logActivity": {
+        "id": 51,
+        "organisation_id": 1,
+        "subject": "Jovert Palonpona cr\u00e9e une TypesChangetypescharge1",
+        "url": "http:\/\/localhost:8000\/api\/typescharge\/save",
+        "method": "POST",
+        "ip": "127.0.0.1",
+        "agent": "PostmanRuntime\/7.6.0",
+        "user_id": 2,
+        "user_name": null,
+        "created_at": "2022-12-04 19:46:51",
+        "updated_at": "2022-12-04 19:46:51"
+    },
+    "socket": null
+}  
+[2022-12-04 19:46:52] local.INFO: Broadcasting [newLogs] on channels [private-logs] with payload:
+{
+    "logActivity": {
+        "id": 52,
+        "organisation_id": 1,
+        "subject": "Jovert Palonpona cr\u00e9e une TypesChangetypescharge1",
+        "url": "http:\/\/localhost:8000\/api\/typescharge\/save",
+        "method": "POST",
+        "ip": "127.0.0.1",
+        "agent": "PostmanRuntime\/7.6.0",
+        "user_id": 2,
+        "user_name": null,
+        "created_at": "2022-12-04 19:46:52",
+        "updated_at": "2022-12-04 19:46:52"
+    },
+    "socket": null
+}  
+[2022-12-04 19:46:54] local.INFO: Broadcasting [newLogs] on channels [private-logs] with payload:
+{
+    "logActivity": {
+        "id": 53,
+        "organisation_id": 1,
+        "subject": "Jovert Palonpona cr\u00e9e une TypesChangetypescharge1",
+        "url": "http:\/\/localhost:8000\/api\/typescharge\/save",
+        "method": "POST",
+        "ip": "127.0.0.1",
+        "agent": "PostmanRuntime\/7.6.0",
+        "user_id": 2,
+        "user_name": null,
+        "created_at": "2022-12-04 19:46:54",
+        "updated_at": "2022-12-04 19:46:54"
+    },
+    "socket": null
+}  
+[2022-12-04 19:46:55] local.INFO: Broadcasting [newLogs] on channels [private-logs] with payload:
+{
+    "logActivity": {
+        "id": 54,
+        "organisation_id": 1,
+        "subject": "Jovert Palonpona cr\u00e9e une TypesChangetypescharge1",
+        "url": "http:\/\/localhost:8000\/api\/typescharge\/save",
+        "method": "POST",
+        "ip": "127.0.0.1",
+        "agent": "PostmanRuntime\/7.6.0",
+        "user_id": 2,
+        "user_name": null,
+        "created_at": "2022-12-04 19:46:55",
+        "updated_at": "2022-12-04 19:46:55"
+    },
+    "socket": null
+}  
+[2022-12-04 19:51:33] local.INFO: Broadcasting [newLogs] on channels [private-logs] with payload:
+{
+    "logActivity": {
+        "id": 55,
+        "organisation_id": 1,
+        "subject": "Jovert Palonpona modifi\u00e9 une TypesChangetypescharge1",
+        "url": "http:\/\/localhost:8000\/api\/typescharge\/update\/7",
+        "method": "POST",
+        "ip": "127.0.0.1",
+        "agent": "PostmanRuntime\/7.6.0",
+        "user_id": 2,
+        "user_name": null,
+        "created_at": "2022-12-04 19:51:33",
+        "updated_at": "2022-12-04 19:51:33"
+    },
+    "socket": null
+}  
+[2022-12-04 19:51:43] local.INFO: Broadcasting [newLogs] on channels [private-logs] with payload:
+{
+    "logActivity": {
+        "id": 56,
+        "organisation_id": 1,
+        "subject": "Jovert Palonpona modifi\u00e9 une TypesChangesaida",
+        "url": "http:\/\/localhost:8000\/api\/typescharge\/update\/7",
+        "method": "POST",
+        "ip": "127.0.0.1",
+        "agent": "PostmanRuntime\/7.6.0",
+        "user_id": 2,
+        "user_name": null,
+        "created_at": "2022-12-04 19:51:43",
+        "updated_at": "2022-12-04 19:51:43"
+    },
+    "socket": null
+}  
+[2022-12-04 19:51:55] local.INFO: Broadcasting [newLogs] on channels [private-logs] with payload:
+{
+    "logActivity": {
+        "id": 57,
+        "organisation_id": 1,
+        "subject": "Jovert Palonpona modifi\u00e9 une TypesChangeMohammed",
+        "url": "http:\/\/localhost:8000\/api\/typescharge\/update\/7",
+        "method": "POST",
+        "ip": "127.0.0.1",
+        "agent": "PostmanRuntime\/7.6.0",
+        "user_id": 2,
+        "user_name": null,
+        "created_at": "2022-12-04 19:51:55",
+        "updated_at": "2022-12-04 19:51:55"
+    },
+    "socket": null
+}  
+[2022-12-04 20:58:45] local.INFO: Broadcasting [newLogs] on channels [private-logs] with payload:
+{
+    "logActivity": {
+        "id": 58,
+        "organisation_id": 1,
+        "subject": "Jovert Palonpona supprim\u00e9 une TypesChangeMohammed",
+        "url": "http:\/\/localhost:8000\/api\/typescharge\/delete",
+        "method": "GET",
+        "ip": "127.0.0.1",
+        "agent": "PostmanRuntime\/7.6.0",
+        "user_id": 2,
+        "user_name": null,
+        "created_at": "2022-12-04 20:58:45",
+        "updated_at": "2022-12-04 20:58:45"
+    },
+    "socket": null
+}  

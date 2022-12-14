@@ -17,7 +17,7 @@ class InvoiceStatusService implements IInvoiceStatusService
     }
     public function save($request)
     {
-        $invoiceStatus=$this->iInvoiceStatusRepository->save($request->all());
+        $invoiceStatus=$this->iInvoiceStatusRepository->save($request);
         if(!is_null($invoiceStatus)){
             $subject = LogsEnumConst::Add . LogsEnumConst::InvoiceStatus . $invoiceStatus->name;
             $logs = new LogActivity();
@@ -50,14 +50,18 @@ class InvoiceStatusService implements IInvoiceStatusService
     }
     public function destroy($request)
     {
-        $res= $this->iInvoiceStatusRepository->destroy($request['id']);
-        if($res === 0 || is_null($res)){
-            return false;
+        $getModel = $this->show($request->id);
+        if(is_null($getModel)){
+            return null;
+        }
+        $res= $this->iInvoiceStatusRepository->destroy($getModel,$request);
+        if($res === false){
+            return null;
         }else{
-            $subject = LogsEnumConst::Delete . LogsEnumConst::Intermediate . $request['Name'];
+            $subject = LogsEnumConst::Delete . LogsEnumConst::Intermediate . $request->name;
             $logs = new LogActivity();
             $logs->addToLog($subject, $request);
+            return $getModel;
         }
-        return true;
     }
 }

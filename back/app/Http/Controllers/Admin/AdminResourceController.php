@@ -10,7 +10,7 @@ use App\Services\Role\IRoleService;
 use App\Services\User\IUserService;
 use Carbon\Carbon;
 use Illuminate\Http\Request;
-use App\Http\Requests\Auth\PaginationRequest;
+use App\Http\Requests\Pagination\PaginationRequest;
 use Illuminate\Support\Facades\Validator;
 
 class AdminResourceController extends Controller

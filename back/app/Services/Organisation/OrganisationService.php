@@ -16,7 +16,7 @@ class OrganisationService implements IOrganisationService
     {
         $this->organisationRepo=$organisationRepo;
         $this->iSaveFileService=$iSaveFileService;
-        $this->organisation_id = Auth::User()->organisation_id;
+        $this->organisation_id = 3;
     }
 
     public function getAllOrganisation($req)

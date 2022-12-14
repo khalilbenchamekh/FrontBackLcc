@@ -16,7 +16,6 @@ class AffaireNatureRequest extends FormRequest
         return [
             'Name' => ['required','string','min:4','max:255','distinct','unique:App\Models\AffaireNature'],
             'Abr_v' => ['string','max:3'],
-            'organisation_id'=>["required","integer"]
         ];
     }
 }

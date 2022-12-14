@@ -4,7 +4,7 @@ namespace App\Http\Controllers\Admin;
 
 use App\Http\Controllers\Controller;
 use App\Http\Requests\Admin\MissionRequest;
-use App\Http\Requests\Auth\PaginationRequest;
+use App\Http\Requests\Pagination\PaginationRequest;
 use Illuminate\Http\Request;
 use App\Response\Mission\MissionResponse;
 use App\Response\Mission\MissionsResponse;

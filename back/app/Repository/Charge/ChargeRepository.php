@@ -9,7 +9,7 @@ use App\Repository\Log\LogTrait;
 use Illuminate\Support\Facades\Auth;
 use Illuminate\Support\Facades\DB;
 
-class ChargeRpository implements IChargeRpository
+class ChargeRepository implements IChargeRpository
 {
     use LogTrait;
     private $organisation_id;
@@ -33,22 +33,24 @@ class ChargeRpository implements IChargeRpository
     public function store($request)
     {
         try {
+            // dd($request->input('unite') && $request->input('unite'));
             $charges = new Charges();
-            $charges->typeSchargeId = $request->input('typeSchargeId');
-            $charges->invoiceStatusId = $request->input('invoiceStatus_id');
-            $charges->others = $request->input('others');
-            $charges->observation = $request->input('observation');
-            $charges->desi = $request->input('desi');
-            $charges->date_fac = $request->input('date_fac');
-            $charges->date_pai = $request->input('date_pai');
-            $charges->date_del = $request->input('date_del');
-            $charges->unite = $request->input('unite');
-            $charges->num_quit = $request->input('num_quit');
-            $charges->archive = $request->input('archive');
-            $charges->isPayed = $request->input('isPayed');
-            $charges->reste = $request->input('reste');
-            $charges->avence = $request->input('avence');
-            $charges->somme_due = $request->input('somme_due');
+            $charges->organisation_id =$this->organisation_id;
+            $charges->typeSchargeId =$request->input('typeSchargeId') && $request->input('typeSchargeId');
+            $charges->invoiceStatusId =$request->input('invoiceStatus_id') && $request->input('invoiceStatus_id');
+            $charges->others =$request->input('others') && $request->input('others');
+            $charges->observation =$request->input('observation') && $request->input('observation');
+            $charges->desi =$request->input('desi') && $request->input('desi');
+            $charges->date_fac =$request->input('date_fac') && $request->input('date_fac');
+            $charges->date_pai =$request->input('date_pai') && $request->input('date_pai');
+            $charges->date_del =$request->input('date_del') && $request->input('date_del');
+            $charges->unite =$request->input('unite') && $request->input('unite');
+            $charges->num_quit =$request->input('num_quit') && $request->input('num_quit');
+            $charges->archive =$request->input('archive') && $request->input('archive');
+            $charges->isPayed =$request->input('isPayed') && $request->input('isPayed');
+            $charges->reste =$request->input('reste')&& $request->input('reste');
+            $charges->avence =$request->input('avence') && $request->input('avence');
+            $charges->somme_due =$request->input('somme_due') && $request->input('somme_due');
             $in = InvoiceStatus::find($request->input('invoiceStatus_id'));
             $ty = TypesCharge::find($request->input('typeSchargeId'));
             $charges->invoiceStatus()->associate($in);
@@ -56,6 +58,7 @@ class ChargeRpository implements IChargeRpository
             $charges->save();
             return $charges;
         }catch (\Exception $exception){
+            dd($exception->getMessage());
             $this->Log($exception);
             return null;
         }
@@ -75,7 +78,7 @@ class ChargeRpository implements IChargeRpository
     {
         try {
             $prevElem->update($data->all());
-            $subject = LogsEnumConst::Update . LogsEnumConst::Cadastral .$data['REQ_TIT'];
+            $subject = LogsEnumConst::Update . LogsEnumConst::Charge .$data['REQ_TIT'];
             $logs = new LogActivity();
             $logs->addToLog($subject, $data);
             return $prevElem;

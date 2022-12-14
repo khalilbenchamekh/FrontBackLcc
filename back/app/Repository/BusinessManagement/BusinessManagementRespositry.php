@@ -11,7 +11,7 @@ class BusinessManagementRespositry implements IBusinessManagementRespositry
     private $organisation_id;
     public function __construct()
     {
-        $this->organisation_id = Auth::user()->organisation_id;
+        $this->organisation_id = 3;
     }
     public function index($request)
     {

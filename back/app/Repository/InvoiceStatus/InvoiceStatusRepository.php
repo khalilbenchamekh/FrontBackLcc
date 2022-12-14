@@ -10,15 +10,17 @@ class InvoiceStatusRepository implements IInvoiceStatusRepository
     private $organisation_id;
     public function __construct()
     {
-        $this->organisation_id = Auth::User()->organisation_id;
+        $this->organisation_id = Auth::user()->organisation_id;
     }
     public function save($request)
     {
         try {
             //code...
+            $data = $request->all();
+
             $intermediate= new InvoiceStatus();
             $intermediate->organisation_id=$this->organisation_id;
-            $intermediate->name=$request['name'];
+            $intermediate->name=$data['name'];
 
             $intermediate->save();
 
@@ -31,10 +33,11 @@ class InvoiceStatusRepository implements IInvoiceStatusRepository
     public function index($request)
     {
         try {
+            $data = $request->all();
             return InvoiceStatus::
                 select()
                 ->where("organisation_id","=",$this->organisation_id)
-                ->paginate($request['limit'],['*'],'page',$request['page']);
+                ->paginate($data['limit'],['*'],'page',$data['page']);
         }catch (\Exception $exception){
             $this->Log($exception);
             return null;
@@ -66,12 +69,10 @@ class InvoiceStatusRepository implements IInvoiceStatusRepository
             return null;
         }
     }
-    public function destroy($id)
+    public function destroy($model,$id)
     {
         try {
-            return  InvoiceStatus::where("id","=",$id)
-            ->where("organisation_id",'=',$this->organisation_id)
-            ->destroy();
+            return $model->delete();
         } catch (\Exception $exception) {
              $this->Log($exception);
              return null;

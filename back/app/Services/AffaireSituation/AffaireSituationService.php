@@ -16,7 +16,7 @@ class AffaireSituationService implements IAffaireSituationService
     public function index($request,$order=null)
     {
         // TODO: Implement index() method.
-        return $this->affaireSituationRepository->index($request);
+        return $this->affaireSituationRepository->index($request,$order);
     }
 
     public function get($id)
@@ -34,7 +34,7 @@ class AffaireSituationService implements IAffaireSituationService
             $logs = new LogActivity();
             $logs->addToLog($subject, $data);
         }
-        return null;
+        return $res;
     }
 
     public function delete($request)
@@ -46,19 +46,37 @@ class AffaireSituationService implements IAffaireSituationService
             $subject = LogsEnumConst::Delete . LogsEnumConst::BusinessSituation . $request['Name'];
             $logs = new LogActivity();
             $logs->addToLog($subject, $request);
+            return $res;
         }
-        return true;
     }
 
     public function store($data)
     {
         // TODO: Implement store() method.
-        return $this->affaireSituationRepository->store($data);
+        return $this->affaireSituationRepository->store($data->all());
     }
 
     public function storeMany($data)
     {
         // TODO: Implement storeMany() method.
         return $this->affaireSituationRepository->storeMany($data);
+    }
+
+    public function validName ($data)
+    {
+        $goodArray = [];
+        $badArray = [];
+        $count = count($data);
+
+        for ($i=0; $i < $count; $i++) {
+            # code...
+            $el = $data[$i];
+            if(!in_array($el['Name'],$goodArray)){
+                array_push($goodArray, $el['Name']);
+            }else{
+                array_push($badArray,$el['Name']." is duplicated");
+            }
+        }
+        return $badArray;
     }
 }

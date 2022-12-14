@@ -35,7 +35,7 @@ class AffaireNatureRepository implements IAffaireNatureRepository
             $affireNature->organisation_id =$this->organisation_id;
             $affireNature->save();
             return $affireNature;
-        }catch (\Exception $exception){dd($exception->getMessage());
+        }catch (\Exception $exception){
             $this->Log($exception);
             return null;
         }
@@ -57,9 +57,8 @@ class AffaireNatureRepository implements IAffaireNatureRepository
     {
         // TODO: Implement get() method.
         try {
-            return AffaireNature::where("id","=",$id)
-                ->where("organisation_id",'=',$this->organisation_id)
-                ->get();
+            return AffaireNature::where("organisation_id",'=',$this->organisation_id)
+                ->find($id);
         }catch (\Exception $exception){
             $this->Log($exception);
             return null;
@@ -102,19 +101,21 @@ class AffaireNatureRepository implements IAffaireNatureRepository
     {
         # code...
         try{
-            for ($i=0; $i<count($data) ; $i++) {
+            $newdata =$data->all()['affaires'];
+            for ($i=0; $i<count($newdata) ; $i++) {
                 # code...
                 $affairenature=new AffaireNature();
-                $el=$data[$i];
+                $el=$newdata[$i];
+                $abr_v = empty($el['Abr_v']) ? substr($el['Name'], 0, 3) : $el['Abr_v'];
                 $affairenature->Name = $el['Name'];
-                $affairenature->Abr_v = $el['Abr_v'];
+                $affairenature->Abr_v = $abr_v;
                 $affairenature->organisation_id=$this->organisation_id;
                 $affairenature->save();
                 $subject = LogsEnumConst::Add . LogsEnumConst::BusinessNature . $el['Name'];
                 $logs = new LogActivity();
                 $logs->addToLog($subject, $data);
             }
-            return $data;
+            return $newdata;
         }catch(\Exception $exception){
             $this->Log($exception);
             return null;

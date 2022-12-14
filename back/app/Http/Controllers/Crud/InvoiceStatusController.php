@@ -3,7 +3,7 @@
 namespace App\Http\Controllers\Crud;
 
 use App\Http\Controllers\Controller;
-use App\Http\Requests\Auth\PaginationRequest;
+use App\Http\Requests\Pagination\PaginationRequest;
 use App\Http\Requests\Crud\InvoiceStatusRequest;
 use App\Models\InvoiceStatus;
 use App\Response\InvoiceStatus\InvoicesStatusResponse;
@@ -32,7 +32,7 @@ class InvoiceStatusController extends Controller
     {
         $res = $this->iInvoiceStatusService->index($request);
         if($res instanceof LengthAwarePaginator){
-            $response = InvoicesStatusResponse::make($res->all());
+            $response = InvoicesStatusResponse::make($res);
             return response()->json([
                 "data"=>$response,
                 'countPage'=>$response->perPage(),
@@ -84,14 +84,17 @@ class InvoiceStatusController extends Controller
     {
         $validator = Validator::make($request->all(),[
             "id"=>["required","integer"],
-            "Name"=>["required","string"],
+            "name"=>["required","string"],
         ]);
             if($validator->fails()){
                 return response()->json(["error"=>$validator->errors()],Response::HTTP_BAD_REQUEST);
             }
             $res=$this->iInvoiceStatusService->destroy($request);
             if(!is_null($res) ){
-                return response()->json(['data' => $res], Response::HTTP_NO_CONTENT);
+                $response= InvoiceStatusResponse::make($res);
+                return response()->json([
+                    "data"=>$response
+                ],Response::HTTP_OK);
            }
            return response()->json(['error'=>"Bad Request"],Response::HTTP_BAD_REQUEST);
     }

@@ -11,7 +11,7 @@ class FeesRepository implements IFeesRepository
     private $organisation_id;
     public function __construct()
     {
-        $this->organisation_id = Auth::User()->organisation_id;
+        $this->organisation_id = 3;
     }
 
     public function getFolderTechFees($request)
@@ -119,7 +119,6 @@ class FeesRepository implements IFeesRepository
     {}
     public function updateBusinessFees($fees,$request,$busines_mang_id)
     {
-        dd('res');
         try{
             $price = $request->input('price');
             $observation = $request->input('observation');

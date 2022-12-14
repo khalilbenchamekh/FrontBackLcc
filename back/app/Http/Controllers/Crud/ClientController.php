@@ -2,13 +2,12 @@
 
 namespace App\Http\Controllers\Crud;
 
-use App\Helpers\LogActivity;
+
 use App\Http\Controllers\Controller;
-use App\Http\Requests\Auth\PaginationRequest;
+use App\Http\Requests\Pagination\PaginationRequest;
 use App\Http\Requests\Crud\ClientParticularRequest;
 use App\Http\Requests\Crud\ClientRequest;
 use App\Http\Requests\Crud\ClientUpdateRequest;
-use App\Models\Client;
 use App\Response\Client\ClientParticularResponse;
 use App\Response\Client\ClientsResponse;
 use App\Response\Client\ClientResponse;

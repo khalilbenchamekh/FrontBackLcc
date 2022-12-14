@@ -7,5 +7,5 @@ interface IInvoiceStatusRepository
     public function index($request);
     public function show($id);
     public function update(InvoiceStatus $folderTech,$request);
-    public function destroy($intermediate);
+    public function destroy(InvoiceStatus $model,$intermediate);
 }

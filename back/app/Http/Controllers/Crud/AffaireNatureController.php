@@ -1,10 +1,10 @@
 <?php
 namespace App\Http\Controllers\Crud;
 use App\Http\Controllers\Controller;
-use App\Http\Requests\Auth\PaginationRequest;
 use App\Http\Requests\Crud\AffaireNatureArrayRequest;
 use App\Http\Requests\Crud\AffaireNatureRequest;
 use App\Http\Requests\Enums\OperationChoice;
+use App\Http\Requests\Pagination\PaginationRequest;
 use App\Models\AffaireNature;
 use App\Response\AffaireNature\AffaireNatureResponse;
 use App\Response\AffaireNature\AllAffaireNatureResponse;
@@ -20,17 +20,18 @@ class AffaireNatureController extends Controller
     public function __construct(IAffaireNatureService $affaireNatureService)
     {
         $this->affaireNatureService=$affaireNatureService;
-        $this->middleware('role:affairenatures_create|owner|admin', ['only' => ['store']]);
-        $this->middleware('role:affairenatures_edit|owner|admin', ['only' => ['update']]);
-        $this->middleware('role:affairenatures_read|owner|admin', ['only' => ['index']]);
-       $this->middleware('role:affairenatures_delete|owner|admin', ['only' => ['destroy']]);
+    //     $this->middleware('role:affairenatures_create|owner|admin', ['only' => ['store']]);
+    //     $this->middleware('role:affairenatures_edit|owner|admin', ['only' => ['update']]);
+    //     $this->middleware('role:affairenatures_read|owner|admin', ['only' => ['index']]);
+    //    $this->middleware('role:affairenatures_delete|owner|admin', ['only' => ['destroy']]);
     }
 
     public function index(PaginationRequest $request)
     {
         $affairenatures=$this->affaireNatureService->getAllAffaireNature($request);
+
         if($affairenatures instanceof  LengthAwarePaginator ){
-            $response= AllAffaireNatureResponse::make($affairenatures->items());
+            $response= AllAffaireNatureResponse::make($affairenatures->all());
             return response()->json([
                 'data'=>$response,
                 'total'=>$affairenatures->total(),
@@ -46,7 +47,7 @@ class AffaireNatureController extends Controller
 
     public function store(AffaireNatureRequest $request)
     {
-        $affaireNature=$this->affaireNatureService->store($request->all());
+        $affaireNature=$this->affaireNatureService->store($request);
         if($affaireNature === true){
             return response()->json(['error'=>"Name exist"],Response::HTTP_BAD_REQUEST);
         }
@@ -70,7 +71,7 @@ class AffaireNatureController extends Controller
 
     public function edit($id,AffaireNatureRequest $request)
     {
-        $affaireNature=$this->affaireNatureService->edit($id,$request->all());
+        $affaireNature=$this->affaireNatureService->edit($id,$request);
         if($affaireNature===true){
             return response()->json(['errors'=>"Name exist"],Response::HTTP_BAD_REQUEST);
         }
@@ -83,28 +84,28 @@ class AffaireNatureController extends Controller
 
     public function storeMany(AffaireNatureArrayRequest $request)
     {
-        $saveManyAffaires= $this->affaireNatureService->saveMany($request->all());
+        $saveManyAffaires= $this->affaireNatureService->saveMany($request);
         return response()->json(["data"=>$saveManyAffaires],Response::HTTP_CREATED);
     }
 
-    private function treatment(Request $request, String $choice, $extera)
-    {
-        if ($choice == OperationChoice::SAVE) {
-            $response = $this->affaireNatureService->store($request);
-            $affairenature= AffaireNatureResponse::make($response);
-        }
-        if ($choice == OperationChoice::UPDATE) {
-            $response = $this->affaireNatureService->edit($extera,$request);
-            $affairenature= AffaireNatureResponse::make($response);
-        }
-        if ($choice == OperationChoice::MULTIPLE) {
-            $affaires = $request->all();
-            $response = $this->affaireNatureService->saveMany($affaires);
-            $affairenature= AllAffaireNatureResponse::make($response->items());
-        }
+    // private function treatment(Request $request, String $choice, $extera)
+    // {
+    //     if ($choice == OperationChoice::SAVE) {
+    //         $response = $this->affaireNatureService->store($request);
+    //         $affairenature= AffaireNatureResponse::make($response);
+    //     }
+    //     if ($choice == OperationChoice::UPDATE) {
+    //         $response = $this->affaireNatureService->edit($extera,$request);
+    //         $affairenature= AffaireNatureResponse::make($response);
+    //     }
+    //     if ($choice == OperationChoice::MULTIPLE) {
+    //         $affaires = $request->all();
+    //         $response = $this->affaireNatureService->saveMany($affaires);
+    //         $affairenature= AllAffaireNatureResponse::make($response->items());
+    //     }
 
-        return response(['data' => $affairenature], $choice === OperationChoice::SAVE ? 201 : 200);
-    }
+    //     return response(['data' => $affairenature], $choice === OperationChoice::SAVE ? 201 : 200);
+    // }
 
     public function show($id)
     {
@@ -116,11 +117,11 @@ class AffaireNatureController extends Controller
          return response()->json(['error'=>"Bad Requedt"],Response::HTTP_BAD_REQUEST);
     }
 
-    public function update(AffaireNatureRequest $request, $id)
-    {
-        $operation = OperationChoice::UPDATE;
-        return $this->treatment($request, $operation, $id);
-    }
+    // public function update(AffaireNatureRequest $request, $id)
+    // {
+    //     $operation = OperationChoice::UPDATE;
+    //     return $this->treatment($request, $operation, $id);
+    // }
 
     public function destroy(Request $request)
     {
@@ -133,7 +134,8 @@ class AffaireNatureController extends Controller
         }
         $res=$this->affaireNatureService->destroy($request);
         if(!is_null($res) ){
-             return response()->json(['data' => $res], Response::HTTP_NO_CONTENT);
+            $response= AffaireNatureResponse::make($res);
+            return response()->json(['data'=>$response],Response::HTTP_OK);
         }else{
             return response()->json(['error'=>"Bad Request"],Response::HTTP_BAD_REQUEST);
         }
