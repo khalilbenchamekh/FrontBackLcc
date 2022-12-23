@@ -13,7 +13,7 @@ class TypesChargeRepository implements ITypesChargeRepository
     private $organisation_id;
     public function __construct()
     {
-        $this->organisation_id = Auth::user()->organisation_id;
+        $this->organisation_id = Auth::user() ? Auth::user()->organisation_id : null;
     }
     public function save($request)
     {
@@ -26,9 +26,7 @@ class TypesChargeRepository implements ITypesChargeRepository
             $typescharge->organisation_id=$this->organisation_id;
 
             $typescharge->save();
-
             return $typescharge;
-
         }catch (\Exception $exception){
             $this->Log($exception);
             return null;

@@ -19,7 +19,7 @@ class CreateClientsTable extends Migration
             $table->foreign('organisation_id')->references('id')->on('organisations')->onDelete("cascade");
             $table->string('name');
             $table->string('Street');
-            $table->string('Street2');
+            $table->string('Street2')->nullable();
             $table->string('city');
             $table->string('ZIP_code');
             $table->string('Country');

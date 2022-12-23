@@ -10,7 +10,7 @@ interface IClientRepository
     public function store($data);
     public function get($id);
     public function edit($perClient,$data);
-    public function delete($id);
-    public function editBusiness($data,$particular);
+    public function delete($model);
+    public function editBusiness($data,$business);
 	public function getBusinessById($id);
 }

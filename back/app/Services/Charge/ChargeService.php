@@ -23,7 +23,8 @@ class ChargeService implements IChargeService
     }
     public function store($request)
     {
-        $res= $this->iChargeRpository->store($request);
+        $res= $this->iChargeRpository->store($request->all());
+        dd($res);
         if(!is_null($res)){
             $subject = LogsEnumConst::Add . LogsEnumConst::Charge . $res->num_quit;
             $logs = new LogActivity();
@@ -40,6 +41,7 @@ class ChargeService implements IChargeService
         $perElem=$this->show($id);
         if($perElem){
             $res = $this->iChargeRpository->update($perElem,$data);
+            dd($res->toArray());
             if(!is_null($res)){
                 $subject = LogsEnumConst::Update . LogsEnumConst::Charge . $res->num_quit;
                 $logs = new LogActivity();

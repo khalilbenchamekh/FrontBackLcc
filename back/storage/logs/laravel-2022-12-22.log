@@ -1,0 +1,822 @@
+[2022-12-22 14:16:47] local.ERROR: Class 'L5Swagger\L5SwaggerServiceProvider' not found {"exception":"[object] (Symfony\\Component\\Debug\\Exception\\FatalThrowableError(code: 0): Class 'L5Swagger\\L5SwaggerServiceProvider' not found at C:\\xampp\\htdocs\\New folder (7)\\FrontBackLcc\\back\\vendor\\laravel\\framework\\src\\Illuminate\\Foundation\\Application.php:679)
+[stacktrace]
+#0 C:\\xampp\\htdocs\\New folder (7)\\FrontBackLcc\\back\\vendor\\laravel\\framework\\src\\Illuminate\\Foundation\\Application.php(613): Illuminate\\Foundation\\Application->resolveProvider('L5Swagger\\\\L5Swa...')
+#1 C:\\xampp\\htdocs\\New folder (7)\\FrontBackLcc\\back\\vendor\\laravel\\framework\\src\\Illuminate\\Foundation\\ProviderRepository.php(75): Illuminate\\Foundation\\Application->register('L5Swagger\\\\L5Swa...')
+#2 C:\\xampp\\htdocs\\New folder (7)\\FrontBackLcc\\back\\vendor\\laravel\\framework\\src\\Illuminate\\Foundation\\Application.php(593): Illuminate\\Foundation\\ProviderRepository->load(Array)
+#3 C:\\xampp\\htdocs\\New folder (7)\\FrontBackLcc\\back\\vendor\\laravel\\framework\\src\\Illuminate\\Foundation\\Bootstrap\\RegisterProviders.php(17): Illuminate\\Foundation\\Application->registerConfiguredProviders()
+#4 C:\\xampp\\htdocs\\New folder (7)\\FrontBackLcc\\back\\vendor\\laravel\\framework\\src\\Illuminate\\Foundation\\Application.php(219): Illuminate\\Foundation\\Bootstrap\\RegisterProviders->bootstrap(Object(Illuminate\\Foundation\\Application))
+#5 C:\\xampp\\htdocs\\New folder (7)\\FrontBackLcc\\back\\vendor\\laravel\\framework\\src\\Illuminate\\Foundation\\Console\\Kernel.php(320): Illuminate\\Foundation\\Application->bootstrapWith(Array)
+#6 C:\\xampp\\htdocs\\New folder (7)\\FrontBackLcc\\back\\vendor\\laravel\\framework\\src\\Illuminate\\Foundation\\Console\\Kernel.php(129): Illuminate\\Foundation\\Console\\Kernel->bootstrap()
+#7 Command line code(1): Illuminate\\Foundation\\Console\\Kernel->handle(Object(Symfony\\Component\\Console\\Input\\ArgvInput), Object(Symfony\\Component\\Console\\Output\\ConsoleOutput))
+#8 {main}
+"} 
+[2022-12-22 14:16:47] local.ERROR: Class 'L5Swagger\L5SwaggerServiceProvider' not found {"exception":"[object] (Symfony\\Component\\Debug\\Exception\\FatalThrowableError(code: 0): Class 'L5Swagger\\L5SwaggerServiceProvider' not found at C:\\xampp\\htdocs\\New folder (7)\\FrontBackLcc\\back\\vendor\\laravel\\framework\\src\\Illuminate\\Foundation\\Application.php:679)
+[stacktrace]
+#0 C:\\xampp\\htdocs\\New folder (7)\\FrontBackLcc\\back\\vendor\\laravel\\framework\\src\\Illuminate\\Foundation\\Application.php(613): Illuminate\\Foundation\\Application->resolveProvider('L5Swagger\\\\L5Swa...')
+#1 C:\\xampp\\htdocs\\New folder (7)\\FrontBackLcc\\back\\vendor\\laravel\\framework\\src\\Illuminate\\Foundation\\ProviderRepository.php(75): Illuminate\\Foundation\\Application->register('L5Swagger\\\\L5Swa...')
+#2 C:\\xampp\\htdocs\\New folder (7)\\FrontBackLcc\\back\\vendor\\laravel\\framework\\src\\Illuminate\\Foundation\\Application.php(593): Illuminate\\Foundation\\ProviderRepository->load(Array)
+#3 C:\\xampp\\htdocs\\New folder (7)\\FrontBackLcc\\back\\vendor\\laravel\\framework\\src\\Illuminate\\Foundation\\Bootstrap\\RegisterProviders.php(17): Illuminate\\Foundation\\Application->registerConfiguredProviders()
+#4 C:\\xampp\\htdocs\\New folder (7)\\FrontBackLcc\\back\\vendor\\laravel\\framework\\src\\Illuminate\\Foundation\\Application.php(219): Illuminate\\Foundation\\Bootstrap\\RegisterProviders->bootstrap(Object(Illuminate\\Foundation\\Application))
+#5 C:\\xampp\\htdocs\\New folder (7)\\FrontBackLcc\\back\\vendor\\laravel\\framework\\src\\Illuminate\\Foundation\\Console\\Kernel.php(320): Illuminate\\Foundation\\Application->bootstrapWith(Array)
+#6 C:\\xampp\\htdocs\\New folder (7)\\FrontBackLcc\\back\\vendor\\laravel\\framework\\src\\Illuminate\\Foundation\\Console\\Kernel.php(129): Illuminate\\Foundation\\Console\\Kernel->bootstrap()
+#7 Command line code(1): Illuminate\\Foundation\\Console\\Kernel->handle(Object(Symfony\\Component\\Console\\Input\\ArgvInput), Object(Symfony\\Component\\Console\\Output\\ConsoleOutput))
+#8 {main}
+"} 
+[2022-12-22 14:16:47] local.ERROR: Class 'L5Swagger\L5SwaggerServiceProvider' not found {"exception":"[object] (Symfony\\Component\\Debug\\Exception\\FatalThrowableError(code: 0): Class 'L5Swagger\\L5SwaggerServiceProvider' not found at C:\\xampp\\htdocs\\New folder (7)\\FrontBackLcc\\back\\vendor\\laravel\\framework\\src\\Illuminate\\Foundation\\Application.php:679)
+[stacktrace]
+#0 C:\\xampp\\htdocs\\New folder (7)\\FrontBackLcc\\back\\vendor\\laravel\\framework\\src\\Illuminate\\Foundation\\Application.php(613): Illuminate\\Foundation\\Application->resolveProvider('L5Swagger\\\\L5Swa...')
+#1 C:\\xampp\\htdocs\\New folder (7)\\FrontBackLcc\\back\\vendor\\laravel\\framework\\src\\Illuminate\\Foundation\\ProviderRepository.php(75): Illuminate\\Foundation\\Application->register('L5Swagger\\\\L5Swa...')
+#2 C:\\xampp\\htdocs\\New folder (7)\\FrontBackLcc\\back\\vendor\\laravel\\framework\\src\\Illuminate\\Foundation\\Application.php(593): Illuminate\\Foundation\\ProviderRepository->load(Array)
+#3 C:\\xampp\\htdocs\\New folder (7)\\FrontBackLcc\\back\\vendor\\laravel\\framework\\src\\Illuminate\\Foundation\\Bootstrap\\RegisterProviders.php(17): Illuminate\\Foundation\\Application->registerConfiguredProviders()
+#4 C:\\xampp\\htdocs\\New folder (7)\\FrontBackLcc\\back\\vendor\\laravel\\framework\\src\\Illuminate\\Foundation\\Application.php(219): Illuminate\\Foundation\\Bootstrap\\RegisterProviders->bootstrap(Object(Illuminate\\Foundation\\Application))
+#5 C:\\xampp\\htdocs\\New folder (7)\\FrontBackLcc\\back\\vendor\\laravel\\framework\\src\\Illuminate\\Foundation\\Console\\Kernel.php(320): Illuminate\\Foundation\\Application->bootstrapWith(Array)
+#6 C:\\xampp\\htdocs\\New folder (7)\\FrontBackLcc\\back\\vendor\\laravel\\framework\\src\\Illuminate\\Foundation\\Console\\Kernel.php(129): Illuminate\\Foundation\\Console\\Kernel->bootstrap()
+#7 Command line code(1): Illuminate\\Foundation\\Console\\Kernel->handle(Object(Symfony\\Component\\Console\\Input\\ArgvInput), Object(Symfony\\Component\\Console\\Output\\ConsoleOutput))
+#8 {main}
+"} 
+[2022-12-22 14:16:47] local.ERROR: Class 'L5Swagger\L5SwaggerServiceProvider' not found {"exception":"[object] (Symfony\\Component\\Debug\\Exception\\FatalThrowableError(code: 0): Class 'L5Swagger\\L5SwaggerServiceProvider' not found at C:\\xampp\\htdocs\\New folder (7)\\FrontBackLcc\\back\\vendor\\laravel\\framework\\src\\Illuminate\\Foundation\\Application.php:679)
+[stacktrace]
+#0 C:\\xampp\\htdocs\\New folder (7)\\FrontBackLcc\\back\\vendor\\laravel\\framework\\src\\Illuminate\\Foundation\\Application.php(613): Illuminate\\Foundation\\Application->resolveProvider('L5Swagger\\\\L5Swa...')
+#1 C:\\xampp\\htdocs\\New folder (7)\\FrontBackLcc\\back\\vendor\\laravel\\framework\\src\\Illuminate\\Foundation\\ProviderRepository.php(75): Illuminate\\Foundation\\Application->register('L5Swagger\\\\L5Swa...')
+#2 C:\\xampp\\htdocs\\New folder (7)\\FrontBackLcc\\back\\vendor\\laravel\\framework\\src\\Illuminate\\Foundation\\Application.php(593): Illuminate\\Foundation\\ProviderRepository->load(Array)
+#3 C:\\xampp\\htdocs\\New folder (7)\\FrontBackLcc\\back\\vendor\\laravel\\framework\\src\\Illuminate\\Foundation\\Bootstrap\\RegisterProviders.php(17): Illuminate\\Foundation\\Application->registerConfiguredProviders()
+#4 C:\\xampp\\htdocs\\New folder (7)\\FrontBackLcc\\back\\vendor\\laravel\\framework\\src\\Illuminate\\Foundation\\Application.php(219): Illuminate\\Foundation\\Bootstrap\\RegisterProviders->bootstrap(Object(Illuminate\\Foundation\\Application))
+#5 C:\\xampp\\htdocs\\New folder (7)\\FrontBackLcc\\back\\vendor\\laravel\\framework\\src\\Illuminate\\Foundation\\Console\\Kernel.php(320): Illuminate\\Foundation\\Application->bootstrapWith(Array)
+#6 C:\\xampp\\htdocs\\New folder (7)\\FrontBackLcc\\back\\vendor\\laravel\\framework\\src\\Illuminate\\Foundation\\Console\\Kernel.php(129): Illuminate\\Foundation\\Console\\Kernel->bootstrap()
+#7 Command line code(1): Illuminate\\Foundation\\Console\\Kernel->handle(Object(Symfony\\Component\\Console\\Input\\ArgvInput), Object(Symfony\\Component\\Console\\Output\\ConsoleOutput))
+#8 {main}
+"} 
+[2022-12-22 14:16:47] local.ERROR: Class 'L5Swagger\L5SwaggerServiceProvider' not found {"exception":"[object] (Symfony\\Component\\Debug\\Exception\\FatalThrowableError(code: 0): Class 'L5Swagger\\L5SwaggerServiceProvider' not found at C:\\xampp\\htdocs\\New folder (7)\\FrontBackLcc\\back\\vendor\\laravel\\framework\\src\\Illuminate\\Foundation\\Application.php:679)
+[stacktrace]
+#0 C:\\xampp\\htdocs\\New folder (7)\\FrontBackLcc\\back\\vendor\\laravel\\framework\\src\\Illuminate\\Foundation\\Application.php(613): Illuminate\\Foundation\\Application->resolveProvider('L5Swagger\\\\L5Swa...')
+#1 C:\\xampp\\htdocs\\New folder (7)\\FrontBackLcc\\back\\vendor\\laravel\\framework\\src\\Illuminate\\Foundation\\ProviderRepository.php(75): Illuminate\\Foundation\\Application->register('L5Swagger\\\\L5Swa...')
+#2 C:\\xampp\\htdocs\\New folder (7)\\FrontBackLcc\\back\\vendor\\laravel\\framework\\src\\Illuminate\\Foundation\\Application.php(593): Illuminate\\Foundation\\ProviderRepository->load(Array)
+#3 C:\\xampp\\htdocs\\New folder (7)\\FrontBackLcc\\back\\vendor\\laravel\\framework\\src\\Illuminate\\Foundation\\Bootstrap\\RegisterProviders.php(17): Illuminate\\Foundation\\Application->registerConfiguredProviders()
+#4 C:\\xampp\\htdocs\\New folder (7)\\FrontBackLcc\\back\\vendor\\laravel\\framework\\src\\Illuminate\\Foundation\\Application.php(219): Illuminate\\Foundation\\Bootstrap\\RegisterProviders->bootstrap(Object(Illuminate\\Foundation\\Application))
+#5 C:\\xampp\\htdocs\\New folder (7)\\FrontBackLcc\\back\\vendor\\laravel\\framework\\src\\Illuminate\\Foundation\\Console\\Kernel.php(320): Illuminate\\Foundation\\Application->bootstrapWith(Array)
+#6 C:\\xampp\\htdocs\\New folder (7)\\FrontBackLcc\\back\\vendor\\laravel\\framework\\src\\Illuminate\\Foundation\\Console\\Kernel.php(129): Illuminate\\Foundation\\Console\\Kernel->bootstrap()
+#7 Command line code(1): Illuminate\\Foundation\\Console\\Kernel->handle(Object(Symfony\\Component\\Console\\Input\\ArgvInput), Object(Symfony\\Component\\Console\\Output\\ConsoleOutput))
+#8 {main}
+"} 
+[2022-12-22 14:16:47] local.ERROR: Class 'L5Swagger\L5SwaggerServiceProvider' not found {"exception":"[object] (Symfony\\Component\\Debug\\Exception\\FatalThrowableError(code: 0): Class 'L5Swagger\\L5SwaggerServiceProvider' not found at C:\\xampp\\htdocs\\New folder (7)\\FrontBackLcc\\back\\vendor\\laravel\\framework\\src\\Illuminate\\Foundation\\Application.php:679)
+[stacktrace]
+#0 C:\\xampp\\htdocs\\New folder (7)\\FrontBackLcc\\back\\vendor\\laravel\\framework\\src\\Illuminate\\Foundation\\Application.php(613): Illuminate\\Foundation\\Application->resolveProvider('L5Swagger\\\\L5Swa...')
+#1 C:\\xampp\\htdocs\\New folder (7)\\FrontBackLcc\\back\\vendor\\laravel\\framework\\src\\Illuminate\\Foundation\\ProviderRepository.php(75): Illuminate\\Foundation\\Application->register('L5Swagger\\\\L5Swa...')
+#2 C:\\xampp\\htdocs\\New folder (7)\\FrontBackLcc\\back\\vendor\\laravel\\framework\\src\\Illuminate\\Foundation\\Application.php(593): Illuminate\\Foundation\\ProviderRepository->load(Array)
+#3 C:\\xampp\\htdocs\\New folder (7)\\FrontBackLcc\\back\\vendor\\laravel\\framework\\src\\Illuminate\\Foundation\\Bootstrap\\RegisterProviders.php(17): Illuminate\\Foundation\\Application->registerConfiguredProviders()
+#4 C:\\xampp\\htdocs\\New folder (7)\\FrontBackLcc\\back\\vendor\\laravel\\framework\\src\\Illuminate\\Foundation\\Application.php(219): Illuminate\\Foundation\\Bootstrap\\RegisterProviders->bootstrap(Object(Illuminate\\Foundation\\Application))
+#5 C:\\xampp\\htdocs\\New folder (7)\\FrontBackLcc\\back\\vendor\\laravel\\framework\\src\\Illuminate\\Foundation\\Console\\Kernel.php(320): Illuminate\\Foundation\\Application->bootstrapWith(Array)
+#6 C:\\xampp\\htdocs\\New folder (7)\\FrontBackLcc\\back\\vendor\\laravel\\framework\\src\\Illuminate\\Foundation\\Console\\Kernel.php(129): Illuminate\\Foundation\\Console\\Kernel->bootstrap()
+#7 Command line code(1): Illuminate\\Foundation\\Console\\Kernel->handle(Object(Symfony\\Component\\Console\\Input\\ArgvInput), Object(Symfony\\Component\\Console\\Output\\ConsoleOutput))
+#8 {main}
+"} 
+[2022-12-22 14:16:48] local.ERROR: Uncaught ReflectionException: Class translator does not exist in C:\xampp\htdocs\New folder (7)\FrontBackLcc\back\vendor\laravel\framework\src\Illuminate\Container\Container.php:803
+Stack trace:
+#0 C:\xampp\htdocs\New folder (7)\FrontBackLcc\back\vendor\laravel\framework\src\Illuminate\Container\Container.php(803): ReflectionClass->__construct('translator')
+#1 C:\xampp\htdocs\New folder (7)\FrontBackLcc\back\vendor\laravel\framework\src\Illuminate\Container\Container.php(681): Illuminate\Container\Container->build('translator')
+#2 C:\xampp\htdocs\New folder (7)\FrontBackLcc\back\vendor\laravel\framework\src\Illuminate\Foundation\Application.php(785): Illuminate\Container\Container->resolve('translator', Array, true)
+#3 C:\xampp\htdocs\New folder (7)\FrontBackLcc\back\vendor\laravel\framework\src\Illuminate\Container\Container.php(629): Illuminate\Foundation\Application->resolve('translator', Array)
+#4 C:\xampp\htdocs\New folder (7)\FrontBackLcc\back\vendor\laravel\framework\src\Illuminate\Foundation\Applicati {"exception":"[object] (Symfony\\Component\\Debug\\Exception\\FatalErrorException(code: 1): Uncaught ReflectionException: Class translator does not exist in C:\\xampp\\htdocs\\New folder (7)\\FrontBackLcc\\back\\vendor\\laravel\\framework\\src\\Illuminate\\Container\\Container.php:803
+Stack trace:
+#0 C:\\xampp\\htdocs\\New folder (7)\\FrontBackLcc\\back\\vendor\\laravel\\framework\\src\\Illuminate\\Container\\Container.php(803): ReflectionClass->__construct('translator')
+#1 C:\\xampp\\htdocs\\New folder (7)\\FrontBackLcc\\back\\vendor\\laravel\\framework\\src\\Illuminate\\Container\\Container.php(681): Illuminate\\Container\\Container->build('translator')
+#2 C:\\xampp\\htdocs\\New folder (7)\\FrontBackLcc\\back\\vendor\\laravel\\framework\\src\\Illuminate\\Foundation\\Application.php(785): Illuminate\\Container\\Container->resolve('translator', Array, true)
+#3 C:\\xampp\\htdocs\\New folder (7)\\FrontBackLcc\\back\\vendor\\laravel\\framework\\src\\Illuminate\\Container\\Container.php(629): Illuminate\\Foundation\\Application->resolve('translator', Array)
+#4 C:\\xampp\\htdocs\\New folder (7)\\FrontBackLcc\\back\\vendor\\laravel\\framework\\src\\Illuminate\\Foundation\\Applicati at C:\\xampp\\htdocs\\New folder (7)\\FrontBackLcc\\back\\vendor\\laravel\\framework\\src\\Illuminate\\Container\\Container.php:805)
+[stacktrace]
+#0 {main}
+"} 
+[2022-12-22 14:16:48] local.ERROR: Class 'L5Swagger\L5SwaggerServiceProvider' not found {"exception":"[object] (Symfony\\Component\\Debug\\Exception\\FatalThrowableError(code: 0): Class 'L5Swagger\\L5SwaggerServiceProvider' not found at C:\\xampp\\htdocs\\New folder (7)\\FrontBackLcc\\back\\vendor\\laravel\\framework\\src\\Illuminate\\Foundation\\Application.php:679)
+[stacktrace]
+#0 C:\\xampp\\htdocs\\New folder (7)\\FrontBackLcc\\back\\vendor\\laravel\\framework\\src\\Illuminate\\Foundation\\Application.php(613): Illuminate\\Foundation\\Application->resolveProvider('L5Swagger\\\\L5Swa...')
+#1 C:\\xampp\\htdocs\\New folder (7)\\FrontBackLcc\\back\\vendor\\laravel\\framework\\src\\Illuminate\\Foundation\\ProviderRepository.php(75): Illuminate\\Foundation\\Application->register('L5Swagger\\\\L5Swa...')
+#2 C:\\xampp\\htdocs\\New folder (7)\\FrontBackLcc\\back\\vendor\\laravel\\framework\\src\\Illuminate\\Foundation\\Application.php(593): Illuminate\\Foundation\\ProviderRepository->load(Array)
+#3 C:\\xampp\\htdocs\\New folder (7)\\FrontBackLcc\\back\\vendor\\laravel\\framework\\src\\Illuminate\\Foundation\\Bootstrap\\RegisterProviders.php(17): Illuminate\\Foundation\\Application->registerConfiguredProviders()
+#4 C:\\xampp\\htdocs\\New folder (7)\\FrontBackLcc\\back\\vendor\\laravel\\framework\\src\\Illuminate\\Foundation\\Application.php(219): Illuminate\\Foundation\\Bootstrap\\RegisterProviders->bootstrap(Object(Illuminate\\Foundation\\Application))
+#5 C:\\xampp\\htdocs\\New folder (7)\\FrontBackLcc\\back\\vendor\\laravel\\framework\\src\\Illuminate\\Foundation\\Console\\Kernel.php(320): Illuminate\\Foundation\\Application->bootstrapWith(Array)
+#6 C:\\xampp\\htdocs\\New folder (7)\\FrontBackLcc\\back\\vendor\\laravel\\framework\\src\\Illuminate\\Foundation\\Console\\Kernel.php(129): Illuminate\\Foundation\\Console\\Kernel->bootstrap()
+#7 Command line code(1): Illuminate\\Foundation\\Console\\Kernel->handle(Object(Symfony\\Component\\Console\\Input\\ArgvInput), Object(Symfony\\Component\\Console\\Output\\ConsoleOutput))
+#8 {main}
+"} 
+[2022-12-22 14:17:42] local.ERROR: Class 'L5Swagger\L5SwaggerServiceProvider' not found {"exception":"[object] (Symfony\\Component\\Debug\\Exception\\FatalThrowableError(code: 0): Class 'L5Swagger\\L5SwaggerServiceProvider' not found at C:\\xampp\\htdocs\\New folder (7)\\FrontBackLcc\\back\\vendor\\laravel\\framework\\src\\Illuminate\\Foundation\\Application.php:679)
+[stacktrace]
+#0 C:\\xampp\\htdocs\\New folder (7)\\FrontBackLcc\\back\\vendor\\laravel\\framework\\src\\Illuminate\\Foundation\\Application.php(613): Illuminate\\Foundation\\Application->resolveProvider('L5Swagger\\\\L5Swa...')
+#1 C:\\xampp\\htdocs\\New folder (7)\\FrontBackLcc\\back\\vendor\\laravel\\framework\\src\\Illuminate\\Foundation\\ProviderRepository.php(75): Illuminate\\Foundation\\Application->register('L5Swagger\\\\L5Swa...')
+#2 C:\\xampp\\htdocs\\New folder (7)\\FrontBackLcc\\back\\vendor\\laravel\\framework\\src\\Illuminate\\Foundation\\Application.php(593): Illuminate\\Foundation\\ProviderRepository->load(Array)
+#3 C:\\xampp\\htdocs\\New folder (7)\\FrontBackLcc\\back\\vendor\\laravel\\framework\\src\\Illuminate\\Foundation\\Bootstrap\\RegisterProviders.php(17): Illuminate\\Foundation\\Application->registerConfiguredProviders()
+#4 C:\\xampp\\htdocs\\New folder (7)\\FrontBackLcc\\back\\vendor\\laravel\\framework\\src\\Illuminate\\Foundation\\Application.php(219): Illuminate\\Foundation\\Bootstrap\\RegisterProviders->bootstrap(Object(Illuminate\\Foundation\\Application))
+#5 C:\\xampp\\htdocs\\New folder (7)\\FrontBackLcc\\back\\vendor\\laravel\\framework\\src\\Illuminate\\Foundation\\Console\\Kernel.php(320): Illuminate\\Foundation\\Application->bootstrapWith(Array)
+#6 C:\\xampp\\htdocs\\New folder (7)\\FrontBackLcc\\back\\vendor\\laravel\\framework\\src\\Illuminate\\Foundation\\Console\\Kernel.php(129): Illuminate\\Foundation\\Console\\Kernel->bootstrap()
+#7 Command line code(1): Illuminate\\Foundation\\Console\\Kernel->handle(Object(Symfony\\Component\\Console\\Input\\ArgvInput), Object(Symfony\\Component\\Console\\Output\\ConsoleOutput))
+#8 {main}
+"} 
+[2022-12-22 14:17:42] local.ERROR: Class 'L5Swagger\L5SwaggerServiceProvider' not found {"exception":"[object] (Symfony\\Component\\Debug\\Exception\\FatalThrowableError(code: 0): Class 'L5Swagger\\L5SwaggerServiceProvider' not found at C:\\xampp\\htdocs\\New folder (7)\\FrontBackLcc\\back\\vendor\\laravel\\framework\\src\\Illuminate\\Foundation\\Application.php:679)
+[stacktrace]
+#0 C:\\xampp\\htdocs\\New folder (7)\\FrontBackLcc\\back\\vendor\\laravel\\framework\\src\\Illuminate\\Foundation\\Application.php(613): Illuminate\\Foundation\\Application->resolveProvider('L5Swagger\\\\L5Swa...')
+#1 C:\\xampp\\htdocs\\New folder (7)\\FrontBackLcc\\back\\vendor\\laravel\\framework\\src\\Illuminate\\Foundation\\ProviderRepository.php(75): Illuminate\\Foundation\\Application->register('L5Swagger\\\\L5Swa...')
+#2 C:\\xampp\\htdocs\\New folder (7)\\FrontBackLcc\\back\\vendor\\laravel\\framework\\src\\Illuminate\\Foundation\\Application.php(593): Illuminate\\Foundation\\ProviderRepository->load(Array)
+#3 C:\\xampp\\htdocs\\New folder (7)\\FrontBackLcc\\back\\vendor\\laravel\\framework\\src\\Illuminate\\Foundation\\Bootstrap\\RegisterProviders.php(17): Illuminate\\Foundation\\Application->registerConfiguredProviders()
+#4 C:\\xampp\\htdocs\\New folder (7)\\FrontBackLcc\\back\\vendor\\laravel\\framework\\src\\Illuminate\\Foundation\\Application.php(219): Illuminate\\Foundation\\Bootstrap\\RegisterProviders->bootstrap(Object(Illuminate\\Foundation\\Application))
+#5 C:\\xampp\\htdocs\\New folder (7)\\FrontBackLcc\\back\\vendor\\laravel\\framework\\src\\Illuminate\\Foundation\\Console\\Kernel.php(320): Illuminate\\Foundation\\Application->bootstrapWith(Array)
+#6 C:\\xampp\\htdocs\\New folder (7)\\FrontBackLcc\\back\\vendor\\laravel\\framework\\src\\Illuminate\\Foundation\\Console\\Kernel.php(129): Illuminate\\Foundation\\Console\\Kernel->bootstrap()
+#7 Command line code(1): Illuminate\\Foundation\\Console\\Kernel->handle(Object(Symfony\\Component\\Console\\Input\\ArgvInput), Object(Symfony\\Component\\Console\\Output\\ConsoleOutput))
+#8 {main}
+"} 
+[2022-12-22 14:18:42] local.ERROR: Class 'L5Swagger\L5SwaggerServiceProvider' not found {"exception":"[object] (Symfony\\Component\\Debug\\Exception\\FatalThrowableError(code: 0): Class 'L5Swagger\\L5SwaggerServiceProvider' not found at C:\\xampp\\htdocs\\New folder (7)\\FrontBackLcc\\back\\vendor\\laravel\\framework\\src\\Illuminate\\Foundation\\Application.php:679)
+[stacktrace]
+#0 C:\\xampp\\htdocs\\New folder (7)\\FrontBackLcc\\back\\vendor\\laravel\\framework\\src\\Illuminate\\Foundation\\Application.php(613): Illuminate\\Foundation\\Application->resolveProvider('L5Swagger\\\\L5Swa...')
+#1 C:\\xampp\\htdocs\\New folder (7)\\FrontBackLcc\\back\\vendor\\laravel\\framework\\src\\Illuminate\\Foundation\\ProviderRepository.php(75): Illuminate\\Foundation\\Application->register('L5Swagger\\\\L5Swa...')
+#2 C:\\xampp\\htdocs\\New folder (7)\\FrontBackLcc\\back\\vendor\\laravel\\framework\\src\\Illuminate\\Foundation\\Application.php(593): Illuminate\\Foundation\\ProviderRepository->load(Array)
+#3 C:\\xampp\\htdocs\\New folder (7)\\FrontBackLcc\\back\\vendor\\laravel\\framework\\src\\Illuminate\\Foundation\\Bootstrap\\RegisterProviders.php(17): Illuminate\\Foundation\\Application->registerConfiguredProviders()
+#4 C:\\xampp\\htdocs\\New folder (7)\\FrontBackLcc\\back\\vendor\\laravel\\framework\\src\\Illuminate\\Foundation\\Application.php(219): Illuminate\\Foundation\\Bootstrap\\RegisterProviders->bootstrap(Object(Illuminate\\Foundation\\Application))
+#5 C:\\xampp\\htdocs\\New folder (7)\\FrontBackLcc\\back\\vendor\\laravel\\framework\\src\\Illuminate\\Foundation\\Console\\Kernel.php(320): Illuminate\\Foundation\\Application->bootstrapWith(Array)
+#6 C:\\xampp\\htdocs\\New folder (7)\\FrontBackLcc\\back\\vendor\\laravel\\framework\\src\\Illuminate\\Foundation\\Console\\Kernel.php(129): Illuminate\\Foundation\\Console\\Kernel->bootstrap()
+#7 Command line code(1): Illuminate\\Foundation\\Console\\Kernel->handle(Object(Symfony\\Component\\Console\\Input\\ArgvInput), Object(Symfony\\Component\\Console\\Output\\ConsoleOutput))
+#8 {main}
+"} 
+[2022-12-22 14:18:42] local.ERROR: Class 'L5Swagger\L5SwaggerServiceProvider' not found {"exception":"[object] (Symfony\\Component\\Debug\\Exception\\FatalThrowableError(code: 0): Class 'L5Swagger\\L5SwaggerServiceProvider' not found at C:\\xampp\\htdocs\\New folder (7)\\FrontBackLcc\\back\\vendor\\laravel\\framework\\src\\Illuminate\\Foundation\\Application.php:679)
+[stacktrace]
+#0 C:\\xampp\\htdocs\\New folder (7)\\FrontBackLcc\\back\\vendor\\laravel\\framework\\src\\Illuminate\\Foundation\\Application.php(613): Illuminate\\Foundation\\Application->resolveProvider('L5Swagger\\\\L5Swa...')
+#1 C:\\xampp\\htdocs\\New folder (7)\\FrontBackLcc\\back\\vendor\\laravel\\framework\\src\\Illuminate\\Foundation\\ProviderRepository.php(75): Illuminate\\Foundation\\Application->register('L5Swagger\\\\L5Swa...')
+#2 C:\\xampp\\htdocs\\New folder (7)\\FrontBackLcc\\back\\vendor\\laravel\\framework\\src\\Illuminate\\Foundation\\Application.php(593): Illuminate\\Foundation\\ProviderRepository->load(Array)
+#3 C:\\xampp\\htdocs\\New folder (7)\\FrontBackLcc\\back\\vendor\\laravel\\framework\\src\\Illuminate\\Foundation\\Bootstrap\\RegisterProviders.php(17): Illuminate\\Foundation\\Application->registerConfiguredProviders()
+#4 C:\\xampp\\htdocs\\New folder (7)\\FrontBackLcc\\back\\vendor\\laravel\\framework\\src\\Illuminate\\Foundation\\Application.php(219): Illuminate\\Foundation\\Bootstrap\\RegisterProviders->bootstrap(Object(Illuminate\\Foundation\\Application))
+#5 C:\\xampp\\htdocs\\New folder (7)\\FrontBackLcc\\back\\vendor\\laravel\\framework\\src\\Illuminate\\Foundation\\Console\\Kernel.php(320): Illuminate\\Foundation\\Application->bootstrapWith(Array)
+#6 C:\\xampp\\htdocs\\New folder (7)\\FrontBackLcc\\back\\vendor\\laravel\\framework\\src\\Illuminate\\Foundation\\Console\\Kernel.php(129): Illuminate\\Foundation\\Console\\Kernel->bootstrap()
+#7 Command line code(1): Illuminate\\Foundation\\Console\\Kernel->handle(Object(Symfony\\Component\\Console\\Input\\ArgvInput), Object(Symfony\\Component\\Console\\Output\\ConsoleOutput))
+#8 {main}
+"} 
+[2022-12-22 14:19:33] local.ERROR: Class 'L5Swagger\L5SwaggerServiceProvider' not found {"exception":"[object] (Symfony\\Component\\Debug\\Exception\\FatalThrowableError(code: 0): Class 'L5Swagger\\L5SwaggerServiceProvider' not found at C:\\xampp\\htdocs\\New folder (7)\\FrontBackLcc\\back\\vendor\\laravel\\framework\\src\\Illuminate\\Foundation\\Application.php:679)
+[stacktrace]
+#0 C:\\xampp\\htdocs\\New folder (7)\\FrontBackLcc\\back\\vendor\\laravel\\framework\\src\\Illuminate\\Foundation\\Application.php(613): Illuminate\\Foundation\\Application->resolveProvider('L5Swagger\\\\L5Swa...')
+#1 C:\\xampp\\htdocs\\New folder (7)\\FrontBackLcc\\back\\vendor\\laravel\\framework\\src\\Illuminate\\Foundation\\ProviderRepository.php(75): Illuminate\\Foundation\\Application->register('L5Swagger\\\\L5Swa...')
+#2 C:\\xampp\\htdocs\\New folder (7)\\FrontBackLcc\\back\\vendor\\laravel\\framework\\src\\Illuminate\\Foundation\\Application.php(593): Illuminate\\Foundation\\ProviderRepository->load(Array)
+#3 C:\\xampp\\htdocs\\New folder (7)\\FrontBackLcc\\back\\vendor\\laravel\\framework\\src\\Illuminate\\Foundation\\Bootstrap\\RegisterProviders.php(17): Illuminate\\Foundation\\Application->registerConfiguredProviders()
+#4 C:\\xampp\\htdocs\\New folder (7)\\FrontBackLcc\\back\\vendor\\laravel\\framework\\src\\Illuminate\\Foundation\\Application.php(219): Illuminate\\Foundation\\Bootstrap\\RegisterProviders->bootstrap(Object(Illuminate\\Foundation\\Application))
+#5 C:\\xampp\\htdocs\\New folder (7)\\FrontBackLcc\\back\\vendor\\laravel\\framework\\src\\Illuminate\\Foundation\\Console\\Kernel.php(320): Illuminate\\Foundation\\Application->bootstrapWith(Array)
+#6 C:\\xampp\\htdocs\\New folder (7)\\FrontBackLcc\\back\\vendor\\laravel\\framework\\src\\Illuminate\\Foundation\\Console\\Kernel.php(129): Illuminate\\Foundation\\Console\\Kernel->bootstrap()
+#7 C:\\xampp\\htdocs\\New folder (7)\\FrontBackLcc\\back\\artisan(37): Illuminate\\Foundation\\Console\\Kernel->handle(Object(Symfony\\Component\\Console\\Input\\ArgvInput), Object(Symfony\\Component\\Console\\Output\\ConsoleOutput))
+#8 {main}
+"} 
+[2022-12-22 14:19:37] local.ERROR: Class 'L5Swagger\L5SwaggerServiceProvider' not found {"exception":"[object] (Symfony\\Component\\Debug\\Exception\\FatalThrowableError(code: 0): Class 'L5Swagger\\L5SwaggerServiceProvider' not found at C:\\xampp\\htdocs\\New folder (7)\\FrontBackLcc\\back\\vendor\\laravel\\framework\\src\\Illuminate\\Foundation\\Application.php:679)
+[stacktrace]
+#0 C:\\xampp\\htdocs\\New folder (7)\\FrontBackLcc\\back\\vendor\\laravel\\framework\\src\\Illuminate\\Foundation\\Application.php(613): Illuminate\\Foundation\\Application->resolveProvider('L5Swagger\\\\L5Swa...')
+#1 C:\\xampp\\htdocs\\New folder (7)\\FrontBackLcc\\back\\vendor\\laravel\\framework\\src\\Illuminate\\Foundation\\ProviderRepository.php(75): Illuminate\\Foundation\\Application->register('L5Swagger\\\\L5Swa...')
+#2 C:\\xampp\\htdocs\\New folder (7)\\FrontBackLcc\\back\\vendor\\laravel\\framework\\src\\Illuminate\\Foundation\\Application.php(593): Illuminate\\Foundation\\ProviderRepository->load(Array)
+#3 C:\\xampp\\htdocs\\New folder (7)\\FrontBackLcc\\back\\vendor\\laravel\\framework\\src\\Illuminate\\Foundation\\Bootstrap\\RegisterProviders.php(17): Illuminate\\Foundation\\Application->registerConfiguredProviders()
+#4 C:\\xampp\\htdocs\\New folder (7)\\FrontBackLcc\\back\\vendor\\laravel\\framework\\src\\Illuminate\\Foundation\\Application.php(219): Illuminate\\Foundation\\Bootstrap\\RegisterProviders->bootstrap(Object(Illuminate\\Foundation\\Application))
+#5 C:\\xampp\\htdocs\\New folder (7)\\FrontBackLcc\\back\\vendor\\laravel\\framework\\src\\Illuminate\\Foundation\\Console\\Kernel.php(320): Illuminate\\Foundation\\Application->bootstrapWith(Array)
+#6 C:\\xampp\\htdocs\\New folder (7)\\FrontBackLcc\\back\\vendor\\laravel\\framework\\src\\Illuminate\\Foundation\\Console\\Kernel.php(129): Illuminate\\Foundation\\Console\\Kernel->bootstrap()
+#7 C:\\xampp\\htdocs\\New folder (7)\\FrontBackLcc\\back\\artisan(37): Illuminate\\Foundation\\Console\\Kernel->handle(Object(Symfony\\Component\\Console\\Input\\ArgvInput), Object(Symfony\\Component\\Console\\Output\\ConsoleOutput))
+#8 {main}
+"} 
+[2022-12-22 14:19:42] local.ERROR: Class 'L5Swagger\L5SwaggerServiceProvider' not found {"exception":"[object] (Symfony\\Component\\Debug\\Exception\\FatalThrowableError(code: 0): Class 'L5Swagger\\L5SwaggerServiceProvider' not found at C:\\xampp\\htdocs\\New folder (7)\\FrontBackLcc\\back\\vendor\\laravel\\framework\\src\\Illuminate\\Foundation\\Application.php:679)
+[stacktrace]
+#0 C:\\xampp\\htdocs\\New folder (7)\\FrontBackLcc\\back\\vendor\\laravel\\framework\\src\\Illuminate\\Foundation\\Application.php(613): Illuminate\\Foundation\\Application->resolveProvider('L5Swagger\\\\L5Swa...')
+#1 C:\\xampp\\htdocs\\New folder (7)\\FrontBackLcc\\back\\vendor\\laravel\\framework\\src\\Illuminate\\Foundation\\ProviderRepository.php(75): Illuminate\\Foundation\\Application->register('L5Swagger\\\\L5Swa...')
+#2 C:\\xampp\\htdocs\\New folder (7)\\FrontBackLcc\\back\\vendor\\laravel\\framework\\src\\Illuminate\\Foundation\\Application.php(593): Illuminate\\Foundation\\ProviderRepository->load(Array)
+#3 C:\\xampp\\htdocs\\New folder (7)\\FrontBackLcc\\back\\vendor\\laravel\\framework\\src\\Illuminate\\Foundation\\Bootstrap\\RegisterProviders.php(17): Illuminate\\Foundation\\Application->registerConfiguredProviders()
+#4 C:\\xampp\\htdocs\\New folder (7)\\FrontBackLcc\\back\\vendor\\laravel\\framework\\src\\Illuminate\\Foundation\\Application.php(219): Illuminate\\Foundation\\Bootstrap\\RegisterProviders->bootstrap(Object(Illuminate\\Foundation\\Application))
+#5 C:\\xampp\\htdocs\\New folder (7)\\FrontBackLcc\\back\\vendor\\laravel\\framework\\src\\Illuminate\\Foundation\\Console\\Kernel.php(320): Illuminate\\Foundation\\Application->bootstrapWith(Array)
+#6 C:\\xampp\\htdocs\\New folder (7)\\FrontBackLcc\\back\\vendor\\laravel\\framework\\src\\Illuminate\\Foundation\\Console\\Kernel.php(129): Illuminate\\Foundation\\Console\\Kernel->bootstrap()
+#7 Command line code(1): Illuminate\\Foundation\\Console\\Kernel->handle(Object(Symfony\\Component\\Console\\Input\\ArgvInput), Object(Symfony\\Component\\Console\\Output\\ConsoleOutput))
+#8 {main}
+"} 
+[2022-12-22 14:20:43] local.ERROR: Class 'L5Swagger\L5SwaggerServiceProvider' not found {"exception":"[object] (Symfony\\Component\\Debug\\Exception\\FatalThrowableError(code: 0): Class 'L5Swagger\\L5SwaggerServiceProvider' not found at C:\\xampp\\htdocs\\New folder (7)\\FrontBackLcc\\back\\vendor\\laravel\\framework\\src\\Illuminate\\Foundation\\Application.php:679)
+[stacktrace]
+#0 C:\\xampp\\htdocs\\New folder (7)\\FrontBackLcc\\back\\vendor\\laravel\\framework\\src\\Illuminate\\Foundation\\Application.php(613): Illuminate\\Foundation\\Application->resolveProvider('L5Swagger\\\\L5Swa...')
+#1 C:\\xampp\\htdocs\\New folder (7)\\FrontBackLcc\\back\\vendor\\laravel\\framework\\src\\Illuminate\\Foundation\\ProviderRepository.php(75): Illuminate\\Foundation\\Application->register('L5Swagger\\\\L5Swa...')
+#2 C:\\xampp\\htdocs\\New folder (7)\\FrontBackLcc\\back\\vendor\\laravel\\framework\\src\\Illuminate\\Foundation\\Application.php(593): Illuminate\\Foundation\\ProviderRepository->load(Array)
+#3 C:\\xampp\\htdocs\\New folder (7)\\FrontBackLcc\\back\\vendor\\laravel\\framework\\src\\Illuminate\\Foundation\\Bootstrap\\RegisterProviders.php(17): Illuminate\\Foundation\\Application->registerConfiguredProviders()
+#4 C:\\xampp\\htdocs\\New folder (7)\\FrontBackLcc\\back\\vendor\\laravel\\framework\\src\\Illuminate\\Foundation\\Application.php(219): Illuminate\\Foundation\\Bootstrap\\RegisterProviders->bootstrap(Object(Illuminate\\Foundation\\Application))
+#5 C:\\xampp\\htdocs\\New folder (7)\\FrontBackLcc\\back\\vendor\\laravel\\framework\\src\\Illuminate\\Foundation\\Console\\Kernel.php(320): Illuminate\\Foundation\\Application->bootstrapWith(Array)
+#6 C:\\xampp\\htdocs\\New folder (7)\\FrontBackLcc\\back\\vendor\\laravel\\framework\\src\\Illuminate\\Foundation\\Console\\Kernel.php(129): Illuminate\\Foundation\\Console\\Kernel->bootstrap()
+#7 Command line code(1): Illuminate\\Foundation\\Console\\Kernel->handle(Object(Symfony\\Component\\Console\\Input\\ArgvInput), Object(Symfony\\Component\\Console\\Output\\ConsoleOutput))
+#8 {main}
+"} 
+[2022-12-22 14:20:43] local.ERROR: Class 'L5Swagger\L5SwaggerServiceProvider' not found {"exception":"[object] (Symfony\\Component\\Debug\\Exception\\FatalThrowableError(code: 0): Class 'L5Swagger\\L5SwaggerServiceProvider' not found at C:\\xampp\\htdocs\\New folder (7)\\FrontBackLcc\\back\\vendor\\laravel\\framework\\src\\Illuminate\\Foundation\\Application.php:679)
+[stacktrace]
+#0 C:\\xampp\\htdocs\\New folder (7)\\FrontBackLcc\\back\\vendor\\laravel\\framework\\src\\Illuminate\\Foundation\\Application.php(613): Illuminate\\Foundation\\Application->resolveProvider('L5Swagger\\\\L5Swa...')
+#1 C:\\xampp\\htdocs\\New folder (7)\\FrontBackLcc\\back\\vendor\\laravel\\framework\\src\\Illuminate\\Foundation\\ProviderRepository.php(75): Illuminate\\Foundation\\Application->register('L5Swagger\\\\L5Swa...')
+#2 C:\\xampp\\htdocs\\New folder (7)\\FrontBackLcc\\back\\vendor\\laravel\\framework\\src\\Illuminate\\Foundation\\Application.php(593): Illuminate\\Foundation\\ProviderRepository->load(Array)
+#3 C:\\xampp\\htdocs\\New folder (7)\\FrontBackLcc\\back\\vendor\\laravel\\framework\\src\\Illuminate\\Foundation\\Bootstrap\\RegisterProviders.php(17): Illuminate\\Foundation\\Application->registerConfiguredProviders()
+#4 C:\\xampp\\htdocs\\New folder (7)\\FrontBackLcc\\back\\vendor\\laravel\\framework\\src\\Illuminate\\Foundation\\Application.php(219): Illuminate\\Foundation\\Bootstrap\\RegisterProviders->bootstrap(Object(Illuminate\\Foundation\\Application))
+#5 C:\\xampp\\htdocs\\New folder (7)\\FrontBackLcc\\back\\vendor\\laravel\\framework\\src\\Illuminate\\Foundation\\Console\\Kernel.php(320): Illuminate\\Foundation\\Application->bootstrapWith(Array)
+#6 C:\\xampp\\htdocs\\New folder (7)\\FrontBackLcc\\back\\vendor\\laravel\\framework\\src\\Illuminate\\Foundation\\Console\\Kernel.php(129): Illuminate\\Foundation\\Console\\Kernel->bootstrap()
+#7 Command line code(1): Illuminate\\Foundation\\Console\\Kernel->handle(Object(Symfony\\Component\\Console\\Input\\ArgvInput), Object(Symfony\\Component\\Console\\Output\\ConsoleOutput))
+#8 {main}
+"} 
+[2022-12-22 14:20:52] local.ERROR: Class 'L5Swagger\L5SwaggerServiceProvider' not found {"exception":"[object] (Symfony\\Component\\Debug\\Exception\\FatalThrowableError(code: 0): Class 'L5Swagger\\L5SwaggerServiceProvider' not found at C:\\xampp\\htdocs\\New folder (7)\\FrontBackLcc\\back\\vendor\\laravel\\framework\\src\\Illuminate\\Foundation\\Application.php:679)
+[stacktrace]
+#0 C:\\xampp\\htdocs\\New folder (7)\\FrontBackLcc\\back\\vendor\\laravel\\framework\\src\\Illuminate\\Foundation\\Application.php(613): Illuminate\\Foundation\\Application->resolveProvider('L5Swagger\\\\L5Swa...')
+#1 C:\\xampp\\htdocs\\New folder (7)\\FrontBackLcc\\back\\vendor\\laravel\\framework\\src\\Illuminate\\Foundation\\ProviderRepository.php(75): Illuminate\\Foundation\\Application->register('L5Swagger\\\\L5Swa...')
+#2 C:\\xampp\\htdocs\\New folder (7)\\FrontBackLcc\\back\\vendor\\laravel\\framework\\src\\Illuminate\\Foundation\\Application.php(593): Illuminate\\Foundation\\ProviderRepository->load(Array)
+#3 C:\\xampp\\htdocs\\New folder (7)\\FrontBackLcc\\back\\vendor\\laravel\\framework\\src\\Illuminate\\Foundation\\Bootstrap\\RegisterProviders.php(17): Illuminate\\Foundation\\Application->registerConfiguredProviders()
+#4 C:\\xampp\\htdocs\\New folder (7)\\FrontBackLcc\\back\\vendor\\laravel\\framework\\src\\Illuminate\\Foundation\\Application.php(219): Illuminate\\Foundation\\Bootstrap\\RegisterProviders->bootstrap(Object(Illuminate\\Foundation\\Application))
+#5 C:\\xampp\\htdocs\\New folder (7)\\FrontBackLcc\\back\\vendor\\laravel\\framework\\src\\Illuminate\\Foundation\\Console\\Kernel.php(320): Illuminate\\Foundation\\Application->bootstrapWith(Array)
+#6 C:\\xampp\\htdocs\\New folder (7)\\FrontBackLcc\\back\\vendor\\laravel\\framework\\src\\Illuminate\\Foundation\\Console\\Kernel.php(129): Illuminate\\Foundation\\Console\\Kernel->bootstrap()
+#7 Command line code(1): Illuminate\\Foundation\\Console\\Kernel->handle(Object(Symfony\\Component\\Console\\Input\\ArgvInput), Object(Symfony\\Component\\Console\\Output\\ConsoleOutput))
+#8 {main}
+"} 
+[2022-12-22 14:20:52] local.ERROR: Class 'L5Swagger\L5SwaggerServiceProvider' not found {"exception":"[object] (Symfony\\Component\\Debug\\Exception\\FatalThrowableError(code: 0): Class 'L5Swagger\\L5SwaggerServiceProvider' not found at C:\\xampp\\htdocs\\New folder (7)\\FrontBackLcc\\back\\vendor\\laravel\\framework\\src\\Illuminate\\Foundation\\Application.php:679)
+[stacktrace]
+#0 C:\\xampp\\htdocs\\New folder (7)\\FrontBackLcc\\back\\vendor\\laravel\\framework\\src\\Illuminate\\Foundation\\Application.php(613): Illuminate\\Foundation\\Application->resolveProvider('L5Swagger\\\\L5Swa...')
+#1 C:\\xampp\\htdocs\\New folder (7)\\FrontBackLcc\\back\\vendor\\laravel\\framework\\src\\Illuminate\\Foundation\\ProviderRepository.php(75): Illuminate\\Foundation\\Application->register('L5Swagger\\\\L5Swa...')
+#2 C:\\xampp\\htdocs\\New folder (7)\\FrontBackLcc\\back\\vendor\\laravel\\framework\\src\\Illuminate\\Foundation\\Application.php(593): Illuminate\\Foundation\\ProviderRepository->load(Array)
+#3 C:\\xampp\\htdocs\\New folder (7)\\FrontBackLcc\\back\\vendor\\laravel\\framework\\src\\Illuminate\\Foundation\\Bootstrap\\RegisterProviders.php(17): Illuminate\\Foundation\\Application->registerConfiguredProviders()
+#4 C:\\xampp\\htdocs\\New folder (7)\\FrontBackLcc\\back\\vendor\\laravel\\framework\\src\\Illuminate\\Foundation\\Application.php(219): Illuminate\\Foundation\\Bootstrap\\RegisterProviders->bootstrap(Object(Illuminate\\Foundation\\Application))
+#5 C:\\xampp\\htdocs\\New folder (7)\\FrontBackLcc\\back\\vendor\\laravel\\framework\\src\\Illuminate\\Foundation\\Console\\Kernel.php(320): Illuminate\\Foundation\\Application->bootstrapWith(Array)
+#6 C:\\xampp\\htdocs\\New folder (7)\\FrontBackLcc\\back\\vendor\\laravel\\framework\\src\\Illuminate\\Foundation\\Console\\Kernel.php(129): Illuminate\\Foundation\\Console\\Kernel->bootstrap()
+#7 Command line code(1): Illuminate\\Foundation\\Console\\Kernel->handle(Object(Symfony\\Component\\Console\\Input\\ArgvInput), Object(Symfony\\Component\\Console\\Output\\ConsoleOutput))
+#8 {main}
+"} 
+[2022-12-22 14:24:38] local.INFO: Broadcasting [newLogs] on channels [private-logs] with payload:
+{
+    "logActivity": {
+        "id": 61,
+        "organisation_id": 1,
+        "subject": "Jovert Palonpona modifi\u00e9 une TypesChangetypescharge154",
+        "url": "http:\/\/localhost:8000\/api\/typescharge\/update\/6",
+        "method": "POST",
+        "ip": "127.0.0.1",
+        "agent": "PostmanRuntime\/7.6.0",
+        "user_id": 2,
+        "user_name": null,
+        "created_at": "2022-12-22 14:24:38",
+        "updated_at": "2022-12-22 14:24:38"
+    },
+    "socket": null
+}  
+[2022-12-22 14:25:18] local.INFO: Broadcasting [newLogs] on channels [private-logs] with payload:
+{
+    "logActivity": {
+        "id": 62,
+        "organisation_id": 1,
+        "subject": "Jovert Palonpona modifi\u00e9 une TypesChangetypescharge154",
+        "url": "http:\/\/localhost:8000\/api\/typescharge\/update\/6",
+        "method": "POST",
+        "ip": "127.0.0.1",
+        "agent": "PostmanRuntime\/7.6.0",
+        "user_id": 2,
+        "user_name": null,
+        "created_at": "2022-12-22 14:25:18",
+        "updated_at": "2022-12-22 14:25:18"
+    },
+    "socket": null
+}  
+[2022-12-22 14:26:25] local.INFO: Broadcasting [newLogs] on channels [private-logs] with payload:
+{
+    "logActivity": {
+        "id": 63,
+        "organisation_id": 1,
+        "subject": "Jovert Palonpona modifi\u00e9 une TypesChangetypescharge154",
+        "url": "http:\/\/localhost:8000\/api\/typescharge\/update\/6",
+        "method": "POST",
+        "ip": "127.0.0.1",
+        "agent": "PostmanRuntime\/7.6.0",
+        "user_id": 2,
+        "user_name": null,
+        "created_at": "2022-12-22 14:26:25",
+        "updated_at": "2022-12-22 14:26:25"
+    },
+    "socket": null
+}  
+[2022-12-22 14:26:47] local.INFO: Broadcasting [newLogs] on channels [private-logs] with payload:
+{
+    "logActivity": {
+        "id": 64,
+        "organisation_id": 1,
+        "subject": "Jovert Palonpona modifi\u00e9 une TypesChangetypescharge154",
+        "url": "http:\/\/localhost:8000\/api\/typescharge\/update\/6",
+        "method": "POST",
+        "ip": "127.0.0.1",
+        "agent": "PostmanRuntime\/7.6.0",
+        "user_id": 2,
+        "user_name": null,
+        "created_at": "2022-12-22 14:26:47",
+        "updated_at": "2022-12-22 14:26:47"
+    },
+    "socket": null
+}  
+[2022-12-22 14:31:37] local.INFO: Broadcasting [newLogs] on channels [private-logs] with payload:
+{
+    "logActivity": {
+        "id": 65,
+        "organisation_id": 1,
+        "subject": "Jovert Palonpona modifi\u00e9 une TypesChangetypescharge154",
+        "url": "http:\/\/localhost:8000\/api\/typescharge\/update\/6",
+        "method": "POST",
+        "ip": "127.0.0.1",
+        "agent": "PostmanRuntime\/7.6.0",
+        "user_id": 2,
+        "user_name": null,
+        "created_at": "2022-12-22 14:31:37",
+        "updated_at": "2022-12-22 14:31:37"
+    },
+    "socket": null
+}  
+[2022-12-22 14:32:03] local.INFO: Broadcasting [newLogs] on channels [private-logs] with payload:
+{
+    "logActivity": {
+        "id": 66,
+        "organisation_id": 1,
+        "subject": "Jovert Palonpona modifi\u00e9 une TypesChangetypescharge154",
+        "url": "http:\/\/localhost:8000\/api\/typescharge\/update\/6",
+        "method": "POST",
+        "ip": "127.0.0.1",
+        "agent": "PostmanRuntime\/7.6.0",
+        "user_id": 2,
+        "user_name": null,
+        "created_at": "2022-12-22 14:32:03",
+        "updated_at": "2022-12-22 14:32:03"
+    },
+    "socket": null
+}  
+[2022-12-22 14:32:11] local.INFO: Broadcasting [newLogs] on channels [private-logs] with payload:
+{
+    "logActivity": {
+        "id": 67,
+        "organisation_id": 1,
+        "subject": "Jovert Palonpona modifi\u00e9 une TypesChangetypescharge14",
+        "url": "http:\/\/localhost:8000\/api\/typescharge\/update\/6",
+        "method": "POST",
+        "ip": "127.0.0.1",
+        "agent": "PostmanRuntime\/7.6.0",
+        "user_id": 2,
+        "user_name": null,
+        "created_at": "2022-12-22 14:32:11",
+        "updated_at": "2022-12-22 14:32:11"
+    },
+    "socket": null
+}  
+[2022-12-22 14:34:44] local.INFO: Broadcasting [newLogs] on channels [private-logs] with payload:
+{
+    "logActivity": {
+        "id": 68,
+        "organisation_id": 1,
+        "subject": "Jovert Palonpona modifi\u00e9 une TypesChangetypescharge14",
+        "url": "http:\/\/localhost:8000\/api\/typescharge\/update\/6",
+        "method": "POST",
+        "ip": "127.0.0.1",
+        "agent": "PostmanRuntime\/7.6.0",
+        "user_id": 2,
+        "user_name": null,
+        "created_at": "2022-12-22 14:34:44",
+        "updated_at": "2022-12-22 14:34:44"
+    },
+    "socket": null
+}  
+[2022-12-22 14:34:50] local.INFO: Broadcasting [newLogs] on channels [private-logs] with payload:
+{
+    "logActivity": {
+        "id": 69,
+        "organisation_id": 1,
+        "subject": "Jovert Palonpona modifi\u00e9 une TypesChangetypescharge1h4",
+        "url": "http:\/\/localhost:8000\/api\/typescharge\/update\/6",
+        "method": "POST",
+        "ip": "127.0.0.1",
+        "agent": "PostmanRuntime\/7.6.0",
+        "user_id": 2,
+        "user_name": null,
+        "created_at": "2022-12-22 14:34:50",
+        "updated_at": "2022-12-22 14:34:50"
+    },
+    "socket": null
+}  
+[2022-12-22 14:39:37] local.ERROR: Class 'App\Repository\Charge\ChargeResponse' not found {"userId":2,"exception":"[object] (Symfony\\Component\\Debug\\Exception\\FatalThrowableError(code: 0): Class 'App\\Repository\\Charge\\ChargeResponse' not found at C:\\xampp\\htdocs\\New folder (7)\\FrontBackLcc\\back\\app\\Http\\Controllers\\Crud\\ChargesController.php:64)
+[stacktrace]
+#0 C:\\xampp\\htdocs\\New folder (7)\\FrontBackLcc\\back\\vendor\\laravel\\framework\\src\\Illuminate\\Routing\\Controller.php(54): App\\Http\\Controllers\\Crud\\ChargesController->show('1')
+#1 C:\\xampp\\htdocs\\New folder (7)\\FrontBackLcc\\back\\vendor\\laravel\\framework\\src\\Illuminate\\Routing\\ControllerDispatcher.php(45): Illuminate\\Routing\\Controller->callAction('show', Array)
+#2 C:\\xampp\\htdocs\\New folder (7)\\FrontBackLcc\\back\\vendor\\laravel\\framework\\src\\Illuminate\\Routing\\Route.php(219): Illuminate\\Routing\\ControllerDispatcher->dispatch(Object(Illuminate\\Routing\\Route), Object(App\\Http\\Controllers\\Crud\\ChargesController), 'show')
+#3 C:\\xampp\\htdocs\\New folder (7)\\FrontBackLcc\\back\\vendor\\laravel\\framework\\src\\Illuminate\\Routing\\Route.php(176): Illuminate\\Routing\\Route->runController()
+#4 C:\\xampp\\htdocs\\New folder (7)\\FrontBackLcc\\back\\vendor\\laravel\\framework\\src\\Illuminate\\Routing\\Router.php(681): Illuminate\\Routing\\Route->run()
+#5 C:\\xampp\\htdocs\\New folder (7)\\FrontBackLcc\\back\\vendor\\laravel\\framework\\src\\Illuminate\\Pipeline\\Pipeline.php(130): Illuminate\\Routing\\Router->Illuminate\\Routing\\{closure}(Object(Illuminate\\Http\\Request))
+#6 C:\\xampp\\htdocs\\New folder (7)\\FrontBackLcc\\back\\vendor\\tymon\\jwt-auth\\src\\Http\\Middleware\\Authenticate.php(32): Illuminate\\Pipeline\\Pipeline->Illuminate\\Pipeline\\{closure}(Object(Illuminate\\Http\\Request))
+#7 C:\\xampp\\htdocs\\New folder (7)\\FrontBackLcc\\back\\vendor\\laravel\\framework\\src\\Illuminate\\Pipeline\\Pipeline.php(171): Tymon\\JWTAuth\\Http\\Middleware\\Authenticate->handle(Object(Illuminate\\Http\\Request), Object(Closure))
+#8 C:\\xampp\\htdocs\\New folder (7)\\FrontBackLcc\\back\\app\\Http\\Middleware\\JWTMiddleware.php(54): Illuminate\\Pipeline\\Pipeline->Illuminate\\Pipeline\\{closure}(Object(Illuminate\\Http\\Request))
+#9 C:\\xampp\\htdocs\\New folder (7)\\FrontBackLcc\\back\\vendor\\laravel\\framework\\src\\Illuminate\\Pipeline\\Pipeline.php(171): App\\Http\\Middleware\\JWTMiddleware->handle(Object(Illuminate\\Http\\Request), Object(Closure))
+#10 C:\\xampp\\htdocs\\New folder (7)\\FrontBackLcc\\back\\vendor\\laravel\\framework\\src\\Illuminate\\Routing\\Middleware\\SubstituteBindings.php(41): Illuminate\\Pipeline\\Pipeline->Illuminate\\Pipeline\\{closure}(Object(Illuminate\\Http\\Request))
+#11 C:\\xampp\\htdocs\\New folder (7)\\FrontBackLcc\\back\\vendor\\laravel\\framework\\src\\Illuminate\\Pipeline\\Pipeline.php(171): Illuminate\\Routing\\Middleware\\SubstituteBindings->handle(Object(Illuminate\\Http\\Request), Object(Closure))
+#12 C:\\xampp\\htdocs\\New folder (7)\\FrontBackLcc\\back\\vendor\\laravel\\framework\\src\\Illuminate\\Routing\\Middleware\\ThrottleRequests.php(59): Illuminate\\Pipeline\\Pipeline->Illuminate\\Pipeline\\{closure}(Object(Illuminate\\Http\\Request))
+#13 C:\\xampp\\htdocs\\New folder (7)\\FrontBackLcc\\back\\vendor\\laravel\\framework\\src\\Illuminate\\Pipeline\\Pipeline.php(171): Illuminate\\Routing\\Middleware\\ThrottleRequests->handle(Object(Illuminate\\Http\\Request), Object(Closure), 60, '1')
+#14 C:\\xampp\\htdocs\\New folder (7)\\FrontBackLcc\\back\\app\\Http\\Middleware\\Cors.php(30): Illuminate\\Pipeline\\Pipeline->Illuminate\\Pipeline\\{closure}(Object(Illuminate\\Http\\Request))
+#15 C:\\xampp\\htdocs\\New folder (7)\\FrontBackLcc\\back\\vendor\\laravel\\framework\\src\\Illuminate\\Pipeline\\Pipeline.php(171): App\\Http\\Middleware\\Cors->handle(Object(Illuminate\\Http\\Request), Object(Closure))
+#16 C:\\xampp\\htdocs\\New folder (7)\\FrontBackLcc\\back\\vendor\\laravel\\framework\\src\\Illuminate\\Pipeline\\Pipeline.php(105): Illuminate\\Pipeline\\Pipeline->Illuminate\\Pipeline\\{closure}(Object(Illuminate\\Http\\Request))
+#17 C:\\xampp\\htdocs\\New folder (7)\\FrontBackLcc\\back\\vendor\\laravel\\framework\\src\\Illuminate\\Routing\\Router.php(683): Illuminate\\Pipeline\\Pipeline->then(Object(Closure))
+#18 C:\\xampp\\htdocs\\New folder (7)\\FrontBackLcc\\back\\vendor\\laravel\\framework\\src\\Illuminate\\Routing\\Router.php(658): Illuminate\\Routing\\Router->runRouteWithinStack(Object(Illuminate\\Routing\\Route), Object(Illuminate\\Http\\Request))
+#19 C:\\xampp\\htdocs\\New folder (7)\\FrontBackLcc\\back\\vendor\\laravel\\framework\\src\\Illuminate\\Routing\\Router.php(624): Illuminate\\Routing\\Router->runRoute(Object(Illuminate\\Http\\Request), Object(Illuminate\\Routing\\Route))
+#20 C:\\xampp\\htdocs\\New folder (7)\\FrontBackLcc\\back\\vendor\\laravel\\framework\\src\\Illuminate\\Routing\\Router.php(613): Illuminate\\Routing\\Router->dispatchToRoute(Object(Illuminate\\Http\\Request))
+#21 C:\\xampp\\htdocs\\New folder (7)\\FrontBackLcc\\back\\vendor\\laravel\\framework\\src\\Illuminate\\Foundation\\Http\\Kernel.php(170): Illuminate\\Routing\\Router->dispatch(Object(Illuminate\\Http\\Request))
+#22 C:\\xampp\\htdocs\\New folder (7)\\FrontBackLcc\\back\\vendor\\laravel\\framework\\src\\Illuminate\\Pipeline\\Pipeline.php(130): Illuminate\\Foundation\\Http\\Kernel->Illuminate\\Foundation\\Http\\{closure}(Object(Illuminate\\Http\\Request))
+#23 C:\\xampp\\htdocs\\New folder (7)\\FrontBackLcc\\back\\app\\Http\\Middleware\\Cors.php(30): Illuminate\\Pipeline\\Pipeline->Illuminate\\Pipeline\\{closure}(Object(Illuminate\\Http\\Request))
+#24 C:\\xampp\\htdocs\\New folder (7)\\FrontBackLcc\\back\\vendor\\laravel\\framework\\src\\Illuminate\\Pipeline\\Pipeline.php(171): App\\Http\\Middleware\\Cors->handle(Object(Illuminate\\Http\\Request), Object(Closure))
+#25 C:\\xampp\\htdocs\\New folder (7)\\FrontBackLcc\\back\\vendor\\laravel\\framework\\src\\Illuminate\\Foundation\\Http\\Middleware\\TransformsRequest.php(21): Illuminate\\Pipeline\\Pipeline->Illuminate\\Pipeline\\{closure}(Object(Illuminate\\Http\\Request))
+#26 C:\\xampp\\htdocs\\New folder (7)\\FrontBackLcc\\back\\vendor\\laravel\\framework\\src\\Illuminate\\Pipeline\\Pipeline.php(171): Illuminate\\Foundation\\Http\\Middleware\\TransformsRequest->handle(Object(Illuminate\\Http\\Request), Object(Closure))
+#27 C:\\xampp\\htdocs\\New folder (7)\\FrontBackLcc\\back\\vendor\\laravel\\framework\\src\\Illuminate\\Foundation\\Http\\Middleware\\TransformsRequest.php(21): Illuminate\\Pipeline\\Pipeline->Illuminate\\Pipeline\\{closure}(Object(Illuminate\\Http\\Request))
+#28 C:\\xampp\\htdocs\\New folder (7)\\FrontBackLcc\\back\\vendor\\laravel\\framework\\src\\Illuminate\\Pipeline\\Pipeline.php(171): Illuminate\\Foundation\\Http\\Middleware\\TransformsRequest->handle(Object(Illuminate\\Http\\Request), Object(Closure))
+#29 C:\\xampp\\htdocs\\New folder (7)\\FrontBackLcc\\back\\vendor\\laravel\\framework\\src\\Illuminate\\Foundation\\Http\\Middleware\\ValidatePostSize.php(27): Illuminate\\Pipeline\\Pipeline->Illuminate\\Pipeline\\{closure}(Object(Illuminate\\Http\\Request))
+#30 C:\\xampp\\htdocs\\New folder (7)\\FrontBackLcc\\back\\vendor\\laravel\\framework\\src\\Illuminate\\Pipeline\\Pipeline.php(171): Illuminate\\Foundation\\Http\\Middleware\\ValidatePostSize->handle(Object(Illuminate\\Http\\Request), Object(Closure))
+#31 C:\\xampp\\htdocs\\New folder (7)\\FrontBackLcc\\back\\vendor\\laravel\\framework\\src\\Illuminate\\Foundation\\Http\\Middleware\\CheckForMaintenanceMode.php(63): Illuminate\\Pipeline\\Pipeline->Illuminate\\Pipeline\\{closure}(Object(Illuminate\\Http\\Request))
+#32 C:\\xampp\\htdocs\\New folder (7)\\FrontBackLcc\\back\\vendor\\laravel\\framework\\src\\Illuminate\\Pipeline\\Pipeline.php(171): Illuminate\\Foundation\\Http\\Middleware\\CheckForMaintenanceMode->handle(Object(Illuminate\\Http\\Request), Object(Closure))
+#33 C:\\xampp\\htdocs\\New folder (7)\\FrontBackLcc\\back\\vendor\\fideloper\\proxy\\src\\TrustProxies.php(57): Illuminate\\Pipeline\\Pipeline->Illuminate\\Pipeline\\{closure}(Object(Illuminate\\Http\\Request))
+#34 C:\\xampp\\htdocs\\New folder (7)\\FrontBackLcc\\back\\vendor\\laravel\\framework\\src\\Illuminate\\Pipeline\\Pipeline.php(171): Fideloper\\Proxy\\TrustProxies->handle(Object(Illuminate\\Http\\Request), Object(Closure))
+#35 C:\\xampp\\htdocs\\New folder (7)\\FrontBackLcc\\back\\vendor\\barryvdh\\laravel-cors\\src\\HandlePreflight.php(29): Illuminate\\Pipeline\\Pipeline->Illuminate\\Pipeline\\{closure}(Object(Illuminate\\Http\\Request))
+#36 C:\\xampp\\htdocs\\New folder (7)\\FrontBackLcc\\back\\vendor\\laravel\\framework\\src\\Illuminate\\Pipeline\\Pipeline.php(171): Barryvdh\\Cors\\HandlePreflight->handle(Object(Illuminate\\Http\\Request), Object(Closure))
+#37 C:\\xampp\\htdocs\\New folder (7)\\FrontBackLcc\\back\\vendor\\laravel\\framework\\src\\Illuminate\\Pipeline\\Pipeline.php(105): Illuminate\\Pipeline\\Pipeline->Illuminate\\Pipeline\\{closure}(Object(Illuminate\\Http\\Request))
+#38 C:\\xampp\\htdocs\\New folder (7)\\FrontBackLcc\\back\\vendor\\laravel\\framework\\src\\Illuminate\\Foundation\\Http\\Kernel.php(145): Illuminate\\Pipeline\\Pipeline->then(Object(Closure))
+#39 C:\\xampp\\htdocs\\New folder (7)\\FrontBackLcc\\back\\vendor\\laravel\\framework\\src\\Illuminate\\Foundation\\Http\\Kernel.php(110): Illuminate\\Foundation\\Http\\Kernel->sendRequestThroughRouter(Object(Illuminate\\Http\\Request))
+#40 C:\\xampp\\htdocs\\New folder (7)\\FrontBackLcc\\back\\public\\index.php(55): Illuminate\\Foundation\\Http\\Kernel->handle(Object(Illuminate\\Http\\Request))
+#41 C:\\xampp\\htdocs\\New folder (7)\\FrontBackLcc\\back\\server.php(21): require_once('C:\\\\xampp\\\\htdocs...')
+#42 {main}
+"} 
+[2022-12-22 14:41:15] local.ERROR: Property [id] does not exist on this collection instance. {"userId":2,"exception":"[object] (Exception(code: 0): Property [id] does not exist on this collection instance. at C:\\xampp\\htdocs\\New folder (7)\\FrontBackLcc\\back\\vendor\\laravel\\framework\\src\\Illuminate\\Support\\Traits\\EnumeratesValues.php:815)
+[stacktrace]
+#0 C:\\xampp\\htdocs\\New folder (7)\\FrontBackLcc\\back\\vendor\\laravel\\framework\\src\\Illuminate\\Http\\Resources\\DelegatesToResource.php(120): Illuminate\\Support\\Collection->__get('id')
+#1 C:\\xampp\\htdocs\\New folder (7)\\FrontBackLcc\\back\\app\\Response\\Charge\\ChargeResponse.php(13): Illuminate\\Http\\Resources\\Json\\JsonResource->__get('id')
+#2 C:\\xampp\\htdocs\\New folder (7)\\FrontBackLcc\\back\\vendor\\laravel\\framework\\src\\Illuminate\\Http\\Resources\\Json\\JsonResource.php(94): App\\Response\\Charge\\ChargeResponse->toArray(Object(Illuminate\\Http\\Request))
+#3 C:\\xampp\\htdocs\\New folder (7)\\FrontBackLcc\\back\\vendor\\laravel\\framework\\src\\Illuminate\\Http\\Resources\\Json\\JsonResource.php(211): Illuminate\\Http\\Resources\\Json\\JsonResource->resolve(Object(Illuminate\\Http\\Request))
+#4 [internal function]: Illuminate\\Http\\Resources\\Json\\JsonResource->jsonSerialize()
+#5 C:\\xampp\\htdocs\\New folder (7)\\FrontBackLcc\\back\\vendor\\laravel\\framework\\src\\Illuminate\\Http\\JsonResponse.php(71): json_encode(Array, 0)
+#6 C:\\xampp\\htdocs\\New folder (7)\\FrontBackLcc\\back\\vendor\\symfony\\http-foundation\\JsonResponse.php(54): Illuminate\\Http\\JsonResponse->setData(Array)
+#7 C:\\xampp\\htdocs\\New folder (7)\\FrontBackLcc\\back\\vendor\\laravel\\framework\\src\\Illuminate\\Http\\JsonResponse.php(31): Symfony\\Component\\HttpFoundation\\JsonResponse->__construct(Array, 200, Array)
+#8 C:\\xampp\\htdocs\\New folder (7)\\FrontBackLcc\\back\\vendor\\laravel\\framework\\src\\Illuminate\\Routing\\ResponseFactory.php(99): Illuminate\\Http\\JsonResponse->__construct(Array, 200, Array, 0)
+#9 C:\\xampp\\htdocs\\New folder (7)\\FrontBackLcc\\back\\app\\Http\\Controllers\\Crud\\ChargesController.php(65): Illuminate\\Routing\\ResponseFactory->json(Array, 200)
+#10 C:\\xampp\\htdocs\\New folder (7)\\FrontBackLcc\\back\\vendor\\laravel\\framework\\src\\Illuminate\\Routing\\Controller.php(54): App\\Http\\Controllers\\Crud\\ChargesController->show('1')
+#11 C:\\xampp\\htdocs\\New folder (7)\\FrontBackLcc\\back\\vendor\\laravel\\framework\\src\\Illuminate\\Routing\\ControllerDispatcher.php(45): Illuminate\\Routing\\Controller->callAction('show', Array)
+#12 C:\\xampp\\htdocs\\New folder (7)\\FrontBackLcc\\back\\vendor\\laravel\\framework\\src\\Illuminate\\Routing\\Route.php(219): Illuminate\\Routing\\ControllerDispatcher->dispatch(Object(Illuminate\\Routing\\Route), Object(App\\Http\\Controllers\\Crud\\ChargesController), 'show')
+#13 C:\\xampp\\htdocs\\New folder (7)\\FrontBackLcc\\back\\vendor\\laravel\\framework\\src\\Illuminate\\Routing\\Route.php(176): Illuminate\\Routing\\Route->runController()
+#14 C:\\xampp\\htdocs\\New folder (7)\\FrontBackLcc\\back\\vendor\\laravel\\framework\\src\\Illuminate\\Routing\\Router.php(681): Illuminate\\Routing\\Route->run()
+#15 C:\\xampp\\htdocs\\New folder (7)\\FrontBackLcc\\back\\vendor\\laravel\\framework\\src\\Illuminate\\Pipeline\\Pipeline.php(130): Illuminate\\Routing\\Router->Illuminate\\Routing\\{closure}(Object(Illuminate\\Http\\Request))
+#16 C:\\xampp\\htdocs\\New folder (7)\\FrontBackLcc\\back\\vendor\\tymon\\jwt-auth\\src\\Http\\Middleware\\Authenticate.php(32): Illuminate\\Pipeline\\Pipeline->Illuminate\\Pipeline\\{closure}(Object(Illuminate\\Http\\Request))
+#17 C:\\xampp\\htdocs\\New folder (7)\\FrontBackLcc\\back\\vendor\\laravel\\framework\\src\\Illuminate\\Pipeline\\Pipeline.php(171): Tymon\\JWTAuth\\Http\\Middleware\\Authenticate->handle(Object(Illuminate\\Http\\Request), Object(Closure))
+#18 C:\\xampp\\htdocs\\New folder (7)\\FrontBackLcc\\back\\app\\Http\\Middleware\\JWTMiddleware.php(54): Illuminate\\Pipeline\\Pipeline->Illuminate\\Pipeline\\{closure}(Object(Illuminate\\Http\\Request))
+#19 C:\\xampp\\htdocs\\New folder (7)\\FrontBackLcc\\back\\vendor\\laravel\\framework\\src\\Illuminate\\Pipeline\\Pipeline.php(171): App\\Http\\Middleware\\JWTMiddleware->handle(Object(Illuminate\\Http\\Request), Object(Closure))
+#20 C:\\xampp\\htdocs\\New folder (7)\\FrontBackLcc\\back\\vendor\\laravel\\framework\\src\\Illuminate\\Routing\\Middleware\\SubstituteBindings.php(41): Illuminate\\Pipeline\\Pipeline->Illuminate\\Pipeline\\{closure}(Object(Illuminate\\Http\\Request))
+#21 C:\\xampp\\htdocs\\New folder (7)\\FrontBackLcc\\back\\vendor\\laravel\\framework\\src\\Illuminate\\Pipeline\\Pipeline.php(171): Illuminate\\Routing\\Middleware\\SubstituteBindings->handle(Object(Illuminate\\Http\\Request), Object(Closure))
+#22 C:\\xampp\\htdocs\\New folder (7)\\FrontBackLcc\\back\\vendor\\laravel\\framework\\src\\Illuminate\\Routing\\Middleware\\ThrottleRequests.php(59): Illuminate\\Pipeline\\Pipeline->Illuminate\\Pipeline\\{closure}(Object(Illuminate\\Http\\Request))
+#23 C:\\xampp\\htdocs\\New folder (7)\\FrontBackLcc\\back\\vendor\\laravel\\framework\\src\\Illuminate\\Pipeline\\Pipeline.php(171): Illuminate\\Routing\\Middleware\\ThrottleRequests->handle(Object(Illuminate\\Http\\Request), Object(Closure), 60, '1')
+#24 C:\\xampp\\htdocs\\New folder (7)\\FrontBackLcc\\back\\app\\Http\\Middleware\\Cors.php(30): Illuminate\\Pipeline\\Pipeline->Illuminate\\Pipeline\\{closure}(Object(Illuminate\\Http\\Request))
+#25 C:\\xampp\\htdocs\\New folder (7)\\FrontBackLcc\\back\\vendor\\laravel\\framework\\src\\Illuminate\\Pipeline\\Pipeline.php(171): App\\Http\\Middleware\\Cors->handle(Object(Illuminate\\Http\\Request), Object(Closure))
+#26 C:\\xampp\\htdocs\\New folder (7)\\FrontBackLcc\\back\\vendor\\laravel\\framework\\src\\Illuminate\\Pipeline\\Pipeline.php(105): Illuminate\\Pipeline\\Pipeline->Illuminate\\Pipeline\\{closure}(Object(Illuminate\\Http\\Request))
+#27 C:\\xampp\\htdocs\\New folder (7)\\FrontBackLcc\\back\\vendor\\laravel\\framework\\src\\Illuminate\\Routing\\Router.php(683): Illuminate\\Pipeline\\Pipeline->then(Object(Closure))
+#28 C:\\xampp\\htdocs\\New folder (7)\\FrontBackLcc\\back\\vendor\\laravel\\framework\\src\\Illuminate\\Routing\\Router.php(658): Illuminate\\Routing\\Router->runRouteWithinStack(Object(Illuminate\\Routing\\Route), Object(Illuminate\\Http\\Request))
+#29 C:\\xampp\\htdocs\\New folder (7)\\FrontBackLcc\\back\\vendor\\laravel\\framework\\src\\Illuminate\\Routing\\Router.php(624): Illuminate\\Routing\\Router->runRoute(Object(Illuminate\\Http\\Request), Object(Illuminate\\Routing\\Route))
+#30 C:\\xampp\\htdocs\\New folder (7)\\FrontBackLcc\\back\\vendor\\laravel\\framework\\src\\Illuminate\\Routing\\Router.php(613): Illuminate\\Routing\\Router->dispatchToRoute(Object(Illuminate\\Http\\Request))
+#31 C:\\xampp\\htdocs\\New folder (7)\\FrontBackLcc\\back\\vendor\\laravel\\framework\\src\\Illuminate\\Foundation\\Http\\Kernel.php(170): Illuminate\\Routing\\Router->dispatch(Object(Illuminate\\Http\\Request))
+#32 C:\\xampp\\htdocs\\New folder (7)\\FrontBackLcc\\back\\vendor\\laravel\\framework\\src\\Illuminate\\Pipeline\\Pipeline.php(130): Illuminate\\Foundation\\Http\\Kernel->Illuminate\\Foundation\\Http\\{closure}(Object(Illuminate\\Http\\Request))
+#33 C:\\xampp\\htdocs\\New folder (7)\\FrontBackLcc\\back\\app\\Http\\Middleware\\Cors.php(30): Illuminate\\Pipeline\\Pipeline->Illuminate\\Pipeline\\{closure}(Object(Illuminate\\Http\\Request))
+#34 C:\\xampp\\htdocs\\New folder (7)\\FrontBackLcc\\back\\vendor\\laravel\\framework\\src\\Illuminate\\Pipeline\\Pipeline.php(171): App\\Http\\Middleware\\Cors->handle(Object(Illuminate\\Http\\Request), Object(Closure))
+#35 C:\\xampp\\htdocs\\New folder (7)\\FrontBackLcc\\back\\vendor\\laravel\\framework\\src\\Illuminate\\Foundation\\Http\\Middleware\\TransformsRequest.php(21): Illuminate\\Pipeline\\Pipeline->Illuminate\\Pipeline\\{closure}(Object(Illuminate\\Http\\Request))
+#36 C:\\xampp\\htdocs\\New folder (7)\\FrontBackLcc\\back\\vendor\\laravel\\framework\\src\\Illuminate\\Pipeline\\Pipeline.php(171): Illuminate\\Foundation\\Http\\Middleware\\TransformsRequest->handle(Object(Illuminate\\Http\\Request), Object(Closure))
+#37 C:\\xampp\\htdocs\\New folder (7)\\FrontBackLcc\\back\\vendor\\laravel\\framework\\src\\Illuminate\\Foundation\\Http\\Middleware\\TransformsRequest.php(21): Illuminate\\Pipeline\\Pipeline->Illuminate\\Pipeline\\{closure}(Object(Illuminate\\Http\\Request))
+#38 C:\\xampp\\htdocs\\New folder (7)\\FrontBackLcc\\back\\vendor\\laravel\\framework\\src\\Illuminate\\Pipeline\\Pipeline.php(171): Illuminate\\Foundation\\Http\\Middleware\\TransformsRequest->handle(Object(Illuminate\\Http\\Request), Object(Closure))
+#39 C:\\xampp\\htdocs\\New folder (7)\\FrontBackLcc\\back\\vendor\\laravel\\framework\\src\\Illuminate\\Foundation\\Http\\Middleware\\ValidatePostSize.php(27): Illuminate\\Pipeline\\Pipeline->Illuminate\\Pipeline\\{closure}(Object(Illuminate\\Http\\Request))
+#40 C:\\xampp\\htdocs\\New folder (7)\\FrontBackLcc\\back\\vendor\\laravel\\framework\\src\\Illuminate\\Pipeline\\Pipeline.php(171): Illuminate\\Foundation\\Http\\Middleware\\ValidatePostSize->handle(Object(Illuminate\\Http\\Request), Object(Closure))
+#41 C:\\xampp\\htdocs\\New folder (7)\\FrontBackLcc\\back\\vendor\\laravel\\framework\\src\\Illuminate\\Foundation\\Http\\Middleware\\CheckForMaintenanceMode.php(63): Illuminate\\Pipeline\\Pipeline->Illuminate\\Pipeline\\{closure}(Object(Illuminate\\Http\\Request))
+#42 C:\\xampp\\htdocs\\New folder (7)\\FrontBackLcc\\back\\vendor\\laravel\\framework\\src\\Illuminate\\Pipeline\\Pipeline.php(171): Illuminate\\Foundation\\Http\\Middleware\\CheckForMaintenanceMode->handle(Object(Illuminate\\Http\\Request), Object(Closure))
+#43 C:\\xampp\\htdocs\\New folder (7)\\FrontBackLcc\\back\\vendor\\fideloper\\proxy\\src\\TrustProxies.php(57): Illuminate\\Pipeline\\Pipeline->Illuminate\\Pipeline\\{closure}(Object(Illuminate\\Http\\Request))
+#44 C:\\xampp\\htdocs\\New folder (7)\\FrontBackLcc\\back\\vendor\\laravel\\framework\\src\\Illuminate\\Pipeline\\Pipeline.php(171): Fideloper\\Proxy\\TrustProxies->handle(Object(Illuminate\\Http\\Request), Object(Closure))
+#45 C:\\xampp\\htdocs\\New folder (7)\\FrontBackLcc\\back\\vendor\\barryvdh\\laravel-cors\\src\\HandlePreflight.php(29): Illuminate\\Pipeline\\Pipeline->Illuminate\\Pipeline\\{closure}(Object(Illuminate\\Http\\Request))
+#46 C:\\xampp\\htdocs\\New folder (7)\\FrontBackLcc\\back\\vendor\\laravel\\framework\\src\\Illuminate\\Pipeline\\Pipeline.php(171): Barryvdh\\Cors\\HandlePreflight->handle(Object(Illuminate\\Http\\Request), Object(Closure))
+#47 C:\\xampp\\htdocs\\New folder (7)\\FrontBackLcc\\back\\vendor\\laravel\\framework\\src\\Illuminate\\Pipeline\\Pipeline.php(105): Illuminate\\Pipeline\\Pipeline->Illuminate\\Pipeline\\{closure}(Object(Illuminate\\Http\\Request))
+#48 C:\\xampp\\htdocs\\New folder (7)\\FrontBackLcc\\back\\vendor\\laravel\\framework\\src\\Illuminate\\Foundation\\Http\\Kernel.php(145): Illuminate\\Pipeline\\Pipeline->then(Object(Closure))
+#49 C:\\xampp\\htdocs\\New folder (7)\\FrontBackLcc\\back\\vendor\\laravel\\framework\\src\\Illuminate\\Foundation\\Http\\Kernel.php(110): Illuminate\\Foundation\\Http\\Kernel->sendRequestThroughRouter(Object(Illuminate\\Http\\Request))
+#50 C:\\xampp\\htdocs\\New folder (7)\\FrontBackLcc\\back\\public\\index.php(55): Illuminate\\Foundation\\Http\\Kernel->handle(Object(Illuminate\\Http\\Request))
+#51 C:\\xampp\\htdocs\\New folder (7)\\FrontBackLcc\\back\\server.php(21): require_once('C:\\\\xampp\\\\htdocs...')
+#52 {main}
+"} 
+[2022-12-22 15:03:41] local.ERROR: Call to a member function input() on null {"userId":2,"exception":"[object] (Symfony\\Component\\Debug\\Exception\\FatalThrowableError(code: 0): Call to a member function input() on null at C:\\xampp\\htdocs\\New folder (7)\\FrontBackLcc\\back\\app\\Repository\\Charge\\ChargeRepository.php:39)
+[stacktrace]
+#0 C:\\xampp\\htdocs\\New folder (7)\\FrontBackLcc\\back\\app\\Services\\Charge\\ChargeService.php(26): App\\Repository\\Charge\\ChargeRepository->store(Object(App\\Http\\Requests\\Crud\\ChargesRequest))
+#1 C:\\xampp\\htdocs\\New folder (7)\\FrontBackLcc\\back\\app\\Http\\Controllers\\Crud\\ChargesController.php(48): App\\Services\\Charge\\ChargeService->store(Object(App\\Http\\Requests\\Crud\\ChargesRequest))
+#2 C:\\xampp\\htdocs\\New folder (7)\\FrontBackLcc\\back\\vendor\\laravel\\framework\\src\\Illuminate\\Routing\\Controller.php(54): App\\Http\\Controllers\\Crud\\ChargesController->store(Object(App\\Http\\Requests\\Crud\\ChargesRequest))
+#3 C:\\xampp\\htdocs\\New folder (7)\\FrontBackLcc\\back\\vendor\\laravel\\framework\\src\\Illuminate\\Routing\\ControllerDispatcher.php(45): Illuminate\\Routing\\Controller->callAction('store', Array)
+#4 C:\\xampp\\htdocs\\New folder (7)\\FrontBackLcc\\back\\vendor\\laravel\\framework\\src\\Illuminate\\Routing\\Route.php(219): Illuminate\\Routing\\ControllerDispatcher->dispatch(Object(Illuminate\\Routing\\Route), Object(App\\Http\\Controllers\\Crud\\ChargesController), 'store')
+#5 C:\\xampp\\htdocs\\New folder (7)\\FrontBackLcc\\back\\vendor\\laravel\\framework\\src\\Illuminate\\Routing\\Route.php(176): Illuminate\\Routing\\Route->runController()
+#6 C:\\xampp\\htdocs\\New folder (7)\\FrontBackLcc\\back\\vendor\\laravel\\framework\\src\\Illuminate\\Routing\\Router.php(681): Illuminate\\Routing\\Route->run()
+#7 C:\\xampp\\htdocs\\New folder (7)\\FrontBackLcc\\back\\vendor\\laravel\\framework\\src\\Illuminate\\Pipeline\\Pipeline.php(130): Illuminate\\Routing\\Router->Illuminate\\Routing\\{closure}(Object(Illuminate\\Http\\Request))
+#8 C:\\xampp\\htdocs\\New folder (7)\\FrontBackLcc\\back\\vendor\\halpdesk\\zizaco-entrust-laravel-6.0\\src\\Entrust\\Middleware\\EntrustRole.php(48): Illuminate\\Pipeline\\Pipeline->Illuminate\\Pipeline\\{closure}(Object(Illuminate\\Http\\Request))
+#9 C:\\xampp\\htdocs\\New folder (7)\\FrontBackLcc\\back\\vendor\\laravel\\framework\\src\\Illuminate\\Pipeline\\Pipeline.php(171): Zizaco\\Entrust\\Middleware\\EntrustRole->handle(Object(Illuminate\\Http\\Request), Object(Closure), Array)
+#10 C:\\xampp\\htdocs\\New folder (7)\\FrontBackLcc\\back\\vendor\\tymon\\jwt-auth\\src\\Http\\Middleware\\Authenticate.php(32): Illuminate\\Pipeline\\Pipeline->Illuminate\\Pipeline\\{closure}(Object(Illuminate\\Http\\Request))
+#11 C:\\xampp\\htdocs\\New folder (7)\\FrontBackLcc\\back\\vendor\\laravel\\framework\\src\\Illuminate\\Pipeline\\Pipeline.php(171): Tymon\\JWTAuth\\Http\\Middleware\\Authenticate->handle(Object(Illuminate\\Http\\Request), Object(Closure))
+#12 C:\\xampp\\htdocs\\New folder (7)\\FrontBackLcc\\back\\app\\Http\\Middleware\\JWTMiddleware.php(54): Illuminate\\Pipeline\\Pipeline->Illuminate\\Pipeline\\{closure}(Object(Illuminate\\Http\\Request))
+#13 C:\\xampp\\htdocs\\New folder (7)\\FrontBackLcc\\back\\vendor\\laravel\\framework\\src\\Illuminate\\Pipeline\\Pipeline.php(171): App\\Http\\Middleware\\JWTMiddleware->handle(Object(Illuminate\\Http\\Request), Object(Closure))
+#14 C:\\xampp\\htdocs\\New folder (7)\\FrontBackLcc\\back\\vendor\\laravel\\framework\\src\\Illuminate\\Routing\\Middleware\\SubstituteBindings.php(41): Illuminate\\Pipeline\\Pipeline->Illuminate\\Pipeline\\{closure}(Object(Illuminate\\Http\\Request))
+#15 C:\\xampp\\htdocs\\New folder (7)\\FrontBackLcc\\back\\vendor\\laravel\\framework\\src\\Illuminate\\Pipeline\\Pipeline.php(171): Illuminate\\Routing\\Middleware\\SubstituteBindings->handle(Object(Illuminate\\Http\\Request), Object(Closure))
+#16 C:\\xampp\\htdocs\\New folder (7)\\FrontBackLcc\\back\\vendor\\laravel\\framework\\src\\Illuminate\\Routing\\Middleware\\ThrottleRequests.php(59): Illuminate\\Pipeline\\Pipeline->Illuminate\\Pipeline\\{closure}(Object(Illuminate\\Http\\Request))
+#17 C:\\xampp\\htdocs\\New folder (7)\\FrontBackLcc\\back\\vendor\\laravel\\framework\\src\\Illuminate\\Pipeline\\Pipeline.php(171): Illuminate\\Routing\\Middleware\\ThrottleRequests->handle(Object(Illuminate\\Http\\Request), Object(Closure), 60, '1')
+#18 C:\\xampp\\htdocs\\New folder (7)\\FrontBackLcc\\back\\app\\Http\\Middleware\\Cors.php(30): Illuminate\\Pipeline\\Pipeline->Illuminate\\Pipeline\\{closure}(Object(Illuminate\\Http\\Request))
+#19 C:\\xampp\\htdocs\\New folder (7)\\FrontBackLcc\\back\\vendor\\laravel\\framework\\src\\Illuminate\\Pipeline\\Pipeline.php(171): App\\Http\\Middleware\\Cors->handle(Object(Illuminate\\Http\\Request), Object(Closure))
+#20 C:\\xampp\\htdocs\\New folder (7)\\FrontBackLcc\\back\\vendor\\laravel\\framework\\src\\Illuminate\\Pipeline\\Pipeline.php(105): Illuminate\\Pipeline\\Pipeline->Illuminate\\Pipeline\\{closure}(Object(Illuminate\\Http\\Request))
+#21 C:\\xampp\\htdocs\\New folder (7)\\FrontBackLcc\\back\\vendor\\laravel\\framework\\src\\Illuminate\\Routing\\Router.php(683): Illuminate\\Pipeline\\Pipeline->then(Object(Closure))
+#22 C:\\xampp\\htdocs\\New folder (7)\\FrontBackLcc\\back\\vendor\\laravel\\framework\\src\\Illuminate\\Routing\\Router.php(658): Illuminate\\Routing\\Router->runRouteWithinStack(Object(Illuminate\\Routing\\Route), Object(Illuminate\\Http\\Request))
+#23 C:\\xampp\\htdocs\\New folder (7)\\FrontBackLcc\\back\\vendor\\laravel\\framework\\src\\Illuminate\\Routing\\Router.php(624): Illuminate\\Routing\\Router->runRoute(Object(Illuminate\\Http\\Request), Object(Illuminate\\Routing\\Route))
+#24 C:\\xampp\\htdocs\\New folder (7)\\FrontBackLcc\\back\\vendor\\laravel\\framework\\src\\Illuminate\\Routing\\Router.php(613): Illuminate\\Routing\\Router->dispatchToRoute(Object(Illuminate\\Http\\Request))
+#25 C:\\xampp\\htdocs\\New folder (7)\\FrontBackLcc\\back\\vendor\\laravel\\framework\\src\\Illuminate\\Foundation\\Http\\Kernel.php(170): Illuminate\\Routing\\Router->dispatch(Object(Illuminate\\Http\\Request))
+#26 C:\\xampp\\htdocs\\New folder (7)\\FrontBackLcc\\back\\vendor\\laravel\\framework\\src\\Illuminate\\Pipeline\\Pipeline.php(130): Illuminate\\Foundation\\Http\\Kernel->Illuminate\\Foundation\\Http\\{closure}(Object(Illuminate\\Http\\Request))
+#27 C:\\xampp\\htdocs\\New folder (7)\\FrontBackLcc\\back\\app\\Http\\Middleware\\Cors.php(30): Illuminate\\Pipeline\\Pipeline->Illuminate\\Pipeline\\{closure}(Object(Illuminate\\Http\\Request))
+#28 C:\\xampp\\htdocs\\New folder (7)\\FrontBackLcc\\back\\vendor\\laravel\\framework\\src\\Illuminate\\Pipeline\\Pipeline.php(171): App\\Http\\Middleware\\Cors->handle(Object(Illuminate\\Http\\Request), Object(Closure))
+#29 C:\\xampp\\htdocs\\New folder (7)\\FrontBackLcc\\back\\vendor\\laravel\\framework\\src\\Illuminate\\Foundation\\Http\\Middleware\\TransformsRequest.php(21): Illuminate\\Pipeline\\Pipeline->Illuminate\\Pipeline\\{closure}(Object(Illuminate\\Http\\Request))
+#30 C:\\xampp\\htdocs\\New folder (7)\\FrontBackLcc\\back\\vendor\\laravel\\framework\\src\\Illuminate\\Pipeline\\Pipeline.php(171): Illuminate\\Foundation\\Http\\Middleware\\TransformsRequest->handle(Object(Illuminate\\Http\\Request), Object(Closure))
+#31 C:\\xampp\\htdocs\\New folder (7)\\FrontBackLcc\\back\\vendor\\laravel\\framework\\src\\Illuminate\\Foundation\\Http\\Middleware\\TransformsRequest.php(21): Illuminate\\Pipeline\\Pipeline->Illuminate\\Pipeline\\{closure}(Object(Illuminate\\Http\\Request))
+#32 C:\\xampp\\htdocs\\New folder (7)\\FrontBackLcc\\back\\vendor\\laravel\\framework\\src\\Illuminate\\Pipeline\\Pipeline.php(171): Illuminate\\Foundation\\Http\\Middleware\\TransformsRequest->handle(Object(Illuminate\\Http\\Request), Object(Closure))
+#33 C:\\xampp\\htdocs\\New folder (7)\\FrontBackLcc\\back\\vendor\\laravel\\framework\\src\\Illuminate\\Foundation\\Http\\Middleware\\ValidatePostSize.php(27): Illuminate\\Pipeline\\Pipeline->Illuminate\\Pipeline\\{closure}(Object(Illuminate\\Http\\Request))
+#34 C:\\xampp\\htdocs\\New folder (7)\\FrontBackLcc\\back\\vendor\\laravel\\framework\\src\\Illuminate\\Pipeline\\Pipeline.php(171): Illuminate\\Foundation\\Http\\Middleware\\ValidatePostSize->handle(Object(Illuminate\\Http\\Request), Object(Closure))
+#35 C:\\xampp\\htdocs\\New folder (7)\\FrontBackLcc\\back\\vendor\\laravel\\framework\\src\\Illuminate\\Foundation\\Http\\Middleware\\CheckForMaintenanceMode.php(63): Illuminate\\Pipeline\\Pipeline->Illuminate\\Pipeline\\{closure}(Object(Illuminate\\Http\\Request))
+#36 C:\\xampp\\htdocs\\New folder (7)\\FrontBackLcc\\back\\vendor\\laravel\\framework\\src\\Illuminate\\Pipeline\\Pipeline.php(171): Illuminate\\Foundation\\Http\\Middleware\\CheckForMaintenanceMode->handle(Object(Illuminate\\Http\\Request), Object(Closure))
+#37 C:\\xampp\\htdocs\\New folder (7)\\FrontBackLcc\\back\\vendor\\fideloper\\proxy\\src\\TrustProxies.php(57): Illuminate\\Pipeline\\Pipeline->Illuminate\\Pipeline\\{closure}(Object(Illuminate\\Http\\Request))
+#38 C:\\xampp\\htdocs\\New folder (7)\\FrontBackLcc\\back\\vendor\\laravel\\framework\\src\\Illuminate\\Pipeline\\Pipeline.php(171): Fideloper\\Proxy\\TrustProxies->handle(Object(Illuminate\\Http\\Request), Object(Closure))
+#39 C:\\xampp\\htdocs\\New folder (7)\\FrontBackLcc\\back\\vendor\\barryvdh\\laravel-cors\\src\\HandlePreflight.php(29): Illuminate\\Pipeline\\Pipeline->Illuminate\\Pipeline\\{closure}(Object(Illuminate\\Http\\Request))
+#40 C:\\xampp\\htdocs\\New folder (7)\\FrontBackLcc\\back\\vendor\\laravel\\framework\\src\\Illuminate\\Pipeline\\Pipeline.php(171): Barryvdh\\Cors\\HandlePreflight->handle(Object(Illuminate\\Http\\Request), Object(Closure))
+#41 C:\\xampp\\htdocs\\New folder (7)\\FrontBackLcc\\back\\vendor\\laravel\\framework\\src\\Illuminate\\Pipeline\\Pipeline.php(105): Illuminate\\Pipeline\\Pipeline->Illuminate\\Pipeline\\{closure}(Object(Illuminate\\Http\\Request))
+#42 C:\\xampp\\htdocs\\New folder (7)\\FrontBackLcc\\back\\vendor\\laravel\\framework\\src\\Illuminate\\Foundation\\Http\\Kernel.php(145): Illuminate\\Pipeline\\Pipeline->then(Object(Closure))
+#43 C:\\xampp\\htdocs\\New folder (7)\\FrontBackLcc\\back\\vendor\\laravel\\framework\\src\\Illuminate\\Foundation\\Http\\Kernel.php(110): Illuminate\\Foundation\\Http\\Kernel->sendRequestThroughRouter(Object(Illuminate\\Http\\Request))
+#44 C:\\xampp\\htdocs\\New folder (7)\\FrontBackLcc\\back\\public\\index.php(55): Illuminate\\Foundation\\Http\\Kernel->handle(Object(Illuminate\\Http\\Request))
+#45 C:\\xampp\\htdocs\\New folder (7)\\FrontBackLcc\\back\\server.php(21): require_once('C:\\\\xampp\\\\htdocs...')
+#46 {main}
+"} 
+[2022-12-22 15:04:31] local.ERROR: Call to a member function input() on null {"userId":2,"exception":"[object] (Symfony\\Component\\Debug\\Exception\\FatalThrowableError(code: 0): Call to a member function input() on null at C:\\xampp\\htdocs\\New folder (7)\\FrontBackLcc\\back\\app\\Repository\\Charge\\ChargeRepository.php:39)
+[stacktrace]
+#0 C:\\xampp\\htdocs\\New folder (7)\\FrontBackLcc\\back\\app\\Services\\Charge\\ChargeService.php(26): App\\Repository\\Charge\\ChargeRepository->store(Object(App\\Http\\Requests\\Crud\\ChargesRequest))
+#1 C:\\xampp\\htdocs\\New folder (7)\\FrontBackLcc\\back\\app\\Http\\Controllers\\Crud\\ChargesController.php(48): App\\Services\\Charge\\ChargeService->store(Object(App\\Http\\Requests\\Crud\\ChargesRequest))
+#2 C:\\xampp\\htdocs\\New folder (7)\\FrontBackLcc\\back\\vendor\\laravel\\framework\\src\\Illuminate\\Routing\\Controller.php(54): App\\Http\\Controllers\\Crud\\ChargesController->store(Object(App\\Http\\Requests\\Crud\\ChargesRequest))
+#3 C:\\xampp\\htdocs\\New folder (7)\\FrontBackLcc\\back\\vendor\\laravel\\framework\\src\\Illuminate\\Routing\\ControllerDispatcher.php(45): Illuminate\\Routing\\Controller->callAction('store', Array)
+#4 C:\\xampp\\htdocs\\New folder (7)\\FrontBackLcc\\back\\vendor\\laravel\\framework\\src\\Illuminate\\Routing\\Route.php(219): Illuminate\\Routing\\ControllerDispatcher->dispatch(Object(Illuminate\\Routing\\Route), Object(App\\Http\\Controllers\\Crud\\ChargesController), 'store')
+#5 C:\\xampp\\htdocs\\New folder (7)\\FrontBackLcc\\back\\vendor\\laravel\\framework\\src\\Illuminate\\Routing\\Route.php(176): Illuminate\\Routing\\Route->runController()
+#6 C:\\xampp\\htdocs\\New folder (7)\\FrontBackLcc\\back\\vendor\\laravel\\framework\\src\\Illuminate\\Routing\\Router.php(681): Illuminate\\Routing\\Route->run()
+#7 C:\\xampp\\htdocs\\New folder (7)\\FrontBackLcc\\back\\vendor\\laravel\\framework\\src\\Illuminate\\Pipeline\\Pipeline.php(130): Illuminate\\Routing\\Router->Illuminate\\Routing\\{closure}(Object(Illuminate\\Http\\Request))
+#8 C:\\xampp\\htdocs\\New folder (7)\\FrontBackLcc\\back\\vendor\\halpdesk\\zizaco-entrust-laravel-6.0\\src\\Entrust\\Middleware\\EntrustRole.php(48): Illuminate\\Pipeline\\Pipeline->Illuminate\\Pipeline\\{closure}(Object(Illuminate\\Http\\Request))
+#9 C:\\xampp\\htdocs\\New folder (7)\\FrontBackLcc\\back\\vendor\\laravel\\framework\\src\\Illuminate\\Pipeline\\Pipeline.php(171): Zizaco\\Entrust\\Middleware\\EntrustRole->handle(Object(Illuminate\\Http\\Request), Object(Closure), Array)
+#10 C:\\xampp\\htdocs\\New folder (7)\\FrontBackLcc\\back\\vendor\\tymon\\jwt-auth\\src\\Http\\Middleware\\Authenticate.php(32): Illuminate\\Pipeline\\Pipeline->Illuminate\\Pipeline\\{closure}(Object(Illuminate\\Http\\Request))
+#11 C:\\xampp\\htdocs\\New folder (7)\\FrontBackLcc\\back\\vendor\\laravel\\framework\\src\\Illuminate\\Pipeline\\Pipeline.php(171): Tymon\\JWTAuth\\Http\\Middleware\\Authenticate->handle(Object(Illuminate\\Http\\Request), Object(Closure))
+#12 C:\\xampp\\htdocs\\New folder (7)\\FrontBackLcc\\back\\app\\Http\\Middleware\\JWTMiddleware.php(54): Illuminate\\Pipeline\\Pipeline->Illuminate\\Pipeline\\{closure}(Object(Illuminate\\Http\\Request))
+#13 C:\\xampp\\htdocs\\New folder (7)\\FrontBackLcc\\back\\vendor\\laravel\\framework\\src\\Illuminate\\Pipeline\\Pipeline.php(171): App\\Http\\Middleware\\JWTMiddleware->handle(Object(Illuminate\\Http\\Request), Object(Closure))
+#14 C:\\xampp\\htdocs\\New folder (7)\\FrontBackLcc\\back\\vendor\\laravel\\framework\\src\\Illuminate\\Routing\\Middleware\\SubstituteBindings.php(41): Illuminate\\Pipeline\\Pipeline->Illuminate\\Pipeline\\{closure}(Object(Illuminate\\Http\\Request))
+#15 C:\\xampp\\htdocs\\New folder (7)\\FrontBackLcc\\back\\vendor\\laravel\\framework\\src\\Illuminate\\Pipeline\\Pipeline.php(171): Illuminate\\Routing\\Middleware\\SubstituteBindings->handle(Object(Illuminate\\Http\\Request), Object(Closure))
+#16 C:\\xampp\\htdocs\\New folder (7)\\FrontBackLcc\\back\\vendor\\laravel\\framework\\src\\Illuminate\\Routing\\Middleware\\ThrottleRequests.php(59): Illuminate\\Pipeline\\Pipeline->Illuminate\\Pipeline\\{closure}(Object(Illuminate\\Http\\Request))
+#17 C:\\xampp\\htdocs\\New folder (7)\\FrontBackLcc\\back\\vendor\\laravel\\framework\\src\\Illuminate\\Pipeline\\Pipeline.php(171): Illuminate\\Routing\\Middleware\\ThrottleRequests->handle(Object(Illuminate\\Http\\Request), Object(Closure), 60, '1')
+#18 C:\\xampp\\htdocs\\New folder (7)\\FrontBackLcc\\back\\app\\Http\\Middleware\\Cors.php(30): Illuminate\\Pipeline\\Pipeline->Illuminate\\Pipeline\\{closure}(Object(Illuminate\\Http\\Request))
+#19 C:\\xampp\\htdocs\\New folder (7)\\FrontBackLcc\\back\\vendor\\laravel\\framework\\src\\Illuminate\\Pipeline\\Pipeline.php(171): App\\Http\\Middleware\\Cors->handle(Object(Illuminate\\Http\\Request), Object(Closure))
+#20 C:\\xampp\\htdocs\\New folder (7)\\FrontBackLcc\\back\\vendor\\laravel\\framework\\src\\Illuminate\\Pipeline\\Pipeline.php(105): Illuminate\\Pipeline\\Pipeline->Illuminate\\Pipeline\\{closure}(Object(Illuminate\\Http\\Request))
+#21 C:\\xampp\\htdocs\\New folder (7)\\FrontBackLcc\\back\\vendor\\laravel\\framework\\src\\Illuminate\\Routing\\Router.php(683): Illuminate\\Pipeline\\Pipeline->then(Object(Closure))
+#22 C:\\xampp\\htdocs\\New folder (7)\\FrontBackLcc\\back\\vendor\\laravel\\framework\\src\\Illuminate\\Routing\\Router.php(658): Illuminate\\Routing\\Router->runRouteWithinStack(Object(Illuminate\\Routing\\Route), Object(Illuminate\\Http\\Request))
+#23 C:\\xampp\\htdocs\\New folder (7)\\FrontBackLcc\\back\\vendor\\laravel\\framework\\src\\Illuminate\\Routing\\Router.php(624): Illuminate\\Routing\\Router->runRoute(Object(Illuminate\\Http\\Request), Object(Illuminate\\Routing\\Route))
+#24 C:\\xampp\\htdocs\\New folder (7)\\FrontBackLcc\\back\\vendor\\laravel\\framework\\src\\Illuminate\\Routing\\Router.php(613): Illuminate\\Routing\\Router->dispatchToRoute(Object(Illuminate\\Http\\Request))
+#25 C:\\xampp\\htdocs\\New folder (7)\\FrontBackLcc\\back\\vendor\\laravel\\framework\\src\\Illuminate\\Foundation\\Http\\Kernel.php(170): Illuminate\\Routing\\Router->dispatch(Object(Illuminate\\Http\\Request))
+#26 C:\\xampp\\htdocs\\New folder (7)\\FrontBackLcc\\back\\vendor\\laravel\\framework\\src\\Illuminate\\Pipeline\\Pipeline.php(130): Illuminate\\Foundation\\Http\\Kernel->Illuminate\\Foundation\\Http\\{closure}(Object(Illuminate\\Http\\Request))
+#27 C:\\xampp\\htdocs\\New folder (7)\\FrontBackLcc\\back\\app\\Http\\Middleware\\Cors.php(30): Illuminate\\Pipeline\\Pipeline->Illuminate\\Pipeline\\{closure}(Object(Illuminate\\Http\\Request))
+#28 C:\\xampp\\htdocs\\New folder (7)\\FrontBackLcc\\back\\vendor\\laravel\\framework\\src\\Illuminate\\Pipeline\\Pipeline.php(171): App\\Http\\Middleware\\Cors->handle(Object(Illuminate\\Http\\Request), Object(Closure))
+#29 C:\\xampp\\htdocs\\New folder (7)\\FrontBackLcc\\back\\vendor\\laravel\\framework\\src\\Illuminate\\Foundation\\Http\\Middleware\\TransformsRequest.php(21): Illuminate\\Pipeline\\Pipeline->Illuminate\\Pipeline\\{closure}(Object(Illuminate\\Http\\Request))
+#30 C:\\xampp\\htdocs\\New folder (7)\\FrontBackLcc\\back\\vendor\\laravel\\framework\\src\\Illuminate\\Pipeline\\Pipeline.php(171): Illuminate\\Foundation\\Http\\Middleware\\TransformsRequest->handle(Object(Illuminate\\Http\\Request), Object(Closure))
+#31 C:\\xampp\\htdocs\\New folder (7)\\FrontBackLcc\\back\\vendor\\laravel\\framework\\src\\Illuminate\\Foundation\\Http\\Middleware\\TransformsRequest.php(21): Illuminate\\Pipeline\\Pipeline->Illuminate\\Pipeline\\{closure}(Object(Illuminate\\Http\\Request))
+#32 C:\\xampp\\htdocs\\New folder (7)\\FrontBackLcc\\back\\vendor\\laravel\\framework\\src\\Illuminate\\Pipeline\\Pipeline.php(171): Illuminate\\Foundation\\Http\\Middleware\\TransformsRequest->handle(Object(Illuminate\\Http\\Request), Object(Closure))
+#33 C:\\xampp\\htdocs\\New folder (7)\\FrontBackLcc\\back\\vendor\\laravel\\framework\\src\\Illuminate\\Foundation\\Http\\Middleware\\ValidatePostSize.php(27): Illuminate\\Pipeline\\Pipeline->Illuminate\\Pipeline\\{closure}(Object(Illuminate\\Http\\Request))
+#34 C:\\xampp\\htdocs\\New folder (7)\\FrontBackLcc\\back\\vendor\\laravel\\framework\\src\\Illuminate\\Pipeline\\Pipeline.php(171): Illuminate\\Foundation\\Http\\Middleware\\ValidatePostSize->handle(Object(Illuminate\\Http\\Request), Object(Closure))
+#35 C:\\xampp\\htdocs\\New folder (7)\\FrontBackLcc\\back\\vendor\\laravel\\framework\\src\\Illuminate\\Foundation\\Http\\Middleware\\CheckForMaintenanceMode.php(63): Illuminate\\Pipeline\\Pipeline->Illuminate\\Pipeline\\{closure}(Object(Illuminate\\Http\\Request))
+#36 C:\\xampp\\htdocs\\New folder (7)\\FrontBackLcc\\back\\vendor\\laravel\\framework\\src\\Illuminate\\Pipeline\\Pipeline.php(171): Illuminate\\Foundation\\Http\\Middleware\\CheckForMaintenanceMode->handle(Object(Illuminate\\Http\\Request), Object(Closure))
+#37 C:\\xampp\\htdocs\\New folder (7)\\FrontBackLcc\\back\\vendor\\fideloper\\proxy\\src\\TrustProxies.php(57): Illuminate\\Pipeline\\Pipeline->Illuminate\\Pipeline\\{closure}(Object(Illuminate\\Http\\Request))
+#38 C:\\xampp\\htdocs\\New folder (7)\\FrontBackLcc\\back\\vendor\\laravel\\framework\\src\\Illuminate\\Pipeline\\Pipeline.php(171): Fideloper\\Proxy\\TrustProxies->handle(Object(Illuminate\\Http\\Request), Object(Closure))
+#39 C:\\xampp\\htdocs\\New folder (7)\\FrontBackLcc\\back\\vendor\\barryvdh\\laravel-cors\\src\\HandlePreflight.php(29): Illuminate\\Pipeline\\Pipeline->Illuminate\\Pipeline\\{closure}(Object(Illuminate\\Http\\Request))
+#40 C:\\xampp\\htdocs\\New folder (7)\\FrontBackLcc\\back\\vendor\\laravel\\framework\\src\\Illuminate\\Pipeline\\Pipeline.php(171): Barryvdh\\Cors\\HandlePreflight->handle(Object(Illuminate\\Http\\Request), Object(Closure))
+#41 C:\\xampp\\htdocs\\New folder (7)\\FrontBackLcc\\back\\vendor\\laravel\\framework\\src\\Illuminate\\Pipeline\\Pipeline.php(105): Illuminate\\Pipeline\\Pipeline->Illuminate\\Pipeline\\{closure}(Object(Illuminate\\Http\\Request))
+#42 C:\\xampp\\htdocs\\New folder (7)\\FrontBackLcc\\back\\vendor\\laravel\\framework\\src\\Illuminate\\Foundation\\Http\\Kernel.php(145): Illuminate\\Pipeline\\Pipeline->then(Object(Closure))
+#43 C:\\xampp\\htdocs\\New folder (7)\\FrontBackLcc\\back\\vendor\\laravel\\framework\\src\\Illuminate\\Foundation\\Http\\Kernel.php(110): Illuminate\\Foundation\\Http\\Kernel->sendRequestThroughRouter(Object(Illuminate\\Http\\Request))
+#44 C:\\xampp\\htdocs\\New folder (7)\\FrontBackLcc\\back\\public\\index.php(55): Illuminate\\Foundation\\Http\\Kernel->handle(Object(Illuminate\\Http\\Request))
+#45 C:\\xampp\\htdocs\\New folder (7)\\FrontBackLcc\\back\\server.php(21): require_once('C:\\\\xampp\\\\htdocs...')
+#46 {main}
+"} 
+[2022-12-22 15:06:06] local.ERROR: Call to a member function input() on null {"userId":2,"exception":"[object] (Symfony\\Component\\Debug\\Exception\\FatalThrowableError(code: 0): Call to a member function input() on null at C:\\xampp\\htdocs\\New folder (7)\\FrontBackLcc\\back\\app\\Repository\\Charge\\ChargeRepository.php:39)
+[stacktrace]
+#0 C:\\xampp\\htdocs\\New folder (7)\\FrontBackLcc\\back\\app\\Services\\Charge\\ChargeService.php(26): App\\Repository\\Charge\\ChargeRepository->store(Object(App\\Http\\Requests\\Crud\\ChargesRequest))
+#1 C:\\xampp\\htdocs\\New folder (7)\\FrontBackLcc\\back\\app\\Http\\Controllers\\Crud\\ChargesController.php(48): App\\Services\\Charge\\ChargeService->store(Object(App\\Http\\Requests\\Crud\\ChargesRequest))
+#2 C:\\xampp\\htdocs\\New folder (7)\\FrontBackLcc\\back\\vendor\\laravel\\framework\\src\\Illuminate\\Routing\\Controller.php(54): App\\Http\\Controllers\\Crud\\ChargesController->store(Object(App\\Http\\Requests\\Crud\\ChargesRequest))
+#3 C:\\xampp\\htdocs\\New folder (7)\\FrontBackLcc\\back\\vendor\\laravel\\framework\\src\\Illuminate\\Routing\\ControllerDispatcher.php(45): Illuminate\\Routing\\Controller->callAction('store', Array)
+#4 C:\\xampp\\htdocs\\New folder (7)\\FrontBackLcc\\back\\vendor\\laravel\\framework\\src\\Illuminate\\Routing\\Route.php(219): Illuminate\\Routing\\ControllerDispatcher->dispatch(Object(Illuminate\\Routing\\Route), Object(App\\Http\\Controllers\\Crud\\ChargesController), 'store')
+#5 C:\\xampp\\htdocs\\New folder (7)\\FrontBackLcc\\back\\vendor\\laravel\\framework\\src\\Illuminate\\Routing\\Route.php(176): Illuminate\\Routing\\Route->runController()
+#6 C:\\xampp\\htdocs\\New folder (7)\\FrontBackLcc\\back\\vendor\\laravel\\framework\\src\\Illuminate\\Routing\\Router.php(681): Illuminate\\Routing\\Route->run()
+#7 C:\\xampp\\htdocs\\New folder (7)\\FrontBackLcc\\back\\vendor\\laravel\\framework\\src\\Illuminate\\Pipeline\\Pipeline.php(130): Illuminate\\Routing\\Router->Illuminate\\Routing\\{closure}(Object(Illuminate\\Http\\Request))
+#8 C:\\xampp\\htdocs\\New folder (7)\\FrontBackLcc\\back\\vendor\\halpdesk\\zizaco-entrust-laravel-6.0\\src\\Entrust\\Middleware\\EntrustRole.php(48): Illuminate\\Pipeline\\Pipeline->Illuminate\\Pipeline\\{closure}(Object(Illuminate\\Http\\Request))
+#9 C:\\xampp\\htdocs\\New folder (7)\\FrontBackLcc\\back\\vendor\\laravel\\framework\\src\\Illuminate\\Pipeline\\Pipeline.php(171): Zizaco\\Entrust\\Middleware\\EntrustRole->handle(Object(Illuminate\\Http\\Request), Object(Closure), Array)
+#10 C:\\xampp\\htdocs\\New folder (7)\\FrontBackLcc\\back\\vendor\\tymon\\jwt-auth\\src\\Http\\Middleware\\Authenticate.php(32): Illuminate\\Pipeline\\Pipeline->Illuminate\\Pipeline\\{closure}(Object(Illuminate\\Http\\Request))
+#11 C:\\xampp\\htdocs\\New folder (7)\\FrontBackLcc\\back\\vendor\\laravel\\framework\\src\\Illuminate\\Pipeline\\Pipeline.php(171): Tymon\\JWTAuth\\Http\\Middleware\\Authenticate->handle(Object(Illuminate\\Http\\Request), Object(Closure))
+#12 C:\\xampp\\htdocs\\New folder (7)\\FrontBackLcc\\back\\app\\Http\\Middleware\\JWTMiddleware.php(54): Illuminate\\Pipeline\\Pipeline->Illuminate\\Pipeline\\{closure}(Object(Illuminate\\Http\\Request))
+#13 C:\\xampp\\htdocs\\New folder (7)\\FrontBackLcc\\back\\vendor\\laravel\\framework\\src\\Illuminate\\Pipeline\\Pipeline.php(171): App\\Http\\Middleware\\JWTMiddleware->handle(Object(Illuminate\\Http\\Request), Object(Closure))
+#14 C:\\xampp\\htdocs\\New folder (7)\\FrontBackLcc\\back\\vendor\\laravel\\framework\\src\\Illuminate\\Routing\\Middleware\\SubstituteBindings.php(41): Illuminate\\Pipeline\\Pipeline->Illuminate\\Pipeline\\{closure}(Object(Illuminate\\Http\\Request))
+#15 C:\\xampp\\htdocs\\New folder (7)\\FrontBackLcc\\back\\vendor\\laravel\\framework\\src\\Illuminate\\Pipeline\\Pipeline.php(171): Illuminate\\Routing\\Middleware\\SubstituteBindings->handle(Object(Illuminate\\Http\\Request), Object(Closure))
+#16 C:\\xampp\\htdocs\\New folder (7)\\FrontBackLcc\\back\\vendor\\laravel\\framework\\src\\Illuminate\\Routing\\Middleware\\ThrottleRequests.php(59): Illuminate\\Pipeline\\Pipeline->Illuminate\\Pipeline\\{closure}(Object(Illuminate\\Http\\Request))
+#17 C:\\xampp\\htdocs\\New folder (7)\\FrontBackLcc\\back\\vendor\\laravel\\framework\\src\\Illuminate\\Pipeline\\Pipeline.php(171): Illuminate\\Routing\\Middleware\\ThrottleRequests->handle(Object(Illuminate\\Http\\Request), Object(Closure), 60, '1')
+#18 C:\\xampp\\htdocs\\New folder (7)\\FrontBackLcc\\back\\app\\Http\\Middleware\\Cors.php(30): Illuminate\\Pipeline\\Pipeline->Illuminate\\Pipeline\\{closure}(Object(Illuminate\\Http\\Request))
+#19 C:\\xampp\\htdocs\\New folder (7)\\FrontBackLcc\\back\\vendor\\laravel\\framework\\src\\Illuminate\\Pipeline\\Pipeline.php(171): App\\Http\\Middleware\\Cors->handle(Object(Illuminate\\Http\\Request), Object(Closure))
+#20 C:\\xampp\\htdocs\\New folder (7)\\FrontBackLcc\\back\\vendor\\laravel\\framework\\src\\Illuminate\\Pipeline\\Pipeline.php(105): Illuminate\\Pipeline\\Pipeline->Illuminate\\Pipeline\\{closure}(Object(Illuminate\\Http\\Request))
+#21 C:\\xampp\\htdocs\\New folder (7)\\FrontBackLcc\\back\\vendor\\laravel\\framework\\src\\Illuminate\\Routing\\Router.php(683): Illuminate\\Pipeline\\Pipeline->then(Object(Closure))
+#22 C:\\xampp\\htdocs\\New folder (7)\\FrontBackLcc\\back\\vendor\\laravel\\framework\\src\\Illuminate\\Routing\\Router.php(658): Illuminate\\Routing\\Router->runRouteWithinStack(Object(Illuminate\\Routing\\Route), Object(Illuminate\\Http\\Request))
+#23 C:\\xampp\\htdocs\\New folder (7)\\FrontBackLcc\\back\\vendor\\laravel\\framework\\src\\Illuminate\\Routing\\Router.php(624): Illuminate\\Routing\\Router->runRoute(Object(Illuminate\\Http\\Request), Object(Illuminate\\Routing\\Route))
+#24 C:\\xampp\\htdocs\\New folder (7)\\FrontBackLcc\\back\\vendor\\laravel\\framework\\src\\Illuminate\\Routing\\Router.php(613): Illuminate\\Routing\\Router->dispatchToRoute(Object(Illuminate\\Http\\Request))
+#25 C:\\xampp\\htdocs\\New folder (7)\\FrontBackLcc\\back\\vendor\\laravel\\framework\\src\\Illuminate\\Foundation\\Http\\Kernel.php(170): Illuminate\\Routing\\Router->dispatch(Object(Illuminate\\Http\\Request))
+#26 C:\\xampp\\htdocs\\New folder (7)\\FrontBackLcc\\back\\vendor\\laravel\\framework\\src\\Illuminate\\Pipeline\\Pipeline.php(130): Illuminate\\Foundation\\Http\\Kernel->Illuminate\\Foundation\\Http\\{closure}(Object(Illuminate\\Http\\Request))
+#27 C:\\xampp\\htdocs\\New folder (7)\\FrontBackLcc\\back\\app\\Http\\Middleware\\Cors.php(30): Illuminate\\Pipeline\\Pipeline->Illuminate\\Pipeline\\{closure}(Object(Illuminate\\Http\\Request))
+#28 C:\\xampp\\htdocs\\New folder (7)\\FrontBackLcc\\back\\vendor\\laravel\\framework\\src\\Illuminate\\Pipeline\\Pipeline.php(171): App\\Http\\Middleware\\Cors->handle(Object(Illuminate\\Http\\Request), Object(Closure))
+#29 C:\\xampp\\htdocs\\New folder (7)\\FrontBackLcc\\back\\vendor\\laravel\\framework\\src\\Illuminate\\Foundation\\Http\\Middleware\\TransformsRequest.php(21): Illuminate\\Pipeline\\Pipeline->Illuminate\\Pipeline\\{closure}(Object(Illuminate\\Http\\Request))
+#30 C:\\xampp\\htdocs\\New folder (7)\\FrontBackLcc\\back\\vendor\\laravel\\framework\\src\\Illuminate\\Pipeline\\Pipeline.php(171): Illuminate\\Foundation\\Http\\Middleware\\TransformsRequest->handle(Object(Illuminate\\Http\\Request), Object(Closure))
+#31 C:\\xampp\\htdocs\\New folder (7)\\FrontBackLcc\\back\\vendor\\laravel\\framework\\src\\Illuminate\\Foundation\\Http\\Middleware\\TransformsRequest.php(21): Illuminate\\Pipeline\\Pipeline->Illuminate\\Pipeline\\{closure}(Object(Illuminate\\Http\\Request))
+#32 C:\\xampp\\htdocs\\New folder (7)\\FrontBackLcc\\back\\vendor\\laravel\\framework\\src\\Illuminate\\Pipeline\\Pipeline.php(171): Illuminate\\Foundation\\Http\\Middleware\\TransformsRequest->handle(Object(Illuminate\\Http\\Request), Object(Closure))
+#33 C:\\xampp\\htdocs\\New folder (7)\\FrontBackLcc\\back\\vendor\\laravel\\framework\\src\\Illuminate\\Foundation\\Http\\Middleware\\ValidatePostSize.php(27): Illuminate\\Pipeline\\Pipeline->Illuminate\\Pipeline\\{closure}(Object(Illuminate\\Http\\Request))
+#34 C:\\xampp\\htdocs\\New folder (7)\\FrontBackLcc\\back\\vendor\\laravel\\framework\\src\\Illuminate\\Pipeline\\Pipeline.php(171): Illuminate\\Foundation\\Http\\Middleware\\ValidatePostSize->handle(Object(Illuminate\\Http\\Request), Object(Closure))
+#35 C:\\xampp\\htdocs\\New folder (7)\\FrontBackLcc\\back\\vendor\\laravel\\framework\\src\\Illuminate\\Foundation\\Http\\Middleware\\CheckForMaintenanceMode.php(63): Illuminate\\Pipeline\\Pipeline->Illuminate\\Pipeline\\{closure}(Object(Illuminate\\Http\\Request))
+#36 C:\\xampp\\htdocs\\New folder (7)\\FrontBackLcc\\back\\vendor\\laravel\\framework\\src\\Illuminate\\Pipeline\\Pipeline.php(171): Illuminate\\Foundation\\Http\\Middleware\\CheckForMaintenanceMode->handle(Object(Illuminate\\Http\\Request), Object(Closure))
+#37 C:\\xampp\\htdocs\\New folder (7)\\FrontBackLcc\\back\\vendor\\fideloper\\proxy\\src\\TrustProxies.php(57): Illuminate\\Pipeline\\Pipeline->Illuminate\\Pipeline\\{closure}(Object(Illuminate\\Http\\Request))
+#38 C:\\xampp\\htdocs\\New folder (7)\\FrontBackLcc\\back\\vendor\\laravel\\framework\\src\\Illuminate\\Pipeline\\Pipeline.php(171): Fideloper\\Proxy\\TrustProxies->handle(Object(Illuminate\\Http\\Request), Object(Closure))
+#39 C:\\xampp\\htdocs\\New folder (7)\\FrontBackLcc\\back\\vendor\\barryvdh\\laravel-cors\\src\\HandlePreflight.php(29): Illuminate\\Pipeline\\Pipeline->Illuminate\\Pipeline\\{closure}(Object(Illuminate\\Http\\Request))
+#40 C:\\xampp\\htdocs\\New folder (7)\\FrontBackLcc\\back\\vendor\\laravel\\framework\\src\\Illuminate\\Pipeline\\Pipeline.php(171): Barryvdh\\Cors\\HandlePreflight->handle(Object(Illuminate\\Http\\Request), Object(Closure))
+#41 C:\\xampp\\htdocs\\New folder (7)\\FrontBackLcc\\back\\vendor\\laravel\\framework\\src\\Illuminate\\Pipeline\\Pipeline.php(105): Illuminate\\Pipeline\\Pipeline->Illuminate\\Pipeline\\{closure}(Object(Illuminate\\Http\\Request))
+#42 C:\\xampp\\htdocs\\New folder (7)\\FrontBackLcc\\back\\vendor\\laravel\\framework\\src\\Illuminate\\Foundation\\Http\\Kernel.php(145): Illuminate\\Pipeline\\Pipeline->then(Object(Closure))
+#43 C:\\xampp\\htdocs\\New folder (7)\\FrontBackLcc\\back\\vendor\\laravel\\framework\\src\\Illuminate\\Foundation\\Http\\Kernel.php(110): Illuminate\\Foundation\\Http\\Kernel->sendRequestThroughRouter(Object(Illuminate\\Http\\Request))
+#44 C:\\xampp\\htdocs\\New folder (7)\\FrontBackLcc\\back\\public\\index.php(55): Illuminate\\Foundation\\Http\\Kernel->handle(Object(Illuminate\\Http\\Request))
+#45 C:\\xampp\\htdocs\\New folder (7)\\FrontBackLcc\\back\\server.php(21): require_once('C:\\\\xampp\\\\htdocs...')
+#46 {main}
+"} 
+[2022-12-22 15:23:42] local.ERROR: Call to a member function all() on array {"userId":2,"exception":"[object] (Symfony\\Component\\Debug\\Exception\\FatalThrowableError(code: 0): Call to a member function all() on array at C:\\xampp\\htdocs\\New folder (7)\\FrontBackLcc\\back\\app\\Repository\\Charge\\ChargeRepository.php:80)
+[stacktrace]
+#0 C:\\xampp\\htdocs\\New folder (7)\\FrontBackLcc\\back\\app\\Services\\Charge\\ChargeService.php(43): App\\Repository\\Charge\\ChargeRepository->update(Object(App\\Models\\Charges), Array)
+#1 C:\\xampp\\htdocs\\New folder (7)\\FrontBackLcc\\back\\app\\Http\\Controllers\\Crud\\ChargesController.php(74): App\\Services\\Charge\\ChargeService->update('1', Array)
+#2 C:\\xampp\\htdocs\\New folder (7)\\FrontBackLcc\\back\\vendor\\laravel\\framework\\src\\Illuminate\\Routing\\Controller.php(54): App\\Http\\Controllers\\Crud\\ChargesController->update(Object(App\\Http\\Requests\\Crud\\ChargesRequest), '1')
+#3 C:\\xampp\\htdocs\\New folder (7)\\FrontBackLcc\\back\\vendor\\laravel\\framework\\src\\Illuminate\\Routing\\ControllerDispatcher.php(45): Illuminate\\Routing\\Controller->callAction('update', Array)
+#4 C:\\xampp\\htdocs\\New folder (7)\\FrontBackLcc\\back\\vendor\\laravel\\framework\\src\\Illuminate\\Routing\\Route.php(219): Illuminate\\Routing\\ControllerDispatcher->dispatch(Object(Illuminate\\Routing\\Route), Object(App\\Http\\Controllers\\Crud\\ChargesController), 'update')
+#5 C:\\xampp\\htdocs\\New folder (7)\\FrontBackLcc\\back\\vendor\\laravel\\framework\\src\\Illuminate\\Routing\\Route.php(176): Illuminate\\Routing\\Route->runController()
+#6 C:\\xampp\\htdocs\\New folder (7)\\FrontBackLcc\\back\\vendor\\laravel\\framework\\src\\Illuminate\\Routing\\Router.php(681): Illuminate\\Routing\\Route->run()
+#7 C:\\xampp\\htdocs\\New folder (7)\\FrontBackLcc\\back\\vendor\\laravel\\framework\\src\\Illuminate\\Pipeline\\Pipeline.php(130): Illuminate\\Routing\\Router->Illuminate\\Routing\\{closure}(Object(Illuminate\\Http\\Request))
+#8 C:\\xampp\\htdocs\\New folder (7)\\FrontBackLcc\\back\\vendor\\halpdesk\\zizaco-entrust-laravel-6.0\\src\\Entrust\\Middleware\\EntrustRole.php(48): Illuminate\\Pipeline\\Pipeline->Illuminate\\Pipeline\\{closure}(Object(Illuminate\\Http\\Request))
+#9 C:\\xampp\\htdocs\\New folder (7)\\FrontBackLcc\\back\\vendor\\laravel\\framework\\src\\Illuminate\\Pipeline\\Pipeline.php(171): Zizaco\\Entrust\\Middleware\\EntrustRole->handle(Object(Illuminate\\Http\\Request), Object(Closure), Array)
+#10 C:\\xampp\\htdocs\\New folder (7)\\FrontBackLcc\\back\\vendor\\tymon\\jwt-auth\\src\\Http\\Middleware\\Authenticate.php(32): Illuminate\\Pipeline\\Pipeline->Illuminate\\Pipeline\\{closure}(Object(Illuminate\\Http\\Request))
+#11 C:\\xampp\\htdocs\\New folder (7)\\FrontBackLcc\\back\\vendor\\laravel\\framework\\src\\Illuminate\\Pipeline\\Pipeline.php(171): Tymon\\JWTAuth\\Http\\Middleware\\Authenticate->handle(Object(Illuminate\\Http\\Request), Object(Closure))
+#12 C:\\xampp\\htdocs\\New folder (7)\\FrontBackLcc\\back\\app\\Http\\Middleware\\JWTMiddleware.php(54): Illuminate\\Pipeline\\Pipeline->Illuminate\\Pipeline\\{closure}(Object(Illuminate\\Http\\Request))
+#13 C:\\xampp\\htdocs\\New folder (7)\\FrontBackLcc\\back\\vendor\\laravel\\framework\\src\\Illuminate\\Pipeline\\Pipeline.php(171): App\\Http\\Middleware\\JWTMiddleware->handle(Object(Illuminate\\Http\\Request), Object(Closure))
+#14 C:\\xampp\\htdocs\\New folder (7)\\FrontBackLcc\\back\\vendor\\laravel\\framework\\src\\Illuminate\\Routing\\Middleware\\SubstituteBindings.php(41): Illuminate\\Pipeline\\Pipeline->Illuminate\\Pipeline\\{closure}(Object(Illuminate\\Http\\Request))
+#15 C:\\xampp\\htdocs\\New folder (7)\\FrontBackLcc\\back\\vendor\\laravel\\framework\\src\\Illuminate\\Pipeline\\Pipeline.php(171): Illuminate\\Routing\\Middleware\\SubstituteBindings->handle(Object(Illuminate\\Http\\Request), Object(Closure))
+#16 C:\\xampp\\htdocs\\New folder (7)\\FrontBackLcc\\back\\vendor\\laravel\\framework\\src\\Illuminate\\Routing\\Middleware\\ThrottleRequests.php(59): Illuminate\\Pipeline\\Pipeline->Illuminate\\Pipeline\\{closure}(Object(Illuminate\\Http\\Request))
+#17 C:\\xampp\\htdocs\\New folder (7)\\FrontBackLcc\\back\\vendor\\laravel\\framework\\src\\Illuminate\\Pipeline\\Pipeline.php(171): Illuminate\\Routing\\Middleware\\ThrottleRequests->handle(Object(Illuminate\\Http\\Request), Object(Closure), 60, '1')
+#18 C:\\xampp\\htdocs\\New folder (7)\\FrontBackLcc\\back\\app\\Http\\Middleware\\Cors.php(30): Illuminate\\Pipeline\\Pipeline->Illuminate\\Pipeline\\{closure}(Object(Illuminate\\Http\\Request))
+#19 C:\\xampp\\htdocs\\New folder (7)\\FrontBackLcc\\back\\vendor\\laravel\\framework\\src\\Illuminate\\Pipeline\\Pipeline.php(171): App\\Http\\Middleware\\Cors->handle(Object(Illuminate\\Http\\Request), Object(Closure))
+#20 C:\\xampp\\htdocs\\New folder (7)\\FrontBackLcc\\back\\vendor\\laravel\\framework\\src\\Illuminate\\Pipeline\\Pipeline.php(105): Illuminate\\Pipeline\\Pipeline->Illuminate\\Pipeline\\{closure}(Object(Illuminate\\Http\\Request))
+#21 C:\\xampp\\htdocs\\New folder (7)\\FrontBackLcc\\back\\vendor\\laravel\\framework\\src\\Illuminate\\Routing\\Router.php(683): Illuminate\\Pipeline\\Pipeline->then(Object(Closure))
+#22 C:\\xampp\\htdocs\\New folder (7)\\FrontBackLcc\\back\\vendor\\laravel\\framework\\src\\Illuminate\\Routing\\Router.php(658): Illuminate\\Routing\\Router->runRouteWithinStack(Object(Illuminate\\Routing\\Route), Object(Illuminate\\Http\\Request))
+#23 C:\\xampp\\htdocs\\New folder (7)\\FrontBackLcc\\back\\vendor\\laravel\\framework\\src\\Illuminate\\Routing\\Router.php(624): Illuminate\\Routing\\Router->runRoute(Object(Illuminate\\Http\\Request), Object(Illuminate\\Routing\\Route))
+#24 C:\\xampp\\htdocs\\New folder (7)\\FrontBackLcc\\back\\vendor\\laravel\\framework\\src\\Illuminate\\Routing\\Router.php(613): Illuminate\\Routing\\Router->dispatchToRoute(Object(Illuminate\\Http\\Request))
+#25 C:\\xampp\\htdocs\\New folder (7)\\FrontBackLcc\\back\\vendor\\laravel\\framework\\src\\Illuminate\\Foundation\\Http\\Kernel.php(170): Illuminate\\Routing\\Router->dispatch(Object(Illuminate\\Http\\Request))
+#26 C:\\xampp\\htdocs\\New folder (7)\\FrontBackLcc\\back\\vendor\\laravel\\framework\\src\\Illuminate\\Pipeline\\Pipeline.php(130): Illuminate\\Foundation\\Http\\Kernel->Illuminate\\Foundation\\Http\\{closure}(Object(Illuminate\\Http\\Request))
+#27 C:\\xampp\\htdocs\\New folder (7)\\FrontBackLcc\\back\\app\\Http\\Middleware\\Cors.php(30): Illuminate\\Pipeline\\Pipeline->Illuminate\\Pipeline\\{closure}(Object(Illuminate\\Http\\Request))
+#28 C:\\xampp\\htdocs\\New folder (7)\\FrontBackLcc\\back\\vendor\\laravel\\framework\\src\\Illuminate\\Pipeline\\Pipeline.php(171): App\\Http\\Middleware\\Cors->handle(Object(Illuminate\\Http\\Request), Object(Closure))
+#29 C:\\xampp\\htdocs\\New folder (7)\\FrontBackLcc\\back\\vendor\\laravel\\framework\\src\\Illuminate\\Foundation\\Http\\Middleware\\TransformsRequest.php(21): Illuminate\\Pipeline\\Pipeline->Illuminate\\Pipeline\\{closure}(Object(Illuminate\\Http\\Request))
+#30 C:\\xampp\\htdocs\\New folder (7)\\FrontBackLcc\\back\\vendor\\laravel\\framework\\src\\Illuminate\\Pipeline\\Pipeline.php(171): Illuminate\\Foundation\\Http\\Middleware\\TransformsRequest->handle(Object(Illuminate\\Http\\Request), Object(Closure))
+#31 C:\\xampp\\htdocs\\New folder (7)\\FrontBackLcc\\back\\vendor\\laravel\\framework\\src\\Illuminate\\Foundation\\Http\\Middleware\\TransformsRequest.php(21): Illuminate\\Pipeline\\Pipeline->Illuminate\\Pipeline\\{closure}(Object(Illuminate\\Http\\Request))
+#32 C:\\xampp\\htdocs\\New folder (7)\\FrontBackLcc\\back\\vendor\\laravel\\framework\\src\\Illuminate\\Pipeline\\Pipeline.php(171): Illuminate\\Foundation\\Http\\Middleware\\TransformsRequest->handle(Object(Illuminate\\Http\\Request), Object(Closure))
+#33 C:\\xampp\\htdocs\\New folder (7)\\FrontBackLcc\\back\\vendor\\laravel\\framework\\src\\Illuminate\\Foundation\\Http\\Middleware\\ValidatePostSize.php(27): Illuminate\\Pipeline\\Pipeline->Illuminate\\Pipeline\\{closure}(Object(Illuminate\\Http\\Request))
+#34 C:\\xampp\\htdocs\\New folder (7)\\FrontBackLcc\\back\\vendor\\laravel\\framework\\src\\Illuminate\\Pipeline\\Pipeline.php(171): Illuminate\\Foundation\\Http\\Middleware\\ValidatePostSize->handle(Object(Illuminate\\Http\\Request), Object(Closure))
+#35 C:\\xampp\\htdocs\\New folder (7)\\FrontBackLcc\\back\\vendor\\laravel\\framework\\src\\Illuminate\\Foundation\\Http\\Middleware\\CheckForMaintenanceMode.php(63): Illuminate\\Pipeline\\Pipeline->Illuminate\\Pipeline\\{closure}(Object(Illuminate\\Http\\Request))
+#36 C:\\xampp\\htdocs\\New folder (7)\\FrontBackLcc\\back\\vendor\\laravel\\framework\\src\\Illuminate\\Pipeline\\Pipeline.php(171): Illuminate\\Foundation\\Http\\Middleware\\CheckForMaintenanceMode->handle(Object(Illuminate\\Http\\Request), Object(Closure))
+#37 C:\\xampp\\htdocs\\New folder (7)\\FrontBackLcc\\back\\vendor\\fideloper\\proxy\\src\\TrustProxies.php(57): Illuminate\\Pipeline\\Pipeline->Illuminate\\Pipeline\\{closure}(Object(Illuminate\\Http\\Request))
+#38 C:\\xampp\\htdocs\\New folder (7)\\FrontBackLcc\\back\\vendor\\laravel\\framework\\src\\Illuminate\\Pipeline\\Pipeline.php(171): Fideloper\\Proxy\\TrustProxies->handle(Object(Illuminate\\Http\\Request), Object(Closure))
+#39 C:\\xampp\\htdocs\\New folder (7)\\FrontBackLcc\\back\\vendor\\barryvdh\\laravel-cors\\src\\HandlePreflight.php(29): Illuminate\\Pipeline\\Pipeline->Illuminate\\Pipeline\\{closure}(Object(Illuminate\\Http\\Request))
+#40 C:\\xampp\\htdocs\\New folder (7)\\FrontBackLcc\\back\\vendor\\laravel\\framework\\src\\Illuminate\\Pipeline\\Pipeline.php(171): Barryvdh\\Cors\\HandlePreflight->handle(Object(Illuminate\\Http\\Request), Object(Closure))
+#41 C:\\xampp\\htdocs\\New folder (7)\\FrontBackLcc\\back\\vendor\\laravel\\framework\\src\\Illuminate\\Pipeline\\Pipeline.php(105): Illuminate\\Pipeline\\Pipeline->Illuminate\\Pipeline\\{closure}(Object(Illuminate\\Http\\Request))
+#42 C:\\xampp\\htdocs\\New folder (7)\\FrontBackLcc\\back\\vendor\\laravel\\framework\\src\\Illuminate\\Foundation\\Http\\Kernel.php(145): Illuminate\\Pipeline\\Pipeline->then(Object(Closure))
+#43 C:\\xampp\\htdocs\\New folder (7)\\FrontBackLcc\\back\\vendor\\laravel\\framework\\src\\Illuminate\\Foundation\\Http\\Kernel.php(110): Illuminate\\Foundation\\Http\\Kernel->sendRequestThroughRouter(Object(Illuminate\\Http\\Request))
+#44 C:\\xampp\\htdocs\\New folder (7)\\FrontBackLcc\\back\\public\\index.php(55): Illuminate\\Foundation\\Http\\Kernel->handle(Object(Illuminate\\Http\\Request))
+#45 C:\\xampp\\htdocs\\New folder (7)\\FrontBackLcc\\back\\server.php(21): require_once('C:\\\\xampp\\\\htdocs...')
+#46 {main}
+"} 
+[2022-12-22 15:25:23] local.INFO: Broadcasting [newLogs] on channels [private-logs] with payload:
+{
+    "logActivity": {
+        "id": 70,
+        "organisation_id": 1,
+        "subject": "Jovert Palonpona modifi\u00e9 une Chargesvvzs",
+        "url": "http:\/\/localhost:8000\/api\/charge\/update\/1",
+        "method": "POST",
+        "ip": "127.0.0.1",
+        "agent": "PostmanRuntime\/7.6.0",
+        "user_id": 2,
+        "user_name": null,
+        "created_at": "2022-12-22 15:25:23",
+        "updated_at": "2022-12-22 15:25:23"
+    },
+    "socket": null
+}  
+[2022-12-22 15:25:23] local.ERROR: Invalid argument supplied for foreach() {"userId":2,"exception":"[object] (ErrorException(code: 0): Invalid argument supplied for foreach() at C:\\xampp\\htdocs\\New folder (7)\\FrontBackLcc\\back\\app\\Services\\SaveFile\\SaveFileService.php:41)
+[stacktrace]
+#0 C:\\xampp\\htdocs\\New folder (7)\\FrontBackLcc\\back\\app\\Services\\SaveFile\\SaveFileService.php(41): Illuminate\\Foundation\\Bootstrap\\HandleExceptions->handleError(2, 'Invalid argumen...', 'C:\\\\xampp\\\\htdocs...', 41, Array)
+#1 C:\\xampp\\htdocs\\New folder (7)\\FrontBackLcc\\back\\app\\Http\\Controllers\\Crud\\ChargesController.php(78): App\\Services\\SaveFile\\SaveFileService->saveFiles('Load/svvzs', NULL)
+#2 C:\\xampp\\htdocs\\New folder (7)\\FrontBackLcc\\back\\vendor\\laravel\\framework\\src\\Illuminate\\Routing\\Controller.php(54): App\\Http\\Controllers\\Crud\\ChargesController->update(Object(App\\Http\\Requests\\Crud\\ChargesRequest), '1')
+#3 C:\\xampp\\htdocs\\New folder (7)\\FrontBackLcc\\back\\vendor\\laravel\\framework\\src\\Illuminate\\Routing\\ControllerDispatcher.php(45): Illuminate\\Routing\\Controller->callAction('update', Array)
+#4 C:\\xampp\\htdocs\\New folder (7)\\FrontBackLcc\\back\\vendor\\laravel\\framework\\src\\Illuminate\\Routing\\Route.php(219): Illuminate\\Routing\\ControllerDispatcher->dispatch(Object(Illuminate\\Routing\\Route), Object(App\\Http\\Controllers\\Crud\\ChargesController), 'update')
+#5 C:\\xampp\\htdocs\\New folder (7)\\FrontBackLcc\\back\\vendor\\laravel\\framework\\src\\Illuminate\\Routing\\Route.php(176): Illuminate\\Routing\\Route->runController()
+#6 C:\\xampp\\htdocs\\New folder (7)\\FrontBackLcc\\back\\vendor\\laravel\\framework\\src\\Illuminate\\Routing\\Router.php(681): Illuminate\\Routing\\Route->run()
+#7 C:\\xampp\\htdocs\\New folder (7)\\FrontBackLcc\\back\\vendor\\laravel\\framework\\src\\Illuminate\\Pipeline\\Pipeline.php(130): Illuminate\\Routing\\Router->Illuminate\\Routing\\{closure}(Object(Illuminate\\Http\\Request))
+#8 C:\\xampp\\htdocs\\New folder (7)\\FrontBackLcc\\back\\vendor\\halpdesk\\zizaco-entrust-laravel-6.0\\src\\Entrust\\Middleware\\EntrustRole.php(48): Illuminate\\Pipeline\\Pipeline->Illuminate\\Pipeline\\{closure}(Object(Illuminate\\Http\\Request))
+#9 C:\\xampp\\htdocs\\New folder (7)\\FrontBackLcc\\back\\vendor\\laravel\\framework\\src\\Illuminate\\Pipeline\\Pipeline.php(171): Zizaco\\Entrust\\Middleware\\EntrustRole->handle(Object(Illuminate\\Http\\Request), Object(Closure), Array)
+#10 C:\\xampp\\htdocs\\New folder (7)\\FrontBackLcc\\back\\vendor\\tymon\\jwt-auth\\src\\Http\\Middleware\\Authenticate.php(32): Illuminate\\Pipeline\\Pipeline->Illuminate\\Pipeline\\{closure}(Object(Illuminate\\Http\\Request))
+#11 C:\\xampp\\htdocs\\New folder (7)\\FrontBackLcc\\back\\vendor\\laravel\\framework\\src\\Illuminate\\Pipeline\\Pipeline.php(171): Tymon\\JWTAuth\\Http\\Middleware\\Authenticate->handle(Object(Illuminate\\Http\\Request), Object(Closure))
+#12 C:\\xampp\\htdocs\\New folder (7)\\FrontBackLcc\\back\\app\\Http\\Middleware\\JWTMiddleware.php(54): Illuminate\\Pipeline\\Pipeline->Illuminate\\Pipeline\\{closure}(Object(Illuminate\\Http\\Request))
+#13 C:\\xampp\\htdocs\\New folder (7)\\FrontBackLcc\\back\\vendor\\laravel\\framework\\src\\Illuminate\\Pipeline\\Pipeline.php(171): App\\Http\\Middleware\\JWTMiddleware->handle(Object(Illuminate\\Http\\Request), Object(Closure))
+#14 C:\\xampp\\htdocs\\New folder (7)\\FrontBackLcc\\back\\vendor\\laravel\\framework\\src\\Illuminate\\Routing\\Middleware\\SubstituteBindings.php(41): Illuminate\\Pipeline\\Pipeline->Illuminate\\Pipeline\\{closure}(Object(Illuminate\\Http\\Request))
+#15 C:\\xampp\\htdocs\\New folder (7)\\FrontBackLcc\\back\\vendor\\laravel\\framework\\src\\Illuminate\\Pipeline\\Pipeline.php(171): Illuminate\\Routing\\Middleware\\SubstituteBindings->handle(Object(Illuminate\\Http\\Request), Object(Closure))
+#16 C:\\xampp\\htdocs\\New folder (7)\\FrontBackLcc\\back\\vendor\\laravel\\framework\\src\\Illuminate\\Routing\\Middleware\\ThrottleRequests.php(59): Illuminate\\Pipeline\\Pipeline->Illuminate\\Pipeline\\{closure}(Object(Illuminate\\Http\\Request))
+#17 C:\\xampp\\htdocs\\New folder (7)\\FrontBackLcc\\back\\vendor\\laravel\\framework\\src\\Illuminate\\Pipeline\\Pipeline.php(171): Illuminate\\Routing\\Middleware\\ThrottleRequests->handle(Object(Illuminate\\Http\\Request), Object(Closure), 60, '1')
+#18 C:\\xampp\\htdocs\\New folder (7)\\FrontBackLcc\\back\\app\\Http\\Middleware\\Cors.php(30): Illuminate\\Pipeline\\Pipeline->Illuminate\\Pipeline\\{closure}(Object(Illuminate\\Http\\Request))
+#19 C:\\xampp\\htdocs\\New folder (7)\\FrontBackLcc\\back\\vendor\\laravel\\framework\\src\\Illuminate\\Pipeline\\Pipeline.php(171): App\\Http\\Middleware\\Cors->handle(Object(Illuminate\\Http\\Request), Object(Closure))
+#20 C:\\xampp\\htdocs\\New folder (7)\\FrontBackLcc\\back\\vendor\\laravel\\framework\\src\\Illuminate\\Pipeline\\Pipeline.php(105): Illuminate\\Pipeline\\Pipeline->Illuminate\\Pipeline\\{closure}(Object(Illuminate\\Http\\Request))
+#21 C:\\xampp\\htdocs\\New folder (7)\\FrontBackLcc\\back\\vendor\\laravel\\framework\\src\\Illuminate\\Routing\\Router.php(683): Illuminate\\Pipeline\\Pipeline->then(Object(Closure))
+#22 C:\\xampp\\htdocs\\New folder (7)\\FrontBackLcc\\back\\vendor\\laravel\\framework\\src\\Illuminate\\Routing\\Router.php(658): Illuminate\\Routing\\Router->runRouteWithinStack(Object(Illuminate\\Routing\\Route), Object(Illuminate\\Http\\Request))
+#23 C:\\xampp\\htdocs\\New folder (7)\\FrontBackLcc\\back\\vendor\\laravel\\framework\\src\\Illuminate\\Routing\\Router.php(624): Illuminate\\Routing\\Router->runRoute(Object(Illuminate\\Http\\Request), Object(Illuminate\\Routing\\Route))
+#24 C:\\xampp\\htdocs\\New folder (7)\\FrontBackLcc\\back\\vendor\\laravel\\framework\\src\\Illuminate\\Routing\\Router.php(613): Illuminate\\Routing\\Router->dispatchToRoute(Object(Illuminate\\Http\\Request))
+#25 C:\\xampp\\htdocs\\New folder (7)\\FrontBackLcc\\back\\vendor\\laravel\\framework\\src\\Illuminate\\Foundation\\Http\\Kernel.php(170): Illuminate\\Routing\\Router->dispatch(Object(Illuminate\\Http\\Request))
+#26 C:\\xampp\\htdocs\\New folder (7)\\FrontBackLcc\\back\\vendor\\laravel\\framework\\src\\Illuminate\\Pipeline\\Pipeline.php(130): Illuminate\\Foundation\\Http\\Kernel->Illuminate\\Foundation\\Http\\{closure}(Object(Illuminate\\Http\\Request))
+#27 C:\\xampp\\htdocs\\New folder (7)\\FrontBackLcc\\back\\app\\Http\\Middleware\\Cors.php(30): Illuminate\\Pipeline\\Pipeline->Illuminate\\Pipeline\\{closure}(Object(Illuminate\\Http\\Request))
+#28 C:\\xampp\\htdocs\\New folder (7)\\FrontBackLcc\\back\\vendor\\laravel\\framework\\src\\Illuminate\\Pipeline\\Pipeline.php(171): App\\Http\\Middleware\\Cors->handle(Object(Illuminate\\Http\\Request), Object(Closure))
+#29 C:\\xampp\\htdocs\\New folder (7)\\FrontBackLcc\\back\\vendor\\laravel\\framework\\src\\Illuminate\\Foundation\\Http\\Middleware\\TransformsRequest.php(21): Illuminate\\Pipeline\\Pipeline->Illuminate\\Pipeline\\{closure}(Object(Illuminate\\Http\\Request))
+#30 C:\\xampp\\htdocs\\New folder (7)\\FrontBackLcc\\back\\vendor\\laravel\\framework\\src\\Illuminate\\Pipeline\\Pipeline.php(171): Illuminate\\Foundation\\Http\\Middleware\\TransformsRequest->handle(Object(Illuminate\\Http\\Request), Object(Closure))
+#31 C:\\xampp\\htdocs\\New folder (7)\\FrontBackLcc\\back\\vendor\\laravel\\framework\\src\\Illuminate\\Foundation\\Http\\Middleware\\TransformsRequest.php(21): Illuminate\\Pipeline\\Pipeline->Illuminate\\Pipeline\\{closure}(Object(Illuminate\\Http\\Request))
+#32 C:\\xampp\\htdocs\\New folder (7)\\FrontBackLcc\\back\\vendor\\laravel\\framework\\src\\Illuminate\\Pipeline\\Pipeline.php(171): Illuminate\\Foundation\\Http\\Middleware\\TransformsRequest->handle(Object(Illuminate\\Http\\Request), Object(Closure))
+#33 C:\\xampp\\htdocs\\New folder (7)\\FrontBackLcc\\back\\vendor\\laravel\\framework\\src\\Illuminate\\Foundation\\Http\\Middleware\\ValidatePostSize.php(27): Illuminate\\Pipeline\\Pipeline->Illuminate\\Pipeline\\{closure}(Object(Illuminate\\Http\\Request))
+#34 C:\\xampp\\htdocs\\New folder (7)\\FrontBackLcc\\back\\vendor\\laravel\\framework\\src\\Illuminate\\Pipeline\\Pipeline.php(171): Illuminate\\Foundation\\Http\\Middleware\\ValidatePostSize->handle(Object(Illuminate\\Http\\Request), Object(Closure))
+#35 C:\\xampp\\htdocs\\New folder (7)\\FrontBackLcc\\back\\vendor\\laravel\\framework\\src\\Illuminate\\Foundation\\Http\\Middleware\\CheckForMaintenanceMode.php(63): Illuminate\\Pipeline\\Pipeline->Illuminate\\Pipeline\\{closure}(Object(Illuminate\\Http\\Request))
+#36 C:\\xampp\\htdocs\\New folder (7)\\FrontBackLcc\\back\\vendor\\laravel\\framework\\src\\Illuminate\\Pipeline\\Pipeline.php(171): Illuminate\\Foundation\\Http\\Middleware\\CheckForMaintenanceMode->handle(Object(Illuminate\\Http\\Request), Object(Closure))
+#37 C:\\xampp\\htdocs\\New folder (7)\\FrontBackLcc\\back\\vendor\\fideloper\\proxy\\src\\TrustProxies.php(57): Illuminate\\Pipeline\\Pipeline->Illuminate\\Pipeline\\{closure}(Object(Illuminate\\Http\\Request))
+#38 C:\\xampp\\htdocs\\New folder (7)\\FrontBackLcc\\back\\vendor\\laravel\\framework\\src\\Illuminate\\Pipeline\\Pipeline.php(171): Fideloper\\Proxy\\TrustProxies->handle(Object(Illuminate\\Http\\Request), Object(Closure))
+#39 C:\\xampp\\htdocs\\New folder (7)\\FrontBackLcc\\back\\vendor\\barryvdh\\laravel-cors\\src\\HandlePreflight.php(29): Illuminate\\Pipeline\\Pipeline->Illuminate\\Pipeline\\{closure}(Object(Illuminate\\Http\\Request))
+#40 C:\\xampp\\htdocs\\New folder (7)\\FrontBackLcc\\back\\vendor\\laravel\\framework\\src\\Illuminate\\Pipeline\\Pipeline.php(171): Barryvdh\\Cors\\HandlePreflight->handle(Object(Illuminate\\Http\\Request), Object(Closure))
+#41 C:\\xampp\\htdocs\\New folder (7)\\FrontBackLcc\\back\\vendor\\laravel\\framework\\src\\Illuminate\\Pipeline\\Pipeline.php(105): Illuminate\\Pipeline\\Pipeline->Illuminate\\Pipeline\\{closure}(Object(Illuminate\\Http\\Request))
+#42 C:\\xampp\\htdocs\\New folder (7)\\FrontBackLcc\\back\\vendor\\laravel\\framework\\src\\Illuminate\\Foundation\\Http\\Kernel.php(145): Illuminate\\Pipeline\\Pipeline->then(Object(Closure))
+#43 C:\\xampp\\htdocs\\New folder (7)\\FrontBackLcc\\back\\vendor\\laravel\\framework\\src\\Illuminate\\Foundation\\Http\\Kernel.php(110): Illuminate\\Foundation\\Http\\Kernel->sendRequestThroughRouter(Object(Illuminate\\Http\\Request))
+#44 C:\\xampp\\htdocs\\New folder (7)\\FrontBackLcc\\back\\public\\index.php(55): Illuminate\\Foundation\\Http\\Kernel->handle(Object(Illuminate\\Http\\Request))
+#45 C:\\xampp\\htdocs\\New folder (7)\\FrontBackLcc\\back\\server.php(21): require_once('C:\\\\xampp\\\\htdocs...')
+#46 {main}
+"} 
+[2022-12-22 15:25:56] local.INFO: Broadcasting [newLogs] on channels [private-logs] with payload:
+{
+    "logActivity": {
+        "id": 71,
+        "organisation_id": 1,
+        "subject": "Jovert Palonpona modifi\u00e9 une Chargesvvzs",
+        "url": "http:\/\/localhost:8000\/api\/charge\/update\/1",
+        "method": "POST",
+        "ip": "127.0.0.1",
+        "agent": "PostmanRuntime\/7.6.0",
+        "user_id": 2,
+        "user_name": null,
+        "created_at": "2022-12-22 15:25:56",
+        "updated_at": "2022-12-22 15:25:56"
+    },
+    "socket": null
+}  
+[2022-12-22 15:27:22] local.INFO: Broadcasting [newLogs] on channels [private-logs] with payload:
+{
+    "logActivity": {
+        "id": 72,
+        "organisation_id": 1,
+        "subject": "Jovert Palonpona modifi\u00e9 une Chargesvvzs",
+        "url": "http:\/\/localhost:8000\/api\/charge\/update\/1",
+        "method": "POST",
+        "ip": "127.0.0.1",
+        "agent": "PostmanRuntime\/7.6.0",
+        "user_id": 2,
+        "user_name": null,
+        "created_at": "2022-12-22 15:27:22",
+        "updated_at": "2022-12-22 15:27:22"
+    },
+    "socket": null
+}  
+[2022-12-22 15:27:28] local.INFO: Broadcasting [newLogs] on channels [private-logs] with payload:
+{
+    "logActivity": {
+        "id": 73,
+        "organisation_id": 1,
+        "subject": "Jovert Palonpona modifi\u00e9 une Chargesvvzs",
+        "url": "http:\/\/localhost:8000\/api\/charge\/update\/1",
+        "method": "POST",
+        "ip": "127.0.0.1",
+        "agent": "PostmanRuntime\/7.6.0",
+        "user_id": 2,
+        "user_name": null,
+        "created_at": "2022-12-22 15:27:28",
+        "updated_at": "2022-12-22 15:27:28"
+    },
+    "socket": null
+}  
+[2022-12-22 15:28:36] local.INFO: Broadcasting [newLogs] on channels [private-logs] with payload:
+{
+    "logActivity": {
+        "id": 74,
+        "organisation_id": 1,
+        "subject": "Jovert Palonpona modifi\u00e9 une Chargesvvzs",
+        "url": "http:\/\/localhost:8000\/api\/charge\/update\/1",
+        "method": "POST",
+        "ip": "127.0.0.1",
+        "agent": "PostmanRuntime\/7.6.0",
+        "user_id": 2,
+        "user_name": null,
+        "created_at": "2022-12-22 15:28:36",
+        "updated_at": "2022-12-22 15:28:36"
+    },
+    "socket": null
+}  

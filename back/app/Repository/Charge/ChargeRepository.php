@@ -15,7 +15,7 @@ class ChargeRepository implements IChargeRpository
     private $organisation_id;
     public function __construct()
     {
-        $this->organisation_id = Auth::user()->organisation_id;
+        $this->organisation_id = Auth::user() ? Auth::user()->organisation_id : null;
     }
 
     public function index($request)
@@ -33,32 +33,32 @@ class ChargeRepository implements IChargeRpository
     public function store($request)
     {
         try {
-            // dd($request->input('unite') && $request->input('unite'));
             $charges = new Charges();
+
             $charges->organisation_id =$this->organisation_id;
-            $charges->typeSchargeId =$request->input('typeSchargeId') && $request->input('typeSchargeId');
-            $charges->invoiceStatusId =$request->input('invoiceStatus_id') && $request->input('invoiceStatus_id');
-            $charges->others =$request->input('others') && $request->input('others');
-            $charges->observation =$request->input('observation') && $request->input('observation');
-            $charges->desi =$request->input('desi') && $request->input('desi');
-            $charges->date_fac =$request->input('date_fac') && $request->input('date_fac');
-            $charges->date_pai =$request->input('date_pai') && $request->input('date_pai');
-            $charges->date_del =$request->input('date_del') && $request->input('date_del');
-            $charges->unite =$request->input('unite') && $request->input('unite');
-            $charges->num_quit =$request->input('num_quit') && $request->input('num_quit');
-            $charges->archive =$request->input('archive') && $request->input('archive');
-            $charges->isPayed =$request->input('isPayed') && $request->input('isPayed');
-            $charges->reste =$request->input('reste')&& $request->input('reste');
-            $charges->avence =$request->input('avence') && $request->input('avence');
-            $charges->somme_due =$request->input('somme_due') && $request->input('somme_due');
-            $in = InvoiceStatus::find($request->input('invoiceStatus_id'));
-            $ty = TypesCharge::find($request->input('typeSchargeId'));
-            $charges->invoiceStatus()->associate($in);
-            $charges->typeCharges()->associate($ty);
+            $charges->typeSchargeId =$request['typeSchargeId'];
+            $charges->others =$request['others']? $request['others'] : null;
+            $charges->observation = $request['observation']? $request['observation'] : null;
+            $charges->desi =$request['desi'];
+            $charges->date_fac =$request['date_fac'];
+            $charges->date_pai =$request['date_pai'];
+            $charges->date_del =$request['date_del'];
+            $charges->unite =$request['unite'];
+            $charges->num_quit =$request['num_quit'];
+            $charges->archive =$request['archive'];
+            $charges->isPayed =$request['isPayed'];
+            $charges->reste =$request['reste'];
+            $charges->avence =$request['avence'];
+            $charges->somme_due =$request['somme_due'];
+            // $in = InvoiceStatus::find($request['invoiceStatus_id']);
+            // $ty = TypesCharge::find($request['typeSchargeId']);
+            $charges->invoiceStatusId->$request['invoiceStatus_id'];
+
             $charges->save();
+
+
             return $charges;
         }catch (\Exception $exception){
-            dd($exception->getMessage());
             $this->Log($exception);
             return null;
         }
@@ -68,7 +68,7 @@ class ChargeRepository implements IChargeRpository
         try {
             return Charges::where("id","=",$id)
                 ->where("organisation_id",'=',$this->organisation_id)
-                ->get();
+                ->first();
         }catch (\Exception $exception){
             $this->Log($exception);
             return null;
@@ -78,9 +78,9 @@ class ChargeRepository implements IChargeRpository
     {
         try {
             $prevElem->update($data->all());
-            $subject = LogsEnumConst::Update . LogsEnumConst::Charge .$data['REQ_TIT'];
-            $logs = new LogActivity();
-            $logs->addToLog($subject, $data);
+            // $subject = LogsEnumConst::Update . LogsEnumConst::Charge .$data['REQ_TIT'];
+            // $logs = new LogActivity();
+            // $logs->addToLog($subject, $data);
             return $prevElem;
         }catch (\Exception $exception){
             $this->Log($exception);

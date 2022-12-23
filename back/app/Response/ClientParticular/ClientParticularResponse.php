@@ -1,8 +1,10 @@
 <?php
-namespace App\Response\Client;
+
+namespace App\Response\ClientParticular;
+
 use Illuminate\Http\Resources\Json\JsonResource;
 
-class ClientResponse extends JsonResource
+class ClientParticularResponse extends JsonResource
 {
     public function toArray($request)
     {
@@ -14,7 +16,10 @@ class ClientResponse extends JsonResource
             "city" => $this->city,
             "ZIP_code" => $this->ZIP_code,
             "Country" => $this->Country,
+            "id_mem" => $this->membership->id,
+            "tel" => $this->membership->tel,
+            "Function" => $this->membership->Function,
+            "Cour" => $this->membership->Cour
         ];
     }
 }
-

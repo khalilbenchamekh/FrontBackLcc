@@ -1,7 +1,7 @@
 <?php
 
 
-namespace App\Repository\Charge;
+namespace App\Response\Charge;
 
 use Illuminate\Http\Resources\Json\JsonResource;
 

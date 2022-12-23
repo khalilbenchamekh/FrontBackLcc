@@ -4,7 +4,7 @@ namespace App\Http\Controllers\Crud;
 use App\Http\Controllers\Controller;
 use App\Http\Requests\Pagination\PaginationRequest;
 use App\Http\Requests\Crud\ChargesRequest;
-use App\Repository\Charge\ChargeResponse;
+use App\Response\Charge\ChargeResponse;
 use App\Response\TypesCharge\TypesChargesResponse;
 use App\Services\Charge\IChargeService;
 use App\Services\SaveFile\ISaveFileService;
@@ -46,6 +46,7 @@ class ChargesController extends Controller
     public function store(ChargesRequest $request)
     {
         $res=$this->iChargeService->store($request);
+        dd($res);
         if(!is_null($res) ){
             $response = ChargeResponse::make($res);
             if($request->hasFile('filenames')){
@@ -70,13 +71,16 @@ class ChargesController extends Controller
 
     public function update(ChargesRequest $request, $id)
     {
-        $res=$this->iChargeService->update($id,$request->all());
-        if(!is_null($res) ){
-         /// we must create a response ChargeResponse + ChargesResponse  $response=ChargeResponse::make($res);
-         $path = 'Load/' . $res->num_quit;
-         $this->saveFileService->saveFiles($path,$request->file('filenames'));
+        $res=$this->iChargeService->update($id,$request);
+        if(! is_null($res)){
+            if($request->hasFile('filenames')){
+                /// we must create a response ChargeResponse + ChargesResponse  $response=ChargeResponse::make($res);
+                $path = 'Load/' . $res->num_quit;
+                $this->saveFileService->saveFiles($path,$request->file('filenames'));
+            }
             return response()->json(["data"=>$res],Response::HTTP_CREATED);
         }
+
         return response()->json(['error'=>"Bad Request"],Response::HTTP_BAD_REQUEST);
     }
 
@@ -94,6 +98,6 @@ class ChargesController extends Controller
                 return response()->json(['data' => $res], Response::HTTP_NO_CONTENT);
            }else{
                return response()->json(['error'=>"Bad Request"],Response::HTTP_BAD_REQUEST);
-           }
+        }
     }
 }

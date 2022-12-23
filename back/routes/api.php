@@ -72,7 +72,10 @@ Route::post("/affairesituations/store",[AffaireSituationController::class,'store
 //----------clients ------------------>
 Route::post('/clients',[ClientController::class,"index"]);
 Route::post('/client/store',[ClientController::class,"store"]);
+Route::post('/client/update/{id}',[ClientController::class,"update"]);
 Route::get('/client/{id}',[ClientController::class,"show"]);
+Route::post('client/business/store', [ClientController::class ,"storeBusiness"]);
+Route::post('client/particular/store',[ClientController::class ,"storeParticular"]);
 
 
 //--------Fees------->
@@ -264,8 +267,8 @@ Route::group(['middleware' => ['jwt', 'jwt.auth']], function () {
         Route::post('loads/statistics', 'LoadController@dashboard');
 
         //Route::apiResource('clients', 'ClientController');
-        Route::post('clients/business', 'ClientController@storeBusiness');
-        Route::post('clients/particular', 'ClientController@storeParticular');
+        // Route::post('clients/business', 'ClientController@storeBusiness');
+        // Route::post('clients/particular', 'ClientController@storeParticular');
 
         //Route::apiResource('employees', 'EmployeeController');
         Route::post('employees/employee', 'EmployeeController@storeEmployee');
@@ -301,6 +304,10 @@ Route::group(['middleware' => ['jwt', 'jwt.auth']], function () {
         // Route::apiResource('invoicestatuses', 'InvoiceStatusController');
         // Route::apiResource('charges', 'ChargesController');
         Route::post('charge/store',[ChargesController::class,'store']);
+        Route::post('charges',[ChargesController::class,'index']);
+        Route::get('charge/show/{id}',[ChargesController::class,'show']);
+        Route::post('charge/update/{id}',[ChargesController::class,'update']);
+        Route::post('charge/delete',[ChargesController::class,'delete']);
         // Route::apiResource('typescharges', 'TypesChargeController');
     });
 

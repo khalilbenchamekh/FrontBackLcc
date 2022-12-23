@@ -5,28 +5,13 @@ namespace App\Http\Requests\Crud;
 
 use Illuminate\Foundation\Http\FormRequest;
 
-
-// class ClientUpdateRequest extends FormRequest
-// {
-//     public function authorize()
-//     {
-//         return true;
-//     }
-
-//     public function rules()
-//     {
-//         return [
-//             'id_mem' => ['required','string','min:4','max:255'],
-//         ];
-//     }
-// }
-
-class ClientRequest extends FormRequest
+class ClientBusinessRequest extends FormRequest
 {
     public function authorize()
     {
         return true;
     }
+
     public function rules()
     {
         return [
@@ -36,7 +21,10 @@ class ClientRequest extends FormRequest
             'city' => ['required','string','max:255'],
             'ZIP_code' => ['required','string','max:255'],
             'Country' => ['required','string','max:255'],
-            'id_mem' => ['required','string','min:4','max:255'],
+            'tel' => ['required','string','min:10','max:15'],
+            'Cour' => ['required','string','max:255'],
+            'RC' => ['required','string','min:4','max:255'],
+            'ICE' => ['required','string','min:4','max:255'],
         ];
     }
 }

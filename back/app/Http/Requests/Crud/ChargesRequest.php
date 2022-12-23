@@ -24,7 +24,7 @@ class ChargesRequest extends FormRequest
             'date_fac' => ['required','nullable', 'date:Y-m-d'],
             'date_pai' => ['required','nullable', 'date:Y-m-d'],
             'date_del' => ['required','nullable', 'date:Y-m-d'],
-            'unite' => ['nullable', 'integer'],
+            'unite' => [ 'integer'],
             '*.filenames.*' => 'mimes:jpeg,png,gif,svg,doc,pdf,docx,zip',
             'filenames.*' => 'mimes:jpeg,png,gif,svg,doc,pdf,docx,zip',
             'archive' => ['required','in:0,1'],
