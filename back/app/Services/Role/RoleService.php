@@ -32,4 +32,8 @@ class RoleService implements IRoleService
         // TODO: Implement getBy() method.
         return $this->roleRepository->like($name);
     }
+    public function getRoleByName(string $name)
+    {
+        return $this->roleRepository->getRoleByName($name);
+    }
 }

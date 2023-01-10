@@ -26,6 +26,19 @@ class UserRepository implements IUserRepository
             return null;
         }
     }
+    public function checkIfEmailOrNameExist($request)
+    {
+        try{
+            $name = User::where("membership_id","!=",$request["id"])->orWhere("membership_id","=",null)->where("name","=",$request["name"])->first();
+            $email =  User::where("membership_id","!=",$request["id"])->orWhere("membership_id","=",null)->where("email","=",$request["email"])->first();
+            // dd(!is_null($email)?"email":$email);
+            return [!is_null($name)?"name":$name,!is_null($email)?"email":$email];
+
+        }catch(\Exception $exception){
+            $this->Log($exception);
+            return null;
+        }
+    }
 
     public function update($preUser,$newUser)
     {

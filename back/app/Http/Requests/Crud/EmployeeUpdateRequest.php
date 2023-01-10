@@ -2,10 +2,9 @@
 
 namespace App\Http\Requests\Crud;
 
-
 use Illuminate\Foundation\Http\FormRequest;
 
-class EmployeeRequest extends FormRequest
+class EmployeeUpdateRequest extends FormRequest
 {
     public function authorize()
     {
@@ -20,8 +19,8 @@ class EmployeeRequest extends FormRequest
             'gender' => ['nullable', 'in:female,male'],
             'address' => ['nullable', 'string', 'max:510'],
             'role' => ['exists:roles,name'],
-            'name' => ["required", 'string', 'max:255','unique:users'],
-            'email' => ['required', 'string', 'email', 'max:255','unique:users'],
+            'name' => ["required", 'string', 'max:255'],
+            'email' => ['required', 'string', 'email', 'max:255'],
             "password"=>['required',"required","max:225","min:6"],
             'workplace' => ['in:Ground,Office'],
             'personal_number' => ['required','string', 'min:10', 'max:255'],
@@ -35,3 +34,4 @@ class EmployeeRequest extends FormRequest
         ];
     }
 }
+

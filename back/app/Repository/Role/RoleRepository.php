@@ -52,4 +52,15 @@ class RoleRepository implements IRoleRepository
             return null;
         }
     }
+
+    public function getRoleByName(string $name)
+    {
+        try {
+            //code...
+            return Role::where("name","=",$name)->first();
+        } catch (\Exception $exception) {
+            $this->Log($exception);
+            return null;
+        }
+    }
 }

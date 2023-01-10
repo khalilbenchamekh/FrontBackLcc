@@ -5,8 +5,11 @@ namespace App\Http\Controllers\Crud;
 use App\Helpers\LogActivity;
 use App\Http\Controllers\Controller;
 use App\Http\Requests\Crud\EmployeeRequest;
+use App\Http\Requests\Crud\EmployeeUpdateRequest;
 use App\Http\Requests\Enums\LogsEnumConst;
+use App\Http\Requests\Pagination\PaginationRequest;
 use App\Models\Employee;
+use App\Request\Crud\EmployeeDownloadRequest;
 use App\Response\Employee\EmployeeResponse;
 use App\Response\Employee\EmployeesResponse;
 use App\Services\Employee\IEmployeeService;
@@ -15,6 +18,7 @@ use Illuminate\Http\Request;
 use Illuminate\Support\Facades\Validator;
 use Symfony\Component\HttpFoundation\Response;
 use Illuminate\Pagination\LengthAwarePaginator;
+
 class EmployeeController extends Controller
 {
     /**
@@ -36,9 +40,9 @@ class EmployeeController extends Controller
         $this->middleware('role:employees_delete|owner|admin', ['only' => ['destroy']]);
     }
 
-    public function index()
+    public function index(PaginationRequest $request)
     {
-        $res=$this->employeeService->all();
+        $res=$this->employeeService->all($request);
         if($res instanceof LengthAwarePaginator){
             $response =  EmployeesResponse::make($res->items());
             return response()->json(
@@ -56,7 +60,7 @@ class EmployeeController extends Controller
 
     public function storeEmployee(EmployeeRequest $request)
     {
-        $res=$this->employeeService->create($request->all());
+        $res=$this->employeeService->create($request);
         if(!is_null($res) ){
             $path = 'Employee/docs/' . $res->name;
             $this->saveFileService->saveEmployeeFiles($res,$path,$request->file('filenames'));
@@ -66,7 +70,7 @@ class EmployeeController extends Controller
        return response()->json("Bad Request",Response::HTTP_BAD_REQUEST);
     }
 
-    public function download(Request $request)
+    public function download(EmployeeDownloadRequest $request)
     {
         $username = $request->input('username');
         $filename = $request->input('filename');
@@ -77,7 +81,7 @@ class EmployeeController extends Controller
 
     public function store(EmployeeRequest $request)
     {
-        $employee=$this->employeeService->store($request->all());
+        $employee=$this->employeeService->create($request);
         if ($employee instanceof Employee){
             $response=EmployeeResponse::make($employee);
            return response()->json($response,Response::HTTP_CREATED);
@@ -95,17 +99,20 @@ class EmployeeController extends Controller
         return response()->json("Bad Request",Response::HTTP_BAD_REQUEST);
     }
 
-    public function update(EmployeeRequest $request, $id)
+    public function update(EmployeeUpdateRequest $request, $id)
     {
-        $firstname = $request->input('firstname');
-        $middlename = $request->input('middlename');
-        $lastname = $request->input('lastname');
-        $name = "{$firstname} {$middlename} {$lastname}";
-        $employee = Employee::findOrFail($id);
-        $data = $request->only($employee->getFillable());
+        // $firstname = $request->input('firstname');
+        // $middlename = $request->input('middlename');
+        // $lastname = $request->input('lastname');
+        // $name = "{$firstname} {$middlename} {$lastname}";
+        // $employee = Employee::findOrFail($id);
+        // $data = $request->only($employee->getFillable());
 
-        $employee->update($data);
-        $subject = LogsEnumConst::Update . LogsEnumConst::Employee . $name;
+        $employee = $this->employeeService->edit($id,$request);
+        if(is_array($employee)){
+            return response(['data' => $employee], 500);
+        }
+        $subject = LogsEnumConst::Update . LogsEnumConst::Employee . $request->name;
         $logs = new LogActivity();
         $logs->addToLog($subject, $request);
         return response(['data' => $employee], 200);

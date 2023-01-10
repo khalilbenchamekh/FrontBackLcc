@@ -54,6 +54,12 @@ class AdminRepository implements IAdminRepository
         try {
             $newUser = new User();
             $newUser->name=$data['name'];
+            $newUser->username = isset($data['username']) ? $data['username']: null ;
+            $newUser->firstname = isset($data['firstname']) ? $data['firstname']: null ;
+            $newUser->middlename = isset($data['middlename']) ? $data['middlename']: null ;
+            $newUser->lastname = isset($data['lastname']) ? $data['lastname']: null ;
+            $newUser->gender = isset($data['gender']) ? $data['gender']: null ;
+            $newUser->address = isset($data['address']) ? $data['address']: null ;
             $newUser->email=$data['email'];
             $newUser->password=Hash::make($data['password']);
             $newUser->organisation_id=$organisation_id;

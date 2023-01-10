@@ -29,4 +29,8 @@ class UserService implements IUserService
     {
         return $this->iUserRepository->getUser($request->all());
     }
+    public function checkIfEmailOrNameExist($request)
+    {
+        return $this->iUserRepository->checkIfEmailOrNameExist($request);
+    }
 }

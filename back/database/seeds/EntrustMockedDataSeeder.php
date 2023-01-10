@@ -117,7 +117,7 @@ class EntrustMockedDataSeeder extends Seeder
         }
 
         $userRole = Role::where('name','like','user')->first();
-        if (is_null($admin)) {
+        if (is_null($userRole)) {
             $userRole = new Role();
             $userRole->name = "user";
             $userRole->display_name = 'user';
@@ -229,6 +229,6 @@ class EntrustMockedDataSeeder extends Seeder
             ]);
         };
         }
-        
+
     }
 }

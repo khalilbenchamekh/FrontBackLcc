@@ -38,7 +38,7 @@ Route::get('/send',function (){
     dd($table);
 });
 
-Route::post("/employees/store",[EmployeeController::class,'store']);
+
 Route::post("/affairesituations",[AffaireSituationController::class,'index']);
 Route::post("/affairesituations/many",[AffaireSituationController::class,'storeMany']);
 Route::post("/affairesituations/delete",[AffaireSituationController::class,'destroy']);
@@ -68,6 +68,14 @@ Route::post("/affairesituations/store",[AffaireSituationController::class,'store
 // GOOD Route::post('/loadtypes/saveMany',[LoadTypesController::class,"storeMany"]);
 
 //-------------- End loadtypes ------------->
+
+//-------------------Employees ------------------------->
+Route::post("/employee/store",[EmployeeController::class,'store']);
+Route::get("/employee/{id}",[EmployeeController::class,'show']);
+Route::post("/employee/update/{id}",[EmployeeController::class,'update']);
+Route::post('employees', [EmployeeController::class,"index"]);
+// Route::post('employees/docs', 'EmployeeController@download');
+
 
 //----------clients ------------------>
 Route::post('/clients',[ClientController::class,"index"]);
@@ -271,8 +279,8 @@ Route::group(['middleware' => ['jwt', 'jwt.auth']], function () {
         // Route::post('clients/particular', 'ClientController@storeParticular');
 
         //Route::apiResource('employees', 'EmployeeController');
-        Route::post('employees/employee', 'EmployeeController@storeEmployee');
-        Route::post('employees/docs', 'EmployeeController@download');
+        // Route::post('employees/employee', 'EmployeeController@storeEmployee');
+        // Route::post('employees/docs', 'EmployeeController@download');
 
         //Route::apiResource('affairesituations', 'AffaireSituationController');
         Route::post('affairesituations/multi', 'AffaireSituationController@storeMany');
