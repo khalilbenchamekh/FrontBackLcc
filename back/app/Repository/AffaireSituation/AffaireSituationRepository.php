@@ -71,7 +71,6 @@ class AffaireSituationRepository implements IAffaireSituationRepository
             $deleted->delete();
             return $model;
         }catch (\Exception $exception){
-            dd($exception->getMessage());
             $this->Log($exception);
             return null;
         }

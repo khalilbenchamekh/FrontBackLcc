@@ -32,7 +32,7 @@ class FolderTechService implements IFolderTechService
     }
     public function getFolderTechBetween($from ,$to)
     {
-        
+
         return $this->iFolderTechRepository->getFolderTechBetween($from,$to);
     }
     public function saveBusinessManagement($request,$affaire)
@@ -46,7 +46,7 @@ class FolderTechService implements IFolderTechService
     }
     public function index($request)
     {
-        return $this->iFolderTechRepository->index($request);
+        return $this->iFolderTechRepository->index($request->all());
     }
     public function show($id)
     {
@@ -68,15 +68,15 @@ class FolderTechService implements IFolderTechService
     }
     public function delete($request)
     {
-        $res = $this->iFolderTechRepository->destroy($request['id']);
+        $res = $this->iFolderTechRepository->destroy($request->id);
         if($res === 0 || is_null($res)){
             return false;
         }else{
-            $subject = LogsEnumConst::Delete . LogsEnumConst::FolderTech . $request['REF'];
+            $subject = LogsEnumConst::Delete . LogsEnumConst::FolderTech . $res->REF;
             $logs = new LogActivity();
             $logs->addToLog($subject, $request);
         }
-        return true;
+        return $res;
     }
 
     public function getFolderTech($request)

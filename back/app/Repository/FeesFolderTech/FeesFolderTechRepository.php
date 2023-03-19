@@ -10,7 +10,7 @@ class FeesFolderTechRepository implements IFeesFolderTechRepository
     private $organisation_id;
     public function __construct()
     {
-        $this->organisation_id = 3;
+        $this->organisation_id = Auth::user()?Auth::user()->organisation_id:null;
     }
     public function save($request)
     {
@@ -34,7 +34,6 @@ class FeesFolderTechRepository implements IFeesFolderTechRepository
             return FeesFolderTech::select()
             ->paginate($request['limit'],['*'],'page',$request['page']);
         }catch(\Exception $exception){
-            dd($exception);
             $this->Log($exception);
             return null;
         }

@@ -13,8 +13,9 @@ class FolderTechNatureRequest extends FormRequest
     public function rules()
     {
         return [
-            'Name' => ['required','string','min:4','max:255'],
+            'Name' => ['required','string','unique:folder_tech_natures','min:4','max:255'],
             'Abr_v' => ['string','max:3'],
         ];
     }
 }
+

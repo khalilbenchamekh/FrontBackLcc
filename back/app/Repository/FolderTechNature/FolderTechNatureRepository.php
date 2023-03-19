@@ -7,6 +7,7 @@ namespace App\Repository\FolderTechNature;
 use App\Models\FolderTechNature;
 use App\Repository\Log\LogTrait;
 use Illuminate\Support\Facades\Auth;
+use Illuminate\Support\Facades\DB;
 
 class FolderTechNatureRepository implements IFolderTechNatureRepository
 {
@@ -14,17 +15,17 @@ class FolderTechNatureRepository implements IFolderTechNatureRepository
     private $organisation_id;
     public function __construct()
     {
-        $this->organisation_id = 3;
+        $this->organisation_id = Auth::user() ? Auth::user()->organisation_id : null;
     }
 
-    public function getFolerTechNatureByName($id,$name)
+    public function getFolerTechNatureByName($id, $name)
     {
         try {
-            return FolderTechNature::where("organisation_id","=",$this->organisation_id)
-                ->where('id','!=',$id)
-                ->where('Name','=',$name)
+            return FolderTechNature::where("organisation_id", "=", $this->organisation_id)
+                ->where('id', '!=', $id)
+                ->where('Name', '=', $name)
                 ->first();
-        }catch (\Exception $exception){
+        } catch (\Exception $exception) {
             $this->Log($exception);
             return null;
         }
@@ -35,12 +36,12 @@ class FolderTechNatureRepository implements IFolderTechNatureRepository
         try {
             //code...
             $folderTechNature = new FolderTechNature();
-            $name= $request['Name'];
-            $abr_v= $request['Abr_v'];
-            $abr_v=empty($abr_v) ? substr($name,0,3) : $abr_v;
-            $folderTechNature->Name=$name;
-            $folderTechNature->Abr_v=$abr_v;
-            $folderTechNature->organisation_id=$this->organisation_id;
+            $name = $request['Name'];
+            $abr_v = $request['Abr_v'];
+            $abr_v = empty($abr_v) ? substr($name, 0, 3) : $abr_v;
+            $folderTechNature->Name = $name;
+            $folderTechNature->Abr_v = $abr_v;
+            $folderTechNature->organisation_id = $this->organisation_id;
             $folderTechNature->save();
             return $folderTechNature;
         } catch (\Exception $exception) {
@@ -48,18 +49,15 @@ class FolderTechNatureRepository implements IFolderTechNatureRepository
             return null;
         }
     }
-    public function index($request,$order=null)
+    public function index($request, $order = null)
     {
         try {
-                $folderTechNature= FolderTechNature::
-                select();
-                if(!is_null($order)){
-                    $folderTechNature->latest();
-                }
-                $folderTechNature->where("organisation_id","=",$this->organisation_id)
-                ->paginate($request['limit'],['*'],'page',$request['page']);
-                return $folderTechNature;
-        }catch (\Exception $exception){
+            return DB::table('folder_tech_natures')->where("organisation_id", "=", $this->organisation_id)
+            ->when($order != null, function($query) use ($request){
+                return $query->orderBy('created_at', 'desc');
+            })
+            ->paginate($request['limit'], ['*'], 'page', $request['page']);
+        } catch (\Exception $exception) {
             $this->Log($exception);
             return null;
         }
@@ -69,24 +67,24 @@ class FolderTechNatureRepository implements IFolderTechNatureRepository
 
         try {
             //code...
-            return FolderTechNature::where("id","=",$id)
-            ->where("organisation_id",'=',$this->organisation_id)
-            ->first();
+            return FolderTechNature::where("id", "=", $id)
+                ->where("organisation_id", '=', $this->organisation_id)
+                ->first();
         } catch (\Exception $exception) {
             $this->Log($exception);
             return null;
         }
     }
-    public function update(FolderTechNature $folderTechNature,$request)
+    public function update(FolderTechNature $folderTechNature, $request)
     {
         try {
             //code...
-            $name= $request['Name'];
-            $abr_v= $request['Abr_v'];
-            $abr_v=empty($abr_v) ? substr($name,0,3) : $abr_v;
-            $folderTechNature->Name=$name;
-            $folderTechNature->Abr_v=$abr_v;
-            $folderTechNature->organisation_id=$this->organisation_id;
+            $name = $request['Name'];
+            $abr_v = $request['Abr_v'];
+            $abr_v = empty($abr_v) ? substr($name, 0, 3) : $abr_v;
+            $folderTechNature->Name = $name;
+            $folderTechNature->Abr_v = $abr_v;
+            $folderTechNature->organisation_id = $this->organisation_id;
 
             $folderTechNature->save();
             return $folderTechNature;
@@ -98,10 +96,10 @@ class FolderTechNatureRepository implements IFolderTechNatureRepository
     public function destroy($id)
     {
         try {
-            return FolderTechNature::where("id","=",$id)
-                ->where("organisation_id",'=',$this->organisation_id)
-                ->destroy();
-
+            $model= FolderTechNature::where("organisation_id",'=',$this->organisation_id)->find($id);
+            $deleted = $model;
+            $deleted->delete();
+            return $model;
         } catch (\Exception $exception) {
             $this->Log($exception);
             return null;

@@ -30,7 +30,7 @@ class AffaireController extends Controller
 
     public function index(PaginationRequest $request)
     {
-        $res=$this->affaireService->getBusiness($request);
+        $res=$this->affaireService->index($request->all());
         if($res instanceof  LengthAwarePaginator ){
             $response= AffairesResponse::make($res->items());
             return response()->json([
@@ -48,8 +48,6 @@ class AffaireController extends Controller
 
     public function store(AffaireRequest $request)
     {
-
-
         // $ttc = $request->input('ttc');
         // if (!empty($ttc)) {
         //     $validator = Validator::make($request->all(), [
@@ -60,11 +58,12 @@ class AffaireController extends Controller
         //     }
         // }
 
-        $res=$this->affaireService->save($request->all());
+        $res=$this->affaireService->save($request);
         if(!is_null($res) ){
             if ($request->hasfile('filenames')) {
-                $path = 'business/business' . $res->ref;
+                $path = 'business/business' . $res->REF;
                 $this->saveFileService->saveFiles($path,$request->file('filenames'));
+
             }
             $response=AffaireResponse::make($res);
             return response()->json($response,Response::HTTP_CREATED);
@@ -86,27 +85,27 @@ class AffaireController extends Controller
 
     public function update(AffaireRequest $request, $id)
     {
-        $longitude = $request->input('longitude');
-        $latitude = $request->input('latitude');
-        if (!empty($longitude) || !empty($latitude)) {
-            $validator = Validator::make($request->all(), [
-                'longitude' => 'required|regex:/^[0-9]+(\.[0-9][0-9]?)?$/',
-                'latitude' => 'required|regex:/^[0-9]+(\.[0-9][0-9]?)?$/',
-            ]);
-            if ($validator->fails()) {
-                return response($validator->errors(),Response::HTTP_BAD_REQUEST);
-            }
-        }
+        // $longitude = $request->input('longitude');
+        // $latitude = $request->input('latitude');
+        // if (!empty($longitude) || !empty($latitude)) {
+        //     $validator = Validator::make($request->all(), [
+        //         'longitude' => 'required|regex:/^[0-9]+(\.[0-9][0-9]?)?$/',
+        //         'latitude' => 'required|regex:/^[0-9]+(\.[0-9][0-9]?)?$/',
+        //     ]);
+            // if ($validator->fails()) {
+            //     return response($validator->errors(),Response::HTTP_BAD_REQUEST);
+            // }
+        // }
 
-        $ttc = $request->input('ttc');
-        if (!empty($ttc)) {
-            $validator = Validator::make($request->all(), [
-                'ttc' => 'in:0,1',
-            ]);
-            if ($validator->fails()) {
-                return response($validator->errors(),Response::HTTP_BAD_REQUEST);
-            }
-        }
+        // $ttc = $request->input('ttc');
+        // if (!empty($ttc)) {
+        //     $validator = Validator::make($request->all(), [
+        //         'ttc' => 'in:0,1',
+        //     ]);
+        //     if ($validator->fails()) {
+        //         return response($validator->errors(),Response::HTTP_BAD_REQUEST);
+        //     }
+        // }
 
         $res=$this->affaireService->update($request,$id);
         if(!is_null($res) ){

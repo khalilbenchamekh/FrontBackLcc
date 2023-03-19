@@ -1,26 +1,29 @@
 <?php
 
 namespace App\Repository\User;
+
 use App\Repository\Log\LogTrait;
 use App\User;
 use Illuminate\Support\Facades\Auth;
+use Illuminate\Support\Facades\DB;
 use Illuminate\Support\Facades\Hash;
+
 class UserRepository implements IUserRepository
 {
     use LogTrait;
     private $organisation_id;
     public function __construct()
     {
-        $this->organisation_id = 3;
+        $this->organisation_id = Auth::user()?Auth::user()->organisation_id:null;
     }
 
     public function get($id)
     {
         try {
             //code...
-            return User::where("id","=",$id)
-            ->where("organisation_id",'=',$this->organisation_id)
-            ->first();
+            return User::where("id", "=", $id)
+                ->where("organisation_id", '=', $this->organisation_id)
+                ->first();
         } catch (\Exception $exception) {
             $this->Log($exception);
             return null;
@@ -28,42 +31,39 @@ class UserRepository implements IUserRepository
     }
     public function checkIfEmailOrNameExist($request)
     {
-        try{
-            $name = User::where("membership_id","!=",$request["id"])->orWhere("membership_id","=",null)->where("name","=",$request["name"])->first();
-            $email =  User::where("membership_id","!=",$request["id"])->orWhere("membership_id","=",null)->where("email","=",$request["email"])->first();
-            // dd(!is_null($email)?"email":$email);
-            return [!is_null($name)?"name":$name,!is_null($email)?"email":$email];
-
-        }catch(\Exception $exception){
+        try {
+            $name = User::where("membership_id", "!=", $request["id"])->where("name", "=", $request["name"])->first();
+            $email =  User::where("membership_id", "!=", $request["id"])->where("email", "=", $request["email"])->first();
+            return [!is_null($name) ? "name" : $name, !is_null($email) ? "email" : $email];
+        } catch (\Exception $exception) {
             $this->Log($exception);
             return null;
         }
     }
 
-    public function update($preUser,$newUser)
+    public function update($preUser, $newUser)
     {
-        try{
-            $preUser->name=$newUser->name;
-            $preUser->username=$newUser->username;
-            $preUser->email =$newUser->email;
-            $preUser->password=Hash::make($newUser->name);
-            $preUser->firstname=$newUser->firstname;
-            $preUser->middlename=$newUser->middlename;
-            $preUser->lastname=$newUser->lastname;
-            $preUser->gender=$newUser->gender;
-            $preUser->birthdate=$newUser->birthdate;
-            $preUser->address=$newUser->address;
-            $preUser->directory=$newUser->directory;
-            $preUser->filename=$newUser->filename;
-            $preUser->original_filename=$newUser->original_filename;
-            $preUser->filesize=$newUser->filesize;
-            $preUser->url=$newUser->url;
+        try {
+            $preUser->name = $newUser->name;
+            $preUser->username = $newUser->username;
+            $preUser->email = $newUser->email;
+            $preUser->password = Hash::make($newUser->name);
+            $preUser->firstname = $newUser->firstname;
+            $preUser->middlename = $newUser->middlename;
+            $preUser->lastname = $newUser->lastname;
+            $preUser->gender = $newUser->gender;
+            $preUser->birthdate = $newUser->birthdate;
+            $preUser->address = $newUser->address;
+            $preUser->directory = $newUser->directory;
+            $preUser->filename = $newUser->filename;
+            $preUser->original_filename = $newUser->original_filename;
+            $preUser->filesize = $newUser->filesize;
+            $preUser->url = $newUser->url;
 
             $preUser->save();
 
             return $preUser;
-
-        }catch(\Exception $exception){
+        } catch (\Exception $exception) {
             $this->Log($exception);
             return null;
         }
@@ -73,14 +73,12 @@ class UserRepository implements IUserRepository
     {
         try {
             $users = User::latest()
-            ->select('name', 'id', 'username')
-            ->where("organisation_id","=",$this->organisation_id)
-            ->paginate($request['limit'],['*'],'page',$request['page']);
+                ->select('name', 'id', 'username')
+                ->where("organisation_id", "=", $this->organisation_id)
+                ->paginate($request['limit'], ['*'], 'page', $request['page']);
         } catch (\Exception $exception) {
             $this->Log($exception);
             return null;
         }
     }
-
-
 }

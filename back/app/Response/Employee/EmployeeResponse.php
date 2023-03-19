@@ -19,7 +19,12 @@ class EmployeeResponse extends JsonResource
             'Start_date'=>$this->Start_date,
             'Salary'=>$this->Salary,
             'isOnline'=>$this->isOnline,
-            "user"=>$this->user,
+            "user"=>[
+                "id"=> $this->user->id,
+                "name"=> $this->user->name,
+                "username"=> $this->user->username,
+                "email"=> $this->user->email,
+            ],
             'workplace'=>$this->workplace,
         ];
     }

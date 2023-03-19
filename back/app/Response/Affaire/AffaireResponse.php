@@ -11,7 +11,9 @@ class AffaireResponse extends JsonResource
         return[
             "id"=>$this->id,
             "advanced"=>$this->advanced,
-            "organisation_id "=>$this->organisation_id 
+            "organisation_id "=>$this->organisation_id,
+            "REF"=>$this->REF,
+            "PTE_KNOWN"=>$this->PTE_KNOWN
         ];
     }
 }

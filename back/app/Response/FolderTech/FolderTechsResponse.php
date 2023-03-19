@@ -1,8 +1,8 @@
 <?php
 
-namespace App\Response\FolderTechNature;
+namespace App\Response\FolderTech;
 
-use App\Response\FeesFolderTech\FeesFolderTechResponse;
+
 use Illuminate\Http\Resources\Json\ResourceCollection;
 
 class FolderTechsResponse extends ResourceCollection

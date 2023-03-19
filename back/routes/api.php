@@ -12,6 +12,7 @@ use App\Http\Controllers\Crud\LoadTypesController;
 use App\Http\Controllers\Crud\ClientController;
 use App\Http\Controllers\Crud\FeesController;
 use App\Http\Controllers\Crud\FeesFolderTechController;
+use App\Http\Controllers\Crud\FolderTechController;
 use App\Http\Controllers\Crud\FolderTechNatureController;
 use App\Http\Controllers\Crud\FolderTechSituationController;
 use App\Http\Controllers\Crud\IntermediateController;
@@ -74,6 +75,7 @@ Route::post("/employee/store",[EmployeeController::class,'store']);
 Route::get("/employee/{id}",[EmployeeController::class,'show']);
 Route::post("/employee/update/{id}",[EmployeeController::class,'update']);
 Route::post('employees', [EmployeeController::class,"index"]);
+Route::post('/employee/delete', [EmployeeController::class,"destroy"]);
 // Route::post('employees/docs', 'EmployeeController@download');
 
 
@@ -101,18 +103,26 @@ Route::put('/updateBusinessFees/{id}',[FeesController::class,'updateBusinessFees
 Route::post('/getAllFeesFolderTech',[FeesFolderTechController::class,'index']);
 Route::get('/getFeesFolderTech/{id}',[FeesFolderTechController::class,'show']);
 Route::post('/updateFeesFolderTech',[FeesFolderTechController::class,'update']);
-Route::post('/saveFeesFolderTech',[FeesFolderTechController::class,'store']);
+Route::post('/FeesFolderTech/save',[FeesFolderTechController::class,'store']);
 Route::get('/deletFeesFolderTech/{id}',[FeesFolderTechController::class,'destroy']);
 //----------End FeesFolderTechController------------------>
 
+
+//-------FolderTechController------------>
+Route::post('/FolderTech/save',[FolderTechController::class,'store']);
+Route::get('/FolderTech/{id}',[FolderTechController::class,'show']);
+Route::post('/FolderTechs',[FolderTechController::class,'index']);
+Route::post('/FolderTech/update/{id}',[FolderTechController::class,'update']);
+Route::post('/FolderTech/delete',[FolderTechController::class,'destroy']);
+//-------End FolderTechController------------>
 
 //-----------------FolderTechNatureController----------------->
 Route::post('foldertechnature/multi',[FolderTechNatureController::class,'storeMany'] );
 Route::post('foldertechnature/save',[FolderTechNatureController::class,'store'] );
 Route::get('foldertechnature/get/{id}',[FolderTechNatureController::class,'show'] );
 Route::post('foldertechnature/update/{id}',[FolderTechNatureController::class,'update'] );
-Route::post('foldertechnature/all',[FolderTechNatureController::class,'index'] );
-Route::get('foldertechnature/delet/{id}',[FolderTechNatureController::class,'destroy'] );
+Route::post('foldertechnatures',[FolderTechNatureController::class,'index'] );
+Route::post('foldertechnature/delete',[FolderTechNatureController::class,'destroy'] );
 //-------------End FolderTechNatureController ------------------------->
 
 //-----------------FolderTechSituationController----------------->
@@ -120,7 +130,7 @@ Route::post('/foldertechsituation/save', [FolderTechSituationController::class,'
 Route::get('/foldertechsituation/get/{id}', [FolderTechSituationController::class,'show']);
 Route::post('/foldertechsituations', [FolderTechSituationController::class,'index']);
 Route::post('/foldertechsituation/update/{id}', [FolderTechSituationController::class,'update']);
-Route::get('/foldertechsituation/delete/{id}', [FolderTechSituationController::class,'destroy']);
+Route::post('/foldertechsituation/delete', [FolderTechSituationController::class,'destroy']);
 Route::post('foldertechsituations/multi',[FolderTechSituationController::class,'storeMany'] );
 //-----------------End FolderTechSituationController----------------->
 
@@ -129,7 +139,7 @@ Route::post('/intermediates', [IntermediateController::class,'index']);
 Route::post('/intermediate/save', [IntermediateController::class,'store']);
 Route::get('/intermediate/get/{id}', [IntermediateController::class,'show']);
 Route::post('/intermediate/update/{id}', [IntermediateController::class,'update']);
-Route::get('/intermediate/delete/{id}', [IntermediateController::class,'destroy']);
+Route::post('/intermediate/delete', [IntermediateController::class,'destroy']);
 //-----------------End IntermediateController----------------->
 
 //-------------InvoiceStatusController------------------>
@@ -150,7 +160,11 @@ Route::get('/typescharge/delete',[TypesChargeController::class,'destroy']);
 // ---------------------- AffaireController ---------------------->
 
 Route::post("/affaire/store",[AffaireController::class,'store']);
-
+Route::get("/affaire/{id}",[AffaireController::class,'show']);
+Route::get("/affaires",[AffaireController::class,'index']);
+Route::post("/affaire/update/{id}",[AffaireController::class,'update']);
+Route::post("/affaire/delete",[AffaireController::class,'destroy']);
+// ---------------------- End AffaireController (we need to check saveFile specialy Constructor) ---------------------->
 
 
 Route::post('/user/image/save/{id}',[\App\Http\Controllers\Web\AdminController::class,'saveImage']);
@@ -292,7 +306,7 @@ Route::group(['middleware' => ['jwt', 'jwt.auth']], function () {
         // Route::apiResource('affaires', 'AffaireController');
 
 
-        Route::apiResource('folderteches', 'FolderTechController');
+        // Route::apiResource('folderteches', 'FolderTechController');
 
         // Route::apiResource('intermediates', 'IntermediateController');
 

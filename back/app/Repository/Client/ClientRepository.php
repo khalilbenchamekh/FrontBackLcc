@@ -115,7 +115,6 @@ class ClientRepository implements IClientRepository
                 return $business;
 
         } catch (\Exception $exception) {
-            dd($exception->getMessage());
             $this->Log($exception);
             return null;
         }
@@ -136,7 +135,6 @@ class ClientRepository implements IClientRepository
 
             return $client;
         } catch (\Exception $exception) {
-            dd($exception->getMessage());
             $this->Log($exception);
             return null;
         }

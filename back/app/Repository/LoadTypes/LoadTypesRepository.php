@@ -43,7 +43,6 @@ class LoadTypesRepository implements ILoadTypesRepository
            return $loadType;
 
         }catch(\Exception $exception){
-            dd($exception->getMessage());
             $this->Log($exception);
             return null;
         }

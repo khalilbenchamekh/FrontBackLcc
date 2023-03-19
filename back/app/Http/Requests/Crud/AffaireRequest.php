@@ -15,21 +15,21 @@ class AffaireRequest extends FormRequest
     public function rules()
     {
         return [
-          
+
             'longitude' => 'required|regex:/^[0-9]+(\.[0-9][0-9]?)?$/',
             'latitude' => 'required|regex:/^[0-9]+(\.[0-9][0-9]?)?$/',
-            'aff_sit_id' => ['exists:affairesituations,id'],
-            'client_id' => ['exists:clients,id'],
-            'resp_id' => ['exists:users,id'],
-            'nature_name' => ['exists:affaire_natures,Name'],
-            'nature_Abr_v_name' => 'string|max:3',
+            'aff_sit_id' => ['required','exists:affairesituations,id'],
+            'client_id' => ['required','exists:clients,id'],
+            'resp_id' => ['required','exists:users,id'],
+            'nature_name' => ['required','exists:affaire_natures,Name',"string"],
+            'nature_Abr_v_name' => ['string|max:3'],
             'PTE_KNOWN' => ['required','string', 'max:255'],
             'TIT_REQ' => ['required', 'string', 'max:255'],
-            'place' => ['required', 'string', 'max:255'],
-            'DATE_ENTRY' => ['nullable', 'date:Y-m-d'],
+            'place' => ['required', 'regex:/^\d+(\.\d{1,2})?$/'],
+            'DATE_ENTRY' => ["required", 'date_format:Y-m-d H:i:s'],
             'DATE_LAI' => ['nullable', 'date:Y-m-d'],
             'Inter_id' => ['nullable', 'integer'],
-            'UNITE' => ['integer'],
+            'UNITE' => ['required','integer'],
             '*.filenames.*' => 'mimes:jpeg,png,gif,svg,doc,pdf,docx,zip',
             'filenames.*' => 'mimes:jpeg,png,gif,svg,doc,pdf,docx,zip',
 //            'ARCHIVE' => ['in:0,1'],

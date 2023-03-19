@@ -79,14 +79,14 @@ class FolderTechNatureService implements IFolderTechNatureService
     }
     public function destroy($request)
     {
-        $res = $this->iFolderTechNatureRepository->destroy($request['id']);
+        $res = $this->iFolderTechNatureRepository->destroy($request->id);
         if($res === 0 || is_null($res)){
             return false;
         }else{
-            $subject = LogsEnumConst::Delete . LogsEnumConst::FolderTechNature . $request['Abr_v'];
+            $subject = LogsEnumConst::Delete . LogsEnumConst::FolderTechNature . $request->Abr_v;
             $logs = new LogActivity();
             $logs->addToLog($subject, $request);
         }
-        return true;
+        return $res;
     }
 }

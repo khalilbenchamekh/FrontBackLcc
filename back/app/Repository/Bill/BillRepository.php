@@ -11,7 +11,7 @@ class BillRepository implements IBillRepository
     use LogTrait;
     private $organisation_id;
     public function __construct() {
-        $this->organisation_id = 3;
+        $this->organisation_id = Auth::user() ? Auth::user()->organisation_id : null;
     }
     public function get($ref){
         try {

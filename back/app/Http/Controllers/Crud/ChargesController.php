@@ -46,7 +46,6 @@ class ChargesController extends Controller
     public function store(ChargesRequest $request)
     {
         $res=$this->iChargeService->store($request);
-        dd($res);
         if(!is_null($res) ){
             $response = ChargeResponse::make($res);
             if($request->hasFile('filenames')){

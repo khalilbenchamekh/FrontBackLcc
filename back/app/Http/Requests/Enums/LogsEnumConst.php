@@ -48,4 +48,8 @@ class LogsEnumConst
     const Load='Charge ';
     const LoadType='Type de Charge ';
     const Bill='Facture ';
+
+    const BillDetails = 'Facture Details';
+
+
 }

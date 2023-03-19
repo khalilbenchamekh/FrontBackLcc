@@ -30,14 +30,14 @@ class IntermediateController extends Controller
     {
         $res = $this->iIntermediateService->index($request);
         if($res instanceof LengthAwarePaginator){
-            $response = IntermediatesResponse::make($res->all());
+            $response = IntermediatesResponse::make($res->items());
             return response()->json([
                 "data"=>$response,
-                'countPage'=>$response->perPage(),
-                "currentPage"=>$response->currentPage(),
-                "nextPage"=>$response->currentPage()<$response->lastPage()?$response->currentPage()+1:$response->currentPage(),
-                "lastPage"=>$response->lastPage(),
-                'total'=>$response->total(),
+                'countPage'=>$res->perPage(),
+                "currentPage"=>$res->currentPage(),
+                "nextPage"=>$res->currentPage()<$res->lastPage()?$res->currentPage()+1:$res->currentPage(),
+                "lastPage"=>$res->lastPage(),
+                'total'=>$res->total(),
             ],Response::HTTP_OK);
         }
         return response()->json(["error"=>"Bad Request"],Response::HTTP_BAD_REQUEST);
@@ -91,7 +91,7 @@ class IntermediateController extends Controller
             }
             $res=$this->iIntermediateService->destroy($request);
             if(!is_null($res) ){
-                return response()->json(['data' => $res], Response::HTTP_NO_CONTENT);
+                return response()->json(['data' => $res], Response::HTTP_OK);
            }
            return response()->json(['error'=>"Bad Request"],Response::HTTP_BAD_REQUEST);
     }

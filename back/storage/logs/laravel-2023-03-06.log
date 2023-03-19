@@ -1,0 +1,1378 @@
+[2023-03-06 12:13:35] local.ERROR: syntax error, unexpected 'if' (T_IF) {"userId":2,"exception":"[object] (Symfony\\Component\\Debug\\Exception\\FatalThrowableError(code: 0): syntax error, unexpected 'if' (T_IF) at C:\\xampp\\htdocs\\New folder (7)\\FrontBackLcc\\back\\app\\Services\\Employee\\EmployeeService.php:97)
+[stacktrace]
+#0 C:\\xampp\\htdocs\\New folder (7)\\FrontBackLcc\\back\\vendor\\composer\\ClassLoader.php(428): Composer\\Autoload\\includeFile('C:\\\\xampp\\\\htdocs...')
+#1 [internal function]: Composer\\Autoload\\ClassLoader->loadClass('App\\\\Services\\\\Em...')
+#2 [internal function]: spl_autoload_call('App\\\\Services\\\\Em...')
+#3 C:\\xampp\\htdocs\\New folder (7)\\FrontBackLcc\\back\\vendor\\laravel\\framework\\src\\Illuminate\\Container\\Container.php(803): ReflectionClass->__construct('App\\\\Services\\\\Em...')
+#4 C:\\xampp\\htdocs\\New folder (7)\\FrontBackLcc\\back\\vendor\\laravel\\framework\\src\\Illuminate\\Container\\Container.php(681): Illuminate\\Container\\Container->build('App\\\\Services\\\\Em...')
+#5 C:\\xampp\\htdocs\\New folder (7)\\FrontBackLcc\\back\\vendor\\laravel\\framework\\src\\Illuminate\\Foundation\\Application.php(785): Illuminate\\Container\\Container->resolve('App\\\\Services\\\\Em...', Array, false)
+#6 C:\\xampp\\htdocs\\New folder (7)\\FrontBackLcc\\back\\vendor\\laravel\\framework\\src\\Illuminate\\Container\\Container.php(265): Illuminate\\Foundation\\Application->resolve('App\\\\Services\\\\Em...', Array, false)
+#7 C:\\xampp\\htdocs\\New folder (7)\\FrontBackLcc\\back\\vendor\\laravel\\framework\\src\\Illuminate\\Container\\Container.php(799): Illuminate\\Container\\Container->Illuminate\\Container\\{closure}(Object(Illuminate\\Foundation\\Application), Array)
+#8 C:\\xampp\\htdocs\\New folder (7)\\FrontBackLcc\\back\\vendor\\laravel\\framework\\src\\Illuminate\\Container\\Container.php(681): Illuminate\\Container\\Container->build(Object(Closure))
+#9 C:\\xampp\\htdocs\\New folder (7)\\FrontBackLcc\\back\\vendor\\laravel\\framework\\src\\Illuminate\\Foundation\\Application.php(785): Illuminate\\Container\\Container->resolve('App\\\\Services\\\\Em...', Array, true)
+#10 C:\\xampp\\htdocs\\New folder (7)\\FrontBackLcc\\back\\vendor\\laravel\\framework\\src\\Illuminate\\Container\\Container.php(629): Illuminate\\Foundation\\Application->resolve('App\\\\Services\\\\Em...', Array)
+#11 C:\\xampp\\htdocs\\New folder (7)\\FrontBackLcc\\back\\vendor\\laravel\\framework\\src\\Illuminate\\Foundation\\Application.php(770): Illuminate\\Container\\Container->make('App\\\\Services\\\\Em...', Array)
+#12 C:\\xampp\\htdocs\\New folder (7)\\FrontBackLcc\\back\\vendor\\laravel\\framework\\src\\Illuminate\\Container\\Container.php(945): Illuminate\\Foundation\\Application->make('App\\\\Services\\\\Em...')
+#13 C:\\xampp\\htdocs\\New folder (7)\\FrontBackLcc\\back\\vendor\\laravel\\framework\\src\\Illuminate\\Container\\Container.php(873): Illuminate\\Container\\Container->resolveClass(Object(ReflectionParameter))
+#14 C:\\xampp\\htdocs\\New folder (7)\\FrontBackLcc\\back\\vendor\\laravel\\framework\\src\\Illuminate\\Container\\Container.php(834): Illuminate\\Container\\Container->resolveDependencies(Array)
+#15 C:\\xampp\\htdocs\\New folder (7)\\FrontBackLcc\\back\\vendor\\laravel\\framework\\src\\Illuminate\\Container\\Container.php(681): Illuminate\\Container\\Container->build('App\\\\Http\\\\Contro...')
+#16 C:\\xampp\\htdocs\\New folder (7)\\FrontBackLcc\\back\\vendor\\laravel\\framework\\src\\Illuminate\\Foundation\\Application.php(785): Illuminate\\Container\\Container->resolve('App\\\\Http\\\\Contro...', Array, true)
+#17 C:\\xampp\\htdocs\\New folder (7)\\FrontBackLcc\\back\\vendor\\laravel\\framework\\src\\Illuminate\\Container\\Container.php(629): Illuminate\\Foundation\\Application->resolve('App\\\\Http\\\\Contro...', Array)
+#18 C:\\xampp\\htdocs\\New folder (7)\\FrontBackLcc\\back\\vendor\\laravel\\framework\\src\\Illuminate\\Foundation\\Application.php(770): Illuminate\\Container\\Container->make('App\\\\Http\\\\Contro...', Array)
+#19 C:\\xampp\\htdocs\\New folder (7)\\FrontBackLcc\\back\\vendor\\laravel\\framework\\src\\Illuminate\\Routing\\Route.php(233): Illuminate\\Foundation\\Application->make('App\\\\Http\\\\Contro...')
+#20 C:\\xampp\\htdocs\\New folder (7)\\FrontBackLcc\\back\\vendor\\laravel\\framework\\src\\Illuminate\\Routing\\Route.php(833): Illuminate\\Routing\\Route->getController()
+#21 C:\\xampp\\htdocs\\New folder (7)\\FrontBackLcc\\back\\vendor\\laravel\\framework\\src\\Illuminate\\Routing\\Route.php(794): Illuminate\\Routing\\Route->controllerMiddleware()
+#22 C:\\xampp\\htdocs\\New folder (7)\\FrontBackLcc\\back\\vendor\\laravel\\framework\\src\\Illuminate\\Routing\\Router.php(694): Illuminate\\Routing\\Route->gatherMiddleware()
+#23 C:\\xampp\\htdocs\\New folder (7)\\FrontBackLcc\\back\\vendor\\laravel\\framework\\src\\Illuminate\\Routing\\Router.php(674): Illuminate\\Routing\\Router->gatherRouteMiddleware(Object(Illuminate\\Routing\\Route))
+#24 C:\\xampp\\htdocs\\New folder (7)\\FrontBackLcc\\back\\vendor\\laravel\\framework\\src\\Illuminate\\Routing\\Router.php(658): Illuminate\\Routing\\Router->runRouteWithinStack(Object(Illuminate\\Routing\\Route), Object(Illuminate\\Http\\Request))
+#25 C:\\xampp\\htdocs\\New folder (7)\\FrontBackLcc\\back\\vendor\\laravel\\framework\\src\\Illuminate\\Routing\\Router.php(624): Illuminate\\Routing\\Router->runRoute(Object(Illuminate\\Http\\Request), Object(Illuminate\\Routing\\Route))
+#26 C:\\xampp\\htdocs\\New folder (7)\\FrontBackLcc\\back\\vendor\\laravel\\framework\\src\\Illuminate\\Routing\\Router.php(613): Illuminate\\Routing\\Router->dispatchToRoute(Object(Illuminate\\Http\\Request))
+#27 C:\\xampp\\htdocs\\New folder (7)\\FrontBackLcc\\back\\vendor\\laravel\\framework\\src\\Illuminate\\Foundation\\Http\\Kernel.php(170): Illuminate\\Routing\\Router->dispatch(Object(Illuminate\\Http\\Request))
+#28 C:\\xampp\\htdocs\\New folder (7)\\FrontBackLcc\\back\\vendor\\laravel\\framework\\src\\Illuminate\\Pipeline\\Pipeline.php(130): Illuminate\\Foundation\\Http\\Kernel->Illuminate\\Foundation\\Http\\{closure}(Object(Illuminate\\Http\\Request))
+#29 C:\\xampp\\htdocs\\New folder (7)\\FrontBackLcc\\back\\app\\Http\\Middleware\\Cors.php(30): Illuminate\\Pipeline\\Pipeline->Illuminate\\Pipeline\\{closure}(Object(Illuminate\\Http\\Request))
+#30 C:\\xampp\\htdocs\\New folder (7)\\FrontBackLcc\\back\\vendor\\laravel\\framework\\src\\Illuminate\\Pipeline\\Pipeline.php(171): App\\Http\\Middleware\\Cors->handle(Object(Illuminate\\Http\\Request), Object(Closure))
+#31 C:\\xampp\\htdocs\\New folder (7)\\FrontBackLcc\\back\\vendor\\laravel\\framework\\src\\Illuminate\\Foundation\\Http\\Middleware\\TransformsRequest.php(21): Illuminate\\Pipeline\\Pipeline->Illuminate\\Pipeline\\{closure}(Object(Illuminate\\Http\\Request))
+#32 C:\\xampp\\htdocs\\New folder (7)\\FrontBackLcc\\back\\vendor\\laravel\\framework\\src\\Illuminate\\Pipeline\\Pipeline.php(171): Illuminate\\Foundation\\Http\\Middleware\\TransformsRequest->handle(Object(Illuminate\\Http\\Request), Object(Closure))
+#33 C:\\xampp\\htdocs\\New folder (7)\\FrontBackLcc\\back\\vendor\\laravel\\framework\\src\\Illuminate\\Foundation\\Http\\Middleware\\TransformsRequest.php(21): Illuminate\\Pipeline\\Pipeline->Illuminate\\Pipeline\\{closure}(Object(Illuminate\\Http\\Request))
+#34 C:\\xampp\\htdocs\\New folder (7)\\FrontBackLcc\\back\\vendor\\laravel\\framework\\src\\Illuminate\\Pipeline\\Pipeline.php(171): Illuminate\\Foundation\\Http\\Middleware\\TransformsRequest->handle(Object(Illuminate\\Http\\Request), Object(Closure))
+#35 C:\\xampp\\htdocs\\New folder (7)\\FrontBackLcc\\back\\vendor\\laravel\\framework\\src\\Illuminate\\Foundation\\Http\\Middleware\\ValidatePostSize.php(27): Illuminate\\Pipeline\\Pipeline->Illuminate\\Pipeline\\{closure}(Object(Illuminate\\Http\\Request))
+#36 C:\\xampp\\htdocs\\New folder (7)\\FrontBackLcc\\back\\vendor\\laravel\\framework\\src\\Illuminate\\Pipeline\\Pipeline.php(171): Illuminate\\Foundation\\Http\\Middleware\\ValidatePostSize->handle(Object(Illuminate\\Http\\Request), Object(Closure))
+#37 C:\\xampp\\htdocs\\New folder (7)\\FrontBackLcc\\back\\vendor\\laravel\\framework\\src\\Illuminate\\Foundation\\Http\\Middleware\\CheckForMaintenanceMode.php(63): Illuminate\\Pipeline\\Pipeline->Illuminate\\Pipeline\\{closure}(Object(Illuminate\\Http\\Request))
+#38 C:\\xampp\\htdocs\\New folder (7)\\FrontBackLcc\\back\\vendor\\laravel\\framework\\src\\Illuminate\\Pipeline\\Pipeline.php(171): Illuminate\\Foundation\\Http\\Middleware\\CheckForMaintenanceMode->handle(Object(Illuminate\\Http\\Request), Object(Closure))
+#39 C:\\xampp\\htdocs\\New folder (7)\\FrontBackLcc\\back\\vendor\\fideloper\\proxy\\src\\TrustProxies.php(57): Illuminate\\Pipeline\\Pipeline->Illuminate\\Pipeline\\{closure}(Object(Illuminate\\Http\\Request))
+#40 C:\\xampp\\htdocs\\New folder (7)\\FrontBackLcc\\back\\vendor\\laravel\\framework\\src\\Illuminate\\Pipeline\\Pipeline.php(171): Fideloper\\Proxy\\TrustProxies->handle(Object(Illuminate\\Http\\Request), Object(Closure))
+#41 C:\\xampp\\htdocs\\New folder (7)\\FrontBackLcc\\back\\vendor\\barryvdh\\laravel-cors\\src\\HandlePreflight.php(29): Illuminate\\Pipeline\\Pipeline->Illuminate\\Pipeline\\{closure}(Object(Illuminate\\Http\\Request))
+#42 C:\\xampp\\htdocs\\New folder (7)\\FrontBackLcc\\back\\vendor\\laravel\\framework\\src\\Illuminate\\Pipeline\\Pipeline.php(171): Barryvdh\\Cors\\HandlePreflight->handle(Object(Illuminate\\Http\\Request), Object(Closure))
+#43 C:\\xampp\\htdocs\\New folder (7)\\FrontBackLcc\\back\\vendor\\laravel\\framework\\src\\Illuminate\\Pipeline\\Pipeline.php(105): Illuminate\\Pipeline\\Pipeline->Illuminate\\Pipeline\\{closure}(Object(Illuminate\\Http\\Request))
+#44 C:\\xampp\\htdocs\\New folder (7)\\FrontBackLcc\\back\\vendor\\laravel\\framework\\src\\Illuminate\\Foundation\\Http\\Kernel.php(145): Illuminate\\Pipeline\\Pipeline->then(Object(Closure))
+#45 C:\\xampp\\htdocs\\New folder (7)\\FrontBackLcc\\back\\vendor\\laravel\\framework\\src\\Illuminate\\Foundation\\Http\\Kernel.php(110): Illuminate\\Foundation\\Http\\Kernel->sendRequestThroughRouter(Object(Illuminate\\Http\\Request))
+#46 C:\\xampp\\htdocs\\New folder (7)\\FrontBackLcc\\back\\public\\index.php(55): Illuminate\\Foundation\\Http\\Kernel->handle(Object(Illuminate\\Http\\Request))
+#47 C:\\xampp\\htdocs\\New folder (7)\\FrontBackLcc\\back\\server.php(21): require_once('C:\\\\xampp\\\\htdocs...')
+#48 {main}
+"} 
+[2023-03-06 12:13:48] local.ERROR: Undefined variable: email {"userId":2,"exception":"[object] (ErrorException(code: 0): Undefined variable: email at C:\\xampp\\htdocs\\New folder (7)\\FrontBackLcc\\back\\app\\Services\\Employee\\EmployeeService.php:96)
+[stacktrace]
+#0 C:\\xampp\\htdocs\\New folder (7)\\FrontBackLcc\\back\\app\\Services\\Employee\\EmployeeService.php(96): Illuminate\\Foundation\\Bootstrap\\HandleExceptions->handleError(8, 'Undefined varia...', 'C:\\\\xampp\\\\htdocs...', 96, Array)
+#1 C:\\xampp\\htdocs\\New folder (7)\\FrontBackLcc\\back\\app\\Http\\Controllers\\Crud\\EmployeeController.php(111): App\\Services\\Employee\\EmployeeService->edit('1', Object(App\\Http\\Requests\\Crud\\EmployeeUpdateRequest))
+#2 C:\\xampp\\htdocs\\New folder (7)\\FrontBackLcc\\back\\vendor\\laravel\\framework\\src\\Illuminate\\Routing\\Controller.php(54): App\\Http\\Controllers\\Crud\\EmployeeController->update(Object(App\\Http\\Requests\\Crud\\EmployeeUpdateRequest), '1')
+#3 C:\\xampp\\htdocs\\New folder (7)\\FrontBackLcc\\back\\vendor\\laravel\\framework\\src\\Illuminate\\Routing\\ControllerDispatcher.php(45): Illuminate\\Routing\\Controller->callAction('update', Array)
+#4 C:\\xampp\\htdocs\\New folder (7)\\FrontBackLcc\\back\\vendor\\laravel\\framework\\src\\Illuminate\\Routing\\Route.php(219): Illuminate\\Routing\\ControllerDispatcher->dispatch(Object(Illuminate\\Routing\\Route), Object(App\\Http\\Controllers\\Crud\\EmployeeController), 'update')
+#5 C:\\xampp\\htdocs\\New folder (7)\\FrontBackLcc\\back\\vendor\\laravel\\framework\\src\\Illuminate\\Routing\\Route.php(176): Illuminate\\Routing\\Route->runController()
+#6 C:\\xampp\\htdocs\\New folder (7)\\FrontBackLcc\\back\\vendor\\laravel\\framework\\src\\Illuminate\\Routing\\Router.php(681): Illuminate\\Routing\\Route->run()
+#7 C:\\xampp\\htdocs\\New folder (7)\\FrontBackLcc\\back\\vendor\\laravel\\framework\\src\\Illuminate\\Pipeline\\Pipeline.php(130): Illuminate\\Routing\\Router->Illuminate\\Routing\\{closure}(Object(Illuminate\\Http\\Request))
+#8 C:\\xampp\\htdocs\\New folder (7)\\FrontBackLcc\\back\\vendor\\halpdesk\\zizaco-entrust-laravel-6.0\\src\\Entrust\\Middleware\\EntrustRole.php(48): Illuminate\\Pipeline\\Pipeline->Illuminate\\Pipeline\\{closure}(Object(Illuminate\\Http\\Request))
+#9 C:\\xampp\\htdocs\\New folder (7)\\FrontBackLcc\\back\\vendor\\laravel\\framework\\src\\Illuminate\\Pipeline\\Pipeline.php(171): Zizaco\\Entrust\\Middleware\\EntrustRole->handle(Object(Illuminate\\Http\\Request), Object(Closure), Array)
+#10 C:\\xampp\\htdocs\\New folder (7)\\FrontBackLcc\\back\\vendor\\laravel\\framework\\src\\Illuminate\\Routing\\Middleware\\SubstituteBindings.php(41): Illuminate\\Pipeline\\Pipeline->Illuminate\\Pipeline\\{closure}(Object(Illuminate\\Http\\Request))
+#11 C:\\xampp\\htdocs\\New folder (7)\\FrontBackLcc\\back\\vendor\\laravel\\framework\\src\\Illuminate\\Pipeline\\Pipeline.php(171): Illuminate\\Routing\\Middleware\\SubstituteBindings->handle(Object(Illuminate\\Http\\Request), Object(Closure))
+#12 C:\\xampp\\htdocs\\New folder (7)\\FrontBackLcc\\back\\vendor\\laravel\\framework\\src\\Illuminate\\Routing\\Middleware\\ThrottleRequests.php(59): Illuminate\\Pipeline\\Pipeline->Illuminate\\Pipeline\\{closure}(Object(Illuminate\\Http\\Request))
+#13 C:\\xampp\\htdocs\\New folder (7)\\FrontBackLcc\\back\\vendor\\laravel\\framework\\src\\Illuminate\\Pipeline\\Pipeline.php(171): Illuminate\\Routing\\Middleware\\ThrottleRequests->handle(Object(Illuminate\\Http\\Request), Object(Closure), 60, '1')
+#14 C:\\xampp\\htdocs\\New folder (7)\\FrontBackLcc\\back\\app\\Http\\Middleware\\Cors.php(30): Illuminate\\Pipeline\\Pipeline->Illuminate\\Pipeline\\{closure}(Object(Illuminate\\Http\\Request))
+#15 C:\\xampp\\htdocs\\New folder (7)\\FrontBackLcc\\back\\vendor\\laravel\\framework\\src\\Illuminate\\Pipeline\\Pipeline.php(171): App\\Http\\Middleware\\Cors->handle(Object(Illuminate\\Http\\Request), Object(Closure))
+#16 C:\\xampp\\htdocs\\New folder (7)\\FrontBackLcc\\back\\vendor\\laravel\\framework\\src\\Illuminate\\Pipeline\\Pipeline.php(105): Illuminate\\Pipeline\\Pipeline->Illuminate\\Pipeline\\{closure}(Object(Illuminate\\Http\\Request))
+#17 C:\\xampp\\htdocs\\New folder (7)\\FrontBackLcc\\back\\vendor\\laravel\\framework\\src\\Illuminate\\Routing\\Router.php(683): Illuminate\\Pipeline\\Pipeline->then(Object(Closure))
+#18 C:\\xampp\\htdocs\\New folder (7)\\FrontBackLcc\\back\\vendor\\laravel\\framework\\src\\Illuminate\\Routing\\Router.php(658): Illuminate\\Routing\\Router->runRouteWithinStack(Object(Illuminate\\Routing\\Route), Object(Illuminate\\Http\\Request))
+#19 C:\\xampp\\htdocs\\New folder (7)\\FrontBackLcc\\back\\vendor\\laravel\\framework\\src\\Illuminate\\Routing\\Router.php(624): Illuminate\\Routing\\Router->runRoute(Object(Illuminate\\Http\\Request), Object(Illuminate\\Routing\\Route))
+#20 C:\\xampp\\htdocs\\New folder (7)\\FrontBackLcc\\back\\vendor\\laravel\\framework\\src\\Illuminate\\Routing\\Router.php(613): Illuminate\\Routing\\Router->dispatchToRoute(Object(Illuminate\\Http\\Request))
+#21 C:\\xampp\\htdocs\\New folder (7)\\FrontBackLcc\\back\\vendor\\laravel\\framework\\src\\Illuminate\\Foundation\\Http\\Kernel.php(170): Illuminate\\Routing\\Router->dispatch(Object(Illuminate\\Http\\Request))
+#22 C:\\xampp\\htdocs\\New folder (7)\\FrontBackLcc\\back\\vendor\\laravel\\framework\\src\\Illuminate\\Pipeline\\Pipeline.php(130): Illuminate\\Foundation\\Http\\Kernel->Illuminate\\Foundation\\Http\\{closure}(Object(Illuminate\\Http\\Request))
+#23 C:\\xampp\\htdocs\\New folder (7)\\FrontBackLcc\\back\\app\\Http\\Middleware\\Cors.php(30): Illuminate\\Pipeline\\Pipeline->Illuminate\\Pipeline\\{closure}(Object(Illuminate\\Http\\Request))
+#24 C:\\xampp\\htdocs\\New folder (7)\\FrontBackLcc\\back\\vendor\\laravel\\framework\\src\\Illuminate\\Pipeline\\Pipeline.php(171): App\\Http\\Middleware\\Cors->handle(Object(Illuminate\\Http\\Request), Object(Closure))
+#25 C:\\xampp\\htdocs\\New folder (7)\\FrontBackLcc\\back\\vendor\\laravel\\framework\\src\\Illuminate\\Foundation\\Http\\Middleware\\TransformsRequest.php(21): Illuminate\\Pipeline\\Pipeline->Illuminate\\Pipeline\\{closure}(Object(Illuminate\\Http\\Request))
+#26 C:\\xampp\\htdocs\\New folder (7)\\FrontBackLcc\\back\\vendor\\laravel\\framework\\src\\Illuminate\\Pipeline\\Pipeline.php(171): Illuminate\\Foundation\\Http\\Middleware\\TransformsRequest->handle(Object(Illuminate\\Http\\Request), Object(Closure))
+#27 C:\\xampp\\htdocs\\New folder (7)\\FrontBackLcc\\back\\vendor\\laravel\\framework\\src\\Illuminate\\Foundation\\Http\\Middleware\\TransformsRequest.php(21): Illuminate\\Pipeline\\Pipeline->Illuminate\\Pipeline\\{closure}(Object(Illuminate\\Http\\Request))
+#28 C:\\xampp\\htdocs\\New folder (7)\\FrontBackLcc\\back\\vendor\\laravel\\framework\\src\\Illuminate\\Pipeline\\Pipeline.php(171): Illuminate\\Foundation\\Http\\Middleware\\TransformsRequest->handle(Object(Illuminate\\Http\\Request), Object(Closure))
+#29 C:\\xampp\\htdocs\\New folder (7)\\FrontBackLcc\\back\\vendor\\laravel\\framework\\src\\Illuminate\\Foundation\\Http\\Middleware\\ValidatePostSize.php(27): Illuminate\\Pipeline\\Pipeline->Illuminate\\Pipeline\\{closure}(Object(Illuminate\\Http\\Request))
+#30 C:\\xampp\\htdocs\\New folder (7)\\FrontBackLcc\\back\\vendor\\laravel\\framework\\src\\Illuminate\\Pipeline\\Pipeline.php(171): Illuminate\\Foundation\\Http\\Middleware\\ValidatePostSize->handle(Object(Illuminate\\Http\\Request), Object(Closure))
+#31 C:\\xampp\\htdocs\\New folder (7)\\FrontBackLcc\\back\\vendor\\laravel\\framework\\src\\Illuminate\\Foundation\\Http\\Middleware\\CheckForMaintenanceMode.php(63): Illuminate\\Pipeline\\Pipeline->Illuminate\\Pipeline\\{closure}(Object(Illuminate\\Http\\Request))
+#32 C:\\xampp\\htdocs\\New folder (7)\\FrontBackLcc\\back\\vendor\\laravel\\framework\\src\\Illuminate\\Pipeline\\Pipeline.php(171): Illuminate\\Foundation\\Http\\Middleware\\CheckForMaintenanceMode->handle(Object(Illuminate\\Http\\Request), Object(Closure))
+#33 C:\\xampp\\htdocs\\New folder (7)\\FrontBackLcc\\back\\vendor\\fideloper\\proxy\\src\\TrustProxies.php(57): Illuminate\\Pipeline\\Pipeline->Illuminate\\Pipeline\\{closure}(Object(Illuminate\\Http\\Request))
+#34 C:\\xampp\\htdocs\\New folder (7)\\FrontBackLcc\\back\\vendor\\laravel\\framework\\src\\Illuminate\\Pipeline\\Pipeline.php(171): Fideloper\\Proxy\\TrustProxies->handle(Object(Illuminate\\Http\\Request), Object(Closure))
+#35 C:\\xampp\\htdocs\\New folder (7)\\FrontBackLcc\\back\\vendor\\barryvdh\\laravel-cors\\src\\HandlePreflight.php(29): Illuminate\\Pipeline\\Pipeline->Illuminate\\Pipeline\\{closure}(Object(Illuminate\\Http\\Request))
+#36 C:\\xampp\\htdocs\\New folder (7)\\FrontBackLcc\\back\\vendor\\laravel\\framework\\src\\Illuminate\\Pipeline\\Pipeline.php(171): Barryvdh\\Cors\\HandlePreflight->handle(Object(Illuminate\\Http\\Request), Object(Closure))
+#37 C:\\xampp\\htdocs\\New folder (7)\\FrontBackLcc\\back\\vendor\\laravel\\framework\\src\\Illuminate\\Pipeline\\Pipeline.php(105): Illuminate\\Pipeline\\Pipeline->Illuminate\\Pipeline\\{closure}(Object(Illuminate\\Http\\Request))
+#38 C:\\xampp\\htdocs\\New folder (7)\\FrontBackLcc\\back\\vendor\\laravel\\framework\\src\\Illuminate\\Foundation\\Http\\Kernel.php(145): Illuminate\\Pipeline\\Pipeline->then(Object(Closure))
+#39 C:\\xampp\\htdocs\\New folder (7)\\FrontBackLcc\\back\\vendor\\laravel\\framework\\src\\Illuminate\\Foundation\\Http\\Kernel.php(110): Illuminate\\Foundation\\Http\\Kernel->sendRequestThroughRouter(Object(Illuminate\\Http\\Request))
+#40 C:\\xampp\\htdocs\\New folder (7)\\FrontBackLcc\\back\\public\\index.php(55): Illuminate\\Foundation\\Http\\Kernel->handle(Object(Illuminate\\Http\\Request))
+#41 C:\\xampp\\htdocs\\New folder (7)\\FrontBackLcc\\back\\server.php(21): require_once('C:\\\\xampp\\\\htdocs...')
+#42 {main}
+"} 
+[2023-03-06 12:14:26] local.ERROR: Undefined variable: email {"userId":2,"exception":"[object] (ErrorException(code: 0): Undefined variable: email at C:\\xampp\\htdocs\\New folder (7)\\FrontBackLcc\\back\\app\\Services\\Employee\\EmployeeService.php:116)
+[stacktrace]
+#0 C:\\xampp\\htdocs\\New folder (7)\\FrontBackLcc\\back\\app\\Services\\Employee\\EmployeeService.php(116): Illuminate\\Foundation\\Bootstrap\\HandleExceptions->handleError(8, 'Undefined varia...', 'C:\\\\xampp\\\\htdocs...', 116, Array)
+#1 C:\\xampp\\htdocs\\New folder (7)\\FrontBackLcc\\back\\app\\Services\\Employee\\EmployeeService.php(95): App\\Services\\Employee\\EmployeeService->errorMessage(Array, Object(App\\Http\\Requests\\Crud\\EmployeeUpdateRequest))
+#2 C:\\xampp\\htdocs\\New folder (7)\\FrontBackLcc\\back\\app\\Http\\Controllers\\Crud\\EmployeeController.php(111): App\\Services\\Employee\\EmployeeService->edit('1', Object(App\\Http\\Requests\\Crud\\EmployeeUpdateRequest))
+#3 C:\\xampp\\htdocs\\New folder (7)\\FrontBackLcc\\back\\vendor\\laravel\\framework\\src\\Illuminate\\Routing\\Controller.php(54): App\\Http\\Controllers\\Crud\\EmployeeController->update(Object(App\\Http\\Requests\\Crud\\EmployeeUpdateRequest), '1')
+#4 C:\\xampp\\htdocs\\New folder (7)\\FrontBackLcc\\back\\vendor\\laravel\\framework\\src\\Illuminate\\Routing\\ControllerDispatcher.php(45): Illuminate\\Routing\\Controller->callAction('update', Array)
+#5 C:\\xampp\\htdocs\\New folder (7)\\FrontBackLcc\\back\\vendor\\laravel\\framework\\src\\Illuminate\\Routing\\Route.php(219): Illuminate\\Routing\\ControllerDispatcher->dispatch(Object(Illuminate\\Routing\\Route), Object(App\\Http\\Controllers\\Crud\\EmployeeController), 'update')
+#6 C:\\xampp\\htdocs\\New folder (7)\\FrontBackLcc\\back\\vendor\\laravel\\framework\\src\\Illuminate\\Routing\\Route.php(176): Illuminate\\Routing\\Route->runController()
+#7 C:\\xampp\\htdocs\\New folder (7)\\FrontBackLcc\\back\\vendor\\laravel\\framework\\src\\Illuminate\\Routing\\Router.php(681): Illuminate\\Routing\\Route->run()
+#8 C:\\xampp\\htdocs\\New folder (7)\\FrontBackLcc\\back\\vendor\\laravel\\framework\\src\\Illuminate\\Pipeline\\Pipeline.php(130): Illuminate\\Routing\\Router->Illuminate\\Routing\\{closure}(Object(Illuminate\\Http\\Request))
+#9 C:\\xampp\\htdocs\\New folder (7)\\FrontBackLcc\\back\\vendor\\halpdesk\\zizaco-entrust-laravel-6.0\\src\\Entrust\\Middleware\\EntrustRole.php(48): Illuminate\\Pipeline\\Pipeline->Illuminate\\Pipeline\\{closure}(Object(Illuminate\\Http\\Request))
+#10 C:\\xampp\\htdocs\\New folder (7)\\FrontBackLcc\\back\\vendor\\laravel\\framework\\src\\Illuminate\\Pipeline\\Pipeline.php(171): Zizaco\\Entrust\\Middleware\\EntrustRole->handle(Object(Illuminate\\Http\\Request), Object(Closure), Array)
+#11 C:\\xampp\\htdocs\\New folder (7)\\FrontBackLcc\\back\\vendor\\laravel\\framework\\src\\Illuminate\\Routing\\Middleware\\SubstituteBindings.php(41): Illuminate\\Pipeline\\Pipeline->Illuminate\\Pipeline\\{closure}(Object(Illuminate\\Http\\Request))
+#12 C:\\xampp\\htdocs\\New folder (7)\\FrontBackLcc\\back\\vendor\\laravel\\framework\\src\\Illuminate\\Pipeline\\Pipeline.php(171): Illuminate\\Routing\\Middleware\\SubstituteBindings->handle(Object(Illuminate\\Http\\Request), Object(Closure))
+#13 C:\\xampp\\htdocs\\New folder (7)\\FrontBackLcc\\back\\vendor\\laravel\\framework\\src\\Illuminate\\Routing\\Middleware\\ThrottleRequests.php(59): Illuminate\\Pipeline\\Pipeline->Illuminate\\Pipeline\\{closure}(Object(Illuminate\\Http\\Request))
+#14 C:\\xampp\\htdocs\\New folder (7)\\FrontBackLcc\\back\\vendor\\laravel\\framework\\src\\Illuminate\\Pipeline\\Pipeline.php(171): Illuminate\\Routing\\Middleware\\ThrottleRequests->handle(Object(Illuminate\\Http\\Request), Object(Closure), 60, '1')
+#15 C:\\xampp\\htdocs\\New folder (7)\\FrontBackLcc\\back\\app\\Http\\Middleware\\Cors.php(30): Illuminate\\Pipeline\\Pipeline->Illuminate\\Pipeline\\{closure}(Object(Illuminate\\Http\\Request))
+#16 C:\\xampp\\htdocs\\New folder (7)\\FrontBackLcc\\back\\vendor\\laravel\\framework\\src\\Illuminate\\Pipeline\\Pipeline.php(171): App\\Http\\Middleware\\Cors->handle(Object(Illuminate\\Http\\Request), Object(Closure))
+#17 C:\\xampp\\htdocs\\New folder (7)\\FrontBackLcc\\back\\vendor\\laravel\\framework\\src\\Illuminate\\Pipeline\\Pipeline.php(105): Illuminate\\Pipeline\\Pipeline->Illuminate\\Pipeline\\{closure}(Object(Illuminate\\Http\\Request))
+#18 C:\\xampp\\htdocs\\New folder (7)\\FrontBackLcc\\back\\vendor\\laravel\\framework\\src\\Illuminate\\Routing\\Router.php(683): Illuminate\\Pipeline\\Pipeline->then(Object(Closure))
+#19 C:\\xampp\\htdocs\\New folder (7)\\FrontBackLcc\\back\\vendor\\laravel\\framework\\src\\Illuminate\\Routing\\Router.php(658): Illuminate\\Routing\\Router->runRouteWithinStack(Object(Illuminate\\Routing\\Route), Object(Illuminate\\Http\\Request))
+#20 C:\\xampp\\htdocs\\New folder (7)\\FrontBackLcc\\back\\vendor\\laravel\\framework\\src\\Illuminate\\Routing\\Router.php(624): Illuminate\\Routing\\Router->runRoute(Object(Illuminate\\Http\\Request), Object(Illuminate\\Routing\\Route))
+#21 C:\\xampp\\htdocs\\New folder (7)\\FrontBackLcc\\back\\vendor\\laravel\\framework\\src\\Illuminate\\Routing\\Router.php(613): Illuminate\\Routing\\Router->dispatchToRoute(Object(Illuminate\\Http\\Request))
+#22 C:\\xampp\\htdocs\\New folder (7)\\FrontBackLcc\\back\\vendor\\laravel\\framework\\src\\Illuminate\\Foundation\\Http\\Kernel.php(170): Illuminate\\Routing\\Router->dispatch(Object(Illuminate\\Http\\Request))
+#23 C:\\xampp\\htdocs\\New folder (7)\\FrontBackLcc\\back\\vendor\\laravel\\framework\\src\\Illuminate\\Pipeline\\Pipeline.php(130): Illuminate\\Foundation\\Http\\Kernel->Illuminate\\Foundation\\Http\\{closure}(Object(Illuminate\\Http\\Request))
+#24 C:\\xampp\\htdocs\\New folder (7)\\FrontBackLcc\\back\\app\\Http\\Middleware\\Cors.php(30): Illuminate\\Pipeline\\Pipeline->Illuminate\\Pipeline\\{closure}(Object(Illuminate\\Http\\Request))
+#25 C:\\xampp\\htdocs\\New folder (7)\\FrontBackLcc\\back\\vendor\\laravel\\framework\\src\\Illuminate\\Pipeline\\Pipeline.php(171): App\\Http\\Middleware\\Cors->handle(Object(Illuminate\\Http\\Request), Object(Closure))
+#26 C:\\xampp\\htdocs\\New folder (7)\\FrontBackLcc\\back\\vendor\\laravel\\framework\\src\\Illuminate\\Foundation\\Http\\Middleware\\TransformsRequest.php(21): Illuminate\\Pipeline\\Pipeline->Illuminate\\Pipeline\\{closure}(Object(Illuminate\\Http\\Request))
+#27 C:\\xampp\\htdocs\\New folder (7)\\FrontBackLcc\\back\\vendor\\laravel\\framework\\src\\Illuminate\\Pipeline\\Pipeline.php(171): Illuminate\\Foundation\\Http\\Middleware\\TransformsRequest->handle(Object(Illuminate\\Http\\Request), Object(Closure))
+#28 C:\\xampp\\htdocs\\New folder (7)\\FrontBackLcc\\back\\vendor\\laravel\\framework\\src\\Illuminate\\Foundation\\Http\\Middleware\\TransformsRequest.php(21): Illuminate\\Pipeline\\Pipeline->Illuminate\\Pipeline\\{closure}(Object(Illuminate\\Http\\Request))
+#29 C:\\xampp\\htdocs\\New folder (7)\\FrontBackLcc\\back\\vendor\\laravel\\framework\\src\\Illuminate\\Pipeline\\Pipeline.php(171): Illuminate\\Foundation\\Http\\Middleware\\TransformsRequest->handle(Object(Illuminate\\Http\\Request), Object(Closure))
+#30 C:\\xampp\\htdocs\\New folder (7)\\FrontBackLcc\\back\\vendor\\laravel\\framework\\src\\Illuminate\\Foundation\\Http\\Middleware\\ValidatePostSize.php(27): Illuminate\\Pipeline\\Pipeline->Illuminate\\Pipeline\\{closure}(Object(Illuminate\\Http\\Request))
+#31 C:\\xampp\\htdocs\\New folder (7)\\FrontBackLcc\\back\\vendor\\laravel\\framework\\src\\Illuminate\\Pipeline\\Pipeline.php(171): Illuminate\\Foundation\\Http\\Middleware\\ValidatePostSize->handle(Object(Illuminate\\Http\\Request), Object(Closure))
+#32 C:\\xampp\\htdocs\\New folder (7)\\FrontBackLcc\\back\\vendor\\laravel\\framework\\src\\Illuminate\\Foundation\\Http\\Middleware\\CheckForMaintenanceMode.php(63): Illuminate\\Pipeline\\Pipeline->Illuminate\\Pipeline\\{closure}(Object(Illuminate\\Http\\Request))
+#33 C:\\xampp\\htdocs\\New folder (7)\\FrontBackLcc\\back\\vendor\\laravel\\framework\\src\\Illuminate\\Pipeline\\Pipeline.php(171): Illuminate\\Foundation\\Http\\Middleware\\CheckForMaintenanceMode->handle(Object(Illuminate\\Http\\Request), Object(Closure))
+#34 C:\\xampp\\htdocs\\New folder (7)\\FrontBackLcc\\back\\vendor\\fideloper\\proxy\\src\\TrustProxies.php(57): Illuminate\\Pipeline\\Pipeline->Illuminate\\Pipeline\\{closure}(Object(Illuminate\\Http\\Request))
+#35 C:\\xampp\\htdocs\\New folder (7)\\FrontBackLcc\\back\\vendor\\laravel\\framework\\src\\Illuminate\\Pipeline\\Pipeline.php(171): Fideloper\\Proxy\\TrustProxies->handle(Object(Illuminate\\Http\\Request), Object(Closure))
+#36 C:\\xampp\\htdocs\\New folder (7)\\FrontBackLcc\\back\\vendor\\barryvdh\\laravel-cors\\src\\HandlePreflight.php(29): Illuminate\\Pipeline\\Pipeline->Illuminate\\Pipeline\\{closure}(Object(Illuminate\\Http\\Request))
+#37 C:\\xampp\\htdocs\\New folder (7)\\FrontBackLcc\\back\\vendor\\laravel\\framework\\src\\Illuminate\\Pipeline\\Pipeline.php(171): Barryvdh\\Cors\\HandlePreflight->handle(Object(Illuminate\\Http\\Request), Object(Closure))
+#38 C:\\xampp\\htdocs\\New folder (7)\\FrontBackLcc\\back\\vendor\\laravel\\framework\\src\\Illuminate\\Pipeline\\Pipeline.php(105): Illuminate\\Pipeline\\Pipeline->Illuminate\\Pipeline\\{closure}(Object(Illuminate\\Http\\Request))
+#39 C:\\xampp\\htdocs\\New folder (7)\\FrontBackLcc\\back\\vendor\\laravel\\framework\\src\\Illuminate\\Foundation\\Http\\Kernel.php(145): Illuminate\\Pipeline\\Pipeline->then(Object(Closure))
+#40 C:\\xampp\\htdocs\\New folder (7)\\FrontBackLcc\\back\\vendor\\laravel\\framework\\src\\Illuminate\\Foundation\\Http\\Kernel.php(110): Illuminate\\Foundation\\Http\\Kernel->sendRequestThroughRouter(Object(Illuminate\\Http\\Request))
+#41 C:\\xampp\\htdocs\\New folder (7)\\FrontBackLcc\\back\\public\\index.php(55): Illuminate\\Foundation\\Http\\Kernel->handle(Object(Illuminate\\Http\\Request))
+#42 C:\\xampp\\htdocs\\New folder (7)\\FrontBackLcc\\back\\server.php(21): require_once('C:\\\\xampp\\\\htdocs...')
+#43 {main}
+"} 
+[2023-03-06 12:16:05] local.INFO: Broadcasting [newLogs] on channels [private-logs] with payload:
+{
+    "logActivity": {
+        "id": 125,
+        "organisation_id": 1,
+        "subject": "Jovert Palonpona modifi\u00e9 une Employee employee21e",
+        "url": "http:\/\/localhost:8000\/api\/employee\/update\/1",
+        "method": "POST",
+        "ip": "127.0.0.1",
+        "agent": "PostmanRuntime\/7.6.0",
+        "user_id": 2,
+        "user_name": null,
+        "created_at": "2023-03-06 12:16:05",
+        "updated_at": "2023-03-06 12:16:05"
+    },
+    "socket": null
+}  
+[2023-03-06 12:20:15] local.INFO: Broadcasting [newLogs] on channels [private-logs] with payload:
+{
+    "logActivity": {
+        "id": 126,
+        "organisation_id": 1,
+        "subject": "Jovert Palonpona modifi\u00e9 une Employee 0666666666",
+        "url": "http:\/\/localhost:8000\/api\/employee\/update\/1",
+        "method": "POST",
+        "ip": "127.0.0.1",
+        "agent": "PostmanRuntime\/7.6.0",
+        "user_id": 2,
+        "user_name": null,
+        "created_at": "2023-03-06 12:20:15",
+        "updated_at": "2023-03-06 12:20:15"
+    },
+    "socket": null
+}  
+[2023-03-06 12:20:15] local.INFO: Broadcasting [newLogs] on channels [private-logs] with payload:
+{
+    "logActivity": {
+        "id": 127,
+        "organisation_id": 1,
+        "subject": "Jovert Palonpona modifi\u00e9 une Employee employee21e",
+        "url": "http:\/\/localhost:8000\/api\/employee\/update\/1",
+        "method": "POST",
+        "ip": "127.0.0.1",
+        "agent": "PostmanRuntime\/7.6.0",
+        "user_id": 2,
+        "user_name": null,
+        "created_at": "2023-03-06 12:20:15",
+        "updated_at": "2023-03-06 12:20:15"
+    },
+    "socket": null
+}  
+[2023-03-06 12:21:08] local.INFO: Broadcasting [newLogs] on channels [private-logs] with payload:
+{
+    "logActivity": {
+        "id": 128,
+        "organisation_id": 1,
+        "subject": "Jovert Palonpona modifi\u00e9 une Employee 0666666666",
+        "url": "http:\/\/localhost:8000\/api\/employee\/update\/1",
+        "method": "POST",
+        "ip": "127.0.0.1",
+        "agent": "PostmanRuntime\/7.6.0",
+        "user_id": 2,
+        "user_name": null,
+        "created_at": "2023-03-06 12:21:08",
+        "updated_at": "2023-03-06 12:21:08"
+    },
+    "socket": null
+}  
+[2023-03-06 12:21:38] local.INFO: Broadcasting [newLogs] on channels [private-logs] with payload:
+{
+    "logActivity": {
+        "id": 129,
+        "organisation_id": 1,
+        "subject": "Jovert Palonpona modifi\u00e9 une Employee 0666666666",
+        "url": "http:\/\/localhost:8000\/api\/employee\/update\/1",
+        "method": "POST",
+        "ip": "127.0.0.1",
+        "agent": "PostmanRuntime\/7.6.0",
+        "user_id": 2,
+        "user_name": null,
+        "created_at": "2023-03-06 12:21:38",
+        "updated_at": "2023-03-06 12:21:38"
+    },
+    "socket": null
+}  
+[2023-03-06 12:21:48] local.INFO: Broadcasting [newLogs] on channels [private-logs] with payload:
+{
+    "logActivity": {
+        "id": 130,
+        "organisation_id": 1,
+        "subject": "Jovert Palonpona modifi\u00e9 une Employee 0666666666",
+        "url": "http:\/\/localhost:8000\/api\/employee\/update\/1",
+        "method": "POST",
+        "ip": "127.0.0.1",
+        "agent": "PostmanRuntime\/7.6.0",
+        "user_id": 2,
+        "user_name": null,
+        "created_at": "2023-03-06 12:21:48",
+        "updated_at": "2023-03-06 12:21:48"
+    },
+    "socket": null
+}  
+[2023-03-06 12:21:48] local.INFO: Broadcasting [newLogs] on channels [private-logs] with payload:
+{
+    "logActivity": {
+        "id": 131,
+        "organisation_id": 1,
+        "subject": "Jovert Palonpona modifi\u00e9 une Employee employee21e",
+        "url": "http:\/\/localhost:8000\/api\/employee\/update\/1",
+        "method": "POST",
+        "ip": "127.0.0.1",
+        "agent": "PostmanRuntime\/7.6.0",
+        "user_id": 2,
+        "user_name": null,
+        "created_at": "2023-03-06 12:21:48",
+        "updated_at": "2023-03-06 12:21:48"
+    },
+    "socket": null
+}  
+[2023-03-06 12:22:24] local.INFO: Broadcasting [newLogs] on channels [private-logs] with payload:
+{
+    "logActivity": {
+        "id": 132,
+        "organisation_id": 1,
+        "subject": "Jovert Palonpona modifi\u00e9 une Employee 0666666666",
+        "url": "http:\/\/localhost:8000\/api\/employee\/update\/1",
+        "method": "POST",
+        "ip": "127.0.0.1",
+        "agent": "PostmanRuntime\/7.6.0",
+        "user_id": 2,
+        "user_name": null,
+        "created_at": "2023-03-06 12:22:24",
+        "updated_at": "2023-03-06 12:22:24"
+    },
+    "socket": null
+}  
+[2023-03-06 12:24:51] local.INFO: Broadcasting [newLogs] on channels [private-logs] with payload:
+{
+    "logActivity": {
+        "id": 133,
+        "organisation_id": 1,
+        "subject": "Jovert Palonpona modifi\u00e9 une Employee 0666666666",
+        "url": "http:\/\/localhost:8000\/api\/employee\/update\/1",
+        "method": "POST",
+        "ip": "127.0.0.1",
+        "agent": "PostmanRuntime\/7.6.0",
+        "user_id": 2,
+        "user_name": null,
+        "created_at": "2023-03-06 12:24:51",
+        "updated_at": "2023-03-06 12:24:51"
+    },
+    "socket": null
+}  
+[2023-03-06 12:25:18] local.INFO: Broadcasting [newLogs] on channels [private-logs] with payload:
+{
+    "logActivity": {
+        "id": 134,
+        "organisation_id": 1,
+        "subject": "Jovert Palonpona modifi\u00e9 une Employee 0666666666",
+        "url": "http:\/\/localhost:8000\/api\/employee\/update\/1",
+        "method": "POST",
+        "ip": "127.0.0.1",
+        "agent": "PostmanRuntime\/7.6.0",
+        "user_id": 2,
+        "user_name": null,
+        "created_at": "2023-03-06 12:25:18",
+        "updated_at": "2023-03-06 12:25:18"
+    },
+    "socket": null
+}  
+[2023-03-06 12:25:36] local.INFO: Broadcasting [newLogs] on channels [private-logs] with payload:
+{
+    "logActivity": {
+        "id": 135,
+        "organisation_id": 1,
+        "subject": "Jovert Palonpona modifi\u00e9 une Employee 0666666666",
+        "url": "http:\/\/localhost:8000\/api\/employee\/update\/1",
+        "method": "POST",
+        "ip": "127.0.0.1",
+        "agent": "PostmanRuntime\/7.6.0",
+        "user_id": 2,
+        "user_name": null,
+        "created_at": "2023-03-06 12:25:36",
+        "updated_at": "2023-03-06 12:25:36"
+    },
+    "socket": null
+}  
+[2023-03-06 12:26:07] local.INFO: Broadcasting [newLogs] on channels [private-logs] with payload:
+{
+    "logActivity": {
+        "id": 136,
+        "organisation_id": 1,
+        "subject": "Jovert Palonpona modifi\u00e9 une Employee 0666666666",
+        "url": "http:\/\/localhost:8000\/api\/employee\/update\/1",
+        "method": "POST",
+        "ip": "127.0.0.1",
+        "agent": "PostmanRuntime\/7.6.0",
+        "user_id": 2,
+        "user_name": null,
+        "created_at": "2023-03-06 12:26:07",
+        "updated_at": "2023-03-06 12:26:07"
+    },
+    "socket": null
+}  
+[2023-03-06 12:26:20] local.INFO: Broadcasting [newLogs] on channels [private-logs] with payload:
+{
+    "logActivity": {
+        "id": 137,
+        "organisation_id": 1,
+        "subject": "Jovert Palonpona modifi\u00e9 une Employee 0666666666",
+        "url": "http:\/\/localhost:8000\/api\/employee\/update\/1",
+        "method": "POST",
+        "ip": "127.0.0.1",
+        "agent": "PostmanRuntime\/7.6.0",
+        "user_id": 2,
+        "user_name": null,
+        "created_at": "2023-03-06 12:26:20",
+        "updated_at": "2023-03-06 12:26:20"
+    },
+    "socket": null
+}  
+[2023-03-06 12:27:10] local.INFO: Broadcasting [newLogs] on channels [private-logs] with payload:
+{
+    "logActivity": {
+        "id": 138,
+        "organisation_id": 1,
+        "subject": "Jovert Palonpona modifi\u00e9 une Employee 0666666666",
+        "url": "http:\/\/localhost:8000\/api\/employee\/update\/1",
+        "method": "POST",
+        "ip": "127.0.0.1",
+        "agent": "PostmanRuntime\/7.6.0",
+        "user_id": 2,
+        "user_name": null,
+        "created_at": "2023-03-06 12:27:10",
+        "updated_at": "2023-03-06 12:27:10"
+    },
+    "socket": null
+}  
+[2023-03-06 12:35:17] local.INFO: Broadcasting [newLogs] on channels [private-logs] with payload:
+{
+    "logActivity": {
+        "id": 139,
+        "organisation_id": 1,
+        "subject": "Jovert Palonpona modifi\u00e9 une Employee 0666666666",
+        "url": "http:\/\/localhost:8000\/api\/employee\/update\/1",
+        "method": "POST",
+        "ip": "127.0.0.1",
+        "agent": "PostmanRuntime\/7.6.0",
+        "user_id": 2,
+        "user_name": null,
+        "created_at": "2023-03-06 12:35:17",
+        "updated_at": "2023-03-06 12:35:17"
+    },
+    "socket": null
+}  
+[2023-03-06 12:35:51] local.INFO: Broadcasting [newLogs] on channels [private-logs] with payload:
+{
+    "logActivity": {
+        "id": 140,
+        "organisation_id": 1,
+        "subject": "Jovert Palonpona modifi\u00e9 une Employee 0666666666",
+        "url": "http:\/\/localhost:8000\/api\/employee\/update\/1",
+        "method": "POST",
+        "ip": "127.0.0.1",
+        "agent": "PostmanRuntime\/7.6.0",
+        "user_id": 2,
+        "user_name": null,
+        "created_at": "2023-03-06 12:35:51",
+        "updated_at": "2023-03-06 12:35:51"
+    },
+    "socket": null
+}  
+[2023-03-06 12:38:33] local.INFO: Broadcasting [newLogs] on channels [private-logs] with payload:
+{
+    "logActivity": {
+        "id": 141,
+        "organisation_id": 1,
+        "subject": "Jovert Palonpona modifi\u00e9 une Employee 0666666666",
+        "url": "http:\/\/localhost:8000\/api\/employee\/update\/1",
+        "method": "POST",
+        "ip": "127.0.0.1",
+        "agent": "PostmanRuntime\/7.6.0",
+        "user_id": 2,
+        "user_name": null,
+        "created_at": "2023-03-06 12:38:33",
+        "updated_at": "2023-03-06 12:38:33"
+    },
+    "socket": null
+}  
+[2023-03-06 12:38:39] local.INFO: Broadcasting [newLogs] on channels [private-logs] with payload:
+{
+    "logActivity": {
+        "id": 142,
+        "organisation_id": 1,
+        "subject": "Jovert Palonpona modifi\u00e9 une Employee 0666666666",
+        "url": "http:\/\/localhost:8000\/api\/employee\/update\/1",
+        "method": "POST",
+        "ip": "127.0.0.1",
+        "agent": "PostmanRuntime\/7.6.0",
+        "user_id": 2,
+        "user_name": null,
+        "created_at": "2023-03-06 12:38:39",
+        "updated_at": "2023-03-06 12:38:39"
+    },
+    "socket": null
+}  
+[2023-03-06 12:39:15] local.INFO: Broadcasting [newLogs] on channels [private-logs] with payload:
+{
+    "logActivity": {
+        "id": 143,
+        "organisation_id": 1,
+        "subject": "Jovert Palonpona modifi\u00e9 une Employee 0666666666",
+        "url": "http:\/\/localhost:8000\/api\/employee\/update\/1",
+        "method": "POST",
+        "ip": "127.0.0.1",
+        "agent": "PostmanRuntime\/7.6.0",
+        "user_id": 2,
+        "user_name": null,
+        "created_at": "2023-03-06 12:39:15",
+        "updated_at": "2023-03-06 12:39:15"
+    },
+    "socket": null
+}  
+[2023-03-06 12:42:03] local.ERROR: syntax error, unexpected 'if' (T_IF), expecting function (T_FUNCTION) or const (T_CONST) {"exception":"[object] (Symfony\\Component\\Debug\\Exception\\FatalErrorException(code: 4): syntax error, unexpected 'if' (T_IF), expecting function (T_FUNCTION) or const (T_CONST) at C:\\xampp\\htdocs\\New folder (7)\\FrontBackLcc\\back\\app\\Models\\Employee.php:22)
+[stacktrace]
+#0 {main}
+"} 
+[2023-03-06 12:44:53] local.INFO: Broadcasting [newLogs] on channels [private-logs] with payload:
+{
+    "logActivity": {
+        "id": 144,
+        "organisation_id": 1,
+        "subject": "Jovert Palonpona modifi\u00e9 une Employee 0666666666",
+        "url": "http:\/\/localhost:8000\/api\/employee\/update\/1",
+        "method": "POST",
+        "ip": "127.0.0.1",
+        "agent": "PostmanRuntime\/7.6.0",
+        "user_id": 2,
+        "user_name": null,
+        "created_at": "2023-03-06 12:44:53",
+        "updated_at": "2023-03-06 12:44:53"
+    },
+    "socket": null
+}  
+[2023-03-06 12:45:46] local.INFO: Broadcasting [newLogs] on channels [private-logs] with payload:
+{
+    "logActivity": {
+        "id": 145,
+        "organisation_id": 1,
+        "subject": "Jovert Palonpona modifi\u00e9 une Employee 0666666666",
+        "url": "http:\/\/localhost:8000\/api\/employee\/update\/1",
+        "method": "POST",
+        "ip": "127.0.0.1",
+        "agent": "PostmanRuntime\/7.6.0",
+        "user_id": 2,
+        "user_name": null,
+        "created_at": "2023-03-06 12:45:46",
+        "updated_at": "2023-03-06 12:45:46"
+    },
+    "socket": null
+}  
+[2023-03-06 12:51:17] local.INFO: Broadcasting [newLogs] on channels [private-logs] with payload:
+{
+    "logActivity": {
+        "id": 146,
+        "organisation_id": 1,
+        "subject": "Jovert Palonpona modifi\u00e9 une Employee 0666666666",
+        "url": "http:\/\/localhost:8000\/api\/employee\/update\/1",
+        "method": "POST",
+        "ip": "127.0.0.1",
+        "agent": "PostmanRuntime\/7.6.0",
+        "user_id": 2,
+        "user_name": null,
+        "created_at": "2023-03-06 12:51:17",
+        "updated_at": "2023-03-06 12:51:17"
+    },
+    "socket": null
+}  
+[2023-03-06 12:51:38] local.INFO: Broadcasting [newLogs] on channels [private-logs] with payload:
+{
+    "logActivity": {
+        "id": 147,
+        "organisation_id": 1,
+        "subject": "Jovert Palonpona modifi\u00e9 une Employee 0666666666",
+        "url": "http:\/\/localhost:8000\/api\/employee\/update\/1",
+        "method": "POST",
+        "ip": "127.0.0.1",
+        "agent": "PostmanRuntime\/7.6.0",
+        "user_id": 2,
+        "user_name": null,
+        "created_at": "2023-03-06 12:51:38",
+        "updated_at": "2023-03-06 12:51:38"
+    },
+    "socket": null
+}  
+[2023-03-06 12:52:12] local.INFO: Broadcasting [newLogs] on channels [private-logs] with payload:
+{
+    "logActivity": {
+        "id": 148,
+        "organisation_id": 1,
+        "subject": "Jovert Palonpona modifi\u00e9 une Employee 0666666666",
+        "url": "http:\/\/localhost:8000\/api\/employee\/update\/1",
+        "method": "POST",
+        "ip": "127.0.0.1",
+        "agent": "PostmanRuntime\/7.6.0",
+        "user_id": 2,
+        "user_name": null,
+        "created_at": "2023-03-06 12:52:12",
+        "updated_at": "2023-03-06 12:52:12"
+    },
+    "socket": null
+}  
+[2023-03-06 12:54:39] local.ERROR: syntax error, unexpected ')' {"exception":"[object] (Symfony\\Component\\Debug\\Exception\\FatalErrorException(code: 4): syntax error, unexpected ')' at C:\\xampp\\htdocs\\New folder (7)\\FrontBackLcc\\back\\app\\User.php:112)
+[stacktrace]
+#0 {main}
+"} 
+[2023-03-06 12:54:44] local.ERROR: syntax error, unexpected ')' {"exception":"[object] (Symfony\\Component\\Debug\\Exception\\FatalErrorException(code: 4): syntax error, unexpected ')' at C:\\xampp\\htdocs\\New folder (7)\\FrontBackLcc\\back\\app\\User.php:112)
+[stacktrace]
+#0 {main}
+"} 
+[2023-03-06 12:56:28] local.INFO: Broadcasting [newLogs] on channels [private-logs] with payload:
+{
+    "logActivity": {
+        "id": 149,
+        "organisation_id": 1,
+        "subject": "Jovert Palonpona modifi\u00e9 une Employee 0666666666",
+        "url": "http:\/\/localhost:8000\/api\/employee\/update\/1",
+        "method": "POST",
+        "ip": "127.0.0.1",
+        "agent": "PostmanRuntime\/7.6.0",
+        "user_id": 2,
+        "user_name": null,
+        "created_at": "2023-03-06 12:56:28",
+        "updated_at": "2023-03-06 12:56:28"
+    },
+    "socket": null
+}  
+[2023-03-06 12:56:51] local.INFO: Broadcasting [newLogs] on channels [private-logs] with payload:
+{
+    "logActivity": {
+        "id": 150,
+        "organisation_id": 1,
+        "subject": "Jovert Palonpona modifi\u00e9 une Employee 0666666666",
+        "url": "http:\/\/localhost:8000\/api\/employee\/update\/1",
+        "method": "POST",
+        "ip": "127.0.0.1",
+        "agent": "PostmanRuntime\/7.6.0",
+        "user_id": 2,
+        "user_name": null,
+        "created_at": "2023-03-06 12:56:51",
+        "updated_at": "2023-03-06 12:56:51"
+    },
+    "socket": null
+}  
+[2023-03-06 13:04:17] local.INFO: Broadcasting [newLogs] on channels [private-logs] with payload:
+{
+    "logActivity": {
+        "id": 151,
+        "organisation_id": 1,
+        "subject": "Jovert Palonpona modifi\u00e9 une Employee 0666666666",
+        "url": "http:\/\/localhost:8000\/api\/employee\/update\/1",
+        "method": "POST",
+        "ip": "127.0.0.1",
+        "agent": "PostmanRuntime\/7.6.0",
+        "user_id": 2,
+        "user_name": null,
+        "created_at": "2023-03-06 13:04:17",
+        "updated_at": "2023-03-06 13:04:17"
+    },
+    "socket": null
+}  
+[2023-03-06 13:10:22] local.INFO: Broadcasting [newLogs] on channels [private-logs] with payload:
+{
+    "logActivity": {
+        "id": 152,
+        "organisation_id": 1,
+        "subject": "Jovert Palonpona modifi\u00e9 une Employee 0666666666",
+        "url": "http:\/\/localhost:8000\/api\/employee\/update\/1",
+        "method": "POST",
+        "ip": "127.0.0.1",
+        "agent": "PostmanRuntime\/7.6.0",
+        "user_id": 2,
+        "user_name": null,
+        "created_at": "2023-03-06 13:10:22",
+        "updated_at": "2023-03-06 13:10:22"
+    },
+    "socket": null
+}  
+[2023-03-06 13:13:01] local.INFO: Broadcasting [newLogs] on channels [private-logs] with payload:
+{
+    "logActivity": {
+        "id": 153,
+        "organisation_id": 1,
+        "subject": "Jovert Palonpona modifi\u00e9 une Employee 0666666666",
+        "url": "http:\/\/localhost:8000\/api\/employee\/update\/1",
+        "method": "POST",
+        "ip": "127.0.0.1",
+        "agent": "PostmanRuntime\/7.6.0",
+        "user_id": 2,
+        "user_name": null,
+        "created_at": "2023-03-06 13:13:01",
+        "updated_at": "2023-03-06 13:13:01"
+    },
+    "socket": null
+}  
+[2023-03-06 13:13:19] local.INFO: Broadcasting [newLogs] on channels [private-logs] with payload:
+{
+    "logActivity": {
+        "id": 154,
+        "organisation_id": 1,
+        "subject": "Jovert Palonpona modifi\u00e9 une Employee 0666666666",
+        "url": "http:\/\/localhost:8000\/api\/employee\/update\/1",
+        "method": "POST",
+        "ip": "127.0.0.1",
+        "agent": "PostmanRuntime\/7.6.0",
+        "user_id": 2,
+        "user_name": null,
+        "created_at": "2023-03-06 13:13:19",
+        "updated_at": "2023-03-06 13:13:19"
+    },
+    "socket": null
+}  
+[2023-03-06 13:13:21] local.INFO: Broadcasting [newLogs] on channels [private-logs] with payload:
+{
+    "logActivity": {
+        "id": 155,
+        "organisation_id": 1,
+        "subject": "Jovert Palonpona modifi\u00e9 une Employee 0666666666",
+        "url": "http:\/\/localhost:8000\/api\/employee\/update\/1",
+        "method": "POST",
+        "ip": "127.0.0.1",
+        "agent": "PostmanRuntime\/7.6.0",
+        "user_id": 2,
+        "user_name": null,
+        "created_at": "2023-03-06 13:13:21",
+        "updated_at": "2023-03-06 13:13:21"
+    },
+    "socket": null
+}  
+[2023-03-06 13:14:22] local.ERROR: Call to undefined method App\User::isOnline() {"userId":2,"exception":"[object] (BadMethodCallException(code: 0): Call to undefined method App\\User::isOnline() at C:\\xampp\\htdocs\\New folder (7)\\FrontBackLcc\\back\\vendor\\laravel\\framework\\src\\Illuminate\\Support\\Traits\\ForwardsCalls.php:50)
+[stacktrace]
+#0 C:\\xampp\\htdocs\\New folder (7)\\FrontBackLcc\\back\\vendor\\laravel\\framework\\src\\Illuminate\\Support\\Traits\\ForwardsCalls.php(36): Illuminate\\Database\\Eloquent\\Model::throwBadMethodCallException('isOnline')
+#1 C:\\xampp\\htdocs\\New folder (7)\\FrontBackLcc\\back\\vendor\\laravel\\framework\\src\\Illuminate\\Database\\Eloquent\\Model.php(1622): Illuminate\\Database\\Eloquent\\Model->forwardCallTo(Object(Illuminate\\Database\\Eloquent\\Builder), 'isOnline', Array)
+#2 C:\\xampp\\htdocs\\New folder (7)\\FrontBackLcc\\back\\app\\Services\\Employee\\EmployeeService.php(86): Illuminate\\Database\\Eloquent\\Model->__call('isOnline', Array)
+#3 C:\\xampp\\htdocs\\New folder (7)\\FrontBackLcc\\back\\app\\Services\\Employee\\EmployeeService.php(100): App\\Services\\Employee\\EmployeeService->get('1')
+#4 C:\\xampp\\htdocs\\New folder (7)\\FrontBackLcc\\back\\app\\Http\\Controllers\\Crud\\EmployeeController.php(111): App\\Services\\Employee\\EmployeeService->edit('1', Object(App\\Http\\Requests\\Crud\\EmployeeUpdateRequest))
+#5 C:\\xampp\\htdocs\\New folder (7)\\FrontBackLcc\\back\\vendor\\laravel\\framework\\src\\Illuminate\\Routing\\Controller.php(54): App\\Http\\Controllers\\Crud\\EmployeeController->update(Object(App\\Http\\Requests\\Crud\\EmployeeUpdateRequest), '1')
+#6 C:\\xampp\\htdocs\\New folder (7)\\FrontBackLcc\\back\\vendor\\laravel\\framework\\src\\Illuminate\\Routing\\ControllerDispatcher.php(45): Illuminate\\Routing\\Controller->callAction('update', Array)
+#7 C:\\xampp\\htdocs\\New folder (7)\\FrontBackLcc\\back\\vendor\\laravel\\framework\\src\\Illuminate\\Routing\\Route.php(219): Illuminate\\Routing\\ControllerDispatcher->dispatch(Object(Illuminate\\Routing\\Route), Object(App\\Http\\Controllers\\Crud\\EmployeeController), 'update')
+#8 C:\\xampp\\htdocs\\New folder (7)\\FrontBackLcc\\back\\vendor\\laravel\\framework\\src\\Illuminate\\Routing\\Route.php(176): Illuminate\\Routing\\Route->runController()
+#9 C:\\xampp\\htdocs\\New folder (7)\\FrontBackLcc\\back\\vendor\\laravel\\framework\\src\\Illuminate\\Routing\\Router.php(681): Illuminate\\Routing\\Route->run()
+#10 C:\\xampp\\htdocs\\New folder (7)\\FrontBackLcc\\back\\vendor\\laravel\\framework\\src\\Illuminate\\Pipeline\\Pipeline.php(130): Illuminate\\Routing\\Router->Illuminate\\Routing\\{closure}(Object(Illuminate\\Http\\Request))
+#11 C:\\xampp\\htdocs\\New folder (7)\\FrontBackLcc\\back\\vendor\\halpdesk\\zizaco-entrust-laravel-6.0\\src\\Entrust\\Middleware\\EntrustRole.php(48): Illuminate\\Pipeline\\Pipeline->Illuminate\\Pipeline\\{closure}(Object(Illuminate\\Http\\Request))
+#12 C:\\xampp\\htdocs\\New folder (7)\\FrontBackLcc\\back\\vendor\\laravel\\framework\\src\\Illuminate\\Pipeline\\Pipeline.php(171): Zizaco\\Entrust\\Middleware\\EntrustRole->handle(Object(Illuminate\\Http\\Request), Object(Closure), Array)
+#13 C:\\xampp\\htdocs\\New folder (7)\\FrontBackLcc\\back\\vendor\\laravel\\framework\\src\\Illuminate\\Routing\\Middleware\\SubstituteBindings.php(41): Illuminate\\Pipeline\\Pipeline->Illuminate\\Pipeline\\{closure}(Object(Illuminate\\Http\\Request))
+#14 C:\\xampp\\htdocs\\New folder (7)\\FrontBackLcc\\back\\vendor\\laravel\\framework\\src\\Illuminate\\Pipeline\\Pipeline.php(171): Illuminate\\Routing\\Middleware\\SubstituteBindings->handle(Object(Illuminate\\Http\\Request), Object(Closure))
+#15 C:\\xampp\\htdocs\\New folder (7)\\FrontBackLcc\\back\\vendor\\laravel\\framework\\src\\Illuminate\\Routing\\Middleware\\ThrottleRequests.php(59): Illuminate\\Pipeline\\Pipeline->Illuminate\\Pipeline\\{closure}(Object(Illuminate\\Http\\Request))
+#16 C:\\xampp\\htdocs\\New folder (7)\\FrontBackLcc\\back\\vendor\\laravel\\framework\\src\\Illuminate\\Pipeline\\Pipeline.php(171): Illuminate\\Routing\\Middleware\\ThrottleRequests->handle(Object(Illuminate\\Http\\Request), Object(Closure), 60, '1')
+#17 C:\\xampp\\htdocs\\New folder (7)\\FrontBackLcc\\back\\app\\Http\\Middleware\\Cors.php(30): Illuminate\\Pipeline\\Pipeline->Illuminate\\Pipeline\\{closure}(Object(Illuminate\\Http\\Request))
+#18 C:\\xampp\\htdocs\\New folder (7)\\FrontBackLcc\\back\\vendor\\laravel\\framework\\src\\Illuminate\\Pipeline\\Pipeline.php(171): App\\Http\\Middleware\\Cors->handle(Object(Illuminate\\Http\\Request), Object(Closure))
+#19 C:\\xampp\\htdocs\\New folder (7)\\FrontBackLcc\\back\\vendor\\laravel\\framework\\src\\Illuminate\\Pipeline\\Pipeline.php(105): Illuminate\\Pipeline\\Pipeline->Illuminate\\Pipeline\\{closure}(Object(Illuminate\\Http\\Request))
+#20 C:\\xampp\\htdocs\\New folder (7)\\FrontBackLcc\\back\\vendor\\laravel\\framework\\src\\Illuminate\\Routing\\Router.php(683): Illuminate\\Pipeline\\Pipeline->then(Object(Closure))
+#21 C:\\xampp\\htdocs\\New folder (7)\\FrontBackLcc\\back\\vendor\\laravel\\framework\\src\\Illuminate\\Routing\\Router.php(658): Illuminate\\Routing\\Router->runRouteWithinStack(Object(Illuminate\\Routing\\Route), Object(Illuminate\\Http\\Request))
+#22 C:\\xampp\\htdocs\\New folder (7)\\FrontBackLcc\\back\\vendor\\laravel\\framework\\src\\Illuminate\\Routing\\Router.php(624): Illuminate\\Routing\\Router->runRoute(Object(Illuminate\\Http\\Request), Object(Illuminate\\Routing\\Route))
+#23 C:\\xampp\\htdocs\\New folder (7)\\FrontBackLcc\\back\\vendor\\laravel\\framework\\src\\Illuminate\\Routing\\Router.php(613): Illuminate\\Routing\\Router->dispatchToRoute(Object(Illuminate\\Http\\Request))
+#24 C:\\xampp\\htdocs\\New folder (7)\\FrontBackLcc\\back\\vendor\\laravel\\framework\\src\\Illuminate\\Foundation\\Http\\Kernel.php(170): Illuminate\\Routing\\Router->dispatch(Object(Illuminate\\Http\\Request))
+#25 C:\\xampp\\htdocs\\New folder (7)\\FrontBackLcc\\back\\vendor\\laravel\\framework\\src\\Illuminate\\Pipeline\\Pipeline.php(130): Illuminate\\Foundation\\Http\\Kernel->Illuminate\\Foundation\\Http\\{closure}(Object(Illuminate\\Http\\Request))
+#26 C:\\xampp\\htdocs\\New folder (7)\\FrontBackLcc\\back\\app\\Http\\Middleware\\Cors.php(30): Illuminate\\Pipeline\\Pipeline->Illuminate\\Pipeline\\{closure}(Object(Illuminate\\Http\\Request))
+#27 C:\\xampp\\htdocs\\New folder (7)\\FrontBackLcc\\back\\vendor\\laravel\\framework\\src\\Illuminate\\Pipeline\\Pipeline.php(171): App\\Http\\Middleware\\Cors->handle(Object(Illuminate\\Http\\Request), Object(Closure))
+#28 C:\\xampp\\htdocs\\New folder (7)\\FrontBackLcc\\back\\vendor\\laravel\\framework\\src\\Illuminate\\Foundation\\Http\\Middleware\\TransformsRequest.php(21): Illuminate\\Pipeline\\Pipeline->Illuminate\\Pipeline\\{closure}(Object(Illuminate\\Http\\Request))
+#29 C:\\xampp\\htdocs\\New folder (7)\\FrontBackLcc\\back\\vendor\\laravel\\framework\\src\\Illuminate\\Pipeline\\Pipeline.php(171): Illuminate\\Foundation\\Http\\Middleware\\TransformsRequest->handle(Object(Illuminate\\Http\\Request), Object(Closure))
+#30 C:\\xampp\\htdocs\\New folder (7)\\FrontBackLcc\\back\\vendor\\laravel\\framework\\src\\Illuminate\\Foundation\\Http\\Middleware\\TransformsRequest.php(21): Illuminate\\Pipeline\\Pipeline->Illuminate\\Pipeline\\{closure}(Object(Illuminate\\Http\\Request))
+#31 C:\\xampp\\htdocs\\New folder (7)\\FrontBackLcc\\back\\vendor\\laravel\\framework\\src\\Illuminate\\Pipeline\\Pipeline.php(171): Illuminate\\Foundation\\Http\\Middleware\\TransformsRequest->handle(Object(Illuminate\\Http\\Request), Object(Closure))
+#32 C:\\xampp\\htdocs\\New folder (7)\\FrontBackLcc\\back\\vendor\\laravel\\framework\\src\\Illuminate\\Foundation\\Http\\Middleware\\ValidatePostSize.php(27): Illuminate\\Pipeline\\Pipeline->Illuminate\\Pipeline\\{closure}(Object(Illuminate\\Http\\Request))
+#33 C:\\xampp\\htdocs\\New folder (7)\\FrontBackLcc\\back\\vendor\\laravel\\framework\\src\\Illuminate\\Pipeline\\Pipeline.php(171): Illuminate\\Foundation\\Http\\Middleware\\ValidatePostSize->handle(Object(Illuminate\\Http\\Request), Object(Closure))
+#34 C:\\xampp\\htdocs\\New folder (7)\\FrontBackLcc\\back\\vendor\\laravel\\framework\\src\\Illuminate\\Foundation\\Http\\Middleware\\CheckForMaintenanceMode.php(63): Illuminate\\Pipeline\\Pipeline->Illuminate\\Pipeline\\{closure}(Object(Illuminate\\Http\\Request))
+#35 C:\\xampp\\htdocs\\New folder (7)\\FrontBackLcc\\back\\vendor\\laravel\\framework\\src\\Illuminate\\Pipeline\\Pipeline.php(171): Illuminate\\Foundation\\Http\\Middleware\\CheckForMaintenanceMode->handle(Object(Illuminate\\Http\\Request), Object(Closure))
+#36 C:\\xampp\\htdocs\\New folder (7)\\FrontBackLcc\\back\\vendor\\fideloper\\proxy\\src\\TrustProxies.php(57): Illuminate\\Pipeline\\Pipeline->Illuminate\\Pipeline\\{closure}(Object(Illuminate\\Http\\Request))
+#37 C:\\xampp\\htdocs\\New folder (7)\\FrontBackLcc\\back\\vendor\\laravel\\framework\\src\\Illuminate\\Pipeline\\Pipeline.php(171): Fideloper\\Proxy\\TrustProxies->handle(Object(Illuminate\\Http\\Request), Object(Closure))
+#38 C:\\xampp\\htdocs\\New folder (7)\\FrontBackLcc\\back\\vendor\\barryvdh\\laravel-cors\\src\\HandlePreflight.php(29): Illuminate\\Pipeline\\Pipeline->Illuminate\\Pipeline\\{closure}(Object(Illuminate\\Http\\Request))
+#39 C:\\xampp\\htdocs\\New folder (7)\\FrontBackLcc\\back\\vendor\\laravel\\framework\\src\\Illuminate\\Pipeline\\Pipeline.php(171): Barryvdh\\Cors\\HandlePreflight->handle(Object(Illuminate\\Http\\Request), Object(Closure))
+#40 C:\\xampp\\htdocs\\New folder (7)\\FrontBackLcc\\back\\vendor\\laravel\\framework\\src\\Illuminate\\Pipeline\\Pipeline.php(105): Illuminate\\Pipeline\\Pipeline->Illuminate\\Pipeline\\{closure}(Object(Illuminate\\Http\\Request))
+#41 C:\\xampp\\htdocs\\New folder (7)\\FrontBackLcc\\back\\vendor\\laravel\\framework\\src\\Illuminate\\Foundation\\Http\\Kernel.php(145): Illuminate\\Pipeline\\Pipeline->then(Object(Closure))
+#42 C:\\xampp\\htdocs\\New folder (7)\\FrontBackLcc\\back\\vendor\\laravel\\framework\\src\\Illuminate\\Foundation\\Http\\Kernel.php(110): Illuminate\\Foundation\\Http\\Kernel->sendRequestThroughRouter(Object(Illuminate\\Http\\Request))
+#43 C:\\xampp\\htdocs\\New folder (7)\\FrontBackLcc\\back\\public\\index.php(55): Illuminate\\Foundation\\Http\\Kernel->handle(Object(Illuminate\\Http\\Request))
+#44 C:\\xampp\\htdocs\\New folder (7)\\FrontBackLcc\\back\\server.php(21): require_once('C:\\\\xampp\\\\htdocs...')
+#45 {main}
+"} 
+[2023-03-06 13:15:21] local.INFO: Broadcasting [newLogs] on channels [private-logs] with payload:
+{
+    "logActivity": {
+        "id": 156,
+        "organisation_id": 1,
+        "subject": "Jovert Palonpona modifi\u00e9 une Employee 0666666666",
+        "url": "http:\/\/localhost:8000\/api\/employee\/update\/1",
+        "method": "POST",
+        "ip": "127.0.0.1",
+        "agent": "PostmanRuntime\/7.6.0",
+        "user_id": 2,
+        "user_name": null,
+        "created_at": "2023-03-06 13:15:21",
+        "updated_at": "2023-03-06 13:15:21"
+    },
+    "socket": null
+}  
+[2023-03-06 13:19:59] local.INFO: Broadcasting [newLogs] on channels [private-logs] with payload:
+{
+    "logActivity": {
+        "id": 157,
+        "organisation_id": 1,
+        "subject": "Jovert Palonpona modifi\u00e9 une Employee 0666666666",
+        "url": "http:\/\/localhost:8000\/api\/employee\/update\/1",
+        "method": "POST",
+        "ip": "127.0.0.1",
+        "agent": "PostmanRuntime\/7.6.0",
+        "user_id": 2,
+        "user_name": null,
+        "created_at": "2023-03-06 13:19:59",
+        "updated_at": "2023-03-06 13:19:59"
+    },
+    "socket": null
+}  
+[2023-03-06 13:21:20] local.INFO: Broadcasting [newLogs] on channels [private-logs] with payload:
+{
+    "logActivity": {
+        "id": 158,
+        "organisation_id": 1,
+        "subject": "Jovert Palonpona modifi\u00e9 une Employee 0666666666",
+        "url": "http:\/\/localhost:8000\/api\/employee\/update\/1",
+        "method": "POST",
+        "ip": "127.0.0.1",
+        "agent": "PostmanRuntime\/7.6.0",
+        "user_id": 2,
+        "user_name": null,
+        "created_at": "2023-03-06 13:21:20",
+        "updated_at": "2023-03-06 13:21:20"
+    },
+    "socket": null
+}  
+[2023-03-06 13:21:20] local.INFO: Broadcasting [newLogs] on channels [private-logs] with payload:
+{
+    "logActivity": {
+        "id": 159,
+        "organisation_id": 1,
+        "subject": "Jovert Palonpona modifi\u00e9 une Employee employee21e",
+        "url": "http:\/\/localhost:8000\/api\/employee\/update\/1",
+        "method": "POST",
+        "ip": "127.0.0.1",
+        "agent": "PostmanRuntime\/7.6.0",
+        "user_id": 2,
+        "user_name": null,
+        "created_at": "2023-03-06 13:21:20",
+        "updated_at": "2023-03-06 13:21:20"
+    },
+    "socket": null
+}  
+[2023-03-06 13:42:58] local.INFO: Broadcasting [newLogs] on channels [private-logs] with payload:
+{
+    "logActivity": {
+        "id": 160,
+        "organisation_id": 1,
+        "subject": "Jovert Palonpona modifi\u00e9 une Employee 0666666666",
+        "url": "http:\/\/localhost:8000\/api\/employee\/update\/1",
+        "method": "POST",
+        "ip": "127.0.0.1",
+        "agent": "PostmanRuntime\/7.6.0",
+        "user_id": 2,
+        "user_name": null,
+        "created_at": "2023-03-06 13:42:58",
+        "updated_at": "2023-03-06 13:42:58"
+    },
+    "socket": null
+}  
+[2023-03-06 13:44:10] local.INFO: Broadcasting [newLogs] on channels [private-logs] with payload:
+{
+    "logActivity": {
+        "id": 161,
+        "organisation_id": 1,
+        "subject": "Jovert Palonpona modifi\u00e9 une Employee 0666666666",
+        "url": "http:\/\/localhost:8000\/api\/employee\/update\/1",
+        "method": "POST",
+        "ip": "127.0.0.1",
+        "agent": "PostmanRuntime\/7.6.0",
+        "user_id": 2,
+        "user_name": null,
+        "created_at": "2023-03-06 13:44:10",
+        "updated_at": "2023-03-06 13:44:10"
+    },
+    "socket": null
+}  
+[2023-03-06 13:45:57] local.INFO: Broadcasting [newLogs] on channels [private-logs] with payload:
+{
+    "logActivity": {
+        "id": 162,
+        "organisation_id": 1,
+        "subject": "Jovert Palonpona modifi\u00e9 une Employee 0666666666",
+        "url": "http:\/\/localhost:8000\/api\/employee\/update\/1",
+        "method": "POST",
+        "ip": "127.0.0.1",
+        "agent": "PostmanRuntime\/7.6.0",
+        "user_id": 2,
+        "user_name": null,
+        "created_at": "2023-03-06 13:45:57",
+        "updated_at": "2023-03-06 13:45:57"
+    },
+    "socket": null
+}  
+[2023-03-06 13:46:05] local.INFO: Broadcasting [newLogs] on channels [private-logs] with payload:
+{
+    "logActivity": {
+        "id": 163,
+        "organisation_id": 1,
+        "subject": "Jovert Palonpona modifi\u00e9 une Employee 0666666666",
+        "url": "http:\/\/localhost:8000\/api\/employee\/update\/1",
+        "method": "POST",
+        "ip": "127.0.0.1",
+        "agent": "PostmanRuntime\/7.6.0",
+        "user_id": 2,
+        "user_name": null,
+        "created_at": "2023-03-06 13:46:05",
+        "updated_at": "2023-03-06 13:46:05"
+    },
+    "socket": null
+}  
+[2023-03-06 13:46:29] local.INFO: Broadcasting [newLogs] on channels [private-logs] with payload:
+{
+    "logActivity": {
+        "id": 164,
+        "organisation_id": 1,
+        "subject": "Jovert Palonpona modifi\u00e9 une Employee 0666666666",
+        "url": "http:\/\/localhost:8000\/api\/employee\/update\/1",
+        "method": "POST",
+        "ip": "127.0.0.1",
+        "agent": "PostmanRuntime\/7.6.0",
+        "user_id": 2,
+        "user_name": null,
+        "created_at": "2023-03-06 13:46:29",
+        "updated_at": "2023-03-06 13:46:29"
+    },
+    "socket": null
+}  
+[2023-03-06 13:47:27] local.INFO: Broadcasting [newLogs] on channels [private-logs] with payload:
+{
+    "logActivity": {
+        "id": 165,
+        "organisation_id": 1,
+        "subject": "Jovert Palonpona modifi\u00e9 une Employee 0666666666",
+        "url": "http:\/\/localhost:8000\/api\/employee\/update\/1",
+        "method": "POST",
+        "ip": "127.0.0.1",
+        "agent": "PostmanRuntime\/7.6.0",
+        "user_id": 2,
+        "user_name": null,
+        "created_at": "2023-03-06 13:47:27",
+        "updated_at": "2023-03-06 13:47:27"
+    },
+    "socket": null
+}  
+[2023-03-06 13:48:19] local.INFO: Broadcasting [newLogs] on channels [private-logs] with payload:
+{
+    "logActivity": {
+        "id": 166,
+        "organisation_id": 1,
+        "subject": "Jovert Palonpona modifi\u00e9 une Employee 0666666666",
+        "url": "http:\/\/localhost:8000\/api\/employee\/update\/1",
+        "method": "POST",
+        "ip": "127.0.0.1",
+        "agent": "PostmanRuntime\/7.6.0",
+        "user_id": 2,
+        "user_name": null,
+        "created_at": "2023-03-06 13:48:19",
+        "updated_at": "2023-03-06 13:48:19"
+    },
+    "socket": null
+}  
+[2023-03-06 13:49:14] local.INFO: Broadcasting [newLogs] on channels [private-logs] with payload:
+{
+    "logActivity": {
+        "id": 167,
+        "organisation_id": 1,
+        "subject": "Jovert Palonpona modifi\u00e9 une Employee 0666666666",
+        "url": "http:\/\/localhost:8000\/api\/employee\/update\/1",
+        "method": "POST",
+        "ip": "127.0.0.1",
+        "agent": "PostmanRuntime\/7.6.0",
+        "user_id": 2,
+        "user_name": null,
+        "created_at": "2023-03-06 13:49:14",
+        "updated_at": "2023-03-06 13:49:14"
+    },
+    "socket": null
+}  
+[2023-03-06 13:50:31] local.INFO: Broadcasting [newLogs] on channels [private-logs] with payload:
+{
+    "logActivity": {
+        "id": 168,
+        "organisation_id": 1,
+        "subject": "Jovert Palonpona modifi\u00e9 une Employee 0666666666",
+        "url": "http:\/\/localhost:8000\/api\/employee\/update\/1",
+        "method": "POST",
+        "ip": "127.0.0.1",
+        "agent": "PostmanRuntime\/7.6.0",
+        "user_id": 2,
+        "user_name": null,
+        "created_at": "2023-03-06 13:50:31",
+        "updated_at": "2023-03-06 13:50:31"
+    },
+    "socket": null
+}  
+[2023-03-06 13:50:46] local.INFO: Broadcasting [newLogs] on channels [private-logs] with payload:
+{
+    "logActivity": {
+        "id": 169,
+        "organisation_id": 1,
+        "subject": "Jovert Palonpona modifi\u00e9 une Employee 0666666666",
+        "url": "http:\/\/localhost:8000\/api\/employee\/update\/1",
+        "method": "POST",
+        "ip": "127.0.0.1",
+        "agent": "PostmanRuntime\/7.6.0",
+        "user_id": 2,
+        "user_name": null,
+        "created_at": "2023-03-06 13:50:45",
+        "updated_at": "2023-03-06 13:50:45"
+    },
+    "socket": null
+}  
+[2023-03-06 13:50:46] local.INFO: Broadcasting [newLogs] on channels [private-logs] with payload:
+{
+    "logActivity": {
+        "id": 170,
+        "organisation_id": 1,
+        "subject": "Jovert Palonpona modifi\u00e9 une Employee employee21e",
+        "url": "http:\/\/localhost:8000\/api\/employee\/update\/1",
+        "method": "POST",
+        "ip": "127.0.0.1",
+        "agent": "PostmanRuntime\/7.6.0",
+        "user_id": 2,
+        "user_name": null,
+        "created_at": "2023-03-06 13:50:46",
+        "updated_at": "2023-03-06 13:50:46"
+    },
+    "socket": null
+}  
+[2023-03-06 13:51:05] local.INFO: Broadcasting [newLogs] on channels [private-logs] with payload:
+{
+    "logActivity": {
+        "id": 171,
+        "organisation_id": 1,
+        "subject": "Jovert Palonpona modifi\u00e9 une Employee 0666666666",
+        "url": "http:\/\/localhost:8000\/api\/employee\/update\/1",
+        "method": "POST",
+        "ip": "127.0.0.1",
+        "agent": "PostmanRuntime\/7.6.0",
+        "user_id": 2,
+        "user_name": null,
+        "created_at": "2023-03-06 13:51:05",
+        "updated_at": "2023-03-06 13:51:05"
+    },
+    "socket": null
+}  
+[2023-03-06 13:53:15] local.INFO: Broadcasting [newLogs] on channels [private-logs] with payload:
+{
+    "logActivity": {
+        "id": 172,
+        "organisation_id": 1,
+        "subject": "Jovert Palonpona modifi\u00e9 une Employee 0666666666",
+        "url": "http:\/\/localhost:8000\/api\/employee\/update\/1",
+        "method": "POST",
+        "ip": "127.0.0.1",
+        "agent": "PostmanRuntime\/7.6.0",
+        "user_id": 2,
+        "user_name": null,
+        "created_at": "2023-03-06 13:53:15",
+        "updated_at": "2023-03-06 13:53:15"
+    },
+    "socket": null
+}  
+[2023-03-06 13:53:15] local.INFO: Broadcasting [newLogs] on channels [private-logs] with payload:
+{
+    "logActivity": {
+        "id": 173,
+        "organisation_id": 1,
+        "subject": "Jovert Palonpona modifi\u00e9 une Employee employee21e",
+        "url": "http:\/\/localhost:8000\/api\/employee\/update\/1",
+        "method": "POST",
+        "ip": "127.0.0.1",
+        "agent": "PostmanRuntime\/7.6.0",
+        "user_id": 2,
+        "user_name": null,
+        "created_at": "2023-03-06 13:53:15",
+        "updated_at": "2023-03-06 13:53:15"
+    },
+    "socket": null
+}  
+[2023-03-06 13:54:01] local.INFO: Broadcasting [newLogs] on channels [private-logs] with payload:
+{
+    "logActivity": {
+        "id": 174,
+        "organisation_id": 1,
+        "subject": "Jovert Palonpona modifi\u00e9 une Employee 0666666666",
+        "url": "http:\/\/localhost:8000\/api\/employee\/update\/1",
+        "method": "POST",
+        "ip": "127.0.0.1",
+        "agent": "PostmanRuntime\/7.6.0",
+        "user_id": 2,
+        "user_name": null,
+        "created_at": "2023-03-06 13:54:01",
+        "updated_at": "2023-03-06 13:54:01"
+    },
+    "socket": null
+}  
+[2023-03-06 13:54:01] local.INFO: Broadcasting [newLogs] on channels [private-logs] with payload:
+{
+    "logActivity": {
+        "id": 175,
+        "organisation_id": 1,
+        "subject": "Jovert Palonpona modifi\u00e9 une Employee employee21e",
+        "url": "http:\/\/localhost:8000\/api\/employee\/update\/1",
+        "method": "POST",
+        "ip": "127.0.0.1",
+        "agent": "PostmanRuntime\/7.6.0",
+        "user_id": 2,
+        "user_name": null,
+        "created_at": "2023-03-06 13:54:01",
+        "updated_at": "2023-03-06 13:54:01"
+    },
+    "socket": null
+}  
+[2023-03-06 13:55:08] local.INFO: Broadcasting [newLogs] on channels [private-logs] with payload:
+{
+    "logActivity": {
+        "id": 176,
+        "organisation_id": 1,
+        "subject": "Jovert Palonpona modifi\u00e9 une Employee 0666666666",
+        "url": "http:\/\/localhost:8000\/api\/employee\/update\/1",
+        "method": "POST",
+        "ip": "127.0.0.1",
+        "agent": "PostmanRuntime\/7.6.0",
+        "user_id": 2,
+        "user_name": null,
+        "created_at": "2023-03-06 13:55:08",
+        "updated_at": "2023-03-06 13:55:08"
+    },
+    "socket": null
+}  
+[2023-03-06 13:55:08] local.INFO: Broadcasting [newLogs] on channels [private-logs] with payload:
+{
+    "logActivity": {
+        "id": 177,
+        "organisation_id": 1,
+        "subject": "Jovert Palonpona modifi\u00e9 une Employee employee21e",
+        "url": "http:\/\/localhost:8000\/api\/employee\/update\/1",
+        "method": "POST",
+        "ip": "127.0.0.1",
+        "agent": "PostmanRuntime\/7.6.0",
+        "user_id": 2,
+        "user_name": null,
+        "created_at": "2023-03-06 13:55:08",
+        "updated_at": "2023-03-06 13:55:08"
+    },
+    "socket": null
+}  
+[2023-03-06 13:55:53] local.INFO: Broadcasting [newLogs] on channels [private-logs] with payload:
+{
+    "logActivity": {
+        "id": 178,
+        "organisation_id": 1,
+        "subject": "Jovert Palonpona modifi\u00e9 une Employee 0666666666",
+        "url": "http:\/\/localhost:8000\/api\/employee\/update\/1",
+        "method": "POST",
+        "ip": "127.0.0.1",
+        "agent": "PostmanRuntime\/7.6.0",
+        "user_id": 2,
+        "user_name": null,
+        "created_at": "2023-03-06 13:55:53",
+        "updated_at": "2023-03-06 13:55:53"
+    },
+    "socket": null
+}  
+[2023-03-06 13:55:53] local.INFO: Broadcasting [newLogs] on channels [private-logs] with payload:
+{
+    "logActivity": {
+        "id": 179,
+        "organisation_id": 1,
+        "subject": "Jovert Palonpona modifi\u00e9 une Employee employee21e",
+        "url": "http:\/\/localhost:8000\/api\/employee\/update\/1",
+        "method": "POST",
+        "ip": "127.0.0.1",
+        "agent": "PostmanRuntime\/7.6.0",
+        "user_id": 2,
+        "user_name": null,
+        "created_at": "2023-03-06 13:55:53",
+        "updated_at": "2023-03-06 13:55:53"
+    },
+    "socket": null
+}  
+[2023-03-06 13:55:53] local.ERROR: Call to undefined method App\Models\Employee::items() {"userId":2,"exception":"[object] (BadMethodCallException(code: 0): Call to undefined method App\\Models\\Employee::items() at C:\\xampp\\htdocs\\New folder (7)\\FrontBackLcc\\back\\vendor\\laravel\\framework\\src\\Illuminate\\Support\\Traits\\ForwardsCalls.php:50)
+[stacktrace]
+#0 C:\\xampp\\htdocs\\New folder (7)\\FrontBackLcc\\back\\vendor\\laravel\\framework\\src\\Illuminate\\Support\\Traits\\ForwardsCalls.php(36): Illuminate\\Database\\Eloquent\\Model::throwBadMethodCallException('items')
+#1 C:\\xampp\\htdocs\\New folder (7)\\FrontBackLcc\\back\\vendor\\laravel\\framework\\src\\Illuminate\\Database\\Eloquent\\Model.php(1622): Illuminate\\Database\\Eloquent\\Model->forwardCallTo(Object(Illuminate\\Database\\Eloquent\\Builder), 'items', Array)
+#2 C:\\xampp\\htdocs\\New folder (7)\\FrontBackLcc\\back\\app\\Http\\Controllers\\Crud\\EmployeeController.php(119): Illuminate\\Database\\Eloquent\\Model->__call('items', Array)
+#3 C:\\xampp\\htdocs\\New folder (7)\\FrontBackLcc\\back\\vendor\\laravel\\framework\\src\\Illuminate\\Routing\\Controller.php(54): App\\Http\\Controllers\\Crud\\EmployeeController->update(Object(App\\Http\\Requests\\Crud\\EmployeeUpdateRequest), '1')
+#4 C:\\xampp\\htdocs\\New folder (7)\\FrontBackLcc\\back\\vendor\\laravel\\framework\\src\\Illuminate\\Routing\\ControllerDispatcher.php(45): Illuminate\\Routing\\Controller->callAction('update', Array)
+#5 C:\\xampp\\htdocs\\New folder (7)\\FrontBackLcc\\back\\vendor\\laravel\\framework\\src\\Illuminate\\Routing\\Route.php(219): Illuminate\\Routing\\ControllerDispatcher->dispatch(Object(Illuminate\\Routing\\Route), Object(App\\Http\\Controllers\\Crud\\EmployeeController), 'update')
+#6 C:\\xampp\\htdocs\\New folder (7)\\FrontBackLcc\\back\\vendor\\laravel\\framework\\src\\Illuminate\\Routing\\Route.php(176): Illuminate\\Routing\\Route->runController()
+#7 C:\\xampp\\htdocs\\New folder (7)\\FrontBackLcc\\back\\vendor\\laravel\\framework\\src\\Illuminate\\Routing\\Router.php(681): Illuminate\\Routing\\Route->run()
+#8 C:\\xampp\\htdocs\\New folder (7)\\FrontBackLcc\\back\\vendor\\laravel\\framework\\src\\Illuminate\\Pipeline\\Pipeline.php(130): Illuminate\\Routing\\Router->Illuminate\\Routing\\{closure}(Object(Illuminate\\Http\\Request))
+#9 C:\\xampp\\htdocs\\New folder (7)\\FrontBackLcc\\back\\vendor\\halpdesk\\zizaco-entrust-laravel-6.0\\src\\Entrust\\Middleware\\EntrustRole.php(48): Illuminate\\Pipeline\\Pipeline->Illuminate\\Pipeline\\{closure}(Object(Illuminate\\Http\\Request))
+#10 C:\\xampp\\htdocs\\New folder (7)\\FrontBackLcc\\back\\vendor\\laravel\\framework\\src\\Illuminate\\Pipeline\\Pipeline.php(171): Zizaco\\Entrust\\Middleware\\EntrustRole->handle(Object(Illuminate\\Http\\Request), Object(Closure), Array)
+#11 C:\\xampp\\htdocs\\New folder (7)\\FrontBackLcc\\back\\vendor\\laravel\\framework\\src\\Illuminate\\Routing\\Middleware\\SubstituteBindings.php(41): Illuminate\\Pipeline\\Pipeline->Illuminate\\Pipeline\\{closure}(Object(Illuminate\\Http\\Request))
+#12 C:\\xampp\\htdocs\\New folder (7)\\FrontBackLcc\\back\\vendor\\laravel\\framework\\src\\Illuminate\\Pipeline\\Pipeline.php(171): Illuminate\\Routing\\Middleware\\SubstituteBindings->handle(Object(Illuminate\\Http\\Request), Object(Closure))
+#13 C:\\xampp\\htdocs\\New folder (7)\\FrontBackLcc\\back\\vendor\\laravel\\framework\\src\\Illuminate\\Routing\\Middleware\\ThrottleRequests.php(59): Illuminate\\Pipeline\\Pipeline->Illuminate\\Pipeline\\{closure}(Object(Illuminate\\Http\\Request))
+#14 C:\\xampp\\htdocs\\New folder (7)\\FrontBackLcc\\back\\vendor\\laravel\\framework\\src\\Illuminate\\Pipeline\\Pipeline.php(171): Illuminate\\Routing\\Middleware\\ThrottleRequests->handle(Object(Illuminate\\Http\\Request), Object(Closure), 60, '1')
+#15 C:\\xampp\\htdocs\\New folder (7)\\FrontBackLcc\\back\\app\\Http\\Middleware\\Cors.php(30): Illuminate\\Pipeline\\Pipeline->Illuminate\\Pipeline\\{closure}(Object(Illuminate\\Http\\Request))
+#16 C:\\xampp\\htdocs\\New folder (7)\\FrontBackLcc\\back\\vendor\\laravel\\framework\\src\\Illuminate\\Pipeline\\Pipeline.php(171): App\\Http\\Middleware\\Cors->handle(Object(Illuminate\\Http\\Request), Object(Closure))
+#17 C:\\xampp\\htdocs\\New folder (7)\\FrontBackLcc\\back\\vendor\\laravel\\framework\\src\\Illuminate\\Pipeline\\Pipeline.php(105): Illuminate\\Pipeline\\Pipeline->Illuminate\\Pipeline\\{closure}(Object(Illuminate\\Http\\Request))
+#18 C:\\xampp\\htdocs\\New folder (7)\\FrontBackLcc\\back\\vendor\\laravel\\framework\\src\\Illuminate\\Routing\\Router.php(683): Illuminate\\Pipeline\\Pipeline->then(Object(Closure))
+#19 C:\\xampp\\htdocs\\New folder (7)\\FrontBackLcc\\back\\vendor\\laravel\\framework\\src\\Illuminate\\Routing\\Router.php(658): Illuminate\\Routing\\Router->runRouteWithinStack(Object(Illuminate\\Routing\\Route), Object(Illuminate\\Http\\Request))
+#20 C:\\xampp\\htdocs\\New folder (7)\\FrontBackLcc\\back\\vendor\\laravel\\framework\\src\\Illuminate\\Routing\\Router.php(624): Illuminate\\Routing\\Router->runRoute(Object(Illuminate\\Http\\Request), Object(Illuminate\\Routing\\Route))
+#21 C:\\xampp\\htdocs\\New folder (7)\\FrontBackLcc\\back\\vendor\\laravel\\framework\\src\\Illuminate\\Routing\\Router.php(613): Illuminate\\Routing\\Router->dispatchToRoute(Object(Illuminate\\Http\\Request))
+#22 C:\\xampp\\htdocs\\New folder (7)\\FrontBackLcc\\back\\vendor\\laravel\\framework\\src\\Illuminate\\Foundation\\Http\\Kernel.php(170): Illuminate\\Routing\\Router->dispatch(Object(Illuminate\\Http\\Request))
+#23 C:\\xampp\\htdocs\\New folder (7)\\FrontBackLcc\\back\\vendor\\laravel\\framework\\src\\Illuminate\\Pipeline\\Pipeline.php(130): Illuminate\\Foundation\\Http\\Kernel->Illuminate\\Foundation\\Http\\{closure}(Object(Illuminate\\Http\\Request))
+#24 C:\\xampp\\htdocs\\New folder (7)\\FrontBackLcc\\back\\app\\Http\\Middleware\\Cors.php(30): Illuminate\\Pipeline\\Pipeline->Illuminate\\Pipeline\\{closure}(Object(Illuminate\\Http\\Request))
+#25 C:\\xampp\\htdocs\\New folder (7)\\FrontBackLcc\\back\\vendor\\laravel\\framework\\src\\Illuminate\\Pipeline\\Pipeline.php(171): App\\Http\\Middleware\\Cors->handle(Object(Illuminate\\Http\\Request), Object(Closure))
+#26 C:\\xampp\\htdocs\\New folder (7)\\FrontBackLcc\\back\\vendor\\laravel\\framework\\src\\Illuminate\\Foundation\\Http\\Middleware\\TransformsRequest.php(21): Illuminate\\Pipeline\\Pipeline->Illuminate\\Pipeline\\{closure}(Object(Illuminate\\Http\\Request))
+#27 C:\\xampp\\htdocs\\New folder (7)\\FrontBackLcc\\back\\vendor\\laravel\\framework\\src\\Illuminate\\Pipeline\\Pipeline.php(171): Illuminate\\Foundation\\Http\\Middleware\\TransformsRequest->handle(Object(Illuminate\\Http\\Request), Object(Closure))
+#28 C:\\xampp\\htdocs\\New folder (7)\\FrontBackLcc\\back\\vendor\\laravel\\framework\\src\\Illuminate\\Foundation\\Http\\Middleware\\TransformsRequest.php(21): Illuminate\\Pipeline\\Pipeline->Illuminate\\Pipeline\\{closure}(Object(Illuminate\\Http\\Request))
+#29 C:\\xampp\\htdocs\\New folder (7)\\FrontBackLcc\\back\\vendor\\laravel\\framework\\src\\Illuminate\\Pipeline\\Pipeline.php(171): Illuminate\\Foundation\\Http\\Middleware\\TransformsRequest->handle(Object(Illuminate\\Http\\Request), Object(Closure))
+#30 C:\\xampp\\htdocs\\New folder (7)\\FrontBackLcc\\back\\vendor\\laravel\\framework\\src\\Illuminate\\Foundation\\Http\\Middleware\\ValidatePostSize.php(27): Illuminate\\Pipeline\\Pipeline->Illuminate\\Pipeline\\{closure}(Object(Illuminate\\Http\\Request))
+#31 C:\\xampp\\htdocs\\New folder (7)\\FrontBackLcc\\back\\vendor\\laravel\\framework\\src\\Illuminate\\Pipeline\\Pipeline.php(171): Illuminate\\Foundation\\Http\\Middleware\\ValidatePostSize->handle(Object(Illuminate\\Http\\Request), Object(Closure))
+#32 C:\\xampp\\htdocs\\New folder (7)\\FrontBackLcc\\back\\vendor\\laravel\\framework\\src\\Illuminate\\Foundation\\Http\\Middleware\\CheckForMaintenanceMode.php(63): Illuminate\\Pipeline\\Pipeline->Illuminate\\Pipeline\\{closure}(Object(Illuminate\\Http\\Request))
+#33 C:\\xampp\\htdocs\\New folder (7)\\FrontBackLcc\\back\\vendor\\laravel\\framework\\src\\Illuminate\\Pipeline\\Pipeline.php(171): Illuminate\\Foundation\\Http\\Middleware\\CheckForMaintenanceMode->handle(Object(Illuminate\\Http\\Request), Object(Closure))
+#34 C:\\xampp\\htdocs\\New folder (7)\\FrontBackLcc\\back\\vendor\\fideloper\\proxy\\src\\TrustProxies.php(57): Illuminate\\Pipeline\\Pipeline->Illuminate\\Pipeline\\{closure}(Object(Illuminate\\Http\\Request))
+#35 C:\\xampp\\htdocs\\New folder (7)\\FrontBackLcc\\back\\vendor\\laravel\\framework\\src\\Illuminate\\Pipeline\\Pipeline.php(171): Fideloper\\Proxy\\TrustProxies->handle(Object(Illuminate\\Http\\Request), Object(Closure))
+#36 C:\\xampp\\htdocs\\New folder (7)\\FrontBackLcc\\back\\vendor\\barryvdh\\laravel-cors\\src\\HandlePreflight.php(29): Illuminate\\Pipeline\\Pipeline->Illuminate\\Pipeline\\{closure}(Object(Illuminate\\Http\\Request))
+#37 C:\\xampp\\htdocs\\New folder (7)\\FrontBackLcc\\back\\vendor\\laravel\\framework\\src\\Illuminate\\Pipeline\\Pipeline.php(171): Barryvdh\\Cors\\HandlePreflight->handle(Object(Illuminate\\Http\\Request), Object(Closure))
+#38 C:\\xampp\\htdocs\\New folder (7)\\FrontBackLcc\\back\\vendor\\laravel\\framework\\src\\Illuminate\\Pipeline\\Pipeline.php(105): Illuminate\\Pipeline\\Pipeline->Illuminate\\Pipeline\\{closure}(Object(Illuminate\\Http\\Request))
+#39 C:\\xampp\\htdocs\\New folder (7)\\FrontBackLcc\\back\\vendor\\laravel\\framework\\src\\Illuminate\\Foundation\\Http\\Kernel.php(145): Illuminate\\Pipeline\\Pipeline->then(Object(Closure))
+#40 C:\\xampp\\htdocs\\New folder (7)\\FrontBackLcc\\back\\vendor\\laravel\\framework\\src\\Illuminate\\Foundation\\Http\\Kernel.php(110): Illuminate\\Foundation\\Http\\Kernel->sendRequestThroughRouter(Object(Illuminate\\Http\\Request))
+#41 C:\\xampp\\htdocs\\New folder (7)\\FrontBackLcc\\back\\public\\index.php(55): Illuminate\\Foundation\\Http\\Kernel->handle(Object(Illuminate\\Http\\Request))
+#42 C:\\xampp\\htdocs\\New folder (7)\\FrontBackLcc\\back\\server.php(21): require_once('C:\\\\xampp\\\\htdocs...')
+#43 {main}
+"} 
+[2023-03-06 13:56:12] local.INFO: Broadcasting [newLogs] on channels [private-logs] with payload:
+{
+    "logActivity": {
+        "id": 180,
+        "organisation_id": 1,
+        "subject": "Jovert Palonpona modifi\u00e9 une Employee 0666666666",
+        "url": "http:\/\/localhost:8000\/api\/employee\/update\/1",
+        "method": "POST",
+        "ip": "127.0.0.1",
+        "agent": "PostmanRuntime\/7.6.0",
+        "user_id": 2,
+        "user_name": null,
+        "created_at": "2023-03-06 13:56:12",
+        "updated_at": "2023-03-06 13:56:12"
+    },
+    "socket": null
+}  
+[2023-03-06 13:56:12] local.INFO: Broadcasting [newLogs] on channels [private-logs] with payload:
+{
+    "logActivity": {
+        "id": 181,
+        "organisation_id": 1,
+        "subject": "Jovert Palonpona modifi\u00e9 une Employee employee21e",
+        "url": "http:\/\/localhost:8000\/api\/employee\/update\/1",
+        "method": "POST",
+        "ip": "127.0.0.1",
+        "agent": "PostmanRuntime\/7.6.0",
+        "user_id": 2,
+        "user_name": null,
+        "created_at": "2023-03-06 13:56:12",
+        "updated_at": "2023-03-06 13:56:12"
+    },
+    "socket": null
+}  
+[2023-03-06 13:56:12] local.ERROR: Property [id] does not exist on this collection instance. {"userId":2,"exception":"[object] (Exception(code: 0): Property [id] does not exist on this collection instance. at C:\\xampp\\htdocs\\New folder (7)\\FrontBackLcc\\back\\vendor\\laravel\\framework\\src\\Illuminate\\Support\\Traits\\EnumeratesValues.php:815)
+[stacktrace]
+#0 C:\\xampp\\htdocs\\New folder (7)\\FrontBackLcc\\back\\vendor\\laravel\\framework\\src\\Illuminate\\Http\\Resources\\DelegatesToResource.php(120): Illuminate\\Support\\Collection->__get('id')
+#1 C:\\xampp\\htdocs\\New folder (7)\\FrontBackLcc\\back\\app\\Response\\Employee\\EmployeeResponse.php(12): Illuminate\\Http\\Resources\\Json\\JsonResource->__get('id')
+#2 C:\\xampp\\htdocs\\New folder (7)\\FrontBackLcc\\back\\vendor\\laravel\\framework\\src\\Illuminate\\Http\\Resources\\Json\\JsonResource.php(94): App\\Response\\Employee\\EmployeeResponse->toArray(Object(Illuminate\\Http\\Request))
+#3 C:\\xampp\\htdocs\\New folder (7)\\FrontBackLcc\\back\\vendor\\laravel\\framework\\src\\Illuminate\\Http\\Resources\\Json\\JsonResource.php(211): Illuminate\\Http\\Resources\\Json\\JsonResource->resolve(Object(Illuminate\\Http\\Request))
+#4 [internal function]: Illuminate\\Http\\Resources\\Json\\JsonResource->jsonSerialize()
+#5 C:\\xampp\\htdocs\\New folder (7)\\FrontBackLcc\\back\\vendor\\laravel\\framework\\src\\Illuminate\\Http\\JsonResponse.php(71): json_encode(Array, 0)
+#6 C:\\xampp\\htdocs\\New folder (7)\\FrontBackLcc\\back\\vendor\\symfony\\http-foundation\\JsonResponse.php(54): Illuminate\\Http\\JsonResponse->setData(Array)
+#7 C:\\xampp\\htdocs\\New folder (7)\\FrontBackLcc\\back\\vendor\\laravel\\framework\\src\\Illuminate\\Http\\JsonResponse.php(31): Symfony\\Component\\HttpFoundation\\JsonResponse->__construct(Array, 200, Array)
+#8 C:\\xampp\\htdocs\\New folder (7)\\FrontBackLcc\\back\\vendor\\laravel\\framework\\src\\Illuminate\\Routing\\ResponseFactory.php(99): Illuminate\\Http\\JsonResponse->__construct(Array, 200, Array, 0)
+#9 C:\\xampp\\htdocs\\New folder (7)\\FrontBackLcc\\back\\app\\Http\\Controllers\\Crud\\EmployeeController.php(120): Illuminate\\Routing\\ResponseFactory->json(Array, 200)
+#10 C:\\xampp\\htdocs\\New folder (7)\\FrontBackLcc\\back\\vendor\\laravel\\framework\\src\\Illuminate\\Routing\\Controller.php(54): App\\Http\\Controllers\\Crud\\EmployeeController->update(Object(App\\Http\\Requests\\Crud\\EmployeeUpdateRequest), '1')
+#11 C:\\xampp\\htdocs\\New folder (7)\\FrontBackLcc\\back\\vendor\\laravel\\framework\\src\\Illuminate\\Routing\\ControllerDispatcher.php(45): Illuminate\\Routing\\Controller->callAction('update', Array)
+#12 C:\\xampp\\htdocs\\New folder (7)\\FrontBackLcc\\back\\vendor\\laravel\\framework\\src\\Illuminate\\Routing\\Route.php(219): Illuminate\\Routing\\ControllerDispatcher->dispatch(Object(Illuminate\\Routing\\Route), Object(App\\Http\\Controllers\\Crud\\EmployeeController), 'update')
+#13 C:\\xampp\\htdocs\\New folder (7)\\FrontBackLcc\\back\\vendor\\laravel\\framework\\src\\Illuminate\\Routing\\Route.php(176): Illuminate\\Routing\\Route->runController()
+#14 C:\\xampp\\htdocs\\New folder (7)\\FrontBackLcc\\back\\vendor\\laravel\\framework\\src\\Illuminate\\Routing\\Router.php(681): Illuminate\\Routing\\Route->run()
+#15 C:\\xampp\\htdocs\\New folder (7)\\FrontBackLcc\\back\\vendor\\laravel\\framework\\src\\Illuminate\\Pipeline\\Pipeline.php(130): Illuminate\\Routing\\Router->Illuminate\\Routing\\{closure}(Object(Illuminate\\Http\\Request))
+#16 C:\\xampp\\htdocs\\New folder (7)\\FrontBackLcc\\back\\vendor\\halpdesk\\zizaco-entrust-laravel-6.0\\src\\Entrust\\Middleware\\EntrustRole.php(48): Illuminate\\Pipeline\\Pipeline->Illuminate\\Pipeline\\{closure}(Object(Illuminate\\Http\\Request))
+#17 C:\\xampp\\htdocs\\New folder (7)\\FrontBackLcc\\back\\vendor\\laravel\\framework\\src\\Illuminate\\Pipeline\\Pipeline.php(171): Zizaco\\Entrust\\Middleware\\EntrustRole->handle(Object(Illuminate\\Http\\Request), Object(Closure), Array)
+#18 C:\\xampp\\htdocs\\New folder (7)\\FrontBackLcc\\back\\vendor\\laravel\\framework\\src\\Illuminate\\Routing\\Middleware\\SubstituteBindings.php(41): Illuminate\\Pipeline\\Pipeline->Illuminate\\Pipeline\\{closure}(Object(Illuminate\\Http\\Request))
+#19 C:\\xampp\\htdocs\\New folder (7)\\FrontBackLcc\\back\\vendor\\laravel\\framework\\src\\Illuminate\\Pipeline\\Pipeline.php(171): Illuminate\\Routing\\Middleware\\SubstituteBindings->handle(Object(Illuminate\\Http\\Request), Object(Closure))
+#20 C:\\xampp\\htdocs\\New folder (7)\\FrontBackLcc\\back\\vendor\\laravel\\framework\\src\\Illuminate\\Routing\\Middleware\\ThrottleRequests.php(59): Illuminate\\Pipeline\\Pipeline->Illuminate\\Pipeline\\{closure}(Object(Illuminate\\Http\\Request))
+#21 C:\\xampp\\htdocs\\New folder (7)\\FrontBackLcc\\back\\vendor\\laravel\\framework\\src\\Illuminate\\Pipeline\\Pipeline.php(171): Illuminate\\Routing\\Middleware\\ThrottleRequests->handle(Object(Illuminate\\Http\\Request), Object(Closure), 60, '1')
+#22 C:\\xampp\\htdocs\\New folder (7)\\FrontBackLcc\\back\\app\\Http\\Middleware\\Cors.php(30): Illuminate\\Pipeline\\Pipeline->Illuminate\\Pipeline\\{closure}(Object(Illuminate\\Http\\Request))
+#23 C:\\xampp\\htdocs\\New folder (7)\\FrontBackLcc\\back\\vendor\\laravel\\framework\\src\\Illuminate\\Pipeline\\Pipeline.php(171): App\\Http\\Middleware\\Cors->handle(Object(Illuminate\\Http\\Request), Object(Closure))
+#24 C:\\xampp\\htdocs\\New folder (7)\\FrontBackLcc\\back\\vendor\\laravel\\framework\\src\\Illuminate\\Pipeline\\Pipeline.php(105): Illuminate\\Pipeline\\Pipeline->Illuminate\\Pipeline\\{closure}(Object(Illuminate\\Http\\Request))
+#25 C:\\xampp\\htdocs\\New folder (7)\\FrontBackLcc\\back\\vendor\\laravel\\framework\\src\\Illuminate\\Routing\\Router.php(683): Illuminate\\Pipeline\\Pipeline->then(Object(Closure))
+#26 C:\\xampp\\htdocs\\New folder (7)\\FrontBackLcc\\back\\vendor\\laravel\\framework\\src\\Illuminate\\Routing\\Router.php(658): Illuminate\\Routing\\Router->runRouteWithinStack(Object(Illuminate\\Routing\\Route), Object(Illuminate\\Http\\Request))
+#27 C:\\xampp\\htdocs\\New folder (7)\\FrontBackLcc\\back\\vendor\\laravel\\framework\\src\\Illuminate\\Routing\\Router.php(624): Illuminate\\Routing\\Router->runRoute(Object(Illuminate\\Http\\Request), Object(Illuminate\\Routing\\Route))
+#28 C:\\xampp\\htdocs\\New folder (7)\\FrontBackLcc\\back\\vendor\\laravel\\framework\\src\\Illuminate\\Routing\\Router.php(613): Illuminate\\Routing\\Router->dispatchToRoute(Object(Illuminate\\Http\\Request))
+#29 C:\\xampp\\htdocs\\New folder (7)\\FrontBackLcc\\back\\vendor\\laravel\\framework\\src\\Illuminate\\Foundation\\Http\\Kernel.php(170): Illuminate\\Routing\\Router->dispatch(Object(Illuminate\\Http\\Request))
+#30 C:\\xampp\\htdocs\\New folder (7)\\FrontBackLcc\\back\\vendor\\laravel\\framework\\src\\Illuminate\\Pipeline\\Pipeline.php(130): Illuminate\\Foundation\\Http\\Kernel->Illuminate\\Foundation\\Http\\{closure}(Object(Illuminate\\Http\\Request))
+#31 C:\\xampp\\htdocs\\New folder (7)\\FrontBackLcc\\back\\app\\Http\\Middleware\\Cors.php(30): Illuminate\\Pipeline\\Pipeline->Illuminate\\Pipeline\\{closure}(Object(Illuminate\\Http\\Request))
+#32 C:\\xampp\\htdocs\\New folder (7)\\FrontBackLcc\\back\\vendor\\laravel\\framework\\src\\Illuminate\\Pipeline\\Pipeline.php(171): App\\Http\\Middleware\\Cors->handle(Object(Illuminate\\Http\\Request), Object(Closure))
+#33 C:\\xampp\\htdocs\\New folder (7)\\FrontBackLcc\\back\\vendor\\laravel\\framework\\src\\Illuminate\\Foundation\\Http\\Middleware\\TransformsRequest.php(21): Illuminate\\Pipeline\\Pipeline->Illuminate\\Pipeline\\{closure}(Object(Illuminate\\Http\\Request))
+#34 C:\\xampp\\htdocs\\New folder (7)\\FrontBackLcc\\back\\vendor\\laravel\\framework\\src\\Illuminate\\Pipeline\\Pipeline.php(171): Illuminate\\Foundation\\Http\\Middleware\\TransformsRequest->handle(Object(Illuminate\\Http\\Request), Object(Closure))
+#35 C:\\xampp\\htdocs\\New folder (7)\\FrontBackLcc\\back\\vendor\\laravel\\framework\\src\\Illuminate\\Foundation\\Http\\Middleware\\TransformsRequest.php(21): Illuminate\\Pipeline\\Pipeline->Illuminate\\Pipeline\\{closure}(Object(Illuminate\\Http\\Request))
+#36 C:\\xampp\\htdocs\\New folder (7)\\FrontBackLcc\\back\\vendor\\laravel\\framework\\src\\Illuminate\\Pipeline\\Pipeline.php(171): Illuminate\\Foundation\\Http\\Middleware\\TransformsRequest->handle(Object(Illuminate\\Http\\Request), Object(Closure))
+#37 C:\\xampp\\htdocs\\New folder (7)\\FrontBackLcc\\back\\vendor\\laravel\\framework\\src\\Illuminate\\Foundation\\Http\\Middleware\\ValidatePostSize.php(27): Illuminate\\Pipeline\\Pipeline->Illuminate\\Pipeline\\{closure}(Object(Illuminate\\Http\\Request))
+#38 C:\\xampp\\htdocs\\New folder (7)\\FrontBackLcc\\back\\vendor\\laravel\\framework\\src\\Illuminate\\Pipeline\\Pipeline.php(171): Illuminate\\Foundation\\Http\\Middleware\\ValidatePostSize->handle(Object(Illuminate\\Http\\Request), Object(Closure))
+#39 C:\\xampp\\htdocs\\New folder (7)\\FrontBackLcc\\back\\vendor\\laravel\\framework\\src\\Illuminate\\Foundation\\Http\\Middleware\\CheckForMaintenanceMode.php(63): Illuminate\\Pipeline\\Pipeline->Illuminate\\Pipeline\\{closure}(Object(Illuminate\\Http\\Request))
+#40 C:\\xampp\\htdocs\\New folder (7)\\FrontBackLcc\\back\\vendor\\laravel\\framework\\src\\Illuminate\\Pipeline\\Pipeline.php(171): Illuminate\\Foundation\\Http\\Middleware\\CheckForMaintenanceMode->handle(Object(Illuminate\\Http\\Request), Object(Closure))
+#41 C:\\xampp\\htdocs\\New folder (7)\\FrontBackLcc\\back\\vendor\\fideloper\\proxy\\src\\TrustProxies.php(57): Illuminate\\Pipeline\\Pipeline->Illuminate\\Pipeline\\{closure}(Object(Illuminate\\Http\\Request))
+#42 C:\\xampp\\htdocs\\New folder (7)\\FrontBackLcc\\back\\vendor\\laravel\\framework\\src\\Illuminate\\Pipeline\\Pipeline.php(171): Fideloper\\Proxy\\TrustProxies->handle(Object(Illuminate\\Http\\Request), Object(Closure))
+#43 C:\\xampp\\htdocs\\New folder (7)\\FrontBackLcc\\back\\vendor\\barryvdh\\laravel-cors\\src\\HandlePreflight.php(29): Illuminate\\Pipeline\\Pipeline->Illuminate\\Pipeline\\{closure}(Object(Illuminate\\Http\\Request))
+#44 C:\\xampp\\htdocs\\New folder (7)\\FrontBackLcc\\back\\vendor\\laravel\\framework\\src\\Illuminate\\Pipeline\\Pipeline.php(171): Barryvdh\\Cors\\HandlePreflight->handle(Object(Illuminate\\Http\\Request), Object(Closure))
+#45 C:\\xampp\\htdocs\\New folder (7)\\FrontBackLcc\\back\\vendor\\laravel\\framework\\src\\Illuminate\\Pipeline\\Pipeline.php(105): Illuminate\\Pipeline\\Pipeline->Illuminate\\Pipeline\\{closure}(Object(Illuminate\\Http\\Request))
+#46 C:\\xampp\\htdocs\\New folder (7)\\FrontBackLcc\\back\\vendor\\laravel\\framework\\src\\Illuminate\\Foundation\\Http\\Kernel.php(145): Illuminate\\Pipeline\\Pipeline->then(Object(Closure))
+#47 C:\\xampp\\htdocs\\New folder (7)\\FrontBackLcc\\back\\vendor\\laravel\\framework\\src\\Illuminate\\Foundation\\Http\\Kernel.php(110): Illuminate\\Foundation\\Http\\Kernel->sendRequestThroughRouter(Object(Illuminate\\Http\\Request))
+#48 C:\\xampp\\htdocs\\New folder (7)\\FrontBackLcc\\back\\public\\index.php(55): Illuminate\\Foundation\\Http\\Kernel->handle(Object(Illuminate\\Http\\Request))
+#49 C:\\xampp\\htdocs\\New folder (7)\\FrontBackLcc\\back\\server.php(21): require_once('C:\\\\xampp\\\\htdocs...')
+#50 {main}
+"} 
+[2023-03-06 13:56:32] local.INFO: Broadcasting [newLogs] on channels [private-logs] with payload:
+{
+    "logActivity": {
+        "id": 182,
+        "organisation_id": 1,
+        "subject": "Jovert Palonpona modifi\u00e9 une Employee 0666666666",
+        "url": "http:\/\/localhost:8000\/api\/employee\/update\/1",
+        "method": "POST",
+        "ip": "127.0.0.1",
+        "agent": "PostmanRuntime\/7.6.0",
+        "user_id": 2,
+        "user_name": null,
+        "created_at": "2023-03-06 13:56:32",
+        "updated_at": "2023-03-06 13:56:32"
+    },
+    "socket": null
+}  
+[2023-03-06 13:56:32] local.INFO: Broadcasting [newLogs] on channels [private-logs] with payload:
+{
+    "logActivity": {
+        "id": 183,
+        "organisation_id": 1,
+        "subject": "Jovert Palonpona modifi\u00e9 une Employee employee21e",
+        "url": "http:\/\/localhost:8000\/api\/employee\/update\/1",
+        "method": "POST",
+        "ip": "127.0.0.1",
+        "agent": "PostmanRuntime\/7.6.0",
+        "user_id": 2,
+        "user_name": null,
+        "created_at": "2023-03-06 13:56:32",
+        "updated_at": "2023-03-06 13:56:32"
+    },
+    "socket": null
+}  
+[2023-03-06 14:00:08] local.INFO: Broadcasting [newLogs] on channels [private-logs] with payload:
+{
+    "logActivity": {
+        "id": 184,
+        "organisation_id": 1,
+        "subject": "Jovert Palonpona modifi\u00e9 une Employee 0666666666",
+        "url": "http:\/\/localhost:8000\/api\/employee\/update\/1",
+        "method": "POST",
+        "ip": "127.0.0.1",
+        "agent": "PostmanRuntime\/7.6.0",
+        "user_id": 2,
+        "user_name": null,
+        "created_at": "2023-03-06 14:00:08",
+        "updated_at": "2023-03-06 14:00:08"
+    },
+    "socket": null
+}  
+[2023-03-06 14:00:08] local.INFO: Broadcasting [newLogs] on channels [private-logs] with payload:
+{
+    "logActivity": {
+        "id": 185,
+        "organisation_id": 1,
+        "subject": "Jovert Palonpona modifi\u00e9 une Employee employee21e",
+        "url": "http:\/\/localhost:8000\/api\/employee\/update\/1",
+        "method": "POST",
+        "ip": "127.0.0.1",
+        "agent": "PostmanRuntime\/7.6.0",
+        "user_id": 2,
+        "user_name": null,
+        "created_at": "2023-03-06 14:00:08",
+        "updated_at": "2023-03-06 14:00:08"
+    },
+    "socket": null
+}  
+[2023-03-06 14:01:10] local.INFO: Broadcasting [newLogs] on channels [private-logs] with payload:
+{
+    "logActivity": {
+        "id": 186,
+        "organisation_id": 1,
+        "subject": "Jovert Palonpona modifi\u00e9 une Employee 0666666666",
+        "url": "http:\/\/localhost:8000\/api\/employee\/update\/1",
+        "method": "POST",
+        "ip": "127.0.0.1",
+        "agent": "PostmanRuntime\/7.6.0",
+        "user_id": 2,
+        "user_name": null,
+        "created_at": "2023-03-06 14:01:10",
+        "updated_at": "2023-03-06 14:01:10"
+    },
+    "socket": null
+}  
+[2023-03-06 14:01:10] local.INFO: Broadcasting [newLogs] on channels [private-logs] with payload:
+{
+    "logActivity": {
+        "id": 187,
+        "organisation_id": 1,
+        "subject": "Jovert Palonpona modifi\u00e9 une Employee employee21e",
+        "url": "http:\/\/localhost:8000\/api\/employee\/update\/1",
+        "method": "POST",
+        "ip": "127.0.0.1",
+        "agent": "PostmanRuntime\/7.6.0",
+        "user_id": 2,
+        "user_name": null,
+        "created_at": "2023-03-06 14:01:10",
+        "updated_at": "2023-03-06 14:01:10"
+    },
+    "socket": null
+}  

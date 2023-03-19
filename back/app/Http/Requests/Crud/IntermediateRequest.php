@@ -23,7 +23,7 @@ class IntermediateRequest extends FormRequest
             "Function"=>["required","max:225","min:3"],
             "tel"=>["required","max:225","min:3"],
             "Cour"=>["required","max:225","min:3"],
-            "fees"=>["max:225","min:3"]
+            "fees"=>["in:inclusive,Percentage"]
         ];
     }
 }

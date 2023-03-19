@@ -3,7 +3,6 @@ namespace App\Http\Controllers\Crud;
 use App\Http\Controllers\Controller;
 use App\Http\Requests\Pagination\PaginationRequest;
 use App\Http\Requests\Crud\FeesFolderTechRequest;
-use App\Models\FeesFolderTech;
 use App\Response\FeesFolderTech\FeesFolderTechResponse;
 use App\Response\FeesFolderTech\FeesFolderTechsResponse;
 use App\Services\FeesFolderTech\IFeesFolderTechService;

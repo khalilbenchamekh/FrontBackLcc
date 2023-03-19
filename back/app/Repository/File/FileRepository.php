@@ -21,7 +21,6 @@ class FileRepository implements IFileRepository
             return FileModel::select()
             ->paginate($request['limit'],['*'],'page',$request['page']);
         }catch(\Exception $exception){
-            dd($exception);
             $this->Log($exception);
             return null;
         }

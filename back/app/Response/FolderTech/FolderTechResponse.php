@@ -1,6 +1,6 @@
 <?php
 
-namespace App\Response\FolderTechNature;
+namespace App\Response\FolderTech;
 
 use Illuminate\Http\Resources\Json\JsonResource;
 
@@ -9,6 +9,7 @@ class FolderTechResponse extends JsonResource
     public function toArray($request)
     {
         return[
+            'id'=>$this->id,
             "REF"=>$this->REF,
             "PTE_KNOWN"=>$this->PTE_KNOWN,
             "TIT_REQ"=>$this->TIT_REQ,

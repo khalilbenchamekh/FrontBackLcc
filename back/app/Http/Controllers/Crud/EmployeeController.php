@@ -115,7 +115,11 @@ class EmployeeController extends Controller
         $subject = LogsEnumConst::Update . LogsEnumConst::Employee . $request->name;
         $logs = new LogActivity();
         $logs->addToLog($subject, $request);
-        return response(['data' => $employee], 200);
+        if (!is_null($employee)) {
+            $response = EmployeeResponse::make($employee);
+            return response()->json(["data"=>$response],Response::HTTP_OK);
+        }
+        return response()->json("Bad Request",Response::HTTP_BAD_REQUEST);
     }
 
     public function destroy(Request $request)

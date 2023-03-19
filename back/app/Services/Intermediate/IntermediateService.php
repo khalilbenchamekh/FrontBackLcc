@@ -52,14 +52,14 @@ class IntermediateService implements IIntermediateService
     }
     public function destroy($request)
     {
-        $res= $this->iIntermediateRepository->destroy($request['id']);
+        $res= $this->iIntermediateRepository->destroy($request->id);
         if($res === 0 || is_null($res)){
             return false;
         }else{
-            $subject = LogsEnumConst::Delete . LogsEnumConst::Intermediate . $request['Name'];
+            $subject = LogsEnumConst::Delete . LogsEnumConst::Intermediate . $request->Name;
             $logs = new LogActivity();
             $logs->addToLog($subject, $request);
         }
-        return true;
+        return $res;
     }
 }

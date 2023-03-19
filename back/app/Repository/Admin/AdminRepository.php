@@ -66,7 +66,6 @@ class AdminRepository implements IAdminRepository
             $newUser->save();
             return $newUser;
         }catch (\Exception $exception){
-            dd($exception->getMessage());
             $this->Log($exception);
             return null;
         }
@@ -139,7 +138,6 @@ class AdminRepository implements IAdminRepository
             $newUser->save();
             return $newUser;
         }catch (\Exception $exception){
-            dd($exception);
             $this->Log($exception);
             return null;
         }

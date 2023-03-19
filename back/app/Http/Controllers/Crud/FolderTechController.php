@@ -4,8 +4,8 @@ use App\Http\Controllers\Controller;
 use App\Http\Requests\Pagination\PaginationRequest;
 use App\Http\Requests\Crud\FolderTechRequest;
 use App\Models\FolderTech;
-use App\Response\FolderTechNature\FolderTechResponse;
-use App\Response\FolderTechNature\FolderTechsResponse;
+use App\Response\FolderTech\FolderTechResponse;
+use App\Response\FolderTech\FolderTechsResponse;
 use App\Services\AffaireSituation\IAffaireSituationService;
 use App\Services\Client\IClientService;
 use App\Services\FolderTech\IFolderTechService;
@@ -45,16 +45,16 @@ class FolderTechController extends Controller
 
     public function index(PaginationRequest $request)
     {
-        $res = $this->iFolderTechService->index($request->all());
-       if($res instanceof LengthAwarePaginator){
-            $response=FolderTechsResponse::make($res);
+        $res = $this->iFolderTechService->index($request);
+       if($res instanceof LengthAwarePaginator ){
+            $response=FolderTechsResponse::make($res->items());
             return response()->json([
                 "data"=>$response,
-                'countPage'=>$response->perPage(),
-                "currentPage"=>$response->currentPage(),
-                "nextPage"=>$response->currentPage()<$response->lastPage()?$response->currentPage()+1:$response->currentPage(),
-                "lastPage"=>$response->lastPage(),
-                'total'=>$response->total(),
+                'countPage'=>$res->perPage(),
+                "currentPage"=>$res->currentPage(),
+                "nextPage"=>$res->currentPage()<$res->lastPage()?$res->currentPage()+1:$res->currentPage(),
+                "lastPage"=>$res->lastPage(),
+                'total'=>$res->total(),
             ],Response::HTTP_OK);
         }
          return response()->json(['error'=>"Bad Request"],Response::HTTP_BAD_REQUEST);
@@ -62,46 +62,12 @@ class FolderTechController extends Controller
 
     public function store(FolderTechRequest $request)
     {
-        $longitude = $request->input('longitude');
-        $latitude = $request->input('latitude');
-        if (!empty($longitude) || !empty($latitude)) {
-            $validator = Validator::make($request->all(), [
-                'longitude' => 'required|regex:/^[0-9]+(\.[0-9][0-9]?)?$/',
-                'latitude' => 'required|regex:/^[0-9]+(\.[0-9][0-9]?)?$/',
-            ]);
-            if ($validator->fails()) {
-                return response($validator->errors(), 400);
-            }
-        }
-        $ttc = $request->input('ttc');
-        if (!empty($ttc)) {
-            $validator = Validator::make($request->all(), [
-                'ttc' => 'in:0,1',
-            ]);
-            if ($validator->fails()) {
-                return response($validator->errors(), 400);
-            }
-        }
-
-        $client = $this->iClientService->get($request->input('client_id'));
-        if(is_null($client)){
-            return response()->json("Bad Request",Response::HTTP_BAD_REQUEST);
-        }
-
-        $affaireSituation = $this->affaireSituationService->get($request->input('aff_sit_id'));
-        if(is_null($affaireSituation)){
-            return response()->json("Bad Request",Response::HTTP_BAD_REQUEST);
-        }
-
-        $responsible = $this->iUserService->get($request->input('resp_id'));
-        if(is_null($responsible)){
-            return response()->json("Bad Request",Response::HTTP_BAD_REQUEST);
-        }
-
-        $res=$this->iFolderTechService->save($request->all());
+        $res=$this->iFolderTechService->save($request);
         if ($res instanceof FolderTech){
-            $path = 'Dossier Technique/Dossier Technique' . $res->REF;
-            $this->saveFileService->saveFeesFiles($res,$path,$request->file('filenames'));
+            if ($request->hasfile('filenames')) {
+                $path = 'Dossier Technique/Dossier Technique' . $res->REF;
+                $this->saveFileService->saveFeesFiles($res,$path,$request->file('filenames'));
+            }
             $response=FolderTechResponse::make($res);
            return response()->json($response,Response::HTTP_CREATED);
         }
@@ -139,7 +105,8 @@ class FolderTechController extends Controller
         }
             $res=$this->iFolderTechService->delete($request);
             if(!is_null($res) ){
-                return response()->json(['data' => $res], Response::HTTP_NO_CONTENT);
+                $response = FolderTechResponse::make($res);
+                return response()->json(['data' => $response], Response::HTTP_OK);
            }else{
                return response()->json(['error'=>"Bad Request"],Response::HTTP_BAD_REQUEST);
            }

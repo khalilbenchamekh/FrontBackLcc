@@ -13,7 +13,7 @@ class FolderTechRequest extends FormRequest
     public function rules()
     {
         return [
-            'aff_sit_id' => ['required', 'integer'],
+            // 'aff_sit_id' => ['required', 'integer'],
             'client_id' => ['required', 'integer'],
             'resp_id' => ['required', 'integer'],
             'nature_name' => ['exists:folder_tech_natures,Name'],

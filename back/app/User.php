@@ -3,7 +3,6 @@
 namespace App;
 
 use Illuminate\Support\Facades\Cache;
-use App\Models\Chat;
 use App\Models\Load;
 use App\Models\Message;
 use App\Models\Mission;
@@ -11,7 +10,6 @@ use App\Models\Participant;
 use Illuminate\Database\Eloquent\Relations\HasMany;
 use Illuminate\Database\Eloquent\SoftDeletes;
 use Illuminate\Notifications\Notifiable;
-use Illuminate\Contracts\Auth\MustVerifyEmail;
 use Illuminate\Foundation\Auth\User as Authenticatable;
 use Tymon\JWTAuth\Contracts\JWTSubject;
 use Zizaco\Entrust\Traits\EntrustUserTrait;
@@ -43,7 +41,7 @@ class User extends Authenticatable implements JWTSubject
     {
         return $this->hasMany(Load::class);
     }
-     public function missions()
+    public function missions()
     {
         return $this->hasMany(Mission::class);
     }
@@ -105,6 +103,7 @@ class User extends Authenticatable implements JWTSubject
     {
         return Cache::has('user-is-online-' . $this->id);
     }
+
 
     /**
      * Override the mail body for reset password notification mail.

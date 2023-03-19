@@ -38,7 +38,7 @@ class EmployeeRepository implements IEmployeeRepository
         try {
             $employees = Employee::with(['user', 'Documents'])
                 ->where('organisation_id', '=', $this->organisation_id)
-                ->paginate($request['limit'],['*'],'page',$request['page']);
+                ->paginate($request['limit'], ['*'], 'page', $request['page']);
             return $employees;
         } catch (\Exception $exception) {
             $this->Log($exception);
@@ -46,7 +46,7 @@ class EmployeeRepository implements IEmployeeRepository
         }
     }
 
-    public function store($data,$user_id)
+    public function store($data, $user_id)
     {
         // TODO: Implement store() method.
         try {
@@ -87,7 +87,7 @@ class EmployeeRepository implements IEmployeeRepository
             $roleReq = Role::where('name', '=', $role)->first();
 
             $user = new User;
-            $user->name = $data->input('name')  ;
+            $user->name = $data->input('name');
             $user->username = $data->input('username');
             $user->email = $data->input('email');
             $user->password = Hash::make($data->input('email'));
@@ -103,7 +103,6 @@ class EmployeeRepository implements IEmployeeRepository
             $user->attachRole($roleReq);
             return $user;
         } catch (\Exception $exception) {
-            dd($exception->getMessage());
             $this->Log($exception);
             return null;
         }
@@ -112,7 +111,7 @@ class EmployeeRepository implements IEmployeeRepository
     public function get($id)
     {
         try {
-            $employee = Employee::with(['user', 'Documents'])->where("id","=",$id)->where('organisation_id', '=', $this->organisation_id)->first();
+            $employee = Employee::with(['user', 'Documents'])->where("id", "=", $id)->where('organisation_id', '=', $this->organisation_id)->first();
             return  $employee;
         } catch (\Exception $exception) {
             $this->Log($exception);
@@ -120,9 +119,10 @@ class EmployeeRepository implements IEmployeeRepository
         }
     }
 
-    public function edit($perEmployee,$user,$data)
+    public function edit($perEmployee, $user, $data)
     {
         try {
+
             $perEmployee->personal_number = $data->input('personal_number');
             $perEmployee->profession_number = $data->input('profession_number');
             $perEmployee->organisation_id = $this->organisation_id;
@@ -130,16 +130,15 @@ class EmployeeRepository implements IEmployeeRepository
             $perEmployee->linked_documents = $data->hasfile('filenames') ? sizeof($data->file('filenames')) : 0;
             $perEmployee->Start_date = $data->input('Start_date');
             $perEmployee->Salary = $data->input('Salary');
-            $perEmployee->save();
+
+
             $firstname = $data->input('firstname');
             $middlename = $data->input('middlename');
             $lastname = $data->input('lastname');
-            $roleinput = $data->input('role');
-            $role = $roleinput == null ? 'user' : $roleinput;
-            $roleReq = Role::where('name', '=', $role)->first();
 
-            $user = new User;
-            $user->name = $data->input('name')  ;
+            $user = $perEmployee['user'];
+
+            $user->name = $data->input('name');
             $user->username = $data->input('username');
             $user->email = $data->input('email');
             $user->password = Hash::make($data->input('email'));
@@ -150,10 +149,9 @@ class EmployeeRepository implements IEmployeeRepository
             $user->gender = $data->input('gender');
             $user->birthdate = $data->input('birthdate');
             $user->address = $data->input('address');
-            $user->membership()->associate($perEmployee);
-            $user->save();
-            $user->attachRole($roleReq);
-            return $user;
+            $user->isOnline=true;
+            $perEmployee->save();
+            return $perEmployee;
         } catch (\Exception $exception) {
             $this->Log($exception);
             return null;
@@ -171,6 +169,4 @@ class EmployeeRepository implements IEmployeeRepository
             return null;
         }
     }
-
-    
 }

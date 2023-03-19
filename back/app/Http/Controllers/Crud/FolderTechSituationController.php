@@ -31,14 +31,14 @@ class FolderTechSituationController extends Controller
     {
         $foldertechsituations = $this->iFolderTechSituationService->index($request);
         if($foldertechsituations instanceof LengthAwarePaginator){
-            $response = FolderTechSituationsResponse::make($foldertechsituations->all());
+            $response = FolderTechSituationsResponse::make($foldertechsituations->items());
             return response()->json([
                 "data"=>$response,
-                'countPage'=>$response->perPage(),
-                "currentPage"=>$response->currentPage(),
-                "nextPage"=>$response->currentPage()<$response->lastPage()?$response->currentPage()+1:$response->currentPage(),
-                "lastPage"=>$response->lastPage(),
-                'total'=>$response->total(),
+                'countPage'=>$foldertechsituations->perPage(),
+                "currentPage"=>$foldertechsituations->currentPage(),
+                "nextPage"=>$foldertechsituations->currentPage()<$foldertechsituations->lastPage()?$foldertechsituations->currentPage()+1:$foldertechsituations->currentPage(),
+                "lastPage"=>$foldertechsituations->lastPage(),
+                'total'=>$foldertechsituations->total(),
             ],Response::HTTP_OK);
         }
         return response()->json(["error"=>"Bad Request"],Response::HTTP_BAD_REQUEST);
@@ -112,7 +112,8 @@ class FolderTechSituationController extends Controller
             }
             $res=$this->iFolderTechSituationService->destroy($request);
             if(!is_null($res) ){
-                return response()->json(['data' => $res], Response::HTTP_NO_CONTENT);
+                $response = FolderTechSituationResponse::make($res);
+                return response()->json(['data' => $response], Response::HTTP_OK);
            }
            return response()->json(['error'=>"Bad Request"],Response::HTTP_BAD_REQUEST);
     }

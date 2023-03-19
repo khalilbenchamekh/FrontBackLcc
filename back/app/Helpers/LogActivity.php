@@ -15,7 +15,7 @@ class LogActivity
     private $organisation_id;
     public function __construct()
     {
-        $this->organisation_id = Auth::user()->organisation_id;
+        $this->organisation_id = Auth::user()?Auth::user()->organisation_id:null;
     }
     private function AssocieteNameToSubject($subject, $user)
     {
@@ -43,6 +43,7 @@ class LogActivity
             $notifications = new Notification();
             $notifications->description = $subject;
             $notifications->organisation_id = $this->organisation_id;
+            $notifications->save();
             LogActivityModel::create($log);
         }
 

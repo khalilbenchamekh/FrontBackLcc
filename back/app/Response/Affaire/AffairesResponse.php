@@ -8,7 +8,7 @@ class AffairesResponse extends ResourceCollection
 {
     public function toArray($request)
     {
-        $collection=$this->collection->toArray();
+        $collection=$this->collection->all();
         return array_map(fn($collection)=>new AffaireResponse($collection),$collection);
     }
 }

@@ -13,7 +13,7 @@ class FolderTechSituationRepository implements IFolderTechSituationRepository
     private $organisation_id;
     public function __construct()
     {
-        $this->organisation_id = 3;
+        $this->organisation_id = Auth::user() ? Auth::user()->organisation_id : null;
     }
 
     public function save($request)
@@ -36,12 +36,10 @@ class FolderTechSituationRepository implements IFolderTechSituationRepository
     public function index($request,$order=null)
     {
         try {
-                $folderTechSituation= FolderTechSituation::
-                select();
-                if(!is_null($order)){
-                    $folderTechSituation->latest();
-                }
-                $folderTechSituation->where("organisation_id","=",$this->organisation_id)
+                $folderTechSituation= FolderTechSituation::where("organisation_id","=",$this->organisation_id)
+                ->when($order != null, function($query){
+                    return $query->orderBy('created_at', 'desc');
+                })
                 ->paginate($request['limit'],['*'],'page',$request['page']);
                 return $folderTechSituation;
         }catch (\Exception $exception){
@@ -81,9 +79,10 @@ class FolderTechSituationRepository implements IFolderTechSituationRepository
     {
         try {
             //code...
-            return  FolderTechSituation::where("id","=",$id)
-                ->where("organisation_id",'=',$this->organisation_id)
-                ->destroy();
+            $model= FolderTechSituation::where("organisation_id",'=',$this->organisation_id)->find($id);
+            $deleted = $model;
+            $deleted->delete();
+            return $model;
         } catch (\Exception $exception) {
             $this->Log($exception);
             return null;

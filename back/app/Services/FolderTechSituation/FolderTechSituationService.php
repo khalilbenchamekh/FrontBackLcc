@@ -19,6 +19,8 @@ class FolderTechSituationService implements IFolderTechSituationService
 
     public function storeMany(Request $request)
     {
+
+
         $data=$request->all();
         $foldertechsituations=$data['foldertechsituation'];
 
@@ -81,7 +83,7 @@ class FolderTechSituationService implements IFolderTechSituationService
             $logs = new LogActivity();
             $logs->addToLog($subject, $request);
         }
-        return true;
+        return $res;
     }
 
 }

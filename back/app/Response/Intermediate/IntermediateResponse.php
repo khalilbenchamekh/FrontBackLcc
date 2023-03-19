@@ -20,7 +20,8 @@ class IntermediateResponse extends JsonResource
             "Country"=>$this->Country,
             "Function"=>$this->Function,
             "tel"=>$this->tel,
-            "Cour"=>$this->Cour
+            "Cour"=>$this->Cour,
+            "fees"=>$this->fees
         ];
     }
 }

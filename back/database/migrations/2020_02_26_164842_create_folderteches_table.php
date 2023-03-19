@@ -30,6 +30,10 @@ class CreateFoldertechesTable extends Migration
             $table->double('PRICE');
             $table->integer('Inter_id');
 
+            $table->integer('Inter_id')->unsigned();
+            $table->foreign('Inter_id')->references('id')->on('intermediates')
+                ->onUpdate('cascade')->onDelete('cascade');
+
             $table->integer('folder_sit_id')->unsigned();
             $table->foreign('folder_sit_id')->references('id')->on('foldertechsituations')
                 ->onUpdate('cascade')->onDelete('cascade');

@@ -5,6 +5,7 @@ namespace App\Models;
 use App\User;
 use Illuminate\Database\Eloquent\Model;
 
+
 class Employee extends Model
 {
     protected $guarded = ['id'];
@@ -19,4 +20,6 @@ class Employee extends Model
     {
         return $this->hasMany(Linked_Documents::class);
     }
+
+
 }

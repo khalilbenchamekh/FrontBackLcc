@@ -36,8 +36,8 @@ class AffaireService implements IAffaireService{
     {
         $affaire= $this->iAffaireRepository->save($request);
         if(!is_null($affaire) ){
-            $resBusinessManagement=$this->businessManagementService->store($request,$affaire);
-            $resMission=$this->missionService->save($request);
+            // $resBusinessManagement=$this->businessManagementService->store($request,$affaire);
+            // $resMission=$this->missionService->save($request);
             $subject = LogsEnumConst::Add . LogsEnumConst::Affaire. $affaire->REF;
             $logs = new LogActivity();
             $logs->addToLog($subject, $request);
@@ -54,12 +54,12 @@ class AffaireService implements IAffaireService{
     }
     public function update($request,$id)
     {
-        $affaire=$this->iAffaireRepository->getAffaireBy(['REF'=>$id]);
+        $affaire=$this->show($id);
         if(!empty($affaire)){
             $newAffaire= $this->iAffaireRepository->update($affaire,$request);
             if(!is_null($newAffaire) ){
-                $resBusinessManagement=$this->businessManagementService->store($request,$affaire);
-                $resMission=$this->missionService->save($request);
+                // $resBusinessManagement=$this->businessManagementService->store($request,$affaire);
+                // $resMission=$this->missionService->save($request);
                 $subject = LogsEnumConst::Update . LogsEnumConst::Affaire. $affaire->REF;
                 $logs = new LogActivity();
                 $logs->addToLog($subject, $request);
@@ -70,15 +70,15 @@ class AffaireService implements IAffaireService{
     }
     public function destroy($request)
     {
-        $res =  $this->iAffaireRepository->destroy($request['id']);
+        $res =  $this->iAffaireRepository->destroy($request->id);
         if($res === 0 || is_null($res)){
             return false;
         }else{
-            $subject = LogsEnumConst::Delete . LogsEnumConst::Affaire . $request['REF'];
+            $subject = LogsEnumConst::Delete . LogsEnumConst::Affaire . $request->REF;
             $logs = new LogActivity();
             $logs->addToLog($subject, $request);
         }
-        return true;
+        return $res;
     }
 
 }
